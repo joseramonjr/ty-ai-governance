@@ -20,4 +20,4 @@ FIX-35.99 | Jaya | Part 35 Formal Seal | 2026-02-18 | SEALED
 ## Global Governance
 
 FIX-36.00 | Global | Non-Weaponization Architecture Guardrail | 2026-02-18 | ACTIVE
-FIX-36.01 | Jaya | CRI Visual Indicator (Read-Only UI Exposure) | 2026-02-18 | INITIATED
+FIX-36.01 | Jaya | CRI Visual Indicator (Read-Only UI Exposure) | 2026-02-18 | COMPLETE
