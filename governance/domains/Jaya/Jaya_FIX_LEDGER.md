@@ -20,4 +20,4 @@ FIX-35.99 | Part 35 Formal Seal | 2026-02-18 | SEALED
 ## Part 36 — Observability Layer and Governance Expansion
 
 FIX-36.00 | Non-Weaponization Architecture Guardrail | 2026-02-18 | ACTIVE
-FIX-36.01 | CRI Visual Indicator (Read-Only UI Exposure) | 2026-02-18 | INITIATED
+FIX-36.01 | CRI Visual Indicator (Read-Only UI Exposure) | 2026-02-18 | COMPLETE
