@@ -1,5 +1,156 @@
 {
-  "version": "0.1",
-  "status": "draft",
-  "constraints": {}
+  "version": "0.2",
+  "status": "active",
+  "established": "2026-02-18",
+  "timezone": "America/Los_Angeles",
+  "builder": "Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.",
+  "repository": "ty-ai-governance",
+
+  "non_weaponization": {
+    "status": "active",
+    "fix_reference": "FIX-36.00",
+    "prohibited": [
+      "kinetic_control_interfaces",
+      "mass_surveillance_primitives",
+      "population_scale_analytics",
+      "autonomous_offensive_decision_logic",
+      "external_authority_override_channels",
+      "centralized_command_enforcement"
+    ]
+  },
+
+  "systems": {
+    "Jaya": {
+      "status": "active",
+      "permitted": [
+        "monitor_system_state",
+        "log_anomaly_events",
+        "decay_cri_deterministically",
+        "expose_readonly_observability",
+        "restore_cri_on_startup",
+        "validate_registry_integrity",
+        "escalate_tier_on_threshold",
+        "fire_sentinel_anomaly_detections"
+      ],
+      "requires_authorization": [
+        "cri_behavioral_coupling",
+        "new_external_data_input_channel",
+        "sentinel_scope_expansion",
+        "new_persistence_target"
+      ],
+      "prohibited": [
+        "mutate_tier_without_threshold",
+        "accept_external_override_commands",
+        "expose_actuation_interfaces",
+        "autonomous_network_connection",
+        "modify_own_governance_constraints",
+        "suppress_anomaly_logs",
+        "bypass_fix_discipline"
+      ]
+    },
+    "TY": {
+      "status": "active",
+      "permitted": [
+        "inspect_system_state",
+        "display_governance_status",
+        "verify_artifact_integrity",
+        "provide_readonly_authority_visibility",
+        "distribute_canonical_artifacts"
+      ],
+      "requires_authorization": [
+        "write_to_governed_component_state",
+        "authority_delegation_to_subsystem",
+        "modify_canonical_governance_documents",
+        "new_external_system_integration"
+      ],
+      "prohibited": [
+        "autonomous_code_execution_without_audit",
+        "accept_authority_from_unauthenticated_sources",
+        "modify_own_invariants",
+        "bypass_verification_before_trust",
+        "operate_without_governance_ledger"
+      ]
+    },
+    "TYOVA": {
+      "status": "active",
+      "permitted": [
+        "serve_canonical_distribution",
+        "display_verification_status",
+        "log_verification_events",
+        "present_registry_data_readonly"
+      ],
+      "requires_authorization": [
+        "publish_new_canonical_releases",
+        "seal_or_tag_canonical_versions",
+        "change_verification_logic",
+        "change_registry_architecture"
+      ],
+      "prohibited": [
+        "modify_artifacts_post_verification",
+        "accept_unverified_artifacts_as_canonical",
+        "bypass_git_sealed_release_process",
+        "expose_write_interfaces_to_unauthenticated_users"
+      ]
+    },
+    "Luke": {
+      "status": "active",
+      "permitted": [
+        "provide_security_audit_explanations",
+        "display_audit_trail_readonly",
+        "answer_audit_queries",
+        "log_explanation_interactions"
+      ],
+      "requires_authorization": [
+        "expand_data_access_scope",
+        "new_integration_with_ty_or_jaya",
+        "change_admin_access_control_rules"
+      ],
+      "prohibited": [
+        "access_data_outside_audit_scope",
+        "interfere_with_ty_governance_operations",
+        "accept_instructions_from_non_admin_sources",
+        "affect_live_system_state",
+        "operate_outside_isolated_infrastructure"
+      ]
+    },
+    "Jayme": {
+      "status": "active",
+      "permitted": [
+        "assist_governed_development_tasks",
+        "reference_canonical_governance_documents",
+        "surface_fix_discipline_reminders",
+        "log_governance_relevant_interactions"
+      ],
+      "requires_authorization": [
+        "autonomous_commit_or_push",
+        "modify_governance_canon_files",
+        "fix_number_assignment",
+        "seal_declaration"
+      ],
+      "prohibited": [
+        "self_authorize_governance_changes",
+        "bypass_fix_discipline",
+        "modify_master_fix_index_without_instruction",
+        "operate_outside_builder_authorized_scope"
+      ]
+    }
+  },
+
+  "global_rules": [
+    "no_system_may_grant_itself_unauthorized_authority",
+    "no_system_may_accept_external_governance_override",
+    "no_system_may_suppress_its_own_audit_trail",
+    "no_system_may_modify_governance_documents_autonomously",
+    "no_system_may_operate_without_resolvable_fix_ancestry",
+    "all_authority_expansions_require_fix_entry",
+    "all_seal_declarations_require_builder_authorization"
+  ],
+
+  "fix_discipline": {
+    "canonical_timezone": "America/Los_Angeles",
+    "repository_is_authoritative": true,
+    "chat_is_non_canonical": true,
+    "retroactive_renumbering_prohibited": true,
+    "duplicate_fix_ids_prohibited": true
+  }
 }
