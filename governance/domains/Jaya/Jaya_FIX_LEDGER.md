@@ -33,3 +33,4 @@ FIX-36.10 | CRI Band History UI Panel | 2026-03-04 | COMPLETE
 FIX-36.11 | Snapshot Pruning — 30 day filename-based retention policy | 2026-03-05 | COMPLETE
 FIX-36.12 | ty-seal universal script deployed | 2026-03-05 | COMPLETE
 FIX-37.01 | SystemHealthCheck operation — Tier1 risk10 governed execution | 2026-03-05 | COMPLETE
+FIX-37.02 | FileRead operation — Tier1 risk20 governed file read with path parameter | 2026-03-05 | COMPLETE
