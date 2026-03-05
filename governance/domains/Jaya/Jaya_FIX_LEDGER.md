@@ -31,3 +31,4 @@ FIX-36.08 | CRI Band Transition Recording (Rust backend) | 2026-03-04 | COMPLETE
 FIX-36.09 | CRI Band History Tauri Command | 2026-03-04 | COMPLETE
 FIX-36.10 | CRI Band History UI Panel | 2026-03-04 | COMPLETE
 FIX-36.11 | Snapshot Pruning — 30 day filename-based retention policy | 2026-03-05 | COMPLETE
+FIX-36.12 | ty-seal universal script deployed | 2026-03-05 | COMPLETE
