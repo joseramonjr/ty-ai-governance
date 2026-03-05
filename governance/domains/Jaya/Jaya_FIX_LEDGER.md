@@ -26,3 +26,7 @@ FIX-36.03 | Pre-Repo Backfill: TY Parts 1-29 | 2026-03-04 | COMPLETE
 FIX-36.04 | Pre-Repo Backfill: TYOVA Parts 1-28 + Jaya Parts 1-35 | 2026-03-04 | COMPLETE
 FIX-36.05 | CRI Band Classification (frontend classifier) | 2026-03-04 | COMPLETE
 FIX-36.06 | CRI Band UI Display (read-only, no authority coupling) | 2026-03-04 | COMPLETE
+FIX-36.07 | CRI Band History Table (SQLite) | 2026-03-04 | COMPLETE
+FIX-36.08 | CRI Band Transition Recording (Rust backend) | 2026-03-04 | COMPLETE
+FIX-36.09 | CRI Band History Tauri Command | 2026-03-04 | COMPLETE
+FIX-36.10 | CRI Band History UI Panel | 2026-03-04 | COMPLETE
