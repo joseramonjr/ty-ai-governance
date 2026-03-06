@@ -8,15 +8,15 @@
 # ════════════════════════════════════════════════════
 
 # ── REPO CONFIG ──────────────────────────────────────
-GOVERNANCE_REPO="/e/Jaya-AI/ty-ai-governance"
+GOVERNANCE_REPO="/e/TY-Ecosystem/ty-ai-governance"
 GOVERNANCE_LEDGER_DIR="governance/domains"
 
 DESTINATIONS=(
-  "JAYA|/e/Jaya-AI/Jaya-Runtime|Jaya/Jaya_FIX_LEDGER.md|joseramonjr/Jaya-Runtime"
-  "TYOVA|/e/Jaya-AI/TYOVA|TYOVA/TYOVA_FIX_LEDGER.md|joseramonjr/TYOVA"
-  "TY|/e/Jaya-AI/TY-AI-OS|TY/TY_FIX_LEDGER.md|joseramonjr/TY-AI-OS"
-  "LUKE|/e/Jaya-AI/Luke|Luke/LUKE_FIX_LEDGER.md|joseramonjr/Luke"
-  "JAYME|/e/Jaya-AI/Jayme|Jayme/JAYME_FIX_LEDGER.md|joseramonjr/Jayme"
+  "JAYA|/e/TY-Ecosystem/Jaya-Runtime|Jaya/Jaya_FIX_LEDGER.md|joseramonjr/Jaya-Runtime"
+  "TYOVA|/e/TY-Ecosystem/TYOVA|TYOVA/TYOVA_FIX_LEDGER.md|joseramonjr/TYOVA"
+  "TY|/e/TY-Ecosystem/TY-AI-OS|TY/TY_FIX_LEDGER.md|joseramonjr/TY-AI-OS"
+  "LUKE|/e/TY-Ecosystem/Luke|Luke/LUKE_FIX_LEDGER.md|joseramonjr/Luke"
+  "JAYME|/e/TY-Ecosystem/Jayme|Jayme/JAYME_FIX_LEDGER.md|joseramonjr/Jayme"
 )
 
 # ── VALIDATE ARGS ────────────────────────────────────
