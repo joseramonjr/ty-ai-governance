@@ -39,3 +39,4 @@ BOOK-CLO-004 | Book Chapter 4 — Governance Canon Master Charter invariants FIX
 BOOK-CLO-005 | Book Chapter 6 — Ecosystem as a Whole five systems authority flow | 2026-03-06 | COMPLETE
 BOOK-CLO-006 | Book Chapter 8 — What Comes Next forward roadmap TY Governance Spec v0.1 | 2026-03-06 | COMPLETE
 BOOK-CLO-007 | Book Chapters 10-14 — Technical architecture series chokepoint risk model authority ledger | 2026-03-06 | COMPLETE
+BOOK-CLO-007-CORR | Chapters 11 and 12 corrected — fabricated values removed aligned to verified archive facts | 2026-03-06 | COMPLETE
