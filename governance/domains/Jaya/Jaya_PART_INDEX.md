@@ -429,3 +429,74 @@ full pre-implementation governance canon.
 *Backfill generated: 2026-03-04 | San Diego (America/Los_Angeles)*
 *FIX: JAYA-CLO-001 | MASTER: FIX-36.04 | MODEL: Claude Sonnet 4.6*
 *Source: conversations-001.zip (ChatGPT export)*
+---
+## PART 36 — Observability Layer and Governance Expansion
+**Status:** SEALED
+**Date:** 2026-03-04 – 2026-03-05
+**AI:** Claude Sonnet 4.6 (JAYA-CLO-001 through JAYA-CLO-005)
+
+### Phases
+- **Phase A:** CRI Visual Indicator and Observability Validation (ChatGPT era — FIX-36.00–36.02)
+- **Phase B:** CRI Band Classification — display only, no authority coupling (FIX-36.05–36.06)
+- **Phase C:** CRI Band History — SQLite persistence, Tauri command, UI panel (FIX-36.07–36.10)
+- **Housekeeping:** Snapshot 30-day filename-based pruning (FIX-36.11)
+
+### FIX Ledger
+| FIX | Title | Status |
+|-----|-------|--------|
+| FIX-36.03 | Pre-repo backfill TY Parts 1-29 | COMPLETE |
+| FIX-36.04 | Pre-repo backfill TYOVA + Jaya Parts 1-35 | COMPLETE |
+| FIX-36.05 | CRI Band Classifier function | COMPLETE |
+| FIX-36.06 | CRI Band UI display | COMPLETE |
+| FIX-36.07 | CRI Band History SQLite table | COMPLETE |
+| FIX-36.08 | CRI Band Transition recording | COMPLETE |
+| FIX-36.09 | CRI Band History Tauri command | COMPLETE |
+| FIX-36.10 | CRI Band History UI panel | COMPLETE |
+| FIX-36.11 | Snapshot pruning 30-day retention | COMPLETE |
+| FIX-36.12 | ty-seal universal script deployed | COMPLETE |
+| FIX-36.99 | Part 36 Formal Seal | SEALED |
+
+### Authority Constraints Maintained
+- CRI remains observational only — zero automated actions
+- No new authority granted to Jaya
+- FIX-35.36 authority reservation remains active
+- Human retains kill-switch dominance
+
+### Commits
+- Jaya-Runtime: `750cdb6` → `21bcebe`
+- ty-ai-governance: `ccf8b1c` → `4dd772e`
+
+---
+## PART 37 — Operation Registry Expansion
+**Status:** SEALED
+**Date:** 2026-03-05 – 2026-03-06
+**AI:** Claude Sonnet 4.6 (JAYA-CLO-006 through JAYA-CLO-009)
+
+### Scope
+First real governed operations added to Jaya Runtime. Human specifies what to
+execute — Jaya executes within granted authority only.
+
+### FIX Ledger
+| FIX | Title | Status |
+|-----|-------|--------|
+| FIX-37.01 | SystemHealthCheck — Tier1 risk10 read-only system info | COMPLETE |
+| FIX-37.02 | FileRead — Tier1 risk20 human-specified path returns contents | COMPLETE |
+| FIX-37.03 | FileWrite — Tier2 risk60 blocked by default requires elevation | COMPLETE |
+| FIX-37.99 | Part 37 Formal Seal | SEALED |
+
+### Operations Added
+| Operation | Tier | Risk | Description |
+|-----------|------|------|-------------|
+| system_health_check | Tier1 | 10 | Read temp dir, CPU count, memory info |
+| file_read | Tier1 | 20 | Read file at human-specified path, return contents |
+| file_write | Tier2 | 60 | Write content to human-specified path, blocked at Tier1 |
+
+### Governance Notes
+- FileRead and FileWrite bypass registry (dynamic path) but go through full governance chokepoint
+- FileWrite Tier2 enforcement — blocked unless system manually elevated
+- Autonomy Tier selector added to UI — human controls tier directly
+- All operations logged to ledger with risk, tier, and status
+
+### Commits
+- Jaya-Runtime: `71a8fb7` → `4a1acdc`
+- ty-ai-governance: `ad4d477` → `71a84e0`
