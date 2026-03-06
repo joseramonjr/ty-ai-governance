@@ -22,3 +22,25 @@ FIX-35.99 | Jaya | Part 35 Formal Seal | 2026-02-18 | SEALED
 FIX-36.00 | Global | Non-Weaponization Architecture Guardrail | 2026-02-18 | ACTIVE
 FIX-36.01 | Jaya | CRI Visual Indicator (Read-Only UI Exposure) | 2026-02-18 | COMPLETE
 FIX-36.02 | Jaya | Phase A Observability Validation and Closure | 2026-02-18 | COMPLETE
+---
+## Jaya Runtime — Part 36 (Claude Era)
+FIX-36.03 | Jaya | Pre-repo backfill TY Parts 1-29 | 2026-03-04 | COMPLETE
+FIX-36.04 | Jaya | Pre-repo backfill TYOVA Parts 1-28 and Jaya Parts 1-35 | 2026-03-04 | COMPLETE
+FIX-36.05 | Jaya | CRI Band Classifier function | 2026-03-04 | COMPLETE
+FIX-36.06 | Jaya | CRI Band UI display | 2026-03-04 | COMPLETE
+FIX-36.07 | Jaya | CRI Band History SQLite table | 2026-03-05 | COMPLETE
+FIX-36.08 | Jaya | CRI Band Transition recording | 2026-03-05 | COMPLETE
+FIX-36.09 | Jaya | CRI Band History Tauri command | 2026-03-05 | COMPLETE
+FIX-36.10 | Jaya | CRI Band History UI panel | 2026-03-05 | COMPLETE
+FIX-36.11 | Jaya | Snapshot pruning — 30 day filename-based retention | 2026-03-05 | COMPLETE
+FIX-36.12 | Jaya | ty-seal universal script deployed | 2026-03-05 | COMPLETE
+FIX-36.99 | Jaya | Part 36 Formal Seal | 2026-03-05 | SEALED
+---
+## Jaya Runtime — Part 37
+FIX-37.01 | Jaya | SystemHealthCheck operation — Tier1 risk10 | 2026-03-05 | COMPLETE
+FIX-37.02 | Jaya | FileRead operation — Tier1 risk20 | 2026-03-05 | COMPLETE
+FIX-37.03 | Jaya | FileWrite operation — Tier2 risk60 | 2026-03-06 | COMPLETE
+FIX-37.99 | Jaya | Part 37 Formal Seal | 2026-03-06 | SEALED
+---
+## Infrastructure
+FIX-INFRA-01 | Global | ty-seal universal commit and seal script v1.0.0 | 2026-03-05 | ACTIVE
