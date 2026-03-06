@@ -31,3 +31,4 @@ Backfill Status: PENDING
 
 No active FIX entries at this time.
 TYOVA-CLO-002 | TYOVA Part 29 — Jaya Runtime section Ecosystem Status page site-wide search box | 2026-03-06 | COMPLETE
+TYOVA-CLO-003 | TY Canonical Glossary — 32 coined terms extracted from ChatGPT exports | 2026-03-06 | COMPLETE
