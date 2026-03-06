@@ -8,7 +8,7 @@
 **Chapter Series:** Technical Architecture (T3 of 5)
 **Author:** Claude Sonnet 4.6 (CLO)
 **Date:** 2026-03-06 | San Diego (America/Los_Angeles)
-**FIX:** BOOK-CLO-007
+**FIX:** BOOK-CLO-007 (corrected)
 **Audience:** Auditors, governance reviewers, general technical readers
 
 ---
@@ -61,8 +61,8 @@ assess as wrong.
 
 ### The TY AI OS Position
 
-TY AI OS rejects automated thresholds for a principled reason stated in the
-development record: CRI is observational only. It never triggers automated
+TY AI OS rejects automated thresholds for a principled reason stated explicitly
+in the development record: CRI is observational only. It never triggers automated
 actions. It never automatically restricts operations. It is a number that a
 human can read and interpret.
 
@@ -70,72 +70,89 @@ This is not a technical limitation. The system could be designed with automated
 thresholds. The choice not to use them reflects a governance commitment: risk
 decisions belong to humans, not to the system making the risk assessment.
 
+This decision was formally locked during the Jaya Runtime Part 35 series with
+the explicit statement: "CRI is a Future-Authorizable Modifier Input" — meaning
+any future coupling of CRI to behavioral decisions requires explicit human
+authorization as a formal governance act, not an implementation choice.
+
 ---
 
 ## Part II: How CRI Is Calculated
 
-### The Base Score
+### The Risk Score
 
-CRI is a rolling integer from 0 to 100. It accumulates upward with each
-operation and decays downward over time.
+CRI is a rolling score that accumulates upward with each operation and decays
+downward over time. Each operation registered in the module registry carries
+a risk score between 0 and 100. The operation's risk score is the base
+contribution to CRI when that operation executes.
 
-The base contribution of an operation to CRI is its registered risk score:
-- SystemHealthCheck: 10
-- FileRead: 20
-- FileWrite: 60
+Operation risk scores as established in the development record:
+- SystemHealthCheck: risk 10
+- FileRead: risk 20
+- FileWrite: risk 60
 
 These scores reflect the relative risk of each operation. A health check is
-read-only with no side effects — low risk. A file write modifies state — higher
-risk. The scores are set when the operation is registered and can only be
-changed through a formal governance process.
+read-only with no side effects — low risk. A file write modifies state —
+higher risk. The scores are defined when the operation is registered.
 
 ### The Adaptive Modifier
 
-The base risk score is multiplied by the adaptive modifier before being added
-to CRI.
+The adaptive modifier is a component of the RiskEngine that adjusts based on
+recent behavioral patterns. It is tracked as a numeric value in the runtime
+state — visible on the governance dashboard alongside failure rate, tier, and
+emergency status.
 
-The adaptive modifier is a multiplier that starts at 1.0 and adjusts based
-on recent behavioral patterns:
+The modifier starts at 0 at baseline (a clean, reset state). It increases
+with failures and emergency events. It decays over time when the system is
+stable.
 
-- **Clean history** — modifier trends downward, approaching 0.8. A system
-  with a consistent record of successful, clean operations earns a lower
-  modifier. Each new operation contributes less to CRI because the recent
-  record supports trust.
+The development record confirms the following observed behavior:
+- At baseline reset state: Adaptive Modifier = 0
+- After repeated failures: Adaptive Modifier elevated (observed value: 30
+  during a high-failure-rate test session in Part 35A)
+- After behavioral reset: Adaptive Modifier returns to 0
 
-- **Failure history** — modifier trends upward, approaching 1.5. A system
-  with recent failures carries a higher modifier. Each new operation contributes
-  more to CRI because the recent record indicates elevated risk.
+The exact floor, ceiling, and decay rate values for the adaptive modifier are
+defined in the Jaya Runtime codebase in `risk_engine.rs`. Those implementation
+details are not reproduced here — this chapter documents the governance
+behavior, not the implementation constants.
 
-- **Neutral history** — modifier stays near 1.0. Normal operations with no
-  notable pattern.
+What the development record confirms architecturally:
+- The modifier reflects recent failure rate and emergency score
+- It decays deterministically when the system is stable
+- It is visible on the governance dashboard
+- It does not directly gate operations — it contributes to risk context
 
-The adaptive modifier means that CRI reflects not just what operations were
-performed, but how the system has been performing recently. The same FileWrite
-operation contributes 60 points to CRI in a clean-history context, 48 points
-in a favorable context (60 × 0.8), and 90 points in a failure context (60 × 1.5).
+### The Emergency Score
 
-### The Failure Penalty
+The risk engine tracks an emergency score separately from the adaptive modifier.
+The emergency score reflects the accumulation of emergency-level events. When
+the emergency score crosses a defined threshold, the runtime can enter
+RESTRICTED mode — an operational state where execution is constrained.
 
-When an operation fails — returns an error, produces unexpected output, or
-is interrupted — an additional failure penalty is added to CRI on top of the
-operation's normal contribution. The penalty reflects that a failure is a
-stronger signal of instability than a successful operation.
+The emergency score and the adaptive modifier are both components the sentinel
+monitors as part of its pattern detection. They are governance signals, not
+enforcement mechanisms on their own.
+
+### The Failure Rate
+
+The risk engine tracks recent execution failures as a failure rate. The
+development record confirms:
+- Failure rate is displayed on the governance dashboard as a percentage
+- After behavioral reset: Failure Rate = 0.00%
+- During a high-failure test session: Failure Rate reached 75.00%
+- The failure rate feeds into the adaptive modifier calculation
 
 ### The Decay Model
 
-CRI decreases over time when no operations are executing. The decay is gradual
-and continuous — not a sudden reset.
+CRI and the adaptive modifier decrease over time when the system is idle or
+operating cleanly. The decay is deterministic — meaning the same conditions
+produce the same decay behavior every time. This property was explicitly
+verified during development: "Decay logic validated via instrumentation."
 
-The decay model reflects a real-world truth: a system that is quiet and stable
-is accumulating evidence of reliability. A CRI of 50 that has been declining
-for an hour represents a different risk context than a CRI of 50 that has been
-climbing for an hour. The decay model makes this distinction visible.
-
-The decay rate is designed so that CRI returns to baseline over a reasonable
-period of inactivity. A system that completes a high-risk operation and then
-sits idle will see its CRI decline to a low baseline — reflecting that the
-period of inactivity following the operation provides evidence that the operation
-did not destabilize the system.
+The decay model reflects a real principle: a system that is quiet and stable
+is accumulating evidence of reliability. The decay makes that evidence visible
+as a declining risk score.
 
 ---
 
@@ -143,51 +160,44 @@ did not destabilize the system.
 
 ### Four Tiers, One Purpose
 
-The autonomy tier system provides four discrete levels of operational constraint:
+The autonomy tier system provides four discrete levels of operational
+constraint. The tier system was defined in Jaya Runtime Part 30 and implemented
+across Parts 30–32:
 
-**Tier0 — Baseline**
-The default state. The most conservative. No operations execute at Tier0
-unless explicitly authorized through tier elevation. Tier0 is where the system
-returns after every evaluation cycle — it is the resting state.
+**Tier0 — Manual approval required**
+The most conservative state. No registered operations execute at Tier0 without
+explicit human authorization. This is the resting state the system returns to
+after a behavioral reset.
 
-**Tier1 — Elevated**
-Permits lower-risk operations. SystemHealthCheck and FileRead are Tier1
-operations. A system at Tier1 can read and observe. It cannot modify state.
+**Tier1 — Default operational level**
+Permits lower-risk operations. SystemHealthCheck (risk 10) and FileRead
+(risk 20) are Tier1 operations. A system at Tier1 can read and observe. It
+cannot execute state-modifying operations.
 
-**Tier2 — Guarded**
-Permits state-modifying operations. FileWrite is a Tier2 operation. A system
-at Tier2 can change things. The tier elevation is a conscious human decision
-to permit more impactful actions.
+**Tier2 — Moderate autonomy**
+Permits state-modifying operations. FileWrite (risk 60) is a Tier2 operation.
+A system at Tier2 can change things. The tier elevation is a conscious human
+decision to permit more impactful actions.
 
-**Tier3 — Restricted**
-Maximum constraint. All operations are blocked. Tier3 is the emergency state —
-used when the human determines that no operation should proceed until the
-situation is assessed.
+**Tier3 — High autonomy**
+The development record defines Tier3 as the high-autonomy tier. At the time
+of writing (Part 37), no Tier3 operations have been registered. Tier3 is
+defined in the architecture but not yet operationally populated.
 
 ### The Human Sets the Tier
 
 The tier is not set automatically. The human sets it.
 
-CRI can be elevated. The sentinel can emit anomaly signals. The behavioral
-history can show concerning patterns. None of these automatically change the
-tier. The human reads the information, assesses the situation, and decides
-what tier is appropriate.
+The development record is explicit: CRI can be elevated, the sentinel can emit
+anomaly signals, the failure rate can be high — none of these automatically
+change the tier. The human reads the information and decides.
 
-This is the core governance commitment: risk information flows to the human.
-Decisions flow from the human. The system provides information. The human
-exercises authority.
-
-### Tier Evaluation Is Not Permanent
-
-After each operation, the system evaluates whether the current tier is still
-appropriate. This evaluation may emit a recommendation — "based on current
-CRI, Tier1 may be appropriate" — but it does not act on that recommendation.
-The tier remains where the human set it until the human changes it.
-
-The evaluation cycle is designed to prompt regular human engagement with the
-tier setting. A system that runs many operations at Tier2 will periodically
-surface the question: given the current CRI and behavioral history, is Tier2
-still the right setting? The human answers.
+The tier is persisted in the ledger between sessions via `persist_autonomy_tier`
+and `load_last_autonomy_tier`. This means the last human-set tier is remembered
+across restarts — but it is loaded as a restored human decision, not as
+inherited authority. Cold start = zero authority still applies to the
+operational state; the tier persistence is a convenience that reflects the
+last human decision.
 
 ---
 
@@ -195,23 +205,23 @@ still the right setting? The human answers.
 
 ### Visualization Without Authority
 
-CRI bands are visual ranges that communicate the current risk level at a glance:
+CRI bands are visual ranges that communicate the current risk level:
 
 | Band | Range | Signal |
 |------|-------|--------|
 | Low | 0–25 | Normal operational context |
 | Moderate | 26–50 | Notable activity has occurred |
 | Elevated | 51–75 | Significant activity; attention may be warranted |
-| Critical | 76–100 | Substantial activity or failures; review recommended |
+| Critical | 76–100 | Substantial activity or failures; human review recommended |
 
-The bands are decorative in the governance sense: they carry no enforcement
-authority. A Critical band does not block operations. A Low band does not
-authorize operations. The bands communicate; the human decides.
+The bands carry no enforcement authority. A Critical band does not block
+operations. A Low band does not authorize operations. The bands communicate;
+the human decides.
 
-The band display is designed so that the current band, the current score, and
-the trend (rising or falling) are all visible simultaneously. A CRI of 45 that
-has been declining is displayed differently than a CRI of 45 that has been
-climbing — because they represent meaningfully different risk contexts.
+The band classification system was formalized during the Claude session era
+(Jaya Part 36), making it one of the first governance additions after the
+transition from ChatGPT sessions to Claude sessions. It is documented in the
+MASTER_FIX_INDEX as part of the CLO-era fixes.
 
 ---
 
@@ -223,33 +233,45 @@ The sentinel is the component that watches for anomaly patterns — conditions
 that are not captured by any single operation's risk score but that emerge
 from the combination of multiple signals.
 
-The sentinel monitors:
-- CRI trajectory (rate of change, not just current value)
-- Failure clustering (are failures happening in bursts or isolated incidents?)
-- Modifier drift (is the adaptive modifier trending consistently upward?)
-- Tier change frequency (is the human changing tiers unusually often?)
+The sentinel captures a `MirrorRiskSnapshot` from read-only runtime state:
+- Current tier
+- Adaptive modifier value
+- Failure rate
+- Emergency score
+- Runtime mode
+- Timestamp
 
-When the sentinel detects a pattern that meets its anomaly criteria, it does
-two things: records the anomaly in the sentinel log, and surfaces it in the
-observability UI. It does not do anything else. It does not change the tier.
-It does not block operations. It does not send alerts to external systems.
+The sentinel does not store execution data. It stores governance signals only.
+
+When the sentinel detects an anomaly pattern, it creates an `AnomalyEvent`
+record and surfaces it in the sentinel anomaly log visible on the governance
+dashboard. The anomaly types detected include patterns such as `EscalationDrift`
+— a condition observed and resolved during Part 35 development where the
+sentinel was continuously re-elevating CRI due to a misfire in the anomaly
+detection logic.
+
+**What the sentinel does:**
+- Observes governance signals
+- Records anomaly events in the sentinel log
+- Displays anomalies in the governance dashboard
+
+**What the sentinel does not do:**
+- Change the autonomy tier
+- Block operations
+- Send alerts to external systems
+- Take any action
 
 The sentinel sees. The human decides.
 
 ### Why Pattern Detection Matters
 
-Individual operations look normal in isolation. A FileWrite with a CRI of 35
-passes tier verification and executes. Another FileWrite. Another. Each one
-individually looks fine.
+Individual operations look normal in isolation. The sentinel's value is in
+surfacing patterns across multiple signals that would not be visible from any
+single metric. A combination of rising modifier, elevated failure rate, and
+CRI trending upward may be more significant than any one of those signals alone.
 
-But a sentinel watching the pattern might notice: the modifier has been
-trending upward for the last hour. The failure rate is 30% over the last
-ten operations. CRI is at 35 and climbing, not declining. Individually, none
-of these is alarming. Together, they suggest a system under stress.
-
-The sentinel surfaces this pattern. The human sees it. The human decides
-whether to investigate, change the tier, or continue with current settings.
-The sentinel has done its job by making the pattern visible.
+The sentinel makes that pattern visible. The human sees it and decides whether
+to investigate, change the tier, or continue with current settings.
 
 ---
 
@@ -258,22 +280,28 @@ The sentinel has done its job by making the pattern visible.
 An auditor examining the TY AI OS risk model can verify specific properties:
 
 **"CRI does not automatically restrict operations."** Verify that the tier
-check in the chokepoint uses the human-set tier, not the CRI score. CRI feeds
-into calculations but does not directly gate operations.
+check in the governance wrapper uses the human-set tier, not the CRI score.
+CRI contributes to the risk context record but does not directly gate operations.
 
-**"The modifier reflects recent behavior."** Verify that the modifier
-calculation uses the actual behavioral history, and that the history is
-stored in the ledger with tamper-evident records.
+**"The adaptive modifier reflects recent behavior."** Verify that the modifier
+calculation uses actual behavioral history stored in the risk engine. Verify
+that modifier = 0 after a behavioral reset, confirming no hidden state.
 
 **"The sentinel cannot take autonomous action."** Verify that the sentinel
-code path ends at recording and display — that there is no code path from
-sentinel detection to operation restriction.
+code path ends at recording an anomaly event and updating the UI display —
+that there is no code path from sentinel detection to operation restriction
+or tier modification.
 
-**"Tier changes require human action."** Verify that no code path in the
-system changes the autonomy tier without a human-initiated action.
+**"Tier changes require human action."** Verify that no code path in the system
+changes the autonomy tier without a human-initiated set_tier command.
 
-These are verifiable claims about the risk model's governance properties.
-They do not require trusting the builder. They require reading the structure.
+**"Decay is deterministic."** Verify that the decay logic produces consistent
+results under the same conditions. Deterministic decay was explicitly validated
+during development via instrumentation.
+
+These are verifiable claims about the risk model's governance properties. They
+do not require trusting the builder. They require reading the structure and
+the verified test results in the development record.
 
 ---
 
@@ -282,17 +310,19 @@ They do not require trusting the builder. They require reading the structure.
 | Component | Function | Enforcement Authority |
 |-----------|----------|----------------------|
 | CRI | Rolling risk score 0–100 | None — observational only |
-| Adaptive Modifier | Weights recent behavior | None — affects calculation only |
-| Failure Penalty | Adds weight for failures | None — affects calculation only |
-| Decay Model | Reduces CRI over time | None — reflects stability passively |
-| Autonomy Tier | Human-set operational constraint | Yes — set by human, enforced by chokepoint |
-| CRI Bands | Visual risk communication | None — display only |
-| Sentinel | Pattern anomaly detection | None — records and displays only |
+| Adaptive Modifier | Numeric value reflecting recent failures and emergency events | None — affects risk context record only |
+| Failure Rate | Percentage of recent failed operations | None — governance signal only |
+| Emergency Score | Accumulation of emergency-level events | Can trigger RESTRICTED mode when threshold crossed |
+| Decay Model | Deterministic reduction over time | None — reflects stability passively |
+| Autonomy Tier (Tier0–Tier3) | Human-set operational constraint | Yes — set by human, enforced by governance wrapper |
+| CRI Bands (Low/Moderate/Elevated/Critical) | Visual risk communication | None — display only |
+| Sentinel | Pattern anomaly detection across governance signals | None — records and displays anomaly events only |
 
 The risk model is an information system. Authority belongs to the human.
 
 ---
 
-*Chapter 12 compiled: 2026-03-06 | San Diego (America/Los_Angeles)*
-*FIX: BOOK-CLO-007 | MODEL: Claude Sonnet 4.6*
+*Chapter 12 corrected: 2026-03-06 | San Diego (America/Los_Angeles)*
+*Source: Jaya Runtime Parts 30–37 — ChatGPT export archives + Claude session records*
+*FIX: BOOK-CLO-007 (corrected) | MODEL: Claude Sonnet 4.6*
 *Classification: CANONICAL TECHNICAL DOCUMENTATION — NON-AUTHORITATIVE RECORD*
