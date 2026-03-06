@@ -59,7 +59,7 @@ if [ ! -d "$REPO_PATH" ]; then
 fi
 
 # ── TIMESTAMP ────────────────────────────────────────
-TIMESTAMP=$(TZ="America/Los_Angeles" date "+%Y-%m-%d %H:%M:%S %Z")
+TIMESTAMP=$(powershell -Command "[System.TimeZoneInfo]::ConvertTimeBySystemTimeZoneId([DateTime]::Now, 'Pacific Standard Time').ToString('yyyy-MM-dd HH:mm:ss PST')")
 DATE_ONLY=$(TZ="America/Los_Angeles" date "+%Y-%m-%d")
 
 # ── HEADER ───────────────────────────────────────────
