@@ -42,3 +42,4 @@ BOOK-CLO-007 | Book Chapters 10-14 — Technical architecture series chokepoint 
 BOOK-CLO-007-CORR | Chapters 11 and 12 corrected — fabricated values removed aligned to verified archive facts | 2026-03-06 | COMPLETE
 TASK4-CLO-001 | Luke AI domain backfill — pre-repo era verified from archive | 2026-03-06 | COMPLETE
 TASK4-CLO-002 | Jayme AI domain backfill — pre-repo era verified from archive | 2026-03-06 | COMPLETE
+BOOK-CLO-008 | Book Chapter 7 — Luke and Jayme | 2026-03-06 | COMPLETE
