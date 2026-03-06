@@ -37,3 +37,4 @@ BOOK-CLO-002 | Book Chapter 2 — TYOVA era canonical hub drift audit | 2026-03-
 BOOK-CLO-003 | Book Chapter 3 — Jaya Runtime era execution engine governed operations | 2026-03-06 | COMPLETE
 BOOK-CLO-004 | Book Chapter 4 — Governance Canon Master Charter invariants FIX discipline | 2026-03-06 | COMPLETE
 BOOK-CLO-005 | Book Chapter 6 — Ecosystem as a Whole five systems authority flow | 2026-03-06 | COMPLETE
+BOOK-CLO-006 | Book Chapter 8 — What Comes Next forward roadmap TY Governance Spec v0.1 | 2026-03-06 | COMPLETE
