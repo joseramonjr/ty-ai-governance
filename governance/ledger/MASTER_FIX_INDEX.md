@@ -44,3 +44,21 @@ FIX-37.99 | Jaya | Part 37 Formal Seal | 2026-03-06 | SEALED
 ---
 ## Infrastructure
 FIX-INFRA-01 | Global | ty-seal universal commit and seal script v1.0.0 | 2026-03-05 | ACTIVE
+---
+## Book of TY — Claude Era
+BOOK-CLO-001 | Book | Chapter 1 — The Origin Story | 2026-03-05 | SEALED
+BOOK-CLO-002 | Book | Chapter 2 — The Canonical Hub | 2026-03-05 | SEALED
+BOOK-CLO-003 | Book | Chapter 3 — The Execution Engine | 2026-03-05 | SEALED
+BOOK-CLO-004 | Book | Chapter 4 — The Constitutional Layer | 2026-03-05 | SEALED
+BOOK-CLO-005 | Book | Chapter 6 — The Full Picture | 2026-03-05 | SEALED
+BOOK-CLO-006 | Book | Chapter 8 — What Comes Next | 2026-03-06 | SEALED
+BOOK-CLO-007 | Book | Chapter 9 — What This Means | 2026-03-06 | SEALED
+BOOK-CLO-008 | Book | Chapter 10 — The Architecture of Trust | 2026-03-06 | SEALED
+BOOK-CLO-009 | Book | Chapter 11 — The Chokepoint | 2026-03-06 | SEALED
+BOOK-CLO-010 | Book | Chapter 12 — The Risk Model | 2026-03-06 | SEALED
+BOOK-CLO-011 | Book | Chapter 13 — The Authority Boundary Model | 2026-03-06 | SEALED
+BOOK-CLO-012 | Book | Chapter 14 — The Ledger and Seal Discipline | 2026-03-06 | SEALED
+BOOK-CLO-013 | Book | Chapter 7 — Luke and Jayme | 2026-03-06 | SEALED
+BOOK-CLO-014 | Book | Title rename — The Case for Verifiable Governance | 2026-03-06 | SEALED
+BOOK-CLO-015 | Book | Chapter 15 — The Mission Restored | 2026-03-07 | SEALED
+
