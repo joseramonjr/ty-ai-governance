@@ -500,3 +500,5 @@ execute — Jaya executes within granted authority only.
 ### Commits
 - Jaya-Runtime: `71a8fb7` → `4a1acdc`
 - ty-ai-governance: `ad4d477` → `71a84e0`
+
+| Part 38 | Agent Registry Foundation | 2026-03-07 | SEALED | 49bf9e2 |

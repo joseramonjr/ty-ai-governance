@@ -37,3 +37,14 @@ FIX-37.02 | FileRead operation — Tier1 risk20 governed file read with path par
 FIX-37.03 | FileWrite operation — Tier2 risk60 governed file write with path and content parameters | 2026-03-06 | COMPLETE
 FIX-37.99 | Jaya Part 37 Seal — operation registry expanded with SystemHealthCheck FileRead FileWrite | 2026-03-06 | COMPLETE
 FIX-37.100 | Governance ledger sync — MASTER_FIX_INDEX SEAL_REGISTRY PART_REGISTRY Jaya_PART_INDEX updated through Part 37 | 2026-03-06 | COMPLETE
+
+## Part 38 — Agent Registry Foundation
+FIX-38.01 | Register FileRead and FileWrite in ModuleRegistry at boot | 2026-03-07 | COMPLETE
+FIX-38.02 | Agent Registry data structure | 2026-03-07 | COMPLETE
+FIX-38.03 | Agent Record per-agent identity and permissions | 2026-03-07 | COMPLETE
+FIX-38.04 | Agent Registration Tauri command | 2026-03-07 | COMPLETE
+FIX-38.05 | Agent Status Tauri command | 2026-03-07 | COMPLETE
+FIX-38.06 | Agent Violation Log | 2026-03-07 | COMPLETE
+FIX-38.07 | Agent Violation Tauri command | 2026-03-07 | COMPLETE
+FIX-38.08 | Ledger integration for agents and violations | 2026-03-07 | COMPLETE
+FIX-38.99 | Part 38 Formal Seal | 2026-03-07 | SEALED

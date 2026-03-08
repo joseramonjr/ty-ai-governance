@@ -62,3 +62,15 @@ BOOK-CLO-013 | Book | Chapter 7 — Luke and Jayme | 2026-03-06 | SEALED
 BOOK-CLO-014 | Book | Title rename — The Case for Verifiable Governance | 2026-03-06 | SEALED
 BOOK-CLO-015 | Book | Chapter 15 — The Mission Restored | 2026-03-07 | SEALED
 
+
+---
+## Jaya Runtime — Part 38
+FIX-38.01 | Jaya | Register FileRead and FileWrite in ModuleRegistry at boot | 2026-03-07 | COMPLETE
+FIX-38.02 | Jaya | Agent Registry data structure | 2026-03-07 | COMPLETE
+FIX-38.03 | Jaya | Agent Record per-agent identity and permissions | 2026-03-07 | COMPLETE
+FIX-38.04 | Jaya | Agent Registration Tauri command | 2026-03-07 | COMPLETE
+FIX-38.05 | Jaya | Agent Status Tauri command | 2026-03-07 | COMPLETE
+FIX-38.06 | Jaya | Agent Violation Log | 2026-03-07 | COMPLETE
+FIX-38.07 | Jaya | Agent Violation Tauri command | 2026-03-07 | COMPLETE
+FIX-38.08 | Jaya | Ledger integration for agents and violations | 2026-03-07 | COMPLETE
+FIX-38.99 | Jaya | Part 38 Formal Seal | 2026-03-07 | SEALED
