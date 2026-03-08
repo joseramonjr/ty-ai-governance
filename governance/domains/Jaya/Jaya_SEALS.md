@@ -66,3 +66,34 @@ Book flag: Part 38 opens Chapter X — Governing the Outside World.
 Chapter closes when agent monitoring is live (Part 39+).
 
 This seal is immutable. No retroactive modification permitted.
+
+---
+## Part 39 — Agent Monitoring Logic
+Sealed by FIX-39.99 on 2026-03-07 (America/Los_Angeles).
+Commit: 96e42b1 | Tag: jaya-part-39
+Model: Claude Sonnet 4.6 | San Diego
+
+Scope sealed:
+- agent_permission_gate() added to lib.rs — central chokepoint for all
+  agent-initiated operations. Blocks on missing permission, Suspended,
+  or Revoked status. Logs violation automatically on every block.
+- AGENT_AUTO_SUSPEND_THRESHOLD = 3 — compile-time constant, not
+  runtime-tunable. Agent auto-suspended when violation_count reaches
+  threshold and status is Active. Ledger entry written on auto-suspend.
+- AgentMonitorPanel.tsx created — read-only table of all registered
+  agents showing status, permissions, violation count, registered_at.
+  Human-initiated Suspend/Revoke/Activate buttons only.
+  Panel polls every 3 seconds. Wired into App.tsx dashboard tab
+  below CriBandHistory.
+
+Architectural decisions (canonical, immutable):
+- agent_permission_gate lives in lib.rs, not agent_registry.rs.
+  The registry is a data store. Enforcement logic is a runtime concern.
+- Auto-suspend threshold is a compile-time constant to prevent
+  runtime drift or social engineering of the threshold value.
+- UI panel is inspection-only. No automated actions originate from UI.
+
+Book flag: Part 39 completes the opening section of Chapter X —
+Governing the Outside World. Active monitoring is now live.
+
+This seal is immutable. No retroactive modification permitted.

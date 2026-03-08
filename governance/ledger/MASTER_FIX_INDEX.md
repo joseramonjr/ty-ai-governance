@@ -74,3 +74,17 @@ FIX-38.06 | Jaya | Agent Violation Log | 2026-03-07 | COMPLETE
 FIX-38.07 | Jaya | Agent Violation Tauri command | 2026-03-07 | COMPLETE
 FIX-38.08 | Jaya | Ledger integration for agents and violations | 2026-03-07 | COMPLETE
 FIX-38.99 | Jaya | Part 38 Formal Seal | 2026-03-07 | SEALED
+
+---
+## Jaya Runtime — Part 39
+FIX-39.01 | Jaya | Agent Permission Gate — central chokepoint for agent-initiated operations | 2026-03-07 | COMPLETE
+FIX-39.02 | Jaya | Auto-Suspend on violation threshold — compile-time constant 3 | 2026-03-07 | COMPLETE
+FIX-39.03 | Jaya | Agent Monitor UI Panel — read-only display with human Suspend/Revoke | 2026-03-07 | COMPLETE
+FIX-39.99 | Jaya | Part 39 Formal Seal | 2026-03-07 | SEALED
+
+---
+## Jaya Runtime — Part 39
+FIX-39.01 | Jaya | Agent Permission Gate — central chokepoint for agent-initiated operations | 2026-03-07 | COMPLETE
+FIX-39.02 | Jaya | Auto-Suspend on violation threshold — compile-time constant 3 | 2026-03-07 | COMPLETE
+FIX-39.03 | Jaya | Agent Monitor UI Panel — read-only display with human Suspend/Revoke | 2026-03-07 | COMPLETE
+FIX-39.99 | Jaya | Part 39 Formal Seal | 2026-03-07 | SEALED
