@@ -97,3 +97,25 @@ Book flag: Part 39 completes the opening section of Chapter X —
 Governing the Outside World. Active monitoring is now live.
 
 This seal is immutable. No retroactive modification permitted.
+
+---
+## Part 40 — Agent Registration UI and End-to-End Demonstration
+Sealed by FIX-40.99 on 2026-03-07 (America/Los_Angeles).
+Commit: f558cf0 | Tag: jaya-part-40
+Model: Claude Sonnet 4.6 | San Diego
+
+Scope sealed:
+- AgentRegistrationForm.tsx — human operator form for registering agents
+  with agent_id, label, and permission checkboxes. Calls register_agent
+  Tauri command directly. No agent is active until registered here.
+- AgentViolationLog.tsx — read-only table of all violations across all
+  agents. Polls every 3 seconds. Newest violations shown first.
+- AgentGovernanceDemo.tsx — end-to-end demonstration panel. Registers
+  demo agent with FileRead only, triggers 3 blocked FileWrite attempts,
+  confirms auto-suspend fires at threshold 3. Full governance loop
+  observable and verifiable in a single UI interaction.
+
+Chapter X — Governing the Outside World: CLOSED.
+Agent governance is fully demonstrable end-to-end as of Part 40.
+
+This seal is immutable. No retroactive modification permitted.

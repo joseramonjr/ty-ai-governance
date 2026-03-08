@@ -506,3 +506,5 @@ execute — Jaya executes within granted authority only.
 | Part 39 | Agent Monitoring Logic | 2026-03-07 | SEALED | 96e42b1 |
 
 | Part 39 | Agent Monitoring Logic | 2026-03-07 | SEALED | 96e42b1 |
+
+| Part 40 | Agent Registration UI and End-to-End Demonstration | 2026-03-07 | SEALED | f558cf0 |
