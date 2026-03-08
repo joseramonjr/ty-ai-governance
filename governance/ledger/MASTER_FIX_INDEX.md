@@ -88,3 +88,10 @@ FIX-39.01 | Jaya | Agent Permission Gate — central chokepoint for agent-initia
 FIX-39.02 | Jaya | Auto-Suspend on violation threshold — compile-time constant 3 | 2026-03-07 | COMPLETE
 FIX-39.03 | Jaya | Agent Monitor UI Panel — read-only display with human Suspend/Revoke | 2026-03-07 | COMPLETE
 FIX-39.99 | Jaya | Part 39 Formal Seal | 2026-03-07 | SEALED
+
+---
+## Jaya Runtime — Part 40
+FIX-40.01 | Jaya | Agent Registration Form UI — human operator registers agents with permissions | 2026-03-07 | COMPLETE
+FIX-40.02 | Jaya | Agent Violation Log Panel — read-only all-agent violation history | 2026-03-07 | COMPLETE
+FIX-40.03 | Jaya | Agent Governance End-to-End Demo — register, block, auto-suspend verified | 2026-03-07 | COMPLETE
+FIX-40.99 | Jaya | Part 40 Formal Seal | 2026-03-07 | SEALED
