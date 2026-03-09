@@ -1,4 +1,4 @@
-# Jaya_SEALS
+﻿# Jaya_SEALS
 Status: Active
 Domain: Jaya Runtime
 Canonical Timezone: America/Los_Angeles
@@ -118,7 +118,7 @@ This seal is immutable. No retroactive modification permitted.
 ---
 ### Part 41 — Security Hardening, SQLite Persistence, Agent Governance Tab
 Sealed by FIX-41.99 on 2026-03-08 (America/Los_Angeles).
-Commit: 9194655 | Tag: jaya-part41-sealed
+Commit: 8e5a649 | Tag: jaya-part41-sealed
 Model: Claude Sonnet 4.6 | JAYA-CLO-066 through JAYA-CLO-069 | San Diego
 Scope sealed (Groups C+D — FIX-41.15 through FIX-41.18):
 - SQLite persistence for agent registry and violations
@@ -131,7 +131,7 @@ This seal is immutable. No retroactive modification permitted.
 ---
 ### Part 42 — Permission Gates, Violation Restore, Deregister, ViolationType Enum
 Sealed by FIX-42.99 on 2026-03-08 (America/Los_Angeles).
-Commit: 737ecf6 | Tag: jaya-part42-sealed
+Commit: 1fc5a03 | Tag: jaya-part42-sealed
 Model: Claude Sonnet 4.6 | JAYA-CLO-071 through JAYA-CLO-076 | San Diego
 Scope sealed:
 - LedgerRead and SnapshotRead permission gates implemented
@@ -143,7 +143,7 @@ This seal is immutable. No retroactive modification permitted.
 ---
 ### Part 43 — Concurrency and Observability Hardening
 Sealed by FIX-43.99 on 2026-03-08 (America/Los_Angeles).
-Commit: 0de9518 | Tag: jaya-part43-sealed
+Commit: 7c19765 | Tag: jaya-part43-sealed
 Model: Claude Sonnet 4.6 | JAYA-CLO-077 through JAYA-CLO-080 | San Diego
 Scope sealed:
 - FIX-43.01 / CLO-077: AgentRegistry Mutex -> RwLock refactor, concurrent read support
@@ -154,7 +154,7 @@ This seal is immutable. No retroactive modification permitted.
 ---
 ### Part 44 — Retention Policies
 Sealed by FIX-44.99 on 2026-03-08 (America/Los_Angeles).
-Commit: 8d2ab96 | Tag: jaya-part44-sealed
+Commit: 07fbd4c | Tag: jaya-part44-sealed
 Model: Claude Sonnet 4.6 | JAYA-CLO-081 through JAYA-CLO-082 | San Diego
 Scope sealed:
 - FIX-44.01 / CLO-081: prune_behavior_snapshots — retention policy for behavioral snapshots
@@ -164,7 +164,7 @@ This seal is immutable. No retroactive modification permitted.
 ---
 ### Part 45 — Windows Memory Info
 Sealed by FIX-45.99 on 2026-03-08 (America/Los_Angeles).
-Commit: 80cf6cd | Tag: jaya-part45-sealed
+Commit: f5f1e3d | Tag: jaya-part45-sealed
 Model: Claude Sonnet 4.6 | JAYA-CLO-083 | San Diego
 Scope sealed:
 - FIX-45.01 / CLO-083: get_memory_info() on Windows now returns real values
@@ -173,3 +173,32 @@ Scope sealed:
 - Non-Windows /proc/meminfo path untouched
 - Gap closed: Windows placeholder string eliminated
 This seal is immutable. No retroactive modification permitted.
+
+---
+### Part 46 -- Governance Sync, Type Cast Fix, MASTER_FIX_INDEX Backfill
+Sealed by FIX-46.99 on 2026-03-09 (America/Los_Angeles).
+Commit: b8ecf8d | Tag: jaya-part46-sealed
+Model: Claude Sonnet 4.6 | JAYA-CLO-084 through JAYA-CLO-086 | San Diego
+Scope sealed:
+- FIX-46.01 / CLO-084: Governance sync -- Jaya_SEALS, Jaya_FIX_LEDGER, Jaya_PART_INDEX updated through Part 45
+- FIX-46.02 / CLO-085: f32 to f64 type cast fix in system_health collect (lib.rs line 760)
+- FIX-46.03 / CLO-086: MASTER_FIX_INDEX backfill Parts 41-46, duplicate Part 39 entry removed
+This seal is immutable. No retroactive modification permitted.
+---
+### CORRECTIVE ACTION -- Repository Integrity Repair (2026-03-09)
+Reason: A 1,497 MB bloated blob of src-tauri/src/lib.rs was committed in Part 41
+(original commit 9194655) due to a write rule violation. GitHub rejected all tag
+pushes due to the 100 MB file size limit.
+Action taken: git filter-repo --strip-blobs-bigger-than 100M applied to rewrite
+history and remove the bloated blob. All commit hashes for Parts 41-46 changed.
+Tags were automatically preserved on new commits by git filter-repo and force-pushed.
+Code content: UNCHANGED. cargo check = 0 errors confirmed before and after repair.
+Backup preserved at: E:\TY-Ecosystem\Jaya-Runtime-BACKUP-20260309-1629
+Old -> New hash mapping:
+  Part 41: 9194655 -> 8e5a649
+  Part 42: 737ecf6 -> 1fc5a03
+  Part 43: 0de9518 -> 7c19765
+  Part 44: 8d2ab96 -> 07fbd4c
+  Part 45: 80cf6cd -> f5f1e3d
+  Part 46: 04952e6 -> b8ecf8d
+This corrective action is documented here as a permanent governance record.
