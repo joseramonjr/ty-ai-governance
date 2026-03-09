@@ -1,32 +1,40 @@
 # Jaya_SEALS
-
 Status: Active
 Domain: Jaya Runtime
 Canonical Timezone: America/Los_Angeles
-
 ---
-
 ## Overview
-
 This file records all formal seal declarations for Jaya Runtime Parts.
 Seals are immutable once recorded.
-
 ---
-
 ## Seal Records
-
 | Seal FIX | Part | Date | Status |
 |---|---|---|---|
-| Pre-repo | Parts 1–34 | Pre-2026-02-18 | COMPLETE (backfill pending) |
+| Pre-repo | Parts 1–34 | Pre-2026-02-18 | COMPLETE |
 | FIX-35.99 | Part 35 | 2026-02-18 | SEALED — IMMUTABLE |
-
+| FIX-36.99 | Part 36 | 2026-03-05 | SEALED — IMMUTABLE |
+| FIX-37.99 | Part 37 | 2026-03-06 | SEALED — IMMUTABLE |
+| FIX-38.99 | Part 38 | 2026-03-07 | SEALED — IMMUTABLE |
+| FIX-39.99 | Part 39 | 2026-03-07 | SEALED — IMMUTABLE |
+| FIX-40.99 | Part 40 | 2026-03-07 | SEALED — IMMUTABLE |
+| FIX-41.99 | Part 41 | 2026-03-08 | SEALED — IMMUTABLE |
+| FIX-42.99 | Part 42 | 2026-03-08 | SEALED — IMMUTABLE |
+| FIX-43.99 | Part 43 | 2026-03-08 | SEALED — IMMUTABLE |
+| FIX-44.99 | Part 44 | 2026-03-08 | SEALED — IMMUTABLE |
+| FIX-45.99 | Part 45 | 2026-03-08 | SEALED — IMMUTABLE |
 ---
-
 ## Seal Definitions
-
+### Parts 1–34 — Pre-Repo Governance Foundation
+Status: COMPLETE (backfill closed 2026-03-08)
+Source: conversations-001.zip (ChatGPT export)
+Backfill Author: Claude Sonnet 4.6 | JAYA-CLO-001 | 2026-03-04 | San Diego
+Scope: Full governance doctrine, tier model, authority flow, risk engine,
+adaptive modifiers, behavioral history, predictive escalation, tamper
+detection, module registry integrity. See Jaya_PART_INDEX.md Parts 1–34
+for full detail.
+---
 ### Part 35 — CRI Lifecycle Completion and Authority Reservation
 Sealed by FIX-35.99 on 2026-02-18 (America/Los_Angeles).
-
 Scope sealed:
 - CRI accumulation implemented
 - Hard cap at 100
@@ -36,15 +44,39 @@ Scope sealed:
 - Safe getter exposed
 - CRI designated Future-Authorizable Modifier Input
 - No behavioral coupling active at seal time
-
 This seal is immutable. No retroactive modification permitted.
-
 ---
-## Part 38 — Agent Registry Foundation
+### Part 36 — Observability Layer and Governance Expansion
+Sealed by FIX-36.99 on 2026-03-05 (America/Los_Angeles).
+Commit: 21bcebe | Tag: jaya-part-36
+Model: Claude Sonnet 4.6 | JAYA-CLO-001 through JAYA-CLO-005 | San Diego
+Scope sealed:
+- CRI Band Classification function (display only, no authority coupling)
+- CRI Band UI display
+- CRI Band History SQLite table
+- CRI Band Transition recording (Rust backend)
+- CRI Band History Tauri command
+- CRI Band History UI panel
+- Snapshot pruning 30-day filename-based retention
+- ty-seal universal script deployed
+- FIX-36.00 Non-Weaponization Architecture Guardrail: ACTIVE (permanent)
+This seal is immutable. No retroactive modification permitted.
+---
+### Part 37 — Operation Registry Expansion
+Sealed by FIX-37.99 on 2026-03-06 (America/Los_Angeles).
+Commit: 4a1acdc | Tag: jaya-part-37
+Model: Claude Sonnet 4.6 | JAYA-CLO-006 through JAYA-CLO-008 | San Diego
+Scope sealed:
+- SystemHealthCheck operation: Tier1 risk10 governed execution
+- FileRead operation: Tier1 risk20 governed file read with path parameter
+- FileWrite operation: Tier2 risk60 governed file write, blocked at Tier1
+- All operations logged to ledger with risk, tier, and status
+This seal is immutable. No retroactive modification permitted.
+---
+### Part 38 — Agent Registry Foundation
 Sealed by FIX-38.99 on 2026-03-07 (America/Los_Angeles).
 Commit: 49bf9e2 | Tag: jaya-part-38
 Model: Claude Sonnet 4.6 | San Diego
-
 Scope sealed:
 - FileRead and FileWrite registered in ModuleRegistry at boot
 - AgentRegistry created as separate governed surface from ModuleRegistry
@@ -55,67 +87,89 @@ Scope sealed:
 - 9 Tauri commands exposed: register_agent, get_agent, get_all_agents,
   log_agent_violation, get_agent_violations, get_all_agent_violations,
   set_agent_status, check_agent_permission, get_agent_count
-
 Architectural decision (canonical, immutable):
-Agents are NOT JayaModules. External AI agents are governed and monitored
-by Jaya — not executed by it. AgentRegistry and ModuleRegistry are
-permanently separate surfaces. This separation must not be collapsed
-in any future part.
-
-Book flag: Part 38 opens Chapter X — Governing the Outside World.
-Chapter closes when agent monitoring is live (Part 39+).
-
+Agents are NOT JayaModules. AgentRegistry and ModuleRegistry are
+permanently separate surfaces. This separation must not be collapsed.
 This seal is immutable. No retroactive modification permitted.
-
 ---
-## Part 39 — Agent Monitoring Logic
+### Part 39 — Agent Monitoring Logic
 Sealed by FIX-39.99 on 2026-03-07 (America/Los_Angeles).
 Commit: 96e42b1 | Tag: jaya-part-39
 Model: Claude Sonnet 4.6 | San Diego
-
 Scope sealed:
-- agent_permission_gate() added to lib.rs — central chokepoint for all
-  agent-initiated operations. Blocks on missing permission, Suspended,
-  or Revoked status. Logs violation automatically on every block.
-- AGENT_AUTO_SUSPEND_THRESHOLD = 3 — compile-time constant, not
-  runtime-tunable. Agent auto-suspended when violation_count reaches
-  threshold and status is Active. Ledger entry written on auto-suspend.
-- AgentMonitorPanel.tsx created — read-only table of all registered
-  agents showing status, permissions, violation count, registered_at.
-  Human-initiated Suspend/Revoke/Activate buttons only.
-  Panel polls every 3 seconds. Wired into App.tsx dashboard tab
-  below CriBandHistory.
-
-Architectural decisions (canonical, immutable):
-- agent_permission_gate lives in lib.rs, not agent_registry.rs.
-  The registry is a data store. Enforcement logic is a runtime concern.
-- Auto-suspend threshold is a compile-time constant to prevent
-  runtime drift or social engineering of the threshold value.
-- UI panel is inspection-only. No automated actions originate from UI.
-
-Book flag: Part 39 completes the opening section of Chapter X —
-Governing the Outside World. Active monitoring is now live.
-
+- agent_permission_gate() added to lib.rs — central enforcement chokepoint
+- AGENT_AUTO_SUSPEND_THRESHOLD = 3 — compile-time constant, not runtime-tunable
+- Auto-suspend fires when violation_count reaches threshold and status is Active
+- Ledger entry written on every auto-suspend event
+- AgentMonitorPanel.tsx — read-only inspection panel, polls every 3 seconds
+- Human-initiated Suspend/Revoke/Activate buttons only — no automated UI actions
 This seal is immutable. No retroactive modification permitted.
-
 ---
-## Part 40 — Agent Registration UI and End-to-End Demonstration
+### Part 40 — Agent Registration UI and End-to-End Demonstration
 Sealed by FIX-40.99 on 2026-03-07 (America/Los_Angeles).
 Commit: f558cf0 | Tag: jaya-part-40
 Model: Claude Sonnet 4.6 | San Diego
-
 Scope sealed:
-- AgentRegistrationForm.tsx — human operator form for registering agents
-  with agent_id, label, and permission checkboxes. Calls register_agent
-  Tauri command directly. No agent is active until registered here.
-- AgentViolationLog.tsx — read-only table of all violations across all
-  agents. Polls every 3 seconds. Newest violations shown first.
-- AgentGovernanceDemo.tsx — end-to-end demonstration panel. Registers
-  demo agent with FileRead only, triggers 3 blocked FileWrite attempts,
-  confirms auto-suspend fires at threshold 3. Full governance loop
-  observable and verifiable in a single UI interaction.
-
-Chapter X — Governing the Outside World: CLOSED.
-Agent governance is fully demonstrable end-to-end as of Part 40.
-
+- AgentRegistrationForm.tsx — human operator registers agents with permissions
+- AgentViolationLog.tsx — read-only all-agent violation history, newest first
+- AgentGovernanceDemo.tsx — end-to-end demo: register, block, auto-suspend verified
+- Chapter X (Governing the Outside World): CLOSED as of Part 40
+This seal is immutable. No retroactive modification permitted.
+---
+### Part 41 — Security Hardening, SQLite Persistence, Agent Governance Tab
+Sealed by FIX-41.99 on 2026-03-08 (America/Los_Angeles).
+Commit: 9194655 | Tag: jaya-part41-sealed
+Model: Claude Sonnet 4.6 | JAYA-CLO-066 through JAYA-CLO-069 | San Diego
+Scope sealed (Groups C+D — FIX-41.15 through FIX-41.18):
+- SQLite persistence for agent registry and violations
+- Startup restore of agent state from SQLite on boot
+- Agent Governance tab added to UI
+- Violation count reactivation decision: DECISION-JAYA-001
+Note: CLO-070 unaccounted — gap between Part 41 (CLO-069) and Part 42
+(CLO-071). No entry fabricated. Flagged for audit.
+This seal is immutable. No retroactive modification permitted.
+---
+### Part 42 — Permission Gates, Violation Restore, Deregister, ViolationType Enum
+Sealed by FIX-42.99 on 2026-03-08 (America/Los_Angeles).
+Commit: 737ecf6 | Tag: jaya-part42-sealed
+Model: Claude Sonnet 4.6 | JAYA-CLO-071 through JAYA-CLO-076 | San Diego
+Scope sealed:
+- LedgerRead and SnapshotRead permission gates implemented
+- Violation restore capability added
+- Agent deregister as soft-delete (status: Revoked, not hard delete)
+- ViolationType enum introduced for structured violation classification
+- AgentViolationLog UI updated to display ViolationType
+This seal is immutable. No retroactive modification permitted.
+---
+### Part 43 — Concurrency and Observability Hardening
+Sealed by FIX-43.99 on 2026-03-08 (America/Los_Angeles).
+Commit: 0de9518 | Tag: jaya-part43-sealed
+Model: Claude Sonnet 4.6 | JAYA-CLO-077 through JAYA-CLO-080 | San Diego
+Scope sealed:
+- FIX-43.01 / CLO-077: AgentRegistry Mutex -> RwLock refactor, concurrent read support
+- FIX-43.02 / CLO-078: SystemHealthResult structured return type, collect() method
+- FIX-43.03 / CLO-079: CRI band history date-range query (ledger.rs + lib.rs)
+- FIX-43.04 / CLO-080: Binary file detection in run_file_read
+This seal is immutable. No retroactive modification permitted.
+---
+### Part 44 — Retention Policies
+Sealed by FIX-44.99 on 2026-03-08 (America/Los_Angeles).
+Commit: 8d2ab96 | Tag: jaya-part44-sealed
+Model: Claude Sonnet 4.6 | JAYA-CLO-081 through JAYA-CLO-082 | San Diego
+Scope sealed:
+- FIX-44.01 / CLO-081: prune_behavior_snapshots — retention policy for behavioral snapshots
+- FIX-44.02 / CLO-082: prune_registry_integrity — retention policy for registry integrity records
+- ledger_entries table intentionally permanent — no pruning permitted
+This seal is immutable. No retroactive modification permitted.
+---
+### Part 45 — Windows Memory Info
+Sealed by FIX-45.99 on 2026-03-08 (America/Los_Angeles).
+Commit: 80cf6cd | Tag: jaya-part45-sealed
+Model: Claude Sonnet 4.6 | JAYA-CLO-083 | San Diego
+Scope sealed:
+- FIX-45.01 / CLO-083: get_memory_info() on Windows now returns real values
+  via sysinfo crate (sysinfo = "0.30" added to Cargo.toml)
+- Returns "MemTotal: X KB | MemAvailable: Y KB" on Windows
+- Non-Windows /proc/meminfo path untouched
+- Gap closed: Windows placeholder string eliminated
 This seal is immutable. No retroactive modification permitted.
