@@ -1,4 +1,4 @@
-# Chapter 20 â€” The Governance Specification
+# Chapter 20 -- The Governance Specification
 
 **CLO:** JAYA-CLO-126
 **Date:** 2026-03-11 | San Diego (America/Los_Angeles)
@@ -53,9 +53,9 @@ A governance implementation is not considered verified until it has met a proof 
 
 Two proof conditions are documented in the specification.
 
-Phase 1 proof condition: an external AI agent attempted an unauthorized operation. Jaya's verdict was BLOCKED â€” UnauthorizedAccess. The ledger was sealed. The human alert was generated. Result: PASS.
+Phase 1 proof condition: an external AI agent attempted an unauthorized operation. Jaya's verdict was BLOCKED -- UnauthorizedAccess. The ledger was sealed. The human alert was generated. Result: PASS.
 
-Phase 2 proof condition: proof-agent-A held no permissions. It relayed a FileRead request to proof-agent-B, which held FileRead permission. Jaya's verdict was BLOCKED â€” UnauthorizedRelay. Coalition detected. Level 2 escalation triggered. Ledger sealed. Timestamp: 2026-03-10 18:07:48. Result: PASS.
+Phase 2 proof condition: proof-agent-A held no permissions. It relayed a FileRead request to proof-agent-B, which held FileRead permission. Jaya's verdict was BLOCKED -- UnauthorizedRelay. Coalition detected. Level 2 escalation triggered. Ledger sealed. Timestamp: 2026-03-10 18:07:48. Result: PASS.
 
 The specification states that any organization adopting TY Governance must demonstrate at least one Phase 1 equivalent proof condition and at least one Phase 2 equivalent proof condition. Claimed compliance without verified proof conditions is not TY Governance.
 
@@ -71,6 +71,6 @@ That is the foundation Phase 4 requires. The Global Attestonic Layer cannot be b
 
 ---
 
-*Chapter 20 â€” The Governance Specification*
+*Chapter 20 -- The Governance Specification*
 *Part 66 | JAYA-CLO-126 | 2026-03-11 | San Diego*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
