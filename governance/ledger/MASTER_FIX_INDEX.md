@@ -633,3 +633,81 @@ NOTE: Part 59 -- no git tag found in Jaya-Runtime log. Skipped or merged into ad
 
 NOTE: JAYA-CLO-119 = Book Chapter 17 (ty-ai-governance repo, commit be2dc51)
 NOTE: Next CLO = JAYA-CLO-120 | Next Jaya Part = 66 | Phase 3: UNBLOCKED
+
+---
+## FIX-66.01 | MASTER_FIX_INDEX Backfill Parts 47-65
+- **CLO:** JAYA-CLO-120
+- **Commit:** 29e7532 (ty-ai-governance)
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Reconstructed Parts 47-65 fix ledger from git log ground truth -- 453 lines appended covering JAYA-CLO-087 through JAYA-CLO-118 -- zero fabrication
+- **Status:** COMPLETE
+
+---
+## FIX-66.02 | Chapter 18 -- Governance Maintenance Record
+- **CLO:** JAYA-CLO-121
+- **Commit:** 8576c8f (ty-ai-governance)
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 18 (Governance Maintenance Record) written to ty-ai-governance repo -- established as permanent session journal
+- **Status:** COMPLETE
+
+---
+## FIX-66.03 | Chapter 19 -- The Phase 2 Build Journey
+- **CLO:** JAYA-CLO-122
+- **Commit:** 0958e5b (ty-ai-governance)
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 19 (The Phase 2 Build Journey) written to ty-ai-governance repo and added to TYOVA -- all three Lovable files updated
+- **Status:** COMPLETE
+
+---
+## FIX-66.04 | Chapter 19 TYOVA Completion
+- **CLO:** JAYA-CLO-123
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 19 confirmed live in TYOVA -- BookOfTyIndex.tsx and BookOfTyChapter.tsx updated -- Chapter 19 routable at /book
+- **Status:** COMPLETE
+
+---
+## FIX-66.05 | Pre-Part 66 Cleanup -- Cargo Warnings + App.tsx Corruption
+- **CLO:** JAYA-CLO-124
+- **Commit:** 06a9fe6 (Jaya-Runtime)
+- **Date:** 2026-03-11 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Resolved 12 cargo warnings across 10 Rust files -- cleared App.tsx Unicode corruption (mojibake in comments and UI text) -- full ecosystem scan confirmed clean -- R12 added as permanent write rule
+- **Files:** lib.rs, ledger.rs, structural_lock.rs, module_registry.rs, runtime_state.rs, traits.rs, agent_registry.rs, db.rs, alerts.rs, inter_agent.rs, App.tsx
+- **Cargo:** 0 warnings, 0 errors
+- **Status:** COMPLETE
+
+---
+## FIX-66.06 | Part 66 -- TY Governance Specification v0.1
+- **CLO:** JAYA-CLO-125
+- **Commit:** bd0c6a0 (ty-ai-governance)
+- **Date:** 2026-03-11 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** TY Governance Specification v0.1 drafted and sealed -- 361 lines, 10 sections -- spec/ folder created in ty-ai-governance -- tagged phase3-spec-v0.1-draft and phase3-spec-v0.1-sealed and jaya-part66-sealed
+- **File:** spec/TY_GOVERNANCE_SPEC_v0.1.md
+- **Status:** SEALED
+
+---
+## FIX-66.07 | Chapter 20 -- The Governance Specification
+- **CLO:** JAYA-CLO-126
+- **Commit:** 28cdf17 (ty-ai-governance)
+- **Date:** 2026-03-11 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 20 (The Governance Specification) written to ty-ai-governance repo -- 76 lines -- all three TYOVA Lovable files updated -- Chapter 20 live at /book/chapter-20
+- **Status:** COMPLETE
+
+---
+## FIX-66.08 | Chapter 18 Update -- Entries 002-005 + Corruption Fix
+- **CLO:** JAYA-CLO-127
+- **Commit:** 19b6ded (ty-ai-governance)
+- **Date:** 2026-03-11 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 18 updated with Entries 002-005 covering all session work from CLO-121 through CLO-126 -- original mojibake corruption fixed -- 155 lines total
+- **Status:** COMPLETE
+
+---
+NOTE: JAYA-CLO-127 = Chapter 18 update (ty-ai-governance repo, commit 19b6ded)
+NOTE: Next CLO = JAYA-CLO-128 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
