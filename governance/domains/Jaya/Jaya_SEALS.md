@@ -202,3 +202,36 @@ Old -> New hash mapping:
   Part 45: 80cf6cd -> f5f1e3d
   Part 46: 04952e6 -> b8ecf8d
 This corrective action is documented here as a permanent governance record.
+
+---
+
+## Part 47 Seal
+
+- **Part:** Jaya Part 47
+- **Seal Tag:** jaya-part47-sealed
+- **Commit:** 960450a (FIX-47.02) | 2e2e113 (FIX-47.01)
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Fixes Included:**
+  - FIX-47.01 / JAYA-CLO-087 -- Outward-facing sentinel backend: evaluate_agent_action + SentinelVerdict (lib.rs)
+  - FIX-47.02 / JAYA-CLO-088 -- Sentinel UI panel: SentinelEvaluationPanel.tsx (204 lines) + App.tsx Sentinel tab
+- **cargo check:** 0 errors, 9 warnings
+- **Phase 1 Capability Delivered:** Outward-facing sentinel -- evaluation gate + ledger write + UI panel
+- **Status:** SEALED
+
+---
+
+## Part 48 Seal
+
+- **Part:** Jaya Part 48
+- **Seal Tag:** jaya-part48-sealed
+- **Commit:** aa7b6b6 (FIX-48.03) | 4aa2e87 (FIX-48.02) | a2c5853 (FIX-48.01)
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Fixes Included:**
+  - FIX-48.01 / JAYA-CLO-089 -- ViolationClass enum + SentinelVerdict violation_class field + evaluate_agent_action classification
+  - FIX-48.02 / JAYA-CLO-090 -- AgentRecord registered_tier + expected_actions, db schema migration M1, AutonomyTier serde
+  - FIX-48.03 / JAYA-CLO-091 -- drift.rs drift detection engine (CRI-band-aware thresholds, 10-action window) + mod drift declaration
+- **cargo check:** 0 errors, 12 warnings
+- **Phase 1 Capability Delivered:** Violation classification (ViolationClass) + Drift detection engine (drift.rs)
+- **Status:** SEALED
