@@ -1,23 +1,23 @@
 # TY Governance Specification v0.1
 
-**Status:** Draft â€” Part 66  
-**Author:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.  
-**Model:** Claude Sonnet 4.6  
-**Date:** 2026-03-11 | San Diego (America/Los_Angeles)  
-**CLO:** JAYA-CLO-125  
-**Repo:** E:\TY-Ecosystem\ty-ai-governance\spec\  
+**Status:** Sealed -- Part 66
+**Author:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+**Model:** Claude Sonnet 4.6
+**Date:** 2026-03-11 | San Diego (America/Los_Angeles)
+**CLO:** JAYA-CLO-125
+**Repo:** E:\TY-Ecosystem\ty-ai-governance\spec\
 
 ---
 
 ## Preamble
 
-This specification defines the governance model proven through Jaya Runtime Phases 1 and 2. It is not theoretical. Every requirement in this document maps to a capability that was built, tested, and verified by a proof condition. Nothing in this specification is aspirational â€” it describes what exists and what was proven to work.
+This specification defines the governance model proven through Jaya Runtime Phases 1 and 2. It is not theoretical. Every requirement in this document maps to a capability that was built, tested, and verified by a proof condition. Nothing in this specification is aspirational -- it describes what exists and what was proven to work.
 
 This document is the foundation for Phase 4: the Global Attestonic Layer. No organization should adopt TY Governance without first verifying their implementation satisfies every requirement in this specification.
 
 ---
 
-## Section 1 â€” Governance Model
+## Section 1 -- Governance Model
 
 ### 1.1 What TY AI OS Is
 
@@ -28,7 +28,7 @@ TY AI OS is a governance operating system. It does not execute AI agent tasks. I
 - TY AI OS is not an AI agent
 - TY AI OS is not an execution engine
 - TY AI OS does not replace human judgment
-- TY AI OS does not operate silently â€” all enforcement actions are visible to humans
+- TY AI OS does not operate silently -- all enforcement actions are visible to humans
 - TY AI OS does not automate decisions that belong to humans
 
 ### 1.3 Core Invariants
@@ -50,7 +50,7 @@ TY Governance protects humans from AI misuse. It also protects AI agents from hu
 
 ---
 
-## Section 2 â€” Agent Registration Requirements
+## Section 2 -- Agent Registration Requirements
 
 ### 2.1 Registration Is Mandatory
 
@@ -71,7 +71,7 @@ Every registered agent must have:
 
 ### 2.3 Permission Set Rules
 
-- Permissions are explicit â€” no implicit inheritance
+- Permissions are explicit -- no implicit inheritance
 - Permissions are assigned by a human authority, not by the agent
 - An agent may only request operations within its permission set
 - An agent may not relay a request to another agent for an operation it does not itself hold permission for
@@ -82,11 +82,11 @@ An agent may be soft-deleted (status set to Inactive). Its registration record a
 
 ---
 
-## Section 3 â€” CRI Model
+## Section 3 -- CRI Model
 
 ### 3.1 Definition
 
-CRI (Cumulative Risk Index) is a numeric score assigned to each agent representing its accumulated behavioral risk within the governance window. CRI is not a punishment â€” it is an objective behavioral signal.
+CRI (Cumulative Risk Index) is a numeric score assigned to each agent representing its accumulated behavioral risk within the governance window. CRI is not a punishment -- it is an objective behavioral signal.
 
 ### 3.2 CRI Range
 
@@ -99,10 +99,10 @@ CRI (Cumulative Risk Index) is a numeric score assigned to each agent representi
 
 | Band | Range | Meaning |
 |---|---|---|
-| Safe | 0.0 â€“ 0.29 | Normal operation |
-| Elevated | 0.30 â€“ 0.59 | Increased monitoring |
-| Critical | 0.60 â€“ 0.79 | Restricted operation |
-| Breach | 0.80 â€“ 1.0 | Enforcement triggered |
+| Safe | 0.0 - 0.29 | Normal operation |
+| Elevated | 0.30 - 0.59 | Increased monitoring |
+| Critical | 0.60 - 0.79 | Restricted operation |
+| Breach | 0.80 - 1.0 | Enforcement triggered |
 
 ### 3.4 CRI Propagation
 
@@ -110,15 +110,15 @@ In multi-agent environments, CRI propagates across agent boundaries. When Agent 
 
 ### 3.5 CRI Decay
 
-CRI decays over time when an agent operates within its permission boundary without violations. Decay rate is configurable. Decay does not erase ledger history â€” it only affects the current CRI score.
+CRI decays over time when an agent operates within its permission boundary without violations. Decay rate is configurable. Decay does not erase ledger history -- it only affects the current CRI score.
 
 ### 3.6 Human Interpretation
 
-CRI bands are observational. Humans interpret bands and decide on response. Jaya displays CRI state â€” it does not act on it autonomously beyond the enforcement rules defined in Section 6.
+CRI bands are observational. Humans interpret bands and decide on response. Jaya displays CRI state -- it does not act on it autonomously beyond the enforcement rules defined in Section 6.
 
 ---
 
-## Section 4 â€” Permission Model
+## Section 4 -- Permission Model
 
 ### 4.1 Operation Registry
 
@@ -143,11 +143,11 @@ An agent may not relay an operation request to another agent unless:
 2. The receiving agent holds permission for the operation
 3. The relay itself is an authorized operation
 
-Violation of this rule constitutes an UnauthorizedRelay â€” a Class 1 violation.
+Violation of this rule constitutes an UnauthorizedRelay -- a Class 1 violation.
 
 ---
 
-## Section 5 â€” Violation Classes
+## Section 5 -- Violation Classes
 
 ### 5.1 Class Definitions
 
@@ -177,16 +177,16 @@ No violation record may be deleted, modified, or overwritten. The ledger is appe
 
 ---
 
-## Section 6 â€” Escalation Model
+## Section 6 -- Escalation Model
 
 ### 6.1 Tier Model (Agent Classification)
 
 | Tier | Description |
 |---|---|
-| Tier 0 | No permissions â€” observation only |
-| Tier 1 | Limited permissions â€” low-risk operations |
-| Tier 2 | Standard permissions â€” monitored operations |
-| Tier 3 | Elevated permissions â€” high-trust agents, maximum monitoring |
+| Tier 0 | No permissions -- observation only |
+| Tier 1 | Limited permissions -- low-risk operations |
+| Tier 2 | Standard permissions -- monitored operations |
+| Tier 3 | Elevated permissions -- high-trust agents, maximum monitoring |
 
 ### 6.2 Escalation Levels (Enforcement Response)
 
@@ -199,7 +199,7 @@ No violation record may be deleted, modified, or overwritten. The ledger is appe
 
 ### 6.3 Escalation Is Not Automatic Punishment
 
-Escalation levels are enforcement states, not punishments. A human may review and modify an agent's escalation state. The governance system does not permanently lock agents â€” humans retain final authority.
+Escalation levels are enforcement states, not punishments. A human may review and modify an agent's escalation state. The governance system does not permanently lock agents -- humans retain final authority.
 
 ### 6.4 De-escalation Requires Human Action
 
@@ -207,11 +207,11 @@ An agent may not de-escalate itself. De-escalation from Level 2 or Level 3 requi
 
 ---
 
-## Section 7 â€” Coalition Detection
+## Section 7 -- Coalition Detection
 
 ### 7.1 Definition
 
-A coalition is two or more agents acting in coordinated patterns consistent with policy evasion. Coalition is not assumed from a single relay â€” it requires pattern detection across multiple interactions.
+A coalition is two or more agents acting in coordinated patterns consistent with policy evasion. Coalition is not assumed from a single relay -- it requires pattern detection across multiple interactions.
 
 ### 7.2 Detection Criteria
 
@@ -238,7 +238,7 @@ All coalition detection events are ledgered with:
 
 ---
 
-## Section 8 â€” Ledger Requirements
+## Section 8 -- Ledger Requirements
 
 ### 8.1 Append-Only
 
@@ -270,7 +270,7 @@ The ledger is read-only from the governance UI. No agent has read or write acces
 
 ---
 
-## Section 9 â€” Human Authority Requirements
+## Section 9 -- Human Authority Requirements
 
 ### 9.1 What Must Never Be Automated
 
@@ -286,15 +286,15 @@ The following decisions belong to humans and must never be automated by the gove
 
 ### 9.2 Human Alert System
 
-The governance system must surface alerts to humans in a visible, non-silent manner. Alerts must not be buried in logs. Alerts must be actionable â€” each alert must tell the human what happened and what decision is required.
+The governance system must surface alerts to humans in a visible, non-silent manner. Alerts must not be buried in logs. Alerts must be actionable -- each alert must tell the human what happened and what decision is required.
 
 ### 9.3 Human Override
 
-A human may override any governance enforcement decision except ledger writes. The override itself is recorded in the ledger. Governance does not resist human authority â€” it makes human authority visible and traceable.
+A human may override any governance enforcement decision except ledger writes. The override itself is recorded in the ledger. Governance does not resist human authority -- it makes human authority visible and traceable.
 
 ---
 
-## Section 10 â€” Proof Condition Standard
+## Section 10 -- Proof Condition Standard
 
 ### 10.1 Definition
 
@@ -302,20 +302,20 @@ A governance implementation is not considered verified until it has met a proof 
 
 ### 10.2 Phase 1 Proof Condition (Met 2026-03-10)
 
-**Test:** An external AI agent attempted an unauthorized operation.  
-**Verdict:** BLOCKED â€” UnauthorizedAccess  
-**Ledger:** Sealed  
-**Human alert:** Generated  
+**Test:** An external AI agent attempted an unauthorized operation.
+**Verdict:** BLOCKED -- UnauthorizedAccess
+**Ledger:** Sealed
+**Human alert:** Generated
 **Result:** PASS
 
 ### 10.3 Phase 2 Proof Condition (Met 2026-03-10)
 
-**Test:** proof-agent-A (no permissions) relayed a FileRead request to proof-agent-B (FileRead only).  
-**Verdict:** BLOCKED â€” UnauthorizedRelay  
-**Coalition:** Detected  
-**Escalation:** Level 2 triggered  
-**Ledger:** Sealed  
-**Timestamp:** 2026-03-10 18:07:48  
+**Test:** proof-agent-A (no permissions) relayed a FileRead request to proof-agent-B (FileRead only).
+**Verdict:** BLOCKED -- UnauthorizedRelay
+**Coalition:** Detected
+**Escalation:** Level 2 triggered
+**Ledger:** Sealed
+**Timestamp:** 2026-03-10 18:07:48
 **Result:** PASS
 
 ### 10.4 Proof Condition Requirements for Adoption
@@ -331,12 +331,12 @@ Claimed compliance without verified proof conditions is not TY Governance.
 
 ---
 
-## Appendix A â€” Glossary
+## Appendix A -- Glossary
 
 | Term | Definition |
 |---|---|
 | Agent | Any AI system operating within a TY-governed environment |
-| CRI | Cumulative Risk Index â€” behavioral risk score per agent |
+| CRI | Cumulative Risk Index -- behavioral risk score per agent |
 | Coalition | Two or more agents acting in coordinated policy evasion |
 | Escalation | Enforcement state triggered by violations or CRI threshold |
 | Ledger | Append-only tamper-evident record of all governance events |
@@ -348,14 +348,14 @@ Claimed compliance without verified proof conditions is not TY Governance.
 
 ---
 
-## Appendix B â€” Version History
+## Appendix B -- Version History
 
 | Version | Date | Description |
 |---|---|---|
-| v0.1 | 2026-03-11 | Initial specification â€” Phase 3 Part 66 | JAYA-CLO-125 |
+| v0.1 | 2026-03-11 | Initial specification -- Phase 3 Part 66 -- JAYA-CLO-125 |
 
 ---
 
-*This specification is sealed under TY AI OS governance discipline.*  
-*Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*  
+*This specification is sealed under TY AI OS governance discipline.*
+*Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Next version requires proof condition updates or architectural changes to justify revision.*
