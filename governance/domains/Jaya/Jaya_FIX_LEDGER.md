@@ -1,4 +1,4 @@
-# JAYA_FIX_LEDGER
+﻿# JAYA_FIX_LEDGER
 Status: Active
 ---
 ## Part 35 — CRI Lifecycle Completion and Authority Reservation
@@ -88,3 +88,63 @@ FIX-44.99 | Part 44 Formal Seal | JAYA-CLO-081 through JAYA-CLO-082 | 2026-03-08
 ## Part 45 — Windows Memory Info
 FIX-45.01 | get_memory_info() real values on Windows via sysinfo crate | JAYA-CLO-083 | 2026-03-08 | COMPLETE
 FIX-45.99 | Part 45 Formal Seal | JAYA-CLO-083 | 2026-03-08 | SEALED
+
+---
+
+## FIX-47.01
+
+- **CLO:** JAYA-CLO-087
+- **Commit:** 2e2e113
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Destination:** Jaya (ty-ai-governance)
+- **Description:** Outward-facing sentinel backend -- evaluate_agent_action + SentinelVerdict in lib.rs
+- **Status:** COMMITTED
+
+---
+
+## FIX-47.02
+
+- **CLO:** JAYA-CLO-088
+- **Commit:** 960450a
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Destination:** Jaya (ty-ai-governance)
+- **Description:** Sentinel UI panel -- SentinelEvaluationPanel.tsx (204 lines, dark bg, ReasonBadge, ledger badge, 50-result cap) + App.tsx Sentinel tab
+- **Status:** COMMITTED
+
+---
+
+## FIX-48.01
+
+- **CLO:** JAYA-CLO-089
+- **Commit:** a2c5853
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Destination:** Jaya (Jaya-Runtime)
+- **Description:** ViolationClass enum + SentinelVerdict violation_class field + evaluate_agent_action classification (lib.rs)
+- **Status:** COMMITTED
+
+---
+
+## FIX-48.02
+
+- **CLO:** JAYA-CLO-090
+- **Commit:** 4aa2e87
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Destination:** Jaya (Jaya-Runtime)
+- **Description:** AgentRecord registered_tier + expected_actions fields, db schema migration M1 (ALTER TABLE), AutonomyTier serde derives
+- **Status:** COMMITTED
+
+---
+
+## FIX-48.03
+
+- **CLO:** JAYA-CLO-091
+- **Commit:** aa7b6b6
+- **Date:** 2026-03-10 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Destination:** Jaya (Jaya-Runtime)
+- **Description:** drift.rs drift detection engine -- CRI-band-aware thresholds, 10-action window, static baseline (Option A), ViolationClass::Deception on trigger + mod drift declaration in lib.rs
+- **Status:** COMMITTED

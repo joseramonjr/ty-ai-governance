@@ -135,3 +135,48 @@ FIX-46.01 | Jaya | Governance sync: Jaya_SEALS, Jaya_FIX_LEDGER, Jaya_PART_INDEX
 FIX-46.02 | Jaya | f32 to f64 type cast fix in system_health collect (lib.rs line 760) | JAYA-CLO-085 | 2026-03-09 | COMPLETE
 FIX-46.03 | Jaya | MASTER_FIX_INDEX backfill Parts 41-46 and duplicate Part 39 removal | JAYA-CLO-086 | 2026-03-09 | COMPLETE
 FIX-46.99 | Jaya | Part 46 Formal Seal | JAYA-CLO-086 | 2026-03-09 | SEALED
+
+---
+
+## FIX-47.01 | JAYA-CLO-087 | MODEL: Claude Sonnet 4.6 | DATE: 2026-03-10 | San Diego
+
+- **Destination:** Jaya (ty-ai-governance)
+- **Commit:** 2e2e113
+- **Description:** Outward-facing sentinel backend -- evaluate_agent_action + SentinelVerdict in lib.rs
+- **Status:** COMMITTED
+
+---
+
+## FIX-47.02 | JAYA-CLO-088 | MODEL: Claude Sonnet 4.6 | DATE: 2026-03-10 | San Diego
+
+- **Destination:** Jaya (ty-ai-governance)
+- **Commit:** 960450a
+- **Description:** Sentinel UI panel -- SentinelEvaluationPanel.tsx (204 lines) + App.tsx Sentinel tab
+- **Status:** COMMITTED
+
+---
+
+## FIX-48.01 | JAYA-CLO-089 | MODEL: Claude Sonnet 4.6 | DATE: 2026-03-10 | San Diego
+
+- **Destination:** Jaya (Jaya-Runtime)
+- **Commit:** a2c5853
+- **Description:** ViolationClass enum + SentinelVerdict violation_class field + evaluate_agent_action classification
+- **Status:** COMMITTED
+
+---
+
+## FIX-48.02 | JAYA-CLO-090 | MODEL: Claude Sonnet 4.6 | DATE: 2026-03-10 | San Diego
+
+- **Destination:** Jaya (Jaya-Runtime)
+- **Commit:** 4aa2e87
+- **Description:** AgentRecord registered_tier + expected_actions, db schema migration M1, AutonomyTier serde
+- **Status:** COMMITTED
+
+---
+
+## FIX-48.03 | JAYA-CLO-091 | MODEL: Claude Sonnet 4.6 | DATE: 2026-03-10 | San Diego
+
+- **Destination:** Jaya (Jaya-Runtime)
+- **Commit:** aa7b6b6
+- **Description:** drift.rs drift detection engine + mod drift declaration in lib.rs
+- **Status:** COMMITTED
