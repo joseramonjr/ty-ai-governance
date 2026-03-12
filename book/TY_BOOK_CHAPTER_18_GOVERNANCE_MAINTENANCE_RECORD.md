@@ -230,3 +230,41 @@ TYOVA: unchanged
 Part 68: Core Invariants update + governance_hash anchor computation
 CLO: JAYA-CLO-135
 Destination: ty-ai-governance
+
+---
+
+### Entry-008
+Date: 2026-03-11 | San Diego (America/Los_Angeles)
+CLO: JAYA-CLO-135
+Part: 68
+Model: Claude Sonnet 4.6
+
+#### What Was Done
+
+Phase 4 Part 68 -- Core Invariants update and governance_hash anchor computation.
+
+Autonomy Ceiling Invariant added to 01_CORE_INVARIANTS.md.
+Hardened version adopted -- execution authority formally defined,
+indirect influence loophole explicitly closed.
+
+governance_hash computed as SHA-256 of canonical invariant set:
+- 01_CORE_INVARIANTS.md
+- 03_NON_WEAPONIZATION_GUARDRAIL.md
+- TY_GAL_SPEC_v0.1.md
+
+governance_hash: cd7ef6c73e8050394bec5b0e0289238cd000d7c4ce133ec951653531356a6e09
+
+GAL_HASH_ANCHOR.md created and committed to ty-ai-governance/spec/.
+
+#### Repo State After Session
+
+ty-ai-governance HEAD: 9b5d074 -- pushed to origin
+Tag: phase4-gal-hash-anchor-v0.1
+Jaya-Runtime: unchanged (06a9fe6)
+TYOVA: unchanged
+
+#### Next
+
+Part 69: Jaya keypair + node identity infrastructure
+CLO: JAYA-CLO-136
+Destination: Jaya-Runtime
