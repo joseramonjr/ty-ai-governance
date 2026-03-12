@@ -184,3 +184,49 @@ OPEN ITEMS CARRIED FORWARD:
 *Classification: CANONICAL BOOK DOCUMENTATION*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
+
+---
+
+### Entry-007
+Date: 2026-03-11 | San Diego (America/Los_Angeles)
+CLO: JAYA-CLO-134
+Part: 67
+Model: Claude Sonnet 4.6
+
+#### What Was Done
+
+Phase 4 -- Global Attestonic Layer -- scoping and specification session.
+
+Full GAL protocol specification drafted, reviewed, and committed.
+All 21 pre-draft items locked before writing began.
+Spec separated from build plan per Phase 3 discipline.
+
+Files committed to ty-ai-governance/spec/:
+- TY_GAL_SPEC_v0.1.md (869 lines, 22 sections)
+- PHASE4_BUILD_PLAN.md (272 lines, 10 parts scoped)
+
+Tag applied: phase4-gal-spec-v0.1-draft -- commit c247983
+
+#### Key Decisions Locked
+
+- governance_hash = SHA-256 of canonical governance invariant set (doctrine only)
+- Freshness window = 30 seconds (v0.1)
+- Ledger hash deferred to v1.1
+- Trust bootstrap = human-mediated key pinning only
+- Autonomy classes A/B/C defined with structural ceilings
+- Authority Non-Propagation Clause added as hard protocol rule
+- Autonomy Ceiling Invariant added -- requires Core Invariants update (Part 68)
+- Protocol--Implementation Separation Clause locked
+- Phase 4 build sequence: Parts 67-76, CLOs 134-143
+
+#### Repo State After Session
+
+ty-ai-governance HEAD: c247983 -- pushed to origin
+Jaya-Runtime: unchanged (06a9fe6)
+TYOVA: unchanged
+
+#### Next
+
+Part 68: Core Invariants update + governance_hash anchor computation
+CLO: JAYA-CLO-135
+Destination: ty-ai-governance
