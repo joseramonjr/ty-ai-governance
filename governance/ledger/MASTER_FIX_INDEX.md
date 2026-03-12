@@ -709,5 +709,23 @@ NOTE: Next CLO = JAYA-CLO-120 | Next Jaya Part = 66 | Phase 3: UNBLOCKED
 - **Status:** COMPLETE
 
 ---
-NOTE: JAYA-CLO-127 = Chapter 18 update (ty-ai-governance repo, commit 19b6ded)
-NOTE: Next CLO = JAYA-CLO-128 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
+## FIX-66.09 | MASTER_FIX_INDEX Update -- CLOs 120-127
+- **CLO:** JAYA-CLO-128
+- **Commit:** f413feb (ty-ai-governance)
+- **Date:** 2026-03-11 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** MASTER_FIX_INDEX updated to record CLOs 120-127 covering Parts 62-66 work -- governance ledger sync
+- **File:** governance/ledger/MASTER_FIX_INDEX.md
+- **Status:** COMPLETE
+---
+## FIX-66.10 | Corruption Fix -- Spec and Chapter 20 Em Dash Mojibake
+- **CLO:** JAYA-CLO-129
+- **Commit:** fe1099f (ty-ai-governance)
+- **Date:** 2026-03-11 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Removed em dash mojibake corruption from TY_GOVERNANCE_SPEC_v0.1.md and chapter_20.md -- R12 scan confirmed clean after fix
+- **Files:** spec/TY_GOVERNANCE_SPEC_v0.1.md, book/chapter_20.md
+- **Status:** COMPLETE
+---
+NOTE: JAYA-CLO-129 = em dash corruption fix (ty-ai-governance repo, commit fe1099f)
+NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
