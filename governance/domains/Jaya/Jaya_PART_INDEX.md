@@ -1,4 +1,4 @@
-i sne# Jaya_PART_INDEX
+﻿i sne# Jaya_PART_INDEX
 
 
 
@@ -42,9 +42,9 @@ Each Part represents a bounded scope of work with a defined completion state.
 
 |---|---|---|
 
-| Parts 1–28 | COMPLETE (pre-repo) | Foundation, tier engine, adaptive modifier, sentinel layer, registry integrity, persistence layer, UI surface |
+| Parts 1â€“28 | COMPLETE (pre-repo) | Foundation, tier engine, adaptive modifier, sentinel layer, registry integrity, persistence layer, UI surface |
 
-| Part 29 | SEALED | Jaya AI Authority Doctrine — authority flow, tier model |
+| Part 29 | SEALED | Jaya AI Authority Doctrine â€” authority flow, tier model |
 
 | Part 30 | SEALED | Runtime Foundation: Stack Lock, Scaffold & Ledger (~70 FIXes) |
 
@@ -56,7 +56,7 @@ Each Part represents a bounded scope of work with a defined completion state.
 
 | Part 34 | SEALED | Behavioral History, Graph Layer & Performance Audit |
 
-| Part 35 | SEALED | Sentinel System & CRI Foundation (FIX-35.01–35.99) |
+| Part 35 | SEALED | Sentinel System & CRI Foundation (FIX-35.01â€“35.99) |
 
 | Part 36 | SEALED | Observability Layer, CRI Band Classification, Band History |
 | Part 37 | SEALED | Operation Registry: SystemHealthCheck, FileRead, FileWrite |
@@ -143,7 +143,7 @@ Each Part represents a bounded scope of work with a defined completion state.
 
 
 
-# PRE-REPO DETAIL — Parts 1–35
+# PRE-REPO DETAIL â€” Parts 1â€“35
 
 ## Source Archive: conversations-001.zip (ChatGPT export)
 
@@ -159,9 +159,9 @@ Each Part represents a bounded scope of work with a defined completion state.
 
 Jaya Runtime development began **February 10, 2026** as a formally separate system
 
-from TY AI OS. Parts 1–28 are mapped from the TYOVA/Jaya transition era (Part 29
+from TY AI OS. Parts 1â€“28 are mapped from the TYOVA/Jaya transition era (Part 29
 
-introduced the Jaya Authority Doctrine). Parts 30–35 represent active implementation
+introduced the Jaya Authority Doctrine). Parts 30â€“35 represent active implementation
 
 in the Jaya-Runtime repo (Tauri + Rust + React).
 
@@ -169,7 +169,7 @@ in the Jaya-Runtime repo (Tauri + Rust + React).
 
 **Jaya Runtime role:** Local-first, deterministic governance execution engine.
 
-Execution arm of the TY AI OS ecosystem. Does not define governance — executes
+Execution arm of the TY AI OS ecosystem. Does not define governance â€” executes
 
 within granted authority only.
 
@@ -185,7 +185,7 @@ within granted authority only.
 
 **Authority Flow (immutable):**
 
-Human → TY AI OS → (Luke / Jayme reasoning) → Jaya AI
+Human â†’ TY AI OS â†’ (Luke / Jayme reasoning) â†’ Jaya AI
 
 Jaya cannot self-authorize. Authority flows downward only.
 
@@ -195,19 +195,19 @@ Jaya cannot self-authorize. Authority flows downward only.
 
 
 
-## PARTS 1–28 — Pre-Implementation Governance Foundation
+## PARTS 1â€“28 â€” Pre-Implementation Governance Foundation
 
 **Status:** SEALED (Pre-Repo, inherited from TY AI OS / TYOVA era)
 
-**Period:** 2025-12-02 – 2026-02-09
+**Period:** 2025-12-02 â€“ 2026-02-09
 
-**Source:** Documented in TY_PART_INDEX.md (Parts 1–22) and TYOVA_PART_INDEX.md (Parts 1–28)
+**Source:** Documented in TY_PART_INDEX.md (Parts 1â€“22) and TYOVA_PART_INDEX.md (Parts 1â€“28)
 
 
 
 ### Summary
 
-Parts 1–28 of the Jaya domain correspond to the governance foundation built across
+Parts 1â€“28 of the Jaya domain correspond to the governance foundation built across
 
 the SS321 and TYOVA eras. While not labeled "Jaya Parts" at the time, they established
 
@@ -215,21 +215,21 @@ the doctrine, authority model, and design principles that Jaya Runtime implement
 
 
 
-- Authority hardening & survival (TY Parts 14–18)
+- Authority hardening & survival (TY Parts 14â€“18)
 
 - Governance intelligence: advisory-only, observer-only (TY Parts 15, 19)
 
-- Recovery doctrine R-0 → R-3 (TY Part 23 / SS321 Part 76)
+- Recovery doctrine R-0 â†’ R-3 (TY Part 23 / SS321 Part 76)
 
 - User-Sovereign Permission Ledger (TY Part 26 / SS321 Part 99.02)
 
-- Tier-based authority model: Tier0–Tier3 (TY Part 29 / Jaya Authority Doctrine)
+- Tier-based authority model: Tier0â€“Tier3 (TY Part 29 / Jaya Authority Doctrine)
 
 - Three authority types: Explicit Task, Tier-Based Standing, Emergency Containment
 
 
 
-**Cross-reference:** See `governance/domains/TY/TY_PART_INDEX.md` Parts 1–29 for
+**Cross-reference:** See `governance/domains/TY/TY_PART_INDEX.md` Parts 1â€“29 for
 
 full pre-implementation governance canon.
 
@@ -239,7 +239,7 @@ full pre-implementation governance canon.
 
 
 
-## PART 29 — Jaya AI Authority Doctrine (Foundational)
+## PART 29 â€” Jaya AI Authority Doctrine (Foundational)
 
 **Status:** SEALED
 
@@ -253,7 +253,7 @@ full pre-implementation governance canon.
 
 - Jaya AI formally defined as the execution layer of TY AI ecosystem
 
-- Authority Flow locked: Human → TY AI OS → (Luke/Jayme) → Jaya
+- Authority Flow locked: Human â†’ TY AI OS â†’ (Luke/Jayme) â†’ Jaya
 
   - Jaya cannot self-authorize
 
@@ -261,15 +261,15 @@ full pre-implementation governance canon.
 
 - Three authority types defined:
 
-  - 🟢 Explicit Task Authority — user approves specific action
+  - ðŸŸ¢ Explicit Task Authority â€” user approves specific action
 
-  - 🟡 Tier-Based Standing Authority — user enables predefined autonomy tier
+  - ðŸŸ¡ Tier-Based Standing Authority â€” user enables predefined autonomy tier
 
-  - 🔴 Emergency Containment Authority — immediate action for critical risk
+  - ðŸ”´ Emergency Containment Authority â€” immediate action for critical risk
 
-- Jaya is the LAST link in the authority chain — executes, does not govern
+- Jaya is the LAST link in the authority chain â€” executes, does not govern
 
-- Tier system (Tier0–Tier3) established as autonomy control mechanism
+- Tier system (Tier0â€“Tier3) established as autonomy control mechanism
 
 
 
@@ -289,7 +289,7 @@ full pre-implementation governance canon.
 
 
 
-## PART 30 — Runtime Foundation: Stack Lock, Scaffold & Ledger
+## PART 30 â€” Runtime Foundation: Stack Lock, Scaffold & Ledger
 
 **Status:** SEALED
 
@@ -299,7 +299,7 @@ full pre-implementation governance canon.
 
 
 
-### FIX Ledger (Selected — Part 30 ran ~70+ fixes across one long session)
+### FIX Ledger (Selected â€” Part 30 ran ~70+ fixes across one long session)
 
 | FIX | Title | Status |
 
@@ -309,7 +309,7 @@ full pre-implementation governance canon.
 
 | FIX-30.02 | Runtime Stack Lock & Scaffold Initialization | COMPLETE (reclassified from BLOCKED) |
 
-| FIX-30.03 | Execution Environment Correction — Build Domain Split | COMPLETE |
+| FIX-30.03 | Execution Environment Correction â€” Build Domain Split | COMPLETE |
 
 | FIX-30.13 | SQLite ledger initialization in Rust | COMPLETE |
 
@@ -317,7 +317,7 @@ full pre-implementation governance canon.
 
 | FIX-30.22 | Governance wrapper integration | COMPLETE |
 
-| FIX-30.30 | Phase 1 — Tier selector UI wired to Rust backend | COMPLETE |
+| FIX-30.30 | Phase 1 â€” Tier selector UI wired to Rust backend | COMPLETE |
 
 | FIX-30.35 | Risk engine scaffolding (AutonomyTier enum) | COMPLETE |
 
@@ -349,7 +349,7 @@ full pre-implementation governance canon.
 
   - Ledger: append-only SQLite table (`ledger_entries`)
 
-  - Risk engine: `AutonomyTier` enum (Tier0–Tier3)
+  - Risk engine: `AutonomyTier` enum (Tier0â€“Tier3)
 
   - Module registry: trait-based (`JayaModule`)
 
@@ -391,7 +391,7 @@ full pre-implementation governance canon.
 
 - SQLite is the canonical ledger backend (not TypeScript/JSON)
 
-- `core/ledger/ledger.ts` deleted — Rust-only ledger
+- `core/ledger/ledger.ts` deleted â€” Rust-only ledger
 
 - Governance wrapper is read-only observer layer
 
@@ -403,7 +403,7 @@ full pre-implementation governance canon.
 
 
 
-## PART 31 — Ledger History UI & Snapshot Restore
+## PART 31 â€” Ledger History UI & Snapshot Restore
 
 **Status:** SEALED
 
@@ -429,15 +429,15 @@ full pre-implementation governance canon.
 
 ### Scope
 
-- FIX-30.68: Ledger History UI — `LedgerHistory` React component displaying
+- FIX-30.68: Ledger History UI â€” `LedgerHistory` React component displaying
 
   recent ledger entries from SQLite; wired to `get_recent_entries` Tauri command
 
-- FIX-30.69: Lock crash recovery — `recover_stale_lock()` handles stale locks
+- FIX-30.69: Lock crash recovery â€” `recover_stale_lock()` handles stale locks
 
   on startup; prevents deadlock from crashed sessions
 
-- FIX-30.70: Snapshot restore — `list_snapshots()` and `restore_snapshot()`
+- FIX-30.70: Snapshot restore â€” `list_snapshots()` and `restore_snapshot()`
 
   fully wired; UI component allows rollback to any saved snapshot
 
@@ -473,7 +473,7 @@ full pre-implementation governance canon.
 
 
 
-## PART 32 — Risk Engine, Module Registry & Adaptive Scoring
+## PART 32 â€” Risk Engine, Module Registry & Adaptive Scoring
 
 **Status:** SEALED
 
@@ -489,7 +489,7 @@ full pre-implementation governance canon.
 
   - `is_allowed()` checks tier + adaptive modifier before permitting any module
 
-  - Tier0 = always blocked; Tier1–Tier3 = graduated permission
+  - Tier0 = always blocked; Tier1â€“Tier3 = graduated permission
 
   - Base risk score per module + adaptive modifier = final gate decision
 
@@ -531,7 +531,7 @@ full pre-implementation governance canon.
 
 
 
-## PART 33 — Cooldown Refinement, Decay Model & Predictive Escalation
+## PART 33 â€” Cooldown Refinement, Decay Model & Predictive Escalation
 
 **Status:** SEALED
 
@@ -569,25 +569,25 @@ full pre-implementation governance canon.
 
 ### Scope
 
-- FIX-33.01: Cooldown model smoothed — no abrupt tier drops; gradual decay
+- FIX-33.01: Cooldown model smoothed â€” no abrupt tier drops; gradual decay
 
-- FIX-33.02: Time-based decay — adaptive modifier decays over time without activity
+- FIX-33.02: Time-based decay â€” adaptive modifier decays over time without activity
 
   - Tier escalation driven by failure rate, not just raw failures
 
 - FIX-33.03: Block accounting separated from failure accounting
 
-  - Blocks (governance-gated refusals) ≠ Failures (execution errors)
+  - Blocks (governance-gated refusals) â‰  Failures (execution errors)
 
 - FIX-33.04: Decay correctly occurs during permission check phase
 
-- FIX-33.05: In-memory registry sealed — no runtime mutations post-registration
+- FIX-33.05: In-memory registry sealed â€” no runtime mutations post-registration
 
-- FIX-33.06: Persistent registry integrity — fingerprints checked on every load
+- FIX-33.06: Persistent registry integrity â€” fingerprints checked on every load
 
-- FIX-33.07: Module fingerprint enforcement — tamper detection at registry level
+- FIX-33.07: Module fingerprint enforcement â€” tamper detection at registry level
 
-- FIX-33.08: Predictive escalation messaging — "Failure rate entering unstable range"
+- FIX-33.08: Predictive escalation messaging â€” "Failure rate entering unstable range"
 
 - FIX-33.09: Predictive baseline timing corrected
 
@@ -595,9 +595,9 @@ full pre-implementation governance canon.
 
 ### Validation (Phase A & B)
 
-- Phase A (Healthy Baseline): 5 cleanup ops, 2–3s gaps → low modifier, no emergency
+- Phase A (Healthy Baseline): 5 cleanup ops, 2â€“3s gaps â†’ low modifier, no emergency
 
-- Phase B (Failure Injection): forced failures → escalation confirmed deterministic
+- Phase B (Failure Injection): forced failures â†’ escalation confirmed deterministic
 
 - Dashboard metrics verified: Adaptive Modifier, Failure Rate, Emergency Score,
 
@@ -609,7 +609,7 @@ full pre-implementation governance canon.
 
 
 
-## PART 34 — Behavioral History, Graph Layer & Performance Audit
+## PART 34 â€” Behavioral History, Graph Layer & Performance Audit
 
 **Status:** SEALED
 
@@ -647,21 +647,21 @@ full pre-implementation governance canon.
 
 ### Scope
 
-- FIX-34.04: `behavioral_history` SQLite table — persistent record of every
+- FIX-34.04: `behavioral_history` SQLite table â€” persistent record of every
 
   module execution: operation, tier, modifier, result, duration
 
 - FIX-34.07: Behavioral history wired to `BehavioralMemoryPanel`
 
-- FIX-34.08: `PerformancePanel` — operation stats: total runs, avg duration,
+- FIX-34.08: `PerformancePanel` â€” operation stats: total runs, avg duration,
 
   max duration per module
 
-- FIX-34.13: Duplicate execution tracking removed — single source of truth
+- FIX-34.13: Duplicate execution tracking removed â€” single source of truth
 
 - FIX-34.14: Graph visualization layer added to behavioral panel
 
-- FIX-34.16: Time window selector — filter behavioral history by time range
+- FIX-34.16: Time window selector â€” filter behavioral history by time range
 
 - FIX-34.20: `run_failing_module` Tauri command for controlled failure injection
 
@@ -691,13 +691,13 @@ full pre-implementation governance canon.
 
 
 
-## PART 35 — Sentinel System: Anomaly Detection, Persistence & CRI
+## PART 35 â€” Sentinel System: Anomaly Detection, Persistence & CRI
 
 **Status:** SEALED
 
-**Date:** 2026-02-16 – 2026-02-18
+**Date:** 2026-02-16 â€“ 2026-02-18
 
-**Source Sessions:** Parts 35, 35A, 35B, 35C, 35D (conversations-001.zip idx 067–071)
+**Source Sessions:** Parts 35, 35A, 35B, 35C, 35D (conversations-001.zip idx 067â€“071)
 
 
 
@@ -727,7 +727,7 @@ full pre-implementation governance canon.
 
 | FIX-35.14 | Sentinel integration hardening | 2026-02-16 | COMPLETE |
 
-| FIX-35.19 | Phase 2B — Modifier Drift Coherence | 2026-02-17 | COMPLETE |
+| FIX-35.19 | Phase 2B â€” Modifier Drift Coherence | 2026-02-17 | COMPLETE |
 
 | FIX-35.24 | Re-Trust Runtime Doctrine Alignment | 2026-02-17 | COMPLETE |
 
@@ -761,7 +761,7 @@ full pre-implementation governance canon.
 
 ### Sentinel Architecture
 
-- `Sentinel<T>` struct — generic over `RuntimeGovernanceView` trait
+- `Sentinel<T>` struct â€” generic over `RuntimeGovernanceView` trait
 
 - Three anomaly types: `TierInconsistency`, `EmergencyIntegrityViolation`, `EscalationDrift`
 
@@ -781,13 +781,13 @@ full pre-implementation governance canon.
 
 - CRI accumulates on each governance event weighted by severity
 
-- Time-bound deterministic decay — CRI reduces over time without new events
+- Time-bound deterministic decay â€” CRI reduces over time without new events
 
 - CRI persisted to SQLite on every change; restored on startup
 
-- CRI Safe Getter (`get_cri_safe()`) — never panics, returns 0 on error
+- CRI Safe Getter (`get_cri_safe()`) â€” never panics, returns 0 on error
 
-- **FIX-35.36: CRI Authority Reservation Declaration** — CRI is observability only;
+- **FIX-35.36: CRI Authority Reservation Declaration** â€” CRI is observability only;
 
   does NOT trigger automated actions; humans interpret CRI, not Jaya
 
@@ -811,7 +811,7 @@ full pre-implementation governance canon.
 
 - All 25 FIX items confirmed complete
 
-- No autonomous actions triggered by Sentinel or CRI — observation only
+- No autonomous actions triggered by Sentinel or CRI â€” observation only
 
 - Part 36 authorized to begin
 
@@ -821,11 +821,11 @@ full pre-implementation governance canon.
 
 
 
-## TRANSITION: Part 35 → Part 36
+## TRANSITION: Part 35 â†’ Part 36
 
 
 
-### FIX-36.00 — Non-Weaponization Architecture Guardrail
+### FIX-36.00 â€” Non-Weaponization Architecture Guardrail
 
 **Date:** 2026-02-18 | **Status:** ACTIVE (permanent)
 
@@ -833,17 +833,17 @@ full pre-implementation governance canon.
 
 - CRI, Sentinel, and all risk data are for the system owner's benefit only
 
-- This guardrail is architectural — enforced by design, not just policy
+- This guardrail is architectural â€” enforced by design, not just policy
 
 
 
-### FIX-36.01 — CRI Visual Indicator (Read-Only UI Exposure)
+### FIX-36.01 â€” CRI Visual Indicator (Read-Only UI Exposure)
 
 **Date:** 2026-02-18 | **Status:** COMPLETE
 
 
 
-### FIX-36.02 — Phase A Observability Validation and Closure
+### FIX-36.02 â€” Phase A Observability Validation and Closure
 
 **Date:** 2026-02-18 | **Status:** COMPLETE
 
@@ -853,7 +853,7 @@ full pre-implementation governance canon.
 
 - Last ChatGPT FIX: FIX-36.02 (2026-02-18)
 
-- Commit: `0f4c019` — "CHECKPOINT: Jaya Runtime Part 36 Post-Phase A"
+- Commit: `0f4c019` â€” "CHECKPOINT: Jaya Runtime Part 36 Post-Phase A"
 
 - Phase B (CRI Band Classification) NOT started in ChatGPT era
 
@@ -873,11 +873,11 @@ full pre-implementation governance canon.
 
 ---
 
-## PART 36 — Observability Layer and Governance Expansion
+## PART 36 â€” Observability Layer and Governance Expansion
 
 **Status:** SEALED
 
-**Date:** 2026-03-04 – 2026-03-05
+**Date:** 2026-03-04 â€“ 2026-03-05
 
 **AI:** Claude Sonnet 4.6 (JAYA-CLO-001 through JAYA-CLO-005)
 
@@ -885,11 +885,11 @@ full pre-implementation governance canon.
 
 ### Phases
 
-- **Phase A:** CRI Visual Indicator and Observability Validation (ChatGPT era — FIX-36.00–36.02)
+- **Phase A:** CRI Visual Indicator and Observability Validation (ChatGPT era â€” FIX-36.00â€“36.02)
 
-- **Phase B:** CRI Band Classification — display only, no authority coupling (FIX-36.05–36.06)
+- **Phase B:** CRI Band Classification â€” display only, no authority coupling (FIX-36.05â€“36.06)
 
-- **Phase C:** CRI Band History — SQLite persistence, Tauri command, UI panel (FIX-36.07–36.10)
+- **Phase C:** CRI Band History â€” SQLite persistence, Tauri command, UI panel (FIX-36.07â€“36.10)
 
 - **Housekeeping:** Snapshot 30-day filename-based pruning (FIX-36.11)
 
@@ -927,7 +927,7 @@ full pre-implementation governance canon.
 
 ### Authority Constraints Maintained
 
-- CRI remains observational only — zero automated actions
+- CRI remains observational only â€” zero automated actions
 
 - No new authority granted to Jaya
 
@@ -939,19 +939,19 @@ full pre-implementation governance canon.
 
 ### Commits
 
-- Jaya-Runtime: `750cdb6` → `21bcebe`
+- Jaya-Runtime: `750cdb6` â†’ `21bcebe`
 
-- ty-ai-governance: `ccf8b1c` → `4dd772e`
+- ty-ai-governance: `ccf8b1c` â†’ `4dd772e`
 
 
 
 ---
 
-## PART 37 — Operation Registry Expansion
+## PART 37 â€” Operation Registry Expansion
 
 **Status:** SEALED
 
-**Date:** 2026-03-05 – 2026-03-06
+**Date:** 2026-03-05 â€“ 2026-03-06
 
 **AI:** Claude Sonnet 4.6 (JAYA-CLO-006 through JAYA-CLO-009)
 
@@ -961,7 +961,7 @@ full pre-implementation governance canon.
 
 First real governed operations added to Jaya Runtime. Human specifies what to
 
-execute — Jaya executes within granted authority only.
+execute â€” Jaya executes within granted authority only.
 
 
 
@@ -971,11 +971,11 @@ execute — Jaya executes within granted authority only.
 
 |-----|-------|--------|
 
-| FIX-37.01 | SystemHealthCheck — Tier1 risk10 read-only system info | COMPLETE |
+| FIX-37.01 | SystemHealthCheck â€” Tier1 risk10 read-only system info | COMPLETE |
 
-| FIX-37.02 | FileRead — Tier1 risk20 human-specified path returns contents | COMPLETE |
+| FIX-37.02 | FileRead â€” Tier1 risk20 human-specified path returns contents | COMPLETE |
 
-| FIX-37.03 | FileWrite — Tier2 risk60 blocked by default requires elevation | COMPLETE |
+| FIX-37.03 | FileWrite â€” Tier2 risk60 blocked by default requires elevation | COMPLETE |
 
 | FIX-37.99 | Part 37 Formal Seal | SEALED |
 
@@ -999,9 +999,9 @@ execute — Jaya executes within granted authority only.
 
 - FileRead and FileWrite bypass registry (dynamic path) but go through full governance chokepoint
 
-- FileWrite Tier2 enforcement — blocked unless system manually elevated
+- FileWrite Tier2 enforcement â€” blocked unless system manually elevated
 
-- Autonomy Tier selector added to UI — human controls tier directly
+- Autonomy Tier selector added to UI â€” human controls tier directly
 
 - All operations logged to ledger with risk, tier, and status
 
@@ -1009,9 +1009,9 @@ execute — Jaya executes within granted authority only.
 
 ### Commits
 
-- Jaya-Runtime: `71a8fb7` → `4a1acdc`
+- Jaya-Runtime: `71a8fb7` â†’ `4a1acdc`
 
-- ty-ai-governance: `ad4d477` → `71a84e0`
+- ty-ai-governance: `ad4d477` â†’ `71a84e0`
 
 
 
@@ -1432,76 +1432,3 @@ Phase 2 declared complete. Phase 3 unblocked.
 - NodeIdentityPanel.tsx -- displays node ID, fingerprint, public key, key source
 - App.tsx -- Node Identity tab added
 - cargo check: 0 errors, 1 expected warning (signing_key unused until Part 70)
-```
-
-Also add to the **Part Registry table** at the top of the file, after the Part 66 row:
-```
-| Part 67 | GAL Specification v0.1 | 2026-03-12 | SEALED | (commit) |
-| Part 68 | Core Invariants + governance_hash | 2026-03-12 | SEALED | (commit) |
-| Part 69 | Ed25519 Keypair + Node Identity | 2026-03-12 | SEALED | 79967e3 |
-
----
-
-## PART 67 -- Phase 4: GAL Specification v0.1
-**Status:** SEALED
-**Date:** 2026-03-12
-**CLO:** JAYA-CLO-134
-**Commit:** 906050c
-**Tag:** jaya-part67-sealed
-### Scope
-- Global Attestonic Layer specification document created
-- GAL_SPEC_v0.1.md in ty-ai-governance
-- Phase 4 scope defined: Ed25519 keypairs, attestation payloads, peer registry, verification engine
-
----
-
-## PART 68 -- Phase 4: Core Invariants + governance_hash
-**Status:** SEALED
-**Date:** 2026-03-12
-**CLO:** JAYA-CLO-135
-**Commit:** 9b5d074
-**Tag:** jaya-part68-sealed
-### Scope
-- governance_hash derived from core invariants
-- Core invariants document sealed
-- governance_hash exposed via Tauri command
-
----
-
-## PART 69 -- Ed25519 Keypair + Node Identity
-**Status:** SEALED
-**Date:** 2026-03-12
-**CLO:** JAYA-CLO-136
-**Commit:** 79967e3
-**Tag:** jaya-part69-sealed
-### Scope
-- ed25519-dalek + rand crates added to Cargo.toml
-- node_identity.rs -- NodeIdentity struct, load_or_create(), derive_node_id(), derive_fingerprint()
-- node_id format: jaya-node-{first 16 hex chars of SHA-256(pubkey)}
-- fingerprint format: XX:XX:XX:XX:XX:XX:XX:XX (first 8 bytes)
-- NodeIdentityPanel.tsx -- displays node ID, fingerprint, public key, key source
-- App.tsx -- Node Identity tab added
-- cargo check: 0 errors, 1 expected warning (signing_key unused until Part 70)
-```
-
----
-
-**Step 4:** Now find the Part Registry table. Press `Ctrl+F` and search for:
-```
-Part 66
-```
-
-Find the row that looks like:
-```
-| Part 66 | Phase 3 -- TY Governance Specification v0.1 | 2026-03-11 | SEALED | bd0c6a0 |
-```
-
-Click at the end of that row and press Enter. Paste these three rows:
-```
-| Part 67 | GAL Specification v0.1 | 2026-03-12 | SEALED | 906050c |
-| Part 68 | Core Invariants + governance_hash | 2026-03-12 | SEALED | 9b5d074 |
-| Part 69 | Ed25519 Keypair + Node Identity | 2026-03-12 | SEALED | 79967e3 |
-
-*Backfill generated: 2026-03-11 | San Diego (America/Los_Angeles)*
-*CLO: JAYA-CLO-130 | MODEL: Claude Sonnet 4.6*
-*Parts 41-66 sourced from verified git log and Master Session Index*
