@@ -729,3 +729,14 @@ NOTE: Next CLO = JAYA-CLO-120 | Next Jaya Part = 66 | Phase 3: UNBLOCKED
 ---
 NOTE: JAYA-CLO-129 = em dash corruption fix (ty-ai-governance repo, commit fe1099f)
 NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
+
+---
+
+## JAYA-CLO-136 | Part 69 -- Ed25519 Keypair + Node Identity
+- **CLO:** JAYA-CLO-136
+- **Commit:** 79967e3 (Jaya-Runtime)
+- **Date:** 2026-03-12 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Ed25519 keypair generation, node identity infrastructure, NodeIdentityPanel.tsx UI, App.tsx Node Identity tab wired
+- **Files:** src-tauri/Cargo.toml, src-tauri/src/node_identity.rs, src-tauri/src/lib.rs, src/components/NodeIdentityPanel.tsx, src/App.tsx
+- **Status:** COMPLETE
