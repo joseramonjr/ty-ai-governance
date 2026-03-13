@@ -1,4 +1,4 @@
-# Jaya_PART_INDEX
+i sne# Jaya_PART_INDEX
 
 
 
@@ -1389,6 +1389,118 @@ Phase 2 declared complete. Phase 3 unblocked.
 - Phase 3 declared complete. Phase 4 unblocked.
 
 ---
+
+---
+
+## PART 67 -- Phase 4: GAL Specification v0.1
+**Status:** SEALED
+**Date:** 2026-03-12
+**CLO:** JAYA-CLO-134
+**Commit:** (verify with git log)
+**Tag:** jaya-part67-sealed
+### Scope
+- Global Attestonic Layer specification document created
+- GAL_SPEC_v0.1.md in ty-ai-governance
+- Phase 4 scope defined: Ed25519 keypairs, attestation payloads, peer registry, verification engine
+
+---
+
+## PART 68 -- Phase 4: Core Invariants + governance_hash
+**Status:** SEALED
+**Date:** 2026-03-12
+**CLO:** JAYA-CLO-135
+**Commit:** (verify with git log)
+**Tag:** jaya-part68-sealed
+### Scope
+- governance_hash derived from core invariants
+- Core invariants document sealed
+- governance_hash exposed via Tauri command
+
+---
+
+## PART 69 -- Ed25519 Keypair + Node Identity
+**Status:** SEALED
+**Date:** 2026-03-12
+**CLO:** JAYA-CLO-136
+**Commit:** 79967e3
+**Tag:** jaya-part69-sealed
+### Scope
+- ed25519-dalek + rand crates added to Cargo.toml
+- node_identity.rs -- NodeIdentity struct, load_or_create(), derive_node_id(), derive_fingerprint()
+- node_id format: jaya-node-{first 16 hex chars of SHA-256(pubkey)}
+- fingerprint format: XX:XX:XX:XX:XX:XX:XX:XX (first 8 bytes)
+- NodeIdentityPanel.tsx -- displays node ID, fingerprint, public key, key source
+- App.tsx -- Node Identity tab added
+- cargo check: 0 errors, 1 expected warning (signing_key unused until Part 70)
+```
+
+Also add to the **Part Registry table** at the top of the file, after the Part 66 row:
+```
+| Part 67 | GAL Specification v0.1 | 2026-03-12 | SEALED | (commit) |
+| Part 68 | Core Invariants + governance_hash | 2026-03-12 | SEALED | (commit) |
+| Part 69 | Ed25519 Keypair + Node Identity | 2026-03-12 | SEALED | 79967e3 |
+
+---
+
+## PART 67 -- Phase 4: GAL Specification v0.1
+**Status:** SEALED
+**Date:** 2026-03-12
+**CLO:** JAYA-CLO-134
+**Commit:** 906050c
+**Tag:** jaya-part67-sealed
+### Scope
+- Global Attestonic Layer specification document created
+- GAL_SPEC_v0.1.md in ty-ai-governance
+- Phase 4 scope defined: Ed25519 keypairs, attestation payloads, peer registry, verification engine
+
+---
+
+## PART 68 -- Phase 4: Core Invariants + governance_hash
+**Status:** SEALED
+**Date:** 2026-03-12
+**CLO:** JAYA-CLO-135
+**Commit:** 9b5d074
+**Tag:** jaya-part68-sealed
+### Scope
+- governance_hash derived from core invariants
+- Core invariants document sealed
+- governance_hash exposed via Tauri command
+
+---
+
+## PART 69 -- Ed25519 Keypair + Node Identity
+**Status:** SEALED
+**Date:** 2026-03-12
+**CLO:** JAYA-CLO-136
+**Commit:** 79967e3
+**Tag:** jaya-part69-sealed
+### Scope
+- ed25519-dalek + rand crates added to Cargo.toml
+- node_identity.rs -- NodeIdentity struct, load_or_create(), derive_node_id(), derive_fingerprint()
+- node_id format: jaya-node-{first 16 hex chars of SHA-256(pubkey)}
+- fingerprint format: XX:XX:XX:XX:XX:XX:XX:XX (first 8 bytes)
+- NodeIdentityPanel.tsx -- displays node ID, fingerprint, public key, key source
+- App.tsx -- Node Identity tab added
+- cargo check: 0 errors, 1 expected warning (signing_key unused until Part 70)
+```
+
+---
+
+**Step 4:** Now find the Part Registry table. Press `Ctrl+F` and search for:
+```
+Part 66
+```
+
+Find the row that looks like:
+```
+| Part 66 | Phase 3 -- TY Governance Specification v0.1 | 2026-03-11 | SEALED | bd0c6a0 |
+```
+
+Click at the end of that row and press Enter. Paste these three rows:
+```
+| Part 67 | GAL Specification v0.1 | 2026-03-12 | SEALED | 906050c |
+| Part 68 | Core Invariants + governance_hash | 2026-03-12 | SEALED | 9b5d074 |
+| Part 69 | Ed25519 Keypair + Node Identity | 2026-03-12 | SEALED | 79967e3 |
 
 *Backfill generated: 2026-03-11 | San Diego (America/Los_Angeles)*
 *CLO: JAYA-CLO-130 | MODEL: Claude Sonnet 4.6*
