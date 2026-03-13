@@ -1432,3 +1432,130 @@ Phase 2 declared complete. Phase 3 unblocked.
 - NodeIdentityPanel.tsx -- displays node ID, fingerprint, public key, key source
 - App.tsx -- Node Identity tab added
 - cargo check: 0 errors, 1 expected warning (signing_key unused until Part 70)
+
+---
+
+## PART 70 -- Attestation Payload Generation
+**Status:** SEALED
+**Date:** 2026-03-13
+**CLO:** JAYA-CLO-137
+**Commit:** e607003
+**Tag:** jaya-part70-sealed
+### Scope
+- AttestationPayload struct added to node_identity.rs
+- sign_governance_state() -- signs canonical message with Ed25519 signing key
+- Canonical message format: node_id|governance_hash|timestamp_utc
+- governance_hash embedded: cd7ef6c73e8050394bec5b0e0289238cd000d7c4ce133ec951653531356a6e09
+- generate_attestation Tauri command wired
+- AttestationPanel.tsx -- generate button, display fields, copy JSON
+- App.tsx -- Attestation tab added
+- cargo check: 0 errors, 0 warnings
+
+---
+
+## PART 71 -- Peer Registry + Key Pinning UI
+**Status:** SEALED
+**Date:** 2026-03-13
+**CLO:** JAYA-CLO-138
+**Commit:** e8b33af
+**Tag:** jaya-part71-sealed
+### Scope
+- peer_registry.rs -- PeerEntry struct, PeerRegistry struct
+- add_peer(), list_peers(), remove_peer() -- persisted to peers.json
+- peer_id derived from SHA-256 of public key hex
+- Duplicate public key detection enforced
+- Three Tauri commands wired: add_peer, list_peers, remove_peer
+- PeerRegistryPanel.tsx -- pin peer form, pinned peers list, remove button
+- App.tsx -- Peer Registry tab added
+- cargo check: 0 errors, 0 warnings
+
+---
+
+## PART 72 -- Verification Engine
+**Status:** SEALED
+**Date:** 2026-03-13
+**CLO:** JAYA-CLO-139
+**Commit:** 568cbba
+**Tag:** jaya-part72-sealed
+### Scope
+- verification.rs -- VerificationRequest + VerificationResult structs
+- verify_attestation_payload() -- reconstructs canonical message, verifies Ed25519 signature
+- hex_to_bytes() helper -- decodes hex strings to byte arrays
+- verify_attestation Tauri command wired
+- VerificationPanel.tsx -- paste JSON input, verify button, clear button, VALID/INVALID display
+- App.tsx -- Verification tab added
+- cargo check: 0 errors, 0 warnings
+
+---
+
+## PART 73 -- Human Alert Integration for GAL
+**Status:** SEALED
+**Date:** 2026-03-13
+**CLO:** JAYA-CLO-140
+**Commit:** e9aec7e
+**Tag:** jaya-part73-sealed
+### Scope
+- VerificationFailed added to AlertType enum in alerts.rs
+- to_db_string() and from_db_string() updated
+- verify_attestation command updated -- inserts GAL alert to DB on verification failure
+- Existing AlertPanel displays VerificationFailed alerts automatically
+- No new frontend files needed
+- cargo check: 0 errors, 0 warnings
+
+---
+
+## PART 74 -- GAL UI Panel
+**Status:** SEALED
+**Date:** 2026-03-13
+**CLO:** JAYA-CLO-141
+**Commit:** 5983bdb
+**Tag:** jaya-part74-sealed
+### Scope
+- GalDashboardPanel.tsx -- unified GAL status view
+- Node Identity card -- node_id, fingerprint, key source
+- Peer Registry card -- pinned peer count, peer list preview
+- Governance Hash card -- anchored hash display
+- Last Attestation card -- timestamp and signature preview
+- Sign Governance State button -- generates and displays attestation
+- Copy Payload JSON button
+- App.tsx -- GAL Dashboard tab added
+- cargo check: 0 errors, 0 warnings
+
+---
+
+## PART 75 -- Phase 4 Proof Condition
+**Status:** SEALED
+**Date:** 2026-03-13
+**CLO:** JAYA-CLO-142
+**Commit:** a7d83ac
+**Tag:** jaya-part75-sealed
+### Proof Condition
+All four steps passed:
+1. Node identity loaded and active -- PASSED
+2. Attestation payload generated and signed -- PASSED
+3. Valid signature verified -- returned VALID -- PASSED
+4. Tampered payload rejected -- returned INVALID -- PASSED
+All four steps written to governance ledger.
+Phase 4 proof condition MET.
+### Scope
+- GalProofStep + GalProofResult structs added to lib.rs
+- run_gal_proof Tauri command -- chains all four proof steps
+- Ledger writes for all four steps
+- GAL alert inserted if tamper detection fails
+- GalProofPanel.tsx -- run proof button, step-by-step result display, PASSED/FAILED banner
+- App.tsx -- GAL Proof tab added
+- cargo check: 0 errors, 0 warnings
+
+---
+
+## PART 76 -- Phase 4 GAL Seal
+**Status:** SEALED
+**Date:** 2026-03-13
+**CLO:** JAYA-CLO-143
+**Commit:** 7908bea (ty-ai-governance)
+**Tag:** jaya-part76-sealed
+### Scope
+- PHASE4_GAL_SEAL.md committed to ty-ai-governance/spec/
+- Jaya_PART_INDEX.md updated with Parts 70-76
+- Phase 4 declared complete
+- Phase 5 scope to be defined
