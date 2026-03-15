@@ -5,7 +5,7 @@
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-15 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 161 (as of 2026-03-15)
+**Current Term Count:** 166 (as of 2026-03-15)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -1061,6 +1061,72 @@ or elapsed time. Failure to recall canon when required is a
 governance violation.
 
 ---
+
+## Section 11 -- Phase 5 Outward Reach Terms
+
+These terms were coined during Phase 5 scope definition on
+2026-03-15. They describe the four new architectural layers
+introduced in Phase 5 Track B and the canonical name for
+Phase 5 itself.
+
+**The Outward Reach**
+*First coined: 2026-03-15 11:47 | San Diego (America/Los_Angeles)*
+The canonical name for Phase 5 of the TY AI OS ecosystem build.
+The Outward Reach describes the phase in which TY AI OS begins
+to extend beyond a single machine and toward its foundational
+mission: providing verifiable governance infrastructure for AI
+systems operating in the world. Phase 5 has two tracks -- Track A
+closes foundation gaps from Phase 4, and Track B introduces four
+new architectural layers extending governance outward.
+
+**Federation**
+*First coined: 2026-03-15 11:47 | San Diego (America/Los_Angeles)*
+The capability for multiple Jaya nodes to participate in a shared
+governance network and verify each other's governance state using
+cryptographic attestation. Federation extends TY AI OS governance
+beyond a single machine. Each node retains its local enforcement
+authority. No node gains authority over another node's local
+agents -- the authority non-propagation invariant is preserved
+across the federation. A federated node that violates governance
+boundaries is isolated, not corrected by peer nodes.
+
+**Policy Engine**
+*First coined: 2026-03-15 11:47 | San Diego (America/Los_Angeles)*
+The capability for the Jaya Runtime to evaluate agent behavior
+directly against rules expressed in the TY Governance
+Specification without those rules being hardcoded into the
+runtime at build time. The Policy Engine makes the governance
+specification directly executable. A policy change is reflected
+in runtime enforcement without requiring a rebuild or restart.
+Policies cannot grant permissions -- they can only define
+boundaries. A policy that contradicts a Core Invariant is
+rejected at load time.
+
+**Transparency Layer**
+*First coined: 2026-03-15 11:47 | San Diego (America/Los_Angeles)*
+The capability for any external party to verify that a Jaya node
+or federation is operating within its stated governance boundaries
+without being given access to system internals. The Transparency
+Layer produces a public, cryptographically verifiable governance
+proof at defined intervals. The proof never exposes internal agent
+identity or behavior data. Verification requires no credentials.
+The Transparency Layer removes the requirement to trust the
+operator -- the system proves its own compliance continuously
+and publicly.
+
+**Governance Intelligence**
+*First coined: 2026-03-15 11:47 | San Diego (America/Los_Angeles)*
+The capability for the TY AI OS ecosystem to analyze patterns in
+the governance ledger and produce early warning signals when agent
+behavior is trending toward a violation before the violation
+occurs. Governance Intelligence moves the system from reactive
+enforcement to predictive monitoring. It produces signals only --
+it never takes enforcement action. The intelligence layer cannot
+modify ledger entries. Analysis reasoning is preserved in the
+governance record for auditability.
+
+---
+
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -1069,6 +1135,7 @@ It is the provenance record for the vocabulary itself.
 |---|---|---|---|
 | 2026-03-14 | JAYA-CLO-146 | Initial creation -- all sections | 114 |
 | 2026-03-15 | JAYA-CLO-148 | Date addition to all 114 terms. New terms: Agentic Ecosystem, Authority Boundary, Authority Flow, Downward Authority, Interpretive Conservatism, Kill-Switch Dominance, Non-Executing, User-Sovereign, Governance Precedes Intelligence, Authority Hardening, Chokepoint, Predictive Instability Detection, CRI Band, Autonomy Tier, Behavioral Recording, Registry Hash Enforcement, Snapshot Integrity, Tamper Detection, Guardian Codex, Observer Rotation Rule, Deterministic Audit, FIX Discipline, Provenance Anchoring, Vocabulary Ledger, Ledger Discipline, CLO Tag, Doctrine, Mission Governance, Continuity Anchor, Permission Ledger, Canon Memory, Canon Recall, Attestonic (RETIRED). LIC updated with pre-TY era marking. Section 10 created. | 47 |
+| 2026-03-15 | JAYA-CLO-151 | New terms: The Outward Reach, Federation, Policy Engine, Transparency Layer, Governance Intelligence. Section 11 created. | 5 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
