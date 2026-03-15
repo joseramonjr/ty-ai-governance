@@ -474,3 +474,49 @@ No Jaya-Runtime changes. No governance canon changes.
 Phase 5 scope definition -- first priority.
 Next CLO: JAYA-CLO-148
 Next Jaya Part: 77
+
+---
+
+> **CORRECTION NOTE -- 2026-03-15 | JAYA-CLO-148**
+> The second Entry-011 block above (CLO-147, TYOVA registration) was
+> committed with the wrong label. It should have been Entry-012.
+> The error is preserved per book discipline -- no retroactive edits.
+> Correct sequence resumes here at Entry-013.
+> Known false positives complete list: Ch18 lines 108, 291, 406, 431
+> -- Ch22 line 68 -- Ch26 line 638. Six total. No further hits = clean.
+
+### Entry-013
+#### Date
+2026-03-15 | San Diego (America/Los_Angeles)
+#### Model
+Claude Sonnet 4.6
+#### CLO
+JAYA-CLO-148
+#### Session Scope
+Chapter 26 vocabulary expansion -- date addition to all 114 terms + 47 new terms + MASTER_FIX_INDEX backfill for CLO-145 through CLO-147.
+#### What Was Done
+Chapter 26 date audit completed using ChatGPT export archives (176 conversations,
+2025-06-24 through 2026-03-03) and Claude.ai session history.
+Dates and times added to all 114 existing terms.
+80 terms verified with exact timestamps. 33 terms matched via alternate phrasing.
+3 terms (Autonomy Ceiling Invariant, Coalition Fingerprint, governance_hash)
+confirmed as Claude.ai era only -- dated ~2026-03-11.
+LIC marked as pre-TY era (first appearance 2025-06-26).
+Attestonic added as RETIRED TERM with first coined date 2025-12-28 and
+retirement date ~2026-03-06.
+47 new terms added across sections 1-9 and new Section 10 (Canon and Continuity
+Terms). Terms sourced from ChatGPT archives and Claude.ai session history audit.
+Total Chapter 26 term count: 161.
+MASTER_FIX_INDEX backfill completed -- CLO-145 through CLO-147 now recorded.
+S1 and S2 scans clean. Chapter 26 false positive at Ch18 line 108 confirmed
+and documented.
+#### Repo State After Session
+| Repo | HEAD | Status |
+|---|---|---|
+| Jaya-Runtime | a7d83ac | Unchanged |
+| ty-ai-governance | 44e2f7d | Clean -- pushed to origin |
+| TYOVA | Deployed on Vercel | Ch25 + Ch26 live |
+#### Next Session
+Phase 5 scope definition -- first priority.
+Next CLO: JAYA-CLO-149
+Next Jaya Part: 77

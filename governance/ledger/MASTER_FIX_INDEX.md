@@ -897,3 +897,39 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
 - **Description:** Book of TY gap audit session. Chapters 22 (Build Resilience Record), 23 (Governance Hygiene Audit), and 24 (SilverSounds321: The First Host) written and committed to ty-ai-governance. All four chapters (21-24) registered in TYOVA and confirmed live on Vercel. Chapter 18 Entry 010 committed. No Jaya-Runtime changes this session.
 - **Files:** book/TY_BOOK_CHAPTER_22_*.md, book/TY_BOOK_CHAPTER_23_*.md, book/TY_BOOK_CHAPTER_24_*.md, book/TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md
 - **Status:** COMPLETE
+
+## JAYA-CLO-145 | MASTER_FIX_INDEX Backfill CLO-137 through CLO-144
+- **CLO:** JAYA-CLO-145
+- **Commit:** 3b6d74e (ty-ai-governance)
+- **Date:** 2026-03-14 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** MASTER_FIX_INDEX backfill session. CLO-137 through CLO-144 recorded in the ledger to close the gap left between the Phase 4 build and the book gap audit sessions. No Jaya-Runtime changes. No governance canon changes.
+- **Files:** governance/ledger/MASTER_FIX_INDEX.md
+- **Status:** COMPLETE
+
+## JAYA-CLO-146 | Chapter 25 + Chapter 26 Initial Creation
+- **CLO:** JAYA-CLO-146
+- **Commits:** d471600, c3eb297, 7543e62 (ty-ai-governance)
+- **Date:** 2026-03-14 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 25 (The Ecosystem Evaluation -- A Historical Record) written and committed. Chapter 26 (The TY AI OS Vocabulary) created as a living document with 114 terms across 9 sections. Chapter 18 Entry-011 written. No Jaya-Runtime changes this session.
+- **Files:** book/TY_BOOK_CHAPTER_25_THE_ECOSYSTEM_EVALUATION.md, book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md, book/TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md
+- **Status:** COMPLETE
+
+## JAYA-CLO-147 | TYOVA Chapter 25 + Chapter 26 Registration
+- **CLO:** JAYA-CLO-147
+- **Commit:** c4917e5 (ty-ai-governance)
+- **Date:** 2026-03-15 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 25 and Chapter 26 registered in TYOVA and confirmed live on Vercel. Chapter 18 Entry-011 updated to reflect TYOVA registration. All 26 chapter slots now routable. No Jaya-Runtime changes this session.
+- **Files:** book/TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md
+- **Status:** COMPLETE
+
+## JAYA-CLO-148 | Chapter 26 Date Addition + 47 New Terms (161 Total)
+- **CLO:** JAYA-CLO-148
+- **Commit:** 44e2f7d (ty-ai-governance)
+- **Date:** 2026-03-15 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 26 expanded. Dates and times added to all 114 existing terms sourced from ChatGPT export archives (176 conversations, 2025-06-24 through 2026-03-03) and Claude.ai session history. 47 new terms added across existing sections and new Section 10 (Canon and Continuity Terms). Attestonic documented as RETIRED TERM. LIC marked as pre-TY era. Total term count: 161. No Jaya-Runtime changes this session.
+- **Files:** book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
+- **Status:** COMPLETE
