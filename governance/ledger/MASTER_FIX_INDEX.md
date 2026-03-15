@@ -933,3 +933,26 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
 - **Description:** Chapter 26 expanded. Dates and times added to all 114 existing terms sourced from ChatGPT export archives (176 conversations, 2025-06-24 through 2026-03-03) and Claude.ai session history. 47 new terms added across existing sections and new Section 10 (Canon and Continuity Terms). Attestonic documented as RETIRED TERM. LIC marked as pre-TY era. Total term count: 161. No Jaya-Runtime changes this session.
 - **Files:** book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
 - **Status:** COMPLETE
+
+## JAYA-CLO-148 | PENDING_TASKS Update
+- **CLO:** JAYA-CLO-148
+- **Commit:** af5f17c (ty-ai-governance)
+- **Date:** 2026-03-15 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** PENDING_TASKS.md updated. Phase 4 and Chapters 21-26 marked
+  complete. Tasks 5-8 added: CANON_INDEX creation, filename inconsistency fix,
+  Chapter 5 personal narrative, pre-repo backfill. No Jaya-Runtime changes.
+- **Files:** governance/ledger/PENDING_TASKS.md
+- **Status:** COMPLETE
+
+## JAYA-CLO-148 | TY_CANONICAL_GLOSSARY Retirement
+- **CLO:** JAYA-CLO-148
+- **Commit:** 4ea80c4 (ty-ai-governance)
+- **Date:** 2026-03-15 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** TY_CANONICAL_GLOSSARY.md retired. File contained 35 lines of
+  Windows-1252 em dash encoding corruption and was outdated (32 terms vs Chapter
+  26's 161 terms). Replaced with clean retirement notice pointing to Chapter 26
+  as the authoritative vocabulary source. 481 lines of corrupted content removed.
+- **Files:** governance/domains/TY/TY_CANONICAL_GLOSSARY.md
+- **Status:** COMPLETE
