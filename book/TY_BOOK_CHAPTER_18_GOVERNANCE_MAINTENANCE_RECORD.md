@@ -439,3 +439,38 @@ TYOVA: Chapters 25 and 26 not yet registered -- TYOVA update pending
 #### Vocabulary Added This Session
 Chapter 26 created with 114 terms across 9 sections. No individual
 terms to log here -- full vocabulary is in Chapter 26 itself.
+
+### Entry-011
+**Date:** 2026-03-15 | San Diego (America/Los_Angeles)
+**CLO:** JAYA-CLO-147
+**Model:** Claude Sonnet 4.6
+**Session Type:** TYOVA Registration -- Documentation Only
+**Repos Modified:** ty-ai-governance (this entry only) -- TYOVA via Lovable
+
+## What Happened
+
+Chapters 25 and 26 were registered in TYOVA via a single Lovable prompt.
+Three files updated: bookChapterContent.ts, BookOfTyIndex.tsx,
+BookOfTyChapter.tsx. No other files modified.
+
+Chapter 25 (The Ecosystem Evaluation: A Historical Record) is now live
+at /book/chapter-25 with SEALED badge. Commit: d471600.
+
+Chapter 26 (The TY AI OS Vocabulary) is now live at /book/chapter-26
+with LIVING badge (blue, distinct from SEALED). Never sealed by design.
+Commit: c3eb297.
+
+Full chapter content for both chapters is reader-accessible in TYOVA.
+No Jaya-Runtime changes. No governance canon changes.
+
+## Repo State at Close
+| Repo | HEAD | Status |
+|---|---|---|
+| Jaya-Runtime | a7d83ac | Unchanged |
+| ty-ai-governance | 7543e62 + this entry | Clean after commit |
+| TYOVA | Deployed on Vercel | Ch25 + Ch26 live |
+
+## Next Session
+Phase 5 scope definition -- first priority.
+Next CLO: JAYA-CLO-148
+Next Jaya Part: 77
