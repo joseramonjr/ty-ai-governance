@@ -381,3 +381,61 @@ All chapters registered and routable in TYOVA
   in Chapters 15-24 -- hygiene item, not urgent
 
 *This entry sourced from verified session facts only. Zero fabrication.*
+
+---
+
+### Entry-011
+#### Date
+2026-03-14 | San Diego (America/Los_Angeles)
+#### Model
+Claude Sonnet 4.6
+#### CLOs
+JAYA-CLO-145, JAYA-CLO-146
+#### Session Scope
+Documentation audit session. No code changes. No Jaya-Runtime changes.
+ty-ai-governance only. Two new chapters written. MASTER_FIX_INDEX backfilled.
+New mandatory session-close gate added to protocol.
+#### What Was Done
+- Full chat history audit conducted across all available sessions
+- MASTER_FIX_INDEX backfilled: CLO-137 through CLO-144 (8 missing entries)
+  appended -- 146 lines inserted -- commit 3b6d74e -- JAYA-CLO-145
+- Chapter 18 Entry-006 investigated -- confirmed present on disk in
+  non-standard format (## ENTRY-006) -- false alarm resolved, no action taken
+- Chapter 18 Entry-006 added to known false positive list for future reference
+- Chapter 26 line 638 identified as new permanent known false positive
+  (S1/S2 definition text contains A~ pattern -- not corruption)
+- Known false positives list updated: Ch18 line 291, Ch22 line 68,
+  Ch26 line 638
+- Full ecosystem vocabulary audit conducted across both ChatGPT archives
+  (conversations-000.zip + conversations-001.zip -- 176 conversations,
+  26,855 message segments, 75MB of text)
+- 114 total TY AI OS terms identified and defined across 9 categories
+- Chapter 25 (The Ecosystem Evaluation: A Historical Record) written --
+  377 lines -- commit d471600 -- JAYA-CLO-146
+- Chapter 26 (The TY AI OS Vocabulary -- Living Document) written --
+  700 lines -- 114 terms -- commit c3eb297 -- JAYA-CLO-146
+- New mandatory session-close gate added: vocabulary review after every
+  chapter completion and every phase seal
+- New mandatory session-close gate added: Chapter 18 entry verification
+  command after every commit
+- Both gates saved to Claude memory
+- All future Chapter 18 entries standardized to ### Entry-0XX format
+  from Entry-011 onward
+#### Repo State After Session
+ty-ai-governance HEAD: c3eb297 -- pushed to origin
+Jaya-Runtime HEAD: a7d83ac -- unchanged
+TYOVA: Chapters 25 and 26 not yet registered -- TYOVA update pending
+#### Known False Positives (Updated This Session)
+- Chapter 18 line 291 -- scan protocol name in text
+- Chapter 22 line 68 -- scan protocol name in text
+- Chapter 26 line 638 -- S1/S2 definition mentions A~ pattern
+#### Open Items Carried Forward
+- Phase 5 scope definition -- not yet started
+- TYOVA registration for Chapters 25 and 26 -- next session
+- Chapter 5 personal narrative -- blocked, requires Jose Ramon input
+- Phase 4.2 deferred items (nonce, ledger hash, Class B, keychain)
+- Luke and Jayme backfill -- ChatGPT zip files available
+- Pre-repo backfill -- Jaya Parts 1-34, TY Parts 1-29
+#### Vocabulary Added This Session
+Chapter 26 created with 114 terms across 9 sections. No individual
+terms to log here -- full vocabulary is in Chapter 26 itself.
