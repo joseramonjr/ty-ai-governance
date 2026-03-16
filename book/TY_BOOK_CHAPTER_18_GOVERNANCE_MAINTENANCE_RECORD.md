@@ -676,3 +676,43 @@ Next CLO: JAYA-CLO-154
 Next Jaya Part: 77
 Next Action: Part 77 -- Track A1 -- Nonce implementation (replay protection)
 Phase 5 status: Spec committed, Track A ready to begin
+
+### Entry-016
+**Date:** 2026-03-16 | San Diego (America/Los_Angeles)
+**Session CLO:** JAYA-CLO-155
+**Model:** Claude Sonnet 4.6
+**Phase:** Phase 5 ACTIVE -- Track A
+
+#### What Happened
+
+Part 77 was built and sealed. This part delivered nonce-based replay
+protection for the Global Attestonic Layer attestation system.
+
+Five files were modified or created: nonce.rs (new), node_identity.rs,
+verification.rs, ledger.rs, lib.rs. The NonceRegistry tracks consumed
+nonces with a 30-second expiry window matching the GAL freshness window.
+AttestationPayload was updated to include a nonce field. The canonical
+message format was updated to node_id|governance_hash|timestamp_utc|nonce.
+The verify_attestation Tauri command now runs a nonce replay check before
+signature verification. Replay violations are logged to the governance
+ledger with REPLAY_BLOCKED classification and raised as ReplayViolation
+alerts. The run_gal_proof command was updated with Step 5 -- a live
+replay protection proof condition.
+
+A Windows Smart App Control policy blocked cargo check after cargo clean
+removed cached build artifacts. Smart App Control was disabled to restore
+the development workflow. This is a one-time machine configuration event.
+The policy is incompatible with local Rust compilation.
+
+Chapter 26 was updated: Replay Violation added as term 167. First coined
+date set to 2026-03-16. Update log row added for JAYA-CLO-155.
+
+#### Repo State at Close
+- Jaya-Runtime HEAD: 912e56d -- jaya-part77-sealed
+- ty-ai-governance HEAD: d75a022 -- Chapter 26 Replay Violation term
+- TYOVA HEAD: ea0bbdb -- unchanged
+
+#### Next Session
+- Part 78 -- JAYA-CLO-156 -- Ledger Hash -- attestation binding
+- Run S1 + S2 scans before any build work
+- Confirm all three repo HEADs match this entry
