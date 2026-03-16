@@ -3,9 +3,9 @@
 **CLO:** JAYA-CLO-148 (date addition + new term audit)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
-**Updated:** 2026-03-15 | San Diego (America/Los_Angeles)
+**Updated:** 2026-03-16 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 166 (as of 2026-03-15)
+**Current Term Count:** 167 (as of 2026-03-16)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -1127,6 +1127,18 @@ governance record for auditability.
 
 ---
 
+**Replay Violation**
+*First coined: 2026-03-16 | San Diego (America/Los_Angeles)*
+A governance event recorded by the Jaya Runtime when a previously consumed
+nonce is submitted again during attestation verification. The runtime
+maintains a session-scoped nonce registry with a 30-second expiry window.
+Any attestation payload whose nonce has already been consumed is rejected
+before signature verification occurs. The rejection is written to the
+append-only governance ledger with classification REPLAY_BLOCKED and
+simultaneously raised as a ReplayViolation alert. Replay violations indicate
+either an attempted replay attack or a misconfigured attestation client.
+Introduced in Part 77 -- JAYA-CLO-155 -- Phase 5 Track A.
+
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -1136,11 +1148,12 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-14 | JAYA-CLO-146 | Initial creation -- all sections | 114 |
 | 2026-03-15 | JAYA-CLO-148 | Date addition to all 114 terms. New terms: Agentic Ecosystem, Authority Boundary, Authority Flow, Downward Authority, Interpretive Conservatism, Kill-Switch Dominance, Non-Executing, User-Sovereign, Governance Precedes Intelligence, Authority Hardening, Chokepoint, Predictive Instability Detection, CRI Band, Autonomy Tier, Behavioral Recording, Registry Hash Enforcement, Snapshot Integrity, Tamper Detection, Guardian Codex, Observer Rotation Rule, Deterministic Audit, FIX Discipline, Provenance Anchoring, Vocabulary Ledger, Ledger Discipline, CLO Tag, Doctrine, Mission Governance, Continuity Anchor, Permission Ledger, Canon Memory, Canon Recall, Attestonic (RETIRED). LIC updated with pre-TY era marking. Section 10 created. | 47 |
 | 2026-03-15 | JAYA-CLO-151 | New terms: The Outward Reach, Federation, Policy Engine, Transparency Layer, Governance Intelligence. Section 11 created. | 5 |
+| 2026-03-16 | JAYA-CLO-155 | New term: Replay Violation. Section 11 expanded. | 1 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-03-15 | San Diego (America/Los_Angeles)*
+*Updated: 2026-03-16 | San Diego (America/Los_Angeles)*
 *This document grows with the project. It is never finished.*
