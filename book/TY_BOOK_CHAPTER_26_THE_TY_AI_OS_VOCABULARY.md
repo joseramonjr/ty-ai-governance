@@ -1157,3 +1157,32 @@ It is the provenance record for the vocabulary itself.
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
 *Updated: 2026-03-16 | San Diego (America/Los_Angeles)*
 *This document grows with the project. It is never finished.*
+### Ledger Hash
+- **Definition:** A SHA-256 digest computed from the most recent entries in the
+  Jaya Runtime append-only ledger at the moment an attestation payload is signed.
+  The ledger hash captures ledger state at a specific point in time and is
+  included in the signed canonical message, binding the attestation to that
+  exact ledger state.
+- **First used:** Part 78 -- JAYA-CLO-156 | 2026-03-16 | San Diego
+- **Layer:** Runtime Enforcement -- Global Attestonic Layer
+
+### Ledger Hash Binding
+- **Definition:** The architectural mechanism by which an attestation payload is
+  cryptographically bound to the ledger state at signing time. A payload signed
+  at time T carries the ledger hash from T. If the ledger advances to T+1 before
+  the payload is verified, the hash no longer matches and the payload is rejected.
+  Ledger hash binding closes a replay attack vector that nonce protection alone
+  cannot address -- an attacker who captures a valid payload and replays it after
+  ledger state changes is detected and blocked.
+- **First used:** Part 78 -- JAYA-CLO-156 | 2026-03-16 | San Diego
+- **Layer:** Runtime Enforcement -- Global Attestonic Layer
+
+### Stale Ledger Hash
+- **Definition:** A ledger hash carried by an attestation payload that no longer
+  matches the current ledger state at verification time. A stale ledger hash is
+  evidence that the payload was generated before the ledger advanced -- either
+  because time passed, new governed operations were logged, or the payload is
+  being replayed. Stale ledger hash payloads are rejected by verify_attestation,
+  logged as StaleLedgerHash alerts, and written to the append-only ledger.
+- **First used:** Part 78 -- JAYA-CLO-156 | 2026-03-16 | San Diego
+- **Layer:** Runtime Enforcement -- Global Attestonic Layer
