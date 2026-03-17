@@ -1,4 +1,4 @@
-# TY AI OS — The Documentary Record
+﻿# TY AI OS — The Documentary Record
 ## Chapter 13: The Authority Boundary Model
 ### What Each System Can and Cannot Do — and Why the Boundaries Are Structural
 
@@ -306,3 +306,46 @@ human from exercising this override.
 *Chapter 13 compiled: 2026-03-06 | San Diego (America/Los_Angeles)*
 *FIX: BOOK-CLO-007 | MODEL: Claude Sonnet 4.6*
 *Classification: CANONICAL TECHNICAL DOCUMENTATION — NON-AUTHORITATIVE RECORD*
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter was compiled on 2026-03-06 covering TY AI OS authority
+boundaries. This postscript records authority boundary extensions since then.*
+
+**Autonomy Classes A, B, C -- Formally Defined (Phase 3, 2026-03-11)**
+
+Phase 3 formally resolved the autonomy classification gap identified before
+GAL specification drafting. Three autonomy classes were defined:
+Class A -- fully human-authorized, requires explicit approval for every action.
+Class B -- bounded autonomy, may act within pre-approved scope without
+per-action approval, but cannot escalate its own authority.
+Class C -- fully autonomous, reserved for systems that have passed formal
+verification against all Core Invariants.
+The Autonomy Ceiling Invariant was hardened: no agent may self-promote to a
+higher autonomy class under any circumstance.
+
+**Authority Non-Propagation Clause (Phase 3, 2026-03-11)**
+
+A formal authority non-propagation clause was established: authority granted
+to an agent does not propagate to agents it contacts, spawns, or influences.
+Every agent's authority is determined at registration time by the governance
+layer, not by other agents.
+
+**GAL Authority Boundary (Phase 4, 2026-03-13)**
+
+The Global Attestonic Layer introduced a new authority boundary: only a node
+with a valid Ed25519 keypair and a governance hash matching the canonical
+anchor may generate attestation payloads. Peer nodes cannot extend or modify
+each other's authority. Federation (Phase 5 Track B) will extend this
+boundary to external peer networks while preserving the non-propagation clause.
+
+**Phase 5 Track A -- Authority Enforcement Extensions (2026-03-16)**
+
+Nonce replay protection (Part 77) and ledger hash binding (Part 78) enforce
+authority at the attestation layer. A payload cannot be reused to claim
+authority it was granted at a different point in time.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*
