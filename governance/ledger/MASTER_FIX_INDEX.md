@@ -1297,3 +1297,13 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
   complete. All chapters now current through 2026-03-17.
 - **Files:** src/data/bookChapterContent.ts (TYOVA)
 - **Status:** COMPLETE
+## JAYA-CLO-157 | TYOVA Chapter 25 Postscript Push
+- **CLO:** JAYA-CLO-157
+- **Commit:** be294fc (TYOVA)
+- **Date:** 2026-03-17 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 25 postscript pushed to TYOVA. Was missed in
+  original 17-push sequence. Phase 4/5 status, Track A progress, governance
+  tooling, vocabulary expansion, ledger rules documented. Verified present.
+- **Files:** src/data/bookChapterContent.ts (TYOVA)
+- **Status:** COMPLETE
