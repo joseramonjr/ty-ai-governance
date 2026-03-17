@@ -1025,3 +1025,19 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
   book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md,
   book/TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md
 - **Status:** COMPLETE
+## JAYA-CLO-156 | Part 78 -- Ledger Hash -- Attestation Binding
+- **CLO:** JAYA-CLO-156
+- **Commit:** 5890d84 (Jaya-Runtime)
+- **Tag:** jaya-part78-sealed
+- **Date:** 2026-03-16 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Part 78 sealed. SHA-256 ledger hash computed from 10 most
+  recent ledger entries at attestation signing time. ledger_hash field added to
+  AttestationPayload and VerificationRequest. Canonical message format updated:
+  node_id|governance_hash|timestamp_utc|nonce|ledger_hash. verify_attestation
+  enforces ledger hash freshness check before signature verification -- stale
+  payloads rejected and logged. GAL proof Step 6 added and passed. cargo check
+  = 0 errors. All 6 GAL proof steps passed. Phase 4.2 Gap 4 closed.
+- **Files:** src-tauri/src/ledger.rs, src-tauri/src/node_identity.rs,
+  src-tauri/src/verification.rs, src-tauri/src/lib.rs
+- **Status:** COMPLETE

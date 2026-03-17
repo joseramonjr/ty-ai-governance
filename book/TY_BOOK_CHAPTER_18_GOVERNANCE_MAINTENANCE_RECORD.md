@@ -1,4 +1,4 @@
-# Chapter 18 -- The Governance Maintenance Record
+﻿# Chapter 18 -- The Governance Maintenance Record
 ## How TY AI OS Is Kept Current
 **Document Type:** Canonical Book Documentation -- Ongoing Governance Maintenance Journal
 **CLO:** JAYA-CLO-121
@@ -716,3 +716,58 @@ date set to 2026-03-16. Update log row added for JAYA-CLO-155.
 - Part 78 -- JAYA-CLO-156 -- Ledger Hash -- attestation binding
 - Run S1 + S2 scans before any build work
 - Confirm all three repo HEADs match this entry
+### Entry-017
+- **Date:** 2026-03-16 | 20:00 America/Los_Angeles | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Session Type:** Phase 5 Track A -- Part 78 Build Session
+- **CLO:** JAYA-CLO-156
+- **Jaya-Runtime HEAD:** 5890d84 (tag: jaya-part78-sealed)
+- **ty-ai-governance HEAD:** (post-commit -- see below)
+- **TYOVA HEAD:** ea0bbdb
+
+## Session Summary
+
+Part 78 sealed. Ledger hash attestation binding built and proven.
+
+### Pre-Build Work
+Session opened with a MASTER_FIX_INDEX gap audit. CLO-149 and CLO-150 were
+found permanently unrecoverable -- both corresponded to TYOVA Lovable pushes
+with no CLO tags and no manual ledger entries. A permanent gap notice was
+written to MASTER_FIX_INDEX. CLO-151 through CLO-155 were backfilled from
+git log reconstruction. Three permanent ledger discipline rules were
+established and added to memory: Ledger Rule 1 (write MASTER_FIX_INDEX same
+session as CLO -- never defer), Ledger Rule 2 (every TYOVA Lovable push
+requires immediate manual MASTER_FIX_INDEX entry before session close),
+Ledger Rule 3 (session-close checklist must confirm MASTER_FIX_INDEX last
+entry matches last CLO used). Correct MASTER_FIX_INDEX path confirmed:
+governance/ledger/MASTER_FIX_INDEX.md.
+
+### Part 78 Build -- JAYA-CLO-156
+Four files modified: ledger.rs, node_identity.rs, verification.rs, lib.rs.
+compute_ledger_hash() added to ledger.rs -- SHA-256 of 10 most recent ledger
+entries ordered by rowid DESC. ledger_hash field added to AttestationPayload
+and VerificationRequest. Canonical message format updated to:
+node_id|governance_hash|timestamp_utc|nonce|ledger_hash.
+sign_governance_state() updated to accept ledger_hash as parameter -- caller
+(lib.rs) computes hash before signing. verify_attestation updated with
+three-stage check: (1) nonce replay, (2) ledger hash freshness, (3) signature.
+Stale ledger hash payloads rejected and logged as StaleLedgerHash alerts.
+GAL proof updated with Step 6 -- ledger hash binding proof.
+
+### Proof Condition -- PASSED
+All 6 GAL proof steps passed at 2026-03-17T03:47:27Z:
+Step 1 -- Node identity loaded -- PASSED
+Step 2 -- Attestation payload with nonce + ledger_hash -- PASSED
+Step 3 -- Valid signature verified -- PASSED
+Step 4 -- Tampered payload rejected -- PASSED
+Step 5 -- Replay protection -- PASSED
+Step 6 -- Ledger hash binding -- payload carried e2b7eaa0... but current
+state was 5c177e80... confirming stale payload rejection -- PASSED
+cargo check = 0 errors. Phase 4.2 Gap 4 closed.
+
+### Governance Notes
+- Documentation gap analysis conducted -- root causes identified and
+  three permanent ledger rules established to prevent recurrence.
+- MASTER_FIX_INDEX backfill committed: 4459e26 (ty-ai-governance).
+- Part 78 commit: 5890d84 (Jaya-Runtime) -- tag: jaya-part78-sealed.
+- MASTER_FIX_INDEX CLO-156 entry written same session per Ledger Rule 1.
