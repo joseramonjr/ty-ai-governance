@@ -1041,3 +1041,14 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
 - **Files:** src-tauri/src/ledger.rs, src-tauri/src/node_identity.rs,
   src-tauri/src/verification.rs, src-tauri/src/lib.rs
 - **Status:** COMPLETE
+## JAYA-CLO-156 | TYOVA Chapter 26 -- Ledger Hash Terms Push
+- **CLO:** JAYA-CLO-156
+- **Commit:** 620b14c (TYOVA) -- f06acee (TYOVA intermediate)
+- **Date:** 2026-03-16 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Three new Chapter 26 vocabulary terms pushed to TYOVA via
+  Lovable: Ledger Hash, Ledger Hash Binding, Stale Ledger Hash. Terms added
+  to src/data/bookChapterContent.ts. Total Chapter 26 terms: 170.
+  Pushed same session as CLO-156 per Ledger Rule 2.
+- **Files:** src/data/bookChapterContent.ts (TYOVA)
+- **Status:** COMPLETE
