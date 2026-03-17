@@ -1,4 +1,4 @@
-# Chapter 21 -- The Global Attestonic Layer
+﻿# Chapter 21 -- The Global Attestonic Layer
 
 *TY AI OS: The Case for Verifiable Governance*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
@@ -182,3 +182,44 @@ That is survivable governance. That is the work.
 *Sealed: 2026-03-13 | San Diego (America/Los_Angeles)*
 *JAYA-CLO-143 | Claude Sonnet 4.6*
 *Facts sourced from verified session history only. Zero fabrication.*
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter was sealed on 2026-03-13 covering the Global Attestonic Layer
+through Phase 4 completion. This postscript records what has been built on
+top of the GAL since sealing.*
+
+**Phase 5 Track A -- Extending the GAL (2026-03-16)**
+
+Two Phase 4.2 gaps identified during GAL development were closed in Phase 5
+Track A:
+
+Part 77 (JAYA-CLO-155, 2026-03-16) -- Nonce replay protection added.
+Every attestation payload now carries a cryptographically random 16-byte
+nonce. The Jaya Runtime maintains a session-scoped nonce registry with a
+30-second expiry window. A nonce submitted a second time is rejected as a
+Replay Violation, logged to the append-only ledger, and raised as an alert.
+
+Part 78 (JAYA-CLO-156, 2026-03-16) -- Ledger hash attestation binding added.
+Every attestation payload now carries a SHA-256 hash of the 10 most recent
+ledger entries at signing time. The verification engine checks ledger hash
+freshness before signature verification. A payload replayed after the ledger
+has advanced carries a stale ledger hash and is rejected. This closes a
+replay attack vector that nonce protection alone cannot address.
+
+The canonical message format evolved across Phase 4 and Phase 5 Track A:
+Phase 4:   node_id|governance_hash|timestamp_utc
+Part 77:   node_id|governance_hash|timestamp_utc|nonce
+Part 78:   node_id|governance_hash|timestamp_utc|nonce|ledger_hash
+
+The GAL proof condition expanded from 4 steps (Phase 4) to 6 steps (Part 78).
+All 6 steps pass. The governance hash anchored in Phase 4 remains unchanged:
+cd7ef6c73e8050394bec5b0e0289238cd000d7c4ce133ec951653531356a6e09
+
+Three new vocabulary terms added to Chapter 26: Ledger Hash, Ledger Hash
+Binding, Stale Ledger Hash. Two terms added: Replay Protection, Replay
+Violation.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*

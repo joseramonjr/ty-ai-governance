@@ -1,4 +1,4 @@
-# Chapter 16 — Jaya Phase 1 — Outward-Facing Governance
+﻿# Chapter 16 — Jaya Phase 1 — Outward-Facing Governance
 ## TY AI OS: The Case for Verifiable Governance
 **Sealed:** 2026-03-11 | San Diego
 **FIX:** JAYA-CLO-096 | MODEL: Claude Sonnet 4.6
@@ -106,3 +106,47 @@ Chapter 16 compiled: 2026-03-11 | San Diego (America/Los_Angeles)
 Source: Jaya Runtime session carry-over records — Parts 35–50
 FIX: JAYA-CLO-096 | MODEL: Claude Sonnet 4.6
 Classification: CANONICAL BOOK DOCUMENTATION
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter was compiled on 2026-03-11 covering Phase 1 (Jaya Runtime
+outward-facing governance, Parts 35-50). This postscript records all phases
+that followed Phase 1.*
+
+**Phase 2 -- Multi-Agent Governance (Sealed 2026-03-11)**
+
+Phase 2 built inter-agent communication governance, coalition fingerprint
+detection, escalation engine, agent isolation, and full governance
+documentation across Parts 51-65. Phase 2 sealed 2026-03-11.
+
+**Phase 3 -- TY Governance Specification v0.1 (Sealed 2026-03-11)**
+
+Phase 3 produced TY_GAL_SPEC_v0.1.md (869 lines). Six architectural gaps
+resolved before drafting. Phase 3 sealed 2026-03-11.
+
+**Phase 4 -- Global Attestonic Layer (Sealed 2026-03-13)**
+
+Phase 4 built the GAL across Parts 69-76. Ed25519 keypair generation,
+attestation payload signing, peer registry with key pinning, verification
+engine, human alert integration, GAL dashboard, four-step proof condition.
+Canonical governance hash anchored:
+cd7ef6c73e8050394bec5b0e0289238cd000d7c4ce133ec951653531356a6e09.
+Phase 4 sealed 2026-03-13.
+
+**Phase 5 -- The Outward Reach (Active 2026-03-15)**
+
+Phase 5 Track A closes Phase 4.2 gaps -- nonce replay protection (Part 77,
+sealed 2026-03-16) and ledger hash attestation binding (Part 78, sealed
+2026-03-16). Parts 79 (Class B Autonomy) and 80 (Keychain) remain pending.
+Track B (Federation, Policy Engine, Transparency Layer, Governance
+Intelligence) follows Track A completion.
+
+The Phase 1 proof event -- Jaya catching a real external AI agent violating
+a boundary (FileRead blocked, logged, alerted) -- remains the foundational
+proof condition that all subsequent phases are built upon. That proof has
+never been invalidated. Every phase since has extended it.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*
