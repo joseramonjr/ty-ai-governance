@@ -1,4 +1,4 @@
-# Chapter 20 -- The Governance Specification
+﻿# Chapter 20 -- The Governance Specification
 
 **CLO:** JAYA-CLO-126
 **Date:** 2026-03-11 | San Diego (America/Los_Angeles)
@@ -74,3 +74,36 @@ That is the foundation Phase 4 requires. The Global Attestonic Layer cannot be b
 *Chapter 20 -- The Governance Specification*
 *Part 66 | JAYA-CLO-126 | 2026-03-11 | San Diego*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter was compiled on 2026-03-11 covering the TY Governance
+Specification v0.1 (Phase 3). This postscript records what has been built
+on top of the specification since sealing.*
+
+**Phase 4 -- The Specification Put Into Practice (Sealed 2026-03-13)**
+
+Phase 4 implemented the Global Attestonic Layer directly from the governance
+specification. TY_GAL_SPEC_v0.1.md (869 lines) defined the architecture.
+Phase 4 built it: Ed25519 keypair generation, attestation payload signing,
+peer registry with key pinning, verification engine, human alert integration,
+GAL dashboard, and a four-step proof condition. The specification's six
+architectural gaps -- autonomy classification (Classes A/B/C), authority
+non-propagation clauses, and the hardened Autonomy Ceiling Invariant -- were
+all resolved before implementation began. Phase 4 sealed 2026-03-13.
+
+**Phase 5 -- The Specification Extended (Active 2026-03-15)**
+
+Phase 5 (The Outward Reach) began 2026-03-15. TY_PHASE5_SPEC_v0.1.md
+committed to ty-ai-governance/spec/. Phase 5 Track A closes Phase 4.2 gaps
+identified during GAL implementation. Phase 5 Track B (Federation, Policy
+Engine, Transparency Layer, Governance Intelligence) extends the governance
+specification into external peer networks and public verification.
+
+The governance specification is a living document. Each phase extends it.
+The specification is never considered complete while the project is active.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*
