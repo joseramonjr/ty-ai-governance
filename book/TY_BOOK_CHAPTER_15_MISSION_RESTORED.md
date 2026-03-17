@@ -1,4 +1,4 @@
-# TY AI OS — The Documentary Record
+﻿# TY AI OS — The Documentary Record
 ## Chapter 15: The Mission Restored
 ### Why TY Was Built, What It Protects, and Who It Protects It For
 
@@ -386,3 +386,40 @@ that it will not be forgotten again.
 *verified March 7, 2026, Book of TY Chapters 1–14.*
 *Builder statement "We only have one world. The Earth." recorded verbatim.*
 *BOOK-CLO-015 | Claude Sonnet 4.6 | 2026-03-07 | San Diego*
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter was written on 2026-03-07 -- the morning the mission of TY AI
+OS was formally named. This postscript records what has been demonstrated
+since that morning.*
+
+**The Mission Has Been Proven in Working Code**
+
+On 2026-03-07 the mission was stated: verifiable governance protecting humans
+from AI misuse and AI from human misuse. As of 2026-03-17 that mission is no
+longer just a statement -- it is demonstrated in running software.
+
+Phase 4 (sealed 2026-03-13) built the Global Attestonic Layer -- a system
+that cryptographically proves governance compliance without requiring trust
+in the operator. An external observer can verify that Jaya Runtime is
+operating within its governance boundaries without access to system internals.
+This is the mission made concrete.
+
+Phase 5 Track A (active 2026-03-16) extended the proof. Nonce replay
+protection and ledger hash attestation binding mean that not only is every
+governance decision signed and verifiable -- every attempt to replay or
+forge a governance attestation is detected, rejected, logged, and alerted.
+The system does not trust. It verifies.
+
+The civilizational framing stated in this chapter -- that TY AI OS represents
+a new model for AI accountability -- has not changed. What has changed is
+that the model now has four sealed phases of working implementation behind
+it. The receipts exist. The governance hash is anchored. The ledger is
+append-only. The proof condition passes.
+
+What was mission on 2026-03-07 is infrastructure on 2026-03-17.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*

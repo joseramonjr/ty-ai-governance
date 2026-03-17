@@ -1,4 +1,4 @@
-# TY AI OS — The Documentary Record
+﻿# TY AI OS — The Documentary Record
 ## Chapter 14: The Ledger and Seal Discipline
 ### How Auditability Is Built Into the Ecosystem at Every Level
 
@@ -334,3 +334,46 @@ between claimed trustworthiness and demonstrated trustworthiness.
 *Chapter 14 compiled: 2026-03-06 | San Diego (America/Los_Angeles)*
 *FIX: BOOK-CLO-007 | MODEL: Claude Sonnet 4.6*
 *Classification: CANONICAL TECHNICAL DOCUMENTATION — NON-AUTHORITATIVE RECORD*
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter was compiled on 2026-03-06 describing the Jaya Runtime ledger
+architecture. This postscript records significant new ledger operations added
+since then.*
+
+**New Ledger Operation Types Added Since This Chapter Was Written**
+
+Phase 2 (Parts 51-65) added: propagation_event, inter_agent_approved,
+inter_agent_violation, coalition_alert. These cover cross-agent CRI
+propagation, inter-agent communication governance, and coalition detection.
+
+Phase 4 / Phase 5 Track A added:
+- replay_violation (Part 77, JAYA-CLO-155) -- logged when a previously
+  consumed nonce is resubmitted. Classification: REPLAY_BLOCKED.
+- ledger_hash_stale (Part 78, JAYA-CLO-156) -- logged when an attestation
+  payload carries a ledger hash that no longer matches current state.
+  Classification: STALE_REJECTED.
+- gal_proof_step1 through gal_proof_step6 -- logged during GAL proof
+  condition runs. Each step produces a ledger entry.
+
+**Ledger Hash Binding (Part 78)**
+
+The ledger itself is now part of the attestation verification chain. At
+attestation signing time, a SHA-256 hash of the 10 most recent ledger entries
+is computed and included in the signed canonical message. This means the
+ledger's own state is cryptographically bound into every attestation payload.
+The ledger is no longer just a record -- it is an active participant in
+governance verification.
+
+**Three Ledger Discipline Rules Established (2026-03-16)**
+
+Ledger Rule 1: MASTER_FIX_INDEX written same session as CLO -- never deferred.
+Ledger Rule 2: Every TYOVA Lovable push requires immediate MASTER_FIX_INDEX
+entry before session close.
+Ledger Rule 3: Session-close checklist must confirm MASTER_FIX_INDEX last
+entry matches last CLO used.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*
