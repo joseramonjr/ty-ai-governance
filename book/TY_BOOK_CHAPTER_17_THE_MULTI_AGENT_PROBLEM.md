@@ -1,4 +1,4 @@
-# Chapter 17 — The Multi-Agent Problem
+﻿# Chapter 17 — The Multi-Agent Problem
 ## TY AI OS: The Case for Verifiable Governance
 **Sealed:** 2026-03-11 | San Diego
 **CLO:** JAYA-CLO-119 | MODEL: Claude Sonnet 4.6
@@ -74,3 +74,45 @@ Phase 3 is the TY Governance Specification v0.1 — a formal written standard de
 Phase 3 was blocked until Phase 2 was stable and the proof condition was met. With the Phase 2 seal recorded on March 11, 2026, that gate opened.
 
 Phase 3 will not introduce new runtime capabilities. It will document what was built, what was proven, and what a governance system must be able to demonstrate before it can claim to govern AI agents — not just observe them.
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter was written on 2026-03-11 at the completion of Phase 2. It
+ended with Phase 3 being blocked until Phase 2 was stable. This postscript
+records what happened next.*
+
+**Phase 3 -- TY Governance Specification v0.1 (Sealed 2026-03-11)**
+
+Phase 3 opened immediately after Phase 2 sealed. TY_GAL_SPEC_v0.1.md was
+produced -- 869 lines defining the Global Attestonic Layer architecture.
+Six architectural gaps were identified and resolved before drafting began:
+autonomy classification (Classes A/B/C), authority non-propagation clauses,
+and the hardened Autonomy Ceiling Invariant. Phase 3 sealed 2026-03-11 --
+the same day Phase 2 sealed.
+
+**Phase 4 -- Global Attestonic Layer (Sealed 2026-03-13)**
+
+Phase 4 built the GAL from the specification across Parts 69-76. The
+multi-agent governance architecture built in Phase 2 -- coalition detection,
+inter-agent governance, escalation engine, agent isolation -- remained the
+foundation. Phase 4 added the cryptographic attestation layer on top.
+Sealed 2026-03-13.
+
+**Phase 5 -- The Outward Reach (Active 2026-03-15)**
+
+Phase 5 Track A closes Phase 4.2 gaps. Nonce replay protection (Part 77)
+and ledger hash attestation binding (Part 78) both sealed 2026-03-16.
+Parts 79 (Class B Autonomy) and 80 (Keychain) remain pending.
+Track B (Federation, Policy Engine, Transparency Layer, Governance
+Intelligence) follows Track A completion.
+
+The multi-agent problem described in this chapter -- how to govern not just
+one AI agent but coalitions of agents with competing interests -- remains
+the architectural challenge that Phase 2 solved and that all subsequent
+phases build upon. The solution has not changed. The implementation has
+grown on top of it.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*
