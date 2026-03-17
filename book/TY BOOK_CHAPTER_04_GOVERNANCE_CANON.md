@@ -1,4 +1,4 @@
-# TY AI OS — The Documentary Record
+﻿# TY AI OS — The Documentary Record
 ## Chapter 4: The Constitutional Layer
 ### The Governance Canon — Master Charter, Invariants, and the Discipline That Made It Auditable
 
@@ -461,3 +461,48 @@ the meaning.
 *Source: ChatGPT export archives + Claude session records + ty-ai-governance repo*
 *FIX: BOOK-CLO-004 | MODEL: Claude Sonnet 4.6*
 *Classification: CANONICAL BOOK DOCUMENTATION — NON-AUTHORITATIVE RECORD*
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter covers the TY AI OS governance canon in its early form.
+This postscript records significant governance canon expansion since then.*
+
+**Phase 5 Specification Added (2026-03-15)**
+
+TY_PHASE5_SPEC_v0.1.md committed to ty-ai-governance/spec/. Phase 5 named
+"The Outward Reach." Track A (Foundation Completion) and Track B (Outward
+Reach) defined. Parts 77-92 scoped across both tracks.
+
+**Three Ledger Discipline Rules Established (2026-03-16)**
+
+Ledger Rule 1: MASTER_FIX_INDEX entry must be written in the same session
+as the CLO. Never deferred.
+Ledger Rule 2: Every TYOVA Lovable push requires an immediate manual
+MASTER_FIX_INDEX entry in ty-ai-governance before session close.
+Ledger Rule 3: Session-close checklist must confirm MASTER_FIX_INDEX last
+entry matches last CLO used.
+These rules were established after CLO-149 and CLO-150 were found permanently
+unrecoverable due to undocumented TYOVA Lovable pushes.
+
+**Generate-Handoff Tool Added (2026-03-17)**
+
+tools/Generate-Handoff.ps1 committed to ty-ai-governance. Reads live git
+state from all three repos, MASTER_FIX_INDEX last CLO, Chapter 18 last
+entry, and Chapter 26 term count. Produces verified handoff block
+automatically. Eliminates manual transcription errors in session handoffs.
+
+**MASTER_FIX_INDEX -- CLO Sequence**
+
+Last CLO as of this postscript: JAYA-CLO-157.
+All CLOs from CLO-148 through CLO-157 verified in MASTER_FIX_INDEX.
+CLO-149 and CLO-150 permanently documented as unrecoverable gap.
+
+**Chapter 26 Vocabulary**
+
+Expanded to 161 verified terms across 11 sections. Three permanent ledger
+rules and Generate-Handoff tool both documented in Chapter 26.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*

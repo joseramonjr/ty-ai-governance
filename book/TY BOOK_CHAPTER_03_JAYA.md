@@ -1,4 +1,4 @@
-# TY AI OS — The Documentary Record
+﻿# TY AI OS — The Documentary Record
 ## Chapter 3: The Execution Engine
 ### Building Jaya Runtime — Governed Hands for a Governance-First OS
 
@@ -391,3 +391,42 @@ mattered, what drove the decisions, and where TY AI OS is going.
 *Source: ChatGPT export archives + Claude session records (Parts 36–37)*
 *FIX: BOOK-CLO-003 | MODEL: Claude Sonnet 4.6*
 *Classification: CANONICAL BOOK DOCUMENTATION — NON-AUTHORITATIVE RECORD*
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter covers Jaya Runtime through Parts 36-37. This postscript
+records the full scope of Jaya development since then.*
+
+**Jaya Runtime -- 78 Parts Across 5 Phases (as of 2026-03-17)**
+
+Phase 1 (Parts 35-50): Agent registry, per-agent CRI bands, tiered response
+Tier0-3, append-only audit ledger, outward-facing sentinel, drift detection,
+violation classes, human alert system. Proof condition met -- Jaya caught a
+real external AI agent violating a boundary.
+
+Phase 2 (Parts 51-65): Inter-agent communication governance, coalition
+fingerprint detection, escalation engine, agent isolation. Sealed 2026-03-11.
+
+Phase 3 (Part 66): TY Governance Specification v0.1 -- TY_GAL_SPEC_v0.1.md
+(869 lines). Six architectural gaps resolved. Sealed 2026-03-11.
+
+Phase 4 (Parts 69-76): Global Attestonic Layer. Ed25519 keypair generation,
+attestation payload signing, peer registry with key pinning, verification
+engine, human alert integration, GAL dashboard, four-step proof condition.
+Canonical governance hash anchored:
+cd7ef6c73e8050394bec5b0e0289238cd000d7c4ce133ec951653531356a6e09.
+Sealed 2026-03-13.
+
+Phase 5 Track A (Parts 77-78, active 2026-03-15):
+Part 77 -- Nonce replay protection. Sealed 2026-03-16.
+Part 78 -- Ledger hash attestation binding. Sealed 2026-03-16.
+Part 79 -- Class B Autonomy -- NEXT.
+Part 80 -- Keychain -- PENDING.
+
+Phase 5 Track B (Parts 81-92): Federation, Policy Engine, Transparency Layer,
+Governance Intelligence. Blocked until Track A completes.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*
