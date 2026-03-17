@@ -1,4 +1,4 @@
-# Chapter 7 — Luke and Jayme
+﻿# Chapter 7 — Luke and Jayme
 
 ## Two Names, Two Purposes
 
@@ -163,3 +163,28 @@ That is the design. That is what the names mean.
 ---
 
 *Chapter 7 source material: LUKE_DOMAIN_BACKFILL.md (TASK4-CLO-001) and JAYME_DOMAIN_BACKFILL.md (TASK4-CLO-002), compiled 2026-03-06 from verified ChatGPT export archives.*
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter was compiled on 2026-03-06 covering Luke AI and Jayme AI.
+This postscript records their current status as of 2026-03-17.*
+
+**Luke AI -- Status Unchanged**
+
+Luke AI remains defined as a completely isolated AI assistant for Security
+Audit Explanation features. Separate infrastructure, UI integration, backend
+implementation, audit logging, and admin access control. Role and boundaries
+unchanged since this chapter was written.
+
+**Jayme AI -- Still Undefined**
+
+Jayme AI's role remains formally undefined as of 2026-03-17. This is an
+honest status -- Jayme was named and scoped as a governed development
+assistant but no implementation work has begun. Jayme is listed as a
+post-Phase-5 gap item. The role will be defined after Phase 5 completes.
+No fabrication -- Jayme exists as a named intention, not yet a built system.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*
