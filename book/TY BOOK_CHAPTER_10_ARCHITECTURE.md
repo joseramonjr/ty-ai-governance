@@ -1,4 +1,4 @@
-# TY AI OS — The Documentary Record
+﻿# TY AI OS — The Documentary Record
 ## Chapter 10: The Architecture of Trust
 ### How the Three-Layer Model Works and Why Each Layer Exists
 
@@ -299,3 +299,50 @@ explicitly rejects.
 *Chapter 10 compiled: 2026-03-06 | San Diego (America/Los_Angeles)*
 *FIX: BOOK-CLO-007 | MODEL: Claude Sonnet 4.6*
 *Classification: CANONICAL TECHNICAL DOCUMENTATION — NON-AUTHORITATIVE RECORD*
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter was compiled on 2026-03-06 describing the three-layer TY AI OS
+architecture. This postscript records significant architectural additions
+since then.*
+
+**Global Attestonic Layer -- Phase 4 (Sealed 2026-03-13)**
+
+Phase 4 added a fourth architectural capability on top of the three-layer
+model: cryptographic attestation. Every Jaya Runtime node now has a stable
+Ed25519 keypair generating a deterministic node_id and fingerprint. Governance
+state is signed at attestation time producing a payload that any peer can
+verify without access to system internals. The canonical governance hash is
+anchored permanently:
+cd7ef6c73e8050394bec5b0e0289238cd000d7c4ce133ec951653531356a6e09.
+
+**Phase 5 Track A -- Architectural Extensions (2026-03-16)**
+
+Two extensions to the attestation architecture were built in Phase 5 Track A:
+
+Nonce replay protection (Part 77): Every attestation payload carries a
+cryptographically random 16-byte nonce. The runtime maintains a session-scoped
+nonce registry. Resubmitted nonces are rejected as Replay Violations.
+
+Ledger hash binding (Part 78): Every attestation payload carries a SHA-256
+hash of the 10 most recent ledger entries at signing time. The verification
+engine checks ledger hash freshness before signature verification. Stale
+payloads are rejected. This makes the ledger an active participant in
+governance verification -- not just a record.
+
+The canonical message format at each architectural milestone:
+Phase 4:   node_id|governance_hash|timestamp_utc
+Part 77:   node_id|governance_hash|timestamp_utc|nonce
+Part 78:   node_id|governance_hash|timestamp_utc|nonce|ledger_hash
+
+**Phase 5 Track B -- Planned Architectural Extensions**
+
+Federation, Policy Engine, Transparency Layer, and Governance Intelligence
+are planned but not yet built. These extend the architecture outward to
+external peer networks and public verification. Track B begins after Track A
+completes.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*
