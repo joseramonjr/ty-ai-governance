@@ -1052,3 +1052,18 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
   Pushed same session as CLO-156 per Ledger Rule 2.
 - **Files:** src/data/bookChapterContent.ts (TYOVA)
 - **Status:** COMPLETE
+## JAYA-CLO-157 | Generate-Handoff.ps1 + Chapter 26 Term Count Fix
+- **CLO:** JAYA-CLO-157
+- **Commit:** df3e074 (ty-ai-governance)
+- **Date:** 2026-03-17 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Generate-Handoff.ps1 created in tools/ directory. Script
+  reads live git state, MASTER_FIX_INDEX last CLO, Chapter 18 last entry, and
+  Chapter 26 term count to produce a verified handoff block automatically.
+  Output printed to terminal and copied to clipboard. Eliminates manual
+  transcription errors in handoff documents. Chapter 26 term count header
+  corrected from 167 to 170 to reflect the three terms added in CLO-156
+  session. No Jaya-Runtime changes this session.
+- **Files:** tools/Generate-Handoff.ps1,
+  book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
+- **Status:** COMPLETE
