@@ -956,3 +956,72 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
   as the authoritative vocabulary source. 481 lines of corrupted content removed.
 - **Files:** governance/domains/TY/TY_CANONICAL_GLOSSARY.md
 - **Status:** COMPLETE
+## GAP NOTICE | CLO-149 and CLO-150
+- **Status:** PERMANENTLY UNRECOVERABLE
+- **Date Identified:** 2026-03-16 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Explanation:** CLO-149 and CLO-150 were assigned and used during a session
+  in the period between CLO-148 (2026-03-15) and CLO-151 (2026-03-15).
+  They correspond to TYOVA Lovable pushes. Lovable commits carry no CLO tags.
+  No manual MASTER_FIX_INDEX entry was written at the time. The scope of these
+  CLOs cannot be reconstructed without fabrication. Per ledger integrity
+  discipline, fabricated entries are not permitted. This gap is documented
+  permanently. Ledger Rules 1 and 2 (established 2026-03-16) prevent recurrence.
+- **TYOVA commits in window:** ea0bbdb, 0166428, 28e4e35, 5f04a19, 6517cd9,
+  febcfda (approximate -- exact CLO-to-commit mapping unrecoverable)
+- **Action:** None. Gap acknowledged. Sequence continues at CLO-151.
+
+## JAYA-CLO-151 | Chapter 26 Section 11 -- Phase 5 Terms
+- **CLO:** JAYA-CLO-151
+- **Commit:** 99617f0 (ty-ai-governance)
+- **Date:** 2026-03-15 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 26 Section 11 added. Phase 5 vocabulary terms
+  written and committed.
+- **Files:** book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
+- **Status:** COMPLETE
+
+## JAYA-CLO-152 | Phase 5 Spec v0.1 -- The Outward Reach
+- **CLO:** JAYA-CLO-152
+- **Commit:** 37a2712 (ty-ai-governance)
+- **Date:** 2026-03-15 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** TY_PHASE5_SPEC_v0.1.md written and committed to
+  ty-ai-governance/spec/. Phase 5 named "The Outward Reach." Track A
+  (Foundation Completion) and Track B (Outward Reach) defined. Parts 77-92
+  scoped across both tracks.
+- **Files:** spec/TY_PHASE5_SPEC_v0.1.md
+- **Status:** COMPLETE
+
+## JAYA-CLO-153 | Chapter 18 Entry-015 -- Phase 5 Scope Session
+- **CLO:** JAYA-CLO-153
+- **Commit:** 8f242a7 (ty-ai-governance)
+- **Date:** 2026-03-15 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 18 Entry-015 written covering Phase 5 scope
+  definition session and TYOVA audit.
+- **Files:** book/TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md
+- **Status:** COMPLETE
+
+## JAYA-CLO-154 | Chapter 18 Entry-015 Corrections
+- **CLO:** JAYA-CLO-154
+- **Commit:** d50ad3c (ty-ai-governance)
+- **Date:** 2026-03-15 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 18 Entry-015 corrected. HEAD commit hash and CLO
+  reference fixed.
+- **Files:** book/TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md
+- **Status:** COMPLETE
+
+## JAYA-CLO-155 | Part 77 -- Nonce Replay Protection
+- **CLO:** JAYA-CLO-155
+- **Commit:** 912e56d (Jaya-Runtime), d75a022 + 9650727 (ty-ai-governance)
+- **Date:** 2026-03-16 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Part 77 sealed. Nonce replay protection built into
+  attestation verification engine. Chapter 26 Replay Violation term added
+  (167 total terms). Chapter 18 Entry-016 written and committed.
+- **Files:** src-tauri/src/ (Jaya-Runtime),
+  book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md,
+  book/TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md
+- **Status:** COMPLETE
