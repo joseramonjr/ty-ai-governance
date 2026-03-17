@@ -1067,3 +1067,28 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
 - **Files:** tools/Generate-Handoff.ps1,
   book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
 - **Status:** COMPLETE
+## JAYA-CLO-157 | Pre-Session Tools + Chapter 26 Sync + TYOVA Updates
+- **CLO:** JAYA-CLO-157
+- **Commits:** df3e074, 92a805d, 7299e87, ff59982, 064a56e (ty-ai-governance)
+           9104012, 0aa004c, b2377ab, d3705d4 (TYOVA)
+- **Date:** 2026-03-17 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Full pre-session governance and vocabulary sync session.
+  (1) Generate-Handoff.ps1 created in tools/ -- reads live git state,
+  MASTER_FIX_INDEX, Ch18, Ch26 header to produce verified handoff block
+  automatically. Output copied to clipboard. Eliminates manual transcription.
+  (2) Chapter 26 audited -- Replay Protection and Generate-Handoff terms
+  found missing and added. Duplicate Ledger Discipline entry identified and
+  removed from count. Term count corrected to 161.
+  (3) TYOVA Chapter 26 synced -- Section 11 added (9 terms), Table of
+  Contents with section links and per-section counts added, Replay Protection
+  and Generate-Handoff terms added to TYOVA. Fabricated CLO-158 reference
+  corrected to CLO-156/CLO-157. All 11 sections verified present.
+  (4) Lovable verification discipline confirmed -- Lovable summary claimed
+  172 terms but actual verified count is 161. File is always the authority.
+  No Jaya-Runtime changes this session.
+- **Files:** tools/Generate-Handoff.ps1,
+  book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md (ty-ai-governance),
+  src/data/bookChapterContent.ts,
+  src/pages/BookOfTyChapter.tsx (TYOVA)
+- **Status:** COMPLETE
