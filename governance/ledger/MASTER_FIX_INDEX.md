@@ -1225,3 +1225,13 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
   extensions documented. Verified present.
 - **Files:** src/data/bookChapterContent.ts (TYOVA)
 - **Status:** COMPLETE
+## JAYA-CLO-157 | TYOVA Chapter 14 Postscript Push
+- **CLO:** JAYA-CLO-157
+- **Commit:** ef831cb (TYOVA)
+- **Date:** 2026-03-17 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 14 postscript pushed to TYOVA. New ledger
+  operation types, ledger hash binding, three ledger rules documented.
+  Verified present.
+- **Files:** src/data/bookChapterContent.ts (TYOVA)
+- **Status:** COMPLETE
