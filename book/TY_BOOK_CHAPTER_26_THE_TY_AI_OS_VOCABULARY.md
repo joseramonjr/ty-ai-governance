@@ -5,7 +5,7 @@
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-16 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 170 (as of 2026-03-17)
+**Current Term Count:** 162 (as of 2026-03-17)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -964,6 +964,18 @@ capturing repo state, next CLO, next part, phase status, and
 first actions for the next session. Pasted at the start of the
 next chat to restore context.
 
+**Generate-Handoff**
+*First coined: 2026-03-17 | San Diego (America/Los_Angeles)*
+The PowerShell automation script (Generate-Handoff.ps1) stored in the
+ty-ai-governance tools/ directory that reads live state from all three
+TY AI OS repositories and produces a verified session handoff block
+automatically. Replaces manual handoff document transcription. Reads:
+Jaya-Runtime git HEAD and tag, ty-ai-governance HEAD, TYOVA HEAD,
+last CLO from MASTER_FIX_INDEX, last Chapter 18 entry, and Chapter 26
+term count. Output is printed to terminal and copied to clipboard.
+Introduced to eliminate manual transcription errors in handoff documents.
+First committed under JAYA-CLO-157 -- 2026-03-17 -- San Diego.
+
 **ty-seal**
 *First coined: 2025-12-12 09:08 | San Diego (America/Los_Angeles)*
 The automated seal script used during the ChatGPT era to commit
@@ -1126,6 +1138,18 @@ modify ledger entries. Analysis reasoning is preserved in the
 governance record for auditability.
 
 ---
+
+**Replay Protection**
+*First coined: 2026-03-16 | San Diego (America/Los_Angeles)*
+The doctrine and runtime enforcement mechanisms that prevent a captured
+attestation payload from being resubmitted and accepted after its original
+use. TY AI OS implements replay protection at two layers: (1) nonce-based
+protection -- every attestation payload carries a cryptographically random
+nonce consumed on first use and rejected on reuse within the expiry window
+(Part 77 -- JAYA-CLO-155); (2) ledger hash binding -- every payload carries
+a hash of the ledger state at signing time, rejected if the ledger has
+advanced since the payload was generated (Part 78 -- JAYA-CLO-156). Both
+layers must pass before signature verification proceeds.
 
 **Replay Violation**
 *First coined: 2026-03-16 | San Diego (America/Los_Angeles)*
