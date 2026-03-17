@@ -31,12 +31,10 @@ Pop-Location
 
 Push-Location $govPath
 $govHash  = (git log --oneline -1).Split(" ")[0]
-$govDesc  = (git log --oneline -1) -replace "^[a-f0-9]+ ",""
 Pop-Location
 
 Push-Location $tyovaPath
 $tyovaHash = (git log --oneline -1).Split(" ")[0]
-$tyovaDesc = (git log --oneline -1) -replace "^[a-f0-9]+ ",""
 Pop-Location
 
 # ------------------------------------------------------------------
@@ -57,13 +55,11 @@ if ($lastCloDesc -eq "") { $lastCloDesc = "See MASTER_FIX_INDEX" }
 $lastEntry = ((Get-Content $ch18 | Select-String "### Entry-") | Select-Object -Last 1).Line.Trim()
 
 # ------------------------------------------------------------------
-# Chapter 26 term count
+# Chapter 26 term count -- read directly from header
+# This is the authoritative count maintained manually after each session.
 # ------------------------------------------------------------------
-# Existing terms use **Term** bold format. New terms use ### heading.
-# Count both patterns and sum.
-$boldTerms    = (Get-Content $ch26 | Select-String "^\*\*[A-Z]").Count
-$headingTerms = (Get-Content $ch26 | Select-String "^### ").Count
-$termCount    = $boldTerms + $headingTerms
+$termCountLine = (Get-Content $ch26 | Select-String "^\*\*Current Term Count").Line
+$termCount = [regex]::Match($termCountLine, "(\d+)").Groups[1].Value
 
 # ------------------------------------------------------------------
 # Next Part number -- derived from last Jaya-Runtime commit
