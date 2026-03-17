@@ -1,4 +1,4 @@
-# TY AI OS — The Documentary Record
+﻿# TY AI OS — The Documentary Record
 ## Chapter 8: What Comes Next
 ### The Forward Roadmap — From Architectural Foundation to Governance Specification
 
@@ -344,3 +344,29 @@ That is not a limitation. That is the point.
 *Source: ty-ai-governance repo + ChatGPT export archives + Claude session records*
 *FIX: BOOK-CLO-006 | MODEL: Claude Sonnet 4.6*
 *Classification: CANONICAL BOOK DOCUMENTATION — NON-AUTHORITATIVE RECORD*
+
+---
+
+## Postscript -- Added 2026-03-17 | San Diego
+
+*This chapter was written on 2026-03-06 at the completion of Phase 3. At that
+time Phase 4 (Global Attestonic Layer) was planned but not yet built. This
+postscript records what actually happened.*
+
+Phase 4 was completed and sealed on 2026-03-13. The Global Attestonic Layer
+was fully built across Parts 69-76 -- Ed25519 keypair generation, attestation
+payload signing, peer registry with key pinning, verification engine, human
+alert integration, and a four-step end-to-end proof condition. The canonical
+governance hash was anchored: cd7ef6c73e8050394bec5b0e0289238cd000d7c4ce133ec951653531356a6e09.
+
+Phase 5 (The Outward Reach) became active on 2026-03-15. Track A (Foundation
+Completion) is underway, closing Phase 4.2 gaps: nonce replay protection
+(Part 77, sealed 2026-03-16) and ledger hash attestation binding (Part 78,
+sealed 2026-03-16). Track B (Federation, Policy Engine, Transparency Layer,
+Governance Intelligence) follows Track A completion.
+
+The ordering principle described in this chapter held. Every phase built on
+the sealed foundation of the previous phase. Nothing was skipped.
+
+*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*
