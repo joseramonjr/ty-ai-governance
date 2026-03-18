@@ -893,3 +893,17 @@ Chapter 18 is the permanent maintenance record -- Entry-019 is this entry.
   removed from ty-ai-governance repo. MASTER_FIX_INDEX written same session.
 - **Gates:** S1 clean | S2 clean | cargo check = 0 errors | tag applied |
   MASTER_FIX_INDEX written | Ch18 entry written
+### Entry-021
+- **Date:** 2026-03-17 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Session:** Part 80 -- Keychain Key Rotation Infrastructure
+- **CLO:** JAYA-CLO-159
+- **Commit:** 9355961 (Jaya-Runtime) | fd70c44 (ty-ai-governance)
+- **Tag:** jaya-part80-sealed
+- **Summary:** Keychain infrastructure built and sealed. keychain.rs implements
+  full multi-keypair lifecycle: key creation, rotation, retirement, compromise
+  declaration, and grace-period verification (300 seconds). Four Tauri commands
+  exposed. KeychainPanel.tsx added to UI. cargo check = zero errors.
+  MASTER_FIX_INDEX written same session.
+- **Gates:** S1 clean | S2 clean | cargo check = 0 errors | tag applied |
+  MASTER_FIX_INDEX written | Ch18 entry written
