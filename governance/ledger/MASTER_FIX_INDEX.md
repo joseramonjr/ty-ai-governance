@@ -1342,3 +1342,12 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
 - **Files:** src-tauri/src/keychain.rs, src-tauri/src/lib.rs,
   src/components/KeychainPanel.tsx, src/App.tsx
 - **Status:** COMPLETE
+## JAYA-CLO-159 | TYOVA Chapter 27 Registration
+- **CLO:** JAYA-CLO-159
+- **Commit:** fbaea09 (TYOVA)
+- **Date:** 2026-03-17 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Chapter 27 -- The Outward Reach registered in TYOVA
+  across all three required files: bookChapterContent.ts, BookOfTyIndex.tsx,
+  BookOfTyChapter.tsx. Chapter verified visible in TYOVA web app.
+- **Status:** COMPLETE
