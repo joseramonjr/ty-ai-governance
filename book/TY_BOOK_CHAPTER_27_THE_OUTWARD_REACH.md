@@ -1,0 +1,160 @@
+# Chapter 27 -- The Outward Reach: Phase 5 and the Hardening of Governance
+**Document Type:** Canonical Book Documentation -- Phase Record
+**CLO:** JAYA-CLO-159
+**Model:** Claude Sonnet 4.6
+**Date:** 2026-03-17 | San Diego (America/Los_Angeles)
+**Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+---
+## Why This Chapter Exists
+Phase 4 ended with a sealed cryptographic attestation layer. A Jaya
+node could sign its governance state, verify the signatures of trusted
+peers, and surface failures as human alerts. That was the foundation.
+
+But a foundation is not a system. Phase 4 left four known gaps -- gaps
+that were documented before Phase 4 sealed, not discovered afterward.
+The gaps were not failures of Phase 4. They were deliberate deferrals.
+Phase 4 was scoped to prove the attestation model. Phase 5 Track A was
+scoped to harden it.
+
+This chapter records what happened when that hardening began.
+---
+## The Phase 5 Scope Session
+Before a single line of Phase 5 code was written, a full scope session
+was held. The session produced TY_PHASE5_SPEC_v0.1.md -- a formal
+specification document committed to ty-ai-governance before any
+implementation began. The spec defined two tracks:
+
+Track A -- Governance Hardening. Four capabilities deferred from Phase 4,
+now required for a production-grade system.
+
+Track B -- The Outward Reach. Federation, policy engine, transparency
+layer, and governance intelligence. The capabilities that would allow
+TY AI OS to operate beyond a single machine.
+
+The decision to define both tracks before building either was
+deliberate. TY AI OS governance doctrine requires that specification
+precedes implementation. The spec session produced Chapter 26 Section
+11 (Phase 5 vocabulary terms) and JAYA-CLO-151 through JAYA-CLO-154
+before a single Part was opened.
+---
+## What Track A Actually Fixed
+Track A addressed four specific gaps. Each gap had a name, a spec
+section, a proof condition, and a CLO. Nothing was built speculatively.
+
+### Gap 1 -- Replay Protection (Part 77 -- JAYA-CLO-155)
+Phase 4 attestation payloads had no replay protection. A captured
+payload could be resubmitted and accepted indefinitely. Part 77
+introduced a 16-byte cryptographically random nonce per attestation.
+The nonce is consumed on first use. Any resubmission returns
+REPLAY_BLOCKED and raises a ReplayViolation alert. The ledger records
+every replay attempt. Replay attacks are now structurally impossible
+within the session window.
+
+### Gap 2 -- Ledger Hash Binding (Part 78 -- JAYA-CLO-156)
+A valid signature is not sufficient proof of freshness. A payload
+signed against an old ledger state could be replayed after the ledger
+advanced. Part 78 embedded the current ledger hash into every
+attestation payload at signing time. Verification recomputes the
+current ledger hash and rejects any payload whose hash does not match.
+Stale payloads are now structurally rejected regardless of signature
+validity.
+
+### Gap 3 -- Class B Autonomy Enforcement (Part 79 -- JAYA-CLO-158)
+Phase 4 introduced autonomy classification -- Class A, B, and C -- but
+the runtime enforced nothing. A Class B agent was registered with a
+Class B designation and treated identically to a Class A agent. The
+classification was cosmetic. Part 79 made it functional.
+
+Class B agents now operate under a distinct enforcement regime. Actions
+within the agent's registered CRI band are permitted. Actions outside
+the band trigger a ClassBEscalation -- a governance event distinct from
+a standard Class A violation. Class B agents require a human-issued
+confirmation token to remain in active autonomous status. An expired
+or missing token automatically downgrades the agent to Class A
+enforcement rules without human intervention. The downgrade is
+structural and cannot be bypassed.
+
+This is the Autonomy Ceiling Invariant in practice. No external
+authority can raise the ceiling. The runtime enforces it locally.
+
+### Gap 4 -- Keychain Key Rotation (Part 80 -- JAYA-CLO-159)
+Phase 4 generated one Ed25519 keypair per node and stored it for the
+lifetime of the node. A single keypair is insufficient for a real
+governance system. Keys can be compromised. Keys should be rotated on
+a schedule. Prior attestations must remain verifiable after rotation.
+
+Part 80 introduced keychain infrastructure. The keychain maintains the
+active signing key, a list of retired keys with retirement timestamps,
+and a 300-second grace period during which retired-key attestations
+remain verifiable. Key rotation is a planned operation. Key compromise
+is an emergency operation -- it immediately invalidates the key, raises
+a governance incident alert, and generates a replacement keypair
+automatically. Compromised keys have no grace period. They are rejected
+immediately and permanently.
+---
+## What Phase 5 Track A Proved
+Track A proved something more important than its individual
+capabilities. It proved that TY AI OS governance discipline scales
+under pressure.
+
+Parts 77 through 80 were built in sequence, each sealed before the
+next opened. Every part had a spec reference, a proof condition, a CLO,
+a git tag, a MASTER_FIX_INDEX entry, a Chapter 18 journal entry, and
+a Chapter 26 vocabulary gate. No part was sealed without all gates
+passing. No gate was skipped.
+
+The gap between Phase 4 and Track A was not a period of drift. It was
+a period of documented, deliberate work -- book chapters, TYOVA
+registrations, governance hygiene audits, vocabulary expansion -- all
+tracked in the same ledger that tracks runtime code. The governance
+system governed its own development.
+
+That is what TY AI OS was always supposed to be.
+---
+## The Vocabulary at Track A Seal
+At the time Phase 5 Track A sealed, Chapter 26 contained 169 terms
+across 11 sections. Four terms were added during Track A itself:
+Autonomy Class, Confirmation Token, Class B Escalation, Class A
+Downgrade, Keychain, Key Rotation, Key Compromise, and Key Grace
+Period. The living vocabulary document now spans from the earliest
+founding concepts to the most recent runtime primitives, with full
+provenance for every term.
+---
+## What Comes Next -- A Brief Look Forward
+Track A closed the gaps left by Phase 4. Track B opens new territory.
+
+Where Track A looked inward -- hardening what already existed -- Track
+B looks outward. The question Track B will answer is whether a
+governance system built for a single machine can extend its authority
+and verification to a wider world without losing the properties that
+make it trustworthy.
+
+Federation. Policy engines. Transparency layers. These are not
+additions to TY AI OS. They are tests of whether its architecture
+survives contact with the outside world. Track A proved the system
+holds together under internal pressure. Track B will prove whether it
+holds together when the boundary expands.
+
+That work has not begun. This chapter records only what has been
+completed. The rest belongs to future sessions, future parts, and
+future chapters.
+---
+## Postscript -- Written at Track A Seal
+Phase 5 Track A sealed on 2026-03-17 in San Diego. Four parts. Four
+proof conditions. Four tags. One formal seal document. All governance
+gates passed. No shortcuts taken.
+
+The system that sealed today is materially more capable than the one
+that entered Phase 5. It is also materially more governed. Every
+capability added in Track A came with a corresponding governance
+constraint -- a proof condition, a ledger entry, a vocabulary term, a
+journal record. The governance grew with the system. That has been true
+from the first session and remains true now.
+
+The Book of TY now has 27 chapters. Chapter 5 remains unwritten --
+that chapter requires a personal narrative that only Jose Ramon
+Alvarado McHerron AKA Jose Ramon Bautista Jr. can provide. Everything
+else is documented, verified, and sealed.
+
+*Chapter sealed: 2026-03-17 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-159 | Model: Claude Sonnet 4.6*
