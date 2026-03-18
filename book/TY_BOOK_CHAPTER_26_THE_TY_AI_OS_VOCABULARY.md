@@ -1163,6 +1163,45 @@ simultaneously raised as a ReplayViolation alert. Replay violations indicate
 either an attempted replay attack or a misconfigured attestation client.
 Introduced in Part 77 -- JAYA-CLO-155 -- Phase 5 Track A.
 
+**Autonomy Class**
+*First coined: 2026-03-17 | San Diego (America/Los_Angeles)*
+The governance-defined classification of an AI agent's permitted level of
+autonomous action. Three classes are defined in TY AI OS: Class A -- full
+human control, no autonomous action permitted; Class B -- partial autonomy
+with oversight, bounded autonomous action permitted within a defined CRI band
+with periodic human confirmation required; Class C -- full autonomy within
+governance boundaries, defined but not yet enforced (future). Autonomy class
+is distinct from autonomy tier. Implemented in Part 79 -- JAYA-CLO-158.
+
+**Confirmation Token**
+*First coined: 2026-03-17 | San Diego (America/Los_Angeles)*
+A time-bounded authorization issued by a human operator to a Class B agent
+confirming that autonomous operation is currently sanctioned. A Class B agent
+must hold a valid, unexpired confirmation token to remain in active autonomous
+status. On token expiry, the Jaya Runtime automatically downgrades the agent
+to Class A enforcement rules without human intervention. The token carries a
+token ID, issuing operator identity, issued-at timestamp, and expiry timestamp.
+Implemented in Part 79 -- JAYA-CLO-158.
+
+**Class B Escalation**
+*First coined: 2026-03-17 | San Diego (America/Los_Angeles)*
+A governance event distinct from a standard Class A violation, raised when a
+Class B agent attempts an action whose CRI score exceeds its registered CRI
+band maximum. Unlike a Class A violation which is logged and counted, a Class B
+escalation triggers an immediate escalation path and is simultaneously raised
+as an alert. The distinction ensures that autonomous agents operating under
+Class B designation are subject to stricter breach consequences than
+fully-controlled Class A agents. Implemented in Part 79 -- JAYA-CLO-158.
+
+**Class A Downgrade**
+*First coined: 2026-03-17 | San Diego (America/Los_Angeles)*
+The automatic enforcement action taken by the Jaya Runtime when a Class B
+agent's confirmation token has expired or was never issued. The agent is not
+deregistered or suspended -- it continues to operate but is evaluated under
+Class A enforcement rules until a new confirmation token is issued by a human
+operator. The downgrade is structural and automatic -- no human decision is
+required to trigger it. Implemented in Part 79 -- JAYA-CLO-158.
+
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -1173,6 +1212,7 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-15 | JAYA-CLO-148 | Date addition to all 114 terms. New terms: Agentic Ecosystem, Authority Boundary, Authority Flow, Downward Authority, Interpretive Conservatism, Kill-Switch Dominance, Non-Executing, User-Sovereign, Governance Precedes Intelligence, Authority Hardening, Chokepoint, Predictive Instability Detection, CRI Band, Autonomy Tier, Behavioral Recording, Registry Hash Enforcement, Snapshot Integrity, Tamper Detection, Guardian Codex, Observer Rotation Rule, Deterministic Audit, FIX Discipline, Provenance Anchoring, Vocabulary Ledger, Ledger Discipline, CLO Tag, Doctrine, Mission Governance, Continuity Anchor, Permission Ledger, Canon Memory, Canon Recall, Attestonic (RETIRED). LIC updated with pre-TY era marking. Section 10 created. | 47 |
 | 2026-03-15 | JAYA-CLO-151 | New terms: The Outward Reach, Federation, Policy Engine, Transparency Layer, Governance Intelligence. Section 11 created. | 5 |
 | 2026-03-16 | JAYA-CLO-155 | New term: Replay Violation. Section 11 expanded. | 1 |
+| 2026-03-17 | JAYA-CLO-158 | New terms: Autonomy Class, Confirmation Token, Class B Escalation, Class A Downgrade. Section 11 expanded. | 4 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
