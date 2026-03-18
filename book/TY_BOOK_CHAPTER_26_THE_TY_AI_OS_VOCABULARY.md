@@ -5,7 +5,7 @@
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-16 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 165 (as of 2026-03-17)
+**Current Term Count:** 169 (as of 2026-03-17)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -1202,6 +1202,46 @@ Class A enforcement rules until a new confirmation token is issued by a human
 operator. The downgrade is structural and automatic -- no human decision is
 required to trigger it. Implemented in Part 79 -- JAYA-CLO-158.
 
+**Keychain**
+*First coined: 2026-03-17 | San Diego (America/Los_Angeles)*
+Infrastructure that manages multiple Ed25519 keypairs for a Jaya node over
+time. A keychain supports key creation, retirement, rotation, and compromise
+declaration. It maintains an active signing key, a list of retired keys with
+retirement timestamps, and a grace period during which attestations signed by
+retired keys remain verifiable. The keychain is the authoritative source of
+key state for a node -- no key operation occurs outside of it. Implemented
+in Part 80 -- JAYA-CLO-159.
+
+**Key Rotation**
+*First coined: 2026-03-17 | San Diego (America/Los_Angeles)*
+A governance operation that promotes a newly generated Ed25519 keypair to
+active signing status and retires the prior active key. Key rotation is a
+planned, non-emergency operation performed on a defined schedule. The prior
+key enters the Retired state and remains verifiable within the grace period.
+Attestations signed by the prior key are rejected after the grace period
+expires. Key rotation does not break existing attestation history within the
+grace window. Implemented in Part 80 -- JAYA-CLO-159.
+
+**Key Compromise**
+*First coined: 2026-03-17 | San Diego (America/Los_Angeles)*
+A governance incident declared when an active Ed25519 signing key is known
+or suspected to have been exposed. On compromise declaration, the key is
+immediately invalidated and logged as a governance incident in the audit
+ledger. A replacement keypair is generated automatically. Unlike retired
+keys, compromised keys are never verifiable -- not even within a grace
+period. The compromise event is raised as an alert in the human alert
+system. Implemented in Part 80 -- JAYA-CLO-159.
+
+**Key Grace Period**
+*First coined: 2026-03-17 | San Diego (America/Los_Angeles)*
+A time window following key retirement during which attestations signed by
+the retired key remain verifiable. The grace period allows in-flight
+attestations to complete verification without being rejected immediately
+after a key rotation. In the Jaya Runtime the grace period is 300 seconds.
+After the grace period expires, attestations signed by the retired key are
+rejected. Compromised keys have no grace period -- they are rejected
+immediately. Implemented in Part 80 -- JAYA-CLO-159.
+
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -1213,6 +1253,7 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-15 | JAYA-CLO-151 | New terms: The Outward Reach, Federation, Policy Engine, Transparency Layer, Governance Intelligence. Section 11 created. | 5 |
 | 2026-03-16 | JAYA-CLO-155 | New term: Replay Violation. Section 11 expanded. | 1 |
 | 2026-03-17 | JAYA-CLO-158 | New terms: Autonomy Class, Confirmation Token, Class B Escalation, Class A Downgrade. Section 11 expanded. | 4 |
+| 2026-03-17 | JAYA-CLO-159 | New terms: Keychain, Key Rotation, Key Compromise, Key Grace Period. Section 11 expanded. | 4 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
