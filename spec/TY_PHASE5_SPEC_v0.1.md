@@ -184,7 +184,7 @@ functions. A Class B agent with an expired token is demonstrably downgraded
 to Class A enforcement rules. Cargo check passes with zero errors.
 
 JAYA PART: 79
-CLO: JAYA-CLO-151
+CLO: JAYA-CLO-158
 
 ---
 
@@ -223,7 +223,7 @@ the grace period expires. The new key signs new attestations successfully.
 Cargo check passes with zero errors.
 
 JAYA PART: 80
-CLO: JAYA-CLO-152
+CLO: JAYA-CLO-159
 
 ---
 
@@ -416,8 +416,8 @@ The following sequence is mandatory. No deviation is permitted.
 |------|-------|------|------|-----|------------|
 | 1 | A | Nonce | 77 | JAYA-CLO-149 | Phase 4 complete |
 | 2 | A | Ledger Hash | 78 | JAYA-CLO-150 | A1 |
-| 3 | A | Class B Autonomy | 79 | JAYA-CLO-151 | A2 |
-| 4 | A | Keychain | 80 | JAYA-CLO-152 | A3 |
+| 3 | A | Class B Autonomy | 79 | JAYA-CLO-158 | A2 |
+| 4 | A | Keychain | 80 | JAYA-CLO-159 | A3 |
 | 5 | B | Federation | 81-83 | JAYA-CLO-153+ | Track A complete |
 | 6 | B | Policy Engine | 84-86 | JAYA-CLO-156+ | B1 |
 | 7 | B | Transparency Layer | 87-89 | JAYA-CLO-159+ | B2 |
