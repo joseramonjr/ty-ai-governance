@@ -875,3 +875,21 @@ No fabrication permitted.
 All 25 accessible chapters (Ch5 blocked) are now current through 2026-03-17.
 Chapter 26 has 161 verified terms across 11 sections.
 Chapter 18 is the permanent maintenance record -- Entry-019 is this entry.
+
+### Entry-020
+- **Date:** 2026-03-17 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Session:** Part 79 -- Class B Autonomy Runtime Enforcement
+- **CLO:** JAYA-CLO-158
+- **Commit:** bae49b0 (Jaya-Runtime) | 329c69a + a3aba4c (ty-ai-governance)
+- **Tag:** jaya-part79-sealed
+- **Summary:** Class B Autonomy Runtime Enforcement built and sealed. New
+  module class_b.rs implements AutonomyClass enum, ConfirmationToken struct,
+  token validity check, automatic Class A downgrade on token expiry, and
+  CRI band breach escalation distinct from Class A violation. AgentRecord
+  extended with autonomy_class and confirmation_token fields. Three new
+  Tauri commands exposed. ClassBAutonomyPanel.tsx added to UI. All four
+  proof gates satisfied. cargo check = zero errors. Stray 'code' file
+  removed from ty-ai-governance repo. MASTER_FIX_INDEX written same session.
+- **Gates:** S1 clean | S2 clean | cargo check = 0 errors | tag applied |
+  MASTER_FIX_INDEX written | Ch18 entry written
