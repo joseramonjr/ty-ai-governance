@@ -1325,3 +1325,20 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
   src-tauri/src/lib.rs, src/components/ClassBAutonomyPanel.tsx,
   src/App.tsx
 - **Status:** COMPLETE
+## JAYA-CLO-159 | Part 80 -- Keychain Key Rotation Infrastructure
+- **CLO:** JAYA-CLO-159
+- **Commit:** 9355961 (Jaya-Runtime)
+- **Tag:** jaya-part80-sealed
+- **Date:** 2026-03-17 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Keychain infrastructure implemented. New file keychain.rs
+  introduces Keychain struct with full multi-keypair management: key creation,
+  retirement, rotation, compromise declaration, and grace-period verification.
+  KeyState enum (Active/Retired/Compromised), KeyEntry, KeychainRecord,
+  KeyRotationResult, KeyCompromiseResult, KeychainVerifyResult structs defined.
+  Grace period set to 300 seconds. Four new Tauri commands: get_keychain_info,
+  rotate_key, compromise_key, verify_with_keychain. KeychainPanel.tsx added
+  to UI. cargo check = zero errors. All proof gates satisfied.
+- **Files:** src-tauri/src/keychain.rs, src-tauri/src/lib.rs,
+  src/components/KeychainPanel.tsx, src/App.tsx
+- **Status:** COMPLETE
