@@ -1307,3 +1307,21 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
   tooling, vocabulary expansion, ledger rules documented. Verified present.
 - **Files:** src/data/bookChapterContent.ts (TYOVA)
 - **Status:** COMPLETE
+## JAYA-CLO-158 | Part 79 -- Class B Autonomy Runtime Enforcement
+- **CLO:** JAYA-CLO-158
+- **Commit:** bae49b0 (Jaya-Runtime)
+- **Tag:** jaya-part79-sealed
+- **Date:** 2026-03-17 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Description:** Class B Autonomy Runtime Enforcement implemented. New file
+  class_b.rs introduces AutonomyClass enum (ClassA/ClassB/ClassC),
+  ConfirmationToken struct, token validity check, automatic downgrade to
+  Class A on token expiry, and CRI band breach escalation distinct from
+  Class A violation. AgentRecord extended with autonomy_class and
+  confirmation_token fields. Three new Tauri commands: evaluate_class_b_action,
+  issue_confirmation_token, check_class_b_status. ClassBAutonomyPanel.tsx
+  added to UI. All four proof gates satisfied. cargo check = zero errors.
+- **Files:** src-tauri/src/class_b.rs, src-tauri/src/agent_registry.rs,
+  src-tauri/src/lib.rs, src/components/ClassBAutonomyPanel.tsx,
+  src/App.tsx
+- **Status:** COMPLETE
