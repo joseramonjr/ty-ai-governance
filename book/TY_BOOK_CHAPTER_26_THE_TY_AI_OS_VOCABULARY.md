@@ -3,9 +3,9 @@
 **CLO:** JAYA-CLO-148 (date addition + new term audit)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
-**Updated:** 2026-03-16 | San Diego (America/Los_Angeles)
+**Updated:** 2026-03-19 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 169 (as of 2026-03-17)
+**Current Term Count:** 177 (as of 2026-03-19 -- corrected under JAYA-CLO-160)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -1163,6 +1163,33 @@ simultaneously raised as a ReplayViolation alert. Replay violations indicate
 either an attempted replay attack or a misconfigured attestation client.
 Introduced in Part 77 -- JAYA-CLO-155 -- Phase 5 Track A.
 
+**Ledger Hash**
+*First coined: 2026-03-16 | San Diego (America/Los_Angeles)*
+A SHA-256 digest computed from the most recent entries in the Jaya Runtime
+append-only ledger at the moment an attestation payload is signed. The ledger
+hash captures ledger state at a specific point in time and is included in the
+signed canonical message, binding the attestation to that exact ledger state.
+Introduced in Part 78 -- JAYA-CLO-156 -- Phase 5 Track A.
+
+**Ledger Hash Binding**
+*First coined: 2026-03-16 | San Diego (America/Los_Angeles)*
+The architectural mechanism by which an attestation payload is cryptographically
+bound to the ledger state at signing time. A payload signed at time T carries the
+ledger hash from T. If the ledger advances to T+1 before the payload is verified,
+the hash no longer matches and the payload is rejected. Ledger hash binding closes
+a replay attack vector that nonce protection alone cannot address -- an attacker
+who captures a valid payload and replays it after ledger state changes is detected
+and blocked. Introduced in Part 78 -- JAYA-CLO-156 -- Phase 5 Track A.
+
+**Stale Ledger Hash**
+*First coined: 2026-03-16 | San Diego (America/Los_Angeles)*
+A ledger hash carried by an attestation payload that no longer matches the current
+ledger state at verification time. A stale ledger hash is evidence that the payload
+was generated before the ledger advanced -- either because time passed, new governed
+operations were logged, or the payload is being replayed. Stale ledger hash payloads
+are rejected by verify_attestation, logged as StaleLedgerHash alerts, and written
+to the append-only ledger. Introduced in Part 78 -- JAYA-CLO-156 -- Phase 5 Track A.
+
 **Autonomy Class**
 *First coined: 2026-03-17 | San Diego (America/Los_Angeles)*
 The governance-defined classification of an AI agent's permitted level of
@@ -1252,6 +1279,8 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-15 | JAYA-CLO-148 | Date addition to all 114 terms. New terms: Agentic Ecosystem, Authority Boundary, Authority Flow, Downward Authority, Interpretive Conservatism, Kill-Switch Dominance, Non-Executing, User-Sovereign, Governance Precedes Intelligence, Authority Hardening, Chokepoint, Predictive Instability Detection, CRI Band, Autonomy Tier, Behavioral Recording, Registry Hash Enforcement, Snapshot Integrity, Tamper Detection, Guardian Codex, Observer Rotation Rule, Deterministic Audit, FIX Discipline, Provenance Anchoring, Vocabulary Ledger, Ledger Discipline, CLO Tag, Doctrine, Mission Governance, Continuity Anchor, Permission Ledger, Canon Memory, Canon Recall, Attestonic (RETIRED). LIC updated with pre-TY era marking. Section 10 created. | 47 |
 | 2026-03-15 | JAYA-CLO-151 | New terms: The Outward Reach, Federation, Policy Engine, Transparency Layer, Governance Intelligence. Section 11 created. | 5 |
 | 2026-03-16 | JAYA-CLO-155 | New term: Replay Violation. Section 11 expanded. | 1 |
+| 2026-03-16 | JAYA-CLO-156 | New terms: Ledger Hash, Ledger Hash Binding, Stale Ledger Hash. Section 11 expanded. | 3 |
+| 2026-03-17 | JAYA-CLO-157 | New terms: Replay Protection (Section 11), Generate-Handoff (Section 9). Update Log entry backfilled under JAYA-CLO-160 repair. | 2 |
 | 2026-03-17 | JAYA-CLO-158 | New terms: Autonomy Class, Confirmation Token, Class B Escalation, Class A Downgrade. Section 11 expanded. | 4 |
 | 2026-03-17 | JAYA-CLO-159 | New terms: Keychain, Key Rotation, Key Compromise, Key Grace Period. Section 11 expanded. | 4 |
 
@@ -1262,32 +1291,3 @@ It is the provenance record for the vocabulary itself.
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
 *Updated: 2026-03-16 | San Diego (America/Los_Angeles)*
 *This document grows with the project. It is never finished.*
-### Ledger Hash
-- **Definition:** A SHA-256 digest computed from the most recent entries in the
-  Jaya Runtime append-only ledger at the moment an attestation payload is signed.
-  The ledger hash captures ledger state at a specific point in time and is
-  included in the signed canonical message, binding the attestation to that
-  exact ledger state.
-- **First used:** Part 78 -- JAYA-CLO-156 | 2026-03-16 | San Diego
-- **Layer:** Runtime Enforcement -- Global Attestonic Layer
-
-### Ledger Hash Binding
-- **Definition:** The architectural mechanism by which an attestation payload is
-  cryptographically bound to the ledger state at signing time. A payload signed
-  at time T carries the ledger hash from T. If the ledger advances to T+1 before
-  the payload is verified, the hash no longer matches and the payload is rejected.
-  Ledger hash binding closes a replay attack vector that nonce protection alone
-  cannot address -- an attacker who captures a valid payload and replays it after
-  ledger state changes is detected and blocked.
-- **First used:** Part 78 -- JAYA-CLO-156 | 2026-03-16 | San Diego
-- **Layer:** Runtime Enforcement -- Global Attestonic Layer
-
-### Stale Ledger Hash
-- **Definition:** A ledger hash carried by an attestation payload that no longer
-  matches the current ledger state at verification time. A stale ledger hash is
-  evidence that the payload was generated before the ledger advanced -- either
-  because time passed, new governed operations were logged, or the payload is
-  being replayed. Stale ledger hash payloads are rejected by verify_attestation,
-  logged as StaleLedgerHash alerts, and written to the append-only ledger.
-- **First used:** Part 78 -- JAYA-CLO-156 | 2026-03-16 | San Diego
-- **Layer:** Runtime Enforcement -- Global Attestonic Layer
