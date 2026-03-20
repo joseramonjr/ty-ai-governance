@@ -1351,3 +1351,16 @@ NOTE: Next CLO = JAYA-CLO-130 | Next Jaya Part = 67 | Phase 4: UNBLOCKED
   across all three required files: bookChapterContent.ts, BookOfTyIndex.tsx,
   BookOfTyChapter.tsx. Chapter verified visible in TYOVA web app.
 - **Status:** COMPLETE
+### FIX JAYA-CLO-160
+**Date:** 2026-03-19 | San Diego (America/Los_Angeles)
+**Destination:** ty-ai-governance
+**Part:** 81 Pre-B Cleanup (Ch26 vocabulary repair)
+**Commit:** 6a98530
+**Description:** Ch26 vocabulary repair. Three orphaned terms (Ledger Hash,
+Ledger Hash Binding, Stale Ledger Hash) converted from ### heading format to
+correct **Bold** format and integrated into Section 11 in CLO sequence order.
+Two missing Update Log rows added for JAYA-CLO-156 (3 terms) and JAYA-CLO-157
+(2 terms -- Replay Protection, Generate-Handoff). Term count header corrected
+from 169 to 177. Updated date corrected to 2026-03-19.
+**S1/S2:** Clean
+**cargo check:** N/A -- documentation only
