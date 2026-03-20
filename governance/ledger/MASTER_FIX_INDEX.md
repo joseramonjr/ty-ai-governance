@@ -1398,3 +1398,18 @@ Changes:
   - Added ClassBEvaluationRecord struct wrapping enforcement result + signed attestation + verification flag
   - Modified evaluate_class_b_action Tauri command to produce signed, self-verified attestation on every Class B decision
 Result: 15/15 tests passed. Class B governance chain verified end-to-end.
+### Entry -- JAYA-CLO-162
+Date: 2026-03-20 | San Diego
+Part: 83
+Title: Federation Peer Discovery and Registry
+Files: federation.rs, lib.rs, FederationPanel.tsx, App.tsx
+Changes:
+  - New federation.rs module: FederationPeer, FederationEvent, FederationRegistry structs
+  - FederationRegistry: register_peer, remove_peer, flag_non_compliant, list_peers, get_ledger
+  - Authority non-propagation enforced structurally (INV-P5-04): peer registration grants zero local authority
+  - Append-only federation ledger with monotonically increasing event IDs
+  - 10 unit tests -- all passing
+  - lib.rs: mod federation, FederationRegistryState, 5 Tauri commands, managed state in setup
+  - FederationPanel.tsx: read-only UI for peer registration, removal, compliance flagging, ledger display
+  - App.tsx: Federation tab added
+Result: 10/10 tests passed. cargo check = 0 errors. Part 83 proof condition met.
