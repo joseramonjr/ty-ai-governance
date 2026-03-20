@@ -1364,3 +1364,24 @@ Two missing Update Log rows added for JAYA-CLO-156 (3 terms) and JAYA-CLO-157
 from 169 to 177. Updated date corrected to 2026-03-19.
 **S1/S2:** Clean
 **cargo check:** N/A -- documentation only
+### FIX JAYA-CLO-160 (Part 81 -- Jaya-Runtime)
+**Date:** 2026-03-19 | San Diego (America/Los_Angeles)
+**Destination:** Jaya-Runtime
+**Part:** 81 -- Pre-B Cleanup
+**Commit:** 0f80689
+**Tag:** jaya-part81-sealed
+**Description:** Part 81 Pre-B Cleanup. Two deferred Track A items closed.
+(1) SQLite persistence for Class B state: autonomy_class and confirmation_token
+columns added to agents table via non-destructive ALTER TABLE migration.
+AgentRow and load_agents updated. persist_class_b_state() added to db.rs.
+Startup restore now reads autonomy_class and confirmation_token from DB --
+Class B state survives restarts. set_autonomy_class Tauri command added.
+issue_confirmation_token now persists token to SQLite.
+(2) Keychain attestation wiring: sign_attestation_with_keychain() helper
+added to lib.rs. generate_attestation and run_gal_proof both now sign using
+the active keychain keypair. Key rotation (Part 80) now has real effect on
+attestation output. NodeIdentity.sign_governance_state is now dead code --
+all signing routes through keychain.
+**Files:** src-tauri/src/db.rs, src-tauri/src/agent_registry.rs, src-tauri/src/lib.rs
+**S1/S2:** Clean
+**cargo check:** 0 errors, 4 warnings (all known)
