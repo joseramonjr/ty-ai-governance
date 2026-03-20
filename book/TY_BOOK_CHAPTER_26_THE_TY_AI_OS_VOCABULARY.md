@@ -5,7 +5,7 @@
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-19 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 177 (as of 2026-03-19 -- corrected under JAYA-CLO-160)
+**Current Term Count:** 181 (as of 2026-03-20 -- corrected under JAYA-CLO-160)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -1269,6 +1269,54 @@ After the grace period expires, attestations signed by the retired key are
 rejected. Compromised keys have no grace period -- they are rejected
 immediately. Implemented in Part 80 -- JAYA-CLO-159.
 
+**Federation Peer**
+*First coined: 2026-03-20 | San Diego (America/Los_Angeles)*
+A node registered in the local federation registry, identified by a
+human-readable label, an Ed25519 public key (64 hex characters), and
+an endpoint identifier. A federation peer registration grants zero
+authority over local agents or enforcement decisions -- registration
+is an informational act only. Peers may be Active, Removed, or
+NonCompliant. Implemented in Part 83 -- JAYA-CLO-162.
+
+**Federation Ledger**
+*First coined: 2026-03-20 | San Diego (America/Los_Angeles)*
+The append-only log of all federation state change events for a given
+Jaya node. Events are never deleted or modified. The federation ledger
+records every PeerJoined, PeerRemoved, and PeerNonCompliant event with
+a monotonically increasing event ID and UTC timestamp. A compromised
+peer cannot retroactively alter the federation ledger. The federation
+ledger is distinct from the governance audit ledger. Implemented in
+Part 83 -- JAYA-CLO-162.
+
+**Federation Event**
+*First coined: 2026-03-20 | San Diego (America/Los_Angeles)*
+A single immutable record in the federation ledger capturing a
+significant state change in the federation. Three event kinds exist:
+PeerJoined (a peer was registered), PeerRemoved (a peer was removed --
+local governance is unaffected), and PeerNonCompliant (a peer failed
+attestation verification and was isolated). Each event carries an
+event ID, kind, peer ID, detail string, and UTC timestamp. Implemented
+in Part 83 -- JAYA-CLO-162.
+
+**Peer NonCompliant**
+*First coined: 2026-03-20 | San Diego (America/Los_Angeles)*
+A federation peer status indicating that the peer has failed attestation
+verification or has been manually flagged as non-compliant by the
+governance operator. A NonCompliant peer is isolated from the active
+federation -- it no longer appears in the active peer list. It is not
+deleted -- it remains in the full audit record. NonCompliant peers are
+isolated, never corrected by peer nodes. This is a structural invariant:
+no federation peer may modify another node's local governance state.
+Implemented in Part 83 -- JAYA-CLO-162.
+
+---
+
+### Step 2 — Add Update Log Entry
+
+Find the last row in the Update Log table:
+
+| 2026-03-17 | JAYA-CLO-159 | New terms: Keychain, Key Rotation, Key Compromise, Key Grace Period. Section 11 expanded. | 4 |
+
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -1283,6 +1331,7 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-17 | JAYA-CLO-157 | New terms: Replay Protection (Section 11), Generate-Handoff (Section 9). Update Log entry backfilled under JAYA-CLO-160 repair. | 2 |
 | 2026-03-17 | JAYA-CLO-158 | New terms: Autonomy Class, Confirmation Token, Class B Escalation, Class A Downgrade. Section 11 expanded. | 4 |
 | 2026-03-17 | JAYA-CLO-159 | New terms: Keychain, Key Rotation, Key Compromise, Key Grace Period. Section 11 expanded. | 4 |
+| 2026-03-20 | JAYA-CLO-162 | New terms: Federation Peer, Federation Ledger, Federation Event, Peer NonCompliant. Section 11 expanded. | 4 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
