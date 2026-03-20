@@ -907,3 +907,29 @@ Chapter 18 is the permanent maintenance record -- Entry-019 is this entry.
   MASTER_FIX_INDEX written same session.
 - **Gates:** S1 clean | S2 clean | cargo check = 0 errors | tag applied |
   MASTER_FIX_INDEX written | Ch18 entry written
+  ### Entry-022
+- **Date:** 2026-03-19 | San Diego
+- **Model:** Claude Sonnet 4.6
+- **Session:** Part 81 -- Pre-B Cleanup + Session Open Hygiene
+- **CLO:** JAYA-CLO-160
+- **Commits:** 6a98530, 57327c3, 0807a73 (ty-ai-governance) | 0f80689 (Jaya-Runtime)
+- **Tag:** jaya-part81-sealed
+- **Summary:** Session open hygiene completed and Part 81 built and sealed.
+  Repo states verified at session open. S1/S2 scans run -- all clean with
+  known false positives confirmed. Ch26 vocabulary repair completed: three
+  orphaned terms (Ledger Hash, Ledger Hash Binding, Stale Ledger Hash)
+  converted from ### heading format to correct bold format and integrated
+  into Section 11. Two missing Update Log rows added for JAYA-CLO-156 and
+  JAYA-CLO-157. Term count header corrected from 169 to 177. Stray
+  book - Copy/ directory deleted from ty-ai-governance. Repository
+  visibility decision recorded: Option C -- both repos remain private.
+  Part 81 Pre-B Cleanup sealed: (1) SQLite persistence for autonomy_class
+  and confirmation_token added via non-destructive schema migration --
+  Class B state now survives restarts; (2) Keychain attestation wiring
+  completed -- generate_attestation and run_gal_proof now sign using
+  active keychain keypair via sign_attestation_with_keychain() helper --
+  key rotation now has real effect on attestation output. set_autonomy_class
+  Tauri command added. MASTER_FIX_INDEX written same session.
+  cargo check = 0 errors.
+- **Gates:** S1 clean | S2 clean | cargo check = 0 errors | tag applied |
+  MASTER_FIX_INDEX written | Ch26 term count 177 confirmed
