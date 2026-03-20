@@ -1385,3 +1385,16 @@ all signing routes through keychain.
 **Files:** src-tauri/src/db.rs, src-tauri/src/agent_registry.rs, src-tauri/src/lib.rs
 **S1/S2:** Clean
 **cargo check:** 0 errors, 4 warnings (all known)
+### Entry -- JAYA-CLO-161
+Date: 2026-03-19 | San Diego
+Part: 82
+Title: Class B Integration Proof Condition
+Files: class_b.rs, verification.rs, db.rs, lib.rs
+Changes:
+  - Added 8 unit tests to class_b.rs covering all three enforcement outcomes and all token states
+  - Added 3 unit tests to verification.rs covering Ed25519 sign/verify round-trip, tamper detection, wrong key rejection
+  - Added 3 unit tests to db.rs covering Class B SQLite persistence, token write, and downgrade-clears-token
+  - Added 1 nonce uniqueness test to lib.rs
+  - Added ClassBEvaluationRecord struct wrapping enforcement result + signed attestation + verification flag
+  - Modified evaluate_class_b_action Tauri command to produce signed, self-verified attestation on every Class B decision
+Result: 15/15 tests passed. Class B governance chain verified end-to-end.
