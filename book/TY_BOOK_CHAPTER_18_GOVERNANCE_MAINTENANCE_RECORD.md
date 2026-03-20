@@ -907,7 +907,7 @@ Chapter 18 is the permanent maintenance record -- Entry-019 is this entry.
   MASTER_FIX_INDEX written same session.
 - **Gates:** S1 clean | S2 clean | cargo check = 0 errors | tag applied |
   MASTER_FIX_INDEX written | Ch18 entry written
-  ### Entry-022
+### Entry-022
 - **Date:** 2026-03-19 | San Diego
 - **Model:** Claude Sonnet 4.6
 - **Session:** Part 81 -- Pre-B Cleanup + Session Open Hygiene
@@ -933,3 +933,14 @@ Chapter 18 is the permanent maintenance record -- Entry-019 is this entry.
   cargo check = 0 errors.
 - **Gates:** S1 clean | S2 clean | cargo check = 0 errors | tag applied |
   MASTER_FIX_INDEX written | Ch26 term count 177 confirmed
+### Entry-023
+Date: 2026-03-19 | San Diego
+Part: 82 | CLO: JAYA-CLO-161
+Title: Class B Integration Proof Condition
+Summary: Part 82 closes Phase 5 Track A. All Class B governance chain components
+verified as a working unit: enforcement decision, SQLite persistence, keychain signing,
+attestation verification, nonce uniqueness. 15/15 tests passed. evaluate_class_b_action
+Tauri command now returns ClassBEvaluationRecord -- every Class B decision produces a
+signed, self-verified attestation. Frontend components calling this command require
+manual review for updated return shape.
+S1: clean | S2: clean | cargo check: 0 errors | cargo test: 15 passed 0 failed
