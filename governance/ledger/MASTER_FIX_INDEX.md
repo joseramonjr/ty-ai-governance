@@ -1420,3 +1420,26 @@ Changes:
   - Chapter 26: 4 new terms added (Federation Peer, Federation Ledger,
     Federation Event, Peer NonCompliant). Term count updated to 181.
   - Chapter 18: Entry-024 added (Part 83 journal entry).
+  ### Entry -- JAYA-CLO-163
+Date: 2026-03-20 | San Diego
+CLO: JAYA-CLO-163
+Part: 84
+Title: Federation Transport + Cross-Node Attestation Exchange
+Files: federation.rs, lib.rs, FederationPanel.tsx, App.tsx
+Changes:
+  - federation.rs: AttestationExchangePayload, CrossNodeVerificationResult,
+    FederationViolation structs added
+  - federation.rs: FederationEventKind expanded with AttestationExchanged,
+    AttestationVerified, AttestationViolationDetected variants
+  - federation.rs: FederationRegistry expanded with violations,
+    violation_counter, exchange_nonce fields
+  - federation.rs: produce_attestation, verify_cross_node_attestation,
+    inject_federation_violation, get_violations, violation_count methods added
+  - federation.rs: 6 new unit tests (Tests 11-16) -- B1 proof condition coverage
+  - lib.rs: produce_federation_attestation, verify_federation_attestation,
+    inject_federation_violation Tauri commands wired
+  - FederationPanel.tsx: Attestation Exchange and Inject Violation UI added
+  - App.tsx: stray )} removed (line 969)
+Result: 16/16 tests passed. cargo check = 0 errors.
+B1 proof condition -- all six steps passed in live UI -- 2026-03-20 San Diego.
+Chapter 28 written and committed (7c16120). Chapter 18 Entry-025 committed (ef30441).
