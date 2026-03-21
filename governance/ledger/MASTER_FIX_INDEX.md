@@ -1480,3 +1480,26 @@ Changes:
   - All 11 sections now match between disk and TYOVA
 TYOVA HEAD after push: 4a6442c
 ty-ai-governance HEAD: d79933b
+### Entry -- JAYA-CLO-164 -- Part 85 -- B2 Policy Engine Foundation
+Date: 2026-03-21 | San Diego
+CLO: JAYA-CLO-164
+Part: 85
+Status: SEALED
+Changes:
+  - core_invariants.rs created -- 133 lines -- 6056 bytes
+    Expresses Autonomy Ceiling Invariant as first-class Rust types
+    PolicyViolatesInvariant enum -- 11 violation types named
+    InvariantCheckable trait -- policy validation interface
+    CoreInvariantCheck::validate -- stateless gate, never mutates
+  - policy.rs created -- 187 lines -- 7082 bytes
+    Policy struct -- boundary definitions only, no grants
+    Policy::maximum_restriction -- fail-safe constructor
+    InvariantCheckable implemented -- all methods return false by design
+    PolicyState -- runtime policy holder
+    PolicyLoader::load -- reads disk, validates, fail-safe on any error
+  - lib.rs updated -- mod core_invariants + mod policy declared
+    load_active_policy Tauri command wired and registered
+  - ty-ai-governance/policy/active_policy.json created -- 11 lines -- 337 bytes
+    TY-POLICY-001 v1.0.0 -- baseline Phase 5 Track B policy
+Jaya-Runtime HEAD: 3949bc0 -- tag: jaya-part85-sealed
+ty-ai-governance HEAD: d5a09b5
