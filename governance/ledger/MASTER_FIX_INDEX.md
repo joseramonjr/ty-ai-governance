@@ -1517,3 +1517,23 @@ Changes:
   - bookChapterContent.ts updated -- no new chapters, index unchanged
 TYOVA HEAD after push: 232829d
 ty-ai-governance HEAD: 4dc71a4
+
+### Entry -- JAYA-CLO-165 -- Part 86 -- B2 Policy Enforcement Hooks
+Date: 2026-03-21 | San Diego
+CLO: JAYA-CLO-165
+Part: 86
+Status: SEALED
+Changes:
+  - lib.rs updated -- PolicyStateManaged type alias added
+    Policy Engine initialized in setup block at startup
+    policy_managed registered as Tauri managed state
+    run_file_read -- file_read_permitted policy check added
+    run_file_write -- file_write_permitted policy check added
+    submit_inter_agent_request -- inter_agent_permitted policy check added
+    register_federation_peer -- federation_permitted policy check added
+    register_federation_peer -- app: tauri::AppHandle added to signature
+  - governance.rs updated -- max_allowed_risk_level policy check added
+    before acquire_lock -- violation logged and module rejected if exceeded
+    pre-existing box-drawing character corruption fixed -- plain ASCII restored
+Jaya-Runtime HEAD: 063378b -- tag: jaya-part86-sealed
+ty-ai-governance HEAD: 204332a
