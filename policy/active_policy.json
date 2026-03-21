@@ -1,0 +1,11 @@
+﻿{
+  "policy_id": "TY-POLICY-001",
+  "version": "1.0.0",
+  "max_allowed_risk_level": 60,
+  "max_allowed_autonomy_tier": 2,
+  "file_read_permitted": true,
+  "file_write_permitted": false,
+  "inter_agent_permitted": true,
+  "federation_permitted": true,
+  "description": "Phase 5 Track B baseline policy -- boundaries only"
+}
