@@ -1503,3 +1503,17 @@ Changes:
     TY-POLICY-001 v1.0.0 -- baseline Phase 5 Track B policy
 Jaya-Runtime HEAD: 3949bc0 -- tag: jaya-part85-sealed
 ty-ai-governance HEAD: d5a09b5
+
+### Entry -- TYOVA LOVABLE PUSH -- Chapter 18 + Chapter 26 -- JAYA-CLO-164
+Date: 2026-03-21 | San Diego
+Destination: TYOVA
+Changes:
+  - Chapter 18 Entry-026 added -- Part 85 B2 Policy Engine Foundation
+  - Chapter 26 -- 6 new terms added after Attestation Nonce:
+    Policy, PolicyLoader, PolicyState, Maximum Restriction,
+    InvariantCheckable, Core Invariant
+  - Chapter 26 term count updated: 179 -> 185
+  - Update Log row added for JAYA-CLO-164
+  - bookChapterContent.ts updated -- no new chapters, index unchanged
+TYOVA HEAD after push: 232829d
+ty-ai-governance HEAD: 4dc71a4
