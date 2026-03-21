@@ -1010,3 +1010,35 @@ MASTER_FIX_INDEX: JAYA-CLO-162 confirmed
 **cargo check:** 0 errors, 5 warnings (all pre-existing).
 **Tests:** 16 passed, 0 failed (federation).
 **MASTER_FIX_INDEX:** Pending -- write next.
+---
+### Entry-026
+Date: 2026-03-21 | San Diego
+Part: 85 | CLO: JAYA-CLO-164
+Title: B2 Policy Engine Foundation
+
+**Objective:** Establish the Policy Engine foundation for Phase 5 Track B.
+First part of the B2 block. Creates core_invariants.rs and policy.rs.
+
+**What was built:**
+- core_invariants.rs -- Autonomy Ceiling Invariant expressed as Rust types
+  PolicyViolatesInvariant enum (11 violation types), InvariantCheckable trait,
+  CoreInvariantCheck::validate -- stateless gate, never mutates runtime state
+- policy.rs -- Policy struct (boundary definitions only, no grants),
+  Policy::maximum_restriction fail-safe, PolicyLoader::load with
+  invariant validation and fail-safe on any load error
+- lib.rs -- mod core_invariants + mod policy declared,
+  load_active_policy Tauri command wired and registered
+- ty-ai-governance/policy/active_policy.json -- TY-POLICY-001 v1.0.0
+  baseline Phase 5 Track B policy file, governance repo version controlled
+
+**Architectural decision:** Option C -- core_invariants.rs as first-class
+type before policy.rs. Derived from 01_CORE_INVARIANTS.md. No circular
+dependency -- InvariantCheckable trait defined in core_invariants.rs,
+Policy implements it.
+
+**cargo check:** 0 errors, 6 warnings (all pre-existing or expected dead_code).
+**S1/S2:** Clean on all files written this session.
+**Repo states:**
+- Jaya-Runtime: 3949bc0 (tag: jaya-part85-sealed)
+- ty-ai-governance: 114971f
+**MASTER_FIX_INDEX:** Entry JAYA-CLO-164 written and committed.
