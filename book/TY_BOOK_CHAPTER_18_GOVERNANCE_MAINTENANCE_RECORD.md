@@ -970,3 +970,43 @@ Build: cargo check = 0 errors
 Tests: 10/10 passed
 Tag: jaya-part83-sealed
 MASTER_FIX_INDEX: JAYA-CLO-162 confirmed
+### Entry-025
+**Date:** 2026-03-20 | San Diego (America/Los_Angeles)
+**CLO:** JAYA-CLO-163
+**Part:** 84 -- Federation Transport + Cross-Node Attestation Exchange
+**Phase:** Phase 5 Track B -- B1 Federation
+
+**What was done:**
+- Added AttestationExchangePayload, CrossNodeVerificationResult, and
+  FederationViolation structs to federation.rs
+- Added three new FederationEventKind variants: AttestationExchanged,
+  AttestationVerified, AttestationViolationDetected
+- Added three new fields to FederationRegistry: violations,
+  violation_counter, exchange_nonce
+- Implemented produce_attestation, verify_cross_node_attestation,
+  inject_federation_violation, get_violations, violation_count methods
+- Added six new unit tests (Tests 11-16) covering all B1 proof steps
+- Wired three new Tauri commands in lib.rs
+- Updated FederationPanel.tsx with exchange and violation UI sections
+- Fixed stray )} in App.tsx line 969
+
+**B1 Proof Condition -- ALL SIX STEPS PASSED in live UI:**
+1. Two nodes formed a federation -- Node A and Node B registered
+2. Node A produced valid attestation -- nonce=1, hash verified
+3. Node B verified it -- AttestationVerified logged
+4. Node A produced governance violation -- tampered hash submitted
+5. Node B detected mismatch -- AttestationViolationDetected logged
+6. Violation logged in both records -- violation_id=1, Node A NonCompliant
+
+**Chapter 28 written and pushed:** TY_BOOK_CHAPTER_28_THE_FEDERATION_PROOF.md
+118 lines, S2 clean, committed 7c16120, pushed to origin.
+
+**Repo states:**
+- Jaya-Runtime: f41437a (tag: jaya-part84-sealed)
+- ty-ai-governance: 7c16120
+- TYOVA: 39bed23 (not updated this session)
+
+**S1/S2:** Clean on all files written this session.
+**cargo check:** 0 errors, 5 warnings (all pre-existing).
+**Tests:** 16 passed, 0 failed (federation).
+**MASTER_FIX_INDEX:** Pending -- write next.
