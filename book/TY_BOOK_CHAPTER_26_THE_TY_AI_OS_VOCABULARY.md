@@ -1374,6 +1374,63 @@ protection (Part 77). Introduced in Part 84 -- JAYA-CLO-163 --
 Phase 5 Track B.
 ```
 
+...Introduced in Part 84 -- JAYA-CLO-163 --
+Phase 5 Track B.
+
+**Policy**
+*First coined: 2026-03-21 | San Diego (America/Los_Angeles)*
+A boundary definition document loaded by the Jaya Runtime that constrains
+agent behavior. Policies cannot grant permissions -- they can only define
+limits and restrictions. A policy that contradicts a Core Invariant is
+rejected at load time. An absent or corrupt policy file triggers maximum
+restriction -- never open access. Introduced in Part 85 -- JAYA-CLO-164 --
+Phase 5 Track B.
+
+**PolicyLoader**
+*First coined: 2026-03-21 | San Diego (America/Los_Angeles)*
+The Jaya Runtime component responsible for reading a policy file from disk,
+deserializing it, and validating it against Core Invariants before accepting
+it into runtime state. On any failure -- file absent, empty, corrupt, or
+invariant violation -- PolicyLoader returns a maximum restriction PolicyState.
+Policy loading is always logged as a governance event. Introduced in
+Part 85 -- JAYA-CLO-164 -- Phase 5 Track B.
+
+**PolicyState**
+*First coined: 2026-03-21 | San Diego (America/Los_Angeles)*
+The runtime representation of the currently active policy. Contains the
+active Policy, the source file path, the load timestamp, and a flag
+indicating whether the failsafe maximum restriction is active. Updated
+at startup and on hot-reload (Part 87). Introduced in Part 85 --
+JAYA-CLO-164 -- Phase 5 Track B.
+
+**Maximum Restriction**
+*First coined: 2026-03-21 | San Diego (America/Los_Angeles)*
+The fail-safe policy state activated when a policy file is absent, empty,
+corrupt, or fails invariant validation. All permissions are set to the most
+restrictive possible values: zero risk level, zero autonomy tier, all
+operations disabled. Maximum restriction is never a silent failure -- it is
+an explicit governance state that is logged. Introduced in Part 85 --
+JAYA-CLO-164 -- Phase 5 Track B.
+
+**InvariantCheckable**
+*First coined: 2026-03-21 | San Diego (America/Los_Angeles)*
+The Rust trait that any type must implement to be validated against the
+Autonomy Ceiling Invariant before entering Jaya Runtime state. Defines
+eleven boolean methods corresponding to the eleven prohibited actions in
+the Autonomy Ceiling Invariant. All methods returning false is correct
+by design for a boundary-only Policy struct. Introduced in Part 85 --
+JAYA-CLO-164 -- Phase 5 Track B.
+
+**Core Invariant**
+*First coined: 2026-03-21 | San Diego (America/Los_Angeles)*
+A governance rule derived from 01_CORE_INVARIANTS.md that is expressed
+as a first-class Rust type in core_invariants.rs. Core Invariants cannot
+be overridden by any policy file, runtime state, or agent action. The
+Autonomy Ceiling Invariant is the primary Core Invariant with runtime
+enforcement meaning. Core Invariants are validated at policy load time --
+not at execution time. Introduced in Part 85 -- JAYA-CLO-164 --
+Phase 5 Track B.
+
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -1390,6 +1447,7 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-17 | JAYA-CLO-159 | New terms: Keychain, Key Rotation, Key Compromise, Key Grace Period. Section 11 expanded. | 4 |
 | 2026-03-20 | JAYA-CLO-162 | New terms: Federation Peer, Federation Ledger, Federation Event, Peer NonCompliant. Section 11 expanded. | 4 |
 | 2026-03-20 | JAYA-CLO-163 | New terms: Attestation Exchange Payload, Cross-Node Attestation, B1 Proof Condition, Federation Violation, Attestation Nonce. Section 11 expanded. | 5 |
+| 2026-03-21 | JAYA-CLO-164 | New terms: Policy, PolicyLoader, PolicyState, Maximum Restriction, InvariantCheckable, Core Invariant. Section 11 expanded. | 6 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
