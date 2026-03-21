@@ -1456,3 +1456,15 @@ Changes:
   - App.tsx modified by Lovable (314 insertions/deletions) -- manual UI review required
   - package.json: type module re-applied
 TYOVA HEAD after push: 0fe2b43
+### Entry -- JAYA-CLO-163 -- Chapter 26 Vocab Update
+Date: 2026-03-20 | San Diego
+CLO: JAYA-CLO-163
+Changes:
+  - Chapter 26 updated: 5 new Part 84 terms added
+  - Attestation Exchange Payload, Cross-Node Attestation,
+    B1 Proof Condition, Federation Violation, Attestation Nonce
+  - Term count: 181 -> 186
+  - Corrupted Lovable instruction text removed from file
+  - Update Log row added for JAYA-CLO-163
+  - S2 scan clean (line 944 known false positive)
+ty-ai-governance HEAD: d157cd8
