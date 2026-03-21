@@ -1042,3 +1042,40 @@ Policy implements it.
 - Jaya-Runtime: 3949bc0 (tag: jaya-part85-sealed)
 - ty-ai-governance: 114971f
 **MASTER_FIX_INDEX:** Entry JAYA-CLO-164 written and committed.
+
+---
+### Entry-027
+Date: 2026-03-21 | San Diego
+Part: 86 | CLO: JAYA-CLO-165
+Title: B2 Policy Enforcement Hooks
+
+**Objective:** Wire loaded policy into runtime enforcement decision points.
+B2 proof condition step 3 -- agent action violating policy triggers violation log.
+
+**What was built:**
+- lib.rs -- PolicyStateManaged type alias added
+  Policy Engine initialized in setup block -- loads active_policy.json at startup
+  policy_managed registered as Tauri managed state
+  run_file_read -- file_read_permitted policy check added
+  run_file_write -- file_write_permitted policy check added
+  submit_inter_agent_request -- inter_agent_permitted policy check added
+  register_federation_peer -- federation_permitted policy check added
+  register_federation_peer -- app: tauri::AppHandle added to signature
+- governance.rs -- max_allowed_risk_level policy check added before acquire_lock
+  violation logged and module rejected if risk exceeds policy maximum
+  pre-existing box-drawing character corruption fixed -- plain ASCII restored
+
+**Policy enforcement coverage after Part 86:**
+  file_read_permitted -- enforced at run_file_read
+  file_write_permitted -- enforced at run_file_write
+  inter_agent_permitted -- enforced at submit_inter_agent_request
+  federation_permitted -- enforced at register_federation_peer
+  max_allowed_risk_level -- enforced at execute_structural_operation
+  max_allowed_autonomy_tier -- deferred to Part 87
+
+**cargo check:** 0 errors, 6 warnings (all pre-existing).
+**S1/S2:** Clean on all files written this session.
+**Repo states:**
+- Jaya-Runtime: 063378b (tag: jaya-part86-sealed)
+- ty-ai-governance: 6b0ef4c
+**MASTER_FIX_INDEX:** Entry JAYA-CLO-165 written and committed.
