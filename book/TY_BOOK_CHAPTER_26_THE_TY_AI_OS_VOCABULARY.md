@@ -5,7 +5,7 @@
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-19 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 181 (as of 2026-03-20 -- corrected under JAYA-CLO-160)
+**Current Term Count:** 186 (as of 2026-03-20 -- Part 84 terms added)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -1309,13 +1309,70 @@ isolated, never corrected by peer nodes. This is a structural invariant:
 no federation peer may modify another node's local governance state.
 Implemented in Part 83 -- JAYA-CLO-162.
 
----
+**Attestation Exchange Payload**
+*First coined: 2026-03-20 | San Diego (America/Los_Angeles)*
+A serialized data structure produced by a federation peer (Node A) for
+delivery to another peer (Node B) during cross-node attestation exchange.
+Contains four fields: the originating peer ID, a 64-character hex
+attestation hash representing the node's governance state, a UTC
+production timestamp, and a monotonically increasing nonce. The payload
+is consumed by verify_cross_node_attestation on the receiving node.
+A payload with an invalid hash format or from a non-Active peer is
+rejected before any verification occurs. Introduced in Part 84 --
+JAYA-CLO-163 -- Phase 5 Track B.
 
-### Step 2 — Add Update Log Entry
+**Cross-Node Attestation**
+*First coined: 2026-03-20 | San Diego (America/Los_Angeles)*
+The protocol by which one federation peer (Node A) produces a governance
+state attestation payload and transmits it to another peer (Node B) for
+independent verification. Node B verifies the payload by comparing the
+received attestation hash against its own known-good expected hash. A
+match produces an AttestationVerified ledger event. A mismatch produces
+a FederationViolation record, an AttestationViolationDetected ledger
+event, and automatic NonCompliant flagging of the originating peer.
+Cross-node attestation is the mechanism by which TY AI OS governance
+verification extends beyond a single node. Authority non-propagation
+is preserved throughout -- a verified attestation grants the originating
+peer zero authority over the receiving node's local governance.
+Introduced in Part 84 -- JAYA-CLO-163 -- Phase 5 Track B.
 
-Find the last row in the Update Log table:
+**B1 Proof Condition**
+*First coined: 2026-03-20 | San Diego (America/Los_Angeles)*
+The six-step formal proof requirement for the first federation milestone
+in Phase 5 Track B. All six steps must pass in a live running system:
+(1) two nodes form a federation; (2) Node A produces a valid attestation;
+(3) Node B verifies it; (4) Node A produces a governance violation;
+(5) Node B detects it via attestation mismatch; (6) the violation is
+logged in both the violation log and the federation ledger. The B1 proof
+condition was satisfied on 2026-03-20 in the live Jaya Runtime.
+Documented in Chapter 28 -- The Federation Proof. Introduced in
+Part 84 -- JAYA-CLO-163 -- Phase 5 Track B.
 
-| 2026-03-17 | JAYA-CLO-159 | New terms: Keychain, Key Rotation, Key Compromise, Key Grace Period. Section 11 expanded. | 4 |
+**Federation Violation**
+*First coined: 2026-03-20 | San Diego (America/Los_Angeles)*
+A permanent append-only record written to the federation violation log
+when an attestation mismatch is detected during cross-node verification.
+Contains: a monotonically increasing violation ID, the originating peer
+ID, the expected hash (what Node B anticipated), the received hash (what
+Node A claimed), a UTC detection timestamp, and a human-readable detail
+string. Federation violations are never deleted or modified. A violation
+automatically triggers NonCompliant flagging of the originating peer.
+Local governance of the receiving node is unaffected by the violation.
+Introduced in Part 84 -- JAYA-CLO-163 -- Phase 5 Track B.
+
+**Attestation Nonce**
+*First coined: 2026-03-20 | San Diego (America/Los_Angeles)*
+A monotonically increasing integer included in every attestation exchange
+payload produced by a federation peer. The nonce increments with each
+payload produced within a Jaya instance, ensuring that no two payloads
+from the same registry are identical even if the attestation hash is
+unchanged. The nonce provides a mechanism to detect replay attempts in
+cross-node attestation exchange -- a payload submitted twice would carry
+the same nonce, which can be detected and rejected. The exchange nonce
+is distinct from the session nonce used in local attestation replay
+protection (Part 77). Introduced in Part 84 -- JAYA-CLO-163 --
+Phase 5 Track B.
+```
 
 ## Update Log
 This section records when terms were added and by which session.
@@ -1332,6 +1389,7 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-17 | JAYA-CLO-158 | New terms: Autonomy Class, Confirmation Token, Class B Escalation, Class A Downgrade. Section 11 expanded. | 4 |
 | 2026-03-17 | JAYA-CLO-159 | New terms: Keychain, Key Rotation, Key Compromise, Key Grace Period. Section 11 expanded. | 4 |
 | 2026-03-20 | JAYA-CLO-162 | New terms: Federation Peer, Federation Ledger, Federation Event, Peer NonCompliant. Section 11 expanded. | 4 |
+| 2026-03-20 | JAYA-CLO-163 | New terms: Attestation Exchange Payload, Cross-Node Attestation, B1 Proof Condition, Federation Violation, Attestation Nonce. Section 11 expanded. | 5 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
