@@ -1138,3 +1138,9 @@ Closes B2 proof condition steps 4 and 5. B2 fully satisfied this session.
 **Scans:** S1 clean -- S2 clean
 **Build:** cargo check = 0 errors -- 7 warnings all pre-existing
 **Repos:** Jaya 9524676 tag jaya-part90-sealed | Gov cc42d8c | TYOVA 5dccbaf
+### Entry-032 | FIX-91.01 | JAYA-CLO-170 | 2026-03-22 | 10:06 San Diego
+**Part:** 91 -- B4 Governance Intelligence Part 1
+**Summary:** governance_intelligence.rs created -- GovernanceWarning + IntelligenceAnalysis structs -- analyze_ledger_patterns function -- WarningSeverity Low/Moderate/High -- weighted scoring with blocked op factor -- run_governance_intelligence Tauri command wired -- INV-P5-07 enforced structurally -- signal only -- no enforcement fields
+**Scans:** S1 clean -- S2 clean
+**Build:** cargo check = 0 errors -- 7 warnings all pre-existing
+**Repos:** Jaya 3f9de90 tag jaya-part91-sealed | Gov 43a2a97 | TYOVA 5dccbaf
