@@ -1,4 +1,4 @@
-﻿# MASTER_FIX_INDEX
+# MASTER_FIX_INDEX
 
 Status: Active
 
@@ -1641,3 +1641,9 @@ Details:
   FIX numbering resumes at FIX-88.01 beginning with Part 88 JAYA-CLO-167.
   No retroactive renumbering will be performed -- gap is preserved as-is.
   Rule: No retroactive renumbering permitted per 01_CORE_INVARIANTS.md FIX Discipline.
+
+### FIX-88.00 | JAYA-CLO-167 | Claude Sonnet 4.6 | 2026-03-22 | 10:06 San Diego
+Part: Pre-88 Standing Item 1
+Summary: Close-Session.ps1 automation script created -- 217 lines -- 8241 bytes
+Commit: 129bab9 -- ty-ai-governance
+Replaces 8-12 manual session-close commands with single parameterized command
