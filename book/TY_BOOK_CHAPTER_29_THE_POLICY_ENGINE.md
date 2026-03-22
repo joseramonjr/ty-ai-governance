@@ -205,3 +205,78 @@ Chapter 29 is sealed. Part 88 begins next.
 *CLO: JAYA-CLO-166*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6
+---
+
+## Real-World Impact -- What B2 Means for Operators
+
+The governance layer is responsive to human authority in real time.
+That is what governance is supposed to mean.
+
+Before B2, governance boundaries existed inside a compiled binary. An
+operator who needed to tighten a risk ceiling, disable file writes, or
+restrict federation participation had to wait for a developer. The code
+had to be found, modified, compiled, and redeployed. During that entire
+window the old boundary remained in effect.
+
+After B2, that same operator opens active_policy.json, changes one
+field, and calls reload_policy. The boundary changes immediately. No
+developer. No rebuild. No downtime. The system enforces the new rule
+and logs the change as a governance event in the audit record.
+
+**What is implemented and proven as of 2026-03-21:**
+
+The following was verified in the live running Jaya Runtime:
+
+- max_allowed_risk_level was changed from 60 to 5 by editing
+  active_policy.json -- no code change, no rebuild.
+- reload_policy was called without restarting the runtime.
+- run_system_health_check (risk level 10) was immediately rejected
+  with: "Policy violation: module risk 10 exceeds policy maximum 5."
+- The violation was logged to the governance ledger.
+- The policy was restored to baseline and reloaded.
+- run_system_health_check then succeeded -- confirming the policy
+  engine correctly permits operations within bounds.
+
+The active_policy.json file is committed to the ty-ai-governance
+repository. Every change to it is a committed record with a timestamp
+and attribution. This is the beginning of a verifiable, auditable
+governance boundary history.
+
+**What is not yet implemented:**
+
+The following capabilities are not yet built and are noted here so
+the record is accurate:
+
+- No policy management UI exists. Policy changes require direct file
+  editing and a manual reload_policy call.
+- The runtime does not watch the policy file for changes
+  automatically. Reload must be triggered explicitly.
+- Only one policy file exists. Multiple policy files for different
+  operating contexts have not been built.
+- This system runs on one machine operated by the builder. No
+  external operators, no deployment, no multi-machine enforcement.
+- The audit trail in the governance repository is real and
+  cryptographically chained, but no formal process exists yet for
+  regulators or external parties to query it. That is the B3
+  Transparency Layer -- not yet built.
+
+**The civilizational point:**
+
+TY AI OS was designed around one ordering principle: governance must
+precede intelligence. A system that is intelligent before it is
+governed is ungovernable.
+
+B2 advances that principle in a specific and concrete way on one
+machine operated by one builder. The governance boundary between the
+specification and the enforcement is now a JSON file -- not compiled
+code. The operator can change it in seconds without touching the
+binary. That is a real, proven, and documented capability as of
+today.
+
+What it will mean when TY AI OS reaches multiple machines, external
+operators, and real-world deployment is described in the post-Phase-5
+roadmap. That work has not begun. What is written here describes only
+what exists and has been proven today.
+
+*Addendum sealed: 2026-03-21 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-166*
