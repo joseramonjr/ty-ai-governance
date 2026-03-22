@@ -1079,3 +1079,43 @@ B2 proof condition step 3 -- agent action violating policy triggers violation lo
 - Jaya-Runtime: 063378b (tag: jaya-part86-sealed)
 - ty-ai-governance: 6b0ef4c
 **MASTER_FIX_INDEX:** Entry JAYA-CLO-165 written and committed.
+
+---
+### Entry-028
+Date: 2026-03-21 | San Diego
+Part: 87 | CLO: JAYA-CLO-166
+Title: B2 Hot-Reload Proof Condition
+
+**Objective:** Enable Jaya Runtime to reload policy from disk without restart.
+Closes B2 proof condition steps 4 and 5. B2 fully satisfied this session.
+
+**What was built:**
+- policy.rs -- PolicyLoader::reload added
+  Reloads policy from disk, replaces managed PolicyState in place
+  Follows same validation path as load -- fail-safe on any error
+- lib.rs -- reload_policy Tauri command added and registered
+  Logs reload event to ledger as governance event
+  Returns new policy state to caller
+- active_policy.json -- BOM issue identified and fixed
+  WriteAllLines with UTF8 adds BOM -- serde_json rejects it
+  Fixed: use WriteAllText with UTF8Encoding(false) -- no BOM
+  Policy restored to baseline v1.0.1 max_risk=60
+
+**B2 PROOF CONDITION -- ALL STEPS PASSED:**
+  Step 1 -- Policy expressed in policy format -- PASS
+  Step 2 -- Jaya loads policy without rebuild -- PASS
+  Step 3 -- Agent action violating policy triggers violation log -- PASS
+    run_system_health_check rejected with:
+    Policy violation: module risk 10 exceeds policy maximum 5
+  Step 4 -- Policy tightened on disk -- PASS -- max_risk dropped 60->5
+  Step 5 -- Runtime reflects change without restart -- PASS
+  Step 6 -- cargo check 0 errors -- PASS
+  Step 7 -- Baseline restored, run_system_health_check succeeds -- PASS
+
+**cargo check:** 0 errors, 6 warnings (all pre-existing).
+**S1/S2:** Clean on all files written this session.
+**Repo states:**
+- Jaya-Runtime: 92d6041 (tag: jaya-part87-sealed)
+- ty-ai-governance: 78ad239
+**MASTER_FIX_INDEX:** Entry JAYA-CLO-166 written and committed.
+**NEXT:** Write Chapter 29 -- B2 Policy Engine -- before Part 88 begins.
