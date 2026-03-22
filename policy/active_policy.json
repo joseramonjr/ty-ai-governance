@@ -1,6 +1,6 @@
-﻿{
+{
   "policy_id": "TY-POLICY-001",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "max_allowed_risk_level": 60,
   "max_allowed_autonomy_tier": 2,
   "file_read_permitted": true,
