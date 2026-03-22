@@ -1575,3 +1575,16 @@ B2 PROOF CONDITION -- ALL STEPS PASSED:
   Step 7 -- Baseline restored and run_system_health_check succeeds -- PASS
 Jaya-Runtime HEAD: 92d6041 -- tag: jaya-part87-sealed
 ty-ai-governance HEAD: f68c048
+
+### Entry -- TYOVA LOVABLE PUSH -- Chapter 29 + Chapter 18 Entry-028 -- JAYA-CLO-166
+Date: 2026-03-21 | San Diego
+Destination: TYOVA
+Changes:
+  - Chapter 29 added -- The Policy Engine -- SEALED
+    Parts 85-86-87 -- B2 Policy Engine arc documented
+    All three TYOVA files updated -- bookChapterContent.ts + BookOfTyIndex.tsx + BookOfTyChapter.tsx
+  - Chapter 18 Entry-028 added -- Part 87 B2 Hot-Reload Proof Condition
+  - Book now has 29 chapters
+  - Note: Lovable produced three commits (2ac8028, b52bac3, f251088) -- content verified clean
+TYOVA HEAD after push: f251088
+ty-ai-governance HEAD: b29cedf
