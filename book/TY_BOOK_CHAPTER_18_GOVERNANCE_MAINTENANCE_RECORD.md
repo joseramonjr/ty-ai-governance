@@ -1132,3 +1132,9 @@ Closes B2 proof condition steps 4 and 5. B2 fully satisfied this session.
 **Scans:** S1 clean -- S2 clean
 **Build:** cargo check = 0 errors -- 9 warnings all pre-existing or expected
 **Repos:** Jaya 1a97f5f tag jaya-part89-sealed | Gov ef0f104 | TYOVA 5dccbaf
+### Entry-031 | FIX-90.01 | JAYA-CLO-169 | 2026-03-22 | 10:06 San Diego
+**Part:** 90 -- B3 Transparency Layer Part 3 -- External Verification Tool
+**Summary:** verify_governance_proof + verify_tampered_proof Tauri commands wired. B3 proof condition fully satisfied live: proof generated, served on port 7777, valid proof verified true, tampered proof detected false, ledger logged GOVERNANCE_PROOF_GENERATED and GOVERNANCE_PROOF_VERIFICATION_FAILED with REASON=PAYLOAD_MISMATCH.
+**Scans:** S1 clean -- S2 clean
+**Build:** cargo check = 0 errors -- 7 warnings all pre-existing
+**Repos:** Jaya 9524676 tag jaya-part90-sealed | Gov cc42d8c | TYOVA 5dccbaf
