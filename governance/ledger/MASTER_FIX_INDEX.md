@@ -1547,3 +1547,31 @@ Changes:
   - Note: Lovable produced two commits (ef15290, acfbe1e) -- content verified clean, no duplication
 TYOVA HEAD after push: acfbe1e
 ty-ai-governance HEAD: ce6ad5a
+
+### Entry -- JAYA-CLO-166 -- Part 87 -- B2 Hot-Reload Proof Condition
+Date: 2026-03-21 | San Diego
+CLO: JAYA-CLO-166
+Part: 87
+Status: SEALED
+Changes:
+  - policy.rs -- PolicyLoader::reload added
+    Reloads policy from disk and replaces managed PolicyState in place
+    Follows same validation path as load -- fail-safe on any error
+  - lib.rs -- reload_policy Tauri command added and registered
+    Logs reload event to ledger as governance event
+    Returns new policy state to caller
+  - active_policy.json -- BOM issue identified and fixed
+    WriteAllLines with UTF8 encoding adds BOM -- serde_json rejects it
+    Fixed using WriteAllText with UTF8Encoding(false) -- no BOM
+    Policy restored to baseline v1.0.1 max_risk=60
+B2 PROOF CONDITION -- ALL STEPS PASSED:
+  Step 1 -- Policy expressed in policy format -- PASS
+  Step 2 -- Jaya loads policy without rebuild -- PASS
+  Step 3 -- Agent action violating policy triggers violation log -- PASS
+    run_system_health_check rejected: Policy violation: module risk 10 exceeds policy maximum 5
+  Step 4 -- Policy tightened on disk -- PASS -- max_risk dropped 60->5
+  Step 5 -- Runtime reflects change without restart -- PASS -- reload_policy confirmed
+  Step 6 -- cargo check 0 errors -- PASS
+  Step 7 -- Baseline restored and run_system_health_check succeeds -- PASS
+Jaya-Runtime HEAD: 92d6041 -- tag: jaya-part87-sealed
+ty-ai-governance HEAD: f68c048
