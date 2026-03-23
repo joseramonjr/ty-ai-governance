@@ -1693,3 +1693,7 @@ B4 PROOF CONDITION SATISFIED:
   6. Both events in ledger -- warnings + FailingModule FAILURE -- PASS
   INV-P5-07 confirmed -- signal_only=true throughout -- no enforcement from intelligence layer
 Commit: 824082f -- Jaya-Runtime -- tag jaya-part92-sealed (code sealed in Part 92)
+### FIX-93.02 | JAYA-CLO-172 | Claude Sonnet 4.6 | 2026-03-22 | 10:06 San Diego
+Part: 93 -- Post-build
+Summary: Chapter 26 vocabulary update -- 6 new terms added (Governance Proof, Proof Server, Intelligence Timer, Governance Warning, Warning Severity, Weighted Risk Score) -- 2 definitions updated (Transparency Layer, Governance Intelligence updated to reflect proven implementation) -- ordering fixed -- term count 185 -> 191
+Commit: f8c1ed2 -- ty-ai-governance
