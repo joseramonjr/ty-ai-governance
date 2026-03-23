@@ -1,11 +1,11 @@
-﻿# Chapter 26 -- The TY AI OS Vocabulary
+# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
 **CLO:** JAYA-CLO-148 (date addition + new term audit)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-19 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 179 (as of 2026-03-20 -- corrected count)
+**Current Term Count:** 191 (as of 2026-03-22 -- 6 new terms added, 2 updated)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -832,6 +832,16 @@ the ledger is the authoritative record of what Jaya did. Ledger
 discipline also applies to the governance repo -- MASTER_FIX_INDEX
 entries are immutable once committed.
 
+**Governance Proof**
+*First coined: 2026-03-22 | San Diego (America/Los_Angeles)*
+A signed, cryptographically verifiable payload produced by a Jaya node
+containing public governance state only. Contains: proof ID, timestamp,
+ledger hash, policy ID, policy version, node public key hex, signed
+payload hex, and Ed25519 signature. No internal agent data. No behavior
+data. No private identifiers. INV-P5-06 is enforced structurally by the
+struct definition. Any external party can verify a Governance Proof using
+only the node public key -- no system access required.
+
 ---
 ## Section 8 -- Operational System Terms
 These terms describe the operational components and monitoring
@@ -895,6 +905,20 @@ instances on different devices develop different behavioral patterns.
 Dual use: in SS321, the voice response system. In the documentation
 system, the engine that identifies and catalogs novel TY AI OS
 vocabulary for patent and documentation use.
+
+**Proof Server**
+*First coined: 2026-03-22 | San Diego (America/Los_Angeles)*
+The dedicated HTTP server running on port 7777 that publishes the current
+GovernanceProof as a public endpoint. Runs in a dedicated OS thread
+separate from the Tauri runtime. Serves GET /governance/proof with no
+authentication required. No internal data exposed.
+
+**Intelligence Timer**
+*First coined: 2026-03-22 | San Diego (America/Los_Angeles)*
+The background thread that runs governance ledger pattern analysis every
+30 seconds. Spawned at Jaya launch via start_intelligence_timer(). Updates
+IntelligenceTimerState via Arc<Mutex<>>. Produces signals only -- never
+enforcement actions. INV-P5-07 enforced.
 
 ---
 ## Section 9 -- Documentation and Process Terms
@@ -1116,27 +1140,24 @@ rejected at load time.
 
 **Transparency Layer**
 *First coined: 2026-03-15 11:47 | San Diego (America/Los_Angeles)*
-The capability for any external party to verify that a Jaya node
-or federation is operating within its stated governance boundaries
-without being given access to system internals. The Transparency
-Layer produces a public, cryptographically verifiable governance
-proof at defined intervals. The proof never exposes internal agent
-identity or behavior data. Verification requires no credentials.
-The Transparency Layer removes the requirement to trust the
-operator -- the system proves its own compliance continuously
-and publicly.
-
+*Updated: 2026-03-22 | San Diego (America/Los_Angeles)*
+The B3 Phase 5 capability enabling any external party to verify a Jaya
+node's governance state without access to system internals. Implemented
+via a signed GovernanceProof published to a public HTTP endpoint on port
+7777. The proof is cryptographically verifiable using only the node's
+public key. INV-P5-06: the Transparency Layer never exposes internal agent
+identity or behavior data. Proven in live Jaya Runtime on 2026-03-22 --
+Parts 88-90 -- JAYA-CLO-167 through JAYA-CLO-169.
 **Governance Intelligence**
 *First coined: 2026-03-15 11:47 | San Diego (America/Los_Angeles)*
-The capability for the TY AI OS ecosystem to analyze patterns in
-the governance ledger and produce early warning signals when agent
-behavior is trending toward a violation before the violation
-occurs. Governance Intelligence moves the system from reactive
-enforcement to predictive monitoring. It produces signals only --
-it never takes enforcement action. The intelligence layer cannot
-modify ledger entries. Analysis reasoning is preserved in the
-governance record for auditability.
-
+*Updated: 2026-03-22 | San Diego (America/Los_Angeles)*
+The B4 Phase 5 capability that analyzes patterns in the governance ledger
+and produces early warning signals when agent behavior is trending toward
+a violation -- before the violation occurs. Operates above the ledger.
+Cannot modify ledger entries or trigger enforcement actions. INV-P5-07:
+Governance Intelligence produces signals only -- never enforcement.
+Proven in live Jaya Runtime on 2026-03-22 -- Parts 91-93 --
+JAYA-CLO-170 through JAYA-CLO-172.
 ---
 
 **Replay Protection**
@@ -1431,6 +1452,29 @@ enforcement meaning. Core Invariants are validated at policy load time --
 not at execution time. Introduced in Part 85 -- JAYA-CLO-164 --
 Phase 5 Track B.
 
+**Governance Warning**
+*First coined: 2026-03-22 | San Diego (America/Los_Angeles)*
+A signal-only output from the Governance Intelligence layer indicating
+behavioral trends approaching a violation threshold. Contains: warning ID,
+timestamp, severity, pattern description, observed average risk, operation
+counts, window size, threshold, and signal_only: true. Contains no action
+fields, no enforcement triggers, no kill-switch references. INV-P5-07
+enforced structurally by the struct definition.
+
+**Warning Severity**
+*First coined: 2026-03-22 | San Diego (America/Los_Angeles)*
+The classification of a GovernanceWarning as Low (weighted score >= 40),
+Moderate (weighted score >= 55), or High (weighted score >= 70). Severity
+is derived from the weighted risk score and determines how urgently a
+warning signal should be reviewed. Severity never triggers enforcement.
+
+**Weighted Risk Score**
+*First coined: 2026-03-22 | San Diego (America/Los_Angeles)*
+The composite score used by Governance Intelligence to determine warning
+severity. Calculated as: average_risk_score + (blocked_op_count x 2).
+The blocked operation weight factor (x2) amplifies the signal from
+operations that were rejected or violated governance boundaries. Used
+exclusively for signal generation -- never for enforcement decisions.
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -1448,6 +1492,8 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-20 | JAYA-CLO-162 | New terms: Federation Peer, Federation Ledger, Federation Event, Peer NonCompliant. Section 11 expanded. | 4 |
 | 2026-03-20 | JAYA-CLO-163 | New terms: Attestation Exchange Payload, Cross-Node Attestation, B1 Proof Condition, Federation Violation, Attestation Nonce. Section 11 expanded. | 5 |
 | 2026-03-21 | JAYA-CLO-164 | New terms: Policy, PolicyLoader, PolicyState, Maximum Restriction, InvariantCheckable, Core Invariant. Section 11 expanded. | 6 |
+| 2026-03-22 | JAYA-CLO-172 | New terms: Governance Proof, Proof Server, Intelligence Timer, Governance Warning, Warning Severity, Weighted Risk Score. Updated: Transparency Layer, Governance Intelligence (definitions updated to reflect proven implementation). Sections 7, 8, 11 expanded. | 6 |
+
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
