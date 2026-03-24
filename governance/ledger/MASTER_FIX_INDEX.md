@@ -1870,3 +1870,10 @@ Commit: f8c1ed2 -- ty-ai-governance
 - Ch5 coming soon, Ch26 living, Ch31 living not counted in sealed
 - Commit: 63409ed
 - S1/S2: CLEAN
+
+### FIX-95.10 | JAYA-CLO-175 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Destination: TYOVA
+- File: src/pages/BookOfTyChapter.tsx
+- Change: Chapter status badge made dynamic -- Ch26 shows Living Document, Ch31 shows Design-Only -- Living, Ch5 shows Coming Soon, all others show Sealed
+- Commit: 8bd8a77
+- S1/S2: CLEAN
