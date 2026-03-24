@@ -1794,3 +1794,44 @@ Commit: f8c1ed2 -- ty-ai-governance
 - S2 false positives confirmed pre-existing at lines 3337 and 4746 -- not new corruption
 - Commit: fbde6f3
 - S1: CLEAN | S2: 2 known false positives
+
+### FIX-95.01 | JAYA-CLO-175 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Destination: ty-ai-governance
+- File: spec/TY_JAYME_SPEC_v0.1.md
+- Change: Jayme AI Continuity Guardian Specification v0.1 -- design-only
+- Sections I-XV including anti-compromise invariants INV-J1 through INV-J5
+- CLO series JAYA-CLO-200 to JAYA-CLO-249 reserved for future implementation
+- Commit: 73a287d
+- S1/S2: CLEAN
+
+### FIX-95.02 | JAYA-CLO-175 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Destination: ty-ai-governance
+- File: book/TY BOOK_CHAPTER_07_LUKE_AND_JAYME.md
+- Change: Full rewrite -- repaired reverse-order corruption and added missing Jayme section
+- Added: Naming Moment, Formal Definition, Why Jayme Exists, Halt Power, Jayme Cannot Be Weaponized
+- Commit: 73a287d
+- S1/S2: CLEAN
+
+### FIX-95.03 | JAYA-CLO-175 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Destination: ty-ai-governance
+- File: book/TY_BOOK_CHAPTER_31_THE_PROMISE_KEPT.md
+- Change: New chapter -- The Promise Kept: Jayme AI and the Continuity of Authority
+- Covers: three-system architecture, activation conditions, halt power, anti-compromise invariants
+- Commit: 73a287d
+- S1/S2: CLEAN
+
+### FIX-95.04 | JAYA-CLO-175 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Destination: TYOVA
+- File: src/data/bookChapterContent.ts
+- Change: Chapter 31 Jayme AI added to TYOVA book content
+- Includes anti-compromise invariants INV-J1 through INV-J5
+- Commit: 0a6ffcc
+- S1/S2: CLEAN (2 known false positives at lines 3337 and 4746)
+
+### FIX-95.05 | JAYA-CLO-175 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Destination: ty-ai-governance
+- File: spec/TY_CONTINUITY_CHARTER_TEMPLATE_v0.1.md
+- Change: Continuity Charter template for builder personal completion
+- Sections I-VIII including compromise and attack conditions
+- Commit: 73a287d
+- S1/S2: CLEAN
