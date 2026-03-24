@@ -1697,3 +1697,81 @@ Commit: 824082f -- Jaya-Runtime -- tag jaya-part92-sealed (code sealed in Part 9
 Part: 93 -- Post-build
 Summary: Chapter 26 vocabulary update -- 6 new terms added (Governance Proof, Proof Server, Intelligence Timer, Governance Warning, Warning Severity, Weighted Risk Score) -- 2 definitions updated (Transparency Layer, Governance Intelligence updated to reflect proven implementation) -- ordering fixed -- term count 185 -> 191
 Commit: f8c1ed2 -- ty-ai-governance
+### FIX-93.03 | JAYA-CLO-173 | Claude Sonnet 4.6 | 2026-03-23 | San Diego
+- Destination: TYOVA
+- File: src/ty-ai-admin-core/vendored-ss321/TYAIHubNavigation.tsx
+- Change: Relocated 12 SS321-disabled nav items to bottom of getNavItems() array
+- Active sections grouped at top (line 85), SS321-only sections grouped at bottom (line 177)
+- Comment separator added: -- SS321-only sections -- active when connected --
+- Commit: 6161f5e
+- S1/S2: CLEAN
+
+### FIX-93.04 | JAYA-CLO-173 | Claude Sonnet 4.6 | 2026-03-23 | San Diego
+- Destination: TYOVA
+- File: src/ty-ai-admin-core/vendored-ss321/TYAIHubNavigation.tsx
+- Change: Added visual separator between active and SS321-only nav sections
+- NavItem interface extended with separator?: boolean field
+- renderNavItem early return renders divider with label "SS321 only -- active when connected"
+- Array comment replaced with real separator object at line 178
+- Commit: c6477c7
+- S1/S2: CLEAN
+
+### FIX-93.05 | JAYA-CLO-173 | Claude Sonnet 4.6 | 2026-03-23 | San Diego
+- Destination: TYOVA
+- File: src/ty-ai-admin-core/vendored-ss321/TYAIHubNavigation.tsx
+- Change: Brightened SS321 separator label opacity from /50 to /80
+- Commit: eb13070
+- S1/S2: CLEAN
+
+### FIX-93.06 | JAYA-CLO-173 | Claude Sonnet 4.6 | 2026-03-23 | San Diego
+- Destination: TYOVA
+- File: src/ty-ai-admin-core/vendored-ss321/TYAIHubNavigation.tsx
+- Change: Increased SS321 separator label to text-xs and full opacity (no opacity suffix)
+- Commit: d3a49bc
+- S1/S2: CLEAN
+
+### FIX-93.07 | JAYA-CLO-173 | Claude Sonnet 4.6 | 2026-03-23 | San Diego
+- Destination: TYOVA
+- File: src/ty-ai-admin-core/vendored-ss321/TYAIHubNavigation.tsx
+- Change: Replaced Master Hub sidebar header with gold-bordered box
+- Shows: Phase 5 Complete -- 93 Parts Sealed, Hub Schema version, Non-Executing -- Inspection-Only
+- Gold border uses hsl(var(--gold)) matching HowTyAiOsWorksPage canonical archive box pattern
+- Commit: cd46cda
+- S1/S2: CLEAN
+
+### FIX-93.08 | JAYA-CLO-173 | Claude Sonnet 4.6 | 2026-03-23 | San Diego
+- Destination: TYOVA
+- File: src/components/hub/HubTopBar.tsx
+- Change: Styled Phase5Complete and Hub Schema badges with gold border
+- Replaced bg-muted/border-border grey styling with gold border + gold text + gold tint background
+- Matches canonical archive gold box pattern from HowTyAiOsWorksPage
+- Commit: 5aad941
+- S1/S2: CLEAN
+
+### FIX-93.09 | JAYA-CLO-173 | Claude Sonnet 4.6 | 2026-03-23 | San Diego
+- Destination: TYOVA
+- File: src/components/hub/HubTopBar.tsx
+- Change: Styled Sections, Chapters, Dormant, Non-Executing, Inspection-Only badges with gold
+- Edit mode Non-Executable badge intentionally left grey (not canonical view)
+- Commit: 65aa8ff
+- S1/S2: CLEAN
+
+### FIX-93.10 | JAYA-CLO-173 | Claude Sonnet 4.6 | 2026-03-23 | San Diego
+- Destination: TYOVA
+- File: src/components/hub/HubTopBar.tsx
+- Change: Renamed Chapters badge to Hub Groups to avoid confusion with Book of TY chapters
+- bookChapters.length counts hub group registrations (10), not Book of TY chapters (30)
+- Commit: 300121d
+- S1/S2: CLEAN
+
+### FIX-94.01 | JAYA-CLO-174 | Claude Sonnet 4.6 | 2026-03-23 | San Diego
+- Destination: Jaya-Runtime
+- Change: Phase 5 formal seal -- git tag phase5-complete-sealed applied
+- HEAD: 824082f (jaya-part92-sealed)
+- Phases 1-5 SEALED -- 93 parts complete
+- Track A (Parts 77-82) SEALED
+- Track B (Parts 83-93) SEALED -- all B1-B4 proof conditions satisfied
+- B3 proof: GET /governance/proof port 7777 -- external verification 2026-03-22
+- B4 proof: WARN-20260322162339-LOW -- weighted_score=40.5 -- signal_only=true
+- cargo check: 0 errors, 7 warnings
+- Tag: phase5-complete-sealed
