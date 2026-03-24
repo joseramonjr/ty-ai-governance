@@ -158,3 +158,102 @@ else is documented, verified, and sealed.
 
 *Chapter sealed: 2026-03-17 | San Diego (America/Los_Angeles)*
 *CLO: JAYA-CLO-159 | Model: Claude Sonnet 4.6*
+---
+
+## Addendum -- Track B Complete and Phase 5 Sealed
+**Written:** 2026-03-23 | San Diego (America/Los_Angeles)
+**CLO:** JAYA-CLO-174 | Model: Claude Sonnet 4.6
+
+This chapter was sealed on 2026-03-17 with Track B not yet begun. That
+has changed. This addendum records what Track B proved and how Phase 5
+formally closed.
+
+### Track B -- What It Built
+
+Track B opened the question this chapter posed: whether a governance
+system built for a single machine can extend its authority and
+verification to a wider world without losing the properties that make
+it trustworthy.
+
+Eleven parts. Four proof conditions. All satisfied.
+
+**B1 -- Federation Runtime (Parts 83-86)**
+A second Jaya node can join a governed federation. The joining node
+submits a cryptographic attestation. The receiving node verifies the
+attestation against its keychain before admitting the peer. Unverified
+nodes are rejected at the boundary. The federation registry enforces
+key pinning -- a peer whose key changes without a governed rotation is
+flagged as a violation. Authority does not propagate between nodes.
+Each node enforces its own governance locally. The federation is a
+verification network, not an authority network.
+
+**B2 -- Policy Engine (Parts 87-88)**
+Governance rules are now machine-evaluable. A policy is a named,
+versioned rule with a defined scope, a condition, and a consequence.
+The policy engine evaluates registered policies against runtime state
+on a timer. Violations produce PolicyViolation events. Policies are
+registered, not hardcoded -- the engine is a runtime surface, not a
+compile-time constraint. The distinction matters: hardcoded rules
+cannot be updated without a code change. Registered policies can be
+updated through the governance ledger while the system runs.
+
+**B3 -- Transparency Layer (Parts 89-90)**
+The governance state of a running Jaya node is now externally
+verifiable without requiring access to the node's internals. A signed
+governance proof is available at GET /governance/proof on port 7777.
+The proof contains the current ledger hash, the active peer registry,
+and a cryptographic signature over the full payload. Any external
+observer with the node's public key can verify the proof independently.
+B3 proof condition satisfied 2026-03-22: external GET request to
+port 7777 returned a valid signed proof. Verification passed.
+
+**B4 -- Governance Intelligence (Parts 91-93)**
+The governance system now monitors itself. A governance intelligence
+analyzer runs on a timer and evaluates weighted signals across the
+runtime -- replay attempts, policy violations, peer registry changes,
+autonomy escalations. The analyzer produces a weighted score. Scores
+above defined thresholds trigger WARN or CRITICAL governance events.
+The system does not wait to be queried. It observes its own state and
+raises signals when patterns emerge.
+B4 proof condition satisfied 2026-03-22:
+WARN-20260322162339-LOW -- weighted_score=40.5 -- signal_only=true.
+The intelligence layer fired a real governance warning from real
+runtime signals. No simulation. No manual trigger.
+
+### Phase 5 Formal Seal
+
+Phase 5 sealed on 2026-03-23 in San Diego.
+
+Tag: phase5-complete-sealed
+HEAD: 824082f (jaya-part92-sealed)
+93 parts complete. 5 phases sealed.
+
+All proof conditions across both tracks were satisfied before the seal
+was applied. No proof condition was waived. No gate was skipped. The
+same discipline that governed Phase 1 governed Phase 5.
+
+### Vocabulary at Phase 5 Seal
+
+Chapter 26 grew from 169 terms at Track A seal to 191 terms at Phase 5
+seal. The 22 terms added during Track B cover federation primitives,
+policy engine concepts, transparency layer vocabulary, and governance
+intelligence terminology. Every term introduced during Track B
+implementation was registered in Chapter 26 before the next part
+opened.
+
+### What This Chapter Now Records
+
+This chapter was written to ask whether Track B would hold. It has
+held. The architecture survived contact with the outside world. A
+second node can join. Policies can be evaluated. Governance state can
+be externally verified. The system monitors itself.
+
+The post-Phase-5 gaps are real and documented: the system still lives
+on one machine, Jayme's role remains undefined, the world does not yet
+know TY exists. Those gaps are not failures of Phase 5. They are the
+honest boundary of what Phase 5 scoped to prove.
+
+Phase 6 begins at that boundary.
+
+*Addendum sealed: 2026-03-23 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-174 | Model: Claude Sonnet 4.6*
