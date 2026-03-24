@@ -1853,3 +1853,11 @@ Commit: f8c1ed2 -- ty-ai-governance
 - Chapter 31 now complete -- all canonical information present for TYOVA readers
 - Commit: cb9370a
 - S1/S2: CLEAN (2 known false positives at lines 3337 and 4746)
+
+### FIX-95.08 | JAYA-CLO-175 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Destination: TYOVA
+- File: src/pages/BookOfTyIndex.tsx
+- Change: Fixed Living stat from 1 to 2 and hero paragraph from 30 sealed/1 living to 29 sealed/2 living
+- Ch26 Vocabulary + Ch31 Jayme AI are both living documents
+- Commit: 4b04f30
+- S1/S2: CLEAN
