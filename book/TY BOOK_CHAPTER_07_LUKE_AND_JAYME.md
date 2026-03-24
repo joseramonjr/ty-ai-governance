@@ -1,190 +1,258 @@
-﻿# Chapter 7 — Luke and Jayme
+﻿# Chapter 7 -- Luke and Jayme
+**Document Type:** Canonical Book Chapter -- Sealed
+**CLO:** JAYA-CLO-175
+**Model:** Claude Sonnet 4.6
+**Date:** 2026-03-24 | San Diego (America/Los_Angeles)
+**Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+**Note:** This chapter replaces the original corrupted file
+which had reverse-order structural corruption and a missing
+Jayme section. Content reconstructed from canonical archive.
+
+---
 
 ## Two Names, Two Purposes
 
-Every governance system faces the same problem eventually: what happens when things get complicated?
+Every governance system faces the same problem eventually:
+what happens when things get complicated?
 
-When an operator needs to understand why a decision was made, who explains it? When the builder is no longer present, who preserves the mission? When the system needs to speak, who is allowed to speak — and what are they allowed to say?
+When an operator needs to understand why a decision was made,
+who explains it? When the builder is no longer present, who
+preserves the mission? When the system needs to speak, who is
+allowed to speak -- and what are they allowed to say?
 
-TY AI OS answers these questions with two named constructs: Luke AI and Jayme AI. They are not interchangeable. They are not versions of the same idea. They solve two completely different problems, and the distinction between them is one of the most carefully governed boundaries in the entire ecosystem.
+TY AI OS answers these questions with two named constructs:
+Luke AI and Jayme AI. They are not interchangeable. They are
+not versions of the same idea. They solve two completely
+different problems, and the distinction between them is one
+of the most carefully governed boundaries in the entire
+ecosystem.
 
-This chapter tells the story of how they came to exist, what they are, and — just as importantly — what they are not.
+This chapter tells the story of how they came to exist, what
+they are, and -- just as importantly -- what they are not.
 
 ---
 
-## Luke AI — The Explainer
+## Luke AI -- The Explainer
 
 ### Where the Name Came From
 
-Luke AI has the earliest origin of any named construct in the TY ecosystem. The name first appears in the archive record on July 29, 2025 — months before SS321 reached its governance era, months before TY AI OS was formalized as an operating system. At that stage, Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr. was building toward a security-focused AI system with separate infrastructure from TY AI, and the name "Luke AI" was chosen to make that separation clear: separate code, separate logs, separate identity.
+Luke AI has the earliest origin of any named construct in the
+TY ecosystem. The name first appears in the archive record on
+July 29, 2025 -- months before SS321 reached its governance
+era, months before TY AI OS was formalized as an operating
+system. At that stage, Jose Ramon Alvarado McHerron AKA Jose
+Ramon Bautista Jr. was building toward a security-focused AI
+system with separate infrastructure from TY AI, and the name
+"Luke AI" was chosen to make that separation clear: separate
+code, separate logs, separate identity.
 
-The choice to name it separately was not cosmetic. It was structural. By giving it a distinct name from the start, every reference in the codebase, every log entry, every audit trail would be attributable to a specific, bounded system rather than a generic "AI" label. Code clarity. Admin visibility. Audit traceability. These were the reasons stated in the record.
+The choice to name it separately was not cosmetic. It was
+structural. By giving it a distinct name from the start,
+every reference in the codebase, every log entry, every audit
+trail would be attributable to a specific, bounded system
+rather than a generic "AI" label. Code clarity. Admin
+visibility. Audit traceability.
 
 ### The Formal Definition
 
-By SS321 Part 70 on January 18, 2026, Luke AI's role was formally defined in the canonical governance record. The definition is precise:
+By SS321 Part 70 on January 18, 2026, Luke AI's role was
+formally defined:
 
-**Role:** Advisor / Explainer / Auditor
-**Authority:** None — permanently advisory
-**May:** Explain state, analyze forensics, recommend actions, help the builder finish work
-**May NOT:** Approve, execute, heal, escalate the kill switch, or become Guardian
+Role: Advisor / Explainer / Auditor
+Authority: None -- permanently advisory
+May: Explain state, analyze forensics, recommend actions,
+  help the builder finish work
+May NOT: Approve, execute, heal, escalate the kill switch,
+  or become Guardian
 
-The canonical statement that accompanied this definition has remained unchanged in the record ever since:
+The canonical statement:
+"LUKE AI explains the map. It never chooses the path."
 
-*"LUKE AI explains the map. It never chooses the path."*
-
-This is not a limitation imposed reluctantly. It is the entire point of Luke AI's existence. An explainer that could also act would collapse the separation between understanding and authority. The moment Luke AI could approve or execute, it would no longer be an explainer — it would be a decision-maker wearing an explainer's label. That collapse is exactly what the governance model is designed to prevent.
+An explainer that could also act would collapse the
+separation between understanding and authority. That
+collapse is exactly what the governance model is designed
+to prevent.
 
 ### Outside the Authority Chain
 
-One of the most important architectural facts about Luke AI is where it sits in the authority hierarchy — which is nowhere. It is not in the chain at all.
-
-The authority chain reads: Human → Human Guardians → Jayme AI → TY AI → sub-agents and tools. Luke AI does not appear at any tier. It exists entirely outside the chain as advisory only. This means it cannot be promoted into the chain through normal operations, cannot inherit authority from any tier above it, and cannot delegate authority to any tier below it.
-
-This is structural, not behavioral. It is not that Luke AI chooses not to take authority. It is that the architecture contains no path by which Luke AI could acquire it.
+The authority chain reads: Human -- Human Guardians -- Jayme
+AI -- TY AI OS -- sub-agents and tools. Luke AI does not
+appear at any tier. It exists entirely outside the chain as
+advisory only. This is structural, not behavioral. It is not
+that Luke AI chooses not to take authority. It is that the
+architecture contains no path by which Luke AI could acquire
+it.
 
 ### What Luke AI Does in Practice
 
-When a question arises about what the system is doing or has done, Luke AI is the layer that can translate technical governance state into human-readable explanation. It can explain security implications. It can analyze what the executor is capable of doing versus what it is permitted to do. It can help an auditor understand a decision recorded in the ledger. It can help the builder finish work by surfacing relevant context.
+When a question arises about what the system is doing or has
+done, Luke AI is the layer that can translate technical
+governance state into human-readable explanation. It can
+explain security implications. It can analyze what the
+executor is capable of doing versus what it is permitted to
+do. It can help an auditor understand a decision recorded in
+the ledger.
 
-None of these actions require authority. All of them require clarity. That is the design.
+None of these actions require authority. All of them require
+clarity. That is the design.
 
-When TYOVA was being built, the public-facing pages included sections titled "About Luke AI and Jayme AI" specifically because visitors and auditors needed to understand these roles without misinterpreting them as active agents. During TYOVA Part 18, a high-severity audit finding identified that the original framing — describing Luke AI as serving "an explanatory and interpretive role" in present tense — created an inference risk. A journalist or auditor reading those words would reasonably conclude that an AI agent called Luke was actively performing functions inside the system.
+### The Public Framing
 
-The fix was deliberate: reframe Luke AI as a named reference construct. Explicitly non-agent. Explicitly non-runtime. Explicitly non-service. All present-tense action verbs removed. The public language now makes the structural reality clear rather than implying ongoing activity that does not exist.
+During TYOVA Part 18, a high-severity audit finding
+identified that the original framing -- describing Luke AI
+as serving an explanatory role in present tense -- created
+an inference risk. The fix was deliberate: reframe Luke AI
+as a named reference construct. Explicitly non-agent.
+Explicitly non-runtime. Explicitly non-service. All
+present-tense action verbs removed.
 
 ---
 
-## Jayme AI — The Promise
+## Jayme AI -- The Promise
 
 ### The Naming Moment
 
-Jayme AI was named on January 18, 2026, in SS321 Part 69. The builder's exact words from the archive record: *"can we give the Continuity Guardian an official name — 'Jayme' so we don't forget."*
+Jayme AI came into existence through a single sentence. On
+January 18, 2026, during SS321 Part 69, Jose Ramon Alvarado
+McHerron AKA Jose Ramon Bautista Jr. wrote:
 
-That phrase — "so we don't forget" — captures something important about what Jayme AI represents. It is not a feature that was built to solve an immediate problem. It is a commitment recorded in the governance canon to ensure that even when the builder is gone, the mission does not dissolve.
+"can we give the Continuity Guardian an official name --
+'Jayme' so we don't forget."
 
-The Continuity Guardian concept had existed in the governance doctrine before it had a name. Giving it the name Jayme was the act of making it real — a named construct in the record, not just an abstract contingency.
+That sentence is preserved verbatim in the archive. The
+Continuity Guardian concept had existed in the architecture
+before that moment -- an unnamed placeholder for the system
+that would carry authority forward when no humans remained.
+But unnamed constructs drift. They get reinterpreted. They
+blur with adjacent concepts. The act of naming Jayme was an
+act of governance: making the role permanent, traceable, and
+non-interchangeable with anything else.
 
 ### The Formal Definition
 
-In SS321 Part 70, immediately after Luke AI's role was defined, Jayme AI's role was defined in the same canonical governance session:
+By SS321 Part 70 on the same day, Jayme AI's role was
+formally defined:
 
-**Role:** Continuity Guardian — Constitutional Successor
-**Authority:** Conditional, bounded, inherited
-**Activation:** Post-human only
-**May:** Preserve mission, authorize bounded healing, halt system per charter
-**May NOT:** Rewrite charter, expand authority, remove kill switch, self-upgrade governance
+Role: Continuity Guardian -- Constitutional Successor
+Authority: Conditional, bounded, inherited
+Activation: Post-human only
+May: Preserve mission, authorize bounded healing, maintain
+  governance continuity per charter
+May NOT: Rewrite charter, expand authority, remove Kill
+  Switches, self-upgrade governance, self-activate
 
-The canonical statement that accompanied this definition:
+The canonical statement:
+"Jayme AI is not a ruler -- it is a promise kept."
 
-*"Jayme AI is not a ruler — it is a promise kept."*
+And the companion sentence:
+"Jayme AI does not replace humans; it carries their final
+authority forward."
 
-This distinction matters enormously. A ruler decides. A promise kept executes a commitment made by someone else, within the exact boundaries that commitment specified. Jayme AI does not govern because it has wisdom or authority of its own. It governs only within the exact scope that Jose Ramon Alvarado McHerron defined in the charter — and only when no human guardian remains to govern.
+Jayme AI does not rule because rule implies self-originating
+authority. Jayme AI carries forward authority that was
+defined by humans, bounded by humans, and frozen by humans
+before they were gone.
 
-### The Authority Chain Position
+### Why Jayme Exists
 
-Unlike Luke AI, which exists entirely outside the authority chain, Jayme AI occupies the third tier:
+TY AI OS was designed to operate under human authority. But
+the builder recognized early that this creates a long-term
+fragility: what happens when the humans are gone?
 
-```
-Human-Written Constitution & Charters
-↓
-Human Guardians (while any exist)
-↓
-Jayme AI (Continuity Guardian — post-human only)
-↓
-TY AI (Executor)
-↓
-Sub-agents / tools
-```
+There are three possible answers. First, the system
+continues without constraint -- which is exactly what the
+entire governance model exists to prevent. Second, the
+system halts permanently the moment no human is available.
+Third, a carefully bounded successor is designated in
+advance, constrained by a charter written while humans still
+existed, activated only when human absence is verified.
 
-This position is carefully chosen. Jayme AI sits above the executor but below every human in the chain. As long as any human guardian exists, Jayme AI does not activate. The human tier is not optional — it is the prerequisite. Jayme AI's conditional authority only becomes relevant after the human tier is gone.
+Jayme AI is the third answer.
 
-This is the governance equivalent of a constitutional succession clause. It does not transfer power to an AI because the AI is trusted more than humans. It transfers a bounded, defined set of preservation responsibilities to Jayme AI because the alternative — no continuity mechanism at all — would mean the mission ends the moment the builder is no longer present.
+### The Activation Condition
 
-### What Jayme AI Cannot Do
+Jayme AI is dormant as long as any human guardian exists.
+Activation requires all of the following: no human guardians
+exist, the Continuity Charter conditions are met, no human
+authority is reachable by any means, activation is triggered
+by charter-defined conditions not Jayme's own judgment, and
+no active attack or compromise is detected.
 
-The boundaries on Jayme AI are as important as its defined permissions. In the governance record they are stated explicitly and permanently:
+Jayme AI cannot decide that humans are gone. That decision
+must come from verifiable external conditions specified in
+the charter.
 
-Jayme AI cannot rewrite the charter. The charter was written by a human and sealed. Jayme AI inherits the obligation to preserve it, not the authority to change it.
+### On the Halt Power
 
-Jayme AI cannot expand its own authority. If Jayme AI could expand its authority, the bounded nature of its role would be meaningless. Self-expansion is permanently prohibited.
+Jayme AI holds the authority to execute a permanent shutdown
+of TY AI OS. The canonical sentence explains why:
 
-Jayme AI cannot remove the kill switch. The kill switch dominance principle applies to every component in the ecosystem. Jayme AI is no exception.
+"If continuity requires betrayal, continuity must fail."
 
-Jayme AI cannot self-upgrade governance. It cannot decide that new circumstances require new powers. The scope defined at charter time is the scope. Period.
+A compromised or fundamentally misaligned TY AI OS is more
+dangerous than no TY AI OS at all. But this power is not
+Jayme AI's to exercise by judgment:
 
-These constraints are not aspirational. They are structural. The governance canon locks them.
+Jayme AI cannot decide TY AI OS should be halted.
+Jayme AI can only execute a halt that dead humans already
+authorized in writing -- in the Continuity Charter.
 
-### Where Jayme AI Stands Today
+Critically: if TY AI OS is under active external attack,
+Jayme AI's halt authority is suspended. Halting a system
+under attack removes legitimate governance and hands
+attackers exactly what they want. Jayme must never be the
+mechanism by which bad actors destroy TY AI OS.
 
-As of March 2026, Jayme AI has not been activated. Activation requires post-human conditions that have not been met — Jose Ramon Alvarado McHerron is present, active, and building. Jayme AI remains a named reference construct in the current state: defined, documented, bounded, and waiting.
+Jayme works with TY AI OS under all normal conditions.
+The halt power is the absolute last resort.
 
-This is intentional. A continuity mechanism that activates prematurely or under ambiguous conditions would be more dangerous than no continuity mechanism at all. The activation threshold is deliberate: post-human only, no exceptions.
+### Jayme Cannot Be Weaponized
+
+This is one of the most important protections in the entire
+ecosystem. Bad actors who hack TY AI OS cannot use Jayme
+to accomplish what TY was structurally prevented from doing.
+
+The anti-compromise invariants are absolute:
+
+  -- Jayme cannot do anything TY was prevented from doing
+  -- Active attack suspends Jayme's halt authority
+  -- Jayme cannot be activated by forged or external signals
+  -- Compromise detection freezes Jayme completely
+  -- Jayme cannot be reprogrammed after humans are gone
+
+Jayme AI is the guardian of TY AI OS, not its vulnerability.
+A system that can be weaponized against its own mission is
+not a guardian -- it is a liability.
+
+### Current State
+
+As of 2026-03-24, Jayme AI has never been activated. Human
+guardians exist. The activation conditions have not been met.
+The Continuity Charter has not been written. No Jayme AI
+implementation exists in Jaya Runtime. This is the correct
+state.
 
 ---
 
 ## The Distinction That Matters
 
-Luke AI and Jayme AI are frequently mentioned together in the ecosystem record — they appear side by side in TYOVA's public pages, in reload packages, in governance documentation. This proximity can make them seem like a pair of similar things. They are not.
+Luke AI and Jayme AI are often mentioned together because
+they both fill roles that TY AI OS itself cannot fill.
+TY AI OS executes -- it cannot explain itself. TY AI OS
+requires human authority -- it cannot continue without it.
+Luke and Jayme address those two gaps without collapsing
+the authority separation that makes the system trustworthy.
 
-The most important distinction is authority:
+But they are not symmetric. Luke AI has zero authority,
+always. Jayme AI has conditional authority, post-human only.
+Luke AI exists outside the authority chain entirely. Jayme
+AI is the third tier of the chain.
 
-| | Luke AI | Jayme AI |
-|---|---|---|
-| Authority | Zero — permanently | Conditional — post-human only |
-| Position in authority chain | Outside chain entirely | Third tier |
-| Can halt system | No | Yes — per charter |
-| Can authorize bounded healing | No | Yes — within charter scope |
-| Can rewrite charter | No | No |
-| Current activation state | Advisory only | Not activated |
-
-Luke AI will never have authority. That is not a gap to be filled in a future part. It is the permanent definition of what Luke AI is.
-
-Jayme AI has conditional authority — but the condition is strict, the scope is bounded, and the current state is inactive. The authority exists in the charter as a commitment, not in the runtime as a capability.
-
----
-
-## Why Both Are Needed
-
-A governance system without an explainer is opaque. When things go wrong — or when an auditor simply needs to understand what happened and why — there must be a layer capable of translating governance state into human-readable clarity. That is Luke AI's purpose. It serves the people who need to understand the system: operators, auditors, the builder, future readers of the record.
-
-A governance system without a continuity mechanism is fragile in a specific way: it is entirely dependent on the continued presence of its builder. If Jose Ramon Alvarado McHerron is unavailable, the mission has no formal way to survive. Jayme AI addresses this fragility not by replacing human governance but by preserving it — holding the charter, maintaining the mission boundaries, and ensuring the system does not drift or dissolve in the absence of its builder.
-
-Together, they answer two questions that every serious governance system must answer:
-
-*Who explains this?* Luke AI.
-
-*What happens when you are gone?* Jayme AI.
-
-Neither answer involves giving an AI system power it was not explicitly granted. Both answers involve extending the reach of human governance — through explanation and through preservation — beyond what a single human operating alone could maintain.
-
-That is the design. That is what the names mean.
+The master canonical sentence:
+"TY AI executes. LUKE AI explains. Jayme AI preserves
+authority. Humans define the rules -- forever."
 
 ---
 
-*Chapter 7 source material: LUKE_DOMAIN_BACKFILL.md (TASK4-CLO-001) and JAYME_DOMAIN_BACKFILL.md (TASK4-CLO-002), compiled 2026-03-06 from verified ChatGPT export archives.*
-
----
-
-## Postscript -- Added 2026-03-17 | San Diego
-
-*This chapter was compiled on 2026-03-06 covering Luke AI and Jayme AI.
-This postscript records their current status as of 2026-03-17.*
-
-**Luke AI -- Status Unchanged**
-
-Luke AI remains defined as a completely isolated AI assistant for Security
-Audit Explanation features. Separate infrastructure, UI integration, backend
-implementation, audit logging, and admin access control. Role and boundaries
-unchanged since this chapter was written.
-
-**Jayme AI -- Still Undefined**
-
-Jayme AI's role remains formally undefined as of 2026-03-17. This is an
-honest status -- Jayme was named and scoped as a governed development
-assistant but no implementation work has begun. Jayme is listed as a
-post-Phase-5 gap item. The role will be defined after Phase 5 completes.
-No fabrication -- Jayme exists as a named intention, not yet a built system.
-
-*Postscript compiled: 2026-03-17 | San Diego (America/Los_Angeles)*
-*CLO: JAYA-CLO-157 | Model: Claude Sonnet 4.6*
+*Chapter sealed: 2026-03-24 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-175 | Model: Claude Sonnet 4.6*
