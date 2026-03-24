@@ -1861,3 +1861,12 @@ Commit: f8c1ed2 -- ty-ai-governance
 - Ch26 Vocabulary + Ch31 Jayme AI are both living documents
 - Commit: 4b04f30
 - S1/S2: CLEAN
+
+### FIX-95.09 | JAYA-CLO-175 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Destination: TYOVA
+- File: src/pages/BookOfTyIndex.tsx
+- Change: Corrected Sealed stat from 30 to 28 and hero text from 29 to 28
+- Accurate count: Ch1-4 (4) + Ch6-25 (20) + Ch27-30 (4) = 28 sealed
+- Ch5 coming soon, Ch26 living, Ch31 living not counted in sealed
+- Commit: 63409ed
+- S1/S2: CLEAN
