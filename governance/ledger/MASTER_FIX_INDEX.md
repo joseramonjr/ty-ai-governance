@@ -1835,3 +1835,12 @@ Commit: f8c1ed2 -- ty-ai-governance
 - Sections I-VIII including compromise and attack conditions
 - Commit: 73a287d
 - S1/S2: CLEAN
+
+### FIX-95.06 | JAYA-CLO-175 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Destination: TYOVA
+- Files: src/pages/BookOfTyIndex.tsx + src/pages/BookOfTyChapter.tsx
+- Change: Chapter 31 registered in all three required Book of TY files
+- BookOfTyIndex: Ch31 added to chapters array, stats updated to 31 total / 30 sealed, hero and Phase 5 note updated
+- BookOfTyChapter: Ch31 added to chapterTitles record
+- Commit: 6ce91ad
+- S1/S2: CLEAN
