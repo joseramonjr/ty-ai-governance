@@ -1167,3 +1167,14 @@ Closes B2 proof condition steps 4 and 5. B2 fully satisfied this session.
 - TYOVA updated same session -- HUB_VERSION Phase5Complete confirmed live
 - cargo check: 0 errors 7 warnings
 - MASTER_FIX_INDEX: FIX-94.01 written same session
+
+### Entry-036 | JAYA-CLO-175 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Event: Jayme AI Definition Session
+- FIX-95.01: TY_JAYME_SPEC_v0.1.md written -- design-only spec with anti-compromise invariants INV-J1 to INV-J5
+- FIX-95.02: Chapter 7 rewritten -- repaired reverse-order corruption and missing Jayme section
+- FIX-95.03: Chapter 31 written -- The Promise Kept: Jayme AI and the Continuity of Authority
+- FIX-95.04: bookChapterContent.ts updated -- Chapter 31 added to TYOVA
+- FIX-95.05: TY_CONTINUITY_CHARTER_TEMPLATE_v0.1.md written -- template for builder personal completion
+- CLO series JAYA-CLO-200 to JAYA-CLO-249 reserved for future Jayme implementation
+- Anti-compromise invariants locked: active attack suspends halt, activation cannot be externally triggered, Jayme has all TY restrictions plus its own, compromise triggers freeze, no post-human reprogramming
+- MASTER_FIX_INDEX: FIX-95.01 to FIX-95.05 written same session
