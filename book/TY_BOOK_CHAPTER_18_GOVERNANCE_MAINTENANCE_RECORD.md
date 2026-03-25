@@ -1178,3 +1178,13 @@ Closes B2 proof condition steps 4 and 5. B2 fully satisfied this session.
 - CLO series JAYA-CLO-200 to JAYA-CLO-249 reserved for future Jayme implementation
 - Anti-compromise invariants locked: active attack suspends halt, activation cannot be externally triggered, Jayme has all TY restrictions plus its own, compromise triggers freeze, no post-human reprogramming
 - MASTER_FIX_INDEX: FIX-95.01 to FIX-95.05 written same session
+
+### Entry-037 | JAYA-CLO-176 to JAYA-CLO-177 | Claude Sonnet 4.6 | 2026-03-24 | San Diego
+- Event: Pre-Phase-6 Cleanup Session -- F-1 through F-4 audit and fixes
+- FIX-96.01: PublicLayout.tsx S2 scan -- all patterns clean -- stale flag cleared
+- FIX-96.02: Hub audit complete -- 74 sections confirmed accurate -- TYAIHubWelcome.tsx HUB701-010 Book of TY description corrected from 30 sealed chapters to 31 chapters 28 sealed -- ch31_addition.ts leftover artifact deleted
+- FIX-96.03: JayaOverview.tsx -- Phase 5 Proof Conditions Verified Record section added -- B1 through B4 surfaced publicly with dates, part references, CLO references, and proof descriptions
+- FIX-96.04: Doctrine expansion -- DEFERRED -- no docs/ folder exists in TYOVA -- all path-based registry entries are 404 -- structural gap flagged as F-3 and F-9 for dedicated session
+- F-8 flagged: TYOVA TypeScript JSX.IntrinsicElements error -- pre-existing -- dedicated session required
+- S1/S2: Clean across all files touched
+- MASTER_FIX_INDEX: FIX-96.01 to FIX-96.03 written same session
