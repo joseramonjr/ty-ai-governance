@@ -1877,3 +1877,17 @@ Commit: f8c1ed2 -- ty-ai-governance
 - Change: Chapter status badge made dynamic -- Ch26 shows Living Document, Ch31 shows Design-Only -- Living, Ch5 shows Coming Soon, all others show Sealed
 - Commit: 8bd8a77
 - S1/S2: CLEAN
+
+### FIX-96.02 | JAYA-CLO-176 | Claude Sonnet 4.6 | 2026-03-24 | 19:22 San Diego
+**Destination:** TYOVA
+**Commit:** 4794dc5
+**File:** src/ty-ai-admin-core/vendored-ss321/TYAIHubWelcome.tsx
+**Change:** HUB701-010 Book of TY description corrected from
+"30 sealed chapters" to "31 chapters, 28 sealed"
+**Hub audit findings:** 74 sections confirmed accurate. All four hub
+files S1/S2 clean on disk. Terminal display artifacts were false
+positives -- disk confirmed clean throughout.
+**Bonus find:** ch31_addition.ts loose file in TYOVA root -- content
+already merged in bookChapterContent.ts -- deleted, no commit needed.
+**S1/S2:** Clean
+**cargo check:** N/A -- TYOVA only
