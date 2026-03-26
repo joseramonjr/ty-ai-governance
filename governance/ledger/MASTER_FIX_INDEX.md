@@ -1924,3 +1924,18 @@ CANONICAL_HOME, AUDITABILITY_MODEL, PROOF_OF_NON_EXECUTION, two FIX-47
 verification files) require builder authorship -- deferred.
 **S1/S2:** Clean on all five files
 **cargo check:** N/A -- TYOVA only
+
+### FIX-97.02 | JAYA-CLO-178 | Claude Sonnet 4.6 | 2026-03-25 | San Diego
+**Destination:** TYOVA
+**Commit:** 71b48d6
+**Files modified:**
+- src/config/docRegistry.ts -- 7 broken path entries cleared to path: ''
+  (TY_IDENTITY, TY_NON_EXECUTION_GUARANTEE, TY0001A_DECLARATION_OF_CANONICAL_HOME,
+  AUDITABILITY_MODEL, PROOF_OF_NON_EXECUTION, two FIX-47 verification files)
+- src/pages/PublicDocument.tsx -- pending authorship guard added at line 19.
+  When path is empty string, renders a pending notice instead of triggering
+  a fetch error. No fabrication. Honest status displayed to public visitors.
+**Context:** F-3 and F-9 final resolution. All 11 broken registry paths
+resolved. 4 files written, 7 converted to pending authorship notices.
+**S1/S2:** Clean
+**cargo check:** N/A -- TYOVA only
