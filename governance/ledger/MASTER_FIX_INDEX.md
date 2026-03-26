@@ -1939,3 +1939,26 @@ verification files) require builder authorship -- deferred.
 resolved. 4 files written, 7 converted to pending authorship notices.
 **S1/S2:** Clean
 **cargo check:** N/A -- TYOVA only
+### FIX-97.03 | JAYA-CLO-179 | Claude Sonnet 4.6 | 2026-03-25 | San Diego
+**Destination:** TYOVA
+**Commit:** aa1b528
+**Files modified:**
+- src/pages/BookOfTyIndex.tsx -- Ch18 corrected to living, Ch31 corrected
+  to designOnly, sealed count corrected from 28 to 27
+- src/data/bookChapterContent.ts -- Ch7 Jayme postscript updated from
+  "Still Undefined" to "Formally Defined" -- cross-reference to Ch31 added
+**S1/S2:** Clean
+**cargo check:** N/A -- TYOVA only
+
+---
+
+### FIX-97.04 | JAYA-CLO-179 | Claude Sonnet 4.6 | 2026-03-25 | San Diego
+**Destination:** ty-ai-governance
+**Commit:** b0e687d
+**File:** book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
+**Change:** 7 new terms added to Section 6 (Succession and Continuity Terms):
+  TY_JAYME_SPEC_v0.1.md, Anti-Compromise Invariant, INV-J1, INV-J2,
+  INV-J3, INV-J4, INV-J5. Update Log row added for JAYA-CLO-175.
+  Term count updated from 191 to 208. Date corrected to 2026-03-25.
+**S1/S2:** Clean -- line 1028 known false positive
+**cargo check:** N/A -- documentation only
