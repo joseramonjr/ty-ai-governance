@@ -257,3 +257,89 @@ Phase 6 begins at that boundary.
 
 *Addendum sealed: 2026-03-23 | San Diego (America/Los_Angeles)*
 *CLO: JAYA-CLO-174 | Model: Claude Sonnet 4.6*
+
+## Addendum -- The Yampolskiy Gaps: What Phase 5 Did Not Solve
+**Written:** 2026-03-25 | San Diego (America/Los_Angeles)
+**CLO:** JAYA-CLO-180 | Model: Claude Sonnet 4.6
+
+Phase 5 proved that TY AI OS governance discipline holds under
+pressure. It did not prove that TY AI OS is sufficient as a
+governance model for the broader problem of AI control. Three
+gaps remain -- gaps that Phase 5 was not scoped to close, but
+that any honest accounting of this system must name.
+
+These gaps are framed here as the Yampolskiy gaps, after Roman
+Yampolskiy's body of work on AI containment, control, and the
+limits of verification. The framing is not a concession that TY
+AI OS fails on its own terms. It is an acknowledgment that the
+problem TY AI OS is solving is larger than any single system
+can fully close.
+
+### Gap 1 -- Operator-Independent Verification
+
+The B3 transparency layer allows any external observer with the
+node's public key to verify a signed governance proof. That is
+a real capability. But it is not operator-independent. The
+public key must come from somewhere. If the operator controls
+the key distribution channel, the verification is only as
+trustworthy as the operator.
+
+A fully credible governance system would provide a verification
+path that does not require trusting the operator at any point.
+A public repository, a signed health endpoint queryable by
+anyone, or a third-party key registry would satisfy this
+requirement. TY AI OS does not yet have any of these. The
+signed proof is real. The independence of that proof is not yet
+established.
+
+### Gap 2 -- External Adoption Standard
+
+TY AI OS has a governance model, a runtime, a vocabulary, and a
+book. It does not have a compliance kit. A third party who
+wanted to verify that a system claiming TY governance
+compliance actually meets TY standards has no formal instrument
+to do that verification with. There is no TY Compliance Proof
+Kit. There is no published audit protocol. There is no
+mechanism for external attestation.
+
+This gap is not architectural. TY's architecture is documented
+and verifiable. The gap is in adoption infrastructure -- the
+tooling and process that would allow the governance model to
+travel beyond the single machine it currently runs on.
+Gap 2 is a candidate for Phase 6 scope.
+
+### Gap 3 -- Scalability to Future AI
+
+TY AI OS was designed for bounded agents -- systems with defined
+action spaces, registered capabilities, and finite authority
+surfaces. The architecture holds for that class of system. The
+question of whether it holds for substantially more capable
+future AI systems is open.
+
+This is not a failure of TY AI OS. It is an honest statement of
+scope. The containment and verification model is sound for the
+problem it was designed to solve. Whether that model scales to
+agents whose capability boundaries are themselves difficult to
+define is a research question. TY has running code, a
+documented architecture, and a proof-of-concept governance
+runtime to contribute to that question. It does not yet have
+the answer.
+
+### Why These Gaps Are Recorded Here
+
+These gaps are recorded in the book because the book is an
+honest record. TY AI OS was built on the principle that
+governance without auditability is theater. An honest governance
+record includes the boundaries of what has been verified and
+the boundaries of what has not.
+
+Phase 6 will address Gap 2 as a candidate scope item. Gap 1 is
+an architectural target for post-Phase-6 work. Gap 3 is a
+research question that belongs to the field, not to a single
+system.
+
+The gaps do not diminish what Phase 5 proved. They define where
+the work continues.
+
+*Addendum sealed: 2026-03-25 | San Diego (America/Los_Angeles)*
+*CLO: JAYA-CLO-180 | Model: Claude Sonnet 4.6*
