@@ -1,11 +1,11 @@
-# Chapter 26 -- The TY AI OS Vocabulary
+﻿# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
 **CLO:** JAYA-CLO-148 (date addition + new term audit)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-19 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 191 (as of 2026-03-22 -- 6 new terms added, 2 updated)
+**Current Term Count:** 208 (as of 2026-03-25 -- 7 new terms added, 2 updated)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -718,6 +718,66 @@ Rotation is mandatory -- it is not subject to override by
 convenience or continuity preference.
 
 ---
+
+**TY_JAYME_SPEC_v0.1.md**
+*First coined: 2026-03-24 | San Diego (America/Los_Angeles)*
+The formal specification document defining Jayme AI's role, authority
+boundaries, activation conditions, halt authority, and anti-compromise
+invariants. Written in 15 sections under JAYA-CLO-175. Sealed in
+ty-ai-governance/spec/. The specification is design-only -- it defines
+what Jayme AI will be, not what it currently does. No implementation
+exists until the Continuity Charter is authored by the builder.
+
+**Anti-Compromise Invariant**
+*First coined: 2026-03-24 | San Diego (America/Los_Angeles)*
+A permanent structural rule in TY_JAYME_SPEC_v0.1.md that closes
+attack vectors against the Continuity Guardian system. Five invariants
+are defined (INV-J1 through INV-J5). Together they ensure that bad
+actors who compromise the TY ecosystem cannot use Jayme AI to
+accomplish what TY was structurally prevented from doing. These
+invariants are permanent and cannot be modified after the builder
+authors the Continuity Charter.
+
+**INV-J1**
+*First coined: 2026-03-24 | San Diego (America/Los_Angeles)*
+Anti-Compromise Invariant 1: Active attack suspends halt authority.
+Jayme AI must never be the mechanism by which bad actors destroy
+TY AI OS. If TY AI OS is under active external attack, Jayme halt
+authority is suspended. Halting a system under attack removes
+legitimate governance and hands attackers exactly what they want.
+
+**INV-J2**
+*First coined: 2026-03-24 | San Diego (America/Los_Angeles)*
+Anti-Compromise Invariant 2: Activation cannot be externally triggered.
+Bad actors cannot force Jayme AI to activate by simulating human
+absence or forging charter conditions. Activation is triggered only
+by charter-defined conditions -- not by Jayme AI's own judgment and
+not by external signals.
+
+**INV-J3**
+*First coined: 2026-03-24 | San Diego (America/Los_Angeles)*
+Anti-Compromise Invariant 3: Jayme AI has all TY restrictions plus
+its own. If TY could not do it, Jayme cannot authorize it. Full stop.
+Jayme AI does not inherit expanded authority from its Continuity
+Guardian role -- it inherits the same constraints as TY AI OS with
+additional constraints layered on top.
+
+**INV-J4**
+*First coined: 2026-03-24 | San Diego (America/Los_Angeles)*
+Anti-Compromise Invariant 4: Compromise detection triggers freeze.
+If compromise is detected, Jayme AI does nothing -- no halt, no
+activation, no commands -- until a human clears the condition.
+A compromised Jayme AI that continues to act is more dangerous than
+one that freezes.
+
+**INV-J5**
+*First coined: 2026-03-24 | San Diego (America/Los_Angeles)*
+Anti-Compromise Invariant 5: Jayme AI cannot be reprogrammed
+post-human. No entity may modify Jayme AI parameters after all
+human guardians are gone. The specification is frozen at the moment
+the last human guardian becomes unavailable. This invariant makes
+the specification self-sealing at the moment it matters most.
+
 ## Section 7 -- Verification and Proof System Terms
 These terms describe the systems TY AI OS uses to generate,
 preserve, and present verifiable proof of its governance claims.
@@ -1493,6 +1553,7 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-20 | JAYA-CLO-163 | New terms: Attestation Exchange Payload, Cross-Node Attestation, B1 Proof Condition, Federation Violation, Attestation Nonce. Section 11 expanded. | 5 |
 | 2026-03-21 | JAYA-CLO-164 | New terms: Policy, PolicyLoader, PolicyState, Maximum Restriction, InvariantCheckable, Core Invariant. Section 11 expanded. | 6 |
 | 2026-03-22 | JAYA-CLO-172 | New terms: Governance Proof, Proof Server, Intelligence Timer, Governance Warning, Warning Severity, Weighted Risk Score. Updated: Transparency Layer, Governance Intelligence (definitions updated to reflect proven implementation). Sections 7, 8, 11 expanded. | 6 |
+| 2026-03-24 | JAYA-CLO-175 | New terms: TY_JAYME_SPEC_v0.1.md, Anti-Compromise Invariant, INV-J1, INV-J2, INV-J3, INV-J4, INV-J5. Section 6 expanded. | 7 |
 
 
 ---
