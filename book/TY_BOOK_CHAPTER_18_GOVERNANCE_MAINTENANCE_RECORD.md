@@ -1188,3 +1188,24 @@ Closes B2 proof condition steps 4 and 5. B2 fully satisfied this session.
 - F-8 flagged: TYOVA TypeScript JSX.IntrinsicElements error -- pre-existing -- dedicated session required
 - S1/S2: Clean across all files touched
 - MASTER_FIX_INDEX: FIX-96.01 to FIX-96.03 written same session
+
+### Entry-038 | JAYA-CLO-178 | Claude Sonnet 4.6 | 2026-03-25 | San Diego
+- Event: F-3 and F-9 Resolution -- docs/ folder creation and registry repair
+- FIX-97.01: docs/ folder created in TYOVA with four subfolders --
+  doctrine, governance, canon, parts
+- FIX-97.01: Four files written from verified canonical sources --
+  ACP_1_ADD_ONLY_CHANGE_PROTOCOL.md (47 lines),
+  TY_PERMISSION_MODEL.md (51 lines, extracted from TY_GOVERNANCE_SPEC_v0.1.md),
+  CANON_INDEX.md (59 lines),
+  part-12.md (363 lines, copied from src/parts/part-12.md)
+- FIX-97.01: docRegistry.ts permission-model path corrected to
+  governance/TY_PERMISSION_MODEL.md
+- FIX-97.02: 7 remaining broken registry paths cleared to path: ''
+  (TY_IDENTITY, TY_NON_EXECUTION_GUARANTEE, TY0001A_DECLARATION_OF_CANONICAL_HOME,
+  AUDITABILITY_MODEL, PROOF_OF_NON_EXECUTION, two FIX-47 verification files)
+- FIX-97.02: Pending authorship guard added to PublicDocument.tsx --
+  empty path renders honest pending notice instead of fetch error
+- All 11 broken registry entries resolved -- no more 404s on TYOVA
+- Zero fabrication -- all written content sourced from verified canonical records
+- S1/S2: Clean across all files
+- MASTER_FIX_INDEX: FIX-97.01 and FIX-97.02 written same session
