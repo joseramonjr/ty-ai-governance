@@ -1971,3 +1971,23 @@ resolved. 4 files written, 7 converted to pending authorship notices.
 date updated to 2026-03-25, term count updated from 191 to 208.
 **S1/S2:** Clean -- lines 3337 and 4746 known false positives
 **cargo check:** N/A -- TYOVA only
+### FIX-98.01 | JAYA-CLO-179 | Claude Sonnet 4.6 | 2026-03-25 | San Diego
+**Destination:** ty-ai-governance
+**Commit:** 9a81904
+**File:** book/TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md
+**Change:** Entry-039 appended -- Post-Phase-5 Cleanup Session record --
+  FIX-97.03 through FIX-97.05 documented -- Ch18 scan confirmed clean --
+  Entry-001 through Entry-039 sequence verified.
+**S1/S2:** Clean
+**cargo check:** N/A -- documentation only
+
+### FIX-98.02 | JAYA-CLO-180 | Claude Sonnet 4.6 | 2026-03-25 | San Diego
+**Destination:** ty-ai-governance
+**Commit:** a2999b4
+**File:** book/TY_BOOK_CHAPTER_27_THE_OUTWARD_REACH.md
+**Change:** Yampolskiy gaps addendum appended -- three gaps documented:
+  Gap 1 operator-independent verification, Gap 2 external adoption
+  standard (candidate for Phase 6 scope), Gap 3 scalability to future AI.
+  Framed as honest boundary record, not system failure.
+**S1/S2:** Clean
+**cargo check:** N/A -- documentation only
