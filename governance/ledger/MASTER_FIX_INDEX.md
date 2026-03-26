@@ -1904,3 +1904,23 @@ JSX.IntrinsicElements error confirmed as pre-existing -- not
 introduced by this fix. Flagged as F-8 for separate session.
 **S1/S2:** Clean
 **cargo check:** N/A -- TYOVA only
+
+### FIX-97.01 | JAYA-CLO-178 | Claude Sonnet 4.6 | 2026-03-25 | San Diego
+**Destination:** TYOVA
+**Commit:** 06d791e
+**Files created:**
+- docs/doctrine/ACP_1_ADD_ONLY_CHANGE_PROTOCOL.md (47 lines)
+- docs/governance/TY_PERMISSION_MODEL.md (51 lines)
+- docs/canon/CANON_INDEX.md (59 lines)
+- docs/parts/part-12.md (363 lines -- copied from src/parts/part-12.md)
+**Files modified:**
+- src/config/docRegistry.ts -- permission-model path corrected to
+  governance/TY_PERMISSION_MODEL.md
+**Context:** F-3 and F-9 resolution. docs/ folder did not exist in TYOVA.
+All path-based registry entries were 404. Four provable files written
+from verified canonical sources only. Zero fabrication.
+Remaining 7 path-based entries (TY_IDENTITY, NON_EXECUTION_GUARANTEE,
+CANONICAL_HOME, AUDITABILITY_MODEL, PROOF_OF_NON_EXECUTION, two FIX-47
+verification files) require builder authorship -- deferred.
+**S1/S2:** Clean on all five files
+**cargo check:** N/A -- TYOVA only
