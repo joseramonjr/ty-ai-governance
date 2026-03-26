@@ -1209,3 +1209,14 @@ Closes B2 proof condition steps 4 and 5. B2 fully satisfied this session.
 - Zero fabrication -- all written content sourced from verified canonical records
 - S1/S2: Clean across all files
 - MASTER_FIX_INDEX: FIX-97.01 and FIX-97.02 written same session
+
+### Entry-039 | JAYA-CLO-179 | Claude Sonnet 4.6 | 2026-03-25 | San Diego
+- Event: Post-Phase-5 Cleanup Session -- Book of TY stats repair and Ch26 vocab gate
+- FIX-97.03: BookOfTyIndex.tsx corrected -- Ch18 status set to living,
+  Ch31 status set to designOnly, sealed chapter count corrected to 27
+- FIX-97.04: Ch26 vocabulary gate -- 7 Jayme AI terms added --
+  total term count updated to 208 across 10 sections
+- FIX-97.05: TYOVA Ch26 compiledNote updated -- term count 208,
+  CLO reference JAYA-CLO-179, date 2026-03-25
+- S1/S2: Clean across all files touched
+- MASTER_FIX_INDEX: FIX-97.03 to FIX-97.05 written same session
