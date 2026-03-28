@@ -2063,3 +2063,32 @@ date updated to 2026-03-25, term count updated from 191 to 208.
   written, committed, and registered in TYOVA.
 **S1/S2:** Clean
 **cargo check:** N/A -- TYOVA only
+
+---
+
+## Phase 6 -- Part 99 Opening
+
+### FIX-99.01 | JAYA-CLO-183 | Claude Sonnet 4.6 | 2026-03-28 | 16:00 San Diego
+**Description:** Phase 6 scope definition -- PHASE6_SCOPE_v0.1.md written
+  and committed. 14 parts defined across three tracks (Track A Verifiability,
+  Track B Adoptability, Track C Visibility). G4a-G4d confirmed closed via
+  disk audit -- stale handoff entry retired. Phase 6 officially opened.
+**Commit:** f0c6f14
+**Files:**
+  governance/phases/PHASE6_SCOPE_v0.1.md (created)
+**S1/S2:** Clean
+**cargo check:** N/A -- governance document only
+**Status:** COMPLETE
+
+### FIX-99.02 | JAYA-CLO-183 | Claude Sonnet 4.6 | 2026-03-28 | 16:00 San Diego
+**Description:** F-13 resolved -- ty-ai-governance and all TY ecosystem
+  repositories permanently private. Option B selected: Public Signed
+  Verification Endpoint. INV-TY-PRIV-1 Source Privacy Invariant established.
+  TY source code, internal logic, and build records permanently private.
+  Distribution via compiled binary only. No source ever exposed.
+**Commit:** f0c6f14
+**Files:**
+  governance/phases/PHASE6_SCOPE_v0.1.md (contains INV-TY-PRIV-1 and F-13 resolution)
+**S1/S2:** Clean
+**cargo check:** N/A -- governance document only
+**Status:** COMPLETE
