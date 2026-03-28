@@ -1991,3 +1991,15 @@ date updated to 2026-03-25, term count updated from 191 to 208.
   Framed as honest boundary record, not system failure.
 **S1/S2:** Clean
 **cargo check:** N/A -- documentation only
+
+### FIX-98.03 | JAYA-CLO-181 | Claude Sonnet 4.6 | 2026-03-26 | San Diego
+**Destination:** TYOVA
+**Commit:** 7e98fda
+**File:** src/pages/BookOfTyIndex.tsx
+**Change:** designOnly render branch added to chapter list -- Ch31 now
+  renders DESIGN ONLY badge with amber styling and Read link instead of
+  falling through to COMING SOON with no link. TypeScript type definition
+  updated to include designOnly optional flag. Ch31 content confirmed
+  fully populated -- 10 sections verified. No new pages or routes added.
+**S1/S2:** Clean
+**cargo check:** N/A -- TYOVA only
