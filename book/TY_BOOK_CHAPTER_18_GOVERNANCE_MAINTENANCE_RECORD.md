@@ -1242,3 +1242,64 @@ Closes B2 proof condition steps 4 and 5. B2 fully satisfied this session.
 - Book of TY now has 36 chapters -- 32 sealed, 2 living, 1 design-only, 1 coming soon
 - S1/S2: Clean across all files touched
 - MASTER_FIX_INDEX: FIX-98.01 to FIX-98.07 written same session
+
+### Entry-041 | JAYA-CLO-183 | 2026-03-28 | 16:00 San Diego
+
+**Session Type:** Phase 6 Opening -- Scope Definition
+**Model:** Claude Sonnet 4.6
+**Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+
+## What Happened This Session
+
+This session opened Phase 6 of TY AI OS development. The following
+work was completed under CLO-183:
+
+**Pre-Phase-6 Audit:**
+- Full audit of all past Claude session history conducted to identify
+  Phase 6 scope candidates and resolve outstanding unknowns.
+- G4a, G4b, G4c, G4d investigated. Confirmed these were the four
+  Phase 4.2 deferred items (nonce, ledger hash, Class B autonomy,
+  keychain) -- all completed in Phase 5 Track A (Parts 77-82).
+  The standing gap entry was stale boilerplate. Officially retired
+  2026-03-28.
+- Fix numbering convention confirmed: FIX-[Part#].[sequence].
+  Next fix number locked as FIX-99.01 per historical pattern.
+
+**F-13 Resolution:**
+- Repository visibility decision made by Jose Ramon: permanently private.
+- Option B selected: Public Signed Verification Endpoint.
+- INV-TY-PRIV-1 Source Privacy Invariant established. TY source code,
+  internal governance logic, and build records are permanently private.
+  No distribution, deployment, or governance requirement may ever
+  compel exposure. TY ships as compiled binary only.
+
+**Phase 6 Scope Locked:**
+- Phase 6 official name: The Outward Reach.
+- Three tracks defined across 14 parts (Parts 99-112):
+  Track A -- Verifiability (Parts 99-102): Yampolskiy Gap 1.
+  Track B -- Adoptability (Parts 103-107): Yampolskiy Gap 2.
+  Track C -- Visibility (Parts 108-112): TYOVA and documentation.
+- Top-level proof condition defined.
+- CLO sequence reserved: JAYA-CLO-184 through JAYA-CLO-199.
+- JAYA-CLO-200 through JAYA-CLO-249 remain reserved for Jayme AI.
+
+**Files Committed:**
+- governance/phases/PHASE6_SCOPE_v0.1.md -- created (281 lines, 10160 bytes)
+  Commit: f0c6f14
+- governance/ledger/MASTER_FIX_INDEX.md -- FIX-99.01 and FIX-99.02 appended
+  Commit: 195d82f
+
+**Fixes This Session:**
+- FIX-99.01 -- Phase 6 scope definition complete
+- FIX-99.02 -- F-13 resolved, INV-TY-PRIV-1 established
+
+**Scans:**
+- S1: Two pre-existing hits in MASTER_FIX_INDEX (Part 47 and Part 48
+  descriptions -- legacy mojibake from early March 2026). Not introduced
+  this session. Not blocking.
+- S2: Clean -- zero hits.
+
+**Next Session:**
+- Open Part 99 under JAYA-CLO-184.
+- First action: Write INV-TY-PRIV-1 into TY_GOVERNANCE_SPEC_v0.1.md.
+- Second action: Begin public signed verification endpoint design.
