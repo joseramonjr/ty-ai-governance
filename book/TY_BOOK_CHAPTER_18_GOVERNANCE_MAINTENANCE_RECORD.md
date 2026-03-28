@@ -1220,3 +1220,25 @@ Closes B2 proof condition steps 4 and 5. B2 fully satisfied this session.
   CLO reference JAYA-CLO-179, date 2026-03-25
 - S1/S2: Clean across all files touched
 - MASTER_FIX_INDEX: FIX-97.03 to FIX-97.05 written same session
+
+### Entry-040 | JAYA-CLO-180 to JAYA-CLO-182 | Claude Sonnet 4.6 | 2026-03-26 | San Diego
+- Event: Pre-Phase-6 Cleanup Session -- F-11 history chapters and open fix resolution
+- FIX-98.01: Ch18 Entry-039 written and committed -- post-Phase-5 session record
+- FIX-98.02: Ch27 Yampolskiy gaps addendum appended -- three gaps documented --
+  Gap 1 operator-independent verification, Gap 2 external adoption standard
+  (Phase 6 candidate), Gap 3 scalability to future AI
+- FIX-98.03: BookOfTyIndex.tsx designOnly render branch added -- Ch31 now
+  accessible with amber DESIGN ONLY badge and Read link -- TYOVA commit 7e98fda
+- FIX-98.04: F-11 resolved -- five history chapters written from verified
+  ChatGPT conversation archives (conversations-000.json, conversations-001.json)
+  and Claude session records -- zero fabrication --
+  Ch32 SilverSounds321 The Build Record (234 lines),
+  Ch33 TSTP The Test Subject Transfer Protocol (172 lines),
+  Ch34 TYOVA The Canonical Archive (185 lines),
+  Ch35 Jaya Runtime The Foundation Build (205 lines),
+  Ch36 The Governance Sessions A Builder Record (213 lines)
+- FIX-98.05 to FIX-98.07: All five chapters registered in TYOVA --
+  sealed count updated to 32, total chapters updated to 36
+- Book of TY now has 36 chapters -- 32 sealed, 2 living, 1 design-only, 1 coming soon
+- S1/S2: Clean across all files touched
+- MASTER_FIX_INDEX: FIX-98.01 to FIX-98.07 written same session
