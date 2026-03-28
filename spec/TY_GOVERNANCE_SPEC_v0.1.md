@@ -43,6 +43,10 @@ These invariants cannot be overridden by any agent, configuration, or runtime st
 | I-04 | No agent may authorize its own permissions |
 | I-05 | Governance cannot be suspended by an agent request |
 | I-06 | Violation records are permanent and cannot be deleted |
+| I-07 | TY source code, governance logic, and build records are permanently private and shall never be exposed |
+
+> I-07 is also registered as INV-TY-PRIV-1 (Source Privacy Invariant, established 2026-03-28). Full statement: governance/phases/PHASE6_SCOPE_v0.1.md Section III.
+
 
 ### 1.4 Bidirectional Governance
 
