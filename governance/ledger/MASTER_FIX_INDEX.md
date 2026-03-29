@@ -2104,3 +2104,16 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **S1/S2:** Clean
 **cargo check:** N/A -- governance document only
 **Status:** COMPLETE
+
+
+### FIX-100.01 | JAYA-CLO-185 | Claude Sonnet 4.6 | 2026-03-28 | San Diego
+**Description:** Part 100 -- Startup proof auto-generation and background
+  60-second refresh added to lib.rs setup(). Cold node now populates
+  endpoint immediately at startup without builder action. ledger_hash
+  kept live by refresh thread. INV-TY-PRIV-1 compliant -- proof only,
+  no source or internal state exposed.
+**Commit:** ef936cd
+**Files:** src-tauri/src/lib.rs
+**S1/S2:** Clean
+**cargo check:** 0 errors -- 7 pre-existing warnings unchanged
+**Status:** COMPLETE
