@@ -2092,3 +2092,15 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **S1/S2:** Clean
 **cargo check:** N/A -- governance document only
 **Status:** COMPLETE
+
+
+### FIX-99.03 | JAYA-CLO-184 | Claude Sonnet 4.6 | 2026-03-28 | San Diego
+**Description:** Part 99 -- INV-TY-PRIV-1 written into TY_GOVERNANCE_SPEC_v0.1.md
+  as I-07. Cross-reference note added linking I-07 to canonical name INV-TY-PRIV-1
+  and full statement in governance/phases/PHASE6_SCOPE_v0.1.md Section III.
+  F-13 formal closure confirmed -- FIX-99.02 entry is complete and sufficient.
+**Commit:** 88f97be
+**Files:** spec/TY_GOVERNANCE_SPEC_v0.1.md
+**S1/S2:** Clean
+**cargo check:** N/A -- governance document only
+**Status:** COMPLETE
