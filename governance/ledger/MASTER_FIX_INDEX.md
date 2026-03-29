@@ -2295,3 +2295,7 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **cargo check:** N/A -- TYOVA only
 **New route added:** /pending-authorship -- manual UI review required
 **Status:** COMPLETE
+
+### FIX-112.01 | 2026-03-29 10:32 AM PDT | JAYA-CLO-197 | Chapter 37 -- The Outward Reach Phase 6 Record -- complete expanded draft and ty-ai-governance commit | commit f4f072a
+
+### FIX-112.02 | 2026-03-29 10:32 AM PDT | JAYA-CLO-197 | post-112 placeholders replaced with real hashes f4f072a and 657169d in bookChapterContent.ts | TYOVA commit b25770a
