@@ -2145,3 +2145,21 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **S1/S2:** Clean
 **cargo check:** N/A -- documentation only
 **Status:** COMPLETE
+
+
+### F-15 | OPEN | 2026-03-28 | San Diego
+**Description:** Proof refresh background thread (Part 100) triggers
+  sentinel anomaly storm. Background thread calls ledger::log_operation()
+  every 60 seconds. Sentinel detects repeated write pattern as
+  EscalationDrift + TierInconsistency. 1787 anomalies logged in one
+  session. CRI reached 99 Critical. False positive -- proof refresh is
+  a legitimate governance operation, not a behavioral threat.
+**Root cause:** Sentinel anomaly detection does not distinguish between
+  agent behavioral patterns and internal governance maintenance writes.
+**Impact:** Anomaly log pollution. CRI inflation. No enforcement
+  consequence -- CRI is observational only. Endpoint unaffected.
+**Fix scope:** Suppress sentinel anomaly logging for proof refresh
+  ledger writes, OR reduce refresh log verbosity to exclude sentinel
+  pattern triggers.
+**Priority:** Medium -- does not block Track B or Track C work.
+**Status:** OPEN -- deferred to dedicated fix part
