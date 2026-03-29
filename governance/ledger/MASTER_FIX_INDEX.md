@@ -2248,3 +2248,21 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **cargo check:** N/A -- TYOVA only
 **New route added:** /jaya/proof-conditions -- manual UI review required
 **Status:** COMPLETE
+
+
+### FIX-109.01 | JAYA-CLO-194 | Claude Sonnet 4.6 | 2026-03-28 | San Diego
+**Description:** Part 109 -- TYOVA doctrine section expanded. Three new
+  doctrine pages created: TyGovernanceInvariants.tsx (I-01 through I-07),
+  TyAuthorityBoundaries.tsx (four authority layers), TySourcePrivacy.tsx
+  (INV-TY-PRIV-1 full statement). docRegistry.ts updated with three new
+  entries. App.tsx updated with three new routes and lazy imports.
+**Commit:** b63d5f9 (TYOVA)
+**Files:** src/pages/doctrine/TyGovernanceInvariants.tsx,
+  src/pages/doctrine/TyAuthorityBoundaries.tsx,
+  src/pages/doctrine/TySourcePrivacy.tsx,
+  src/config/docRegistry.ts, src/App.tsx
+**S1/S2:** N/A -- TypeScript/React files
+**cargo check:** N/A -- TYOVA only
+**New routes added:** /doctrine/core-invariants, /doctrine/authority-boundaries,
+  /doctrine/source-privacy -- manual UI review required
+**Status:** COMPLETE
