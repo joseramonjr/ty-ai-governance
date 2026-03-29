@@ -2117,3 +2117,17 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **S1/S2:** Clean
 **cargo check:** 0 errors -- 7 pre-existing warnings unchanged
 **Status:** COMPLETE
+
+
+### FIX-101.01 | JAYA-CLO-186 | Claude Sonnet 4.6 | 2026-03-28 | San Diego
+**Description:** Part 101 -- External verification guide written.
+  docs/TY_EXTERNAL_VERIFICATION_GUIDE_v0.1.md created. Step-by-step
+  instructions for any external party to retrieve and verify a signed
+  governance proof without builder contact, source access, or
+  credentials. Includes Python verification script. INV-TY-PRIV-1
+  compliant -- guide operates entirely on public outputs.
+**Commit:** e33c176
+**Files:** docs/TY_EXTERNAL_VERIFICATION_GUIDE_v0.1.md
+**S1/S2:** Clean
+**cargo check:** N/A -- documentation only
+**Status:** COMPLETE
