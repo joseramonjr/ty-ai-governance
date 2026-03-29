@@ -1364,3 +1364,33 @@ work was completed under CLO-183:
 **S1/S2:** Clean on all modified files
 **cargo check:** 0 errors -- 7 pre-existing warnings unchanged
 **Status:** COMPLETE
+
+
+### Entry-044 | JAYA-CLO-186 | Claude Sonnet 4.6 | 2026-03-28 | San Diego
+
+**Part:** 101
+**Track:** Phase 6 Track A -- Verifiability
+**CLO:** JAYA-CLO-186
+
+**Actions Completed:**
+1. docs/ directory created at ty-ai-governance repo root.
+2. TY_EXTERNAL_VERIFICATION_GUIDE_v0.1.md written -- 178 lines.
+   Step-by-step guide for any external party to retrieve and verify
+   a signed governance proof. Includes curl commands and Python
+   verification script. No builder contact required. No source
+   access required. No credentials required.
+3. INV-TY-PRIV-1 compliant -- guide operates on public outputs only.
+
+**Commits:**
+- e33c176 -- External verification guide created
+- dce03b8 -- FIX-101.01 MASTER_FIX_INDEX updated
+
+**Repo States:**
+- Jaya-Runtime HEAD: ef936cd (untouched)
+- ty-ai-governance HEAD: dce03b8
+- TYOVA HEAD: a1e61d7 (untouched)
+
+**FIX Log:** FIX-101.01 written and committed same session
+**S1/S2:** Clean on all modified files
+**cargo check:** N/A -- documentation only
+**Status:** COMPLETE
