@@ -4106,3 +4106,18 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **Description:** FIX-115 Part 3 -- install.html -- Repaired UTF-8 double-encoding corruption throughout -- title, h1, welcome text, expandable arrows, CSS bullet content, nav buttons, footer -- all replaced with ASCII equivalents -- S1/S2 clean
 **File:** INSTALL/install.html
 **Status:** COMPLETE
+
+### FIX-116.01 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- BookOfTyChapter.tsx -- chapter numbers wrapped in Roboto font span -- Cinzel heading font preserved for all other text
+**Commit:** 2c4826f -- TYOVA main
+**Status:** COMPLETE
+
+### FIX-116.02 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- JayaOverview.tsx -- Tier System individual colors applied -- Tier 0 green, Tier 1 gold, Tier 2 orange, Tier 3 red -- description text changed to text-foreground for readability
+**Commit:** aad543a -- TYOVA main
+**Status:** COMPLETE
+
+### FIX-116.03 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- JayaOverview.tsx -- UTF-8 double-encoding corruption removed -- em dashes and arrows replaced with ASCII equivalents -- S1 clean confirmed
+**Commit:** aad543a -- TYOVA main
+**Status:** COMPLETE
