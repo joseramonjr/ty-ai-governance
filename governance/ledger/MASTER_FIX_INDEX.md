@@ -4151,3 +4151,13 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **Description:** Part 116 -- TyAiOsIndex.tsx -- all 14 occurrences of text-muted-foreground changed to text-foreground -- page contrast fully fixed -- S1 clean confirmed
 **Commit:** 5230f49 -- TYOVA main
 **Status:** COMPLETE
+
+### FIX-116.10 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- HowTyAiOsWorksPage.tsx -- Luke AI and Jayme AI boxes changed to teal border matching TY AI OS and Jaya Runtime -- Advisory Only badges changed to teal -- all text-muted-foreground and hsl(var(--muted)) contrast issues fixed -- encoding corruption cleaned
+**Commit:** 25d7bc7 -- TYOVA main
+**Status:** COMPLETE
+
+### FIX-116.11 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- HowTyAiOsWorksPage.tsx -- No Execution box changed from surface-disclaimer to archive-panel with amber left border -- body text changed to text-foreground -- now visually consistent with other three explanation boxes
+**Commit:** 7685996 -- TYOVA main
+**Status:** COMPLETE
