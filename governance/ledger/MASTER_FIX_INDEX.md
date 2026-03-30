@@ -4121,3 +4121,13 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **Description:** Part 116 -- JayaOverview.tsx -- UTF-8 double-encoding corruption removed -- em dashes and arrows replaced with ASCII equivalents -- S1 clean confirmed
 **Commit:** aad543a -- TYOVA main
 **Status:** COMPLETE
+
+### FIX-116.04 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- TYAIHubNavigation.tsx -- nav item text size increased from text-sm to text-base -- all 5 occurrences updated -- sidebar text now comfortably readable
+**Commit:** 474ec67 -- TYOVA main
+**Status:** COMPLETE
+
+### FIX-116.05 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- TYAIHubNavigation.tsx -- iconColor field added to NavItem interface -- all nav icons color-coded across multiple passes -- teal, gold, green, orange, red, pink colors applied -- icon render sites updated to apply iconColor -- SS321 separator Lock icon colored orange -- all icons confirmed colored in browser
+**Commit:** bf820c1 -- TYOVA main
+**Status:** COMPLETE
