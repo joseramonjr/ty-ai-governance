@@ -4141,3 +4141,8 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **Description:** Part 116 -- DashboardPrimitives.tsx -- non-interactive controls notice changed from text-[10px] text-muted-foreground to text-xs text-foreground font-medium -- text now readable and appropriately sized
 **Commit:** 9be3bc9 -- TYOVA main
 **Status:** COMPLETE
+
+### FIX-116.08 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- HomePage.tsx -- all 21 occurrences of hsl(var(--muted)) contrast issues fixed to hsl(var(--foreground)) -- Read-Only and Non-Executable badges unified to match Canonical badge teal styling -- arrow JSX escaping fixed -- landing page text now fully readable throughout
+**Commit:** c099487 -- TYOVA main
+**Status:** COMPLETE
