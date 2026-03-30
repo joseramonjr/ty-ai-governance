@@ -4161,3 +4161,33 @@ date updated to 2026-03-25, term count updated from 191 to 208.
 **Description:** Part 116 -- HowTyAiOsWorksPage.tsx -- No Execution box changed from surface-disclaimer to archive-panel with amber left border -- body text changed to text-foreground -- now visually consistent with other three explanation boxes
 **Commit:** 7685996 -- TYOVA main
 **Status:** COMPLETE
+
+### FIX-116.12 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- DocIndex.tsx -- page description and document description contrast fixed -- text-muted-foreground to text-foreground -- document description size increased from text-sm to text-base -- applies to all DocIndex pages including Canon, Doctrine, Architecture
+**Commit:** 2946588 -- TYOVA main
+**Status:** COMPLETE
+
+### FIX-116.13 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- PublicDocument.tsx -- all contrast issues fixed -- footer text size increased -- pending authorship box background improved -- encoding corruption fixed
+**Commit:** 2946588 -- TYOVA main
+**Status:** COMPLETE
+
+### FIX-116.14 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- Part20Charter.tsx -- Canonical Notice Banner gold styling applied -- all text-muted-foreground contrast issues fixed -- encoding corruption fixed
+**Commit:** 2946588 -- TYOVA main
+**Status:** COMPLETE
+
+### FIX-116.15 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- ArtifactRegistryDefinition.tsx -- Canonical Notice Banner gold styling applied -- Registry Population Status box gold styling applied -- all contrast issues fixed
+**Commit:** 2946588 -- TYOVA main
+**Status:** COMPLETE
+
+### FIX-116.16 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- IntegrityHashDisclosure.tsx -- Part 20 and Read-Only badges changed to gold -- all grey info boxes changed to gold styling -- all contrast issues fixed -- blurry font-mono text-xs combinations removed (25 occurrences)
+**Commit:** 2946588 -- TYOVA main
+**Status:** COMPLETE
+
+### FIX-116.17 | 2026-03-29 San Diego | JAYA-CLO-206 | Claude Sonnet 4.6
+**Description:** Part 116 -- BookNavigation.tsx -- font-mono text-xs blurry font combination removed -- applies globally to book navigation component
+**Commit:** 2946588 -- TYOVA main
+**Status:** COMPLETE
