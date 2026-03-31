@@ -4309,3 +4309,32 @@ Generate-Handoff.ps1 CLO read pattern fix
 - Part number still derives from Jaya-Runtime commits -- expected behavior for TYOVA-only phases
 - ty-ai-governance HEAD: 8105166
 CLO: JAYA-CLO-213
+
+### FIX-117.8 | luke-ai | 2026-03-31 14:00 San Diego
+Luke AI repo established -- canonical definition committed
+- Repo created at github.com/joseramonjr/luke-ai -- Private
+- README committed with canonical role, authority boundary, invariants INV-L1 through INV-L5
+- Ecosystem position documented
+- INV-TY-PRIV-1 maintained
+- luke-ai HEAD: 53288d6
+CLO: JAYA-CLO-214
+
+### FIX-117.9 | jayme-ai | 2026-03-31 14:00 San Diego
+Jayme AI repo established -- canonical definition committed
+- Repo created at github.com/joseramonjr/jayme-ai -- Private
+- README committed with canonical role, authority boundary, anti-compromise invariants INV-J1 through INV-J5
+- Implementation pending CLO-250 through CLO-299
+- INV-TY-PRIV-1 maintained
+- jayme-ai HEAD: 69189ca
+CLO: JAYA-CLO-215
+
+### FIX-117.10 | TYOVA | 2026-03-31 14:00 San Diego
+EcosystemStatus.tsx updated -- PRE-REPO resolved for Luke AI and Jayme AI
+- TY AI OS parts updated to 117, status updated to Phase 7 active
+- TYOVA parts updated to 37 chapters, status updated
+- Jaya Runtime parts updated to 116, status updated
+- Luke AI badge changed from PRE-REPO to ACTIVE
+- Jayme AI badge changed from PRE-REPO to ACTIVE, name corrected to Jayme AI
+- S1 clean | S2 clean
+- TYOVA HEAD: 707a69b
+CLO: JAYA-CLO-216
