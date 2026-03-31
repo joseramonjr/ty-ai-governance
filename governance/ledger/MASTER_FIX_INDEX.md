@@ -4266,3 +4266,36 @@ BookOfTyIndex.tsx contrast polish -- /book page
 - S1 clean | S2 clean
 - TYOVA HEAD: 8876234
 CLO: JAYA-CLO-209
+
+### FIX-117.4 | TYOVA | 2026-03-31 10:24 San Diego
+DistributionPage.tsx contrast polish -- /distribution page
+- All text-muted-foreground tokens replaced with explicit #94a3b8
+- All border-border tokens replaced with explicit #334155
+- All hover:text-foreground replaced with onMouseEnter/onMouseLeave handlers
+- Code block explicit #0f172a bg, #f1f5f9 text, #334155 border
+- hsl(var(--foreground)) instances replaced with #f1f5f9
+- surface-disclaimer hsl(var(--disclaimer-foreground)) tokens left untouched
+- 5 nav links explicit #94a3b8 with hover #f1f5f9
+- S1 clean | S2 clean
+- TYOVA HEAD: f3ea600
+CLO: JAYA-CLO-210
+
+### FIX-117.5 | TYOVA | 2026-03-31 10:54 San Diego
+index.css root token fix -- global contrast resolution
+- --muted-foreground corrected from 211 24% 58% to 215 19% 67% in :root and .dark
+- --border corrected from 210 32% 21% to 217 19% 27% in :root and .dark
+- Root cause of all per-page contrast failures eliminated
+- Resolves text-muted-foreground and border-border on all pages using tokens
+- /about, /verification, /help confirmed clean via root fix -- no per-page patches needed
+- S1 clean | S2 clean
+- TYOVA HEAD: ea6b270
+CLO: JAYA-CLO-211
+
+### FIX-117.6 | TYOVA | 2026-03-31 10:54 San Diego
+PublicGovernanceIndex.tsx contrast polish -- /governance page
+- Disclaimer promoted to amber/gold styled banner (#1a1f2e bg, #fbbf24 border and text)
+- Card hover:bg-muted/50 replaced with onMouseEnter/onMouseLeave handlers (#1e293b)
+- Card borders explicit #334155
+- S1 clean | S2 clean
+- TYOVA HEAD: 37ca3cb
+CLO: JAYA-CLO-212
