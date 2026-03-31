@@ -4375,3 +4375,13 @@ governance_intelligence.rs -- F-15 Intelligence Timer maintenance op exemption
 - cargo check = 0 errors | 7 warnings all pre-existing
 - Jaya-Runtime HEAD: 06067b4
 CLO: JAYA-CLO-219
+
+### FIX-117.15 | Jaya-Runtime | 2026-03-31 16:35 San Diego
+proof_server.rs -- bind localhost only instead of 0.0.0.0
+- Changed proof server binding from 0.0.0.0:7777 to 127.0.0.1:7777
+- Eliminates Windows firewall dialog on first run
+- Reduces port conflict surface -- localhost ports have different availability
+- Proof server still accessible locally for external verification via SSH tunnel or local client
+- cargo check = 0 errors | 7 warnings all pre-existing
+- Jaya-Runtime HEAD: b65722c
+CLO: JAYA-CLO-220
