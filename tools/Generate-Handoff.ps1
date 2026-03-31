@@ -71,8 +71,9 @@ $nextPart  = $lastPart + 1
 # ------------------------------------------------------------------
 # Current date San Diego
 # ------------------------------------------------------------------
-$date = Get-Date -Format "yyyy-MM-dd"
-$time = Get-Date -Format "HH:mm"
+$sdTime = [System.TimeZoneInfo]::ConvertTimeBySystemTimeZoneId((Get-Date), 'Pacific Standard Time')
+$date = $sdTime.ToString("yyyy-MM-dd")
+$time = $sdTime.ToString("HH:mm")
 
 # ------------------------------------------------------------------
 # Build repo state table rows as plain strings
