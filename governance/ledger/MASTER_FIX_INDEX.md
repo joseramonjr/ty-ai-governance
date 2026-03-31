@@ -4252,3 +4252,17 @@ PublicCanonIndex.tsx -- /canon page follow-up fixes
 - S1 clean | S2 clean
 - TYOVA HEAD: faacf53
 CLO: JAYA-CLO-208
+
+### FIX-117.3 | TYOVA | 2026-03-31 10:15 San Diego
+BookOfTyIndex.tsx contrast polish -- /book page
+- Hero description explicit #94a3b8
+- Stats card backgrounds #0f172a, borders #334155, labels #94a3b8
+- Phase 6 note background #1a1f2e, border #d97706, span text #94a3b8
+- Chapter row backgrounds #0f172a, borders #334155
+- COMING SOON badge background #1e293b, text #94a3b8
+- Footer border explicit #334155
+- All 4 nav links explicit #94a3b8 with hover #f1f5f9
+- All text-muted-foreground, hsl(var(--border)), hsl(var(--card)) tokens eliminated
+- S1 clean | S2 clean
+- TYOVA HEAD: 8876234
+CLO: JAYA-CLO-209
