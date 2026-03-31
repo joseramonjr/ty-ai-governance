@@ -4385,3 +4385,14 @@ proof_server.rs -- bind localhost only instead of 0.0.0.0
 - cargo check = 0 errors | 7 warnings all pre-existing
 - Jaya-Runtime HEAD: b65722c
 CLO: JAYA-CLO-220
+
+### FIX-117.16 | Jaya-Runtime | 2026-03-31 16:41 San Diego
+lib.rs -- proof refresh thread shutdown channel
+- Added Arc<AtomicBool> shutdown flag to proof refresh background thread
+- Thread checks flag before sleep and after sleep -- exits cleanly on signal
+- Shutdown flag managed via app.manage() for Tauri lifecycle access
+- Added use std::sync::atomic::{AtomicBool, Ordering} import
+- Refresh thread no longer runs infinitely without shutdown mechanism
+- cargo check = 0 errors | 7 warnings all pre-existing
+- Jaya-Runtime HEAD: 2e3f51c
+CLO: JAYA-CLO-221
