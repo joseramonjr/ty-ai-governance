@@ -4365,3 +4365,13 @@ Chapter 26 vocabulary update -- 10 new terms added
 - Update Log row added for JAYA-CLO-217
 - ty-ai-governance HEAD: fb7170f
 CLO: JAYA-CLO-217
+
+### FIX-117.14 | Jaya-Runtime | 2026-03-31 16:31 San Diego
+governance_intelligence.rs -- F-15 Intelligence Timer maintenance op exemption
+- Root cause of F-15 proof refresh anomaly storm identified and fixed
+- analyze_ledger_patterns now skips maintenance operation types before computing behavioral metrics
+- Excluded ops: GOVERNANCE_PROOF_GENERATED, GOVERNANCE_INTELLIGENCE_WARNING, PROOF_REFRESH, all gal_proof_step* entries, policy_reload, keychain_rotate, keychain_compromise
+- Proof refresh (60s interval) no longer triggers false GovernanceWarning signals
+- cargo check = 0 errors | 7 warnings all pre-existing
+- Jaya-Runtime HEAD: 06067b4
+CLO: JAYA-CLO-219
