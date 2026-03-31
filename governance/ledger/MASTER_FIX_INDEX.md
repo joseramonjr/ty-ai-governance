@@ -4299,3 +4299,13 @@ PublicGovernanceIndex.tsx contrast polish -- /governance page
 - S1 clean | S2 clean
 - TYOVA HEAD: 37ca3cb
 CLO: JAYA-CLO-212
+
+### FIX-117.7 | ty-ai-governance | 2026-03-31 11:06 San Diego
+Generate-Handoff.ps1 CLO read pattern fix
+- Changed CLO search pattern from "^## JAYA-CLO-\d+" to "^CLO: JAYA-CLO-\d+"
+- Script now correctly reads last CLO from MASTER_FIX_INDEX
+- Verified: Last CLO reads JAYA-CLO-212, Next CLO reads JAYA-CLO-213
+- Script streamlined -- removed stale Phase 5 hardcoded content
+- Part number still derives from Jaya-Runtime commits -- expected behavior for TYOVA-only phases
+- ty-ai-governance HEAD: 8105166
+CLO: JAYA-CLO-213
