@@ -4229,3 +4229,18 @@ All future entries in this session use 2026-03-30.
 **Description:** Part 116 -- PublicDoctrineIndex.tsx -- 15 contrast issues fixed -- text-muted-foreground changed to text-foreground throughout
 **Commit:** 91e8e13 -- TYOVA main
 **Status:** COMPLETE
+
+### FIX-117.1 | TYOVA | 2026-03-30 20:24 San Diego
+PublicCanonIndex.tsx contrast polish -- /canon page
+- H1 explicit #f1f5f9
+- Description and card descriptions explicit #94a3b8
+- Disclaimer promoted to styled amber/gold banner (#1a1f2e bg, #92400e border, #fbbf24 text)
+- Card borders explicit #334155, hover #1e293b via onMouseEnter/onMouseLeave
+- Card H3 explicit #f1f5f9
+- Empty state explicit #94a3b8
+- Footer border explicit #334155
+- Back link explicit #94a3b8 with hover #f1f5f9
+- All text-muted-foreground and border-border tokens eliminated
+- S1 clean | S2 clean
+- TYOVA HEAD: 7f36605
+CLO: JAYA-CLO-207
