@@ -5,7 +5,7 @@
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-19 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 208 (as of 2026-03-25 -- 7 new terms added, 2 updated)
+**Current Term Count:** 218 (as of 2026-03-31 -- 10 new terms added)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -119,6 +119,15 @@ identities, coordination protocols, and enforcement infrastructure
 operating under TY AI OS governance. The agentic ecosystem is not
 a deployment -- it is the governed space in which agents operate
 within defined authority boundaries.
+
+**Complete Ecosystem Ship**
+*First coined: 2026-03-31 | San Diego (America/Los_Angeles)*
+The requirement that all four TY AI OS components -- TYOVA, Jaya-Runtime, Luke AI,
+and Jayme AI -- ship together in every release. No component is optional at the
+distribution level. User activation is sovereign but all components must be present
+in the release artifact. A release that omits any of the four components is an
+incomplete release by definition. The installation questionnaire is the activation
+gateway -- users decide which components to enable after receiving all four.
 
 ---
 ## Section 2 -- Governance Architecture Terms
@@ -349,6 +358,18 @@ TY AI OS at all times. User sovereignty means: the kill switch is
 always available; no operation can override human intent; the system
 cannot self-authorize; all permission grants are revocable instantly.
 User sovereignty is not a feature -- it is the foundational constraint.
+
+**User-Sovereign Activation**
+*First coined: 2026-03-31 | San Diego (America/Los_Angeles)*
+The governance mechanism by which no TY AI OS component activates without an
+explicit decision by the user. Distinct from User-Sovereign (which describes the
+principle of human authority) in that User-Sovereign Activation describes the
+specific implementation: the installation questionnaire serves as the activation
+gateway. Users receive all four ecosystem components. Users decide which to enable.
+Nothing activates automatically. Nothing activates another component. No default
+activation state exists. The questionnaire is not a convenience feature -- it is
+a structural governance mechanism enforcing user sovereignty at the moment of
+first contact with the ecosystem.
 
 **Governance Precedes Intelligence**
 *First coined: 2025-12-14 03:38 | San Diego (America/Los_Angeles)*
@@ -778,6 +799,40 @@ human guardians are gone. The specification is frozen at the moment
 the last human guardian becomes unavailable. This invariant makes
 the specification self-sealing at the moment it matters most.
 
+**INV-L1**
+*First coined: 2026-03-31 | San Diego (America/Los_Angeles)*
+Luke AI Isolation Invariant 1: Luke never issues commands to any TY AI OS component.
+Luke's role is explanation and audit visibility only. It has no command path to
+Jaya-Runtime, TYOVA, or Jayme AI. This invariant is structural -- the absence of
+any command interface enforces it architecturally.
+
+**INV-L2**
+*First coined: 2026-03-31 | San Diego (America/Los_Angeles)*
+Luke AI Isolation Invariant 2: Luke never modifies canonical records. Luke reads
+governance state to explain it. It cannot write to the audit ledger, the canonical
+archive, or any governance document. Modification authority is zero.
+
+**INV-L3**
+*First coined: 2026-03-31 | San Diego (America/Los_Angeles)*
+Luke AI Isolation Invariant 3: Luke never holds credentials, keys, or execution
+tokens. Luke has no authentication surface, no signing capability, and no stored
+secrets. It cannot impersonate any component or authorize any action.
+
+**INV-L4**
+*First coined: 2026-03-31 | San Diego (America/Los_Angeles)*
+Luke AI Isolation Invariant 4: Luke activation is always user-initiated -- never
+automatic. Luke does not start when Jaya-Runtime starts. Luke does not start when
+TYOVA loads. Luke activates only when a user explicitly enables it through the
+installation questionnaire or a subsequent deliberate user action.
+
+**INV-L5**
+*First coined: 2026-03-31 | San Diego (America/Los_Angeles)*
+Luke AI Isolation Invariant 5: Luke explanations are descriptive only -- never
+prescriptive. Luke describes what happened, what the governance state is, and what
+an audit finding means. Luke never recommends an action, never frames a decision,
+and never applies pressure toward any outcome. Explanation without prescription
+is the complete boundary of Luke's function.
+
 ## Section 7 -- Verification and Proof System Terms
 These terms describe the systems TY AI OS uses to generate,
 preserve, and present verifiable proof of its governance claims.
@@ -1081,6 +1136,39 @@ commits, CLO tags, and seal dates.
 A seal operation that records a governance event in the fix ledger
 without any corresponding code changes. Used when a session
 produces documentation or governance work only.
+
+**PRE-REPO**
+*First coined: 2026-03-31 | San Diego (America/Los_Angeles)*
+A governance status indicating that a TY AI OS component is canonically defined --
+its role, authority boundary, and invariants are documented -- but no repository
+has been established for it yet. PRE-REPO is a transitional state, not a permanent
+classification. A component exits PRE-REPO when its repository is created and its
+canonical definition is committed as the initial record. Luke AI and Jayme AI held
+PRE-REPO status from Phase 5 completion until 2026-03-31, when both repositories
+were established and their canonical definitions were committed.
+
+**Minimum Viable State**
+*First coined: 2026-03-31 | San Diego (America/Los_Angeles)*
+The smallest canonical definition sufficient to establish a TY AI OS component's
+existence, role, authority boundary, and invariants within the ecosystem. Minimum
+viable state does not require working code. It requires: a repository, a README
+with canonical role definition, documented authority boundary, and documented
+invariants. This is consistent with the foundational TY governance principle:
+definition precedes execution. A component at minimum viable state is canonically
+real. Its implementation is pending but its governance existence is established.
+
+**Root Token Fix**
+*First coined: 2026-03-31 | San Diego (America/Los_Angeles)*
+A correction applied to CSS custom property definitions at the design system root
+level that resolves rendering failures across all pages simultaneously. In the TY
+AI OS context, the root token fix refers specifically to the 2026-03-31 correction
+of the TYOVA index.css file in which --muted-foreground was corrected from
+211 24% 58% to 215 19% 67% and --border was corrected from 210 32% 21% to
+217 19% 27% in both :root and .dark blocks. This single fix resolved contrast
+failures across all TYOVA pages that used text-muted-foreground and border-border
+via the token system. The root token fix demonstrated the governance principle of
+fixing structural root causes rather than patching instances: one root correction
+versus dozens of per-page patches.
 
 **CLO Tag**
 *First coined: 2026-03-06 | San Diego (America/Los_Angeles)*
@@ -1554,12 +1642,12 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-21 | JAYA-CLO-164 | New terms: Policy, PolicyLoader, PolicyState, Maximum Restriction, InvariantCheckable, Core Invariant. Section 11 expanded. | 6 |
 | 2026-03-22 | JAYA-CLO-172 | New terms: Governance Proof, Proof Server, Intelligence Timer, Governance Warning, Warning Severity, Weighted Risk Score. Updated: Transparency Layer, Governance Intelligence (definitions updated to reflect proven implementation). Sections 7, 8, 11 expanded. | 6 |
 | 2026-03-24 | JAYA-CLO-175 | New terms: TY_JAYME_SPEC_v0.1.md, Anti-Compromise Invariant, INV-J1, INV-J2, INV-J3, INV-J4, INV-J5. Section 6 expanded. | 7 |
-
+| 2026-03-31 | JAYA-CLO-217 | New terms: Complete Ecosystem Ship (Section 1), User-Sovereign Activation (Section 2), INV-L1, INV-L2, INV-L3, INV-L4, INV-L5 (Section 6), PRE-REPO, Minimum Viable State, Root Token Fix (Section 9). | 10 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-03-16 | San Diego (America/Los_Angeles)*
+*Updated: 2026-03-31 | San Diego (America/Los_Angeles)*
 *This document grows with the project. It is never finished.*
