@@ -4406,3 +4406,16 @@ VerificationPage.tsx -- Governance Proof Endpoint notice added
 - S1 clean | S2 clean
 - TYOVA HEAD: e7c7473
 CLO: JAYA-CLO-222
+
+### FIX-118.01 | ty-ai-governance | 2026-04-01 15:31 San Diego
+
+**Description:** Part 118 -- TY_GUARDIAN_CODEX_v0.1.md written and
+  committed. Full Guardian Codex covering 16 sections -- closed chain
+  rule -- two-tier guardian system -- Jayme adaptive authority --
+  human verification protocol -- anti-corrupt capture -- 40 gaps
+  identified and addressed across two audit passes. F-17 F-18 F-19
+  F-20 logged this session.
+**CLO:** JAYA-CLO-223
+**File:** spec/TY_GUARDIAN_CODEX_v0.1.md
+**Commit:** df79ab8
+**Status:** COMPLETE
