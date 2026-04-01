@@ -5388,3 +5388,29 @@ TYOVA HEAD: 16069d9
 ty-ai-governance HEAD: 42d9d46
 MASTER_FIX_INDEX confirmed current at FIX-117.13.
 Next session: continue Phase 7 remaining work.
+
+### Entry-062
+Date: 2026-03-31
+San Diego Time: 17:27
+CLO Range: JAYA-CLO-219 through JAYA-CLO-222
+FIX Range: FIX-117.14 through FIX-117.17
+Phase: 7 -- The Delivery
+
+Session: F-15 proof refresh anomaly storm formally resolved and closed.
+Root cause identified: Intelligence Timer was including proof refresh ledger entries
+in behavioral risk analysis -- producing false GovernanceWarning signals every 60s.
+Fix 2: governance_intelligence.rs -- maintenance op exemption list added to
+analyze_ledger_patterns. Proof refresh, GAL proof, policy reload, keychain events
+all excluded from behavioral scoring. JAYA-CLO-219.
+Fix 1: proof_server.rs -- binding changed from 0.0.0.0:7777 to 127.0.0.1:7777.
+Eliminates Windows firewall dialog. JAYA-CLO-220.
+Fix 4: lib.rs -- Arc<AtomicBool> shutdown channel added to proof refresh thread.
+Thread exits cleanly on shutdown signal. JAYA-CLO-221.
+Fix 3: VerificationPage.tsx -- Governance Proof Endpoint notice added to /verification page.
+User-facing documentation for proof server purpose and TYOVA non-involvement. JAYA-CLO-222.
+All cargo checks = 0 errors. S1/S2 clean.
+Jaya-Runtime HEAD: 2e3f51c
+TYOVA HEAD: e7c7473
+ty-ai-governance HEAD: 8d1fa7a
+MASTER_FIX_INDEX confirmed current at FIX-117.17.
+F-15 closed. All 6 pre-ship requirements addressed.
