@@ -5414,3 +5414,19 @@ TYOVA HEAD: e7c7473
 ty-ai-governance HEAD: 8d1fa7a
 MASTER_FIX_INDEX confirmed current at FIX-117.17.
 F-15 closed. All 6 pre-ship requirements addressed.
+
+### Entry-063 | JAYA-CLO-223 | Claude Sonnet 4.6 | 2026-04-01 15:31 San Diego
+
+Part 118 -- TY_GUARDIAN_CODEX_v0.1.md written and committed to
+ty-ai-governance/spec/. Full Guardian Codex -- 16 sections -- 2526
+lines -- 25.01 KiB. Covers closed chain rule, two-tier guardian
+system (Tier 1 full authority, Tier 2 emergency authority), Jayme
+adaptive authority (Layer C pre-authorized, Layer D provisional),
+human verification protocol (Gate 0 plus four verification layers),
+anti-corrupt human capture section, duress signal, infrastructure
+custodian succession, charter modification options, two full gap
+audits G-1 through G-40 all addressed. Four new flags logged:
+F-17 external user governance Model D four paths, F-18 update
+delivery system, F-19 governed evolution three-layer model, F-20
+human verification protocol against advanced AI impersonation.
+Commit: df79ab8 -- MASTER_FIX_INDEX: f7860a1.
