@@ -4396,3 +4396,13 @@ lib.rs -- proof refresh thread shutdown channel
 - cargo check = 0 errors | 7 warnings all pre-existing
 - Jaya-Runtime HEAD: 2e3f51c
 CLO: JAYA-CLO-221
+
+### FIX-117.17 | TYOVA | 2026-03-31 17:27 San Diego
+VerificationPage.tsx -- Governance Proof Endpoint notice added
+- Added proof server documentation panel to /verification page
+- Notice appears below TYOVA Role Boundary box in hero section
+- Documents: local endpoint URL, public-only data, Ed25519 signature, TYOVA non-involvement
+- Addresses F-15 Fix 3 -- user-facing documentation requirement
+- S1 clean | S2 clean
+- TYOVA HEAD: e7c7473
+CLO: JAYA-CLO-222
