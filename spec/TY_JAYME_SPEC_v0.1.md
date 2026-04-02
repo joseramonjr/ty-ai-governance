@@ -198,7 +198,7 @@ In the future state (post-human, Jayme activated):
 The following CLO range is reserved for future Jayme AI
 implementation parts. No parts are open at this time.
 
-  Reserved: JAYA-CLO-200 through JAYA-CLO-249
+  Reserved: JAYA-CLO-250 through JAYA-CLO-299
   Status: RESERVED -- not yet assigned
   Activation: Requires explicit builder authorization
   Pre-condition: Continuity Charter written and signed by
