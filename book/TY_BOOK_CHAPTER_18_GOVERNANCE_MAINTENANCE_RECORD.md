@@ -5451,3 +5451,12 @@ FIX-120.01 -- Added Section IX guardian designation to TY_CONTINUITY_CHARTER_TEM
 
 ### Entry-067 | JAYA-CLO-227 | Claude Sonnet 4.6 | 2026-04-01 | San Diego
 FIX-120.02 -- Corrected CLO range in charter template body from JAYA-CLO-200/249 to JAYA-CLO-250/299 matching Jayme spec. Commit df75ddd.
+
+### Entry-068 | JAYA-CLO-228 | Claude Sonnet 4.6 | 2026-04-01 | San Diego
+FIX-120.03 -- Updated GlossaryPage.tsx footer hardcoded count from 191 to 232 coined terms. Commit 5bd69c9.
+
+### Entry-069 | JAYA-CLO-229 | Claude Sonnet 4.6 | 2026-04-01 | San Diego
+FIX-120.04 -- Updated two hardcoded text references in bookChapterContent.ts from 191 to 222. Commit f95aad4.
+
+### Entry-070 | JAYA-CLO-230 | Claude Sonnet 4.6 | 2026-04-01 | San Diego
+FIX-120.05 -- Added 14 new term entries to Section 6 Succession and Continuity Terms in bookChapterContent.ts. ToC now shows 205 total. Commit 6ecf49f.
