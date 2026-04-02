@@ -5460,3 +5460,6 @@ FIX-120.04 -- Updated two hardcoded text references in bookChapterContent.ts fro
 
 ### Entry-070 | JAYA-CLO-230 | Claude Sonnet 4.6 | 2026-04-01 | San Diego
 FIX-120.05 -- Added 14 new term entries to Section 6 Succession and Continuity Terms in bookChapterContent.ts. ToC now shows 205 total. Commit 6ecf49f.
+
+### Entry-071 | JAYA-CLO-231 | Claude Sonnet 4.6 | 2026-04-01 | San Diego
+FIX-120.06 -- Created Sync-Ch26ToTYOVA.ps1 in tools directory. Automates Ch26 to TYOVA vocabulary sync. Parses 222 terms across 11 sections, outputs TypeScript-ready entries for bookChapterContent.ts. Eliminates manual vocab sync work. Commit 0a88b6d.
