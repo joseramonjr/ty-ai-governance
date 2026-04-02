@@ -4444,3 +4444,12 @@ CLO: JAYA-CLO-222
 **File:** book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
 **Commit:** d28b532
 **Status:** COMPLETE
+### FIX-120.01 | ty-ai-governance | 2026-04-01 20:30 San Diego
+File: spec/TY_CONTINUITY_CHARTER_TEMPLATE_v0.1.md
+Action: Added Section IX guardian designation -- closed chain rule, Tier 1/2 authority, Gate 0 acknowledgment, Guardian Codex reference
+CLO: JAYA-CLO-226 | Commit: df75ddd
+
+### FIX-120.02 | ty-ai-governance | 2026-04-01 20:30 San Diego
+File: spec/TY_CONTINUITY_CHARTER_TEMPLATE_v0.1.md
+Action: Corrected CLO range in body from JAYA-CLO-200/249 to JAYA-CLO-250/299
+CLO: JAYA-CLO-227 | Commit: df75ddd
