@@ -4419,3 +4419,14 @@ CLO: JAYA-CLO-222
 **File:** spec/TY_GUARDIAN_CODEX_v0.1.md
 **Commit:** df79ab8
 **Status:** COMPLETE
+
+### FIX-119.01 | ty-ai-governance | 2026-04-01 18:41 San Diego
+
+**Description:** Part 119 -- TY_JAYME_SPEC_v0.1.md CLO range
+  corrected from JAYA-CLO-200 through JAYA-CLO-249 to
+  JAYA-CLO-250 through JAYA-CLO-299. Line 201 only. One line
+  change. Spec footer unchanged.
+**CLO:** JAYA-CLO-224
+**File:** spec/TY_JAYME_SPEC_v0.1.md
+**Commit:** 96b0de3
+**Status:** COMPLETE
