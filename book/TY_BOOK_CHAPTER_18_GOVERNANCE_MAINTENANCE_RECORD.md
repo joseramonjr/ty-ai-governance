@@ -5436,3 +5436,13 @@ Commit: df79ab8 -- MASTER_FIX_INDEX: f7860a1.
 Part 119 -- TY_JAYME_SPEC_v0.1.md CLO range corrected. Line 201
 updated from JAYA-CLO-200 through JAYA-CLO-249 to JAYA-CLO-250
 through JAYA-CLO-299. One line change. Commit: 96b0de3.
+
+### Entry-065 | JAYA-CLO-225 | Claude Sonnet 4.6 | 2026-04-01 20:05 San Diego
+
+Ch26 vocab gate -- 14 new terms added covering Guardian Codex
+session vocabulary. Closed Chain, Closed Chain Rule, Tier 1
+Guardian, Tier 2 Guardian, Gate 0, Layer C Adaptation, Layer D
+Adaptation, Provisional Adaptation Limit, Three-Layer Governance
+Model, Three-Circle Mental Model, Model D, Infrastructure
+Custodian, Duress Signal, Two Protection Directions. Ch26 now
+at 232 terms. Commit: d28b532.

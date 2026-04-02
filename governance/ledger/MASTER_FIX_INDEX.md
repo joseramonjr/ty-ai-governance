@@ -4430,3 +4430,17 @@ CLO: JAYA-CLO-222
 **File:** spec/TY_JAYME_SPEC_v0.1.md
 **Commit:** 96b0de3
 **Status:** COMPLETE
+
+### FIX-119.02 | ty-ai-governance | 2026-04-01 20:05 San Diego
+
+**Description:** Ch26 vocab gate -- 14 new terms added for
+  JAYA-CLO-223 and JAYA-CLO-224 session. Terms: Closed Chain,
+  Closed Chain Rule, Tier 1 Guardian, Tier 2 Guardian, Gate 0,
+  Layer C Adaptation, Layer D Adaptation, Provisional Adaptation
+  Limit, Three-Layer Governance Model, Three-Circle Mental Model,
+  Model D, Infrastructure Custodian, Duress Signal, Two Protection
+  Directions. Ch26 now at 232 terms.
+**CLO:** JAYA-CLO-225
+**File:** book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
+**Commit:** d28b532
+**Status:** COMPLETE
