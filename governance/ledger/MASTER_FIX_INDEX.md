@@ -4453,3 +4453,18 @@ CLO: JAYA-CLO-226 | Commit: df75ddd
 File: spec/TY_CONTINUITY_CHARTER_TEMPLATE_v0.1.md
 Action: Corrected CLO range in body from JAYA-CLO-200/249 to JAYA-CLO-250/299
 CLO: JAYA-CLO-227 | Commit: df75ddd
+
+### FIX-120.03 | TYOVA | 2026-04-01 21:02 San Diego
+File: src/pages/noncanonical/GlossaryPage.tsx
+Action: Updated footer hardcoded count from 191 to 232 coined terms
+CLO: JAYA-CLO-228 | Commit: 5bd69c9
+
+### FIX-120.04 | TYOVA | 2026-04-01 21:02 San Diego
+File: src/data/bookChapterContent.ts
+Action: Updated two hardcoded text references from 191 to 222
+CLO: JAYA-CLO-229 | Commit: f95aad4
+
+### FIX-120.05 | TYOVA | 2026-04-01 21:02 San Diego
+File: src/data/bookChapterContent.ts
+Action: Added 14 new term entries to Section 6 Succession and Continuity Terms -- ToC updated 191 to 205
+CLO: JAYA-CLO-230 | Commit: 6ecf49f
