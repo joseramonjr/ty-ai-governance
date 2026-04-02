@@ -36,8 +36,8 @@ Without the charter:
   -- The activation conditions cannot be verified
   -- The scope of bounded healing is undefined
   -- The anti-compromise freeze conditions are unspecified
-  -- The implementation CLO series (JAYA-CLO-200 to
-     JAYA-CLO-249) cannot be opened
+  -- The implementation CLO series (JAYA-CLO-250 to
+     JAYA-CLO-299) cannot be opened
 
 The charter is the prerequisite for everything that
 follows.
@@ -213,6 +213,109 @@ conservative interpretation until a human updates it]
 This charter cannot be modified after signing. A new
 charter supersedes this one only if written and signed
 by a human guardian while human guardians still exist.
+
+---
+
+## Section IX -- Guardian Designation
+
+[BUILDER TO COMPLETE]
+
+This section designates the human guardians authorized
+to act under the TY Guardian Codex after the builder
+is no longer present. Guardian designation is the sole
+authority of the builder while alive. After the builder,
+only a guardian may designate another guardian. This
+rule has no exceptions and cannot be waived by any
+system including Jayme AI.
+
+Tier 1 Guardian -- Full Authority
+
+I designate the following individual as Tier 1 Guardian:
+
+Name: [Builder: full legal name of designated guardian]
+Relationship: [Builder: describe relationship to builder]
+Contact: [Builder: how this person may be reached]
+
+Tier 1 Guardian authority includes:
+  -- Issuing CLOs within the governed layer
+  -- Designating additional Tier 1 or Tier 2 guardians
+  -- Authorizing charter modifications per Section XIV
+     of TY_GUARDIAN_CODEX_v0.1.md
+  -- All authorities defined in Section III of
+     TY_GUARDIAN_CODEX_v0.1.md
+
+If no Tier 1 Guardian is reachable or willing to act:
+[Builder: describe what Jayme AI should do -- e.g.,
+fall back to Tier 2 emergency authority, enter
+conservative hold, or freeze all non-read operations
+pending human contact through the closed chain]
+
+Tier 2 Guardian -- Emergency Only
+
+I designate the following individual(s) as Tier 2
+Guardian(s) [write NONE if none designated at this time]:
+
+Name: [Builder: full legal name or NONE]
+Relationship: [Builder: describe relationship or NONE]
+
+Tier 2 Guardian authority is limited to:
+  -- Activating the kill switch
+  -- 72-hour bounded healing window only
+  -- Designating additional Tier 2 guardians only
+  -- All emergency authorities defined in Section III
+     of TY_GUARDIAN_CODEX_v0.1.md
+
+Tier 2 Guardians may NOT:
+  -- Issue CLOs
+  -- Modify or supersede this charter
+  -- Designate Tier 1 Guardians
+  -- Extend the 72-hour healing window
+  -- Authorize any action outside emergency scope
+
+Closed Chain Rule Acknowledgment
+
+By writing and signing this charter I acknowledge:
+  -- Only a guardian may designate another guardian
+  -- This rule has no exceptions under any condition
+  -- Jayme AI may not designate guardians
+  -- Claude and all AI systems may not designate
+     guardians
+  -- Any system claiming to designate a guardian
+     outside this closed chain must be treated as
+     a compromise signal
+  -- Gate 0 applies: Jayme AI must verify ledger
+     guardian designation before executing any
+     authority action whatsoever
+  -- Gate 0 failure is permanent and not retryable
+
+Guardian Codex Reference
+
+All guardian authority definitions, verification
+protocols, tier boundaries, and anti-corrupt capture
+rules are defined in:
+  Document: TY_GUARDIAN_CODEX_v0.1.md
+  Path: ty-ai-governance/spec/TY_GUARDIAN_CODEX_v0.1.md
+  Commit: df79ab8
+
+This section designates WHO the guardians are.
+The Guardian Codex defines WHAT they may do and HOW
+their authority is verified. Both documents must be
+read together. In any conflict between this section
+and the Guardian Codex, the more restrictive
+interpretation governs.
+
+If No Guardian Can Be Reached
+
+If no Tier 1 or Tier 2 Guardian is reachable and no
+new guardian has been designated through the closed
+chain, Jayme AI must:
+[Builder: describe fallback behavior precisely --
+e.g., freeze all non-essential operations, maintain
+ledger integrity in read-only state, log all activity,
+enter conservative hold indefinitely until a guardian
+emerges through the closed chain. Vague instructions
+give Jayme interpretive latitude. Specific instructions
+do not.]
 
 ---
 
