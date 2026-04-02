@@ -4468,3 +4468,8 @@ CLO: JAYA-CLO-229 | Commit: f95aad4
 File: src/data/bookChapterContent.ts
 Action: Added 14 new term entries to Section 6 Succession and Continuity Terms -- ToC updated 191 to 205
 CLO: JAYA-CLO-230 | Commit: 6ecf49f
+
+### FIX-120.06 | ty-ai-governance | 2026-04-01 21:55 San Diego
+File: tools/Sync-Ch26ToTYOVA.ps1
+Action: Created PowerShell sync script -- reads Ch26 md, parses all sections and terms, outputs TypeScript-ready entries for bookChapterContent.ts. Eliminates manual vocab sync. 222 terms exported clean across 11 sections.
+CLO: JAYA-CLO-231 | Commit: 0a88b6d
