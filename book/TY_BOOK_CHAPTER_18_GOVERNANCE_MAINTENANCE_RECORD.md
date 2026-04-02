@@ -5446,3 +5446,8 @@ Adaptation, Provisional Adaptation Limit, Three-Layer Governance
 Model, Three-Circle Mental Model, Model D, Infrastructure
 Custodian, Duress Signal, Two Protection Directions. Ch26 now
 at 232 terms. Commit: d28b532.
+### Entry-066 | JAYA-CLO-226 | Claude Sonnet 4.6 | 2026-04-01 | San Diego
+FIX-120.01 -- Added Section IX guardian designation to TY_CONTINUITY_CHARTER_TEMPLATE_v0.1.md. Closed chain rule, Tier 1/2 designation blocks, Gate 0 acknowledgment, Guardian Codex reference, no-guardian fallback placeholder. Commit df75ddd.
+
+### Entry-067 | JAYA-CLO-227 | Claude Sonnet 4.6 | 2026-04-01 | San Diego
+FIX-120.02 -- Corrected CLO range in charter template body from JAYA-CLO-200/249 to JAYA-CLO-250/299 matching Jayme spec. Commit df75ddd.
