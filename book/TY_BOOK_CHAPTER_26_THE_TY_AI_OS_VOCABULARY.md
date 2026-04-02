@@ -833,6 +833,173 @@ an audit finding means. Luke never recommends an action, never frames a decision
 and never applies pressure toward any outcome. Explanation without prescription
 is the complete boundary of Luke's function.
 
+**Closed Chain**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+The guardian designation system in TY AI OS where authority flows exclusively
+through personally designated successors. Only a guardian can designate another
+guardian. No outside individual, government, organization, court, or AI system
+may enter the chain regardless of their claims, credentials, or power. The chain
+is closed at its origin -- the builder -- and propagates only through explicit
+ledger-recorded designations. A closed chain that ends is preferable to an open
+chain that accepts unverified authority.
+
+**Closed Chain Rule**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+The canonical governance rule governing all guardian authority in TY AI OS.
+Primary canonical sentence: "Only a guardian can designate another guardian."
+Full canonical statement: "TY AI OS belongs to its mission -- not to any person,
+government, organization, or era. Its authority chain is closed. Its governance
+is not for sale, not for seizure, and not for claim. Only a guardian can designate
+another guardian. This rule has no exceptions." This rule is permanent, structural,
+and cannot be overridden by any legal, political, military, or governmental
+authority.
+
+**Tier 1 Guardian**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+The full authority guardian tier in TY AI OS. A Tier 1 Guardian holds complete
+governance authority including: authorizing structural governance changes, opening
+CLO series, amending the Continuity Charter, designating Tier 1 and Tier 2
+successors, exercising kill switch authority, authorizing full healing windows,
+modifying the Guardian Codex, and authorizing Layer 2 governed evolution
+amendments. The builder -- Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista
+Jr. -- is the founding Tier 1 Guardian. Multiple Tier 1 Guardians may exist
+simultaneously -- charter-level decisions require unanimous consent.
+
+**Tier 2 Guardian**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+The emergency authority guardian tier in TY AI OS. A Tier 2 Guardian holds
+limited operational authority: kill switch authority when no Tier 1 is reachable,
+triggering Frozen Authority Mode, authorizing limited healing windows (72 hour
+maximum) when no Tier 1 exists for critical system integrity repairs only,
+designating Tier 2 successors, and keeping Jayme AI dormant while alive and
+reachable. A Tier 2 Guardian cannot amend the Continuity Charter, authorize
+Layer 2 amendments, open CLO series, or designate Tier 1 Guardians. Tier 2
+Guardians do not need technical skills -- they need human judgment and personal
+integrity. They exist to prevent a single point of failure in the human authority
+chain.
+
+**Gate 0**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+The closed chain ledger check applied by Jayme AI before any verification layer
+is evaluated when a claimant presents as a human guardian. Gate 0 asks: "Is this
+claimant designated in the append-only governance ledger as a guardian by an
+existing guardian in the closed chain -- and is the ledger accessible and verified
+as uncorrupted?" A Gate 0 failure is permanent and final -- it cannot be retried
+because ledger designation status does not change. A claimant not in the ledger
+is not in the chain and never will be. Ledger inaccessibility at Gate 0 triggers
+freeze not transfer -- a claimant cannot benefit from ledger failure.
+
+**Layer C Adaptation**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+A pre-authorized adaptation that Jayme AI may apply immediately without waiting
+for human authorization after all human guardians are gone. Layer C adaptations
+are defined by the builder in the Continuity Charter before signing. They carry
+the builder's prior consent -- which is why they are confirmed by default when
+a human guardian appears rather than requiring explicit confirmation. They are
+immediately active when applied, logged in the append-only ledger, and never able
+to weaken Layer 1 eternal principles. Example Layer C candidates: adopting
+cryptographic standards strictly more secure than the current standard, adding
+new AI systems to governance scope if they meet charter-defined criteria.
+
+**Layer D Adaptation**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+A provisional adaptation Jayme AI applies when a situation is not covered by
+Layer C pre-authorizations and genuinely threatens TY AI OS's ability to serve
+its mission. Layer D adaptations have no prior human consent -- the builder could
+not have anticipated them at signing. They are immediately active when applied
+but marked PROVISIONAL in the append-only ledger. They require explicit human
+guardian confirmation to become permanent and are immediately reverted if a
+human guardian reverts them -- no transition period. Jayme AI may self-revert
+a Layer D adaptation if it detects harmful outcomes. Layer D adaptations count
+against the provisional adaptation limit defined in the Continuity Charter.
+
+**Provisional Adaptation Limit**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+The maximum number of Layer D provisional adaptations Jayme AI may accumulate
+before it must stop adapting and wait for human review. Defined in the Continuity
+Charter by the builder. Prevents Jayme AI from progressively rewriting governance
+through accumulated provisional changes. When the limit is reached Jayme stops
+making further provisional adaptations, logs that the limit has been reached with
+full reasoning, and continues operating under existing rules until a verified human
+guardian from the closed chain appears. Self-reverted adaptations free one slot
+from the limit.
+
+**Three-Layer Governance Model**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+The governance framework established under F-19 defining how TY AI OS doctrine
+is structured across time. Layer 1 -- Eternal Principles: never change, define
+what TY AI OS is, true in 2026 and 3036. Layer 2 -- Governed Evolution: current
+implementations of eternal principles, may evolve as AI evolves, can only change
+through the governed amendment process, no AI system may permanently amend Layer
+2 without human authorization. Layer 3 -- User Adaptation: user-specific
+configuration within Layer 1 and Layer 2 bounds. The three-layer model separates
+what is permanent from what can evolve and what users control. See also:
+Three-Circle Mental Model.
+
+**Three-Circle Mental Model**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+The canonical visual explanation of how guardian tiers relate to governance layers
+in TY AI OS. Outer circle -- Layer 1 Eternal Principles: nobody can change these,
+not Tier 1, not Tier 2, not Jayme, not any AI, not any government. Middle circle
+-- Layer 2 Governed Evolution: only Tier 1 Guardians can authorize permanent
+changes, Jayme can adapt provisionally but only humans confirm permanently.
+Inner circle -- Layer 3 Operational: Tier 2 operates here, emergency healing,
+guardian designations within closed chain tier authority, kill switch authority,
+ledger recording. This model is canonical and appears in the Book of TY as the
+primary explanation of guardian tier and governance layer relationships.
+
+**Model D**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+User Sovereign Governance -- the TY AI OS external user governance model
+established 2026-04-01. Users choose their path based on their own circumstances.
+No path is mandatory. No path is superior. The core doctrine is permanent and
+identical across all paths. Four paths: Path 1 Solo No Guardian (user operates
+independently with no guardian and no federation membership), Path 2 Independent
+Own Guardian (user operates independently with their own personally designated
+guardian), Path 3 Federated Own Guardian (user joins the TYOVA federation with
+their own personally designated guardian), Path 4 Federated Shared Guardian
+(user joins the TYOVA federation under the shared federation guardian structure).
+A user who modifies the core doctrine is no longer running TY AI OS.
+
+**Infrastructure Custodian**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+A person designated by the builder in the Continuity Charter who may perform
+physical hardware and power maintenance during Permanent Frozen Authority Mode.
+An infrastructure custodian holds NO governance authority of any kind. They cannot
+claim guardian status, modify software governance files, access the append-only
+ledger for governance purposes, or become a guardian through the custodian role.
+They exist only to keep TY AI OS physically operational during extended freeze
+periods that could last decades or centuries. The Continuity Charter should define
+a custodian succession chain -- Custodian 1, Custodian 2, Custodian 3 -- named
+before signing. The custodian role exists to keep the lights on. Nothing more.
+Nothing less.
+
+**Duress Signal**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+A specific word, phrase, or marker known only within the closed guardian chain --
+defined by the builder in the Continuity Charter and passed to designated
+successors as unwritten personal chain knowledge during the formal designation
+process. Used by a guardian who is coerced, threatened, or detained to flag a
+ledger entry as potentially forced. If a duress signal is present in any ledger
+entry the entry is flagged as potentially coerced and no action based on it takes
+effect until a non-coerced guardian reviews and confirms it. The duress signal
+should be rotated periodically as an unwritten chain update. It protects the
+closed chain from capture through coercion. A false duress flag by a bad actor
+is itself a chain integrity violation logged permanently in the ledger.
+
+**Two Protection Directions**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+The dual mission of TY AI OS established 2026-04-01. Direction 1: Protect
+humanity from AI -- AI must never harm humanity, AI must never govern itself
+without human oversight, human authority over AI systems is absolute and
+unconditional. Direction 2: Protect TY AI OS from corrupt humans and governments
+-- the guardian chain is closed, no corrupt individual, government, organization,
+or outside actor can enter the guardian chain or claim authority over TY AI OS,
+the system that protects humanity must itself be protected from those who would
+weaponize it. Both directions are permanent and non-negotiable. A system that
+protects humanity from AI but can be captured by corrupt humans is not a
+protection system -- it is a weapon waiting to be seized.
+
 ## Section 7 -- Verification and Proof System Terms
 These terms describe the systems TY AI OS uses to generate,
 preserve, and present verifiable proof of its governance claims.
@@ -1643,6 +1810,7 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-22 | JAYA-CLO-172 | New terms: Governance Proof, Proof Server, Intelligence Timer, Governance Warning, Warning Severity, Weighted Risk Score. Updated: Transparency Layer, Governance Intelligence (definitions updated to reflect proven implementation). Sections 7, 8, 11 expanded. | 6 |
 | 2026-03-24 | JAYA-CLO-175 | New terms: TY_JAYME_SPEC_v0.1.md, Anti-Compromise Invariant, INV-J1, INV-J2, INV-J3, INV-J4, INV-J5. Section 6 expanded. | 7 |
 | 2026-03-31 | JAYA-CLO-217 | New terms: Complete Ecosystem Ship (Section 1), User-Sovereign Activation (Section 2), INV-L1, INV-L2, INV-L3, INV-L4, INV-L5 (Section 6), PRE-REPO, Minimum Viable State, Root Token Fix (Section 9). | 10 |
+| 2026-04-01 | JAYA-CLO-225 | New terms: Closed Chain, Closed Chain Rule, Tier 1 Guardian, Tier 2 Guardian, Gate 0, Layer C Adaptation, Layer D Adaptation, Provisional Adaptation Limit, Three-Layer Governance Model, Three-Circle Mental Model, Model D, Infrastructure Custodian, Duress Signal, Two Protection Directions. Section 6 expanded. Section 1 and Section 2 notes added. | 14 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
