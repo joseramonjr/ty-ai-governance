@@ -4514,3 +4514,9 @@ DistributionPage.tsx -- External Distribution Source section updated --
 stale "not yet distributed" text replaced with live TY-0001.A release info,
 SHA-256 hash, and GitHub Releases link
 CLO: JAYA-CLO-240 | TYOVA Commit: 5c80d0b
+
+### FIX-121.09 | TYOVA | 2026-04-03 10:56 San Diego
+VerificationPage.tsx -- SHA-256 command examples updated --
+ty-ai-os-v14.4.0.zip replaced with ty-ai-os-TY-0001.A.zip in both
+macOS/Linux and Windows PowerShell examples
+CLO: JAYA-CLO-241 | TYOVA Commit: 5142707
