@@ -5463,3 +5463,6 @@ FIX-120.05 -- Added 14 new term entries to Section 6 Succession and Continuity T
 
 ### Entry-071 | JAYA-CLO-231 | Claude Sonnet 4.6 | 2026-04-01 | San Diego
 FIX-120.06 -- Created Sync-Ch26ToTYOVA.ps1 in tools directory. Automates Ch26 to TYOVA vocabulary sync. Parses 222 terms across 11 sections, outputs TypeScript-ready entries for bookChapterContent.ts. Eliminates manual vocab sync work. Commit 0a88b6d.
+
+### Entry-072 | JAYA-CLO-232 | Claude Sonnet 4.6 | 2026-04-02 | San Diego
+FIX-120.07 -- TY_CONTINUITY_CHARTER_v1.0.md written and signed by builder. All sections completed in builder's own words. Guardians designated: Tier 1 -- Janet L. McHerron, Jessica Bobadilla, Hayley Frushon. Tier 2 -- Jasmin Frushon. Charter active and immutable. F-5 CLOSED. Commit 36bd0ff.
