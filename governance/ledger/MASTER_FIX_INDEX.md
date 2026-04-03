@@ -4520,3 +4520,8 @@ VerificationPage.tsx -- SHA-256 command examples updated --
 ty-ai-os-v14.4.0.zip replaced with ty-ai-os-TY-0001.A.zip in both
 macOS/Linux and Windows PowerShell examples
 CLO: JAYA-CLO-241 | TYOVA Commit: 5142707
+
+### FIX-121.10 | TYOVA | 2026-04-03 11:00 San Diego
+PublicGovernanceIndex.tsx -- disclaimer banner added, hero section
+standardized, inline styles consistent with other polished pages
+CLO: JAYA-CLO-242 | TYOVA Commit: 57526fb
