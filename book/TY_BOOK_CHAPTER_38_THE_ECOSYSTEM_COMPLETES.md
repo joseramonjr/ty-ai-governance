@@ -1,4 +1,4 @@
-# Chapter 38 — The Ecosystem Completes: Luke AI, Jayme AI, and the Full Delivery
+﻿# Chapter 38 — The Ecosystem Completes: Luke AI, Jayme AI, and the Full Delivery
 
 **Status:** SEALED
 **Date:** 2026-03-31 | San Diego
@@ -53,7 +53,7 @@ During the /canon follow-up, a UTF-8 double-encoding artifact was identified
 in the back link arrow character. The character `←` had been corrupted to
 `â†` by Lovable during a previous pull. This was corrected and documented
 as part of the standing post-pull corruption scan protocol. The S1 scan
-pattern `Ã|â€|Â` is specifically designed to catch this class of artifact.
+pattern `Ã|"|Â` is specifically designed to catch this class of artifact.
 This pattern has appeared repeatedly across Phase 7 sessions and is confirmed
 as a Lovable-introduced encoding issue. The post-pull protocol remains
 mandatory for every session.
