@@ -4531,3 +4531,7 @@ Generate-Handoff.ps1 -- part number now derived from MASTER_FIX_INDEX --
 luke-ai and jayme-ai HEADs added -- last FIX ID now shown --
 S1 pattern replaced with plain ASCII note
 CLO: JAYA-CLO-243 | Commit: 11274a4
+
+### FIX-121.12 | ty-ai-governance | 2026-04-03 11:22 San Diego
+Ch26 term count header corrected from 218 to 232
+CLO: JAYA-CLO-244 | Commit: acd95b4
