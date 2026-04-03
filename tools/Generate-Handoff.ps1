@@ -1,4 +1,4 @@
-# Generate-Handoff.ps1
+﻿# Generate-Handoff.ps1
 # TY AI OS -- Auto Handoff Generator
 # FIX-121.11 | JAYA-CLO-243 | Claude Sonnet 4.6 | 2026-04-03 | San Diego
 #
@@ -43,7 +43,7 @@ Pop-Location
 # Last CLO from MASTER_FIX_INDEX
 # Reads lines starting with "CLO: JAYA-CLO-" and takes the last one
 # ------------------------------------------------------------------
-$cloLines    = Get-Content $masterFix | Select-String "^CLO: JAYA-CLO-\d+"
+$cloLines    = Get-Content $masterFix | Select-String "CLO: JAYA-CLO-\d+"
 $lastCloLine = ($cloLines | Select-Object -Last 1).Line
 $lastCloNum  = [int]([regex]::Match($lastCloLine, "JAYA-CLO-(\d+)").Groups[1].Value)
 $nextCloNum  = $lastCloNum + 1
