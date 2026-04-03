@@ -4544,3 +4544,10 @@ CLO: JAYA-CLO-244 | Commit: acd95b4
 - TY_RELEASE_PROCESS.md: confirmed false positive — no fix applied
 - Commit: 53d47bd | CLO: JAYA-CLO-245
 CLO: JAYA-CLO-245 | Commit: 53d47bd
+
+### FIX-122.2 | ty-ai-governance | 2026-04-03 13:47 San Diego
+- Generate-Handoff.ps1: removed ^ anchor from CLO regex on line 46 -- now matches CLO anywhere on line
+- MASTER_FIX_INDEX.md: added correctly formatted CLO line to FIX-122.1 block
+- Root cause: FIX-122.1 entry placed CLO at end of line breaking script pattern match
+- Commit: a4f24c7
+CLO: JAYA-CLO-246 | Commit: a4f24c7
