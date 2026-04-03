@@ -5518,3 +5518,6 @@ Pages audited clean with no Lovable prompt needed:
 /about, /help, all canon pages -- root token fix from Ch38.3 resolved all.
 
 jayme-ai HEAD: 892a7a6 | ty-ai-governance HEAD: c631e53 | TYOVA HEAD: 57526fb
+
+### Entry-075 | JAYA-CLO-245 | Claude Sonnet 4.6 | 2026-04-03 | 13:02 San Diego
+S1 UTF-8 corruption remediation. Three live files cleaned: Jaya_PART_INDEX.md (byte-level hex replace, en dash + em dash, ~80+ lines), TY_BOOK_CHAPTER_38 (em dash + arrow), MASTER_FIX_INDEX.md (left arrow). TY_RELEASE_PROCESS.md confirmed false positive. Commit 53d47bd.

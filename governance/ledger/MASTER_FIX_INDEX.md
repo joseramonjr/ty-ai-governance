@@ -4535,3 +4535,11 @@ CLO: JAYA-CLO-243 | Commit: 11274a4
 ### FIX-121.12 | ty-ai-governance | 2026-04-03 11:22 San Diego
 Ch26 term count header corrected from 218 to 232
 CLO: JAYA-CLO-244 | Commit: acd95b4
+
+### FIX-122.1 | ty-ai-governance | 2026-04-03 13:01 San Diego
+- S1 UTF-8 corruption remediation — three live files fixed
+- Jaya_PART_INDEX.md: ~80+ lines — en dash (E28093) and em dash (E28094) byte-level replacement via hex reconstruct
+- TY_BOOK_CHAPTER_38_THE_ECOSYSTEM_COMPLETES.md: em dash and arrow corruption cleared
+- MASTER_FIX_INDEX.md: single left arrow corruption cleared
+- TY_RELEASE_PROCESS.md: confirmed false positive — no fix applied
+- Commit: 53d47bd | CLO: JAYA-CLO-245
