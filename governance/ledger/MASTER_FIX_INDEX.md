@@ -4248,7 +4248,7 @@ CLO: JAYA-CLO-207
 ### FIX-117.2 | TYOVA | 2026-03-31 09:58 San Diego
 PublicCanonIndex.tsx -- /canon page follow-up fixes
 - Disclaimer border corrected from #92400e to #fbbf24 (matches text color)
-- UTF-8 corruption fixed: â† restored to ← (back link arrow)
+- UTF-8 corruption fixed: ← restored to ← (back link arrow)
 - S1 clean | S2 clean
 - TYOVA HEAD: faacf53
 CLO: JAYA-CLO-208
