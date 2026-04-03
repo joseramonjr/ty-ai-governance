@@ -1,11 +1,11 @@
-﻿# Chapter 26 -- The TY AI OS Vocabulary
+# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
 **CLO:** JAYA-CLO-148 (date addition + new term audit)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-19 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 218 (as of 2026-03-31 -- 10 new terms added)
+**Current Term Count:** 232 (as of 2026-04-03 -- 14 new terms added via FIX-120.05)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
