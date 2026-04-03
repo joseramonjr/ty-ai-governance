@@ -4478,3 +4478,23 @@ CLO: JAYA-CLO-231 | Commit: 0a88b6d
 File: spec/TY_CONTINUITY_CHARTER_v1.0.md
 Action: Continuity Charter written and signed by builder Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr. April 2 2026. F-5 CLOSED. Charter is active and immutable. 292 lines.
 CLO: JAYA-CLO-232 | Commit: 36bd0ff
+
+### FIX-121.01 | jayme-ai | 2026-04-03 09:33 San Diego
+Scaffold: spec/SPEC_REFERENCE.md, runtime/PLACEHOLDER.md, tests/PLACEHOLDER.md
+CLO: JAYA-CLO-233 | Commit: 86eadba
+
+### FIX-121.02 | jayme-ai | 2026-04-03 09:40 San Diego
+Activation runbook v1.0 -- both trigger paths, healing window protocol
+CLO: JAYA-CLO-234 | Commit: efc6de0
+
+### FIX-121.03 | jayme-ai | 2026-04-03 09:42 San Diego
+Authority boundaries v1.0 -- INV-J1 through INV-J5 mapped, guardian hierarchy
+CLO: JAYA-CLO-235 | Commit: 530505d
+
+### FIX-121.04 | jayme-ai | 2026-04-03 09:51 San Diego
+Guardian codex alignment v1.0 -- codex sections mapped, constraints defined
+CLO: JAYA-CLO-236 | Commit: 774cfff
+
+### FIX-121.05 | jayme-ai | 2026-04-03 09:53 San Diego
+Governance ledger genesis entry ENTRY-0001
+CLO: JAYA-CLO-237 | Commit: 892a7a6
