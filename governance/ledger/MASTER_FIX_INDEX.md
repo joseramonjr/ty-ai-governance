@@ -4525,3 +4525,9 @@ CLO: JAYA-CLO-241 | TYOVA Commit: 5142707
 PublicGovernanceIndex.tsx -- disclaimer banner added, hero section
 standardized, inline styles consistent with other polished pages
 CLO: JAYA-CLO-242 | TYOVA Commit: 57526fb
+
+### FIX-121.11 | ty-ai-governance | 2026-04-03 11:18 San Diego
+Generate-Handoff.ps1 -- part number now derived from MASTER_FIX_INDEX --
+luke-ai and jayme-ai HEADs added -- last FIX ID now shown --
+S1 pattern replaced with plain ASCII note
+CLO: JAYA-CLO-243 | Commit: 11274a4
