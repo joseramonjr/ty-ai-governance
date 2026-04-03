@@ -5530,3 +5530,6 @@ FIX-122.3: TYOVA /book page corrected -- 6 Phases → 7 Phases Documented, Phase
 
 ### Entry-078 | JAYA-CLO-248 | Claude Sonnet 4.6 | 2026-04-03 | San Diego
 FIX-122.4: F-15 sentinel anomaly storm fixed. Root cause: Tier2/Tier3 doctrine checks used OR instead of AND -- fired on every clean cycle. Decay Bypass rule removed -- duplicated Sudden Collapse and fired on normal decay. Two || changed to &&, 11 lines removed. cargo check 0 errors. Jaya-Runtime commit 1b0abb9.
+
+### Entry-079 | JAYA-CLO-249 | Claude Sonnet 4.6 | 2026-04-03 | San Diego
+FIX-122.5: TYOVA stale data audit complete. 6 page files updated -- Parts 93->122, Phases 5->7, Chapters corrected, Vocab 191->232, dates updated, Phase 6 and 7 added to phase lists. S1 clean. TYOVA commit 4352864.
