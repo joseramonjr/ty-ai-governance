@@ -5527,3 +5527,6 @@ FIX-122.2: Generate-Handoff.ps1 CLO regex anchor bug fixed -- ^ removed from lin
 
 ### Entry-077 | JAYA-CLO-247 | Claude Sonnet 4.6 | 2026-04-03 | San Diego
 FIX-122.3: TYOVA /book page corrected -- 6 Phases → 7 Phases Documented, Phase 6 banner replaced with Phase 7 Complete banner. S1 post-pull clean. TYOVA Commit f276b7c.
+
+### Entry-078 | JAYA-CLO-248 | Claude Sonnet 4.6 | 2026-04-03 | San Diego
+FIX-122.4: F-15 sentinel anomaly storm fixed. Root cause: Tier2/Tier3 doctrine checks used OR instead of AND -- fired on every clean cycle. Decay Bypass rule removed -- duplicated Sudden Collapse and fired on normal decay. Two || changed to &&, 11 lines removed. cargo check 0 errors. Jaya-Runtime commit 1b0abb9.

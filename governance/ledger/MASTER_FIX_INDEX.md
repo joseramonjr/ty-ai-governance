@@ -4558,3 +4558,12 @@ CLO: JAYA-CLO-246 | Commit: a4f24c7
 - S1 scan post-pull: CLEAN
 - TYOVA Commit: f276b7c
 CLO: JAYA-CLO-247 | TYOVA Commit: f276b7c
+
+### FIX-122.4 | Jaya-Runtime | 2026-04-03 San Diego
+- F-15: Sentinel anomaly storm root cause fixed
+- Bug 1: Tier2 doctrine check OR -> AND (modifier < 10 && failure_rate < 0.30)
+- Bug 2: Tier3 doctrine check OR -> AND (modifier <= 25 && failure_rate <= 0.60)
+- Bug 3: Decay Bypass rule removed -- duplicate of Sudden Collapse, fired on normal decay
+- cargo check: 0 errors, 7 pre-existing warnings
+- Jaya-Runtime Commit: 1b0abb9
+CLO: JAYA-CLO-248 | Jaya-Runtime Commit: 1b0abb9
