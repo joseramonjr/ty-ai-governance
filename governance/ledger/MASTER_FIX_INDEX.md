@@ -4508,3 +4508,9 @@ CLO: JAYA-CLO-239 | TYOVA Commit: 0e97292
 ### FIX-121.06 | ty-ai-governance | 2026-04-03 09:58 San Diego
 MASTER_FIX_INDEX FIX-121.01 through FIX-121.05 -- Ch18 Entry-073 -- .gitignore added
 CLO: JAYA-CLO-238 | Commit: 3756b41
+
+### FIX-121.08 | TYOVA | 2026-04-03 10:48 San Diego
+DistributionPage.tsx -- External Distribution Source section updated --
+stale "not yet distributed" text replaced with live TY-0001.A release info,
+SHA-256 hash, and GitHub Releases link
+CLO: JAYA-CLO-240 | TYOVA Commit: 5c80d0b
