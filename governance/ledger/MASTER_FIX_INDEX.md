@@ -4597,3 +4597,7 @@ CLO: JAYA-CLO-249 | TYOVA Commit: 4352864
 - CLO-275 Group 3 sealed -- 150 proof conditions passing
 - CLO range: JAYA-CLO-270 through JAYA-CLO-275
 - Git tag: jayme-group3-sealed
+
+### FIX-123.5 | jayme-ai | 2026-04-03 20:33 San Diego
+- S1 UTF8 corruption fixed in README.md
+- CLO: JAYA-CLO-275
