@@ -5573,3 +5573,10 @@ Part 126 work. TY_IDENTITY.md written from Jose's personal authorship --
 AI names, continuity vision. First pending authorship document completed.
 FIX-126.1 Ch26 16 new F-7 terms. FIX-126.2 Ch26 TOC count fixed.
 FIX-126.3 TY_IDENTITY.md committed. FLAG-126.1 logged.
+
+### Entry-085 | JAYA-CLO-287 | Claude Sonnet 4.6 | 2026-04-04 | San Diego
+Part 127 work. FIX-47 verification docs recovered from verified ChatGPT
+archives and placed in TYOVA public/verification/. Both files were registered
+in docRegistry.ts but never written to disk -- dead links resolved.
+FIX-127.1: TY0001_PART47_FIX47_4_PAIR_CODE_SYNC_1 and FIX47_4_1_PAIR_CODE_
+SYNC_ROUTES_1 written with placement notes. TYOVA commit 61d9e37.
