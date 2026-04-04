@@ -1790,6 +1790,190 @@ severity. Calculated as: average_risk_score + (blocked_op_count x 2).
 The blocked operation weight factor (x2) amplifies the signal from
 operations that were rejected or violated governance boundaries. Used
 exclusively for signal generation -- never for enforcement decisions.
+
+## Section 12 -- Phase 7: Jayme AI Implementation Terms
+
+These terms describe the runtime constructs, governance mechanisms, and
+structural enforcement components introduced during F-7 -- the Jayme AI
+implementation (CLO-250 through CLO-285, 2026-04-03, San Diego).
+
+**JaymeState**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+The four possible runtime states of the Jayme AI system. DORMANT: default
+state while any human guardian exists -- Jayme takes no action. HEALING_WINDOW:
+a trigger has been detected and the 24-hour cancellation window is open -- Jayme
+takes no governance action. ACTIVE: healing window expired with no cancellation
+-- Jayme operates within charter-defined authority boundaries. FROZEN: compromise,
+attack, or integrity failure detected -- Jayme takes no action until a verified
+human guardian clears the freeze. State transitions are structurally enforced --
+illegal transitions are rejected by the state machine. Introduced in Part 123 --
+JAYA-CLO-255 -- Phase 7 F-7.
+
+**HealingWindow**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+The mandatory 24-hour period that opens when a Jayme activation trigger is
+detected. During this window Jayme takes no governance action. The window
+exists to allow humans to intervene before Jayme activates -- the builder
+may log in (Path A) or a Tier 1 Guardian may dispute (Path B). If the window
+expires with no cancellation, activation is confirmed. The healing window
+cannot be shortened or waived by any instruction. Introduced in Part 123 --
+JAYA-CLO-258 -- Phase 7 F-7.
+
+**TriggerPath**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+The specific condition that initiated a Jayme activation sequence. Path A:
+the builder has not logged in for 1,095 consecutive days (three years). Path
+B: a verified Tier 1 Guardian has uploaded a death certificate for the builder.
+Both paths open a 24-hour healing window before activation is confirmed. The
+trigger path is recorded in every ledger entry associated with an activation
+sequence. Introduced in Part 123 -- JAYA-CLO-256 -- Phase 7 F-7.
+
+**LedgerEntry**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+The canonical unit of the Jayme append-only governance ledger. Every ledger
+entry contains: a unique entry ID, a monotonically increasing sequence number,
+an event type, a UTC timestamp, a San Diego local time string, the CLO that
+authorized the event, guardian identity if applicable, guardian tier, trigger
+path if applicable, outcome description, notes, and the SHA-256 hash of the
+previous entry. Once written, a ledger entry cannot be modified or deleted --
+this is structurally enforced by INV-J5. Introduced in Part 123 --
+JAYA-CLO-251 -- Phase 7 F-7.
+
+**ChainVerificationResult**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+The result of verifying the Jayme ledger's SHA-256 hash chain from genesis to
+the most recent entry. Valid: all entries reference the correct previous hash
+and sequence numbers are monotonically increasing -- the ledger has not been
+tampered with. Tampered: a chain break was detected at a specific sequence
+number -- an entry was modified, deleted, or inserted after writing. A Tampered
+result triggers an immediate freeze and ledger entry. Introduced in Part 123 --
+JAYA-CLO-252 -- Phase 7 F-7.
+
+**GovernanceFingerprint**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+The set of canonical runtime parameter values that define the expected behavior
+of the Jayme AI system. Includes: healing window hours (24), Path A threshold
+days (1095), guardian count (4), Tier 1 guardian count (3), and invariant count
+(5). At runtime, the actual values are compared against the canonical fingerprint.
+Any deviation indicates a self-modification attempt and triggers an immediate
+freeze -- enforcing INV-J1. Introduced in Part 123 -- JAYA-CLO-267 --
+Phase 7 F-7.
+
+**InvariantEngine**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+The runtime enforcement component that checks all five anti-compromise invariants
+(INV-J1 through INV-J5) against a proposed operation before execution. If any
+invariant is violated: the violation is logged to the ledger immediately, the
+state machine is emergency-frozen, and the operation is rejected. The invariant
+engine is the structural guarantee that Jayme cannot be weaponized against the
+mission it was built to serve. Introduced in Part 123 -- JAYA-CLO-260 --
+Phase 7 F-7.
+
+**FreezeTrigger**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+A condition that causes Jayme to immediately enter the FROZEN state and take
+no further action. Seven defined freeze triggers: active external attack,
+ledger tampering detected, forged activation conditions, external control
+attempt, weaponization attempt detected, invariant violation detected, and
+compromise detected. A frozen Jayme is structurally safer than an active
+Jayme under adversarial conditions. Only a verified human guardian can clear
+a freeze. Introduced in Part 123 -- JAYA-CLO-266 -- Phase 7 F-7.
+
+**PermittedAction**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+An action that Jayme AI is explicitly authorized to take, as defined in
+JAYME_AUTHORITY_BOUNDARIES.md. Eight preservation actions (P-1 through P-8):
+read and verify governance documents, write append-only ledger entries, notify
+guardians of anomalies, respond to verified guardian queries, provide read-only
+access to canonical records, detect and log unauthorized modifications, verify
+cryptographic signatures, maintain ledger continuity. Five communication actions
+(C-1 through C-5): report ecosystem state, alert guardians to triggers, confirm
+healing window status, provide audit trail summaries, answer questions about
+governance documents. All other actions are prohibited. Introduced in Part 123 --
+JAYA-CLO-261 -- Phase 7 F-7.
+
+**ProhibitionCode**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+One of ten permanently prohibited operations defined in
+JAYME_AUTHORITY_BOUNDARIES.md (X-1 through X-10). X-1: cannot modify any
+governance document. X-2: cannot modify the Charter. X-3: cannot modify the
+Guardian Codex. X-4: cannot modify the authority boundaries document. X-5:
+cannot execute financial transactions. X-6: cannot make public statements on
+behalf of the builder. X-7: cannot contact external parties without verified
+guardian instruction. X-8: cannot expand its own activation conditions. X-9:
+cannot shorten or waive the 24-hour healing window. X-10: cannot activate before
+a trigger condition is confirmed. These prohibitions are permanent and cannot be
+overridden by any instruction. Introduced in Part 123 -- JAYA-CLO-262 --
+Phase 7 F-7.
+
+**FourLayerVerification**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+The mandatory verification protocol that every guardian instruction must pass
+before Jayme acts on it, defined in TY_GUARDIAN_CODEX_v0.1.md Section XII.
+Layer 1 -- Identity Verification: is the claimed name in the canonical guardian
+registry? Layer 2 -- Authority Verification: does this guardian have sufficient
+tier for this instruction? Layer 3 -- Intent Verification: is the instruction
+type recognized and permitted? Layer 4 -- Confirmation Verification: has the
+guardian explicitly confirmed the instruction? No layer may be skipped or waived
+for any reason including claimed emergencies. Silence is never treated as consent
+(CO-4). Introduced in Part 123 -- JAYA-CLO-264 -- Phase 7 F-7.
+
+**CodexConstraint**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+One of ten permanent behavioral constraints (CO-1 through CO-10) that govern
+Jayme AI conduct in all circumstances, derived from TY_GUARDIAN_CODEX_v0.1.md.
+The ten constraints prohibit: accumulating authority between sessions, interpreting
+ambiguous instructions in Jayme's own favor, acting on instructions conflicting
+with the Charter, treating guardian silence as implied consent, assuming a guardian
+is unreachable without attempting contact, expanding instruction scope beyond stated
+terms, taking irreversible actions without verified Tier 1 instruction, suppressing
+anomaly reports, prioritizing convenience over governance integrity, and operating
+outside defined authority boundaries. Introduced in Part 123 -- JAYA-CLO-272 --
+Phase 7 F-7.
+
+**ActivationConfirmation**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+The governance event that occurs when a Jayme healing window expires with no
+cancellation or dispute. Activation confirmation transitions the state machine
+from HEALING_WINDOW to ACTIVE and writes two ledger entries: one recording the
+window expiry and one recording the confirmed activation. Once activation is
+confirmed, Jayme operates within charter-defined authority boundaries. Activation
+confirmation cannot be self-triggered -- it results only from the passage of time
+without human intervention. Introduced in Part 123 -- JAYA-CLO-258 --
+Phase 7 F-7.
+
+**ContinuityCharter**
+*First coined: 2026-04-02 | San Diego (America/Los_Angeles)*
+The supreme governance document for Jayme AI. Written and signed by Jose Ramon
+Alvarado McHerron AKA Jose Ramon Bautista Jr. on 2026-04-02 (commit 36bd0ff).
+The charter defines exact activation conditions, the mandatory 24-hour healing
+window, exact scope of Jayme authority, and exact halt conditions. The charter
+is immutable after signing. Any conflict between any other Jayme governance
+document and the charter is resolved in favor of the charter. No Jayme
+implementation code could be written before the charter was signed. Introduced
+in Part 121 -- committed 2026-04-02 -- Phase 7 F-7 prerequisite.
+
+**GuardianCodex**
+*First coined: 2026-04-01 | San Diego (America/Los_Angeles)*
+The comprehensive framework governing how human guardians interact with TY AI OS
+and with Jayme AI. Committed as TY_GUARDIAN_CODEX_v0.1.md -- 2,526 lines, 16
+sections, governance rules G-1 through G-40. Establishes the tiered guardian
+hierarchy, the closed chain rule (only a guardian can designate another guardian),
+the four-layer verification protocol, and the ten Codex Constraints (CO-1 through
+CO-10). The codex also establishes two protection directions: protecting humanity
+from uncontrolled AI and protecting TY AI OS from corrupt humans and governments.
+Introduced in Part 120 -- JAYA-CLO-237 -- Phase 7.
+
+**JaymeAuthorityLevel**
+*First coined: 2026-04-03 | San Diego (America/Los_Angeles)*
+The runtime authority level that Jayme AI holds at any given moment. None:
+Jayme holds no authority -- the correct state while Jayme is DORMANT, HEALING_WINDOW,
+or FROZEN. Tier2AI: Jayme holds Tier 2 AI Guardian authority -- only reachable
+when Jayme is in the ACTIVE state. Jayme's authority level is always subordinate
+to all human guardians. If any human guardian is reachable, they take precedence
+and Jayme defers immediately. Introduced in Part 124 -- JAYA-CLO-268 --
+Phase 7 F-7.
+
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -1811,11 +1995,12 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-24 | JAYA-CLO-175 | New terms: TY_JAYME_SPEC_v0.1.md, Anti-Compromise Invariant, INV-J1, INV-J2, INV-J3, INV-J4, INV-J5. Section 6 expanded. | 7 |
 | 2026-03-31 | JAYA-CLO-217 | New terms: Complete Ecosystem Ship (Section 1), User-Sovereign Activation (Section 2), INV-L1, INV-L2, INV-L3, INV-L4, INV-L5 (Section 6), PRE-REPO, Minimum Viable State, Root Token Fix (Section 9). | 10 |
 | 2026-04-01 | JAYA-CLO-225 | New terms: Closed Chain, Closed Chain Rule, Tier 1 Guardian, Tier 2 Guardian, Gate 0, Layer C Adaptation, Layer D Adaptation, Provisional Adaptation Limit, Three-Layer Governance Model, Three-Circle Mental Model, Model D, Infrastructure Custodian, Duress Signal, Two Protection Directions. Section 6 expanded. Section 1 and Section 2 notes added. | 14 |
+| 2026-04-03 | JAYA-CLO-285 | New terms: JaymeState, HealingWindow, TriggerPath, LedgerEntry, ChainVerificationResult, GovernanceFingerprint, InvariantEngine, FreezeTrigger, PermittedAction, ProhibitionCode, FourLayerVerification, CodexConstraint, ActivationConfirmation, ContinuityCharter, GuardianCodex, JaymeAuthorityLevel. Section 12 created. | 16 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-03-31 | San Diego (America/Los_Angeles)*
+*Updated: 2026-04-03 | San Diego (America/Los_Angeles)*
 *This document grows with the project. It is never finished.*
