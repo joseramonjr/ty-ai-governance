@@ -4629,3 +4629,8 @@ CLO: JAYA-CLO-249 | TYOVA Commit: 4352864
 ### FIX-125.5 | TYOVA | 2026-04-03 21:31 San Diego
 - BookOfTyIndex counters updated -- 39 total, 35 sealed, Phase 7 callout updated
 - Commit: 06d9858
+
+### FIX-126.1 | ty-ai-governance | 2026-04-04 10:40 San Diego
+- Ch26 Section 12 added -- 16 new Jayme AI F-7 terms (232 to 248)
+- Terms: JaymeState, HealingWindow, TriggerPath, LedgerEntry, ChainVerificationResult, GovernanceFingerprint, InvariantEngine, FreezeTrigger, PermittedAction, ProhibitionCode, FourLayerVerification, CodexConstraint, ActivationConfirmation, ContinuityCharter, GuardianCodex, JaymeAuthorityLevel
+- Commit: e3c4162
