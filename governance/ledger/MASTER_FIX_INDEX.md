@@ -4639,3 +4639,10 @@ CLO: JAYA-CLO-249 | TYOVA Commit: 4352864
 - Ch26 Section 12 TOC count fixed -- JaymeState split into two objects
 - Section 12 now shows 16 terms correctly
 - Commit: c1cb116
+
+### FLAG-126.1 | TYOVA | 2026-04-04 10:40 San Diego
+- Ch26 TOC dynamic count (221) differs from authoritative count (248)
+- Root cause: older terms added as content strings not heading objects in bookChapterContent.ts
+- Fix: restructure all older terms to use heading format in TYOVA
+- Priority: LOW -- display inconsistency only, not a governance issue
+- Status: OPEN -- deferred to future session
