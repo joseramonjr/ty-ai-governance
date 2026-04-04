@@ -4651,3 +4651,12 @@ CLO: JAYA-CLO-249 | TYOVA Commit: 4352864
 - TY_IDENTITY.md written -- personal authorship by Jose Ramon Alvarado McHerron
 - 124 lines, 7 sections, builder's own words
 - CLO: JAYA-CLO-286 | Commit: 94e4e80
+
+### FIX-127.1 | TYOVA | 2026-04-04 16:29 San Diego
+- FIX-47 verification docs recovered from verified ChatGPT archives
+- TY0001_PART47_FIX47_4_PAIR_CODE_SYNC_1_VERIFICATION_2026-01-08.md -- 87 lines
+- TY0001_PART47_FIX47_4_1_PAIR_CODE_SYNC_ROUTES_1_VERIFICATION_2026-01-08.md -- 94 lines
+- Both registered in docRegistry.ts but never written to TYOVA/public/verification/
+- Dead links resolved -- placement notes added to each file
+- Content sourced from verified ChatGPT session archives -- no fabrication
+- CLO: JAYA-CLO-287 | Commit: 61d9e37
