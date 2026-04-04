@@ -4634,3 +4634,8 @@ CLO: JAYA-CLO-249 | TYOVA Commit: 4352864
 - Ch26 Section 12 added -- 16 new Jayme AI F-7 terms (232 to 248)
 - Terms: JaymeState, HealingWindow, TriggerPath, LedgerEntry, ChainVerificationResult, GovernanceFingerprint, InvariantEngine, FreezeTrigger, PermittedAction, ProhibitionCode, FourLayerVerification, CodexConstraint, ActivationConfirmation, ContinuityCharter, GuardianCodex, JaymeAuthorityLevel
 - Commit: e3c4162
+
+### FIX-126.2 | TYOVA | 2026-04-04 10:40 San Diego
+- Ch26 Section 12 TOC count fixed -- JaymeState split into two objects
+- Section 12 now shows 16 terms correctly
+- Commit: c1cb116
