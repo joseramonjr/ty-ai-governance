@@ -4615,3 +4615,8 @@ CLO: JAYA-CLO-249 | TYOVA Commit: 4352864
 ### FIX-125.2 | TYOVA | 2026-04-03 20:54 San Diego
 - EcosystemStatus.tsx updated -- TY AI OS parts 125, Jayme AI F-7 sealed, Luke AI scope defined
 - Commit: d79b703
+
+### FIX-125.3 | ty-ai-governance | 2026-04-03 21:31 San Diego
+- Ch37 renamed from chapter-37.md to TY_BOOK_CHAPTER_37_THE_OUTWARD_REACH.md
+- Preamble removed, S1 corruption cleared
+- CLO: JAYA-CLO-285
