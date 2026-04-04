@@ -1,15 +1,3 @@
-Chapter 37 — Expanded Draft
-
-2026-03-29 | 10:32 AM PDT | San Diego
-
-
-
-Acknowledged. Every chapter in the Book of TY is a permanent record — not a summary for insiders, but a complete account for any reader who arrives without prior context. Chapter 37 covers the most outward-facing phase TY has produced. It deserves full treatment.
-
-I am rewriting the chapter now with full depth in every section — context, reasoning, architectural explanation, and significance — not just event logging.
-
-
-
 BOOK OF TY
 
 Chapter 37 -- The Outward Reach: Phase 6 Record
