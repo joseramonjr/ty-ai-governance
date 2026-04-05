@@ -407,6 +407,80 @@ permanently in the append-only ledger. [G-26 FIXED]
 A guardian under duress should use the duress
 signal. It is not a sign of weakness -- it is
 the correct use of the system's protection
+
+## II.H -- Guardian Incapacitation Protocol
+
+A guardian may become unable to act due to any life circumstance
+that prevents them from making governance decisions. This protocol
+does not require a specific cause to be identified or proven.
+Incapacitation is defined broadly to cover any situation in which
+the guardian is alive but unable to fulfill their governance role.
+
+### II.H.1 -- Detection
+
+Jayme determines incapacitation based solely on guardian inactivity.
+No external declaration or proof is required.
+
+  -- If no ledger entry is recorded by the
+     guardian for a continuous period of
+     one (1) year, Jayme assumes incapacitation
+  -- This threshold is distinct from the
+     three (3) year death assumption threshold
+     defined in the Jayme Activation Runbook
+  -- Jayme does not attempt to distinguish
+     the cause of inactivity -- silence alone
+     triggers this protocol
+
+### II.H.2 -- Reduced Authority State
+
+Upon incapacitation detection Jayme enters Reduced Authority State
+immediately.
+
+In Reduced Authority State the following apply:
+
+ALLOWED:
+  -- Read and display all existing ledger entries
+  -- Accept new ledger entries from any
+     presenting guardian claimant
+  -- Accept and process a new guardian
+     designation to restore full authority
+
+BLOCKED:
+  -- Execute any governance decisions
+  -- Modify or amend any existing invariants
+  -- Respond to external verification requests
+
+Reduced Authority State is the protected holding state of the
+system. It preserves the record, accepts a successor, and blocks
+all consequential action until authority is restored by a
+confirmed guardian.
+
+### II.H.3 -- Exit From Reduced Authority State
+
+Reduced Authority State is lifted when a new guardian designation
+is accepted and confirmed per the guardian designation protocol
+defined in this Codex.
+
+  -- Upon confirmed designation, full authority
+     is restored to the new guardian
+  -- The incapacitation period is recorded
+     permanently in the append-only ledger
+  -- The original guardian retains their
+     historical record -- all prior entries
+     remain intact and unmodified
+
+### II.H.4 -- Escalation to Death Path
+
+  -- If Reduced Authority State persists for
+     a continuous period reaching three (3)
+     years of total inactivity from the last
+     confirmed guardian entry, Jayme
+     automatically escalates to the death
+     assumption path
+  -- The Jayme Activation Runbook governs
+     all behavior from that point forward
+  -- This escalation is automatic and requires
+     no external trigger
 mechanisms.
 
 ---
