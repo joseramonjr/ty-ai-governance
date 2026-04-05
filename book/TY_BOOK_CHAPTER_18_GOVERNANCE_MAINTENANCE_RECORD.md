@@ -5591,3 +5591,14 @@ FIX-127.3 TYOVA JayaOverview.tsx Tier labels corrected to match authoritative
 Jaya Runtime risk_engine.rs source. Tier 0 Fully Stable, Tier 1 Normal
 Operational, Tier 2 Elevated Risk, Tier 3 Critical Mode. S1 clean.
 Lovable commit 4f58e40. Merge commit b3d101d.
+
+### Entry-088 | JAYA-CLO-290 | Claude Sonnet 4.6 | 2026-04-04 | San Diego
+Part 128 work. Governance repo scan conducted across ty-ai-governance and
+jayme-ai repos to identify incomplete governance writing. Duress signal
+protocol confirmed complete in Codex Section II.G. Gap G-A identified --
+guardian incapacitation scenario had no protocol anywhere in ecosystem.
+FIX-128.1: Added Section II.H Guardian Incapacitation Protocol to
+TY_GUARDIAN_CODEX_v0.1.md -- four subsections: Detection (1 year trigger),
+Reduced Authority State, Exit path, Escalation to death path at 3 years.
+File now 2,600 lines. Commit 16e4ce2. FLAG-128.1 logged -- duress signal
+and all-clear signal deferred pending Jose decision.
