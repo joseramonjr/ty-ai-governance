@@ -4674,3 +4674,12 @@ CLO: JAYA-CLO-249 | TYOVA Commit: 4352864
 - Previous labels were wrong -- Baseline, Elevated, Guarded, Restricted
 - S1 clean post-pull. Lovable commit 4f58e40. Merge b3d101d.
 - CLO: JAYA-CLO-289
+
+### FIX-128.1 | ty-ai-governance | 2026-04-04 22:32 San Diego
+- Added Section II.H Guardian Incapacitation Protocol to TY_GUARDIAN_CODEX_v0.1.md
+- Four subsections: II.H.1 Detection, II.H.2 Reduced Authority State, II.H.3 Exit, II.H.4 Escalation
+- Incapacitation trigger: 1 year inactivity -- distinct from 3 year death assumption path
+- Reduced Authority State: read/accept entries/accept designation ALLOWED -- governance decisions/invariants/verification BLOCKED
+- Auto-escalates to death path at 3 years total inactivity
+- 75 insertions -- file now 2,600 lines
+- CLO: JAYA-CLO-290 | Commit: 16e4ce2
