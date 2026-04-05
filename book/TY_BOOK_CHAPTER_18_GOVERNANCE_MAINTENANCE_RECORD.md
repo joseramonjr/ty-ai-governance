@@ -5585,3 +5585,9 @@ SYNC_ROUTES_1 written with placement notes. TYOVA commit 61d9e37.
 FIX-127.2 Section 37.10 personal voice authored by Jose Ramon Alvarado
 McHerron. Placeholder removed. 44 insertions, 39 deletions. Chapter 37
 now complete -- no pending sections remaining. Commit 04ea2b1.
+
+### Entry-087 | JAYA-CLO-289 | Claude Sonnet 4.6 | 2026-04-04 | San Diego
+FIX-127.3 TYOVA JayaOverview.tsx Tier labels corrected to match authoritative
+Jaya Runtime risk_engine.rs source. Tier 0 Fully Stable, Tier 1 Normal
+Operational, Tier 2 Elevated Risk, Tier 3 Critical Mode. S1 clean.
+Lovable commit 4f58e40. Merge commit b3d101d.
