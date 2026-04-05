@@ -4667,3 +4667,10 @@ CLO: JAYA-CLO-249 | TYOVA Commit: 4352864
 - Placeholder [PERSONAL VOICE SECTION -- Jose to complete] removed
 - 44 insertions, 39 deletions
 - CLO: JAYA-CLO-288 | Commit: 04ea2b1
+
+### FIX-127.3 | TYOVA | 2026-04-04 16:29 San Diego
+- JayaOverview.tsx Tier labels corrected to match Jaya Runtime risk_engine.rs
+- Tier 0: Fully Stable, Tier 1: Normal Operational, Tier 2: Elevated Risk, Tier 3: Critical Mode
+- Previous labels were wrong -- Baseline, Elevated, Guarded, Restricted
+- S1 clean post-pull. Lovable commit 4f58e40. Merge b3d101d.
+- CLO: JAYA-CLO-289
