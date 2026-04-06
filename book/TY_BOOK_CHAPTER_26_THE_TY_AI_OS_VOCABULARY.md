@@ -5,7 +5,7 @@
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-19 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 232 (as of 2026-04-03 -- 14 new terms added via FIX-120.05)
+**Current Term Count:** 251 (as of 2026-04-06 -- 3 brand etymology terms added via FIX-130.1 | JAYA-CLO-291)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -1974,6 +1974,63 @@ to all human guardians. If any human guardian is reachable, they take precedence
 and Jayme defers immediately. Introduced in Part 124 -- JAYA-CLO-268 --
 Phase 7 F-7.
 
+## Section 13 -- Brand Etymology and Canonical Definitions
+
+These entries document the canonical etymologies, coined meanings, and
+trademark-layer definitions of the core TY AI OS brand names. These
+definitions are distinct from the functional and architectural definitions
+found in Sections 1 and 2. Where earlier sections describe what a component
+does, these entries document what the name means, where it came from, and
+why it was chosen. All sources are ChatGPT export archives and
+builder-confirmed session records. USPTO TESS searches confirmed April 5,
+2026.
+
+**TY** (Brand Name -- Etymology)
+*First coined: 2025-12-11 | San Diego (America/Los_Angeles)*
+The root brand name of the TY AI OS ecosystem. T = Transcendent.
+Y = Yield. Canonical meaning declared by the builder December 11, 2025:
+"The system produces results beyond normal limits, output that surpasses
+expectations." The informal pre-brand phrase "Taste You" is disclosed as
+superseded by the Transcendent Yield definition. The TY brand is the
+identity root from which TY AI OS, TYOVA, Jaya AI, Jayme AI, Luke AI,
+and all ecosystem components derive their names. First trademark use date:
+August 8, 2025. USPTO TESS search April 5, 2026: CLEAR -- no conflicting
+marks found. See also: TY AI OS (Section 1) for the functional system
+definition.
+
+**TYOVA** (Brand Name -- Etymology)
+*First coined: 2025-12-11 | San Diego (America/Los_Angeles)*
+TYOVA is a coined compound, not an acronym. TY (the brand) + OVA (from
+nova -- star explosion, creation of light; evolutionary growth; origin).
+Full canonical meaning: "The birth of the next evolution of intelligence
+-- created by TY AI." Source: SilverSounds321 Part 8, December 11, 2025.
+The later functional description "TY Open Verification Archive" is a
+functional reframe adopted for external clarity -- it is not a retroactive
+acronym and does not supersede the coined compound meaning. The etymology
+precedes and takes canonical precedence over any acronym interpretation.
+First trademark use date: January 28, 2026. USPTO TESS search April 5,
+2026: CLEAR -- no conflicting marks found. See also: TYOVA (Integrity Hub)
+in Section 1 for the functional deployment definition.
+
+**Attestonic** (Canonical Framework -- Etymology)
+*First coined: 2025-12-16 | San Diego (America/Los_Angeles)*
+Etymology: attest + -onic. A coined term defining the four-level framework
+by which governance claims are classified according to their level of
+verifiable support. Core rule: No Proof, No Claim. A claim without
+supporting evidence is not an Attestonic claim -- it is an assertion.
+Four canonical claim levels: (1) Observed -- seen but not yet verified;
+(2) Verified -- confirmed by evidence; (3) Sustained -- verified
+consistently over time; (4) Governed -- structurally enforced at the
+architecture level. Sources: ChatGPT export archives, Parts 11, 19, 20,
+and 21. First trademark use date: December 16, 2025. USPTO TESS search
+April 5, 2026: CLEAR -- no conflicting marks found. Note: Attestonic was
+retired as a standalone system descriptor circa 2026-03-06 and replaced
+by Verifiable Governance for external clarity (see Section 5). This entry
+documents the canonical etymology and four-level claim framework, which
+remains foundational to the Global Attestonic Layer. See also: Attestonic
+(RETIRED TERM) in Section 5, GAL in Section 5, Verifiable Governance in
+Section 2.
+
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -1996,11 +2053,12 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-31 | JAYA-CLO-217 | New terms: Complete Ecosystem Ship (Section 1), User-Sovereign Activation (Section 2), INV-L1, INV-L2, INV-L3, INV-L4, INV-L5 (Section 6), PRE-REPO, Minimum Viable State, Root Token Fix (Section 9). | 10 |
 | 2026-04-01 | JAYA-CLO-225 | New terms: Closed Chain, Closed Chain Rule, Tier 1 Guardian, Tier 2 Guardian, Gate 0, Layer C Adaptation, Layer D Adaptation, Provisional Adaptation Limit, Three-Layer Governance Model, Three-Circle Mental Model, Model D, Infrastructure Custodian, Duress Signal, Two Protection Directions. Section 6 expanded. Section 1 and Section 2 notes added. | 14 |
 | 2026-04-03 | JAYA-CLO-285 | New terms: JaymeState, HealingWindow, TriggerPath, LedgerEntry, ChainVerificationResult, GovernanceFingerprint, InvariantEngine, FreezeTrigger, PermittedAction, ProhibitionCode, FourLayerVerification, CodexConstraint, ActivationConfirmation, ContinuityCharter, GuardianCodex, JaymeAuthorityLevel. Section 12 created. | 16 |
+| 2026-04-06 | JAYA-CLO-291 | New terms: TY (Brand Name -- Etymology), TYOVA (Brand Name -- Etymology), Attestonic (Canonical Framework -- Etymology). Section 13 created -- Brand Etymology and Canonical Definitions. All three definitions confirmed from ChatGPT export archives and builder-verified session records (Part 129). | 3 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-04-03 | San Diego (America/Los_Angeles)*
+*Updated: 2026-04-06 | San Diego (America/Los_Angeles)*
 *This document grows with the project. It is never finished.*
