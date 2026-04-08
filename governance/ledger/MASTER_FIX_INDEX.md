@@ -4747,3 +4747,7 @@ and builder-verified session records (Part 129). Term count updated from
 ### FIX-133.4 | Ch26 Current Term Count updated to 253 | 2026-04-08 10:04 San Diego
 
 ### FIX-133.5 | TYOVA bookChapterContent.ts Ch26 updated -- Sections 13 and 14 added, term count 253, CLO-292 | 2026-04-08 10:04 San Diego
+
+### FIX-133.5-PUSH | TYOVA Lovable push -- Ch26 Sections 13 and 14 live on testing.tyova.ai | 2026-04-08 10:04 San Diego
+
+### FIX-133.6 | TYOVA BookOfTyChapter.tsx TOC term count override -- now reads 253 from compiledNote | 2026-04-08 10:04 San Diego
