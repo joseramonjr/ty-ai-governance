@@ -2031,6 +2031,44 @@ remains foundational to the Global Attestonic Layer. See also: Attestonic
 (RETIRED TERM) in Section 5, GAL in Section 5, Verifiable Governance in
 Section 2.
 
+
+
+## Section 14 -- Intellectual Property Protection
+
+This section documents vocabulary specific to TY AI OS intellectual
+property protection activities. These terms govern how TY establishes,
+records, and defends its invention priority and prior art claims.
+
+**Patent Evidence Report** (IP Protection Artifact)
+*First produced: 2026-04-06 | San Diego (America/Los_Angeles)*
+A formal TY governance artifact that compiles verified evidence of
+invention priority for TY AI OS. The Patent Evidence Report records
+first-appearance dates for core TY concepts drawn from ChatGPT export
+archives and builder-verified session records, identifies competing
+patent applications and their claim families, and documents TY's
+differentiation across all components. The report is versioned and
+amended as new evidence is discovered or errors are corrected. The
+canonical version as of Part 132 is v4 CORRECTED. The Patent Evidence
+Report is the primary evidentiary document submitted to patent counsel
+when engaging a provisional patent filing. See also: First Publication
+Date (this section), Guardian Codex (Section 12), Closed Chain Rule
+(Section 6).
+
+**First Publication Date** (IP Protection Doctrine)
+*First applied: 2026-04-06 | San Diego (America/Los_Angeles)*
+The earliest verifiable date on which a TY AI OS concept was documented
+in a recoverable, timestamped record. In the TY IP protection doctrine,
+the first publication date is the primary evidence of invention priority.
+TY's first publication dates are established from ChatGPT export archives
+originating in the SilverSounds321 era beginning December 2, 2025. The
+first publication date governs claim priority against competing
+applications: a TY concept with a verified first publication date
+predating a competing filing date is documented as prior art. The
+Attested Intelligence Holdings LLC application (USPTO 19/433,835, filed
+December 28, 2025) is the first known competing application against
+which TY's first publication dates have been formally compared. See
+also: Patent Evidence Report (this section), Attestonic (Section 13).
+
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -2053,6 +2091,7 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-31 | JAYA-CLO-217 | New terms: Complete Ecosystem Ship (Section 1), User-Sovereign Activation (Section 2), INV-L1, INV-L2, INV-L3, INV-L4, INV-L5 (Section 6), PRE-REPO, Minimum Viable State, Root Token Fix (Section 9). | 10 |
 | 2026-04-01 | JAYA-CLO-225 | New terms: Closed Chain, Closed Chain Rule, Tier 1 Guardian, Tier 2 Guardian, Gate 0, Layer C Adaptation, Layer D Adaptation, Provisional Adaptation Limit, Three-Layer Governance Model, Three-Circle Mental Model, Model D, Infrastructure Custodian, Duress Signal, Two Protection Directions. Section 6 expanded. Section 1 and Section 2 notes added. | 14 |
 | 2026-04-03 | JAYA-CLO-285 | New terms: JaymeState, HealingWindow, TriggerPath, LedgerEntry, ChainVerificationResult, GovernanceFingerprint, InvariantEngine, FreezeTrigger, PermittedAction, ProhibitionCode, FourLayerVerification, CodexConstraint, ActivationConfirmation, ContinuityCharter, GuardianCodex, JaymeAuthorityLevel. Section 12 created. | 16 |
+| 2026-04-08 | JAYA-CLO-292 | New terms: Patent Evidence Report, First Publication Date. Section 14 created -- Intellectual Property Protection. | 2 |
 | 2026-04-06 | JAYA-CLO-291 | New terms: TY (Brand Name -- Etymology), TYOVA (Brand Name -- Etymology), Attestonic (Canonical Framework -- Etymology). Section 13 created -- Brand Etymology and Canonical Definitions. All three definitions confirmed from ChatGPT export archives and builder-verified session records (Part 129). | 3 |
 
 ---
@@ -2060,5 +2099,5 @@ It is the provenance record for the vocabulary itself.
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-04-06 | San Diego (America/Los_Angeles)*
+*Updated: 2026-04-08 | San Diego (America/Los_Angeles)*
 *This document grows with the project. It is never finished.*

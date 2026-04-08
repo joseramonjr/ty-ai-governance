@@ -5602,3 +5602,62 @@ TY_GUARDIAN_CODEX_v0.1.md -- four subsections: Detection (1 year trigger),
 Reduced Authority State, Exit path, Escalation to death path at 3 years.
 File now 2,600 lines. Commit 16e4ce2. FLAG-128.1 logged -- duress signal
 and all-clear signal deferred pending Jose decision.
+
+### Entry-089 | JAYA-CLO-291 | Claude Sonnet 4.6 | 2026-04-06 11:24 | San Diego
+**Date:** 2026-04-06 11:24 San Diego (America/Los_Angeles)
+**Part:** 130
+**CLO:** JAYA-CLO-291
+**Model:** Claude Sonnet 4.6
+**Commit:** 1350a2d
+
+**Work Completed This Session:**
+
+FIX-129.1 -- Patent attorney research completed (Part 129 backfill).
+Three San Diego firms identified: Alloy Patent Law, Torrey Pines Law
+Group, USPTO Pro Bono Program. Attorney intake email drafted. Attested
+Intelligence comparison completed -- TY documented 23 days earlier than
+their trademark First Use Anywhere date. TY unique differentiators
+confirmed.
+
+FIX-129.2 -- TY_AI_OS_Trademark_Descriptions_v2.html produced (Part 129
+backfill). Seven marks documented with Class 009 and 042 descriptions.
+Canonical definitions added for Attestonic, TY, and TYOVA. USPTO TESS
+search April 5, 2026 -- all seven marks CLEAR.
+
+FIX-130.1 -- Ch26 Section 13 created. Three brand etymology entries
+added: TY (Transcendent Yield), TYOVA (TY + OVA coined compound),
+Attestonic (four-level claim framework). Term count corrected from 232
+to 251. Committed 1350a2d.
+
+**Repo State:**
+- ty-ai-governance HEAD: 1350a2d
+- Last CLO: JAYA-CLO-291
+- Ch26 term count: 251
+
+**Session-Close Gate:** CLEAR
+
+### Entry-090 | JAYA-CLO-291 | Claude Sonnet 4.6 | 2026-04-07 10:21 | San Diego
+Date: 2026-04-07 San Diego
+Parts: 131-132
+Phase: 7 — The Delivery
+
+WHAT HAPPENED:
+- Rapacke Law Group call attended April 7 11:00
+- Alloy Patent Law selected for provisional patent filing
+- USPTO 19/433,835 (Attested Intelligence Holdings LLC) confirmed via applicant website
+- Full competitive analysis completed — TY uniquely differentiated by Guardian Codex, Incapacitation Protocol, Duress Signal, Two Protection Directions, Closed Chain Rule
+- Patent Evidence Report v3 produced, v4 CORRECTED produced (8 errors fixed, 6 applied)
+- GoDaddy DNS remediation completed — FIX-131.1
+- support@tyova.ai email confirmed working via Microsoft 365 / Outlook
+- SPF updated to spf.protection.outlook.com
+- WebsiteBuilder A record deleted — website root deferred pending testing completion
+- testing.tyova.ai operational throughout
+
+OPEN:
+- FIX-131.1 Steps 5+6 deferred — Vercel A record and www CNAME when testing complete
+- FLAG-128.1 duress signal personal decision pending
+- G-B compromise signal not in active Codex
+- Alloy engagement letter + $4,500 provisional fee pending
+
+CLO: JAYA-CLO-291
+FIX: FIX-131.1, FIX-132.1
