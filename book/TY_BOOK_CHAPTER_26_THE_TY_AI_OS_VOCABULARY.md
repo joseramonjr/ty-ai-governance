@@ -5,7 +5,7 @@
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-03-19 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 251 (as of 2026-04-06 -- 3 brand etymology terms added via FIX-130.1 | JAYA-CLO-291)
+**Current Term Count:** 253 (as of 2026-04-08 -- 2 IP protection terms added via FIX-133.2 | JAYA-CLO-292)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -2091,8 +2091,8 @@ It is the provenance record for the vocabulary itself.
 | 2026-03-31 | JAYA-CLO-217 | New terms: Complete Ecosystem Ship (Section 1), User-Sovereign Activation (Section 2), INV-L1, INV-L2, INV-L3, INV-L4, INV-L5 (Section 6), PRE-REPO, Minimum Viable State, Root Token Fix (Section 9). | 10 |
 | 2026-04-01 | JAYA-CLO-225 | New terms: Closed Chain, Closed Chain Rule, Tier 1 Guardian, Tier 2 Guardian, Gate 0, Layer C Adaptation, Layer D Adaptation, Provisional Adaptation Limit, Three-Layer Governance Model, Three-Circle Mental Model, Model D, Infrastructure Custodian, Duress Signal, Two Protection Directions. Section 6 expanded. Section 1 and Section 2 notes added. | 14 |
 | 2026-04-03 | JAYA-CLO-285 | New terms: JaymeState, HealingWindow, TriggerPath, LedgerEntry, ChainVerificationResult, GovernanceFingerprint, InvariantEngine, FreezeTrigger, PermittedAction, ProhibitionCode, FourLayerVerification, CodexConstraint, ActivationConfirmation, ContinuityCharter, GuardianCodex, JaymeAuthorityLevel. Section 12 created. | 16 |
-| 2026-04-08 | JAYA-CLO-292 | New terms: Patent Evidence Report, First Publication Date. Section 14 created -- Intellectual Property Protection. | 2 |
 | 2026-04-06 | JAYA-CLO-291 | New terms: TY (Brand Name -- Etymology), TYOVA (Brand Name -- Etymology), Attestonic (Canonical Framework -- Etymology). Section 13 created -- Brand Etymology and Canonical Definitions. All three definitions confirmed from ChatGPT export archives and builder-verified session records (Part 129). | 3 |
+| 2026-04-08 | JAYA-CLO-292 | New terms: Patent Evidence Report, First Publication Date. Section 14 created -- Intellectual Property Protection. | 2 |
 
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
