@@ -5661,3 +5661,20 @@ OPEN:
 
 CLO: JAYA-CLO-291
 FIX: FIX-131.1, FIX-132.1
+
+### Entry-091 | JAYA-CLO-292 | Claude Sonnet 4.6 | 2026-04-08 10:04 | San Diego
+
+**Part:** 133
+**Date:** 2026-04-08 10:04 San Diego (America/Los_Angeles)
+**CLO:** JAYA-CLO-292
+**ty-ai-governance HEAD:** 13838b8
+**TYOVA HEAD:** bda83e1
+**Session-Close Gate:** CLEAR
+
+FIX-133.1: Ch18 Entry-089 and Entry-090 header format corrected -- missing CLO, model, and timestamp fields restored to canonical format.
+FIX-133.2: Ch26 Section 14 created in ty-ai-governance -- Patent Evidence Report and First Publication Date added as new IP Protection vocabulary.
+FIX-133.3: Ch26 Update Log row order corrected -- JAYA-CLO-291 row placed before JAYA-CLO-292 row, restoring oldest-first chronological order.
+FIX-133.4: Ch26 Current Term Count updated from 251 to 253 in ty-ai-governance.
+FIX-133.5: TYOVA bookChapterContent.ts Ch26 updated -- Sections 13 and 14 added, compiledNote updated to 253 terms and CLO-292, Lovable push confirmed live.
+FIX-133.6: TYOVA BookOfTyChapter.tsx TOC term count override implemented -- Ch26 TOC now reads 253 from compiledNote instead of dynamic content count.
+All six fixes committed. testing.tyova.ai/book/chapter-26 verified live with Sections 13 and 14 visible and TOC showing 253 terms.
