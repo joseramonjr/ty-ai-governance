@@ -4741,3 +4741,7 @@ and builder-verified session records (Part 129). Term count updated from
 ### FIX-133.1 | Ch18 Entry-089 and Entry-090 header format corrected | 2026-04-08 10:04 San Diego
 
 ### FIX-133.2 | Ch26 Section 14 created -- Patent Evidence Report and First Publication Date added | 2026-04-08 10:04 San Diego
+
+### FIX-133.3 | Ch26 Update Log row order corrected -- CLO-291 before CLO-292 | 2026-04-08 10:04 San Diego
+
+### FIX-133.4 | Ch26 Current Term Count updated to 253 | 2026-04-08 10:04 San Diego
