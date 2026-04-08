@@ -4745,3 +4745,5 @@ and builder-verified session records (Part 129). Term count updated from
 ### FIX-133.3 | Ch26 Update Log row order corrected -- CLO-291 before CLO-292 | 2026-04-08 10:04 San Diego
 
 ### FIX-133.4 | Ch26 Current Term Count updated to 253 | 2026-04-08 10:04 San Diego
+
+### FIX-133.5 | TYOVA bookChapterContent.ts Ch26 updated -- Sections 13 and 14 added, term count 253, CLO-292 | 2026-04-08 10:04 San Diego
