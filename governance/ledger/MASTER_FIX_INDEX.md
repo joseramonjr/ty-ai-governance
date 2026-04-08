@@ -4683,3 +4683,61 @@ CLO: JAYA-CLO-249 | TYOVA Commit: 4352864
 - Auto-escalates to death path at 3 years total inactivity
 - 75 insertions -- file now 2,600 lines
 - CLO: JAYA-CLO-290 | Commit: 16e4ce2
+
+### FIX-129.1 | ty-ai-governance | 2026-04-04 San Diego
+- Patent attorney research completed -- three San Diego firms identified
+- Alloy Patent Law, Torrey Pines Law Group, USPTO Pro Bono Program
+- Attorney intake email drafted -- covers December 2025 conception dates,
+  Attested Intelligence comparison, USPTO App 19/433,835 prior art question
+- Attested Intelligence overlap confirmed -- TY documented 23 days earlier
+- TY unique differentiators confirmed: Guardian Codex, Duress Signal,
+  Guardian Incapacitation Protocol, Succession Law, CRI
+- CLO: JAYA-CLO-291 (Part 129 session)
+
+### FIX-129.2 | ty-ai-governance | 2026-04-04 San Diego
+- TY_AI_OS_Trademark_Descriptions_v2.html produced
+- Seven marks documented: TY AI OS, Attestonic, TY AI, TYOVA, Jaya AI,
+  Jayme AI, Luke AI -- Class 009 and Class 042
+- Canonical definitions added: Attestonic (four claim levels), TY
+  (Transcendent Yield), TYOVA (TY + OVA coined compound)
+- USPTO TESS search April 5, 2026 -- all seven marks CLEAR
+- CLO: JAYA-CLO-291 (Part 129 session)
+
+## FIX-130.1
+**Date:** 2026-04-06 11:24 San Diego
+**Destination:** ty-ai-governance
+**CLO:** JAYA-CLO-291
+**Model:** Claude Sonnet 4.6
+**Commit:** 1350a2d
+**Description:** Ch26 Section 13 created -- Brand Etymology and Canonical
+Definitions. Three new entries added: TY (Brand Name -- Etymology),
+TYOVA (Brand Name -- Etymology), Attestonic (Canonical Framework --
+Etymology). All three definitions confirmed from ChatGPT export archives
+and builder-verified session records (Part 129). Term count updated from
+232 to 251. Updated date corrected to 2026-04-06.
+
+### FIX-131.1 | GoDaddy DNS | 2026-04-06 20:41 San Diego
+- DNS full remediation for tyova.ai
+- Deleted Microsoft MX record tyova-ai.mail.protection.outlook.com (error)
+- Added and then removed GoDaddy MX records (mailstore1, smtp.secureserver.net)
+- Discovered GoDaddy Email Essentials IS Microsoft 365 -- restored Microsoft MX
+- Updated SPF TXT record from include:secureserver.net to include:spf.protection.outlook.com
+- Deleted WebsiteBuilder A record -- website root domain deferred pending testing
+- support@tyova.ai email confirmed working -- test email received in Microsoft 365 inbox
+- testing.tyova.ai untouched and operational throughout
+- Vercel cleaned -- only testing.tyova.ai active, tyova.ai and www.tyova.ai removed
+- Steps 5 and 6 (Vercel A record + www CNAME) deferred until testing complete
+- CLO: JAYA-CLO-291
+
+### FIX-132.1 | ty-ai-governance | 2026-04-07 10:21 San Diego
+- Competitive analysis completed -- USPTO 19/433,835 Attested Intelligence Holdings LLC confirmed
+- Full architectural comparison produced -- TY uniquely differentiated on 11 components
+- Patent Evidence Report v3 produced for Alloy Patent Law
+- Patent Evidence Report v4 CORRECTED produced -- 6 of 8 errors fixed per builder instruction
+- Attorney outreach email drafted with full competitive findings from both websites
+- Alloy Patent Law selected -- provisional patent proceeding at $4,500
+- Rapacke Law Group call attended April 7 2026 11:00 San Diego
+- CLO: JAYA-CLO-291
+### FIX-133.1 | Ch18 Entry-089 and Entry-090 header format corrected | 2026-04-08 10:04 San Diego
+
+### FIX-133.2 | Ch26 Section 14 created -- Patent Evidence Report and First Publication Date added | 2026-04-08 10:04 San Diego
