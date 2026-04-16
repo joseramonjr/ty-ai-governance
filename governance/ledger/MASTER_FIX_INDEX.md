@@ -4805,3 +4805,37 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Open: 2026-04-15 20:15 PDT
 - Time Close: 2026-04-15 20:15 PDT
 - Source: SS321 governance session -- TY AI scaling discussion
+
+### FIX-140 | SS-FIX-044 | G-41 Personalization Boundary Enforcement | 2026-04-15 21:13 PDT | San Diego
+- Destination: SS321 -- supabase/functions/ty-ai-chat/index.ts
+- CLO: CLO-342
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Wired G-41 Personalization Boundary into TY AI edge function.
+  Objective signals (top 5 by play_count + 5 newest approved tracks) and
+  user context (last 10 played, 10 liked, 5 skipped) injected into system
+  prompt. G-41 prohibitions explicitly active -- TY grounds recommendations
+  in objective catalog truth first. User history is framing context only.
+- Files Modified:
+  - supabase/functions/ty-ai-chat/index.ts -- getUserContext(),
+    getObjectiveSignals(), G-41 system prompt block added
+- Time Open: 2026-04-15 21:13 PDT
+- Time Close: 2026-04-15 21:13 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-044
+
+### FIX-141 | SS-FIX-045 | Remove Static KB Recommendation Entries | 2026-04-15 21:13 PDT | San Diego
+- Destination: SS321 -- src/ty-ai/TYAISS321Knowledge.ts
+- CLO: CLO-343
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Removed two static KB entries whose patterns intercepted
+  recommendation and new music queries before reaching Claude AI.
+  These queries now fall through to Claude AI where G-41 governance
+  is active. Live data responses verified -- TY now cites real play
+  counts and track names instead of static deflection text.
+- Files Modified:
+  - src/ty-ai/TYAISS321Knowledge.ts -- removed favorite music and
+    new music static KB entries
+- Time Open: 2026-04-15 21:13 PDT
+- Time Close: 2026-04-15 21:13 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-045
