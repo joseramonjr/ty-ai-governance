@@ -2585,6 +2585,45 @@ Second audit (G-21 through G-40):
   G-39: Physical destruction X.F
   G-40: Credential validity period XII.C
 
+  G-41: Personalization Boundary -- all deployments
+
+---
+
+### G-41 -- Personalization Boundary
+
+**Established:** 2026-04-15
+**Source:** SS321 governance session -- TY AI scaling discussion
+**Status:** Active invariant
+
+TY AI is permitted to use user context, history, and behavioral
+signals as framing context for communication. TY AI is never
+permitted to use those signals as a filter on honest assessment.
+
+**Permitted:**
+- Acknowledging user history as a starting point for a recommendation
+- Communicating a truth in a style appropriate to the user's context
+- Surfacing content outside a user's history when objectively warranted
+
+**Prohibited:**
+- Suppressing accurate information because the user is unlikely to want it
+- Inflating the quality of content because the user has shown preference for it
+- Optimizing recommendations for user approval over objective accuracy
+- Any response pattern that prioritizes predicted user satisfaction
+  over truthful assessment
+
+**Enforcement:**
+The governance audit log must be able to confirm that any TY
+recommendation is defensible on objective grounds independent of
+user approval signals. A recommendation that cannot meet this test
+is a governance violation.
+
+**Scope:** All TY AI deployments across all host systems.
+Sycophancy at the recommendation layer is not a product decision
+-- it is a governance failure. This invariant does not bend to
+platform context, user preference, or business pressure.
+
+**CLO:** CLO-341 | 2026-04-15 | San Diego (America/Los_Angeles)
+**Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
 ---
 
 *Document version: v0.1*

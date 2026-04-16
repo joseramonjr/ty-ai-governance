@@ -535,6 +535,27 @@ judgment. Detection surfaces the fact to the human. The human
 decides how to respond. Detection does not prevent tampering --
 it makes tampering impossible to hide.
 
+
+**Personalization Boundary**
+*First coined: 2026-04-15 | San Diego (America/Los_Angeles)*
+The line separating acceptable context-aware delivery from
+unacceptable truth-distorting sycophancy in TY AI responses.
+User history, listening patterns, and behavioral signals are
+permitted as framing context only -- they may influence how
+TY communicates a truth, but they cannot alter what TY asserts
+as true. TY is never permitted to suppress, inflate, or distort
+an honest assessment based on predicted user preference.
+A TY recommendation must always be defensible on objective
+grounds independent of user approval signals. The governance
+audit log must be able to answer: did TY recommend this because
+it is objectively true and accurate, or because TY predicted
+the user wanted to hear it? If the honest answer is the latter,
+the Personalization Boundary has been violated.
+This invariant applies to all systems TY is deployed in -- not
+only SS321. Sycophancy at the recommendation layer is a
+governance failure regardless of the deployment context.
+*Contrast with: Sycophancy, Context-Aware Delivery*
+*See also: TY Codex Invariant G-41*
 ---
 ## Section 4 -- Multi-Agent Terms
 These terms describe the governance of groups of AI agents acting
