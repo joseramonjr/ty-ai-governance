@@ -4860,3 +4860,29 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Open: 2026-04-15 23:58 PDT
 - Time Close: 2026-04-16 00:03 PDT
 - Also recorded in ty-ai-governance as commit 4bae95f (local chapter file)
+
+### FIX-143 | SS-FIX-046 | Audio Format Selection and Display | 2026-04-16 10:02 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-345
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Added MP3/WAV audio format selection and display to SS321.
+  New AudioFormatBadge component added. Auto-detect from uploaded file
+  extension on upload form. Artist can override. Badge displays on track
+  cards, track detail page, download button, TrackListRow, TrackDetailCard,
+  and My Tracks page. Null audio_format defaults to MP3 badge.
+- Database: audio_format column added to tracks table via Supabase migration
+  (text, check constraint mp3/wav, default mp3)
+- Files Modified:
+  - src/components/track/AudioFormatBadge.tsx -- new component
+  - src/hooks/useTracks.ts -- Track interface updated
+  - src/pages/Upload.tsx -- format selector + auto-detect added
+  - src/pages/EditTrack.tsx -- format selector added
+  - src/components/track/DownloadButton.tsx -- badge added
+  - src/components/TrackCard.tsx -- badge added
+  - src/components/browse/TrackListRow.tsx -- badge added
+  - src/components/browse/TrackDetailCard.tsx -- badge added
+- All 6 verification checks passed on live site
+- Time Open: 2026-04-16 10:02 PDT
+- Time Close: 2026-04-16 10:02 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-046
