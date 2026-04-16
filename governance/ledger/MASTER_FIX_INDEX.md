@@ -4886,3 +4886,24 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Open: 2026-04-16 10:02 PDT
 - Time Close: 2026-04-16 10:02 PDT
 - Also recorded in SS321_FIX_INDEX.md as SS-FIX-046
+
+### FIX-144 | SS-FIX-047 | Title Sort + Audio Format Filter | 2026-04-16 10:02 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-346
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Added Title A-Z and Z-A sort options to Browse page Sort By
+  dropdown. Added Audio Format filter (MP3/WAV) to Browse filter bar with
+  URL persistence (?format=), active filter chip with X-remove, included
+  in clearFilters and hasActiveFilters. Applied to both regular Supabase
+  query and RPC search branch.
+- Files Modified:
+  - src/config/constants.ts -- title_asc and title_desc added to SORT_OPTIONS
+  - src/hooks/useBrowseFilters.ts -- audioFormat added to BrowseFilters
+  - src/hooks/useInfiniteTracks.ts -- title sort cases + format filter added
+  - src/components/browse/FilterBar.tsx -- Format Select dropdown added
+  - src/components/browse/ActiveFilters.tsx -- format chip added
+- All 8 verification checks passed on live site
+- Time Open: 2026-04-16 10:02 PDT
+- Time Close: 2026-04-16 10:02 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-047
