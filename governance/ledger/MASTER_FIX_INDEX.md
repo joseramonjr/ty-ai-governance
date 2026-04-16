@@ -4751,3 +4751,57 @@ and builder-verified session records (Part 129). Term count updated from
 ### FIX-133.5-PUSH | TYOVA Lovable push -- Ch26 Sections 13 and 14 live on testing.tyova.ai | 2026-04-08 10:04 San Diego
 
 ### FIX-133.6 | TYOVA BookOfTyChapter.tsx TOC term count override -- now reads 253 from compiledNote | 2026-04-08 10:04 San Diego
+
+### FIX-134 through FIX-137 -- UNACCOUNTED -- SS321 Product Fixes
+NOTE: FIX-134 through FIX-137 were referenced in session handoffs as the last
+known FIX numbers before SS321_FIX_INDEX.md was created on 2026-04-15. These
+correspond to SS321 product fixes performed in the April 12-14, 2026 sessions.
+Their details were never written to MASTER_FIX_INDEX at time of session execution.
+A complete search of all available Claude history conducted 2026-04-15 12:08 PDT
+could not recover specific descriptions. No fabrication. These fixes have been
+migrated in scope to E:\TY-Ecosystem\ss321\SS321_FIX_INDEX.md. If source
+documentation is found in the future, entries should be backfilled in
+SS321_FIX_INDEX.md with a clear provenance note at that time.
+
+### FIX-138 | TY-HARDEN-001 | RLS Hardening -- Full SS321 Database | 2026-04-15 12:12 PDT | San Diego
+- Destination: SS321 -- Supabase instance tsmyhzjmkampssjwshqh
+- CLO: CLO-329
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Full RLS policy hardening of all tables in the SS321 Supabase
+  public schema. Audited and corrected every table in six batches plus one
+  remediation pass. Live re-audit via four sequential pg_policies queries
+  confirmed zero remaining gaps at close.
+- Problems Fixed:
+  - Admin ALL policies missing WITH CHECK (~75 tables)
+  - System INSERT on {public} instead of service_role (~48 tables)
+  - User/artist UPDATE policies missing WITH CHECK (~22 tables)
+  - Open system UPDATE qual:true no WITH CHECK on {public} (~16 tables)
+  - system_rate_limits fully open to public internet (CRITICAL)
+  - ty_timemachine_divergence_events anonymous INSERT (CRITICAL)
+  - guardian_authority self-perpetuating appointment chain (CRITICAL)
+  - ty_ai_governance_log unauthenticated pollution (CRITICAL)
+  - ty_ai_evidence_lineage/packets/renewal fully open (CRITICAL)
+- Batches: Batch 1-4 + Sub-Batch 5A + Sub-Batch 5B + 5B Remediation
+- Time Open: 2026-04-15 08:45 PDT
+- Time Close: 2026-04-15 10:36 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-001 and SS-FIX-032
+
+### FIX-139 | G-41 Personalization Boundary | Codex + Ch26 Governance Doctrine | 2026-04-15 20:15 PDT | San Diego
+- Destination: ty-ai-governance
+- CLO: CLO-341
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Established Personalization Boundary as a named governance
+  invariant in TY AI OS. Defines the line between acceptable context-aware
+  delivery and unacceptable truth-distorting sycophancy. User history is
+  permitted as framing context only -- never as a filter on honest assessment.
+  Applies to all TY deployments across all host systems.
+- Files Modified:
+  - spec/TY_GUARDIAN_CODEX_v0.1.md -- G-41 added as named invariant
+  - book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md -- Personalization
+    Boundary added to Section 3 Agent Governance Terms
+- Commit: 99efc1d
+- Time Open: 2026-04-15 20:15 PDT
+- Time Close: 2026-04-15 20:15 PDT
+- Source: SS321 governance session -- TY AI scaling discussion
