@@ -4907,3 +4907,146 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Open: 2026-04-16 10:02 PDT
 - Time Close: 2026-04-16 10:02 PDT
 - Also recorded in SS321_FIX_INDEX.md as SS-FIX-047
+
+### FIX-145 | SS-FIX-048 | Inline Rename + Artist Self-Delete on My Tracks | 2026-04-16 10:02 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-347
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Added inline track rename and artist self-delete to My Tracks
+  page. InlineTrackTitle component -- click to edit, Enter to save, Escape
+  to revert, owner-only. ArtistDeleteTrackButton component -- confirmation
+  dialog, purchase guard, owner-only. artist_delete_track RPC wired.
+  useArtistTracks filters is_deleted = false. All three view modes updated.
+- Files Modified:
+  - src/hooks/useArtistDeleteTrack.ts -- new hook
+  - src/components/track/InlineTrackTitle.tsx -- new component
+  - src/components/track/ArtistDeleteTrackButton.tsx -- new component
+  - src/components/browse/TrackListRow.tsx -- isOwner prop wired
+  - src/components/browse/TrackDetailCard.tsx -- isOwner prop wired
+  - src/components/TrackCard.tsx -- isOwner prop wired
+  - src/pages/artist/MyTracks.tsx -- isOwner passed to all view modes
+  - src/hooks/useTracks.ts -- is_deleted = false filter added
+- Time Open: 2026-04-16 10:02 PDT
+- Time Close: 2026-04-16 10:02 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-048
+
+### FIX-146 | SS-FIX-049 | InlineTrackTitle Green Flash Fix | 2026-04-16 10:02 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-348
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed green flash confirmation after successful title save.
+  Reordered cn() so flash classes come after className -- tailwind-merge
+  was overriding flash color with parent text classes. Added !text-green-500
+  important prefix, drop-shadow glow, extended duration to 900ms.
+- Files Modified:
+  - src/components/track/InlineTrackTitle.tsx -- cn() reordered, duration bumped
+- Time Open: 2026-04-16 10:02 PDT
+- Time Close: 2026-04-16 10:02 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-049
+
+### FIX-147 | SS-FIX-050 | Play Button Moved to Album Art Cover | 2026-04-16 10:02 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-349
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Moved play button from actions area to album art hover overlay
+  in TrackListRow and TrackDetailCard. Circular purple play button appears
+  on art hover. TrackCard unchanged -- already had this pattern.
+  Click propagation stopped on overlays.
+- Files Modified:
+  - src/components/browse/TrackListRow.tsx -- play overlay added to thumbnail
+  - src/components/browse/TrackDetailCard.tsx -- play overlay added to banner
+- Time Open: 2026-04-16 10:02 PDT
+- Time Close: 2026-04-16 10:02 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-050
+
+### FIX-148 | SS-FIX-051 | Recently Deleted Section on My Tracks | 2026-04-16 10:02 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-350
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Added collapsible Recently Deleted section to My Tracks page.
+  Artists can restore their own soft-deleted tracks. Section only appears
+  when deleted tracks exist. Collapsed by default with count badge.
+  RestoreTrackButton with confirmation dialog. artist_id guard on query
+  and restore mutation.
+- Files Modified:
+  - src/hooks/useArtistDeletedTracks.ts -- new hook
+  - src/hooks/useArtistRestoreTrack.ts -- new hook
+  - src/components/track/RestoreTrackButton.tsx -- new component
+  - src/pages/artist/MyTracks.tsx -- Recently Deleted section added
+- Time Open: 2026-04-16 10:02 PDT
+- Time Close: 2026-04-16 10:02 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-051
+
+### FIX-149 | SS-FIX-052 | Delete Confirmation Checkbox | 2026-04-16 10:02 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-350
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Expanded delete confirmation dialog with full disclosure bullets
+  and agreement checkbox. Explains what happens to deleted track, buyer access
+  preserved, Recently Deleted restore available, contact support link.
+  Delete button disabled until checkbox checked. Checkbox resets on every open.
+- Files Modified:
+  - src/components/track/ArtistDeleteTrackButton.tsx -- dialog expanded
+- Time Open: 2026-04-16 10:02 PDT
+- Time Close: 2026-04-16 10:02 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-052
+
+### FIX-150 | SS-FIX-053 | SS321 Support System | 2026-04-16 18:13 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-350
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Built full support system for SS321. New /support page with
+  7 FAQs, Ask TY AI button, Contact Support mailto pre-filled with SS321
+  subject line to support@tyova.ai. Support link added to Account dropdown,
+  mobile menu, and footer. Delete dialog contact support links to /support.
+  8 TY AI KB entries added covering download, delete, restore, profile,
+  payments, refunds, payouts, technical issues, and escalation.
+- Files Modified:
+  - src/pages/Support.tsx -- new page
+  - src/components/Header.tsx -- Support link added
+  - src/components/Footer.tsx -- Support link added
+  - src/App.tsx -- /support route added
+  - src/routes/routeConfig.ts -- Support.tsx excluded from AutoRoute
+  - src/components/track/ArtistDeleteTrackButton.tsx -- contact support link
+  - src/ty-ai/TYAISS321Knowledge.ts -- 8 KB entries added
+- Time Open: 2026-04-16 18:13 PDT
+- Time Close: 2026-04-16 18:13 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-053
+
+### FIX-151 | SS-FIX-054 | TY AI KB Targeted Fixes | 2026-04-16 20:40 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-351
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Targeted KB fixes -- artist payout patterns expanded, edit
+  profile patterns expanded + route /profile added (corrected from /settings),
+  pricing entry added, upload guidelines entry added, TY identity/feelings
+  entry added (G-41 compliant), TY decision making entry added (governance
+  doctrine). TY now navigates directly to /profile on edit profile requests.
+- Files Modified:
+  - src/ty-ai/TYAISS321Knowledge.ts -- patterns expanded, routes added,
+    new KB entries prepended
+- Time Open: 2026-04-16 20:40 PDT
+- Time Close: 2026-04-16 20:40 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-054
+
+### FIX-152 | SS-FIX-055 | Settings Edit Profile Button Fix | 2026-04-16 20:40 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-352
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed Settings page Edit Profile button -- was linking to
+  /profile/userId (public profile view). Now correctly links to /profile
+  (editable profile form). Users land directly on edit form with no extra
+  clicks required.
+- Files Modified:
+  - src/pages/Settings.tsx -- Edit Profile link corrected to /profile
+- Time Open: 2026-04-16 20:40 PDT
+- Time Close: 2026-04-16 20:40 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-055
