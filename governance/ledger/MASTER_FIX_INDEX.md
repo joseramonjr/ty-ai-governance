@@ -5050,3 +5050,100 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Open: 2026-04-16 20:40 PDT
 - Time Close: 2026-04-16 20:40 PDT
 - Also recorded in SS321_FIX_INDEX.md as SS-FIX-055
+
+### FIX-153 | SS-FIX-056 | Profile Page Client-Side Filters | 2026-04-16 21:03 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-353
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Added client-side filtering and sorting to Tracks and Recently
+  Played sections on PublicProfile page. New ProfileTrackFilters component
+  with search, genre, format, price, sort controls. Two independent filter
+  instances with separate localStorage keys. Showing X of Y count when
+  filtered. Clear button with active filter count badge.
+- Files Modified:
+  - src/components/profile/ProfileTrackFilters.tsx -- new component
+  - src/pages/PublicProfile.tsx -- filters wired to both sections
+- Time Open: 2026-04-16 21:03 PDT
+- Time Close: 2026-04-16 21:03 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-056
+
+### FIX-154 | SS-FIX-057 | View Mode Persistence + MyTracks + Library Filters | 2026-04-16 21:03 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-354
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: View mode persistence refactored -- all 6 ViewToggle sites now
+  use canonical useBrowseViewMode hook with unique keys. ProfileTrackFilters
+  added to My Tracks, Library Liked Tracks, and Library Listening History.
+  All filters client-side with localStorage persistence per section.
+- Files Modified:
+  - src/hooks/useBrowseViewMode.ts -- optional key parameter added
+  - src/pages/Library.tsx -- view modes + filters for both sections
+  - src/pages/PublicProfile.tsx -- view modes refactored
+  - src/pages/artist/MyTracks.tsx -- view mode + filters added
+- Time Open: 2026-04-16 21:03 PDT
+- Time Close: 2026-04-16 21:03 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-057
+
+### FIX-155 | SS-FIX-058 | Gold Sparkle Delete Animation | 2026-04-16 21:03 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-355
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Gold sparkle dissolve animation added to track delete on My
+  Tracks page. Three phase animation -- gold ring at 0ms, shimmer overlay
+  at 100ms, scale/fade at 300ms with 500ms transition. isDeleting prop
+  passed from MyTracks only -- Browse and Profile unaffected.
+- Files Modified:
+  - src/components/track/ArtistDeleteTrackButton.tsx -- onDeleteStart prop
+  - src/components/browse/TrackListRow.tsx -- animation phases added
+  - src/components/browse/TrackDetailCard.tsx -- animation phases added
+  - src/components/TrackCard.tsx -- animation phases added
+  - src/pages/artist/MyTracks.tsx -- deletingId state wired
+- Time Open: 2026-04-16 21:03 PDT
+- Time Close: 2026-04-16 21:03 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-058
+
+### FIX-156 | SS-FIX-059 | Deleted Track Security Lockdown | 2026-04-16 21:03 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-356
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Launch critical security fix -- deleted tracks locked down
+  across all client surfaces. Liked Tracks, Listening History, and Playlists
+  filter is_deleted = true tracks client-side. TrackPage blocks render,
+  purchase, download, and view count for deleted tracks. useTrack staleTime=0
+  gcTime=0 for fresh fetch. Direct URL navigation shows blank page --
+  purchase and download blocked. Known limitation: Vite base='./' prevents
+  SPA deep route direct navigation on Lovable hosting.
+- Files Modified:
+  - src/pages/Library.tsx -- liked tracks filter added
+  - src/hooks/useRecentlyPlayed.ts -- deleted tracks filtered
+  - src/pages/TrackPage.tsx -- deleted track gate added
+  - src/hooks/usePlaylists.ts -- deleted tracks filtered
+  - src/hooks/useTracks.ts -- staleTime=0 gcTime=0 added to useTrack
+- Time Open: 2026-04-16 21:03 PDT
+- Time Close: 2026-04-16 21:03 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-059
+
+### FIX-157 | SS-FIX-060 | Track Unavailable Page + Click Guards | 2026-04-16 21:03 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-357
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Track Unavailable page added at /track-unavailable with
+  MusicOff icon, messaging, Browse Music and Go Home buttons. TrackPage
+  redirects to /track-unavailable when is_deleted = true. All track card
+  components updated with trackHref redirecting deleted tracks.
+  Known limitation: direct URL navigation shows blank page on Lovable
+  hosting due to Vite base='./' -- deferred to post-launch B-SS321-003.
+- Files Modified:
+  - src/pages/TrackUnavailable.tsx -- new page
+  - src/pages/TrackPage.tsx -- Navigate redirect added
+  - src/components/TrackCard.tsx -- trackHref guard added
+  - src/components/browse/TrackListRow.tsx -- trackHref guard added
+  - src/components/browse/TrackDetailCard.tsx -- trackHref guard added
+- Time Open: 2026-04-16 21:03 PDT
+- Time Close: 2026-04-16 21:03 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-060
