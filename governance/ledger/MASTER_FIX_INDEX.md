@@ -5306,3 +5306,72 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Open: 2026-04-17 16:42 PDT
 - Time Close: 2026-04-17 16:42 PDT
 - Also recorded in SS321_FIX_INDEX.md as SS-FIX-069
+
+### FIX-167 | SS-FIX-070 | Settings Page Expansion | 2026-04-17 18:04 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-367
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Expanded Settings page from stub to full settings system.
+  Five sections: Account (email, change password, sign out), Profile
+  (display name, country, edit profile link), Preferences (theme toggle,
+  default browse view, autoplay), Notifications (3 localStorage-backed
+  toggles with future delivery note), Danger Zone (delete account dialog
+  with email confirmation -- routes to support@tyova.ai mailto, never
+  calls Supabase delete directly).
+- Files Modified:
+  - src/pages/Settings.tsx -- full expansion
+- Time Open: 2026-04-17 18:04 PDT
+- Time Close: 2026-04-17 18:04 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-070
+
+### FIX-168 | SS-FIX-071 | Upload Flow Three Fixes | 2026-04-17 18:56 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-368
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Three fixes combined: (1) FileUpload Choose File button fixed
+  -- button nested inside label was swallowing clicks, fixed with ref+click
+  pattern. (2) Artist Dashboard delete draft confirmation dialog added.
+  (3) Upload audio preview player fixed -- signed URL created after upload
+  for preview only. tracks-private storage bucket RLS policies added
+  (0 policies was blocking all uploads post-hardening).
+- Files Modified:
+  - src/components/FileUpload.tsx -- Choose File button fix
+  - src/pages/ArtistDashboard.tsx -- delete draft confirmation
+  - src/pages/Upload.tsx -- audio preview signed URL fix
+- Time Open: 2026-04-17 18:56 PDT
+- Time Close: 2026-04-17 18:56 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-071
+
+### FIX-169 | SS-FIX-072 | My Tracks Status Tabs | 2026-04-17 19:08 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-369
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Added status tabs to My Tracks page -- All, Drafts, Pending,
+  Approved, Rejected with count badges per tab. Filters apply within
+  selected tab. Empty states per tab. Recently Deleted section preserved.
+  Delete/restore/rename untouched.
+- Files Modified:
+  - src/pages/artist/MyTracks.tsx -- status tabs added
+- Time Open: 2026-04-17 19:08 PDT
+- Time Close: 2026-04-17 19:08 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-072
+
+### FIX-170 | SS-FIX-073 | Artist Dashboard Fixes | 2026-04-17 19:22 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-370
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Two Artist Dashboard fixes: (1) Avg. Playthrough Rate fixed
+  from 1275% to 12.8% -- was multiplying by 100 when value already stored
+  as percentage. Capped to 0-100% range. (2) Quick Action status buttons
+  added -- View Drafts, View Pending, View Rejected with counts, only
+  visible when count > 0. useArtistStats extended to include rejected count.
+- Files Modified:
+  - src/pages/artist/Dashboard.tsx -- playthrough fix + status buttons
+  - src/hooks/useArtistStats.ts -- rejected count added
+- Time Open: 2026-04-17 19:22 PDT
+- Time Close: 2026-04-17 19:22 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-073
