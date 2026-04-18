@@ -5375,3 +5375,25 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Open: 2026-04-17 19:22 PDT
 - Time Close: 2026-04-17 19:22 PDT
 - Also recorded in SS321_FIX_INDEX.md as SS-FIX-073
+
+### FIX-171 | SS-FIX-074 | Draft System Unified to Tracks Table | 2026-04-17 20:09 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-371
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Draft system unified to single tracks table. Save Draft now
+  writes to tracks table with status='draft' instead of separate drafts
+  table. Existing draft migrated from drafts table to tracks table via
+  Supabase SQL. useArtistStats updated to count drafts from tracks table.
+  Toast message now status-aware: Draft saved successfully for drafts,
+  Track submitted for review for submissions. Artist Dashboard and My
+  Tracks both show correct draft counts. Service worker cache was causing
+  old code to run -- cleared by hard refresh.
+- Files Modified:
+  - src/pages/Upload.tsx -- handleSaveDraft uses createTrack with status=draft
+  - src/pages/ArtistDashboard.tsx -- reads drafts from tracks table
+  - src/hooks/useTracks.ts -- status-aware toast in useCreateTrack
+  - src/hooks/useArtistStats.ts -- drafts counted from tracks table
+- Time Open: 2026-04-17 20:09 PDT
+- Time Close: 2026-04-17 20:09 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-074
