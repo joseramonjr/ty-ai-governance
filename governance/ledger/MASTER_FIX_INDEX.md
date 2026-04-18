@@ -5147,3 +5147,162 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Open: 2026-04-16 21:03 PDT
 - Time Close: 2026-04-16 21:03 PDT
 - Also recorded in SS321_FIX_INDEX.md as SS-FIX-060
+
+### FIX-158 | SS-FIX-061 | Monetization UX Fixes + Preview Playback | 2026-04-17 11:42 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-358
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed paid track monetization UX. canPreviewTrack function
+  added to accessControl.ts. TrackPage play button enabled for 30s preview.
+  Browse TrackListRow and TrackDetailCard updated with Lock overlay, Buy
+  button, and correct two-argument playTrack call passing preview meta to
+  PlayerContext. 30s preview cutoff verified. preview_duration set to 30s
+  on all paid tracks via Supabase SQL update.
+- Files Modified:
+  - src/utils/accessControl.ts -- canPreviewTrack added
+  - src/pages/TrackPage.tsx -- preview play enabled
+  - src/components/browse/TrackListRow.tsx -- Lock overlay + Buy button
+  - src/components/browse/TrackDetailCard.tsx -- Lock overlay + Buy button
+- Time Open: 2026-04-17 11:42 PDT
+- Time Close: 2026-04-17 11:42 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-061
+
+### FIX-159 | SS-FIX-062 | Purchased Track Download Fix | 2026-04-17 14:28 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-359
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed purchased track download in SnapshotDownloadButton.
+  Root causes: click bubbling to parent Link wrapper (fixed with
+  stopPropagation), and browser blocking client-side download triggers.
+  Final fix: pass download option directly to Supabase createSignedUrl
+  as third argument -- sets Content-Disposition: attachment header at
+  storage level forcing all browsers to download instead of open inline.
+- Files Modified:
+  - src/components/monetization/SnapshotDownloadButton.tsx
+- Time Open: 2026-04-17 14:28 PDT
+- Time Close: 2026-04-17 14:28 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-062
+
+### FIX-160 | SS-FIX-063 | Privacy Policy + Terms of Service | 2026-04-17 15:07 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-360
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Privacy Policy and Terms of Service pages added at /privacy
+  and /terms. TYOVA LLC San Diego CA. 10-section Privacy Policy covering
+  data collection, TY AI personalization boundary, children privacy
+  (13+ general 18+ purchases/uploads), explicit content warning, CCPA.
+  13-section Terms of Service covering eligibility, artist uploads,
+  explicit content policy, 90/10 payout split, TY AI governance.
+  Footer links added. Dynamic copyright year. Support page legal links.
+- Files Modified:
+  - src/pages/PrivacyPolicy.tsx -- new page
+  - src/pages/TermsOfService.tsx -- new page
+  - src/routes/routeConfig.ts -- route overrides added
+  - src/components/Footer.tsx -- links + dynamic year
+  - src/pages/Support.tsx -- legal links row added
+- Time Open: 2026-04-17 15:07 PDT
+- Time Close: 2026-04-17 15:07 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-063
+
+### FIX-161 | SS-FIX-064 | Explicit Content Flagging | 2026-04-17 15:19 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-361
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Explicit content flagging added. New ExplicitBadge component
+  red/orange E pill shows only when is_explicit = true. is_explicit column
+  added to Track interface. Upload and EditTrack forms have Explicit Content
+  checkbox. Badge displays on TrackCard, TrackListRow, TrackDetailCard,
+  and TrackPage. Default false -- existing tracks unaffected.
+- Database: is_explicit boolean column added to tracks table default false
+- Files Modified:
+  - src/components/track/ExplicitBadge.tsx -- new component
+  - src/hooks/useTracks.ts -- Track interface updated
+  - src/pages/Upload.tsx -- explicit checkbox added
+  - src/pages/EditTrack.tsx -- explicit checkbox added
+  - src/components/TrackCard.tsx -- badge added
+  - src/components/browse/TrackListRow.tsx -- badge added
+  - src/components/browse/TrackDetailCard.tsx -- badge added
+  - src/pages/TrackPage.tsx -- badge added
+- Time Open: 2026-04-17 15:19 PDT
+- Time Close: 2026-04-17 15:19 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-064
+
+### FIX-162 | SS-FIX-065 | Footer Profile Link Fix | 2026-04-17 15:19 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-362
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed Footer Profile link -- was pointing to /profile
+  (account editor form). Now points to /profile/:userId (public profile
+  page) when logged in, /browse when logged out.
+- Files Modified:
+  - src/components/Footer.tsx -- Profile link corrected
+- Time Open: 2026-04-17 15:19 PDT
+- Time Close: 2026-04-17 15:19 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-065
+
+### FIX-163 | SS-FIX-066 | Upload Visible to All Artists | 2026-04-17 15:19 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-363
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed Upload visibility in header. Previously gated by
+  isAdmin only -- new users could not find Upload to become artists.
+  Now shows Artist dropdown with Upload and Dashboard to all authenticated
+  users. Admin-only items remain gated by isAdmin. Mobile menu mirrors
+  desktop. Logged-out users see no dropdown.
+- Files Modified:
+  - src/components/Header.tsx -- gate changed to isAdmin || isArtist || user
+- Time Open: 2026-04-17 15:19 PDT
+- Time Close: 2026-04-17 15:19 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-066
+
+### FIX-164 | SS-FIX-067 | About Page TYOVA URL Fix | 2026-04-17 16:42 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-364
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed About page TYOVA link -- changed from staging URL
+  testing.tyova.ai to production URL https://tyova.ai. Note: tyova.ai
+  root domain not yet activated in Vercel -- link will resolve correctly
+  once domain is live.
+- Files Modified:
+  - src/pages/About.tsx -- TYOVA link updated
+- Time Open: 2026-04-17 16:42 PDT
+- Time Close: 2026-04-17 16:42 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-067
+
+### FIX-165 | SS-FIX-068 | Mood Tags Preserved on Track Save | 2026-04-17 16:42 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-365
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed mood tags being silently dropped on track save.
+  Root cause: handleTrackSave only consumed bodyParts[0] and [1].
+  Fix: parse bodyParts.slice(2) as mood_tags and include in update
+  payload. Fallback to track.mood_tags prevents accidental wipe.
+- Files Modified:
+  - src/pages/TrackPage.tsx -- handleTrackSave fixed
+- Time Open: 2026-04-17 16:42 PDT
+- Time Close: 2026-04-17 16:42 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-068
+
+### FIX-166 | SS-FIX-069 | Email Leak Fix in TY AI Comments | 2026-04-17 16:42 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-366
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed email leak in TY AI posted comments and playlist
+  naming. Both locations previously used user.email as fallback when
+  display_name not set -- exposing email addresses in public content.
+  Fixed to fetch display_name from profiles table with Anonymous fallback.
+  Never falls back to email address.
+- Files Modified:
+  - src/components/ty-ai-chat/TYAIPanelContainer.tsx -- both locations fixed
+- Time Open: 2026-04-17 16:42 PDT
+- Time Close: 2026-04-17 16:42 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-069
