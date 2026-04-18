@@ -5397,3 +5397,110 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Open: 2026-04-17 20:09 PDT
 - Time Close: 2026-04-17 20:09 PDT
 - Also recorded in SS321_FIX_INDEX.md as SS-FIX-074
+
+### FIX-172 | SS-FIX-075 | Unknown Artist Fix on My Tracks | 2026-04-18 08:53 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-372
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed Unknown Artist on My Tracks. useArtistTracks changed
+  from select('*') to select('*, profiles(display_name, avatar_url)').
+- Files Modified:
+  - src/hooks/useTracks.ts
+- Time Open: 2026-04-18 08:53 PDT
+- Time Close: 2026-04-18 08:53 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-075
+
+### FIX-173 | SS-FIX-076 | RLS Heartbeat Errors Fixed | 2026-04-18 08:53 PDT | San Diego
+- Destination: SS321 -- Lovable project + Supabase
+- CLO: CLO-373
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed RLS heartbeat errors flooding console. Added INSERT
+  grant to authenticated role on ai_system_heartbeat. Updated INSERT
+  policy to require admin role. Added isCurrentUserAdmin() to scheduler.
+- Files Modified:
+  - src/ty-ai/TYAIScheduler.ts
+- Time Open: 2026-04-18 08:53 PDT
+- Time Close: 2026-04-18 08:53 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-076
+
+### FIX-174 | SS-FIX-077 | TY AI Playlist Number Selection | 2026-04-18 10:22 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-374
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed TY AI playlist pick by number dead-end. Added
+  pendingPlaylistSelectionRef. Intercepts numeric replies before
+  processMessage. Duplicate guard prevents adding track already in playlist.
+- Files Modified:
+  - src/components/ty-ai-chat/TYAIPanelContainer.tsx
+- Time Open: 2026-04-18 10:22 PDT
+- Time Close: 2026-04-18 10:22 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-077
+
+### FIX-175 | SS-FIX-078 | Mobile Browse Filter Button Visible | 2026-04-18 10:22 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-375
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed mobile filter button covered by TY AI button.
+  Moved from bottom-6 right-6 to bottom-24 left-6. Added Filters label.
+- Files Modified:
+  - src/components/browse/MobileFilterDrawer.tsx
+- Time Open: 2026-04-18 10:22 PDT
+- Time Close: 2026-04-18 10:22 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-078
+
+### FIX-176 | SS-FIX-079 | View Toggle in Mobile Filter Drawer | 2026-04-18 10:22 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-376
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Added ViewToggle and SortSelect to MobileFilterDrawer.
+  View and Sort section at top of drawer. Props from Browse.tsx.
+- Files Modified:
+  - src/components/browse/MobileFilterDrawer.tsx
+  - src/pages/Browse.tsx
+- Time Open: 2026-04-18 10:22 PDT
+- Time Close: 2026-04-18 10:22 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-079
+
+### FIX-177 | SS-FIX-080 | Mobile Filter Button Prominence | 2026-04-18 10:22 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-377
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Gradient variant, h-14 px-6, stronger shadow, pulse animation
+  when idle, numeric filter count badge.
+- Files Modified:
+  - src/components/browse/MobileFilterDrawer.tsx
+- Time Open: 2026-04-18 10:22 PDT
+- Time Close: 2026-04-18 10:22 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-080
+
+### FIX-178 | SS-FIX-081 | Draggable Mobile Filter Button | 2026-04-18 10:22 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-378
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Draggable edge-snapping filter FAB. Touch + pointer events.
+  Snaps to nearest edge on release. Position persists in localStorage.
+- Files Modified:
+  - src/components/browse/MobileFilterDrawer.tsx
+- Time Open: 2026-04-18 10:22 PDT
+- Time Close: 2026-04-18 10:22 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-081
+
+### FIX-179 | SS-FIX-082 | Mobile Hamburger Menu Scrolling | 2026-04-18 12:15 PDT | San Diego
+- Destination: SS321 -- Lovable project
+- CLO: CLO-379
+- Model: Claude Sonnet 4.6
+- Status: COMPLETE
+- Description: Fixed mobile hamburger menu items cut off. SheetContent
+  flex column h-full max-h-screen. Nav flex-1 overflow-y-auto pb-8.
+- Files Modified:
+  - src/components/Header.tsx
+- Time Open: 2026-04-18 12:15 PDT
+- Time Close: 2026-04-18 12:15 PDT
+- Also recorded in SS321_FIX_INDEX.md as SS-FIX-082
