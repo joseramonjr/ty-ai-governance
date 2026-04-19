@@ -5982,3 +5982,103 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
   propagation, secret-pattern false-positive recovery, FIX-189
   design, v1 failure, v2 build and verification)
 - Also recorded in Ch18 Entry-101
+
+### FIX-190 | Ch18 Entry-102 | Ch41 Section 41.23 Heading De-duplication | 2026-04-19 13:37 PDT | San Diego
+- Destination: TYOVA -- E:\TY-Ecosystem\TYOVA\src\data\bookChapterContent.ts
+- CLO: CLO-390
+- Model: Claude Opus 4.7
+- Status: COMPLETED
+- Description: Targeted drift remediation on TYOVA Ch41. During live-site
+  verification of FIX-188 (Ch41 propagation), duplicate section-numbering
+  drift was detected: two TypeScript ChapterSection objects both labeled
+  partHeading "41.23" instead of unique numbers. Root cause: the original
+  FIX-188 port split source section 41.23 into two TypeScript objects to
+  honor the ChapterSection listItems[] interface constraint (one listItems
+  array per section, with the 8 December-15-2025 evidentiary anchors
+  requiring a separate section), but both split halves retained the same
+  partHeading "41.23" rather than receiving distinct labels. This produced
+  visible drift between the ty-ai-governance source (27 sections with
+  unique numbering) and the TYOVA public archive (28 TypeScript objects
+  with a duplicated "41.23" label). Readers of the live site saw the same
+  section number twice consecutively, creating the appearance of a content
+  error. FIX-190 resolves this with minimal edit: add letter suffixes "a"
+  and "b" to the two existing partHeadings, producing "41.23a" and "41.23b"
+  respectively. Section count remains 28 TypeScript objects representing
+  27 logical sections (with 41.23a + 41.23b as the split halves of source
+  section 41.23).
+- Scope:
+  - Two partHeading strings edited in bookChapterContent.ts via
+    [System.IO.File]::ReadAllText / content.Replace / WriteAllText
+    with UTF8Encoding no-BOM per R1/R13.
+  - Line 7062: '41.23 -- The Canonical Character of the Prior Art Record'
+    -> '41.23a -- The Canonical Character of the Prior Art Record'
+    (+1 character 'a').
+  - Line 7080: '41.23 -- The Canonical Character (Continued)'
+    -> '41.23b -- The Canonical Character (Continued)'
+    (+1 character 'b').
+  - Pre-edit occurrence checks: both target strings found exactly once
+    (protection against over-replacement).
+  - Post-edit verification: both new strings present exactly once.
+  - R3 verification passed: bytes 675,326 -> 675,328 (delta exactly
+    +2 bytes as predicted), line count 7,141 unchanged.
+  - R12 S1/S2 scan passed: zero em-dash corruption hits, zero en-dash
+    corruption hits, no BOM. Clean UTF-8 preserved.
+  - Scoped git add: single file (src/data/bookChapterContent.ts) only.
+    Pre-existing TYOVA working-tree drift (package-lock.json modified,
+    Fix-Bundle.ps1 untracked, Fix-BundleCorruption.ps1 untracked,
+    node_modules untracked) preserved and excluded from this commit.
+  - Diff verification: git diff --cached showed exactly 2 insertions
+    and 2 deletions, matching the two partHeading edits precisely.
+    No other lines altered.
+  - Commit ff4378d signed with standing format: "FIX-190 Ch41 section
+    41.23 heading de-duplication -- CLO-390 | Claude Opus 4.7 |
+    2026-04-19 | San Diego".
+  - Pre-push secret audit against SS-FIX-085 canonical pattern set:
+    zero hits. Audit clean.
+  - Pushed to origin/main. Local HEAD ff4378d, Remote HEAD ff4378d.
+    Push delta: adec5de..ff4378d.
+  - Builder performed Lovable Update + Publish cycle to propagate the
+    change to the live testing.tyova.ai site.
+  - Builder verified live site rendering: section heading sequence
+    now reads "41.22 / 41.23a / 41.23b / 41.24" in place of the
+    previous "41.22 / 41.23 / 41.23 / 41.24" duplicate. Drift
+    eliminated on public-facing archive.
+- Phase 8 context: First true drift remediation fix under Phase 8
+  (TYOVA Documentation Integrity Audit). Phase 8 was declared during
+  the FIX-188 session with a planned sequence of audit-then-remediate
+  fixes. FIX-190 skips the audit step for this specific drift item
+  because the drift was already identified during FIX-188 live
+  verification. The broader Book of TY drift audit originally scoped
+  as FIX-190 is re-numbered to FIX-191 (read-only audit) with
+  subsequent remediation under FIX-192+.
+- Correction note for earlier session work (carry-forward documentation):
+  Three inaccuracies in the FIX-188 entries (commit 82439a2) surfaced
+  during this session but are left as-committed per Option 3
+  resolution precedent established with FIX-189:
+  (1) FIX-188 described the TYOVA live URL as
+  "testing.silversounds321.com/book/chapter-41" when the actual URL
+  is "testing.tyova.ai/book/chapter-41". testing.silversounds321.com
+  is the SS321 music platform testing subdomain, not TYOVA.
+  (2) FIX-188 claimed "Lovable auto-deploy pipeline triggered by the
+  push" when the actual Lovable workflow requires manual Update and
+  Publish steps after the GitHub push. Auto-deploy on push is false.
+  (3) Lovable's Publish workflow during the FIX-188 cycle produced an
+  intermediate commit b1123dd ("Update site info for publish") in
+  the TYOVA repository between adec5de (FIX-188) and ff4378d
+  (FIX-190). Per Ledger Rule 2, Lovable commits require manual
+  MASTER_FIX_INDEX entries; this fact is recorded here in lieu of a
+  separate backfill entry for b1123dd.
+  These corrections apply to the historical record carried in FIX-188
+  entries. The FIX-188 entries themselves are left unmodified.
+- Live deployment workflow, accurate form (for future session reference):
+  (1) git push to origin/main on TYOVA repo; (2) manual Update step in
+  Lovable UI to pull GitHub changes into Lovable's working copy;
+  (3) manual Publish step in Lovable UI to deploy to the testing
+  subdomain; (4) Lovable may add its own housekeeping commits during
+  step 3; (5) live site at testing.tyova.ai reflects changes after
+  step 3 completes. This replaces the "auto-deploy on push"
+  assumption in earlier session work.
+- Time Open: 2026-04-19 13:25 PDT (Builder-confirmed)
+- Time Close: 2026-04-19 13:37 PDT (Builder-confirmed)
+- Session duration: 12 minutes
+- Also recorded in Ch18 Entry-102
