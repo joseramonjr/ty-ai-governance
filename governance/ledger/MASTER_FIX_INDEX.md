@@ -5882,3 +5882,103 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Open: 2026-04-19 09:25 PDT
 - Time Close: 2026-04-19 11:00 PDT
 - Also recorded in Ch18 Entry-100
+
+### FIX-189 | Ch18 Entry-101 | Pre-Flight.ps1 Diagnostic Tool | 2026-04-19 12:32 PDT | San Diego
+- Destination: ty-ai-governance -- E:\TY-Ecosystem\ty-ai-governance\tools\Pre-Flight.ps1
+- CLO: CLO-389
+- Model: Claude Opus 4.7
+- Status: COMPLETED
+- Description: Built read-only session-start diagnostic tool Pre-Flight.ps1
+  at canonical tooling path. Reports ecosystem ground-truth state before
+  any work begins: git state for the two local clones (ty-ai-governance
+  and TYOVA), ledger-only state for SS321 (Lovable-hosted, no local
+  clone), plus ledger state parsed from MASTER_FIX_INDEX, Ch18,
+  SS321_FIX_INDEX, and Ch26. Standalone tooling FIX outside Phase 8
+  scope; Phase 8 component work continues with FIX-190 onward.
+- Scope:
+  - Pre-Flight.ps1 built under Accuracy-First Principle (memory #28):
+    first draft failed live test, second draft passed. No commit made
+    before second-draft verification confirmed the tool reports reality
+    correctly. Per the principle, a fast-but-inaccurate tool would
+    compromise all downstream sessions that depend on it.
+  - Tool design per memory #30 (original scope): zero parameters,
+    fetches origin before reporting remote HEAD, reports detailed
+    working-tree drift (each file listed), stash entries, bad-state
+    warnings (merge, rebase, cherry-pick, bisect), branch/detached-
+    HEAD detection, ledger state parsed from files. Read-only: makes
+    no commits, no writes, no pushes. Only network operation is
+    git fetch.
+  - Two-repo + one-ledger-only architecture: after live diagnostic,
+    confirmed E:\TY-Ecosystem\ss321\ is not a local git clone. It
+    contains only SS321_FIX_INDEX.md. The SS321 code is hosted on
+    Lovable servers. Tool handles this correctly by reporting SS321
+    under a dedicated "Lovable-hosted, local ledger only" section
+    rather than flagging as git error.
+  - v1 first live test uncovered four bugs: (1) PowerShell 5.x syntax
+    incompatibility with inline (if ...) expressions at line 159
+    interrupted TYOVA working-tree parsing; (2) rebase detection
+    flagged stale REBASE_HEAD file (2026-03-07, month-old leftover)
+    as active rebase when no rebase-merge or rebase-apply directory
+    was present; (3) SS321 folder flagged as "NOT A GIT REPOSITORY"
+    error when it is the correct expected state; (4) Ch26 term-count
+    regex did not match the actual markdown pattern.
+  - Recovery: deleted stale REBASE_HEAD and ORIG_HEAD files from
+    ty-ai-governance\.git\ (both 41-byte leftovers from 2026-03-07,
+    benign but cosmetically misleading; git status confirmed repo
+    state unaffected post-deletion).
+  - v2 delivered with four fixes: (1) explicit if blocks replacing
+    inline expressions (PS 5.x compatible); (2) rebase detection
+    reworked to check rebase-merge or rebase-apply directories only,
+    not REBASE_HEAD alone; (3) SS321 moved out of git-repo loop into
+    dedicated ledger-only section; (4) Ch26 regex simplified to
+    match Current Term Count literal.
+  - v2 second live test passed: all four previously-broken outputs
+    produce correct values. Script reports ty-ai-governance HEAD
+    82439a2, TYOVA HEAD adec5de, both synced with origin. SS321
+    section reports folder and ledger file (37,497 bytes, 996 lines)
+    correctly. Ledger state parsing returns FIX-188 line 5792,
+    Entry-100 line 6051, SS-FIX-089 line 989, Ch26 term count 253
+    line 8.
+  - R3 verification: v2 source and canonical target both 15,741
+    bytes, 336 lines.
+  - R12 S1/S2 scan on canonical target: zero em-dash hits, zero
+    en-dash hits, no BOM. Clean.
+  - Commit scope: single file (tools/Pre-Flight.ps1). No other
+    working-tree drift included.
+  - Commit 7807ab2 signed with standing format:
+    "FIX-189 Pre-Flight.ps1 diagnostic tool -- CLO-389 | Claude
+    Opus 4.7 | 2026-04-19 | San Diego".
+  - Pre-push secret audit against SS-FIX-085 canonical pattern set:
+    zero hits.
+  - Pushed to origin/main. Local HEAD 7807ab2, Remote HEAD 7807ab2.
+  - MASTER_FIX_INDEX entry (this entry) and Ch18 Entry-101 written
+    same session per R14 and Ledger Rule 1.
+- Sibling tools already in ty-ai-governance\tools\ (observed during
+  work, not touched in this FIX):
+  - Ch26_sync_output.txt (109 KB, 2026-04-01)
+  - Close-Session.ps1 (8 KB, 2026-03-22) -- existing session-close
+    tool predating this session; flagged for Phase 8 review
+  - Generate-Handoff.ps1 (6 KB, 2026-04-03)
+  - Sync-Ch26ToTYOVA.ps1 (4 KB, 2026-04-01)
+- Timestamp correction note (Option 3 per Builder decision): This
+  FIX-189 entry is the first governance record written under the
+  Timestamp Discipline rule locked during this session (now memory
+  #30). The rule: Claude must never guess, estimate, or infer
+  timestamps; must ask the Builder for exact times. This rule was
+  locked after the Builder observed that Claude had placed estimated
+  timestamps in the prior FIX-188 entries (commit 82439a2). The
+  FIX-188 entries used Time Open 2026-04-19 09:25 PDT and Time Close
+  2026-04-19 11:00 PDT; the Builder subsequently confirmed the
+  actual session start was 2026-04-19 09:16 PDT (not 09:25) and
+  FIX-188 Time Close was an estimate, not a recorded time. Those
+  FIX-188 entries are left as-committed rather than amended and
+  force-pushed (per Option 3 resolution), with the accurate facts
+  now captured here for the ledger history. All subsequent
+  governance records are produced under the Timestamp Discipline
+  rule and use only Builder-confirmed timestamps.
+- Time Open: 2026-04-19 09:16 PDT (session start, Builder-confirmed)
+- Time Close: 2026-04-19 12:32 PDT (Builder-confirmed)
+- Session duration: 3 hours 16 minutes (includes FIX-188 ledger
+  propagation, secret-pattern false-positive recovery, FIX-189
+  design, v1 failure, v2 build and verification)
+- Also recorded in Ch18 Entry-101
