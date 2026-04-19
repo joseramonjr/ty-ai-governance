@@ -5678,3 +5678,296 @@ FIX-133.4: Ch26 Current Term Count updated from 251 to 253 in ty-ai-governance.
 FIX-133.5: TYOVA bookChapterContent.ts Ch26 updated -- Sections 13 and 14 added, compiledNote updated to 253 terms and CLO-292, Lovable push confirmed live.
 FIX-133.6: TYOVA BookOfTyChapter.tsx TOC term count override implemented -- Ch26 TOC now reads 253 from compiledNote instead of dynamic content count.
 All six fixes committed. testing.tyova.ai/book/chapter-26 verified live with Sections 13 and 14 visible and TOC showing 253 terms.
+### Entry-092 | FIX-180 | SS-FIX-083 | 2026-04-18 13:40 PDT | San Diego
+
+**Fix:** Canonical TYOVA LLC relationship statement rollout + codebase URL audit
+**Destination:** SS321 — testing.silversounds321.com
+**CLO:** CLO-380
+
+**Governance note.** The canonical SS321/TYOVA LLC relationship statement
+was locked in this session after discovery that the existing /privacy and
+/terms pages already contain "operated by TYOVA LLC, San Diego, California,
+USA" in Section 1, and support@tyova.ai as canonical contact email
+throughout. Legal pages treated as complete and explicitly excluded from
+this fix.
+
+**Canonical statement (full):**
+"Silver Sounds 321 is a project of TYOVA LLC. TY AI was conceived during
+the construction of Silver Sounds 321, and this platform remains the first
+and continuous live testing ground for TY AI. For support, contact
+support@tyova.ai."
+
+**Canonical statement (short, footer):**
+"Silver Sounds 321 is a project of TYOVA LLC. Support: support@tyova.ai"
+
+**Rollout surfaces completed:**
+- Footer: short statement deployed site-wide above copyright row
+- About page: full statement deployed after "Powered by TY AI" section
+- TY AI knowledge base: new entry with 22 match patterns covering ownership,
+  relationship, operator, parent company queries
+
+**URL audit completed:** 4 operational silversounds321.com hits identified
+(PrivacyPolicy.tsx, buildMode.ts, security.ts x2) deferred to SS-FIX-086
+domain cutover. 37 documentation hits in book manuscript excluded as
+historical narrative.
+
+**Pre-flight CORS readback:** confirmed testing.silversounds321.com NOT
+present in supabase/functions/_shared/security.ts ALLOWED_ORIGINS array.
+Deferred to SS-FIX-085.
+
+**Verification:** 21 of 21 acceptance checks passed on
+testing.silversounds321.com. TY AI returned the canonical statement for
+"who owns ss321", "what is the relationship between SS321 and TYOVA",
+and "what is TYOVA".
+
+**Issues surfaced during verification (logged as separate fixes to preserve
+scope discipline):**
+- SS-FIX-084: mailto subject lines on About + Footer should pre-populate
+  with "SS321 Support" so inbound mail to support@tyova.ai is immediately
+  identifiable as originating from SS321
+- SS-FIX-085: testing.silversounds321.com must be added to Supabase CORS
+  ALLOWED_ORIGINS before further browser-based testing on testing subdomain
+
+**Status:** COMPLETE
+**Time Open:** 2026-04-18 13:40 PDT
+**Time Close:** 2026-04-18 14:21 PDT
+
+### Entry-093 | FIX-181 | SS-FIX-084 | 2026-04-18 14:21 PDT | San Diego
+
+**Fix:** mailto subject pre-population on SS321 canonical support links
+**Destination:** SS321 — testing.silversounds321.com
+**CLO:** CLO-381
+
+**Governance note.** This fix originates from a requirement surfaced during
+SS-FIX-083 verification. Per scope discipline, the new requirement was
+NOT folded into SS-FIX-083 post-hoc. SS-FIX-083 closed COMPLETE on its
+original scope, and this fix was opened as a clean separate entry.
+
+**Change:** Updated href attribute of two mailto:support@tyova.ai links
+(Footer site-wide, About page canonical block) to include URL-encoded
+subject parameter "SS321%20Support". Rendered subject in user email
+client: "SS321 Support".
+
+**Files modified:**
+- src/components/Footer.tsx line 12
+- src/pages/About.tsx line 144
+
+**Purpose:** Inbound mail arriving at support@tyova.ai is now immediately
+identifiable as originating from SilverSounds321 — the inbound equivalent
+of the existing outbound bracketed-tag pattern used on the TYOVA support
+side. Reinforces the single-inbox operational model where support@tyova.ai
+serves both TYOVA and SS321.
+
+**Scope discipline held:** 2 files, 2 lines, 2 href attributes. No styling,
+no text, no other files, no other behavior.
+
+**Verification:** Clicked Footer mailto on live testing.silversounds321.com
+after publish -- email client opened with Subject = "SS321 Support".
+Clicked About page mailto -- same result. No console errors.
+
+**Execution context:** Opened at 14:21 PDT then paused while SS-FIX-085
+(security incident response) took priority. Executed and closed after
+full rotation incident resolved.
+
+**Status:** COMPLETE
+**Time Open:** 2026-04-18 14:21 PDT
+**Time Close:** 2026-04-18 17:30 PDT
+
+### Entry-094 | FIX-182 | SS-FIX-085 | 2026-04-18 17:30 PDT | San Diego
+
+**Fix:** Secret rotation incident response
+**Destination:** SS321 -- Supabase + Anthropic + OpenAI + Lovable
+**CLO:** CLO-382
+
+**Incident summary.** During SS-FIX-083 verification on 2026-04-18,
+plaintext credentials were discovered in two untracked files inside the
+ty-ai-governance working directory: book/key.txt and book/key 1.txt.
+Exposed credentials included a Supabase service_role JWT, Supabase anon
+JWT, Supabase sb_secret_ key, Anthropic API key, OpenAI API key, and an
+unidentified base64 value (tv3Kva1...). Files had never been committed
+to git (history audit verified across 5 patterns). No cloud sync was
+active on the machine, limiting blast radius to local exposure.
+
+**Containment actions:**
+- Two key files moved to quarantine folder at
+  E:\TY-Ecosystem\_SECRETS_DO_NOT_COMMIT\ outside the repo
+- .gitignore hardened with 24 new protective rules covering key files,
+  credentials, environment files, and editor artifacts
+- Quarantine folder pattern established for future handling of
+  sensitive material
+
+**Rotation sequence:**
+1. Supabase JWT secret rotated via legacy rotation flow. New anon
+   and service_role JWTs auto-populated into Edge Functions secrets.
+2. Frontend rebuild: Lovable updated the new anon key in three
+   locations (.env plus two source files) and republished to
+   testing.silversounds321.com. Browser service worker and site data
+   cleared to force fresh bundle download.
+3. Anthropic key (sk-ant-api03-szlr...) revoked. New key
+   ss321-ty-ai-20260418 created and pasted into Supabase Edge Functions
+   ANTHROPIC_API_KEY.
+4. OpenAI key (SS321i Embeddings, sk-proj-...VXUA) revoked. New key
+   ss321-openai-20260418 created and pasted into Supabase Edge Functions
+   OPENAI_API_KEY.
+
+**Verification:**
+- TY AI canonical statement returns correctly (KB path unaffected)
+- TY AI "difference between pop and romantic pop" question returned
+  detailed Claude API response tagged with Claude AI icon, confirming
+  Anthropic rotation works end-to-end
+- TY AI "find something soulful and emotional" question returned
+  semantically-matched tracks, confirming OpenAI embeddings rotation
+  works end-to-end
+- No 401 / No suitable key errors remaining in browser console
+- Site fully operational on testing.silversounds321.com
+
+**Governance flags raised:**
+- Plaintext secrets in repo working directory was a working pattern
+  that leaked notes and credentials into governance-tracked directories.
+  Hardened .gitignore prevents recurrence.
+- Supabase anon key hardcoded in 3 source files is an architectural
+  anti-pattern. Logged as SS-FIX-087 for consolidation refactor.
+- testing.silversounds321.com not in Supabase CORS ALLOWED_ORIGINS
+  array was surfaced during incident pre-flight. Logged as SS-FIX-088.
+- Two older OpenAI keys (9+ months) with unclear purpose. Logged as
+  SS-FIX-089 for audit and cleanup.
+- Mystery base64 key tv3Kva1... identity unconfirmed because Supabase
+  displays only Digest hashes for custom secret values. Logged as
+  SS-FIX-086 for investigation.
+
+**Not rotated during incident:**
+- PAYMENT_ENCRYPTION_KEY (Supabase Digest-only display; rotation risk
+  includes encrypted data corruption; deferred pending investigation)
+- Stripe keys (not in leaked files)
+- LOVABLE_API_KEY (not in leaked files)
+
+**Lessons learned:**
+- Ledger Rule 1 violation occurred early in the session (FIX-180 initially
+  stamped without being written to file). Detection came via sequence
+  verification. Correction: moved SS-FIX-083 ledger entry into position
+  before FIX-181 via split-and-insert. Validated chronological monotonicity
+  restored.
+- Service worker cache caused persistent 401 errors even after Lovable
+  republished with correct anon key. Resolution required unregistering
+  service worker and clearing site data in DevTools Application tab.
+- Legacy JWT rotation has 20-minute cooldown that prevents re-rotation
+  attempts; must prepare thoroughly before clicking Generate.
+
+**Duration:** approximately 3 hours from discovery to verification close.
+
+**Status:** COMPLETE
+**Time Open:** 2026-04-18 15:00 PDT (approximate discovery time)
+**Time Close:** 2026-04-18 17:30 PDT
+
+### Entry-095 | FIX-183 | SS-FIX-086 | 2026-04-18 17:30 PDT | San Diego
+
+**Fix:** Investigate tv3Kva1 mystery key identity
+**Destination:** Investigation task
+**CLO:** CLO-383
+
+**Governance note.** During SS-FIX-085 incident response, the base64
+value tv3Kva1...=[REDACTED-FULL-VALUE-IN-LOCAL-QUARANTINE] was found in both
+quarantined key files with no identifying label. Primary hypothesis is
+that it is the PAYMENT_ENCRYPTION_KEY stored in Supabase Edge Functions,
+but confirmation was not possible during the incident because Supabase
+displays only a Digest (one-way hash) of custom secret values, not the
+raw value. Rotation was deferred during the incident because if this
+key encrypts real payment data, rotating it without a migration plan
+would corrupt encrypted records.
+
+**Scope:**
+- Review payment-related edge functions to identify what
+  PAYMENT_ENCRYPTION_KEY encrypts and where encrypted data lives
+- Determine if safe rotation is possible or if a data migration plan
+  is required
+- If safe: plan rotation with new value, include any required data
+  re-encryption
+- If unsafe: document residual risk, maintain current key in place,
+  plan architectural change to remove the dependency long-term
+- Regardless of outcome: physically shred the quarantined files
+  afterward so the old value no longer exists on disk
+
+**Status:** PENDING
+**Time Open:** 2026-04-18 17:30 PDT
+**Time Close:** TBD
+
+### Entry-096 | FIX-184 | SS-FIX-087 | 2026-04-18 17:30 PDT | San Diego
+
+**Fix:** Supabase anon key single-source-of-truth consolidation
+**Destination:** SS321 -- Lovable project
+**CLO:** CLO-384
+
+**Governance note.** During SS-FIX-085 rotation, Lovable reported the
+Supabase anon key was hardcoded in 3 locations requiring simultaneous
+update: .env, src/integrations/supabase/client.ts, and
+src/system/env/supabaseConfig.ts. This anti-pattern made the rotation
+slower and more fragile than necessary. Standard architecture is a
+single source of truth in .env referenced via import.meta.env from one
+client module.
+
+**Scope:**
+- Refactor src/integrations/supabase/client.ts to read anon key via
+  import.meta.env only
+- Refactor src/system/env/supabaseConfig.ts similarly or eliminate
+  the module if it is redundant
+- Confirm .env remains the single canonical source
+- Verify build still succeeds
+- Verify site still functions end-to-end on testing.silversounds321.com
+
+**Status:** PENDING
+**Time Open:** 2026-04-18 17:30 PDT
+**Time Close:** TBD
+
+### Entry-097 | FIX-185 | SS-FIX-088 | 2026-04-18 17:30 PDT | San Diego
+
+**Fix:** CORS allowlist addition for testing subdomain
+**Destination:** SS321 -- supabase/functions/_shared/security.ts
+**CLO:** CLO-385
+
+**Governance note.** The ALLOWED_ORIGINS array in
+supabase/functions/_shared/security.ts does NOT currently include
+testing.silversounds321.com. Neither as a literal entry nor covered by
+the existing Lovable regex patterns. Any browser-originated edge
+function call from testing.silversounds321.com is CORS-rejected. TY AI
+and other edge function calls from the testing subdomain may be
+silently failing or misbehaving under certain flows.
+
+**Scope:**
+- Add https://testing.silversounds321.com as a literal entry to the
+  ALLOWED_ORIGINS array
+- Do not change any other entries
+- Redeploy affected edge functions
+- Verify CORS-sensitive flows work from testing subdomain
+- This fix will be superseded when testing subdomain is retired at
+  domain cutover; entry will need removal then.
+
+**Status:** PENDING
+**Time Open:** 2026-04-18 17:30 PDT
+**Time Close:** TBD
+
+### Entry-098 | FIX-186 | SS-FIX-089 | 2026-04-18 17:30 PDT | San Diego
+
+**Fix:** Audit unused OpenAI keys
+**Destination:** OpenAI platform account
+**CLO:** CLO-386
+
+**Governance note.** OpenAI account contains two keys older than 9
+months with unclear purpose:
+- "AI Performance Agent" (created Jun 24, 2025) -- likely from the
+  Global Pulse App DB AI Agent project
+- "secret Key" (created Jun 18, 2025) -- unlabeled, purpose unclear
+
+Neither was rotated during SS-FIX-085 because neither appeared in the
+leaked key 1.txt. Unused API keys are unnecessary exposure surface and
+the lazy naming violates naming discipline.
+
+**Scope:**
+- Investigate what each key was issued for
+- Determine if either is actively used anywhere
+- Revoke any that are not in active use
+- Rename any that are kept with clear, dated, descriptive names
+- Document decisions and actions in a follow-up Ch18 entry when closed
+
+**Status:** PENDING
+**Time Open:** 2026-04-18 17:30 PDT
+**Time Close:** TBD
