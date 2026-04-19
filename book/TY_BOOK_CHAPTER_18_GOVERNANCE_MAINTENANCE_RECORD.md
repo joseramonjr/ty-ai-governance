@@ -6123,3 +6123,90 @@ consideration rather than touched in this fix.
 **Status:** COMPLETED
 **Time Open:** 2026-04-19 09:25 PDT
 **Time Close:** 2026-04-19 11:00 PDT
+
+### Entry-101 | FIX-189 | Ch18 | 2026-04-19 12:32 PDT | San Diego
+**Fix:** Pre-Flight.ps1 Diagnostic Tool
+**Destination:** ty-ai-governance -- E:\TY-Ecosystem\ty-ai-governance\tools\Pre-Flight.ps1
+**CLO:** CLO-389
+
+**Governance note.** This entry records the build and commit of
+Pre-Flight.ps1, a read-only session-start diagnostic tool now
+canonically placed at ty-ai-governance\tools\Pre-Flight.ps1. The
+tool reports ecosystem ground-truth state at session open: git
+state for the two local clones (ty-ai-governance, TYOVA), ledger-
+only state for SS321 (confirmed during this session to be Lovable-
+hosted with no local git clone), and ledger state parsed from the
+four canonical governance files (MASTER_FIX_INDEX, Ch18,
+SS321_FIX_INDEX, Ch26). Standalone tooling FIX outside Phase 8
+scope.
+
+This FIX is also the first governance record authored under the
+Timestamp Discipline rule locked earlier in this session (now
+memory entry #30). The rule: Claude must not guess, estimate, or
+infer timestamps for any governance record. Timestamps must be
+Builder-confirmed before any ledger write. The rule was locked
+after the Builder observed that prior FIX-188 entries (commit
+82439a2) contained estimated times: Time Open 09:25 PDT (actual
+09:16 PDT, off by nine minutes) and Time Close 11:00 PDT (never
+actually recorded, pure estimate). Those Entry-100 timestamps are
+left as committed rather than rewritten and force-pushed. The
+correction is documented in the FIX-189 MASTER_FIX_INDEX entry at
+line 5886 per Option 3 resolution. From Entry-101 forward, all
+governance timestamps are Builder-confirmed.
+
+The work itself was a live exercise of the Accuracy-First
+Principle (memory #28). First draft of Pre-Flight.ps1 failed
+live test on four issues. No commit was made. Recovery included
+deleting two stale files (REBASE_HEAD and ORIG_HEAD, both from
+2026-03-07, month-old leftovers from a completed rebase) from
+ty-ai-governance\.git\, then delivering v2 with four fixes:
+PowerShell 5.x syntax compatibility, rebase detection reworked to
+check rebase-merge and rebase-apply directories only, SS321
+moved from git-repo loop to a dedicated "Lovable-hosted, local
+ledger only" section, and Ch26 regex simplified. v2 second live
+test passed all four previously-broken outputs. Commit followed
+only after that verification. A fast-but-inaccurate tool would
+have compromised every future session that relied on it.
+
+**Scope:**
+- Pre-Flight.ps1 written to canonical tools path via
+  [System.IO.File]::WriteAllBytes byte-preserving copy from
+  work directory source. v2 source and canonical target both
+  15,741 bytes, 336 lines.
+- R3 verification passed (line and byte counts match single-byte
+  precision).
+- R12 S1 scan: zero em-dash double-encode hits, zero en-dash
+  double-encode hits. R12 S2 BOM check: NO BOM. Clean.
+- Stale file cleanup: deleted ty-ai-governance\.git\REBASE_HEAD
+  (41 bytes, 2026-03-07) and ty-ai-governance\.git\ORIG_HEAD
+  (41 bytes, 2026-03-07) after confirming they were leftovers
+  from a rebase that completed a month ago. git status and
+  git log confirmed repo state unaffected post-deletion.
+- Four v1 bugs identified and fixed in v2:
+  (1) PowerShell 5.x syntax incompatibility at line 159
+  (inline if expression); (2) rebase detection false positive
+  from stale REBASE_HEAD file alone; (3) SS321 flagged as
+  NOT A GIT REPOSITORY error when it is the correct state;
+  (4) Ch26 term-count regex did not match markdown pattern.
+- v2 live-test verification: ty-ai-governance HEAD 82439a2 and
+  TYOVA HEAD adec5de confirmed synced with origin. SS321 ledger
+  file confirmed 37,497 bytes / 996 lines. Ledger state parsing
+  confirmed FIX-188 at line 5792, Entry-100 at line 6051,
+  SS-FIX-089 at line 989, Ch26 term count 253 at line 8.
+- Scoped git add: single file (tools/Pre-Flight.ps1). No other
+  working-tree drift included.
+- Commit 7807ab2 signed "FIX-189 Pre-Flight.ps1 diagnostic tool
+  -- CLO-389 | Claude Opus 4.7 | 2026-04-19 | San Diego".
+- Pre-push secret scan against SS-FIX-085 canonical pattern set:
+  zero hits. Audit clean.
+- Pushed to origin/main. Local HEAD 7807ab2, Remote HEAD 7807ab2.
+- MASTER_FIX_INDEX FIX-189 entry written at line 5886 same session
+  per R14 and Ledger Rule 1.
+- This Ch18 Entry-101 written same session per R14.
+- Handoff notification: no new UI surface. Tool is command-line
+  only, invoked manually by Builder at session open via
+  `.\tools\Pre-Flight.ps1` from ty-ai-governance root.
+
+**Status:** COMPLETED
+**Time Open:** 2026-04-19 09:16 PDT (session start, Builder-confirmed)
+**Time Close:** 2026-04-19 12:32 PDT (Builder-confirmed)
