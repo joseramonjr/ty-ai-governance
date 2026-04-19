@@ -1,1 +1,37 @@
-﻿tools/Ch26_sync_output.txt
+tools/Ch26_sync_output.txt
+
+# --- Security hardening (added 2026-04-18) ---
+# Never commit credentials, secrets, or key files under any circumstances.
+# If you need to store secrets locally, put them in the quarantine folder:
+#   E:\TY-Ecosystem\_SECRETS_DO_NOT_COMMIT\
+# or use a password manager. Never place them inside any repo.
+
+# Plaintext key/secret notes (the specific incident pattern)
+book/key.txt
+book/key 1.txt
+book/key*.txt
+**/key.txt
+**/key*.txt
+
+# Credential file patterns (general protection)
+**/*.secret
+**/*.secrets
+**/*.pem
+**/*.key
+**/credentials
+**/credentials.*
+
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.sample
+**/.env
+**/.env.*
+
+# Editor and OS artifacts (minor hygiene)
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+~$*
