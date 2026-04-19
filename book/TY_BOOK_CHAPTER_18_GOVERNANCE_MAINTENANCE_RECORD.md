@@ -5971,3 +5971,79 @@ the lazy naming violates naming discipline.
 **Status:** PENDING
 **Time Open:** 2026-04-18 17:30 PDT
 **Time Close:** TBD
+
+### Entry-099 | FIX-187 | Ch18 | 2026-04-18 18:30 PDT | San Diego
+**Fix:** Write Book of TY Chapter 41 -- SS321 as Prior Art and First Origin
+**Destination:** ty-ai-os-bundle -- E:\TY-Ecosystem\ty-ai-governance\book\TY_BOOK_CHAPTER_41_SS321_AS_PRIOR_ART_AND_FIRST_ORIGIN.md
+**CLO:** CLO-387
+**Governance note.** This entry records the authorship and sealing of
+Book of TY Chapter 41, the canonical Prior Art Evidentiary Record for
+SS321 and TYOVA covering the window from the December 2, 2025
+conception of SilverSounds321 through the March 29, 2026 release of
+TY-0001.A. The chapter was written during a single Claude Opus 4.7
+session opened April 18, 2026 at 18:30 PDT and closed April 19, 2026
+at approximately 00:00 PDT. The session was conducted under a
+zero-fabrication governance rule declared by the Builder during the
+work: no fabrication, no filled-in gaps, no inferences treated as
+facts, every claim cites a primary source, unknowns remain declared as
+unknowns. The rule is now locked as standing governance for all future
+Book of TY chapter writing and all TY AI ecosystem documentation.
+
+The chapter occupies a niche that Chapters 24, 32, and 34 did not
+cover: the canonical prior-art evidentiary record drawing on the
+ChatGPT conversation archives for the December 2, 2025 to March 3,
+2026 window, extended into the post-archive window via sealed Book of
+TY chapters and canonical source files in the TY ecosystem
+repositories. The central prior-art anchor established by the chapter
+is the TYOVA Vercel deployment event on December 15, 2025 at 19:53
+PST San Diego time, reconstructed at minute precision from ChatGPT
+archive conv000 [33] (SilverSounds321 Part 10). Two additional
+cryptographic anchors are canonized: the governance hash
+cd7ef6c73e8050394bec5b0e0289238cd000d7c4ce133ec951653531356a6e09
+sealed March 13, 2026, and the TY-0001.A SHA-256
+3A6FAD0CA68C52DCBA3F3F264A5244A50B32399A263D9224D3D66AD739ADAA23
+released March 29, 2026 to the ty-ai-releases GitHub repository. The
+Vercel Project ID prj_hyoRVu913CvseEcShlOcrudxDRBL for the
+tyova-integrity-hub project was directly verified against the Vercel
+dashboard by Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+on 2026-04-18 at 21:35 PDT during the session.
+
+The chapter explicitly defers four categories of material to future
+chapters rather than fabricate or smooth them into this chapter: the
+competing USPTO Application No. 19/433,835 by Attested Intelligence
+Holdings LLC (discovered post-archive in April 2026), the Alloy
+Patent Law engagement and Walker Griffin Weitzel correspondence, the
+Rapacke Law Group consultation, and post-March 29, 2026 operational
+SS321 and TYOVA events (Stripe live mode, first real payment,
+hybrid 3-tier TY AI system, signed URL architecture, TYOVA LLC canon
+lock, April 18 Secret Rotation Incident). Each deferred category is
+named in the chapter so future canonical work is tracked rather than
+forgotten.
+
+**Scope:**
+- Audit of ChatGPT conversation archives (conversations-000.json and
+  conversations-001.json) covering 176 conversations, June 24, 2025
+  through March 3, 2026
+- Lovable read-only audit of TYOVA codebase across 3,608 files in
+  674 folders to locate three technical anchors
+- PowerShell filesystem search across E:\TY-Ecosystem\ locating
+  governance hash in 23 locations across 17 files and TY-0001.A
+  SHA-256 in 13 locations across 8 files
+- Direct Vercel dashboard verification of Project ID for
+  tyova-integrity-hub project
+- Draft of full 77,570-byte, 1,518-line chapter with 27 section
+  headers, minute-precision timeline reconstruction of the
+  December 15, 2025 deployment event, and extensive primary-source
+  citations throughout
+- Sandbox file generation with SHA-256 verification
+  3ba29a6b318360c03daa3298bba701169b2018e01ca4a6b56afca31c25eed9bf
+- File placement at canonical location with SHA-256 verified intact
+  post-transfer
+- MASTER_FIX_INDEX entry at line 5734 (FIX-187 entry)
+- This Ch18 Entry-099 written same session per R14
+- Session-close verification: S1 corruption clean, no BOM, byte and
+  line counts match expected
+
+**Status:** COMPLETED
+**Time Open:** 2026-04-18 18:30 PDT
+**Time Close:** 2026-04-19 00:00 PDT
