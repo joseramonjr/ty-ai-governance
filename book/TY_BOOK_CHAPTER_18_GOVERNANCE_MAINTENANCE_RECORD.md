@@ -6047,3 +6047,79 @@ forgotten.
 **Status:** COMPLETED
 **Time Open:** 2026-04-18 18:30 PDT
 **Time Close:** 2026-04-19 00:00 PDT
+
+### Entry-100 | FIX-188 | TYOVA | 2026-04-19 09:25 PDT | San Diego
+**Fix:** Chapter 41 Propagation to TYOVA
+**Destination:** TYOVA -- E:\TY-Ecosystem\TYOVA\src\data\bookChapterContent.ts, E:\TY-Ecosystem\TYOVA\src\pages\BookOfTyIndex.tsx, E:\TY-Ecosystem\TYOVA\src\pages\BookOfTyChapter.tsx
+**CLO:** CLO-388
+
+**Governance note.** This entry records the propagation of Book of TY
+Chapter 41 (SS321 as Prior Art and First Origin) from the
+ty-ai-governance repository to the TYOVA public-facing archive.
+Chapter 41 was authored and sealed yesterday under FIX-187 at commit
+2cbcc22 in ty-ai-governance. The Builder's standing governance rule
+requires that all sealed Book of TY chapters also appear in TYOVA,
+the canonical public-facing archive. A Lovable-only chapter workflow
+existed for Chapter 40 but Chapter 41 was authored directly in
+ty-ai-governance under the zero-fabrication rule locked yesterday,
+which required a different propagation path. This FIX closes that
+gap.
+
+The propagation is a structural port: the 77,570-byte, 1,518-line
+markdown source was translated into the structured TypeScript format
+established by Chapters 37 through 40 in bookChapterContent.ts.
+Every evidentiary anchor in the source was preserved verbatim:
+the governance hash cd7ef6c73e8050394bec5b0e0289238cd000d7c4ce133ec951653531356a6e09,
+the TY-0001.A SHA-256 integrity hash 3A6FAD0CA68C52DCBA3F3F264A5244A50B32399A263D9224D3D66AD739ADAA23,
+and the Vercel Project ID prj_hyoRVu913CvseEcShlOcrudxDRBL. The port
+preserved the source's 27 H2 sections, with section 41.23 split
+into two TypeScript sections to honor the ChapterSection interface's
+single listItems array constraint while preserving the eight
+December 15, 2025 evidentiary anchors as a proper bulleted list.
+
+This FIX is the first component fix of Phase 8 (TYOVA Documentation
+Integrity Audit), declared this session. Phase 8 follows a bounded-
+FIX discipline rather than a monolithic audit approach, honoring R2,
+R14, and Ledger Rule 1. Follow-on component fixes will address
+Book of TY drift audit (FIX-189, read-only), drift remediation
+(FIX-190), non-Book TYOVA surfaces inventory (FIX-191, read-only),
+and surface-by-surface remediation (FIX-192 onward). Pre-existing
+drift observed during FIX-188 execution but not remediated includes
+indentation inconsistency in the chapters[] array, Ch40 section
+numbering starting at 40.0 while Ch37-39 start at .1, Ch39 title
+mismatch between Index and Chapter record, and Phase 7 hero note
+not updated for Ch40 or Ch41. These are logged for FIX-189
+consideration rather than touched in this fix.
+
+**Scope:**
+- bookChapterContent.ts: inserted 41-keyed chapter object with title,
+  bookTitle, metadata, compiledNote, and 28 section objects before
+  closing brace of chapterContent export. Post-write 675,326 bytes,
+  7,141 lines, up from 590,846 bytes and 6,774 lines.
+- BookOfTyIndex.tsx: added Ch41 to chapters[] array, updated hero
+  prose and stats grid for new chapter counts (41 total, 37 sealed).
+  Post-write 9,652 bytes, 255 lines, up from 9,555 and 254.
+- BookOfTyChapter.tsx: added Ch41 entry to chapterTitles Record.
+  Post-write 11,245 bytes, 325 lines, up from 11,183 and 324.
+- R1/R3/R12/R13 discipline: all three writes executed via
+  [System.IO.File]::WriteAllText with UTF8Encoding constructed
+  false for no-BOM. Post-write verification passed: line and byte
+  counts matched single-byte precision, zero em-dash or en-dash
+  S1 corruption hits across all three files, zero BOM.
+- Scoped git add: only the three target files staged. Working-tree
+  drift preserved (package-lock.json, Fix-Bundle.ps1,
+  Fix-BundleCorruption.ps1, node_modules/) for future cleanup.
+- Pre-push secret scan against SS-FIX-085 canonical pattern set:
+  zero hits. Audit clean.
+- TYOVA commit adec5de pushed to origin/main. Local equals remote.
+  Lovable auto-deploy pipeline triggered by push.
+- MASTER_FIX_INDEX FIX-188 entry written at line 5792 same session
+  per R14 and Ledger Rule 1.
+- This Ch18 Entry-100 written same session per R14.
+- Handoff notification: new UI surface introduced at
+  /book/chapter-41. Builder to perform manual UI review after
+  Lovable deploy completes.
+
+**Status:** COMPLETED
+**Time Open:** 2026-04-19 09:25 PDT
+**Time Close:** 2026-04-19 11:00 PDT
