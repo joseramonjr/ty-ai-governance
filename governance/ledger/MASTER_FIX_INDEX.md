@@ -1,4 +1,4 @@
-# MASTER_FIX_INDEX
+﻿# MASTER_FIX_INDEX
 
 Status: Active
 
@@ -6082,3 +6082,29 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
 - Time Close: 2026-04-19 13:37 PDT (Builder-confirmed)
 - Session duration: 12 minutes
 - Also recorded in Ch18 Entry-102
+
+### FIX-191 | Ch18 Entry-103 | SS321 SS-FIX-087 Close (ATTEMPTED-ROLLED-BACK-DEFERRED) | 2026-04-21 09:08 PDT | San Diego
+- Destination: SS321 (Lovable-hosted)
+- Scope: Supabase JWT env-only single-source-of-truth refactor
+- Disposition: ATTEMPTED-ROLLED-BACK-DEFERRED
+- Summary: SS-FIX-087 attempted 2026-04-19 22:26 PDT. Lovable applied partial changes;
+  rollback initiated after scope and correctness concerns. Env-only refactor deferred to
+  future controlled session. Scope now extended to include .env:2 stale JWT correction
+  (iat: 1776103054) revealed by SS-FIX-090 V1-V9 audit. Canonical path correction locked:
+  src/system/env/supabaseConfig.ts (prior records incorrect). No live-site changes.
+  No functional regression.
+- CLO: CLO-391
+- Session model: Claude Opus 4.7
+
+### FIX-192 | Ch18 Entry-104 | SS321 SS-FIX-090 Close (CLOSED-PARTIAL) | 2026-04-21 09:08 PDT | San Diego
+- Destination: SS321 (Lovable-hosted)
+- Scope: Supabase JWT rotation — client.ts active path update
+- Disposition: CLOSED-PARTIAL (runtime-verified, env-sync-deferred)
+- Summary: client.ts:6 hardcoded literal updated to new JWT (iat: 1776553526). Runtime
+  verified GREEN via P1-P5 pre-publish audit, S1-S7 Stripe code readiness audit, V1-V9
+  structured source-of-truth audit, browser F12, Supabase dashboard, and Stripe dashboard.
+  Material discrepancy: Lovable self-reported .env:2 updated — V1-V9 audit found this false.
+  .env:2 still holds old JWT (iat: 1776103054). Active client path does not read .env;
+  stale value is dead weight, not functional risk. .env:2 sync deferred into SS-FIX-087 scope.
+- CLO: CLO-392
+- Session model: Claude Opus 4.7
