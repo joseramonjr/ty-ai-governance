@@ -6419,3 +6419,26 @@ Lovable observing calls from its own sandbox environment.
   tracks to tracks-private bucket until automated workflow built
 
 **No live-site regression introduced. All critical paths verified.**
+
+### Entry-106 | FIX-194 | SS321 | 2026-04-21 15:26 PDT | San Diego
+
+**Action:** SS-FIX-092 closed — Purchased badge added to all track
+card views.
+
+**Scope:** Three files changed: TrackCard.tsx (tile view),
+TrackListRow.tsx (list view), TrackDetailCard.tsx (detail view).
+Each received the same pattern: useQuery keyed by
+['purchase-date', track.id, user?.id] fetching purchased_at from
+the purchases table, rendered as a green Badge component showing
+'Purchased · MMM DD, YYYY' below the artist name.
+
+**Render guard:** badge only renders when user is authenticated AND
+access?.hasPurchased is true. Non-purchased tracks and logged-out
+users see no change.
+
+**Verification:** Confirmed in all three browse views in Lovable
+preview as regular user — 'My One and Only ver3 NEW UPDATED 7'
+shows 'Purchased · Apr 17, 2026' correctly in tile, list, and
+detail views.
+
+**Resolves SS321-FUTURE-003.**
