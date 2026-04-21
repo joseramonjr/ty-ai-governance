@@ -6129,3 +6129,19 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
   completed across all 7 items — all PASS.
 - CLO: CLO-393
 - Session model: Claude Sonnet 4.6
+
+### FIX-194 | Ch18 Entry-106 | SS321 SS-FIX-092 Close (CLOSED) | 2026-04-21 15:26 PDT | San Diego
+- Destination: SS321 (Lovable-hosted)
+- Scope: Purchased badge on track cards — all three browse views
+- Disposition: CLOSED
+- Summary: Added green 'Purchased · MMM DD, YYYY' badge to all three
+  track display components: TrackCard.tsx (tile view), TrackListRow.tsx
+  (list view), TrackDetailCard.tsx (detail view). Badge uses existing
+  useTrackAccess hasPurchased value plus a lightweight useQuery fetching
+  purchased_at from purchases table. Renders only when user is logged in
+  and has a completed purchase record for the track. Verified in all three
+  views in Lovable preview as regular user on 'My One and Only ver3 NEW
+  UPDATED 7' — badge shows 'Purchased · Apr 17, 2026' correctly.
+  Resolves SS321-FUTURE-003.
+- CLO: CLO-394
+- Session model: Claude Sonnet 4.6
