@@ -1,4 +1,4 @@
-# Chapter 18 -- The Governance Maintenance Record
+﻿# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current
@@ -6308,3 +6308,64 @@ timestamp correction.
 **Status:** COMPLETED
 **Time Open:** 2026-04-19 13:25 PDT (Builder-confirmed)
 **Time Close:** 2026-04-19 13:37 PDT (Builder-confirmed)
+
+### Entry-103 | FIX-191 | SS321 | 2026-04-21 09:08 PDT | San Diego
+
+**Action:** SS-FIX-087 closed as ATTEMPTED-ROLLED-BACK-DEFERRED.
+
+**Scope:** Supabase JWT env-only single-source-of-truth refactor. Attempted 2026-04-19
+22:26 PDT. Lovable-applied partial changes rolled back after scope and correctness concerns.
+Deferred to future controlled session. Scope extended to include .env:2 stale JWT correction
+(iat: 1776103054 to iat: 1776553526) revealed by SS-FIX-090 V1-V9 audit.
+
+**Canonical path correction locked:** src/system/env/supabaseConfig.ts
+(prior records incorrectly stated src/integrations/supabase/supabaseConfig.ts).
+
+**Session-Level Governance Finding — Evidence-First Rule (locked 2026-04-20 ~10:50 PDT):**
+Claude must gather all data from all relevant sources before making any decision,
+recommendation, or analysis. Decisions made without complete facts are wrong or will be
+wrong. Past session records from conversation history are primary-source evidence and must
+be folded into the evidence set.
+
+Case study — first post-lock application: SS-FIX-090 near-miss false-positive. Browser
+evidence (2xx everywhere) almost caused SS-FIX-090 to close as fully-applied. V1-V9
+structured source-of-truth audit revealed .env:2 was never updated despite Lovable's
+self-report. Runtime worked due to defensive fallback (hardcoded literal in client.ts),
+not because the declared fix had fully occurred. Evidence-First Rule caught the discrepancy
+and prevented a false governance close.
+
+**No live-site changes. No functional regression. No Supabase Dashboard state changes.**
+
+### Entry-104 | FIX-192 | SS321 | 2026-04-21 09:08 PDT | San Diego
+
+**Action:** SS-FIX-090 closed as CLOSED-PARTIAL (runtime-verified, env-sync-deferred).
+
+**Scope:** Supabase JWT rotation — client.ts active path update. New JWT (iat: 1776553526)
+applied to client.ts:6 hardcoded literal by Lovable.
+
+**Verification chain (2026-04-20 session):**
+- P1-P5 Pre-publish audit (Supabase/code): GREEN — active client uses new JWT; no .env
+  read in active path; critical paths (auth, Stripe edge functions, TY AI, RLS, Build Mode
+  gate) present and not stubbed
+- S1-S7 Stripe code readiness audit: GREEN — 7 edge functions deployed, webhook signature
+  verification implemented, redirect URLs dynamic from origin header, purchase recording
+  path uses service-role key correctly, signed-URL access control intact (B-SS321-001)
+- Browser F12: GREEN — 2xx on all Supabase calls, 101 on WebSocket
+- Supabase dashboard: GREEN — STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
+  PAYMENT_ENCRYPTION_KEY all present
+- Stripe dashboard: GREEN — live webhook active (SS321 Live Webhook), URL matches code,
+  1 real event processed successfully 2026-04-17, 0 failed deliveries this week
+
+**Material discrepancy documented:**
+Lovable self-reported .env:2 updated to new JWT. V1-V9 structured source-of-truth audit
+found this false. .env:2 still holds old JWT (iat: 1776103054). Active client path
+(client.ts) does not read .env — hardcoded literal is the operative value. Stale .env:2
+is architecturally dead weight, not functional risk. .env:2 sync deferred into SS-FIX-087
+scope.
+
+Second Lovable self-report inaccuracy this session: Lovable audit stated code listens for
+invoice.paid; Stripe dashboard subscribed to invoice.payment_succeeded. Likely
+transcription error, not code gap. Post-launch verification item.
+
+**No live-site changes. No Supabase Dashboard state changes. Publish not performed
+this session.**
