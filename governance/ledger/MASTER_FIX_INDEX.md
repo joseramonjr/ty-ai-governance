@@ -6108,3 +6108,24 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
   stale value is dead weight, not functional risk. .env:2 sync deferred into SS-FIX-087 scope.
 - CLO: CLO-392
 - Session model: Claude Opus 4.7
+
+### FIX-193 | Ch18 Entry-105 | SS321 SS-FIX-091 Close (CLOSED) | 2026-04-21 14:41 PDT | San Diego
+- Destination: SS321 (Lovable-hosted) + Supabase (database + storage)
+- Scope: Paid track access gate — full investigation and remediation
+- Disposition: CLOSED
+- Summary: Paid track 'My One and Only ver3 NEW UPDATED 7' discovered playing
+  in full for regular users during pre-launch audit. Root cause: audio file
+  stored in public tracks bucket instead of private tracks-private bucket.
+  File manually moved from tracks to tracks-private via Supabase Storage UI.
+  audio_url updated to bare path in tracks table (track ID ef8ef175-...).
+  Access gate confirmed working — regular user had completed purchase record
+  (purchases table, status: completed), explaining full playback access.
+  EditDraft.tsx fixed: uploadAudio (public bucket) replaced with
+  uploadAudioPrivate (private bucket) + separate audioPreviewUrl state
+  mirroring Upload.tsx pattern. vite.config.ts rollup type error fixed:
+  import type swapped from rollup to vite Rollup namespace.
+  Stripe origin verified via Stripe dashboard: success_url and cancel_url
+  both correctly point to testing.silversounds321.com. Pre-launch audit
+  completed across all 7 items — all PASS.
+- CLO: CLO-393
+- Session model: Claude Sonnet 4.6

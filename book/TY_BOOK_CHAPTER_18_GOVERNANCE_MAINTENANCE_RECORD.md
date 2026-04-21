@@ -6369,3 +6369,53 @@ transcription error, not code gap. Post-launch verification item.
 
 **No live-site changes. No Supabase Dashboard state changes. Publish not performed
 this session.**
+
+### Entry-105 | FIX-193 | SS321 | 2026-04-21 14:41 PDT | San Diego
+
+**Action:** SS-FIX-091 closed — paid track access gate investigation and
+full remediation.
+
+**Trigger:** Pre-launch audit revealed paid track 'My One and Only ver3
+NEW UPDATED 7' playing in full for regular users with no paywall enforcement.
+
+**Root cause:** Audio file stored in public tracks bucket
+(tracks/d883602b-.../0.32686880049635625.mp3) instead of private
+tracks-private bucket. The get-audio-url edge function and purchase gate
+were bypassed entirely — the client read audio_url directly from the
+tracks table, which pointed to a publicly accessible URL.
+
+**Remediation steps:**
+1. File downloaded from tracks public bucket
+2. File uploaded to tracks-private bucket (same path)
+3. File deleted from tracks public bucket
+4. audio_url updated to bare path in tracks table:
+   d883602b-da79-4fad-be93-6d84b2661b91/0.32686880049635625.mp3
+5. Access gate confirmed working: regular user had completed purchase
+   record (purchases table, status completed) — full playback was
+   legitimate, not a gate failure
+6. EditDraft.tsx fixed: uploadAudio (public) replaced with
+   uploadAudioPrivate (private) + audioPreviewUrl state added
+7. vite.config.ts rollup type error fixed: import type swapped from
+   rollup to vite Rollup namespace
+
+**Stripe origin verification:** Stripe dashboard confirmed success_url
+and cancel_url both point to https://testing.silversounds321.com.
+Lovable audit finding (HIGH concern) was a false positive caused by
+Lovable observing calls from its own sandbox environment.
+
+**Pre-launch audit results (all 7 items):**
+- Sign-out / sign-in: PASS
+- Search: PASS (two separate systems — TY AI docs + Browse catalog)
+- Library page: PASS
+- TY AI chat: PASS (no fabricated catalog content)
+- Voice button: PASS (present on live site)
+- Mobile layout (430px): PASS
+- Stripe origin: PASS
+
+**Post-launch items logged:**
+- SS321-FUTURE-003: Purchased badge on TrackCard for tracks with
+  completed purchase record
+- Free-to-paid track conversion requires manual file migration from
+  tracks to tracks-private bucket until automated workflow built
+
+**No live-site regression introduced. All critical paths verified.**
