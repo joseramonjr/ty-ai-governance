@@ -6542,3 +6542,42 @@ Buy Track button unchanged — always visible for paid tracks.
 - Toggle ON → Subscribe button appears on track detail page
 - Toggle OFF → Subscribe button hidden on track detail page
 - Buy Track button unaffected in both states
+
+### Entry-110 | FIX-198 | SS321 | 2026-04-21 23:04 PDT | San Diego
+
+**Action:** SS-FIX-096 closed — non-registered user access control.
+
+**Policy locked:**
+- Non-registered users: free tracks limited to 20s preview only;
+  paid tracks completely locked (no preview)
+- Registered users: free tracks play in full; paid tracks require
+  purchase (30s preview available)
+- Download control: unchanged, per track is_downloadable flag
+
+**Six files changed:**
+
+accessControl.ts: canListenToTrack now requires isAuthenticated === true
+for free tracks. canPreviewTrack returns true for guests on free tracks
+(enabling 20s preview), false for guests on paid tracks.
+
+PlayerContext.tsx: TrackMeta interface extended with is_free_preview
+boolean. onTimeUpdate preview enforcement condition changed from
+meta.is_paid to (meta.is_paid || meta.is_free_preview) so free track
+previews also trigger the pause/reset enforcement.
+
+TrackCard.tsx, TrackListRow.tsx, TrackDetailCard.tsx: !!user passed
+as isAuthenticated to both access control functions. Preview branch
+playTrack call uses conditional meta — free tracks get
+{is_paid: false, is_free_preview: true, preview_duration: 20,
+userHasAccess: false}; paid tracks keep existing behavior.
+
+GlobalAudioPlayer.tsx: useAuthContext imported and user destructured.
+Toast useEffect expanded to three branches: non-authenticated user
+sees 'Preview ended — register to listen to [title] in full.';
+authenticated unpurchased user sees purchase prompt with remaining
+preview count; zero remaining shows final no-more-previews message.
+
+**Verified on live site (non-registered user):**
+- Free track plays 20s then stops
+- Toast: 'Preview ended — register to listen in full'
+- Paid track fully locked, no play button
