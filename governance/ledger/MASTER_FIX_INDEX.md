@@ -6180,3 +6180,18 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
   top-center with remaining preview count.
 - CLO: CLO-396
 - Session model: Claude Sonnet 4.6
+
+### FIX-197 | Ch18 Entry-109 | SS321 SS-FIX-095 Close (CLOSED) | 2026-04-21 22:06 PDT | San Diego
+- Destination: SS321 (Lovable-hosted)
+- Scope: Artist subscription toggle — Upload, EditDraft, TrackPaywallCard
+- Disposition: CLOSED
+- Summary: Added per-artist subscription enable/disable toggle to
+  Upload.tsx and EditDraft.tsx Monetization sections. Toggle reads
+  and upserts artist_settings.subscription_enabled via Supabase.
+  TrackPaywallCard.tsx updated to read useArtistSettings(track.artist_id)
+  and conditionally render Subscribe button only when subscription_enabled
+  is true. artist_settings table already had subscription_enabled column.
+  No artist_settings row existed for artist — upsert creates it on first
+  toggle. Verified: toggle ON shows Subscribe button, toggle OFF hides it.
+- CLO: CLO-397
+- Session model: Claude Sonnet 4.6
