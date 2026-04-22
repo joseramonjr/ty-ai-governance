@@ -6161,3 +6161,22 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
   Verified: \.50 checkout opened successfully on live site after fixes.
 - CLO: CLO-395
 - Session model: Claude Sonnet 4.6
+
+### FIX-196 | Ch18 Entry-108 | SS321 SS-FIX-094 Close (CLOSED) | 2026-04-21 19:38 PDT | San Diego
+- Destination: SS321 (Lovable-hosted)
+- Scope: Preview play counter + end-of-preview toast + TrackCard preview
+  playback + get-audio-url preview support + toast positioning
+- Disposition: CLOSED
+- Summary: Five related fixes. (1) get-audio-url edge function updated to
+  return signed URL with preview_duration and is_preview flags for unpurchased
+  paid tracks with preview_duration > 0, instead of throwing Purchase required.
+  (2) TrackCard.tsx updated with three-way canListen/canPreview/locked logic
+  mirroring TrackListRow and TrackDetailCard. (3) PlayerContext.tsx added
+  session-scoped previewCounts state tracking preview plays per track.
+  (4) GlobalAudioPlayer.tsx added useEffect firing sonner toast on previewEnded
+  with remaining preview count (max 5, resets on refresh). (5) App.tsx Sonner
+  position changed from default bottom-right to top-center for visibility.
+  Verified: ver4 and ver5 play 30s preview on all pages, toast appears
+  top-center with remaining preview count.
+- CLO: CLO-396
+- Session model: Claude Sonnet 4.6

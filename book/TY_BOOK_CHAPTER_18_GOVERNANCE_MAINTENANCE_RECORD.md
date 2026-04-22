@@ -6472,3 +6472,42 @@ updated to '0.50'. Helper text added: 'Minimum price is \.50
 
 **Verified:** \.50 Stripe checkout opened successfully on live
 site after all three fixes applied.
+
+### Entry-108 | FIX-196 | SS321 | 2026-04-21 19:38 PDT | San Diego
+
+**Action:** SS-FIX-094 closed — preview playback, counter, and toast
+notification system.
+
+**Trigger:** Paid tracks ver4 and ver5 not playing preview on landing
+page cards. Track detail page play button not working for unpurchased
+paid tracks.
+
+**Fix 1 — get-audio-url edge function:**
+Function was throwing Purchase required for all unpurchased paid tracks,
+blocking even preview playback. Updated to check preview_duration — if
+> 0, returns signed URL with is_preview: true and preview_duration in
+response. Preview enforcement remains client-side in PlayerContext.
+
+**Fix 2 — TrackCard.tsx preview overlay:**
+Added three-way logic: canListen (full play) / canPreview (30s preview
+with slightly dimmed purple button) / locked (lock icon). Mirrors
+pattern already in TrackListRow and TrackDetailCard.
+
+**Fix 3 — PlayerContext.tsx preview counter:**
+Added previewCounts state (Record<string, number>) tracking how many
+times each track has been previewed this session. Counter increments
+each time preview enforcement triggers. Resets on page refresh.
+No database writes.
+
+**Fix 4 — GlobalAudioPlayer.tsx toast:**
+Added useEffect watching previewEnded. Fires sonner toast showing
+track title and remaining previews (max 5). Message:
+'Preview ended — purchase [title] to listen in full. X previews remaining.'
+
+**Fix 5 — App.tsx toast position:**
+Sonner Toaster position changed from default (bottom-right) to
+top-center for better visibility.
+
+**Verified:** ver4 and ver5 play 30-second preview on landing page,
+Browse, and track detail page. Toast appears top-center with correct
+remaining preview count.
