@@ -6195,3 +6195,25 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
   toggle. Verified: toggle ON shows Subscribe button, toggle OFF hides it.
 - CLO: CLO-397
 - Session model: Claude Sonnet 4.6
+
+### FIX-198 | Ch18 Entry-110 | SS321 SS-FIX-096 Close (CLOSED) | 2026-04-21 23:04 PDT | San Diego
+- Destination: SS321 (Lovable-hosted)
+- Scope: Non-registered user access control — free track 20s preview,
+  paid track full lock
+- Disposition: CLOSED
+- Summary: Six files updated. accessControl.ts canListenToTrack and
+  canPreviewTrack updated with isAuthenticated parameter — free tracks
+  require auth for full listen, guests get 20s preview only. Paid tracks
+  completely locked for non-registered users (no preview). PlayerContext.tsx
+  TrackMeta interface extended with is_free_preview flag; onTimeUpdate
+  preview enforcement expanded to trigger on free preview tracks.
+  TrackCard.tsx, TrackListRow.tsx, TrackDetailCard.tsx all updated to
+  pass !!user to access control functions and use free-preview meta
+  (preview_duration: 20) for unauthenticated free track plays.
+  GlobalAudioPlayer.tsx toast updated with three branches: guest sees
+  register message, authenticated unpurchased sees purchase+count message,
+  no-previews-remaining sees final message.
+  Verified: free tracks preview 20s for guests with correct toast,
+  paid tracks fully locked for guests.
+- CLO: CLO-398
+- Session model: Claude Sonnet 4.6
