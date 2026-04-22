@@ -6511,3 +6511,34 @@ top-center for better visibility.
 **Verified:** ver4 and ver5 play 30-second preview on landing page,
 Browse, and track detail page. Toast appears top-center with correct
 remaining preview count.
+
+### Entry-109 | FIX-197 | SS321 | 2026-04-21 22:06 PDT | San Diego
+
+**Action:** SS-FIX-095 closed — artist subscription toggle added.
+
+**Scope:** Three files changed: Upload.tsx, EditDraft.tsx,
+TrackPaywallCard.tsx.
+
+**Context:** Subscribe button on TrackPaywallCard was always visible
+for paid tracks regardless of whether the artist wanted to offer
+subscriptions. artist_settings table had subscription_enabled column
+but it was never read or written by the UI.
+
+**Upload.tsx and EditDraft.tsx changes:**
+Added subscriptionEnabled state (default false). Added useEffect
+on mount to fetch current artist_settings.subscription_enabled for
+logged-in user. Added handleSubscriptionToggle handler that upserts
+artist_settings with onConflict: artist_id. Added toggle UI in
+Monetization card after Allow Listening toggle with helper text:
+'Let fans subscribe monthly to access all your paid tracks.'
+
+**TrackPaywallCard.tsx changes:**
+Added useArtistSettings(track.artist_id, false) hook call.
+Derived subscriptionEnabled from artistSettings?.subscription_enabled ?? false.
+Wrapped Subscribe button in {subscriptionEnabled && (...)} conditional.
+Buy Track button unchanged — always visible for paid tracks.
+
+**Verified:**
+- Toggle ON → Subscribe button appears on track detail page
+- Toggle OFF → Subscribe button hidden on track detail page
+- Buy Track button unaffected in both states
