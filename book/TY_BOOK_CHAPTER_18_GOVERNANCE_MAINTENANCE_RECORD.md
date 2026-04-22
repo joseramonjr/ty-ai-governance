@@ -6442,3 +6442,33 @@ shows 'Purchased · Apr 17, 2026' correctly in tile, list, and
 detail views.
 
 **Resolves SS321-FUTURE-003.**
+
+### Entry-107 | FIX-195 | SS321 | 2026-04-21 18:02 PDT | San Diego
+
+**Action:** SS-FIX-093 closed — three related price and checkout fixes.
+
+**Fix 1 — TrackPaywallCard price fallback:**
+product_catalog table is empty. Previous code fell back to
+hardcoded default_price_cents (100 cents / \.00) for all tracks.
+Updated fallback logic: track.price converted to cents via
+Math.round(track.price * 100) is now used as secondary fallback
+before the hardcoded default. Applied to both handlePurchase and
+display price calculation (lines 38 and 70).
+
+**Fix 2 — create-checkout edge function upsert:**
+Purchases table has unique constraint on (user_id, track_id).
+When user cancelled Stripe checkout and retried, the pending
+purchase record from the first attempt caused a duplicate key
+error on the second attempt. Changed .insert() to .upsert()
+with onConflict: 'user_id,track_id' to overwrite stale pending
+records automatically. Stale pending records cleaned from
+purchases table before deployment.
+
+**Fix 3 — Minimum price validation:**
+Stripe requires minimum charge of \.50 USD. Added min='0.50'
+to price input in Upload.tsx and EditDraft.tsx. Placeholder
+updated to '0.50'. Helper text added: 'Minimum price is \.50
+(Stripe requirement)'.
+
+**Verified:** \.50 Stripe checkout opened successfully on live
+site after all three fixes applied.
