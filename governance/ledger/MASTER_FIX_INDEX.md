@@ -6145,3 +6145,19 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
   Resolves SS321-FUTURE-003.
 - CLO: CLO-394
 - Session model: Claude Sonnet 4.6
+
+### FIX-195 | Ch18 Entry-107 | SS321 SS-FIX-093 Close (CLOSED) | 2026-04-21 18:02 PDT | San Diego
+- Destination: SS321 (Lovable-hosted) + Supabase edge function
+- Scope: Track price fallback fix + Stripe minimum enforcement + upsert fix
+- Disposition: CLOSED
+- Summary: Three related fixes in one session. (1) TrackPaywallCard.tsx
+  price fallback updated — was using hardcoded default_price_cents (\.00)
+  when product_catalog is empty; now falls back to track.price converted
+  to cents. (2) create-checkout edge function changed from insert to upsert
+  on purchases table to handle cancel-and-retry without duplicate key
+  constraint violation. Stale pending records cleaned from purchases table.
+  (3) Minimum price validation added to Upload.tsx and EditDraft.tsx —
+  min='0.50' with helper text 'Minimum price is \.50 (Stripe requirement)'.
+  Verified: \.50 checkout opened successfully on live site after fixes.
+- CLO: CLO-395
+- Session model: Claude Sonnet 4.6
