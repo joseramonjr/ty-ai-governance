@@ -6759,3 +6759,15 @@ Resume (togglePlay), Repeat Execute (toggleRepeat), Ordered Play All
 (playQueue 50 tracks asc). ChatProcessResult type extended. currentTrack
 passed into processMessage. All 9 verification tests passed.
 Files: ty-ai-chat.ts, useTYAIChatProcessor.ts, TYAIPanelContainer.tsx.
+
+Entry-150 | FIX-238 | CLO-438 | 2026-04-25 15:15 PDT
+SS-FIX-136 CLOSED — TY AI lyric-phrase search. Tier 0 handler at top
+of processor detects lyric-search intent, extracts phrase, calls
+search-tracks-semantic, returns top result with confirmation prompt.
+useTYAIChatProcessor.ts only.
+
+Entry-151 | FIX-239 | CLO-439 | 2026-04-25 15:15 PDT
+SS-FIX-137 CLOSED — TY AI confirm-play handler. Two patches. Final:
+lastLyricResultRef stores result at search time; confirm-play reads
+ref directly bypassing stale closure. 'yes play it' → correct track
+plays. useTYAIChatProcessor.ts only.

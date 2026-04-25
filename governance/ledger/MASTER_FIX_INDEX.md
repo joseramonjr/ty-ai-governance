@@ -6447,3 +6447,18 @@ currentTrack now passed into processMessage. All 9 verification tests
 passed. Files: src/types/ty-ai-chat.ts, src/hooks/ty-ai-chat/
 useTYAIChatProcessor.ts, src/components/ty-ai-chat/
 TYAIPanelContainer.tsx. CLOSED.
+
+FIX-238 | CLO-438 | SS-FIX-136 | 2026-04-25 15:15 PDT
+SS321 — TY AI lyric-phrase search handler. New Tier 0 handler added
+at top of useTYAIChatProcessor.ts (before Browse-navigation KB entry).
+Detects lyric-search intent patterns, extracts phrase, calls
+search-tracks-semantic edge function, returns top result with
+confirmation prompt. Single file: useTYAIChatProcessor.ts. CLOSED.
+
+FIX-239 | CLO-439 | SS-FIX-137 | 2026-04-25 15:15 PDT
+SS321 — TY AI confirm-play handler (two patches). Patch 1: re-ran
+search from prior user lyric message (failed — stale closure on
+recentMessages). Patch 2: added lastLyricResultRef to store search
+result at hit time; confirm-play reads ref directly (bypasses stale
+closure). User says 'yes play it' → player starts correct track.
+All sequences verified. Single file: useTYAIChatProcessor.ts. CLOSED.
