@@ -6412,3 +6412,12 @@ questions now return correct KB answer (verified). Shuffle and Play
 All HOW questions still intercepted by Tier 0 handler before KB
 lookup — to be resolved in SS-FIX-133.
 src/ty-ai/TYAISS321Knowledge.ts only. CLOSED.
+
+FIX-235 | CLO-435 | SS-FIX-133 | 2026-04-25 13:13 PDT
+SS321 — TY AI handler fixes: three Tier 0 guards added to
+useTYAIChatProcessor.ts immediately before isShuffleRequest block.
+Fix A: Shuffle HOW-question guard returns instructional answer instead
+of triggering TY Radio. Fix B: Play All HOW-question guard returns
+instructional answer. Fix C: Repeat command handler returns instructional
+response pointing to mini player Repeat button. All 9 verification
+tests passed. src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only. CLOSED.
