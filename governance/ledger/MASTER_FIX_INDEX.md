@@ -6217,3 +6217,184 @@ SS321_FIX_INDEX.md with a clear provenance note at that time.
   paid tracks fully locked for guests.
 - CLO: CLO-398
 - Session model: Claude Sonnet 4.6
+
+FIX-199 | CLO-399 | SS-FIX-097 | 2026-04-22 10:27 PDT
+SS321 — Registered missing /profile/:userId/taste-map route in App.tsx. Added lazy import and explicit Route block for UserTasteMap component. View Full Taste Map button no longer 404s. CLOSED.
+
+FIX-200 | CLO-400 | SS-FIX-098 | 2026-04-22 10:27 PDT
+SS321 — Replaced Math.random() placeholder fallback in TasteWheel.tsx with honest empty state. Radar chart hidden when taste_graph_nodes has no data. Listening data is building message shown instead. CLOSED.
+
+FIX-201 | CLO-401 | SS-FIX-099 | 2026-04-22 10:27 PDT
+SS321 — Removed duplicate BackButton from UserTasteMap.tsx header row. Removed unused import. PageWrapper-provided Back button is sole navigation element. CLOSED.
+
+FIX-202 | CLO-402 | SS-FIX-100 | 2026-04-23 10:15 PDT
+SS321 — Added missing Library and My Tracks links to mobile nav Library section in Header.tsx. Mobile nav Library section now has parity with desktop dropdown. CLOSED.
+
+FIX-203 | CLO-403 | SS-FIX-102 | 2026-04-23 12:54 PDT
+SS321 — Guest paid track preview fully enabled. Changes across: accessControl.ts
+(removed isAuthenticated gate on canPreviewTrack), TrackCard.tsx (real is_paid /
+preview_duration in preview meta), storage.ts (getAudioUrl returns full response
+object), PlayerContext.tsx (propagate preview meta from edge response at all 4
+call sites, sync autoplay unlock added to playTrack), get-audio-url edge function
+(null-user guest detection replacing authHeader check, bucket-aware signed URL
+resolution for both guest and authenticated preview branches). CLOSED.
+
+FIX-204 | CLO-404 | SS-FIX-101 | 2026-04-23 13:25 PDT
+SS321 — Track card preview button now toggles play/pause correctly for guests.
+Added togglePlay to usePlayer destructure, Pause icon to lucide-react import,
+and wired isActive (not isActivelyPlaying) as click condition so paused tracks
+resume from position instead of restarting. Icon swap uses isActivelyPlaying.
+TrackCard.tsx only. CLOSED.
+
+FIX-205 | CLO-405 | SS-FIX-103 | 2026-04-23 13:45 PDT
+SS321 — Guest preview-end toast replaced with modal popup. Modal shows
+"Enjoying the music?" with Create Account / Log In / Maybe later CTAs.
+X close button added. Cadence gate: shows on 1st preview end then every
+5th thereafter using previewCounts total. GlobalAudioPlayer.tsx only. CLOSED.
+
+FIX-206 | CLO-406 | SS-FIX-104 | 2026-04-23 14:27 PDT
+SS321 — Buy Track button on TrackCard now invokes Stripe checkout directly
+via createTrackCheckout. Guests redirected to /auth. Logged-in users get
+Stripe checkout in new tab. Loading state added. TrackCard.tsx only. CLOSED.
+
+FIX-207 | CLO-407 | SS-FIX-105 | 2026-04-23 14:27 PDT
+SS321 — Buy button z-index raised (relative z-10) and Buy row container
+click propagation stopped to prevent title Link intercepting tap on mobile.
+TrackCard.tsx only. CLOSED.
+
+FIX-208 | CLO-408 | SS-FIX-106 | 2026-04-23 14:27 PDT
+SS321 — Stripe Checkout now shows real track title and artist display name
+instead of hardcoded "Track Purchase" + UUID. Track metadata fetched from
+Supabase before session creation. 404 guard added. create-checkout edge
+function only. CLOSED.
+
+FIX-209 | CLO-409 | SS-FIX-107 | 2026-04-23 19:25 PDT
+SS321 — Direct Stripe checkout applied to TrackListRow.tsx and
+TrackDetailCard.tsx. Both Buy buttons now invoke createTrackCheckout
+directly. Guests redirected to /auth. Loading state added. CLOSED.
+
+FIX-210 | CLO-410 | SS-FIX-108 | 2026-04-23 19:25 PDT
+SS321 — Replaced Free Only toggle with All / Free / Paid 3-state segmented
+control in FilterBar.tsx. Paid filter now reachable from UI. Underlying
+tri-state logic in useBrowseFilters and useInfiniteTracks unchanged. CLOSED.
+
+FIX-211 | CLO-411 | SS-FIX-109 | 2026-04-23 20:16 PDT
+SS321 — Auto-populate title from audio filename on upload. Derives clean
+title from filename (strip extension, replace dashes/underscores, capitalize).
+Only fills when title field is empty. Upload.tsx only. CLOSED.
+
+FIX-212 | CLO-412 | SS-FIX-110 | 2026-04-23 20:16 PDT
+SS321 — Country field on Upload page now pre-fills from user profile.
+useEffect fetches profiles.country on mount. Only fills when field is empty.
+Upload.tsx only. CLOSED.
+
+FIX-213 | CLO-413 | SS-FIX-111 | 2026-04-23 20:16 PDT
+SS321 — Working clear/remove buttons for audio and album art on Upload page.
+onClear callback added to FileUpload.tsx. handleClearAudio resets audio
+state and title. handleClearAlbumArt resets album art state. CLOSED.
+
+FIX-214 | CLO-414 | SS-FIX-112 | 2026-04-23 21:14 PDT
+SS321 — Added direct Edit button (Pencil icon) for track owners on TrackCard
+and TrackListRow. isOwner derived internally via useAuthContext so Edit/Delete
+controls appear on Browse, Library, Profile for owner's tracks. Non-owners
+unaffected. View Track tooltip deferred (SS321-FUTURE-004). CLOSED.
+
+FIX-215 | CLO-415 | SS-FIX-113 | 2026-04-24 13:18 PDT
+SS321 — Added Purchases as 4th tab in Library page. Reuses usePurchases
+hook and PurchaseCard component. grid-cols-3 changed to grid-cols-4.
+Library.tsx only. CLOSED.
+
+FIX-216 | CLO-416 | SS-FIX-114 | 2026-04-24 13:18 PDT
+SS321 — Added Remove button for pending purchases in PurchaseCard.tsx.
+Deletes row via Supabase, invalidates query. RLS DELETE policy added to
+purchases table (auth.uid()=user_id AND status='pending'). CLOSED.
+
+FIX-217 | CLO-417 | SS-FIX-115 | 2026-04-24 13:18 PDT
+SS321 — Fixed create-purchase-snapshot edge function: bucket-aware download
+(tracks-private first, public tracks fallback), dynamic extension/content-type.
+Retroactive snapshot recovery for ver4 purchase confirmed. CLOSED.
+
+FIX-218 | CLO-418 | SS-FIX-116 | 2026-04-24 13:18 PDT
+SS321 — Library tab selection persists via localStorage (ss321-library-tab).
+Controlled Tabs component replaces defaultValue. Library.tsx only. CLOSED.
+
+FIX-219 | CLO-419 | SS-FIX-117 | 2026-04-24 13:18 PDT
+SS321 — Added LikeButton and ShareMenu to TrackListRow.tsx actions section.
+TrackListRow.tsx only. CLOSED.
+
+FIX-220 | CLO-420 | SS-FIX-118 | 2026-04-24 13:18 PDT
+SS321 — Full parity additions to TrackListRow.tsx: clickable title link,
+follower count + Follow button, duration, upload date, Add to Queue,
+Now Playing pill, active-state ring. TrackListRow.tsx only. CLOSED.
+
+FIX-221 | CLO-421 | SS-FIX-119 | 2026-04-24 13:18 PDT
+SS321 — Full parity additions to TrackDetailCard.tsx: LikeButton, ShareMenu,
+Edit button, Add to Queue, follower count + Follow button, play count,
+duration, upload date, active ring, clickable title. TrackDetailCard.tsx only.
+CLOSED.
+
+FIX-222 | CLO-422 | SS-FIX-120 | 2026-04-24 13:46 PDT
+SS321 — Added License: prefix to license_type badge in TrackDetailCard.tsx.
+Badge color changed to neon-blue semantic token to distinguish from mood
+badges. TrackDetailCard.tsx only. CLOSED.
+
+FIX-223 | CLO-423 | SS-FIX-121 | 2026-04-24 14:48 PDT
+SS321 — Header search wired to real music search via useSearch hook and
+search_tracks RPC. Popular searches updated to music-relevant terms.
+CommandItem value props added to fix cmdk empty state bug. Two files:
+SearchEngine.ts and SearchCommand.tsx. CLOSED.
+
+FIX-224 | CLO-424 | SS-FIX-122 | 2026-04-24 15:29 PDT
+SS321 — Added Revenue button to Artist Dashboard Quick Actions row.
+Links to /dashboard/revenue. DollarSign icon added to imports.
+Dashboard.tsx only. CLOSED.
+
+FIX-225 | CLO-425 | SS-FIX-123 | 2026-04-24 18:23 PDT
+SS321 — Added Support link to guest-visible nav on desktop and mobile.
+Placed between About and TY AI in both desktop nav and mobile slide-in.
+HelpCircle icon used. Header.tsx only. CLOSED.
+
+FIX-226 | CLO-426 | SS-FIX-124 | 2026-04-24 20:05 PDT
+SS321 — Fixed Footer.tsx: Profile link fallback changed from /browse to
+/auth for guests. Support mailto updated with pre-filled subject and body
+matching Support page template. Footer.tsx only. CLOSED.
+
+FIX-227 | CLO-427 | SS-FIX-125 | 2026-04-24 22:02 PDT
+SS321 — Added resetPreviewEnded to PlayerContext interface, callback, and
+provider value. GlobalAudioPlayer reverted to post-SS-FIX-103 working state
+after failed modal positioning attempts. Modal confirmed working on mobile.
+Modal position deferred as SS321-FUTURE-008. CLOSED.
+
+FIX-228 | CLO-428 | SS-FIX-126 | 2026-04-25 11:50 PDT
+SS321 — TrackListRow.tsx mobile responsive two-row layout. Added flex-wrap
+sm:flex-nowrap to outer row, w-full sm:w-auto to title column, w-full sm:w-auto
+justify-end to actions cluster. Title now full-width on mobile portrait, badges
+and actions wrap to second line. Desktop layout unchanged.
+src/components/browse/TrackListRow.tsx only. CLOSED.
+
+FIX-229 | CLO-429 | SS-FIX-127 | 2026-04-25 11:50 PDT
+SS321 — Footer pb-24 added to outermost footer container so TY AI floating
+buttons no longer overlap footer content on any page.
+src/components/Footer.tsx only. CLOSED.
+
+FIX-230 | CLO-430 | SS-FIX-128 | 2026-04-25 11:50 PDT
+SS321 — AudioFormatBadge light/dark theme-aware colors. WAV badge shows green
+in light mode and gold in dark mode. MP3 badge shows blue in light mode and
+cyan in dark mode. Verified on both modes.
+src/components/track/AudioFormatBadge.tsx only. CLOSED.
+
+FIX-231 | CLO-431 | SS-FIX-129 | 2026-04-25 11:50 PDT
+SS321 — PlayAllButton reusable component added to multi-track pages. New
+component src/components/PlayAllButton.tsx uses playQueue to play all
+currently loaded tracks starting from index 0. Integrated on Browse page next
+to results count, Library Liked tab, and My Tracks page. Returns null when
+zero tracks. Verified working on all three locations.
+Files: src/components/PlayAllButton.tsx (new), src/pages/Browse.tsx,
+src/pages/Library.tsx, src/pages/artist/MyTracks.tsx. CLOSED.
+
+FIX-232 | CLO-432 | SS-FIX-130 | 2026-04-25 11:50 PDT
+SS321 — 3-state Repeat button added to mini player (GlobalAudioPlayer).
+Cycles none to all to one matching Spotify pattern. Repeat state managed in
+PlayerContext. Verified working.
+Files: src/contexts/PlayerContext.tsx, src/components/GlobalAudioPlayer.tsx.
+CLOSED.
