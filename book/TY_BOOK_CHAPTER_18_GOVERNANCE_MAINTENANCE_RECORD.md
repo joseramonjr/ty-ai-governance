@@ -6731,3 +6731,9 @@ Entry-145 | FIX-233 | CLO-433 | 2026-04-25 11:50 PDT
 SS-FIX-131 NO-OP CLOSED — About page TYOVA link audit only. href on
 src/pages/About.tsx line 126 already https://tyova.ai. Link text on line 131.
 No change applied. No file modifications.
+
+Entry-146 | FIX-234 | CLO-434 | 2026-04-25 13:00 PDT
+SS-FIX-132 CLOSED — TY AI KB entries added for Shuffle, Repeat, and
+Play All. Repeat HOW questions verified working. Shuffle and Play All
+HOW questions blocked by Tier 0 handler priority — SS-FIX-133 to fix.
+src/ty-ai/TYAISS321Knowledge.ts only.

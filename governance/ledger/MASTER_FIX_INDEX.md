@@ -6404,3 +6404,11 @@ SS321 — About page TYOVA link audit. Read-only audit confirmed current href on
 src/pages/About.tsx line 126 is already https://tyova.ai. Link text "Learn
 more about TY AI OS at TYOVA →" on line 131. No change required. No file
 modifications. NO-OP CLOSED.
+
+FIX-234 | CLO-434 | SS-FIX-132 | 2026-04-25 13:00 PDT
+SS321 — TY AI KB: added Shuffle, Repeat, and Play All entries to
+TYAISS321Knowledge.ts immediately after Queue entry. Repeat HOW
+questions now return correct KB answer (verified). Shuffle and Play
+All HOW questions still intercepted by Tier 0 handler before KB
+lookup — to be resolved in SS-FIX-133.
+src/ty-ai/TYAISS321Knowledge.ts only. CLOSED.
