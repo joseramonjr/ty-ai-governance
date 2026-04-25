@@ -6462,3 +6462,13 @@ recentMessages). Patch 2: added lastLyricResultRef to store search
 result at hit time; confirm-play reads ref directly (bypasses stale
 closure). User says 'yes play it' → player starts correct track.
 All sequences verified. Single file: useTYAIChatProcessor.ts. CLOSED.
+
+FIX-240 | CLO-440 | SS-FIX-138 | 2026-04-25 15:42 PDT
+SS321 — Claude/Anthropic disclosure added to two user-facing pages.
+About page: disclosure paragraph added to "Powered by TY AI" section.
+TY AI page: disclosure sentence added to "Governed by Design" card.
+Text: "TY AI's conversational reasoning is powered by Claude,
+Anthropic's AI model. TY AI OS governs how Claude operates within
+SilverSounds321 — defining what it can do, when it can act, and
+ensuring humans remain in control." Verified live on both pages.
+Files: src/pages/About.tsx, src/pages/TyAi.tsx. CLOSED.

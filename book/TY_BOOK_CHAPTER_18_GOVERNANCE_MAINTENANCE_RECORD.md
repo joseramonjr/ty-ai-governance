@@ -6771,3 +6771,9 @@ SS-FIX-137 CLOSED — TY AI confirm-play handler. Two patches. Final:
 lastLyricResultRef stores result at search time; confirm-play reads
 ref directly bypassing stale closure. 'yes play it' → correct track
 plays. useTYAIChatProcessor.ts only.
+
+Entry-152 | FIX-240 | CLO-440 | 2026-04-25 15:42 PDT
+SS-FIX-138 CLOSED — Claude/Anthropic disclosure added to About page
+(Powered by TY AI section) and TY AI page (Governed by Design card).
+Matches transparency doctrine. Legal pages already disclosed;
+user-facing pages now consistent. src/pages/About.tsx, TyAi.tsx.
