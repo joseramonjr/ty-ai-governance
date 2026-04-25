@@ -6737,3 +6737,9 @@ SS-FIX-132 CLOSED — TY AI KB entries added for Shuffle, Repeat, and
 Play All. Repeat HOW questions verified working. Shuffle and Play All
 HOW questions blocked by Tier 0 handler priority — SS-FIX-133 to fix.
 src/ty-ai/TYAISS321Knowledge.ts only.
+
+Entry-147 | FIX-235 | CLO-435 | 2026-04-25 13:13 PDT
+SS-FIX-133 CLOSED — TY AI handler fixes. Three Tier 0 guards added to
+useTYAIChatProcessor.ts: Shuffle HOW-question guard, Play All HOW-question
+guard, Repeat command handler. All 9 verification tests passed.
+src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only.
