@@ -6421,3 +6421,15 @@ of triggering TY Radio. Fix B: Play All HOW-question guard returns
 instructional answer. Fix C: Repeat command handler returns instructional
 response pointing to mini player Repeat button. All 9 verification
 tests passed. src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only. CLOSED.
+
+FIX-236 | CLO-436 | SS-FIX-134 | 2026-04-25 13:33 PDT
+SS321 — TY AI catalog intelligence: five live Supabase query handlers
+added to useTYAIChatProcessor.ts. Handler 1: track count (returns live
+approved count). Handler 2: artist list (deduped from tracks+profiles
+join). Handler 3: genre list (deduped distinct genres). Handler 4: new
+releases (latest 5 by created_at desc). Handler 5: specific track
+lookup (ilike title match, honest not-found deflection). All use
+.eq('status','approved').eq('is_deleted',false) filter. All 8
+verification tests passed. TY now answers catalog questions from live
+DB — no KB updates needed as catalog grows.
+src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only. CLOSED.
