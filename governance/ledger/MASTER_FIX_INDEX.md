@@ -6433,3 +6433,17 @@ lookup (ilike title match, honest not-found deflection). All use
 verification tests passed. TY now answers catalog questions from live
 DB — no KB updates needed as catalog grows.
 src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only. CLOSED.
+
+FIX-237 | CLO-437 | SS-FIX-135 | 2026-04-25 14:39 PDT
+SS321 — TY AI player execution wiring. Five Tier 0 handlers added:
+(1) What's Playing — reads currentTrack, returns title+artist or
+honest deflection. (2) Pause — calls togglePlay(), player pauses.
+(3) Resume — calls togglePlay(), player resumes. (4) Repeat Execute
+— calls toggleRepeat(), inserted before SS-FIX-133 instructional
+handler. (5) Ordered Play All — queries 50 approved tracks ordered
+by created_at asc, calls playQueue(tracks,0). ChatProcessResult type
+extended with shouldTogglePlay, shouldToggleRepeat, shouldPlayQueue.
+currentTrack now passed into processMessage. All 9 verification tests
+passed. Files: src/types/ty-ai-chat.ts, src/hooks/ty-ai-chat/
+useTYAIChatProcessor.ts, src/components/ty-ai-chat/
+TYAIPanelContainer.tsx. CLOSED.

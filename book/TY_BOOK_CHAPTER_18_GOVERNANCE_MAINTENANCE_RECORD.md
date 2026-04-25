@@ -6751,3 +6751,11 @@ list, genre list, new releases, specific track lookup. All query live
 DB with approved+is_deleted filters. All 8 verification tests passed.
 TY now self-updates as catalog grows — no KB maintenance required.
 src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only.
+
+Entry-149 | FIX-237 | CLO-437 | 2026-04-25 14:39 PDT
+SS-FIX-135 CLOSED — TY AI player execution wiring. Five Tier 0
+handlers: What's Playing (reads currentTrack), Pause (togglePlay),
+Resume (togglePlay), Repeat Execute (toggleRepeat), Ordered Play All
+(playQueue 50 tracks asc). ChatProcessResult type extended. currentTrack
+passed into processMessage. All 9 verification tests passed.
+Files: ty-ai-chat.ts, useTYAIChatProcessor.ts, TYAIPanelContainer.tsx.
