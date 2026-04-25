@@ -6743,3 +6743,11 @@ SS-FIX-133 CLOSED — TY AI handler fixes. Three Tier 0 guards added to
 useTYAIChatProcessor.ts: Shuffle HOW-question guard, Play All HOW-question
 guard, Repeat command handler. All 9 verification tests passed.
 src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only.
+
+Entry-148 | FIX-236 | CLO-436 | 2026-04-25 13:33 PDT
+SS-FIX-134 CLOSED — TY AI catalog intelligence. Five live Supabase
+query handlers added to useTYAIChatProcessor.ts: track count, artist
+list, genre list, new releases, specific track lookup. All query live
+DB with approved+is_deleted filters. All 8 verification tests passed.
+TY now self-updates as catalog grows — no KB maintenance required.
+src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only.
