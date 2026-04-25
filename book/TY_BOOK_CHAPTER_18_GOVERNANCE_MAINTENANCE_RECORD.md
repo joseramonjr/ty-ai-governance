@@ -6726,3 +6726,8 @@ Files: PlayAllButton.tsx (new), Browse.tsx, Library.tsx, MyTracks.tsx.
 Entry-144 | FIX-232 | CLO-432 | 2026-04-25 11:50 PDT
 SS-FIX-130 CLOSED — 3-state Repeat button on mini player (none/all/one).
 Spotify-style cycle. Files: PlayerContext.tsx, GlobalAudioPlayer.tsx.
+
+Entry-145 | FIX-233 | CLO-433 | 2026-04-25 11:50 PDT
+SS-FIX-131 NO-OP CLOSED — About page TYOVA link audit only. href on
+src/pages/About.tsx line 126 already https://tyova.ai. Link text on line 131.
+No change applied. No file modifications.
