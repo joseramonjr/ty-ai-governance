@@ -6777,3 +6777,9 @@ SS-FIX-138 CLOSED — Claude/Anthropic disclosure added to About page
 (Powered by TY AI section) and TY AI page (Governed by Design card).
 Matches transparency doctrine. Legal pages already disclosed;
 user-facing pages now consistent. src/pages/About.tsx, TyAi.tsx.
+
+Entry-153 | FIX-241 | CLO-441 | 2026-04-25 18:17 PDT
+B-SS321-003 CLOSED — SilverSounds321 domain cutover complete.
+silversounds321.com live via Entri/Lovable DNS. www redirects to
+apex. Supabase auth URLs updated. testing.silversounds321.com
+retained as staging. SS321 IS NOW LIVE AT silversounds321.com.

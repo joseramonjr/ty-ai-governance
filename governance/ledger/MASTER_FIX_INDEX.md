@@ -6472,3 +6472,16 @@ Anthropic's AI model. TY AI OS governs how Claude operates within
 SilverSounds321 — defining what it can do, when it can act, and
 ensuring humans remain in control." Verified live on both pages.
 Files: src/pages/About.tsx, src/pages/TyAi.tsx. CLOSED.
+
+FIX-241 | CLO-441 | B-SS321-003 | 2026-04-25 18:17 PDT
+SS321 — LAUNCH BLOCKER CLOSED. Domain cutover silversounds321.com
+completed. Entri automatic DNS configuration via Lovable connected
+apex domain. A record @ set to 34.102.136.180. www.silversounds321.com
+configured as CNAME redirect to apex. silversounds321.com set as
+primary domain in Lovable (replacing testing.silversounds321.com).
+Supabase auth Site URL updated to https://silversounds321.com.
+Redirect URLs updated: silversounds321.com, silversounds321.com/**,
+www.silversounds321.com, www.silversounds321.com/** all added.
+testing.silversounds321.com retained as staging subdomain.
+silversounds321.com verified live in incognito browser.
+SS321 IS NOW LIVE. B-SS321-003 CLOSED.
