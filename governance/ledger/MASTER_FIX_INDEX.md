@@ -6485,3 +6485,12 @@ www.silversounds321.com, www.silversounds321.com/** all added.
 testing.silversounds321.com retained as staging subdomain.
 silversounds321.com verified live in incognito browser.
 SS321 IS NOW LIVE. B-SS321-003 CLOSED.
+
+FIX-242 | CLO-442 | SS-FIX-139 | 2026-04-25 18:43 PDT
+SS321 — profiles email exposure fix attempt. Dropped public SELECT
+policy, created get_public_profile() SECURITY DEFINER function.
+Regression: anon embedded joins broken, "Unknown Artist" on Browse.
+Restored public SELECT policy. Root cause: PostgreSQL RLS is
+row-level only. Long-term fix deferred as SS321-FUTURE-009:
+profiles_private table migration. Practical risk low — no app code
+exposes email publicly. CLOSED — deferred fix logged.

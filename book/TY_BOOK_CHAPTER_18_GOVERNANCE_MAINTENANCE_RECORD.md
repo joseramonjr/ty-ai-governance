@@ -6783,3 +6783,10 @@ B-SS321-003 CLOSED — SilverSounds321 domain cutover complete.
 silversounds321.com live via Entri/Lovable DNS. www redirects to
 apex. Supabase auth URLs updated. testing.silversounds321.com
 retained as staging. SS321 IS NOW LIVE AT silversounds321.com.
+
+Entry-154 | FIX-242 | CLO-442 | 2026-04-25 18:43 PDT
+SS-FIX-139 CLOSED — profiles email exposure fix attempt. Public
+SELECT policy dropped, SECURITY DEFINER function created. Regression
+discovered (anon embedded joins broken). Policy restored. Root cause:
+PostgreSQL RLS row-level only. Deferred as SS321-FUTURE-009.
+Practical risk low. Site confirmed healthy post-restore.
