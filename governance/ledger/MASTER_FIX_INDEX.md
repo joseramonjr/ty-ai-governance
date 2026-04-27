@@ -6615,3 +6615,12 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - SS-FIX: SS-FIX-203
 - CLO: CLO-506
 - Summary: Audited and remediated all 47 SECURITY DEFINER functions in SS321 Supabase public schema. Revoked EXECUTE from anon, authenticated, and public on 37 functions. Revoked EXECUTE from anon and public on 5 authenticated-only functions. Rewrote search_tracks — stripped audio_url and internal columns, added soft-delete filter. Applied future auto-grant prevention. Closes Supabase security advisor lint-0028 and lint-0029.
+
+### FIX-307
+- Date: 2026-04-27 14:27 PDT
+- Title: SS321 Anonymous Browse Preview Lock and Like Button Fix
+- Destination: SS321 — Lovable (2 files)
+- SS-FIX: SS-FIX-204
+- CLO: CLO-507
+- Commits: 4a9865c, 69c1636
+- Summary: Fixed anonymous browse regressions — is_listenable field missing from get-anonymous-tracks response caused preview lock on all 7 tracks; LikeButton silently disabled for anonymous users now redirects to /auth.
