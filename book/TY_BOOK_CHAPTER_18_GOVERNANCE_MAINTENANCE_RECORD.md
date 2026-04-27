@@ -6919,3 +6919,5 @@ Entry-216 | FIX-304 | CLO-504 | 2026-04-27 12:40 PDT | SS321: Added React.memo t
 Entry-217 | FIX-305 | CLO-505 | 2026-04-27 12:51 PDT | SS321: Eliminated any types in AuthContext, EditTrack, useBackupRestore, Library — Fix 1: AuthError|null on 4 auth method return types in AuthContext; downstream isStorageError access in Auth.tsx narrowed with targeted cast. Fix 2a: catch(error:unknown) with instanceof narrowing in EditTrack.tsx (2 blocks). Fix 2b: catch(error:unknown) with instanceof narrowing in useBackupRestore.ts (3 blocks). Fix 3: Library.tsx callbacks typed with Track, Playlist, LibraryPurchase application types. All Supabase write casts and governance files untouched. Clean TypeScript compile. Zero behavior changes. Commit 3e07e54.
 
 Entry-218 | FIX-306 | CLO-506 | 2026-04-27 14:04 PDT
+
+Entry-219 | FIX-307 | CLO-507 | 2026-04-27 14:27 PDT
