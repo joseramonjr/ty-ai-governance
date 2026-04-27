@@ -1,4 +1,4 @@
-﻿# MASTER_FIX_INDEX
+# MASTER_FIX_INDEX
 
 Status: Active
 
@@ -6494,3 +6494,124 @@ Restored public SELECT policy. Root cause: PostgreSQL RLS is
 row-level only. Long-term fix deferred as SS321-FUTURE-009:
 profiles_private table migration. Practical risk low — no app code
 exposes email publicly. CLOSED — deferred fix logged.
+
+| FIX-243 | CLO-443 | SS-FIX-140 | 2026-04-25 19:31 PDT | SS321 | Server-authoritative checkout price — client-supplied priceInCents ignored; price derived from tracks.price in DB; guard added for zero-price tracks | 266e7e1 |
+
+| FIX-244 | CLO-444 | SS-FIX-141 | 2026-04-25 19:42 PDT | SS321 | Email column exposure fix — REVOKE SELECT (email) ON public.profiles FROM anon; prevents unauthenticated users reading email addresses | DB-only, no commit |
+
+| FIX-245 | CLO-445 | SS-FIX-142 | 2026-04-25 20:21 PDT | SS321 | OpenAI key server-side proxy — deleted get-openai-key; added openai-chat + openai-transcribe proxies; refactored VoiceEngine, RealtimeConversationController, AUDE, AIDRE — API key never reaches browser | 8f97863 |
+
+| FIX-246 | CLO-446 | SS-FIX-143 | 2026-04-25 20:51 PDT | SS321 | Email column isolation — corrects SS-FIX-141. REVOKE SELECT ON public.profiles FROM anon + GRANT SELECT on 13 safe columns only; email excluded and verified absent | DB-only, no commit |
+
+| FIX-247 | CLO-447 | SS-FIX-144 | 2026-04-25 21:17 PDT | SS321 | Auth guards added to 5 unauthenticated edge functions — ty-ai-chat (JWT), search-tracks-semantic (JWT or service role), evolution-ml-analyze + generate-track-embedding + backfill-embeddings (JWT + admin) | d97ac93 |
+
+| FIX-248 | CLO-448 | SS-FIX-145 | 2026-04-25 21:30 PDT | SS321 | Client-side admin email shortcut removed — deleted ADMIN_EMAILS and isAdminByEmail from useUserRole.tsx; isAdmin now derives solely from user_roles DB query | 7ea8e7f |
+
+| FIX-249 | CLO-449 | SS-FIX-146 | 2026-04-25 21:43 PDT | SS321 | TY AI autorun tables restricted to admin-only SELECT — admin_only_select RLS policy applied to tyai_autorun_config, tyai_autorun_locks, tyai_autorun_runs, tyai_autorun_fail_safe_alerts | DB-only, no commit |
+
+| FIX-250 | CLO-450 | SS-FIX-147 | 2026-04-25 21:47 PDT | SS321 | ty_ai_recovery_attempts restricted to admin-only SELECT — dropped public policy, replaced with admin_only_select | DB-only, no commit |
+
+| FIX-251 | CLO-451 | SS-FIX-148 | 2026-04-25 22:22 PDT | SS321 | Core AI table INSERT/UPDATE lockdown — ty_ai_system_state UPDATE restricted to service_role; public INSERT dropped on 20 core AI operational tables | DB-only, no commit |
+
+| FIX-252 | CLO-452 | SS-FIX-149 | 2026-04-25 22:28 PDT | SS321 | ty_ai_system_state SELECT and INSERT restricted to service_role only — dropped public read/insert policies, replaced with service_role_only_select and service_role_only_insert | DB-only, no commit |
+
+| FIX-253 | CLO-453 | SS-FIX-150 | 2026-04-25 22:40 PDT | SS321 | Batch RLS lockdown — guardian_fail_safe_alerts admin SELECT only; comments authenticated SELECT only; INSERT/UPDATE restricted to service_role on 17 ty_ai/ty_evolution tables | DB-only, no commit |
+
+| FIX-254 | CLO-454 | SS-FIX-151 | 2026-04-25 22:54 PDT | SS321 | Dropped anon SELECT policy on public.profiles entirely — removed Public profiles are viewable by everyone policy; unauthenticated users have zero access to profiles table | DB-only, no commit |
+
+| FIX-255 | CLO-455 | SS-FIX-152 | 2026-04-25 23:02 PDT | SS321 | Profiles authenticated SELECT restricted to owner+admin only; remaining public INSERT/UPDATE dropped on 26 ty_ai/ty_evolution tables; ty_ai_upe_prediction_events service_role_only_insert added | DB-only, no commit |
+
+| FIX-256 | CLO-456 | SS-FIX-153 | 2026-04-26 10:16 PDT | SS321 | Batch AI table and storage lockdown — admin_only_select on ty_ai_consensus_sessions, ty_ai_consensus_votes, ty_ai_learning_events, ty_ai_simulation_runs, ty_ai_improvements, ty_ai_guardian_notifications; service_role_only INSERT/UPDATE on ty_ai_test_results, ty_ai_test_history, and 20+ ty_ai/ty_evolution tables; certification bucket restricted to service_role; broad authenticated upload policies dropped from tracks/album_art/playlist_covers buckets | DB-only, no commit |
+
+| FIX-257 | CLO-457 | SS-FIX-154 | 2026-04-26 10:24 PDT | SS321 | Dropped all real public System INSERT/UPDATE policies on 39 ty_ai/ty_evolution tables by exact policy name; recreated as service_role_only_insert/update; admin-gated INSERT on ty_ai_patent_certification_history, ty_ai_personality_audits, ty_tool_governance_audit, ty_tool_request_approvals, ty_tool_requests | DB-only, no commit |
+
+| FIX-258 | CLO-458 | SS-FIX-155 | 2026-04-26 10:31 PDT | SS321 | monitoring_health_checks restricted to admin SELECT only; tyai_autorun_fail_safe_alerts INSERT restricted to service_role and SELECT restricted to admin | DB-only, no commit |
+
+| FIX-259 | CLO-459 | SS-FIX-156 | 2026-04-26 10:37 PDT | SS321 | Artist purchases SELECT policy recreated with track ownership check; ty-ai-backups bucket upload restricted to service_role only | DB-only, no commit |
+
+| FIX-260 | CLO-460 | SS-FIX-157 | 2026-04-26 10:43 PDT | SS321 | tyai_autorun_runs INSERT restricted to service_role; artist_purchases_view created exposing only id/user_id/track_id/amount_cents/currency/status/purchased_at — excludes stripe_session_id/stripe_payment_intent_id/encrypted columns | DB-only, no commit |
+
+| FIX-261 | CLO-461 | SS-FIX-158 | 2026-04-26 11:05 PDT | SS321 | ty_instance_registry UPDATE restricted to owner or admin only; ai_certification_ledger SELECT restricted to authenticated only — removes public exposure of real user names | DB-only, no commit |
+
+| FIX-262 | CLO-462 | SS-FIX-159 | 2026-04-26 11:09 PDT | SS321 | profiles policies fixed — Users can view own profile changed from public to authenticated role; Admins can view all profiles recreated with has_role check; email column SELECT revoked from authenticated role | DB-only, no commit |
+
+| FIX-263 | CLO-463 | SS-FIX-160 | 2026-04-26 11:28 PDT | SS321 | system_config SELECT restricted to authenticated only — dropped Anyone can read system_config public policy, replaced with authenticated_only_select | DB-only, no commit |
+
+| FIX-264 | CLO-464 | SS-FIX-161 | 2026-04-26 11:46 PDT | SS321 | Guardian authority lockdown — INSERT restricted to admin only; guardian-token-manager edge function created with AES-256-GCM encryption of guardian_master_token, offline_recovery_token, successor_activation_token; GUARDIAN_ENCRYPTION_KEY stored in Supabase secrets | 8c8c13b |
+
+| FIX-265 | CLO-465 | SS-FIX-162 | 2026-04-26 11:55 PDT | SS321 | Dropped security definer artist_purchases_view; replaced with security invoker artist_purchases_safe view exposing only id/user_id/track_id/amount_cents/currency/status/purchased_at — excludes all Stripe payment identifiers | DB-only, no commit |
+
+| FIX-266 | CLO-466 | SS-FIX-163 | 2026-04-26 12:04 PDT | SS321 | ty_ai_learning_events, ty_ai_simulation_runs, ty_ai_improvements SELECT restricted to admin only — dropped public SELECT policies, replaced with admin_only_select | DB-only, no commit |
+
+| FIX-267 | CLO-467 | SS-FIX-164 | 2026-04-26 12:09 PDT | SS321 | Dropped real public SELECT policy names on ty_ai_learning_events, ty_ai_simulation_runs, ty_ai_improvements — Allow public read access policies removed; admin_only_select remains as sole SELECT policy | DB-only, no commit |
+
+| FIX-268 | CLO-468 | SS-FIX-165 | 2026-04-26 12:14 PDT | SS321 | ai_certification_ledger restricted to admin only; track_plays_log, track_skips_log, track_download_log artist SELECT policies restricted to exclude user_id — prevents individual user tracking by artists | DB-only, no commit |
+
+| FIX-269 | CLO-469 | SS-FIX-166 | 2026-04-26 12:20 PDT | SS321 | likes SELECT restricted to authenticated only; artist_settings admin policy recreated with has_role check; stripe_account_id column SELECT revoked from authenticated role | DB-only, no commit |
+
+| FIX-270 | CLO-470 | SS-FIX-167 | 2026-04-26 12:25 PDT | SS321 | Dropped Users can update own instances policy on ty_instance_registry — removed owner_user_id IS NULL condition that allowed any authenticated user to claim unowned system instances | DB-only, no commit |
+
+| FIX-271 | CLO-471 | SS-FIX-168 | 2026-04-26 12:44 PDT | SS321 | get-audio-url bypass fix — both legacy bucket public URL fallback branches patched; paid tracks on legacy bucket now return 400 error instead of full public URL for guests and non-purchasers | aa2a0f8 |
+
+| FIX-272 | CLO-472 | SS-FIX-169 | 2026-04-26 13:18 PDT | SS321 | get-audio-url fully rewritten — all tracks served from tracks-private via signed URLs; is_paid flag governs access not bucket location; legacy bucket branching eliminated; subscription check scoped to artist_id; free tracks signed for anyone; paid tracks require purchase/subscription/ownership | 9f1f3b7 |
+
+| FIX-273 | CLO-473 | SS-FIX-170 | 2026-04-26 12:44 PDT | SS321 | Legacy tracks bucket public SELECT policy removed — dropped Anyone can view track audio policy; replaced with authenticated-only SELECT; direct unauthenticated storage access to legacy bucket closed | DB-only, no commit |
+
+| FIX-274 | CLO-474 | SS-FIX-171 | 2026-04-26 13:28 PDT | SS321 | profiles INSERT and UPDATE policies changed from public to authenticated — Users can insert own profile and Users can update own profile now require authenticated role | DB-only, no commit |
+
+| FIX-275 | CLO-475 | SS-FIX-172 | 2026-04-26 13:35 PDT | SS321 | Dropped Artists can view purchases of their tracks policy — artists must use artist_purchases_safe view which excludes user_id and Stripe payment identifiers | DB-only, no commit |
+
+| FIX-276 | CLO-476 | SS-FIX-173 | 2026-04-26 13:42 PDT | SS321 | feed_engagement INSERT restricted to authenticated with ownership check; artist subscriptions broad policy dropped; artist_subscriptions_safe view created excluding stripe_customer_id and stripe_subscription_id | DB-only, no commit |
+
+| FIX-277 | CLO-477 | SS-FIX-174 | 2026-04-26 13:55 PDT | SS321 | Function Search Path Mutable fixed on 5 functions; pg_graphql anon introspection revoked; public bucket listing policy dropped | DB-only, no commit |
+
+| FIX-278 | CLO-478 | SS-FIX-175 | 2026-04-26 14:00 PDT | SS321 | ty_ai_state SELECT restricted to admin only — dropped Authenticated can read ty_ai_state policy, replaced with admin_only_select | DB-only, no commit |
+
+| FIX-279 | CLO-479 | SS-FIX-176 | 2026-04-26 14:05 PDT | SS321 | system_config SELECT restricted to admin only — dropped authenticated_only_select, replaced with admin_only_select | DB-only, no commit |
+
+| FIX-280 | CLO-480 | SS-FIX-177 | 2026-04-26 14:11 PDT | SS321 | artist_settings policy changed from public to authenticated; tis_track_emotion_analysis public SELECT replaced with authenticated_only_select; ty_ai_emotion_records public policies replaced with authenticated admin/owner policies | DB-only, no commit |
+
+| FIX-281 | CLO-481 | SS-FIX-178 | 2026-04-26 14:26 PDT | SS321 | artist_settings public policy corrected; track_plays_log public INSERT replaced with authenticated ownership check; ty_ai_emotion_records public SELECT replaced with authenticated | DB-only, no commit |
+
+| FIX-282 | CLO-482 | SS-FIX-179 | 2026-04-26 14:30 PDT | SS321 | profiles Admins can update any profile status changed from public to authenticated; tyai_autorun_config SELECT restricted to admin only | DB-only, no commit |
+
+| FIX-283 | CLO-483 | SS-FIX-180 | 2026-04-26 14:34 PDT | SS321 | tyai_autorun_locks SELECT restricted to admin only; ty_instance_registry SELECT restricted to authenticated only — removes public access to unowned instance entries | DB-only, no commit |
+
+| FIX-284 | CLO-484 | SS-FIX-181 | 2026-04-26 14:38 PDT | SS321 | tis_track_emotion_analysis SELECT restricted to admin only — upgraded from authenticated_only_select | DB-only, no commit |
+
+| FIX-285 | CLO-485 | SS-FIX-182 | 2026-04-26 14:42 PDT | SS321 | Dropped Allow read autorun_runs permissive policy on tyai_autorun_runs — admin_only_select remains as sole SELECT policy | DB-only, no commit |
+
+| FIX-286 | CLO-486 | SS-FIX-183 | 2026-04-26 14:47 PDT | SS321 | ai_system_state SELECT restricted to admin only — dropped Authenticated can read ai_system_state, replaced with admin_only_select | DB-only, no commit |
+
+| FIX-287 | CLO-487 | SS-FIX-184 | 2026-04-26 14:50 PDT | SS321 | Dropped broad authenticated_only_select on ty_instance_registry — scoped Users can view instances for verification policy remains as sole SELECT | DB-only, no commit |
+
+| FIX-288 | CLO-488 | SS-FIX-185 | 2026-04-26 15:09 PDT | SS321 | TYAILogger persistToDatabase defaulted to false — stops repeating RLS violation warning loop on ty_ai_logs; flush timer not started when disabled; setPersistToDatabase(true) still available for service-role callers | f888146 |
+
+| FIX-289 | CLO-489 | SS-FIX-186 | 2026-04-26 17:24 PDT | SS321 | Deleted 16 disabled edge function stubs — health-check-worker, security-maintenance-worker, ty-cross-instance-api, tyai-autorun-scheduled, run_phase17-28 audit functions; removed from Supabase deployment; 8 admin caller files left for follow-up cleanup | a9d0d8f |
+
+| FIX-290 | CLO-490 | SS-FIX-187 | 2026-04-26 17:31 PDT | SS321 | Archived 12 unused components and 5 unused hooks to src/_archive/ — moved not deleted; 6 broken relative imports fixed with @/ aliases | f06ef9c |
+
+| FIX-291 | CLO-491 | SS-FIX-188 | 2026-04-26 20:07 PDT | SS321 | get-audio-url HTTP status codes fixed — Authentication required returns 401, Purchase required/Track not available returns 403, Track not found returns 404, other errors remain 400 | 76eef0b |
+
+| FIX-292 | CLO-492 | SS-FIX-189 | 2026-04-26 20:34 PDT | SS321 | TYAIEnabledPacksPage split — 3,535 line mega-file refactored into 15 focused files across two phases; parent reduced from 3,418 to 2,389 lines (-30%); 7 section components extracted in Phase 2; TypeScript compile clean; zero behavior changes | 3f7a285 |
+| FIX-293 | CLO-493 | SS-FIX-190 | 2026-04-26 21:31 PDT | SS321 | Remove migrate-tracks-storage edge function — deleted from Supabase (0 invocations, no auth guard, obsolete per SS-FIX-169) and codebase | 234adf2 |
+| FIX-294 | CLO-494 | SS-FIX-191 | 2026-04-26 21:49 PDT | SS321 | Remove all 6 RLS policies from legacy tracks bucket (SS-FIX-170 follow-up) � SELECT/DELETE/UPDATE/INSERT authenticated + 2 public DELETE/UPDATE policies removed; all audio confirmed in tracks-private; client access fully locked; no commit (Supabase Dashboard only) |
+| FIX-295 | CLO-495 | SS-FIX-192 | 2026-04-26 22:06 PDT | SS321 | Make legacy tracks bucket private � disabled Public bucket toggle in Supabase Storage settings; closes security scan Error (paid tracks freely downloadable via public bucket); all audio served from tracks-private per SS-FIX-169; no commit (Supabase Dashboard only) |
+| FIX-296 | CLO-496 | SS-FIX-193 | 2026-04-26 22:30 PDT | SS321 | Restrict ty_instance_registry SELECT policy from public to authenticated � closes security scan Warning: Internal system instance registry readable by unauthenticated users; USING expression unchanged; no commit (Supabase Dashboard only) |
+| FIX-297 | CLO-497 | SS-FIX-194 | 2026-04-27 10:04 PDT | SS321 | Restrict track_skips_log + track_download_log policies from public to authenticated � INSERT policies now require auth.uid() = user_id; 4 SELECT policies changed from public to authenticated; closes security scan Warning: unauthenticated users can inject analytics records; no commit (Supabase SQL Editor only) |
+| FIX-298 | CLO-498 | SS-FIX-195 | 2026-04-27 10:11 PDT | SS321 | Restrict AI test result tables from public to authenticated � dropped open SELECT policy (qual: true) from ty_ai_test_results; altered 6 policies across ty_ai_test_results, ty_ai_test_history, beta_test_results, beta_test_runs; closes security scan Warning: Internal AI system test results publicly readable; no commit (Supabase SQL Editor only) |
+| FIX-299 | CLO-499 | SS-FIX-196 | 2026-04-27 10:52 PDT | SS321 | Implement anonymous browse restriction � get-anonymous-tracks edge function (public, no JWT, daily-seeded, genre-varied, 7 free tracks, no audio_url); useInfiniteTracks branched on auth state; sign-up banner on Browse.tsx; clean compile; closes security scan Error: paid track audio paths readable by unauthenticated users | a0b62c2 |
+| FIX-300 | CLO-500 | SS-FIX-197 | 2026-04-27 11:23 PDT | SS321 | Fix get-anonymous-tracks edge function column name errors � replaced cover_art_url with album_art_url, removed non-existent duration column; function now returns 200 with 7 free tracks; anonymous browse confirmed working; no audio_url in response | e5b7a89 |
+| FIX-301 | CLO-501 | SS-FIX-198 | 2026-04-27 11:36 PDT | SS321 | Restrict ty_ai_attil_progression SELECT policy to admin only � changed USING from true to has_role(auth.uid(), 'admin'::app_role); closes security scan Warning: all authenticated users can read every AI instance's progression records; no commit (Supabase SQL Editor only) |
+| FIX-302 | CLO-502 | SS-FIX-199 | 2026-04-27 12:07 PDT | SS321 | Split TYAIToolGatewayPage 2541 lines into 6 extracted files � verificationTypes.ts, useSnapshotVerification.ts, useMapboxVerification.ts, SnapshotVerificationModal.tsx, MapboxVerificationModal.tsx, GatewayEventsTable.tsx; parent reduced to 864 lines (-66%); TSTP-99 lock comments preserved; clean compile; zero behavior changes | de504f8 |
+| FIX-303 | CLO-503 | SS-FIX-200 | 2026-04-27 12:24 PDT | SS321 | Hide TY AI and mic from anonymous users + graceful 401 handling � gated TYAIAvatar and TYAIPanelContainer on !!user and !authLoading in App.tsx; 401 detection at both ty-ai-chat invoke sites in useTYAIChatProcessor.ts; verified in incognito; clean compile | b6e9296 |
+| FIX-304 | CLO-504 | SS-FIX-201 | 2026-04-27 12:40 PDT | SS321 | Add React.memo to 6 feed and track list components � TrackCard (memo+forwardRef), TrackListRow, TrackDetailCard, TrendingNowCard, FeedRecommendationCard, FeedFilterBar; displayNames set; prefetchOnHover already in useCallback; zero logic changes; clean compile | 87cb3e5 |
+| FIX-305 | CLO-505 | SS-FIX-202 | 2026-04-27 12:51 PDT | SS321 | Eliminate any types in AuthContext, EditTrack, useBackupRestore, Library � AuthError|null on 4 auth methods; catch(error:unknown) with instanceof narrowing in EditTrack (2) and useBackupRestore (3); Library callbacks typed with Track/Playlist/LibraryPurchase; Supabase write casts and governance files untouched; clean compile | 3e07e54 |
+
+### FIX-306
+- Date: 2026-04-27 14:04 PDT
+- Title: SS321 SECURITY DEFINER Function Permission Hardening
+- Destination: SS321 � Supabase SQL (Dashboard)
+- SS-FIX: SS-FIX-203
+- CLO: CLO-506
+- Summary: Audited and remediated all 47 SECURITY DEFINER functions in SS321 Supabase public schema. Revoked EXECUTE from anon, authenticated, and public on 37 functions. Revoked EXECUTE from anon and public on 5 authenticated-only functions. Rewrote search_tracks � stripped audio_url and internal columns, added soft-delete filter. Applied future auto-grant prevention. Closes Supabase security advisor lint-0028 and lint-0029.
