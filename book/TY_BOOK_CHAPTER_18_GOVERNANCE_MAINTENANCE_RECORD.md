@@ -6943,3 +6943,5 @@ Entry-228 | FIX-316 | CLO-516 | 2026-04-28 11:03 PDT | SS-FIX-221 — Owner/admin 
 Entry-229 | FIX-317 | CLO-517 | 2026-04-28 12:23 PDT | SS-FIX-222 — Likes privacy hardening Option C DB migration. RLS rewrite + 11 SECURITY DEFINER RPCs. Commits: f3d4a02, 512cb29.
 
 Entry-230 | FIX-318 | CLO-518 | 2026-04-28 12:23 PDT | SS-FIX-223 — Likes privacy hardening Option C frontend. 17 hook rewrites. All 8 smoke checks passed. Commits: 31fe385, 8c3af2d.
+
+Entry-231 | FIX-319 | CLO-519 | 2026-04-28 12:42 PDT | SS-FIX-224 — Purchases INSERT policy restricted to status=pending. Payment bypass vulnerability closed. Commits: 1a3f797, baaaad2.

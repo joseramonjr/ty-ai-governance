@@ -6708,3 +6708,10 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - **Action:** Likes privacy hardening Option C — 17 frontend hook rewrites. All raw likes reads replaced with RPCs. All 8 smoke checks passed.
 - **Commits:** 31fe385, 8c3af2d
 - **Date:** 2026-04-28 12:23 PDT
+
+### FIX-319
+- **SS-FIX:** SS-FIX-224
+- **CLO:** CLO-519
+- **Action:** Restricted purchases INSERT policy to status='pending' only. Payment bypass vulnerability closed.
+- **Commits:** 1a3f797, baaaad2
+- **Date:** 2026-04-28 12:42 PDT
