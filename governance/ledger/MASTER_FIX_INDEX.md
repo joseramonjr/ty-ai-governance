@@ -6656,3 +6656,11 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - SS-FIX: SS-FIX-213, SS-FIX-214, SS-FIX-215
 - CLO: CLO-511
 - Summary: Full Family Access feature implementation. Database: family role added to app_role enum, family_members table created with RLS, auto-signup trigger assigns family role on matching email signup. Edge function: get-audio-url grants free access to artist d883602b paid tracks for family role users only. Admin UI: Family Members panel at /admin/family with full CRUD, linked account status, Family Access badges. Admin nav: green-styled Family link with live active member count. One existing account (susan.bobadilla23) manually linked via SQL.
+
+### FIX-312
+- Date: 2026-04-27 21:49 PDT
+- Title: SS321 Artist Recruitment — Founding Program + Landing Page
+- Destination: SS321 — Lovable + Strategic
+- SS-FIX: SS-FIX-216, SS-FIX-217
+- CLO: CLO-512
+- Summary: Designed Founding Artist Program (5% fee for life, first 50 artists, 1 track upload required within 30 days). Finalized honest artist pitch copy. Created /artists public landing page with full pitch content and Founding Artist Program section. Added For Artists nav link to desktop and mobile header. Verified live.
