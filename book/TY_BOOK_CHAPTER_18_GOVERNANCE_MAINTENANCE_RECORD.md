@@ -6953,3 +6953,5 @@ Entry-233 | FIX-321 | CLO-521 | 2026-04-28 13:32 PDT | SS-FIX-226 — Audio URL fr
 Entry-234 | FIX-322 | CLO-522 | 2026-04-28 13:42 PDT | Governance Rule Addition — POST-SESSION SECURITY SCAN RULE locked. Supabase scan mandatory every session. Column-level privilege review required for sensitive tables. Edge function assumption insufficient. All findings triaged before session close.
 
 Entry-235 | FIX-323 | CLO-523 | 2026-04-28 13:45 PDT | Governance Rule Addition — PRE-CLOSE SECURITY AUDIT RULE locked. Dedicated security audit required before every major feature release involving payments or user data. No revenue feature releases until all critical/high findings closed. Rule permanent.
+
+Entry-236 | FIX-324 | CLO-524 | 2026-04-28 14:18 PDT | SS-FIX-227 — Guardian backup exposure fixed. create_ty_ai_backup patched to 12-column safe select. 5 historical backup files purged. Purge confirmed 200 success. Commits: 83fd891, c1977dd.
