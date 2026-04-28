@@ -6648,3 +6648,11 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - SS-FIX: SS-FIX-210, SS-FIX-211, SS-FIX-212
 - CLO: CLO-510
 - Summary: Three fixes: (1) MediaSession API wired into PlayerContext — fixes next-track not advancing on phone screen lock, adds lock screen controls and Bluetooth headphone support; (2) TrackListRow play button toggle fix — was always restarting instead of pausing; (3) TrackDetailCard play button toggle fix — same restart bug, same fix. All three views now correctly toggle play/pause.
+
+### FIX-311
+- Date: 2026-04-27 20:30 PDT
+- Title: SS321 Family Access Feature — Full Implementation
+- Destination: SS321 — Supabase SQL + Edge Function + Lovable
+- SS-FIX: SS-FIX-213, SS-FIX-214, SS-FIX-215
+- CLO: CLO-511
+- Summary: Full Family Access feature implementation. Database: family role added to app_role enum, family_members table created with RLS, auto-signup trigger assigns family role on matching email signup. Edge function: get-audio-url grants free access to artist d883602b paid tracks for family role users only. Admin UI: Family Members panel at /admin/family with full CRUD, linked account status, Family Access badges. Admin nav: green-styled Family link with live active member count. One existing account (susan.bobadilla23) manually linked via SQL.
