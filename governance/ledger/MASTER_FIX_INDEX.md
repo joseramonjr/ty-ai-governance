@@ -6673,3 +6673,10 @@ exposes email publicly. CLOSED — deferred fix logged.
 - CLO: CLO-513
 - Commit: 84e8df4
 - Summary: Added Platform vs Distributor section to /artists page with 3-column comparison (SS321 highlighted, Distributors, Bandcamp). Clarifies SS321 is a direct listening and sales platform not a distribution service.
+
+### FIX-314
+- **SS-FIX:** SS-FIX-219
+- **CLO:** CLO-514
+- **Action:** Sanitized real company and artist names from SS321 public-facing copy (Artists.tsx, About.tsx)
+- **Commits:** 14efc19, cc473a1
+- **Date:** 2026-04-28 09:04 PDT
