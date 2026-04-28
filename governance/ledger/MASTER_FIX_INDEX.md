@@ -6715,3 +6715,17 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - **Action:** Restricted purchases INSERT policy to status='pending' only. Payment bypass vulnerability closed.
 - **Commits:** 1a3f797, baaaad2
 - **Date:** 2026-04-28 12:42 PDT
+
+### FIX-320
+- **SS-FIX:** SS-FIX-225
+- **CLO:** CLO-520
+- **Action:** Audio URL DB protection — REVOKE audio_url column, GRANT 29 explicit columns, get_track_audio_url_owner RPC created
+- **Commits:** 6393f25
+- **Date:** 2026-04-28 13:32 PDT
+
+### FIX-321
+- **SS-FIX:** SS-FIX-226
+- **CLO:** CLO-521
+- **Action:** Audio URL frontend protection — 25+ files updated, useOwnerAudioUrl hook created, all 9 smoke checks passed
+- **Commits:** 037d209 + 16 metadata commits
+- **Date:** 2026-04-28 13:32 PDT
