@@ -6664,3 +6664,12 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - SS-FIX: SS-FIX-216, SS-FIX-217
 - CLO: CLO-512
 - Summary: Designed Founding Artist Program (5% fee for life, first 50 artists, 1 track upload required within 30 days). Finalized honest artist pitch copy. Created /artists public landing page with full pitch content and Founding Artist Program section. Added For Artists nav link to desktop and mobile header. Verified live.
+
+### FIX-313
+- Date: 2026-04-27 23:59 PDT
+- Title: SS321 Artists Page Platform Comparison Section
+- Destination: SS321 — Lovable (src/pages/Artists.tsx)
+- SS-FIX: SS-FIX-218
+- CLO: CLO-513
+- Commit: 84e8df4
+- Summary: Added Platform vs Distributor section to /artists page with 3-column comparison (SS321 highlighted, Distributors, Bandcamp). Clarifies SS321 is a direct listening and sales platform not a distribution service.
