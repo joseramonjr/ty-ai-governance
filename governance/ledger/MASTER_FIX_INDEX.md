@@ -6680,3 +6680,17 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - **Action:** Sanitized real company and artist names from SS321 public-facing copy (Artists.tsx, About.tsx)
 - **Commits:** 14efc19, cc473a1
 - **Date:** 2026-04-28 09:04 PDT
+
+### FIX-315
+- **SS-FIX:** SS-FIX-220
+- **CLO:** CLO-515
+- **Action:** Owner/admin bypass initial attempt — 400 error, superseded by FIX-316
+- **Commits:** f35e279, 75cca28
+- **Date:** 2026-04-28 11:03 PDT
+
+### FIX-316
+- **SS-FIX:** SS-FIX-221
+- **CLO:** CLO-516
+- **Action:** Owner/admin bypass corrected and verified — full playback confirmed for owner and admin accounts
+- **Commits:** 2bf5557, 28df153
+- **Date:** 2026-04-28 11:03 PDT
