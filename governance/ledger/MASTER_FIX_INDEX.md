@@ -6694,3 +6694,17 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - **Action:** Owner/admin bypass corrected and verified — full playback confirmed for owner and admin accounts
 - **Commits:** 2bf5557, 28df153
 - **Date:** 2026-04-28 11:03 PDT
+
+### FIX-317
+- **SS-FIX:** SS-FIX-222
+- **CLO:** CLO-517
+- **Action:** Likes privacy hardening Option C — DB migration. RLS rewrite + 11 SECURITY DEFINER RPCs on public.likes
+- **Commits:** f3d4a02, 512cb29
+- **Date:** 2026-04-28 12:23 PDT
+
+### FIX-318
+- **SS-FIX:** SS-FIX-223
+- **CLO:** CLO-518
+- **Action:** Likes privacy hardening Option C — 17 frontend hook rewrites. All raw likes reads replaced with RPCs. All 8 smoke checks passed.
+- **Commits:** 31fe385, 8c3af2d
+- **Date:** 2026-04-28 12:23 PDT

@@ -6939,3 +6939,7 @@ Entry-226 | FIX-314 | CLO-514 | 2026-04-28 09:04 PDT | SS-FIX-219 — Sanitized re
 Entry-227 | FIX-315 | CLO-515 | 2026-04-28 11:03 PDT | SS-FIX-220 — Owner/admin bypass initial attempt, 400 error, superseded by FIX-316. Commits: f35e279, 75cca28.
 
 Entry-228 | FIX-316 | CLO-516 | 2026-04-28 11:03 PDT | SS-FIX-221 — Owner/admin bypass corrected and verified. Full playback confirmed for owner/admin. Commits: 2bf5557, 28df153.
+
+Entry-229 | FIX-317 | CLO-517 | 2026-04-28 12:23 PDT | SS-FIX-222 — Likes privacy hardening Option C DB migration. RLS rewrite + 11 SECURITY DEFINER RPCs. Commits: f3d4a02, 512cb29.
+
+Entry-230 | FIX-318 | CLO-518 | 2026-04-28 12:23 PDT | SS-FIX-223 — Likes privacy hardening Option C frontend. 17 hook rewrites. All 8 smoke checks passed. Commits: 31fe385, 8c3af2d.
