@@ -6729,3 +6729,9 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - **Action:** Audio URL frontend protection — 25+ files updated, useOwnerAudioUrl hook created, all 9 smoke checks passed
 - **Commits:** 037d209 + 16 metadata commits
 - **Date:** 2026-04-28 13:32 PDT
+
+### FIX-322
+- **CLO:** CLO-522
+- **Type:** Governance Rule Addition
+- **Rule:** POST-SESSION SECURITY SCAN RULE — (1) Supabase security scan mandatory at end of every SS321 session before close. (2) Any new table with sensitive columns requires explicit column-level privilege review at creation time — RLS row policies do not substitute for column-level protection. (3) The assumption 'edge function protects it' is never sufficient — database-layer verification always required. (4) Any new security finding must be triaged before session close — either fixed same session or explicitly logged as SS321-FUTURE or TY-GOV ID. Rule added after audio_url direct query vulnerability found live in production (SS-FIX-225/226).
+- **Date:** 2026-04-28 13:42 PDT
