@@ -6735,3 +6735,9 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - **Type:** Governance Rule Addition
 - **Rule:** POST-SESSION SECURITY SCAN RULE — (1) Supabase security scan mandatory at end of every SS321 session before close. (2) Any new table with sensitive columns requires explicit column-level privilege review at creation time — RLS row policies do not substitute for column-level protection. (3) The assumption 'edge function protects it' is never sufficient — database-layer verification always required. (4) Any new security finding must be triaged before session close — either fixed same session or explicitly logged as SS321-FUTURE or TY-GOV ID. Rule added after audio_url direct query vulnerability found live in production (SS-FIX-225/226).
 - **Date:** 2026-04-28 13:42 PDT
+
+### FIX-323
+- **CLO:** CLO-523
+- **Type:** Governance Rule Addition
+- **Rule:** PRE-CLOSE SECURITY AUDIT RULE — (1) A dedicated security audit session must be completed before every major feature release involving payments, user data, or new database tables. (2) Audit must cover: all database tables (RLS + column privileges), all edge functions (access checks), all frontend routes (auth gates), Stripe webhook signature verification, and rate limiting on sensitive endpoints. (3) No new revenue feature (Founding Artist Program, pay-what-you-want, licensing tier, merch, etc.) may be released to paying artists until a full security audit session is completed and all critical/high findings are closed. (4) This rule is permanent — cannot be skipped for convenience or time pressure. Rule added after multiple security gaps found live in production during SS321 post-launch session 2026-04-28.
+- **Date:** 2026-04-28 13:45 PDT
