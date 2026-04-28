@@ -6741,3 +6741,10 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - **Type:** Governance Rule Addition
 - **Rule:** PRE-CLOSE SECURITY AUDIT RULE — (1) A dedicated security audit session must be completed before every major feature release involving payments, user data, or new database tables. (2) Audit must cover: all database tables (RLS + column privileges), all edge functions (access checks), all frontend routes (auth gates), Stripe webhook signature verification, and rate limiting on sensitive endpoints. (3) No new revenue feature (Founding Artist Program, pay-what-you-want, licensing tier, merch, etc.) may be released to paying artists until a full security audit session is completed and all critical/high findings are closed. (4) This rule is permanent — cannot be skipped for convenience or time pressure. Rule added after multiple security gaps found live in production during SS321 post-launch session 2026-04-28.
 - **Date:** 2026-04-28 13:45 PDT
+
+### FIX-324
+- **SS-FIX:** SS-FIX-227
+- **CLO:** CLO-524
+- **Action:** Guardian backup exposure fixed. create_ty_ai_backup patched to 12-column safe select. 5 historical backup files purged from ty-ai-backups bucket and registry. Purge confirmed 200 success.
+- **Commits:** 83fd891, c1977dd
+- **Date:** 2026-04-28 14:18 PDT
