@@ -6624,3 +6624,11 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - CLO: CLO-507
 - Commits: 4a9865c, 69c1636
 - Summary: Fixed anonymous browse regressions — is_listenable field missing from get-anonymous-tracks response caused preview lock on all 7 tracks; LikeButton silently disabled for anonymous users now redirects to /auth.
+
+### FIX-308
+- Date: 2026-04-27 17:31 PDT
+- Title: SS321 Anonymous Browse Full Fix Pass
+- Destination: SS321 — Lovable + Supabase Edge Functions + SQL
+- SS-FIX: SS-FIX-205
+- CLO: CLO-508
+- Summary: Full anonymous browse fix pass covering: is_listenable missing from edge function response (lock icon bug); free track preview enforcing 20s instead of 30s (get-audio-url missing preview metadata); anonymous card clicks routing to track-unavailable instead of /auth (trackHref + onClick fixes across all three browse view components); LikeButton silent disable replaced with /auth redirect; Auth page vertical centering fixed (min-h-screen to flex-1); render-phase navigate anti-pattern fixed with useEffect. All fixes verified in incognito across Tiles, List, and Details views.
