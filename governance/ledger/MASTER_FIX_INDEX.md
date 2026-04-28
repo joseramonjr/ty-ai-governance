@@ -6640,3 +6640,11 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - SS-FIX: SS-FIX-206, SS-FIX-207, SS-FIX-208, SS-FIX-209
 - CLO: CLO-509
 - Summary: Four browse UX fixes: (1) audio_format field missing from get-anonymous-tracks response — all cards showed MP3; (2) Shuffle button added to PlayAllButton component — all call sites updated automatically; (3) TrackCard canListen play button always restarted track instead of toggling — fixed with isActive check; (4) TrackListRow Playing indicator displaced track title as flex sibling — relocated as absolute overlay inside album art.
+
+### FIX-310
+- Date: 2026-04-27 19:00 PDT
+- Title: SS321 MediaSession + Play/Pause Toggle Batch
+- Destination: SS321 — Lovable
+- SS-FIX: SS-FIX-210, SS-FIX-211, SS-FIX-212
+- CLO: CLO-510
+- Summary: Three fixes: (1) MediaSession API wired into PlayerContext — fixes next-track not advancing on phone screen lock, adds lock screen controls and Bluetooth headphone support; (2) TrackListRow play button toggle fix — was always restarting instead of pausing; (3) TrackDetailCard play button toggle fix — same restart bug, same fix. All three views now correctly toggle play/pause.
