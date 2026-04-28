@@ -6949,3 +6949,5 @@ Entry-231 | FIX-319 | CLO-519 | 2026-04-28 12:42 PDT | SS-FIX-224 — Purchases IN
 Entry-232 | FIX-320 | CLO-520 | 2026-04-28 13:32 PDT | SS-FIX-225 — Audio URL DB protection. REVOKE audio_url column from anon/authenticated. 29 columns re-granted. get_track_audio_url_owner RPC created. Commit: 6393f25.
 
 Entry-233 | FIX-321 | CLO-521 | 2026-04-28 13:32 PDT | SS-FIX-226 — Audio URL frontend protection. 25+ files updated. useOwnerAudioUrl hook created. All 9 smoke checks passed. Lead commit: 037d209.
+
+Entry-234 | FIX-322 | CLO-522 | 2026-04-28 13:42 PDT | Governance Rule Addition — POST-SESSION SECURITY SCAN RULE locked. Supabase scan mandatory every session. Column-level privilege review required for sensitive tables. Edge function assumption insufficient. All findings triaged before session close.
