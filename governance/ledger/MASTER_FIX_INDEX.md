@@ -6632,3 +6632,11 @@ exposes email publicly. CLOSED â€” deferred fix logged.
 - SS-FIX: SS-FIX-205
 - CLO: CLO-508
 - Summary: Full anonymous browse fix pass covering: is_listenable missing from edge function response (lock icon bug); free track preview enforcing 20s instead of 30s (get-audio-url missing preview metadata); anonymous card clicks routing to track-unavailable instead of /auth (trackHref + onClick fixes across all three browse view components); LikeButton silent disable replaced with /auth redirect; Auth page vertical centering fixed (min-h-screen to flex-1); render-phase navigate anti-pattern fixed with useEffect. All fixes verified in incognito across Tiles, List, and Details views.
+
+### FIX-309
+- Date: 2026-04-27 18:20 PDT
+- Title: SS321 Browse UX Fix Batch — Audio Format, Shuffle, Toggle, Playing Indicator
+- Destination: SS321 — Lovable + Supabase Edge Function
+- SS-FIX: SS-FIX-206, SS-FIX-207, SS-FIX-208, SS-FIX-209
+- CLO: CLO-509
+- Summary: Four browse UX fixes: (1) audio_format field missing from get-anonymous-tracks response — all cards showed MP3; (2) Shuffle button added to PlayAllButton component — all call sites updated automatically; (3) TrackCard canListen play button always restarted track instead of toggling — fixed with isActive check; (4) TrackListRow Playing indicator displaced track title as flex sibling — relocated as absolute overlay inside album art.
