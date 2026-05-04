@@ -1,4 +1,4 @@
-# Chapter 18 -- The Governance Maintenance Record
+﻿# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current
@@ -319,7 +319,7 @@ OPEN ITEMS CARRIED FORWARD:
 - Full ecosystem corruption scan performed: Jaya Runtime, ty-ai-governance, TYOVA all clean
 
 
-- R12 added as permanent write rule: after every file write run Select-String "Ã" scan immediately
+- R12 added as permanent write rule: after every file write run Select-String "Ãƒ" scan immediately
 
 
 - Committed: 06a9fe6
@@ -5526,7 +5526,7 @@ S1 UTF-8 corruption remediation. Three live files cleaned: Jaya_PART_INDEX.md (b
 FIX-122.2: Generate-Handoff.ps1 CLO regex anchor bug fixed -- ^ removed from line 46 pattern. MASTER_FIX_INDEX FIX-122.1 block corrected -- CLO line added in standard format. Root cause: FIX-122.1 entry placed CLO at line end breaking script. Commit a4f24c7.
 
 ### Entry-077 | JAYA-CLO-247 | Claude Sonnet 4.6 | 2026-04-03 | San Diego
-FIX-122.3: TYOVA /book page corrected -- 6 Phases → 7 Phases Documented, Phase 6 banner replaced with Phase 7 Complete banner. S1 post-pull clean. TYOVA Commit f276b7c.
+FIX-122.3: TYOVA /book page corrected -- 6 Phases †’ 7 Phases Documented, Phase 6 banner replaced with Phase 7 Complete banner. S1 post-pull clean. TYOVA Commit f276b7c.
 
 ### Entry-078 | JAYA-CLO-248 | Claude Sonnet 4.6 | 2026-04-03 | San Diego
 FIX-122.4: F-15 sentinel anomaly storm fixed. Root cause: Tier2/Tier3 doctrine checks used OR instead of AND -- fired on every clean cycle. Decay Bypass rule removed -- duplicated Sudden Collapse and fired on normal decay. Two || changed to &&, 11 lines removed. cargo check 0 errors. Jaya-Runtime commit 1b0abb9.
@@ -5639,22 +5639,22 @@ to 251. Committed 1350a2d.
 ### Entry-090 | JAYA-CLO-291 | Claude Sonnet 4.6 | 2026-04-07 10:21 | San Diego
 Date: 2026-04-07 San Diego
 Parts: 131-132
-Phase: 7 — The Delivery
+Phase: 7 â€” The Delivery
 
 WHAT HAPPENED:
 - Rapacke Law Group call attended April 7 11:00
 - Alloy Patent Law selected for provisional patent filing
 - USPTO 19/433,835 (Attested Intelligence Holdings LLC) confirmed via applicant website
-- Full competitive analysis completed — TY uniquely differentiated by Guardian Codex, Incapacitation Protocol, Duress Signal, Two Protection Directions, Closed Chain Rule
+- Full competitive analysis completed â€” TY uniquely differentiated by Guardian Codex, Incapacitation Protocol, Duress Signal, Two Protection Directions, Closed Chain Rule
 - Patent Evidence Report v3 produced, v4 CORRECTED produced (8 errors fixed, 6 applied)
-- GoDaddy DNS remediation completed — FIX-131.1
+- GoDaddy DNS remediation completed â€” FIX-131.1
 - support@tyova.ai email confirmed working via Microsoft 365 / Outlook
 - SPF updated to spf.protection.outlook.com
-- WebsiteBuilder A record deleted — website root deferred pending testing completion
+- WebsiteBuilder A record deleted â€” website root deferred pending testing completion
 - testing.tyova.ai operational throughout
 
 OPEN:
-- FIX-131.1 Steps 5+6 deferred — Vercel A record and www CNAME when testing complete
+- FIX-131.1 Steps 5+6 deferred â€” Vercel A record and www CNAME when testing complete
 - FLAG-128.1 duress signal personal decision pending
 - G-B compromise signal not in active Codex
 - Alloy engagement letter + $4,500 provisional fee pending
@@ -5681,7 +5681,7 @@ All six fixes committed. testing.tyova.ai/book/chapter-26 verified live with Sec
 ### Entry-092 | FIX-180 | SS-FIX-083 | 2026-04-18 13:40 PDT | San Diego
 
 **Fix:** Canonical TYOVA LLC relationship statement rollout + codebase URL audit
-**Destination:** SS321 — testing.silversounds321.com
+**Destination:** SS321 â€” testing.silversounds321.com
 **CLO:** CLO-380
 
 **Governance note.** The canonical SS321/TYOVA LLC relationship statement
@@ -5735,7 +5735,7 @@ scope discipline):**
 ### Entry-093 | FIX-181 | SS-FIX-084 | 2026-04-18 14:21 PDT | San Diego
 
 **Fix:** mailto subject pre-population on SS321 canonical support links
-**Destination:** SS321 — testing.silversounds321.com
+**Destination:** SS321 â€” testing.silversounds321.com
 **CLO:** CLO-381
 
 **Governance note.** This fix originates from a requirement surfaced during
@@ -5753,7 +5753,7 @@ client: "SS321 Support".
 - src/pages/About.tsx line 144
 
 **Purpose:** Inbound mail arriving at support@tyova.ai is now immediately
-identifiable as originating from SilverSounds321 — the inbound equivalent
+identifiable as originating from SilverSounds321 â€” the inbound equivalent
 of the existing outbound bracketed-tag pattern used on the TYOVA support
 side. Reinforces the single-inbox operational model where support@tyova.ai
 serves both TYOVA and SS321.
@@ -6321,13 +6321,13 @@ Deferred to future controlled session. Scope extended to include .env:2 stale JW
 **Canonical path correction locked:** src/system/env/supabaseConfig.ts
 (prior records incorrectly stated src/integrations/supabase/supabaseConfig.ts).
 
-**Session-Level Governance Finding — Evidence-First Rule (locked 2026-04-20 ~10:50 PDT):**
+**Session-Level Governance Finding â€” Evidence-First Rule (locked 2026-04-20 ~10:50 PDT):**
 Claude must gather all data from all relevant sources before making any decision,
 recommendation, or analysis. Decisions made without complete facts are wrong or will be
 wrong. Past session records from conversation history are primary-source evidence and must
 be folded into the evidence set.
 
-Case study — first post-lock application: SS-FIX-090 near-miss false-positive. Browser
+Case study â€” first post-lock application: SS-FIX-090 near-miss false-positive. Browser
 evidence (2xx everywhere) almost caused SS-FIX-090 to close as fully-applied. V1-V9
 structured source-of-truth audit revealed .env:2 was never updated despite Lovable's
 self-report. Runtime worked due to defensive fallback (hardcoded literal in client.ts),
@@ -6340,26 +6340,26 @@ and prevented a false governance close.
 
 **Action:** SS-FIX-090 closed as CLOSED-PARTIAL (runtime-verified, env-sync-deferred).
 
-**Scope:** Supabase JWT rotation — client.ts active path update. New JWT (iat: 1776553526)
+**Scope:** Supabase JWT rotation â€” client.ts active path update. New JWT (iat: 1776553526)
 applied to client.ts:6 hardcoded literal by Lovable.
 
 **Verification chain (2026-04-20 session):**
-- P1-P5 Pre-publish audit (Supabase/code): GREEN — active client uses new JWT; no .env
+- P1-P5 Pre-publish audit (Supabase/code): GREEN â€” active client uses new JWT; no .env
   read in active path; critical paths (auth, Stripe edge functions, TY AI, RLS, Build Mode
   gate) present and not stubbed
-- S1-S7 Stripe code readiness audit: GREEN — 7 edge functions deployed, webhook signature
+- S1-S7 Stripe code readiness audit: GREEN â€” 7 edge functions deployed, webhook signature
   verification implemented, redirect URLs dynamic from origin header, purchase recording
   path uses service-role key correctly, signed-URL access control intact (B-SS321-001)
-- Browser F12: GREEN — 2xx on all Supabase calls, 101 on WebSocket
-- Supabase dashboard: GREEN — STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
+- Browser F12: GREEN â€” 2xx on all Supabase calls, 101 on WebSocket
+- Supabase dashboard: GREEN â€” STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
   PAYMENT_ENCRYPTION_KEY all present
-- Stripe dashboard: GREEN — live webhook active (SS321 Live Webhook), URL matches code,
+- Stripe dashboard: GREEN â€” live webhook active (SS321 Live Webhook), URL matches code,
   1 real event processed successfully 2026-04-17, 0 failed deliveries this week
 
 **Material discrepancy documented:**
 Lovable self-reported .env:2 updated to new JWT. V1-V9 structured source-of-truth audit
 found this false. .env:2 still holds old JWT (iat: 1776103054). Active client path
-(client.ts) does not read .env — hardcoded literal is the operative value. Stale .env:2
+(client.ts) does not read .env â€” hardcoded literal is the operative value. Stale .env:2
 is architecturally dead weight, not functional risk. .env:2 sync deferred into SS-FIX-087
 scope.
 
@@ -6372,7 +6372,7 @@ this session.**
 
 ### Entry-105 | FIX-193 | SS321 | 2026-04-21 14:41 PDT | San Diego
 
-**Action:** SS-FIX-091 closed — paid track access gate investigation and
+**Action:** SS-FIX-091 closed â€” paid track access gate investigation and
 full remediation.
 
 **Trigger:** Pre-launch audit revealed paid track 'My One and Only ver3
@@ -6381,7 +6381,7 @@ NEW UPDATED 7' playing in full for regular users with no paywall enforcement.
 **Root cause:** Audio file stored in public tracks bucket
 (tracks/d883602b-.../0.32686880049635625.mp3) instead of private
 tracks-private bucket. The get-audio-url edge function and purchase gate
-were bypassed entirely — the client read audio_url directly from the
+were bypassed entirely â€” the client read audio_url directly from the
 tracks table, which pointed to a publicly accessible URL.
 
 **Remediation steps:**
@@ -6391,7 +6391,7 @@ tracks table, which pointed to a publicly accessible URL.
 4. audio_url updated to bare path in tracks table:
    d883602b-da79-4fad-be93-6d84b2661b91/0.32686880049635625.mp3
 5. Access gate confirmed working: regular user had completed purchase
-   record (purchases table, status completed) — full playback was
+   record (purchases table, status completed) â€” full playback was
    legitimate, not a gate failure
 6. EditDraft.tsx fixed: uploadAudio (public) replaced with
    uploadAudioPrivate (private) + audioPreviewUrl state added
@@ -6405,7 +6405,7 @@ Lovable observing calls from its own sandbox environment.
 
 **Pre-launch audit results (all 7 items):**
 - Sign-out / sign-in: PASS
-- Search: PASS (two separate systems — TY AI docs + Browse catalog)
+- Search: PASS (two separate systems â€” TY AI docs + Browse catalog)
 - Library page: PASS
 - TY AI chat: PASS (no fabricated catalog content)
 - Voice button: PASS (present on live site)
@@ -6422,7 +6422,7 @@ Lovable observing calls from its own sandbox environment.
 
 ### Entry-106 | FIX-194 | SS321 | 2026-04-21 15:26 PDT | San Diego
 
-**Action:** SS-FIX-092 closed — Purchased badge added to all track
+**Action:** SS-FIX-092 closed â€” Purchased badge added to all track
 card views.
 
 **Scope:** Three files changed: TrackCard.tsx (tile view),
@@ -6430,24 +6430,24 @@ TrackListRow.tsx (list view), TrackDetailCard.tsx (detail view).
 Each received the same pattern: useQuery keyed by
 ['purchase-date', track.id, user?.id] fetching purchased_at from
 the purchases table, rendered as a green Badge component showing
-'Purchased · MMM DD, YYYY' below the artist name.
+'Purchased Â· MMM DD, YYYY' below the artist name.
 
 **Render guard:** badge only renders when user is authenticated AND
 access?.hasPurchased is true. Non-purchased tracks and logged-out
 users see no change.
 
 **Verification:** Confirmed in all three browse views in Lovable
-preview as regular user — 'My One and Only ver3 NEW UPDATED 7'
-shows 'Purchased · Apr 17, 2026' correctly in tile, list, and
+preview as regular user â€” 'My One and Only ver3 NEW UPDATED 7'
+shows 'Purchased Â· Apr 17, 2026' correctly in tile, list, and
 detail views.
 
 **Resolves SS321-FUTURE-003.**
 
 ### Entry-107 | FIX-195 | SS321 | 2026-04-21 18:02 PDT | San Diego
 
-**Action:** SS-FIX-093 closed — three related price and checkout fixes.
+**Action:** SS-FIX-093 closed â€” three related price and checkout fixes.
 
-**Fix 1 — TrackPaywallCard price fallback:**
+**Fix 1 â€” TrackPaywallCard price fallback:**
 product_catalog table is empty. Previous code fell back to
 hardcoded default_price_cents (100 cents / \.00) for all tracks.
 Updated fallback logic: track.price converted to cents via
@@ -6455,7 +6455,7 @@ Math.round(track.price * 100) is now used as secondary fallback
 before the hardcoded default. Applied to both handlePurchase and
 display price calculation (lines 38 and 70).
 
-**Fix 2 — create-checkout edge function upsert:**
+**Fix 2 â€” create-checkout edge function upsert:**
 Purchases table has unique constraint on (user_id, track_id).
 When user cancelled Stripe checkout and retried, the pending
 purchase record from the first attempt caused a duplicate key
@@ -6464,7 +6464,7 @@ with onConflict: 'user_id,track_id' to overwrite stale pending
 records automatically. Stale pending records cleaned from
 purchases table before deployment.
 
-**Fix 3 — Minimum price validation:**
+**Fix 3 â€” Minimum price validation:**
 Stripe requires minimum charge of \.50 USD. Added min='0.50'
 to price input in Upload.tsx and EditDraft.tsx. Placeholder
 updated to '0.50'. Helper text added: 'Minimum price is \.50
@@ -6475,36 +6475,36 @@ site after all three fixes applied.
 
 ### Entry-108 | FIX-196 | SS321 | 2026-04-21 19:38 PDT | San Diego
 
-**Action:** SS-FIX-094 closed — preview playback, counter, and toast
+**Action:** SS-FIX-094 closed â€” preview playback, counter, and toast
 notification system.
 
 **Trigger:** Paid tracks ver4 and ver5 not playing preview on landing
 page cards. Track detail page play button not working for unpurchased
 paid tracks.
 
-**Fix 1 — get-audio-url edge function:**
+**Fix 1 â€” get-audio-url edge function:**
 Function was throwing Purchase required for all unpurchased paid tracks,
-blocking even preview playback. Updated to check preview_duration — if
+blocking even preview playback. Updated to check preview_duration â€” if
 > 0, returns signed URL with is_preview: true and preview_duration in
 response. Preview enforcement remains client-side in PlayerContext.
 
-**Fix 2 — TrackCard.tsx preview overlay:**
+**Fix 2 â€” TrackCard.tsx preview overlay:**
 Added three-way logic: canListen (full play) / canPreview (30s preview
 with slightly dimmed purple button) / locked (lock icon). Mirrors
 pattern already in TrackListRow and TrackDetailCard.
 
-**Fix 3 — PlayerContext.tsx preview counter:**
+**Fix 3 â€” PlayerContext.tsx preview counter:**
 Added previewCounts state (Record<string, number>) tracking how many
 times each track has been previewed this session. Counter increments
 each time preview enforcement triggers. Resets on page refresh.
 No database writes.
 
-**Fix 4 — GlobalAudioPlayer.tsx toast:**
+**Fix 4 â€” GlobalAudioPlayer.tsx toast:**
 Added useEffect watching previewEnded. Fires sonner toast showing
 track title and remaining previews (max 5). Message:
-'Preview ended — purchase [title] to listen in full. X previews remaining.'
+'Preview ended â€” purchase [title] to listen in full. X previews remaining.'
 
-**Fix 5 — App.tsx toast position:**
+**Fix 5 â€” App.tsx toast position:**
 Sonner Toaster position changed from default (bottom-right) to
 top-center for better visibility.
 
@@ -6514,7 +6514,7 @@ remaining preview count.
 
 ### Entry-109 | FIX-197 | SS321 | 2026-04-21 22:06 PDT | San Diego
 
-**Action:** SS-FIX-095 closed — artist subscription toggle added.
+**Action:** SS-FIX-095 closed â€” artist subscription toggle added.
 
 **Scope:** Three files changed: Upload.tsx, EditDraft.tsx,
 TrackPaywallCard.tsx.
@@ -6536,16 +6536,16 @@ Monetization card after Allow Listening toggle with helper text:
 Added useArtistSettings(track.artist_id, false) hook call.
 Derived subscriptionEnabled from artistSettings?.subscription_enabled ?? false.
 Wrapped Subscribe button in {subscriptionEnabled && (...)} conditional.
-Buy Track button unchanged — always visible for paid tracks.
+Buy Track button unchanged â€” always visible for paid tracks.
 
 **Verified:**
-- Toggle ON → Subscribe button appears on track detail page
-- Toggle OFF → Subscribe button hidden on track detail page
+- Toggle ON †’ Subscribe button appears on track detail page
+- Toggle OFF †’ Subscribe button hidden on track detail page
 - Buy Track button unaffected in both states
 
 ### Entry-110 | FIX-198 | SS321 | 2026-04-21 23:04 PDT | San Diego
 
-**Action:** SS-FIX-096 closed — non-registered user access control.
+**Action:** SS-FIX-096 closed â€” non-registered user access control.
 
 **Policy locked:**
 - Non-registered users: free tracks limited to 20s preview only;
@@ -6567,193 +6567,193 @@ previews also trigger the pause/reset enforcement.
 
 TrackCard.tsx, TrackListRow.tsx, TrackDetailCard.tsx: !!user passed
 as isAuthenticated to both access control functions. Preview branch
-playTrack call uses conditional meta — free tracks get
+playTrack call uses conditional meta â€” free tracks get
 {is_paid: false, is_free_preview: true, preview_duration: 20,
 userHasAccess: false}; paid tracks keep existing behavior.
 
 GlobalAudioPlayer.tsx: useAuthContext imported and user destructured.
 Toast useEffect expanded to three branches: non-authenticated user
-sees 'Preview ended — register to listen to [title] in full.';
+sees 'Preview ended â€” register to listen to [title] in full.';
 authenticated unpurchased user sees purchase prompt with remaining
 preview count; zero remaining shows final no-more-previews message.
 
 **Verified on live site (non-registered user):**
 - Free track plays 20s then stops
-- Toast: 'Preview ended — register to listen in full'
+- Toast: 'Preview ended â€” register to listen in full'
 - Paid track fully locked, no play button
 
 Entry-111 | FIX-199 | CLO-399 | 2026-04-22 10:27 PDT
-SS-FIX-097 CLOSED — Registered /profile/:userId/taste-map route in App.tsx. UserTasteMap page now reachable. Single file change.
+SS-FIX-097 CLOSED â€” Registered /profile/:userId/taste-map route in App.tsx. UserTasteMap page now reachable. Single file change.
 
 Entry-112 | FIX-200 | CLO-400 | 2026-04-22 10:27 PDT
-SS-FIX-098 CLOSED — TasteWheel.tsx random placeholder replaced with honest empty state. No synthetic data shown to users.
+SS-FIX-098 CLOSED â€” TasteWheel.tsx random placeholder replaced with honest empty state. No synthetic data shown to users.
 
 Entry-113 | FIX-201 | CLO-401 | 2026-04-22 10:27 PDT
-SS-FIX-099 CLOSED — Duplicate BackButton removed from UserTasteMap.tsx. Single Back button now rendered via PageWrapper only.
+SS-FIX-099 CLOSED â€” Duplicate BackButton removed from UserTasteMap.tsx. Single Back button now rendered via PageWrapper only.
 
 Entry-114 | FIX-202 | CLO-402 | 2026-04-23 10:15 PDT
-SS-FIX-100 CLOSED — Added Library and My Tracks links to mobile nav Library section in Header.tsx. Mobile nav now has parity with desktop dropdown.
+SS-FIX-100 CLOSED â€” Added Library and My Tracks links to mobile nav Library section in Header.tsx. Mobile nav now has parity with desktop dropdown.
 
 Entry-115 | FIX-203 | CLO-403 | 2026-04-23 12:54 PDT
-SS-FIX-102 CLOSED — Guest paid track preview fully enabled end-to-end.
+SS-FIX-102 CLOSED â€” Guest paid track preview fully enabled end-to-end.
 accessControl.ts, TrackCard.tsx, storage.ts, PlayerContext.tsx, and
 get-audio-url edge function all updated. Bucket-aware signed URL resolution
 and null-user guest detection confirmed working on live site.
 
 Entry-116 | FIX-204 | CLO-404 | 2026-04-23 13:25 PDT
-SS-FIX-101 CLOSED — Track card preview button wired with play/pause toggle.
+SS-FIX-101 CLOSED â€” Track card preview button wired with play/pause toggle.
 isActive used for click condition, isActivelyPlaying for icon swap. Pause/resume
 from card confirmed working for guests on live site. TrackCard.tsx only.
 
 Entry-117 | FIX-205 | CLO-405 | 2026-04-23 13:45 PDT
-SS-FIX-103 CLOSED — Guest preview-end toast replaced with modal popup.
+SS-FIX-103 CLOSED â€” Guest preview-end toast replaced with modal popup.
 X close button added. Cadence gate: 1st preview end then every 5th.
 GlobalAudioPlayer.tsx only. Confirmed working on live site.
 
 Entry-118 | FIX-206 | CLO-406 | 2026-04-23 14:27 PDT
-SS-FIX-104 CLOSED — Buy Track button on TrackCard invokes Stripe checkout
+SS-FIX-104 CLOSED â€” Buy Track button on TrackCard invokes Stripe checkout
 directly. Guests to /auth, logged-in users get checkout in new tab. CLOSED.
 
 Entry-119 | FIX-207 | CLO-407 | 2026-04-23 14:27 PDT
-SS-FIX-105 CLOSED — Buy button z-index raised, row container propagation
+SS-FIX-105 CLOSED â€” Buy button z-index raised, row container propagation
 stopped. Prevents title Link intercepting mobile tap. TrackCard.tsx only.
 
 Entry-120 | FIX-208 | CLO-408 | 2026-04-23 14:27 PDT
-SS-FIX-106 CLOSED — Stripe Checkout shows real track title and artist name.
+SS-FIX-106 CLOSED â€” Stripe Checkout shows real track title and artist name.
 Track metadata fetched in create-checkout edge function. 404 guard added.
 
 Entry-121 | FIX-209 | CLO-409 | 2026-04-23 19:25 PDT
-SS-FIX-107 CLOSED — Direct Stripe checkout applied to TrackListRow.tsx and
+SS-FIX-107 CLOSED â€” Direct Stripe checkout applied to TrackListRow.tsx and
 TrackDetailCard.tsx. Buy buttons invoke createTrackCheckout directly.
 
 Entry-122 | FIX-210 | CLO-410 | 2026-04-23 19:25 PDT
-SS-FIX-108 CLOSED — All / Free / Paid segmented control replaces Free Only
+SS-FIX-108 CLOSED â€” All / Free / Paid segmented control replaces Free Only
 toggle in FilterBar.tsx. Paid filter now reachable from UI.
 
 Entry-123 | FIX-211 | CLO-411 | 2026-04-23 20:16 PDT
-SS-FIX-109 CLOSED — Auto-populate title from audio filename on upload.
+SS-FIX-109 CLOSED â€” Auto-populate title from audio filename on upload.
 Clean derivation from filename. Only fills when title field is empty.
 
 Entry-124 | FIX-212 | CLO-412 | 2026-04-23 20:16 PDT
-SS-FIX-110 CLOSED — Country field pre-fills from user profile on Upload page.
+SS-FIX-110 CLOSED â€” Country field pre-fills from user profile on Upload page.
 useEffect fetches profiles.country on mount. Upload.tsx only.
 
 Entry-125 | FIX-213 | CLO-413 | 2026-04-23 20:16 PDT
-SS-FIX-111 CLOSED — Working clear/remove buttons for audio and album art.
+SS-FIX-111 CLOSED â€” Working clear/remove buttons for audio and album art.
 onClear callback added to FileUpload.tsx. Parent state fully reset on clear.
 
 Entry-126 | FIX-214 | CLO-414 | 2026-04-23 21:14 PDT
-SS-FIX-112 CLOSED — Direct Edit button added for track owners on TrackCard
+SS-FIX-112 CLOSED â€” Direct Edit button added for track owners on TrackCard
 and TrackListRow. isOwner derived internally from useAuthContext. Owner
 controls appear on Browse, Library, Profile. Non-owners unaffected.
 View Track tooltip deferred as SS321-FUTURE-004.
 
 Entry-127 | FIX-215 | CLO-415 | 2026-04-24 13:18 PDT
-SS-FIX-113 CLOSED — Purchases tab added to Library page. 4th tab using
+SS-FIX-113 CLOSED â€” Purchases tab added to Library page. 4th tab using
 usePurchases hook and PurchaseCard component. Library.tsx only.
 
 Entry-128 | FIX-216 | CLO-416 | 2026-04-24 13:18 PDT
-SS-FIX-114 CLOSED — Remove button for pending purchases in PurchaseCard.tsx.
+SS-FIX-114 CLOSED â€” Remove button for pending purchases in PurchaseCard.tsx.
 RLS DELETE policy added to purchases table.
 
 Entry-129 | FIX-217 | CLO-417 | 2026-04-24 13:18 PDT
-SS-FIX-115 CLOSED — create-purchase-snapshot edge function fixed: bucket-aware
+SS-FIX-115 CLOSED â€” create-purchase-snapshot edge function fixed: bucket-aware
 download, dynamic content-type. Retroactive ver4 snapshot recovery confirmed.
 
 Entry-130 | FIX-218 | CLO-418 | 2026-04-24 13:18 PDT
-SS-FIX-116 CLOSED — Library tab persists via localStorage. Controlled Tabs
+SS-FIX-116 CLOSED â€” Library tab persists via localStorage. Controlled Tabs
 replaces defaultValue. Library.tsx only.
 
 Entry-131 | FIX-219 | CLO-419 | 2026-04-24 13:18 PDT
-SS-FIX-117 CLOSED — LikeButton and ShareMenu added to TrackListRow.tsx.
+SS-FIX-117 CLOSED â€” LikeButton and ShareMenu added to TrackListRow.tsx.
 
 Entry-132 | FIX-220 | CLO-420 | 2026-04-24 13:18 PDT
-SS-FIX-118 CLOSED — Full parity additions to TrackListRow.tsx: title link,
+SS-FIX-118 CLOSED â€” Full parity additions to TrackListRow.tsx: title link,
 follow, duration, upload date, queue, now playing, active ring.
 
 Entry-133 | FIX-221 | CLO-421 | 2026-04-24 13:18 PDT
-SS-FIX-119 CLOSED — Full parity additions to TrackDetailCard.tsx: LikeButton,
+SS-FIX-119 CLOSED â€” Full parity additions to TrackDetailCard.tsx: LikeButton,
 ShareMenu, Edit, Queue, follow, stats, active ring, clickable title.
 
 Entry-134 | FIX-222 | CLO-422 | 2026-04-24 13:46 PDT
-SS-FIX-120 CLOSED — License: prefix added to license_type badge in
+SS-FIX-120 CLOSED â€” License: prefix added to license_type badge in
 TrackDetailCard.tsx. Neon-blue semantic token applied for visual distinction
 from mood badges. TrackDetailCard.tsx only.
 
 Entry-135 | FIX-223 | CLO-423 | 2026-04-24 14:48 PDT
-SS-FIX-121 CLOSED — Header search wired to real music search via useSearch
+SS-FIX-121 CLOSED â€” Header search wired to real music search via useSearch
 hook and search_tracks RPC. Popular searches updated to music terms.
 CommandItem value props fixed cmdk empty state bug. SearchEngine.ts and
 SearchCommand.tsx only.
 
 Entry-136 | FIX-224 | CLO-424 | 2026-04-24 15:29 PDT
-SS-FIX-122 CLOSED — Revenue button added to Artist Dashboard Quick Actions
+SS-FIX-122 CLOSED â€” Revenue button added to Artist Dashboard Quick Actions
 row. Links to /dashboard/revenue. Dashboard.tsx only.
 
 Entry-137 | FIX-225 | CLO-425 | 2026-04-24 18:23 PDT
-SS-FIX-123 CLOSED — Support link added to guest-visible nav on desktop
+SS-FIX-123 CLOSED â€” Support link added to guest-visible nav on desktop
 and mobile. Between About and TY AI. HelpCircle icon. Header.tsx only.
 
 Entry-138 | FIX-226 | CLO-426 | 2026-04-24 20:05 PDT
-SS-FIX-124 CLOSED — Footer.tsx: Profile fallback to /auth for guests.
+SS-FIX-124 CLOSED â€” Footer.tsx: Profile fallback to /auth for guests.
 Support mailto pre-filled with subject and body template. Footer.tsx only.
 
 Entry-139 | FIX-227 | CLO-427 | 2026-04-24 22:02 PDT
-SS-FIX-125 CLOSED — resetPreviewEnded added to PlayerContext. GlobalAudioPlayer
+SS-FIX-125 CLOSED â€” resetPreviewEnded added to PlayerContext. GlobalAudioPlayer
 reverted to post-SS-FIX-103 working state. Modal working on mobile.
 Position deferred as SS321-FUTURE-008.
 
 Entry-140 | FIX-228 | CLO-428 | 2026-04-25 11:50 PDT
-SS-FIX-126 CLOSED — TrackListRow mobile responsive two-row layout. flex-wrap
+SS-FIX-126 CLOSED â€” TrackListRow mobile responsive two-row layout. flex-wrap
 sm:flex-nowrap on outer row, w-full sm:w-auto on title column and actions
 cluster. Title full-width on mobile, actions wrap to second line. Desktop
 unchanged. src/components/browse/TrackListRow.tsx only.
 
 Entry-141 | FIX-229 | CLO-429 | 2026-04-25 11:50 PDT
-SS-FIX-127 CLOSED — Footer pb-24 added so TY AI floating buttons no longer
+SS-FIX-127 CLOSED â€” Footer pb-24 added so TY AI floating buttons no longer
 overlap footer content. src/components/Footer.tsx only.
 
 Entry-142 | FIX-230 | CLO-430 | 2026-04-25 11:50 PDT
-SS-FIX-128 CLOSED — AudioFormatBadge theme-aware colors. WAV green light /
+SS-FIX-128 CLOSED â€” AudioFormatBadge theme-aware colors. WAV green light /
 gold dark. MP3 blue light / cyan dark.
 src/components/track/AudioFormatBadge.tsx only.
 
 Entry-143 | FIX-231 | CLO-431 | 2026-04-25 11:50 PDT
-SS-FIX-129 CLOSED — PlayAllButton component on Browse, Library Liked, and
+SS-FIX-129 CLOSED â€” PlayAllButton component on Browse, Library Liked, and
 My Tracks. Uses playQueue from index 0. Returns null when zero tracks.
 Files: PlayAllButton.tsx (new), Browse.tsx, Library.tsx, MyTracks.tsx.
 
 Entry-144 | FIX-232 | CLO-432 | 2026-04-25 11:50 PDT
-SS-FIX-130 CLOSED — 3-state Repeat button on mini player (none/all/one).
+SS-FIX-130 CLOSED â€” 3-state Repeat button on mini player (none/all/one).
 Spotify-style cycle. Files: PlayerContext.tsx, GlobalAudioPlayer.tsx.
 
 Entry-145 | FIX-233 | CLO-433 | 2026-04-25 11:50 PDT
-SS-FIX-131 NO-OP CLOSED — About page TYOVA link audit only. href on
+SS-FIX-131 NO-OP CLOSED â€” About page TYOVA link audit only. href on
 src/pages/About.tsx line 126 already https://tyova.ai. Link text on line 131.
 No change applied. No file modifications.
 
 Entry-146 | FIX-234 | CLO-434 | 2026-04-25 13:00 PDT
-SS-FIX-132 CLOSED — TY AI KB entries added for Shuffle, Repeat, and
+SS-FIX-132 CLOSED â€” TY AI KB entries added for Shuffle, Repeat, and
 Play All. Repeat HOW questions verified working. Shuffle and Play All
-HOW questions blocked by Tier 0 handler priority — SS-FIX-133 to fix.
+HOW questions blocked by Tier 0 handler priority â€” SS-FIX-133 to fix.
 src/ty-ai/TYAISS321Knowledge.ts only.
 
 Entry-147 | FIX-235 | CLO-435 | 2026-04-25 13:13 PDT
-SS-FIX-133 CLOSED — TY AI handler fixes. Three Tier 0 guards added to
+SS-FIX-133 CLOSED â€” TY AI handler fixes. Three Tier 0 guards added to
 useTYAIChatProcessor.ts: Shuffle HOW-question guard, Play All HOW-question
 guard, Repeat command handler. All 9 verification tests passed.
 src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only.
 
 Entry-148 | FIX-236 | CLO-436 | 2026-04-25 13:33 PDT
-SS-FIX-134 CLOSED — TY AI catalog intelligence. Five live Supabase
+SS-FIX-134 CLOSED â€” TY AI catalog intelligence. Five live Supabase
 query handlers added to useTYAIChatProcessor.ts: track count, artist
 list, genre list, new releases, specific track lookup. All query live
 DB with approved+is_deleted filters. All 8 verification tests passed.
-TY now self-updates as catalog grows — no KB maintenance required.
+TY now self-updates as catalog grows â€” no KB maintenance required.
 src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only.
 
 Entry-149 | FIX-237 | CLO-437 | 2026-04-25 14:39 PDT
-SS-FIX-135 CLOSED — TY AI player execution wiring. Five Tier 0
+SS-FIX-135 CLOSED â€” TY AI player execution wiring. Five Tier 0
 handlers: What's Playing (reads currentTrack), Pause (togglePlay),
 Resume (togglePlay), Repeat Execute (toggleRepeat), Ordered Play All
 (playQueue 50 tracks asc). ChatProcessResult type extended. currentTrack
@@ -6761,162 +6761,162 @@ passed into processMessage. All 9 verification tests passed.
 Files: ty-ai-chat.ts, useTYAIChatProcessor.ts, TYAIPanelContainer.tsx.
 
 Entry-150 | FIX-238 | CLO-438 | 2026-04-25 15:15 PDT
-SS-FIX-136 CLOSED — TY AI lyric-phrase search. Tier 0 handler at top
+SS-FIX-136 CLOSED â€” TY AI lyric-phrase search. Tier 0 handler at top
 of processor detects lyric-search intent, extracts phrase, calls
 search-tracks-semantic, returns top result with confirmation prompt.
 useTYAIChatProcessor.ts only.
 
 Entry-151 | FIX-239 | CLO-439 | 2026-04-25 15:15 PDT
-SS-FIX-137 CLOSED — TY AI confirm-play handler. Two patches. Final:
+SS-FIX-137 CLOSED â€” TY AI confirm-play handler. Two patches. Final:
 lastLyricResultRef stores result at search time; confirm-play reads
-ref directly bypassing stale closure. 'yes play it' → correct track
+ref directly bypassing stale closure. 'yes play it' †’ correct track
 plays. useTYAIChatProcessor.ts only.
 
 Entry-152 | FIX-240 | CLO-440 | 2026-04-25 15:42 PDT
-SS-FIX-138 CLOSED — Claude/Anthropic disclosure added to About page
+SS-FIX-138 CLOSED â€” Claude/Anthropic disclosure added to About page
 (Powered by TY AI section) and TY AI page (Governed by Design card).
 Matches transparency doctrine. Legal pages already disclosed;
 user-facing pages now consistent. src/pages/About.tsx, TyAi.tsx.
 
 Entry-153 | FIX-241 | CLO-441 | 2026-04-25 18:17 PDT
-B-SS321-003 CLOSED — SilverSounds321 domain cutover complete.
+B-SS321-003 CLOSED â€” SilverSounds321 domain cutover complete.
 silversounds321.com live via Entri/Lovable DNS. www redirects to
 apex. Supabase auth URLs updated. testing.silversounds321.com
 retained as staging. SS321 IS NOW LIVE AT silversounds321.com.
 
 Entry-154 | FIX-242 | CLO-442 | 2026-04-25 18:43 PDT
-SS-FIX-139 CLOSED — profiles email exposure fix attempt. Public
+SS-FIX-139 CLOSED â€” profiles email exposure fix attempt. Public
 SELECT policy dropped, SECURITY DEFINER function created. Regression
 discovered (anon embedded joins broken). Policy restored. Root cause:
 PostgreSQL RLS row-level only. Deferred as SS321-FUTURE-009.
 Practical risk low. Site confirmed healthy post-restore.
 
-Entry-155 | FIX-243 | CLO-443 | 2026-04-25 19:31 PDT | SS321 SS-FIX-140 — Server-authoritative checkout price. create-checkout edge function patched: priceInCents from client ignored entirely; price fetched from public.tracks.price (numeric, dollars), converted to cents via Math.round(track.price * 100); guard throws if dbPriceInCents <= 0. Stripe unit_amount and purchases.amount_cents both use DB price. Commit 266e7e1.
+Entry-155 | FIX-243 | CLO-443 | 2026-04-25 19:31 PDT | SS321 SS-FIX-140 â€” Server-authoritative checkout price. create-checkout edge function patched: priceInCents from client ignored entirely; price fetched from public.tracks.price (numeric, dollars), converted to cents via Math.round(track.price * 100); guard throws if dbPriceInCents <= 0. Stripe unit_amount and purchases.amount_cents both use DB price. Commit 266e7e1.
 
-Entry-156 | FIX-244 | CLO-444 | 2026-04-25 19:42 PDT | SS321 SS-FIX-141 — Email column exposure fix. public.profiles table had anon SELECT access to email column via Public profiles are viewable by everyone RLS policy. Fixed via column-level privilege revocation: REVOKE SELECT (email) ON public.profiles FROM anon. No schema migration, no policy rewrite, no app code changes. DB-only fix applied directly in Supabase SQL Editor.
+Entry-156 | FIX-244 | CLO-444 | 2026-04-25 19:42 PDT | SS321 SS-FIX-141 â€” Email column exposure fix. public.profiles table had anon SELECT access to email column via Public profiles are viewable by everyone RLS policy. Fixed via column-level privilege revocation: REVOKE SELECT (email) ON public.profiles FROM anon. No schema migration, no policy rewrite, no app code changes. DB-only fix applied directly in Supabase SQL Editor.
 
-Entry-157 | FIX-245 | CLO-445 | 2026-04-25 20:21 PDT | SS321 SS-FIX-142 — OpenAI key server-side proxy. Deleted get-openai-key edge function and fetchServerApiKey.ts. Added two authenticated proxy functions: openai-chat (JWT + admin gate, serves AUDE/AIDRE) and openai-transcribe (JWT gate, 25 MB cap, serves VoiceEngine/RealtimeConversationController). Client refactors: VoiceEngine.ts, RealtimeConversationController.ts, useTyAiVoice.ts, AUDEAutoAbstractEngine.ts, AIDRERefinementEngine.ts — all direct browser-to-OpenAI calls eliminated. OPENAI_API_KEY remains in Supabase Function secrets only. Commit 8f97863.
+Entry-157 | FIX-245 | CLO-445 | 2026-04-25 20:21 PDT | SS321 SS-FIX-142 â€” OpenAI key server-side proxy. Deleted get-openai-key edge function and fetchServerApiKey.ts. Added two authenticated proxy functions: openai-chat (JWT + admin gate, serves AUDE/AIDRE) and openai-transcribe (JWT gate, 25 MB cap, serves VoiceEngine/RealtimeConversationController). Client refactors: VoiceEngine.ts, RealtimeConversationController.ts, useTyAiVoice.ts, AUDEAutoAbstractEngine.ts, AIDRERefinementEngine.ts â€” all direct browser-to-OpenAI calls eliminated. OPENAI_API_KEY remains in Supabase Function secrets only. Commit 8f97863.
 
-Entry-158 | FIX-246 | CLO-446 | 2026-04-25 20:51 PDT | SS321 SS-FIX-143 — Email column isolation (corrects SS-FIX-141). Initial column-level REVOKE SELECT (email) ON public.profiles FROM anon failed — Supabase table-level grants override column-level revokes. Correct fix: (1) REVOKE SELECT ON public.profiles FROM anon; (2) GRANT SELECT (id, display_name, avatar_url, country, created_at, updated_at, banner_url, status, deleted_at, privacy_behavioral_tracking, privacy_emotion_tracking, privacy_proactive_engagement, bio) ON public.profiles TO anon. Verified via information_schema.column_privileges — 13 columns granted, email absent. DB-only fix, no commit.
+Entry-158 | FIX-246 | CLO-446 | 2026-04-25 20:51 PDT | SS321 SS-FIX-143 â€” Email column isolation (corrects SS-FIX-141). Initial column-level REVOKE SELECT (email) ON public.profiles FROM anon failed â€” Supabase table-level grants override column-level revokes. Correct fix: (1) REVOKE SELECT ON public.profiles FROM anon; (2) GRANT SELECT (id, display_name, avatar_url, country, created_at, updated_at, banner_url, status, deleted_at, privacy_behavioral_tracking, privacy_emotion_tracking, privacy_proactive_engagement, bio) ON public.profiles TO anon. Verified via information_schema.column_privileges â€” 13 columns granted, email absent. DB-only fix, no commit.
 
-Entry-159 | FIX-247 | CLO-447 | 2026-04-25 21:17 PDT | SS321 SS-FIX-144 — Auth guards for 5 unauthenticated AI/embedding edge functions. Closes unauthenticated_ai_endpoints finding. Guards: ty-ai-chat (JWT required, any authenticated user); search-tracks-semantic (service role key OR valid JWT); evolution-ml-analyze, generate-track-embedding, backfill-embeddings (JWT + has_role admin check, 401/403 respectively). Missing createClient import added to evolution-ml-analyze. All guards inserted immediately after OPTIONS preflight block. No other logic changed. Commit d97ac93.
+Entry-159 | FIX-247 | CLO-447 | 2026-04-25 21:17 PDT | SS321 SS-FIX-144 â€” Auth guards for 5 unauthenticated AI/embedding edge functions. Closes unauthenticated_ai_endpoints finding. Guards: ty-ai-chat (JWT required, any authenticated user); search-tracks-semantic (service role key OR valid JWT); evolution-ml-analyze, generate-track-embedding, backfill-embeddings (JWT + has_role admin check, 401/403 respectively). Missing createClient import added to evolution-ml-analyze. All guards inserted immediately after OPTIONS preflight block. No other logic changed. Commit d97ac93.
 
-Entry-160 | FIX-248 | CLO-448 | 2026-04-25 21:30 PDT | SS321 SS-FIX-145 — Client-side admin email shortcut removed. useUserRole.tsx contained hardcoded ADMIN_EMAILS list and isAdminByEmail short-circuit granting admin status purely from email match in browser JS without server-side validation. Fix: removed ADMIN_EMAILS constant, isAdminByEmail field, all email-based short-circuit paths. isAdmin now derives solely from user_roles table query. Pre-flight DB check confirmed joseramonjr@hotmail.com has role=admin in user_roles before shipping. Commit 7ea8e7f.
+Entry-160 | FIX-248 | CLO-448 | 2026-04-25 21:30 PDT | SS321 SS-FIX-145 â€” Client-side admin email shortcut removed. useUserRole.tsx contained hardcoded ADMIN_EMAILS list and isAdminByEmail short-circuit granting admin status purely from email match in browser JS without server-side validation. Fix: removed ADMIN_EMAILS constant, isAdminByEmail field, all email-based short-circuit paths. isAdmin now derives solely from user_roles table query. Pre-flight DB check confirmed joseramonjr@hotmail.com has role=admin in user_roles before shipping. Commit 7ea8e7f.
 
-Entry-161 | FIX-249 | CLO-449 | 2026-04-25 21:43 PDT | SS321 SS-FIX-146 — TY AI autorun tables restricted to admin-only SELECT. Four internal governance tables (tyai_autorun_config, tyai_autorun_locks, tyai_autorun_runs, tyai_autorun_fail_safe_alerts) had open SELECT policies applying to all authenticated users with USING: true and no user scoping. Fix: dropped existing authenticated SELECT policies, created admin_only_select policy on each table using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
+Entry-161 | FIX-249 | CLO-449 | 2026-04-25 21:43 PDT | SS321 SS-FIX-146 â€” TY AI autorun tables restricted to admin-only SELECT. Four internal governance tables (tyai_autorun_config, tyai_autorun_locks, tyai_autorun_runs, tyai_autorun_fail_safe_alerts) had open SELECT policies applying to all authenticated users with USING: true and no user scoping. Fix: dropped existing authenticated SELECT policies, created admin_only_select policy on each table using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
 
-Entry-162 | FIX-250 | CLO-450 | 2026-04-25 21:47 PDT | SS321 SS-FIX-147 — ty_ai_recovery_attempts restricted to admin-only SELECT. Table had SELECT policy applying to {public} (unauthenticated) with USING: true — exposing pre/post fix system states and internal instance IDs without any auth. Fix: dropped public policy, created admin_only_select policy using has_role(auth.uid(), 'admin'::app_role) scoped to authenticated role. DB-only fix, no commit.
+Entry-162 | FIX-250 | CLO-450 | 2026-04-25 21:47 PDT | SS321 SS-FIX-147 â€” ty_ai_recovery_attempts restricted to admin-only SELECT. Table had SELECT policy applying to {public} (unauthenticated) with USING: true â€” exposing pre/post fix system states and internal instance IDs without any auth. Fix: dropped public policy, created admin_only_select policy using has_role(auth.uid(), 'admin'::app_role) scoped to authenticated role. DB-only fix, no commit.
 
-Entry-163 | FIX-251 | CLO-451 | 2026-04-25 22:22 PDT | SS321 SS-FIX-148 — Core AI table INSERT/UPDATE lockdown. ty_ai_system_state had public UPDATE policy (System can update state) allowing anonymous users to flip AI safety controls — dropped and replaced with service_role_only_update. 20 core AI operational tables (ty_ai_logs, ty_ai_kernel_runtime_events, ty_ai_memory_events, ty_ai_resource_events, ty_ai_scaling_events, ty_ai_kse_events, ty_ai_kse_snapshots, ty_ai_uce_context_events, ty_ai_mesh_events, ty_ai_mesh_repairs, ty_ai_threat_events, ty_ai_task_failures, ty_ai_task_runs, ty_ai_tasks, ty_ai_memory_snapshots, ty_ai_memory_integrity_reports, ty_ai_test_history, ty_cross_instance_violations, ty_evolution_marl_agents) had public INSERT policies — all dropped, RLS enabled on each. DB-only fix, no commit.
+Entry-163 | FIX-251 | CLO-451 | 2026-04-25 22:22 PDT | SS321 SS-FIX-148 â€” Core AI table INSERT/UPDATE lockdown. ty_ai_system_state had public UPDATE policy (System can update state) allowing anonymous users to flip AI safety controls â€” dropped and replaced with service_role_only_update. 20 core AI operational tables (ty_ai_logs, ty_ai_kernel_runtime_events, ty_ai_memory_events, ty_ai_resource_events, ty_ai_scaling_events, ty_ai_kse_events, ty_ai_kse_snapshots, ty_ai_uce_context_events, ty_ai_mesh_events, ty_ai_mesh_repairs, ty_ai_threat_events, ty_ai_task_failures, ty_ai_task_runs, ty_ai_tasks, ty_ai_memory_snapshots, ty_ai_memory_integrity_reports, ty_ai_test_history, ty_cross_instance_violations, ty_evolution_marl_agents) had public INSERT policies â€” all dropped, RLS enabled on each. DB-only fix, no commit.
 
-Entry-164 | FIX-252 | CLO-452 | 2026-04-25 22:28 PDT | SS321 SS-FIX-149 — ty_ai_system_state SELECT and INSERT restricted to service_role only. Table had two remaining public policies: System can read state (SELECT, public) and System can insert state (INSERT, public) — both dropped. Replaced with service_role_only_select and service_role_only_insert policies. Completes full lockdown of ty_ai_system_state (UPDATE locked in SS-FIX-148). DB-only fix, no commit.
+Entry-164 | FIX-252 | CLO-452 | 2026-04-25 22:28 PDT | SS321 SS-FIX-149 â€” ty_ai_system_state SELECT and INSERT restricted to service_role only. Table had two remaining public policies: System can read state (SELECT, public) and System can insert state (INSERT, public) â€” both dropped. Replaced with service_role_only_select and service_role_only_insert policies. Completes full lockdown of ty_ai_system_state (UPDATE locked in SS-FIX-148). DB-only fix, no commit.
 
-Entry-165 | FIX-253 | CLO-453 | 2026-04-25 22:40 PDT | SS321 SS-FIX-150 — Batch RLS lockdown. guardian_fail_safe_alerts: dropped public Anyone can view fail-safe alerts SELECT policy, replaced with admin_only_select. comments: dropped Anyone can view comments policy, replaced with authenticated_can_view_comments. INSERT restricted to service_role on: ty_ai_test_results, ty_ai_simulation_runs, ty_ai_self_improvement_log, ty_ai_recovery_attempts, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_sync_log, ty_evolution_performance_metrics, ty_evolution_maintenance_predictions, ty_evolution_marl_coordination. UPDATE restricted to service_role on: ty_ai_mesh_repairs, ty_ai_task_runs, ty_ai_tasks, ty_evolution_marl_agents, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_maintenance_predictions. DB-only fix, no commit.
+Entry-165 | FIX-253 | CLO-453 | 2026-04-25 22:40 PDT | SS321 SS-FIX-150 â€” Batch RLS lockdown. guardian_fail_safe_alerts: dropped public Anyone can view fail-safe alerts SELECT policy, replaced with admin_only_select. comments: dropped Anyone can view comments policy, replaced with authenticated_can_view_comments. INSERT restricted to service_role on: ty_ai_test_results, ty_ai_simulation_runs, ty_ai_self_improvement_log, ty_ai_recovery_attempts, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_sync_log, ty_evolution_performance_metrics, ty_evolution_maintenance_predictions, ty_evolution_marl_coordination. UPDATE restricted to service_role on: ty_ai_mesh_repairs, ty_ai_task_runs, ty_ai_tasks, ty_evolution_marl_agents, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_maintenance_predictions. DB-only fix, no commit.
 
-Entry-166 | FIX-254 | CLO-454 | 2026-04-25 22:54 PDT | SS321 SS-FIX-151 — Dropped anon SELECT policy on public.profiles entirely. Scanner continued flagging email exposure despite column grant fix (SS-FIX-143) because it reads RLS policy definitions statically. Root fix: dropped Public profiles are viewable by everyone policy (anon, USING: true) entirely. Unauthenticated users now have zero access to profiles table. Authenticated users retain their own policy. DB-only fix, no commit.
+Entry-166 | FIX-254 | CLO-454 | 2026-04-25 22:54 PDT | SS321 SS-FIX-151 â€” Dropped anon SELECT policy on public.profiles entirely. Scanner continued flagging email exposure despite column grant fix (SS-FIX-143) because it reads RLS policy definitions statically. Root fix: dropped Public profiles are viewable by everyone policy (anon, USING: true) entirely. Unauthenticated users now have zero access to profiles table. Authenticated users retain their own policy. DB-only fix, no commit.
 
-Entry-167 | FIX-255 | CLO-455 | 2026-04-25 23:02 PDT | SS321 SS-FIX-152 — Profiles authenticated SELECT restricted to owner+admin; AI table INSERT/UPDATE lockdown continued. Dropped Authenticated users can view public profile fields policy (authenticated, USING: true); replaced with owner_or_admin_select (auth.uid()=id OR has_role admin). Dropped remaining public INSERT policies on 26 ty_ai/ty_evolution tables. Added service_role_only_insert on ty_ai_upe_prediction_events. DB-only fix, no commit.
+Entry-167 | FIX-255 | CLO-455 | 2026-04-25 23:02 PDT | SS321 SS-FIX-152 â€” Profiles authenticated SELECT restricted to owner+admin; AI table INSERT/UPDATE lockdown continued. Dropped Authenticated users can view public profile fields policy (authenticated, USING: true); replaced with owner_or_admin_select (auth.uid()=id OR has_role admin). Dropped remaining public INSERT policies on 26 ty_ai/ty_evolution tables. Added service_role_only_insert on ty_ai_upe_prediction_events. DB-only fix, no commit.
 
-Entry-168 | FIX-256 | CLO-456 | 2026-04-26 10:16 PDT | SS321 SS-FIX-153 — Batch AI table and storage lockdown. admin_only_select applied to: ty_ai_consensus_sessions, ty_ai_consensus_votes, ty_ai_learning_events, ty_ai_simulation_runs, ty_ai_improvements, ty_ai_guardian_notifications. service_role_only_insert/update applied to: ty_ai_test_results, ty_ai_test_history, ty_ai_tasks, ty_ai_task_runs, ty_ai_task_failures, ty_ai_mesh_events, ty_ai_mesh_repairs, ty_ai_memory_snapshots, ty_ai_memory_integrity_reports, ty_ai_kernel_runtime_events, ty_ai_scaling_events, ty_ai_resource_events, ty_ai_kse_events, ty_ai_kse_snapshots, ty_ai_uce_context_events, ty_ai_self_improvement_log, ty_ai_threat_events, ty_ai_recovery_attempts, ty_ai_logs, ty_cross_instance_violations, ty_evolution_marl_agents, ty_evolution_marl_coordination, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_sync_log, ty_evolution_performance_metrics, ty_evolution_maintenance_predictions. Storage: certification bucket restricted to service_role; broad authenticated upload policies dropped from tracks/album_art/playlist_covers. DB-only fix, no commit.
+Entry-168 | FIX-256 | CLO-456 | 2026-04-26 10:16 PDT | SS321 SS-FIX-153 â€” Batch AI table and storage lockdown. admin_only_select applied to: ty_ai_consensus_sessions, ty_ai_consensus_votes, ty_ai_learning_events, ty_ai_simulation_runs, ty_ai_improvements, ty_ai_guardian_notifications. service_role_only_insert/update applied to: ty_ai_test_results, ty_ai_test_history, ty_ai_tasks, ty_ai_task_runs, ty_ai_task_failures, ty_ai_mesh_events, ty_ai_mesh_repairs, ty_ai_memory_snapshots, ty_ai_memory_integrity_reports, ty_ai_kernel_runtime_events, ty_ai_scaling_events, ty_ai_resource_events, ty_ai_kse_events, ty_ai_kse_snapshots, ty_ai_uce_context_events, ty_ai_self_improvement_log, ty_ai_threat_events, ty_ai_recovery_attempts, ty_ai_logs, ty_cross_instance_violations, ty_evolution_marl_agents, ty_evolution_marl_coordination, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_sync_log, ty_evolution_performance_metrics, ty_evolution_maintenance_predictions. Storage: certification bucket restricted to service_role; broad authenticated upload policies dropped from tracks/album_art/playlist_covers. DB-only fix, no commit.
 
-Entry-169 | FIX-257 | CLO-457 | 2026-04-26 10:24 PDT | SS321 SS-FIX-154 — Dropped all real public System INSERT/UPDATE policies by exact name on 39 ty_ai/ty_evolution tables. Previous fixes used generic policy names that did not match actual policy names in DB. This fix queried pg_policies for exact names, dropped all matching public System policies, and recreated as service_role_only_insert/update. Admin-gated INSERT created for ty_ai_patent_certification_history, ty_ai_personality_audits, ty_tool_governance_audit, ty_tool_request_approvals, ty_tool_requests. DB-only fix, no commit.
+Entry-169 | FIX-257 | CLO-457 | 2026-04-26 10:24 PDT | SS321 SS-FIX-154 â€” Dropped all real public System INSERT/UPDATE policies by exact name on 39 ty_ai/ty_evolution tables. Previous fixes used generic policy names that did not match actual policy names in DB. This fix queried pg_policies for exact names, dropped all matching public System policies, and recreated as service_role_only_insert/update. Admin-gated INSERT created for ty_ai_patent_certification_history, ty_ai_personality_audits, ty_tool_governance_audit, ty_tool_request_approvals, ty_tool_requests. DB-only fix, no commit.
 
-Entry-170 | FIX-258 | CLO-458 | 2026-04-26 10:31 PDT | SS321 SS-FIX-155 — monitoring_health_checks and tyai_autorun_fail_safe_alerts locked down. monitoring_health_checks: dropped Anyone can view health checks public SELECT, replaced with admin_only_select. tyai_autorun_fail_safe_alerts: dropped Allow insert autorun_alerts and Allow read autorun_alerts policies, replaced with service_role_only_insert and admin_only_select. guardian_authority plaintext token error deferred per FLAG-128.1 — Jose personal decision only. DB-only fix, no commit.
+Entry-170 | FIX-258 | CLO-458 | 2026-04-26 10:31 PDT | SS321 SS-FIX-155 â€” monitoring_health_checks and tyai_autorun_fail_safe_alerts locked down. monitoring_health_checks: dropped Anyone can view health checks public SELECT, replaced with admin_only_select. tyai_autorun_fail_safe_alerts: dropped Allow insert autorun_alerts and Allow read autorun_alerts policies, replaced with service_role_only_insert and admin_only_select. guardian_authority plaintext token error deferred per FLAG-128.1 â€” Jose personal decision only. DB-only fix, no commit.
 
-Entry-171 | FIX-259 | CLO-459 | 2026-04-26 10:37 PDT | SS321 SS-FIX-156 — Artist Stripe identifier exposure and backup bucket upload fixed. purchases: dropped Artists can view purchases of their tracks policy, recreated with track ownership USING check (tracks.artist_id = auth.uid()). ty-ai-backups storage: dropped public System can upload TY AI backups policy, replaced with service_role_only_upload_backups. DB-only fix, no commit.
+Entry-171 | FIX-259 | CLO-459 | 2026-04-26 10:37 PDT | SS321 SS-FIX-156 â€” Artist Stripe identifier exposure and backup bucket upload fixed. purchases: dropped Artists can view purchases of their tracks policy, recreated with track ownership USING check (tracks.artist_id = auth.uid()). ty-ai-backups storage: dropped public System can upload TY AI backups policy, replaced with service_role_only_upload_backups. DB-only fix, no commit.
 
-Entry-172 | FIX-260 | CLO-460 | 2026-04-26 10:43 PDT | SS321 SS-FIX-157 — tyai_autorun_runs INSERT locked and artist_purchases_view created. tyai_autorun_runs: dropped Allow insert autorun_runs authenticated policy, replaced with service_role_only_insert. purchases: RLS cannot restrict columns so created artist_purchases_view projecting only safe columns (id, user_id, track_id, amount_cents, currency, status, purchased_at) — excludes stripe_session_id, stripe_payment_intent_id, encrypted_payment_intent_id, encrypted_session_id. SELECT granted to authenticated on view. DB-only fix, no commit.
+Entry-172 | FIX-260 | CLO-460 | 2026-04-26 10:43 PDT | SS321 SS-FIX-157 â€” tyai_autorun_runs INSERT locked and artist_purchases_view created. tyai_autorun_runs: dropped Allow insert autorun_runs authenticated policy, replaced with service_role_only_insert. purchases: RLS cannot restrict columns so created artist_purchases_view projecting only safe columns (id, user_id, track_id, amount_cents, currency, status, purchased_at) â€” excludes stripe_session_id, stripe_payment_intent_id, encrypted_payment_intent_id, encrypted_session_id. SELECT granted to authenticated on view. DB-only fix, no commit.
 
 
-Entry-174 | FIX-262 | CLO-462 | 2026-04-26 11:09 PDT | SS321 SS-FIX-159 — profiles email exposure final fix. Users can view own profile policy changed from {public} to {authenticated} role (auth.uid()=id). Admins can view all profiles policy recreated with has_role admin check scoped to authenticated. REVOKE SELECT (email) ON public.profiles FROM authenticated — removes email column access from all authenticated users. DB-only fix, no commit.
+Entry-174 | FIX-262 | CLO-462 | 2026-04-26 11:09 PDT | SS321 SS-FIX-159 â€” profiles email exposure final fix. Users can view own profile policy changed from {public} to {authenticated} role (auth.uid()=id). Admins can view all profiles policy recreated with has_role admin check scoped to authenticated. REVOKE SELECT (email) ON public.profiles FROM authenticated â€” removes email column access from all authenticated users. DB-only fix, no commit.
 
-Entry-173 | FIX-261 | CLO-461 | 2026-04-26 11:05 PDT | SS321 SS-FIX-158 � ty_instance_registry and ai_certification_ledger locked down. ty_instance_registry: dropped open UPDATE policy allowing authenticated users to claim unowned instances (owner_user_id IS NULL rows); replaced with owner_or_admin_update (auth.uid()=owner_user_id OR has_role admin). ai_certification_ledger: dropped Anyone can view ledger public SELECT policy exposing real user names to unauthenticated users; replaced with authenticated_only_select. DB-only fix, no commit.
+Entry-173 | FIX-261 | CLO-461 | 2026-04-26 11:05 PDT | SS321 SS-FIX-158 — ty_instance_registry and ai_certification_ledger locked down. ty_instance_registry: dropped open UPDATE policy allowing authenticated users to claim unowned instances (owner_user_id IS NULL rows); replaced with owner_or_admin_update (auth.uid()=owner_user_id OR has_role admin). ai_certification_ledger: dropped Anyone can view ledger public SELECT policy exposing real user names to unauthenticated users; replaced with authenticated_only_select. DB-only fix, no commit.
 
-Entry-175 | FIX-263 | CLO-463 | 2026-04-26 11:28 PDT | SS321 SS-FIX-160 � system_config SELECT restricted to authenticated only. Dropped Anyone can read system_config policy (public, USING: true); replaced with authenticated_only_select. DB-only fix, no commit.
+Entry-175 | FIX-263 | CLO-463 | 2026-04-26 11:28 PDT | SS321 SS-FIX-160 — system_config SELECT restricted to authenticated only. Dropped Anyone can read system_config policy (public, USING: true); replaced with authenticated_only_select. DB-only fix, no commit.
 
-Entry-176 | FIX-264 | CLO-464 | 2026-04-26 11:46 PDT | SS321 SS-FIX-161 � Guardian authority full lockdown. Two fixes: (1) guardian_authority INSERT restricted to admin only � dropped guardian self-appointment policy, replaced with admin_only_insert. (2) guardian-token-manager edge function created: admin-gated (JWT + has_role admin), AES-256-GCM encrypt/decrypt of three guardian token columns (guardian_master_token, offline_recovery_token, successor_activation_token) keyed by guardian_id UUID, strict token_type allowlist, never logs or returns secrets/blobs, GUARDIAN_ENCRYPTION_KEY stored in Supabase Function secrets. No other files touched. Commit 8c8c13b.
+Entry-176 | FIX-264 | CLO-464 | 2026-04-26 11:46 PDT | SS321 SS-FIX-161 — Guardian authority full lockdown. Two fixes: (1) guardian_authority INSERT restricted to admin only — dropped guardian self-appointment policy, replaced with admin_only_insert. (2) guardian-token-manager edge function created: admin-gated (JWT + has_role admin), AES-256-GCM encrypt/decrypt of three guardian token columns (guardian_master_token, offline_recovery_token, successor_activation_token) keyed by guardian_id UUID, strict token_type allowlist, never logs or returns secrets/blobs, GUARDIAN_ENCRYPTION_KEY stored in Supabase Function secrets. No other files touched. Commit 8c8c13b.
 
-Entry-177 | FIX-265 | CLO-465 | 2026-04-26 11:55 PDT | SS321 SS-FIX-162 � Security definer view replaced with security invoker view. Dropped artist_purchases_view (SECURITY DEFINER � flagged by linter). Created artist_purchases_safe WITH (security_invoker = true) projecting safe columns only: id, user_id, track_id, amount_cents, currency, status, purchased_at. Excludes stripe_session_id, stripe_payment_intent_id, encrypted_payment_intent_id, encrypted_session_id, snapshot. SELECT granted to authenticated. DB-only fix, no commit.
+Entry-177 | FIX-265 | CLO-465 | 2026-04-26 11:55 PDT | SS321 SS-FIX-162 — Security definer view replaced with security invoker view. Dropped artist_purchases_view (SECURITY DEFINER — flagged by linter). Created artist_purchases_safe WITH (security_invoker = true) projecting safe columns only: id, user_id, track_id, amount_cents, currency, status, purchased_at. Excludes stripe_session_id, stripe_payment_intent_id, encrypted_payment_intent_id, encrypted_session_id, snapshot. SELECT granted to authenticated. DB-only fix, no commit.
 
-Entry-178 | FIX-266 | CLO-466 | 2026-04-26 12:04 PDT | SS321 SS-FIX-163 � ty_ai_learning_events, ty_ai_simulation_runs, ty_ai_improvements SELECT restricted to admin only. All three tables had public SELECT policies exposing AI decision inputs, simulation outputs, risk scores, and improvement approval details to unauthenticated users. Dropped existing policies, created admin_only_select on each using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
+Entry-178 | FIX-266 | CLO-466 | 2026-04-26 12:04 PDT | SS321 SS-FIX-163 — ty_ai_learning_events, ty_ai_simulation_runs, ty_ai_improvements SELECT restricted to admin only. All three tables had public SELECT policies exposing AI decision inputs, simulation outputs, risk scores, and improvement approval details to unauthenticated users. Dropped existing policies, created admin_only_select on each using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
 
-Entry-179 | FIX-267 | CLO-467 | 2026-04-26 12:09 PDT | SS321 SS-FIX-164 � Dropped real public SELECT policies on AI operational tables. Previous fix (SS-FIX-163) added admin_only_select but did not drop existing public policies by their real names. Real policy names: Allow public read access for improvements, Allow public read access for learning events, Allow public read access for simulation runs � all dropped. admin_only_select remains as sole SELECT policy on all three tables. DB-only fix, no commit.
+Entry-179 | FIX-267 | CLO-467 | 2026-04-26 12:09 PDT | SS321 SS-FIX-164 — Dropped real public SELECT policies on AI operational tables. Previous fix (SS-FIX-163) added admin_only_select but did not drop existing public policies by their real names. Real policy names: Allow public read access for improvements, Allow public read access for learning events, Allow public read access for simulation runs — all dropped. admin_only_select remains as sole SELECT policy on all three tables. DB-only fix, no commit.
 
-Entry-180 | FIX-268 | CLO-468 | 2026-04-26 12:14 PDT | SS321 SS-FIX-165 � AI certification ledger and track log privacy fixes. ai_certification_ledger: dropped authenticated_only_select, replaced with admin_only_select. track_plays_log, track_skips_log, track_download_log: dropped existing artist SELECT policies, replaced with restricted versions using user_id IS NULL condition to prevent artists from identifying individual listeners. DB-only fix, no commit.
+Entry-180 | FIX-268 | CLO-468 | 2026-04-26 12:14 PDT | SS321 SS-FIX-165 — AI certification ledger and track log privacy fixes. ai_certification_ledger: dropped authenticated_only_select, replaced with admin_only_select. track_plays_log, track_skips_log, track_download_log: dropped existing artist SELECT policies, replaced with restricted versions using user_id IS NULL condition to prevent artists from identifying individual listeners. DB-only fix, no commit.
 
-Entry-181 | FIX-269 | CLO-469 | 2026-04-26 12:20 PDT | SS321 SS-FIX-166 � Likes and artist_settings privacy fixes. likes: dropped Anyone can view likes public SELECT, replaced with authenticated_only_select. artist_settings: dropped Admins can view all artist settings, recreated with has_role admin check; REVOKE SELECT (stripe_account_id) FROM authenticated to prevent Stripe account ID exposure. DB-only fix, no commit.
+Entry-181 | FIX-269 | CLO-469 | 2026-04-26 12:20 PDT | SS321 SS-FIX-166 — Likes and artist_settings privacy fixes. likes: dropped Anyone can view likes public SELECT, replaced with authenticated_only_select. artist_settings: dropped Admins can view all artist settings, recreated with has_role admin check; REVOKE SELECT (stripe_account_id) FROM authenticated to prevent Stripe account ID exposure. DB-only fix, no commit.
 
-Entry-182 | FIX-270 | CLO-470 | 2026-04-26 12:25 PDT | SS321 SS-FIX-167 � ty_instance_registry ownership claim vulnerability closed. Dropped Users can update own instances policy (authenticated, USING: owner_user_id IS NULL OR auth.uid()=owner_user_id) � the IS NULL branch allowed any authenticated user to claim 51 unowned system instances. owner_or_admin_update policy from SS-FIX-158 remains as sole authenticated UPDATE policy. DB-only fix, no commit.
+Entry-182 | FIX-270 | CLO-470 | 2026-04-26 12:25 PDT | SS321 SS-FIX-167 — ty_instance_registry ownership claim vulnerability closed. Dropped Users can update own instances policy (authenticated, USING: owner_user_id IS NULL OR auth.uid()=owner_user_id) — the IS NULL branch allowed any authenticated user to claim 51 unowned system instances. owner_or_admin_update policy from SS-FIX-158 remains as sole authenticated UPDATE policy. DB-only fix, no commit.
 
-Entry-183 | FIX-271 | CLO-471 | 2026-04-26 12:44 PDT | SS321 SS-FIX-168 � get-audio-url paid track bypass closed. Two branches in get-audio-url/index.ts (lines 101-106 guest branch, 159-164 authenticated-without-purchase branch) were returning full public URLs for paid tracks on legacy tracks bucket. Both patched to throw Error: Track not yet available for preview. Tracks-private signed URL path, free-track path, owner path, and post-purchase path unchanged. 10 paid tracks on legacy bucket no longer served via bypass. Legacy bucket still publicly accessible at storage layer � Gap 2 (bucket flip) and Gap 3 (track migration) remain open. Commit aa2a0f8.
+Entry-183 | FIX-271 | CLO-471 | 2026-04-26 12:44 PDT | SS321 SS-FIX-168 — get-audio-url paid track bypass closed. Two branches in get-audio-url/index.ts (lines 101-106 guest branch, 159-164 authenticated-without-purchase branch) were returning full public URLs for paid tracks on legacy tracks bucket. Both patched to throw Error: Track not yet available for preview. Tracks-private signed URL path, free-track path, owner path, and post-purchase path unchanged. 10 paid tracks on legacy bucket no longer served via bypass. Legacy bucket still publicly accessible at storage layer — Gap 2 (bucket flip) and Gap 3 (track migration) remain open. Commit aa2a0f8.
 
-Entry-184 | FIX-272 | CLO-472 | 2026-04-26 13:18 PDT | SS321 SS-FIX-169 � get-audio-url architectural rewrite. All 28 approved tracks confirmed in tracks-private pre-deploy. Rewrite: single private bucket for all tracks, is_paid flag governs access not bucket location, all legacy isPrivateBucket branching removed, subscription check now correctly scoped to track artist_id. Free tracks: signed URL for anyone including guests. Paid tracks: owner/purchase/subscription get full signed URL, preview_duration>0 gets preview signed URL, otherwise throws Purchase required. Track migration between buckets no longer needed when toggling free/paid. Commit 9f1f3b7.
+Entry-184 | FIX-272 | CLO-472 | 2026-04-26 13:18 PDT | SS321 SS-FIX-169 — get-audio-url architectural rewrite. All 28 approved tracks confirmed in tracks-private pre-deploy. Rewrite: single private bucket for all tracks, is_paid flag governs access not bucket location, all legacy isPrivateBucket branching removed, subscription check now correctly scoped to track artist_id. Free tracks: signed URL for anyone including guests. Paid tracks: owner/purchase/subscription get full signed URL, preview_duration>0 gets preview signed URL, otherwise throws Purchase required. Track migration between buckets no longer needed when toggling free/paid. Commit 9f1f3b7.
 
-Entry-185 | FIX-273 | CLO-473 | 2026-04-26 12:44 PDT | SS321 SS-FIX-170 � Legacy tracks bucket public SELECT policy removed. Dropped Anyone can view track audio storage policy (public SELECT on tracks bucket). Replaced with authenticated-only SELECT. Prevents unauthenticated direct URL access to files in legacy public tracks bucket. Gap 2 of 3-gap audio security remediation. DB-only fix, no commit.
+Entry-185 | FIX-273 | CLO-473 | 2026-04-26 12:44 PDT | SS321 SS-FIX-170 — Legacy tracks bucket public SELECT policy removed. Dropped Anyone can view track audio storage policy (public SELECT on tracks bucket). Replaced with authenticated-only SELECT. Prevents unauthenticated direct URL access to files in legacy public tracks bucket. Gap 2 of 3-gap audio security remediation. DB-only fix, no commit.
 
-Entry-186 | FIX-274 | CLO-474 | 2026-04-26 13:28 PDT | SS321 SS-FIX-171 � profiles INSERT and UPDATE policies fixed. Dropped Users can insert own profile and Users can update own profile (both applied to {public} role). Recreated both as authenticated-only: INSERT WITH CHECK (auth.uid()=id), UPDATE USING (auth.uid()=id). Unauthenticated users can no longer attempt profile INSERT or UPDATE operations. DB-only fix, no commit.
+Entry-186 | FIX-274 | CLO-474 | 2026-04-26 13:28 PDT | SS321 SS-FIX-171 — profiles INSERT and UPDATE policies fixed. Dropped Users can insert own profile and Users can update own profile (both applied to {public} role). Recreated both as authenticated-only: INSERT WITH CHECK (auth.uid()=id), UPDATE USING (auth.uid()=id). Unauthenticated users can no longer attempt profile INSERT or UPDATE operations. DB-only fix, no commit.
 
-Entry-187 | FIX-275 | CLO-475 | 2026-04-26 13:35 PDT | SS321 SS-FIX-172 � Artist purchases broad policy dropped. Dropped Artists can view purchases of their tracks policy which granted artists full row access including user_id, stripe_session_id, stripe_payment_intent_id, encrypted_session_id. Artists must now use artist_purchases_safe view (security_invoker) which exposes only id, user_id, track_id, amount_cents, currency, status, purchased_at. DB-only fix, no commit.
+Entry-187 | FIX-275 | CLO-475 | 2026-04-26 13:35 PDT | SS321 SS-FIX-172 — Artist purchases broad policy dropped. Dropped Artists can view purchases of their tracks policy which granted artists full row access including user_id, stripe_session_id, stripe_payment_intent_id, encrypted_session_id. Artists must now use artist_purchases_safe view (security_invoker) which exposes only id, user_id, track_id, amount_cents, currency, status, purchased_at. DB-only fix, no commit.
 
-Entry-188 | FIX-276 | CLO-476 | 2026-04-26 13:42 PDT | SS321 SS-FIX-173 � feed_engagement and subscriptions fixes. feed_engagement: dropped Anyone can insert engagement public INSERT policy; replaced with authenticated_insert_own_engagement requiring auth.uid()=user_id OR user_id IS NULL. subscriptions: dropped Artists can view their subscribers policy exposing stripe_customer_id and stripe_subscription_id; created artist_subscriptions_safe view (security_invoker) exposing only id, artist_id, status, created_at. DB-only fix, no commit.
+Entry-188 | FIX-276 | CLO-476 | 2026-04-26 13:42 PDT | SS321 SS-FIX-173 — feed_engagement and subscriptions fixes. feed_engagement: dropped Anyone can insert engagement public INSERT policy; replaced with authenticated_insert_own_engagement requiring auth.uid()=user_id OR user_id IS NULL. subscriptions: dropped Artists can view their subscribers policy exposing stripe_customer_id and stripe_subscription_id; created artist_subscriptions_safe view (security_invoker) exposing only id, artist_id, status, created_at. DB-only fix, no commit.
 
-Entry-189 | FIX-277 | CLO-477 | 2026-04-26 13:55 PDT | SS321 SS-FIX-174 � Three persistent linter warnings resolved. (1) Function Search Path Mutable: SET search_path=public applied to artist_delete_track, get_artist_revenue, get_artist_subscribers, get_weekly_trending, search_similar_tracks. (2) pg_graphql anon introspection: REVOKE SELECT ON ALL TABLES IN SCHEMA graphql FROM anon. (3) Public Bucket Allows Listing: broad public bucket SELECT policy dropped. DB-only fix, no commit.
+Entry-189 | FIX-277 | CLO-477 | 2026-04-26 13:55 PDT | SS321 SS-FIX-174 — Three persistent linter warnings resolved. (1) Function Search Path Mutable: SET search_path=public applied to artist_delete_track, get_artist_revenue, get_artist_subscribers, get_weekly_trending, search_similar_tracks. (2) pg_graphql anon introspection: REVOKE SELECT ON ALL TABLES IN SCHEMA graphql FROM anon. (3) Public Bucket Allows Listing: broad public bucket SELECT policy dropped. DB-only fix, no commit.
 
-Entry-190 | FIX-278 | CLO-478 | 2026-04-26 14:00 PDT | SS321 SS-FIX-175 � ty_ai_state SELECT restricted to admin only. Dropped Authenticated can read ty_ai_state policy (authenticated, USING: true) exposing internal AI key-value state to all authenticated users. Replaced with admin_only_select using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
+Entry-190 | FIX-278 | CLO-478 | 2026-04-26 14:00 PDT | SS321 SS-FIX-175 — ty_ai_state SELECT restricted to admin only. Dropped Authenticated can read ty_ai_state policy (authenticated, USING: true) exposing internal AI key-value state to all authenticated users. Replaced with admin_only_select using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
 
-Entry-191 | FIX-279 | CLO-479 | 2026-04-26 14:05 PDT | SS321 SS-FIX-176 � system_config SELECT restricted to admin only. Previous fix (SS-FIX-160) set authenticated_only_select � scanner requires admin-only. Dropped authenticated_only_select, replaced with admin_only_select using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
+Entry-191 | FIX-279 | CLO-479 | 2026-04-26 14:05 PDT | SS321 SS-FIX-176 — system_config SELECT restricted to admin only. Previous fix (SS-FIX-160) set authenticated_only_select — scanner requires admin-only. Dropped authenticated_only_select, replaced with admin_only_select using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
 
-Entry-192 | FIX-280 | CLO-480 | 2026-04-26 14:11 PDT | SS321 SS-FIX-177 � Public-scoped policy fixes. artist_settings: dropped public Artists can view own settings, recreated as authenticated. tis_track_emotion_analysis: dropped Anyone can view track emotion analysis public SELECT, replaced with authenticated_only_select. ty_ai_emotion_records: dropped public Admins can view all emotion records and Users can view own emotion records, recreated both as authenticated with has_role admin check and auth.uid()=user_id respectively. DB-only fix, no commit.
+Entry-192 | FIX-280 | CLO-480 | 2026-04-26 14:11 PDT | SS321 SS-FIX-177 — Public-scoped policy fixes. artist_settings: dropped public Artists can view own settings, recreated as authenticated. tis_track_emotion_analysis: dropped Anyone can view track emotion analysis public SELECT, replaced with authenticated_only_select. ty_ai_emotion_records: dropped public Admins can view all emotion records and Users can view own emotion records, recreated both as authenticated with has_role admin check and auth.uid()=user_id respectively. DB-only fix, no commit.
 
-Entry-193 | FIX-281 | CLO-481 | 2026-04-26 14:26 PDT | SS321 SS-FIX-178 � Remaining public-scoped policy fixes. artist_settings: re-dropped public Artists can view own settings, recreated as authenticated. track_plays_log: dropped Anyone can insert play logs for approved tracks public INSERT, replaced with authenticated_insert_play_logs (auth.uid()=user_id OR user_id IS NULL). ty_ai_emotion_records: dropped public Users can view own emotion records, recreated as authenticated. DB-only fix, no commit.
+Entry-193 | FIX-281 | CLO-481 | 2026-04-26 14:26 PDT | SS321 SS-FIX-178 — Remaining public-scoped policy fixes. artist_settings: re-dropped public Artists can view own settings, recreated as authenticated. track_plays_log: dropped Anyone can insert play logs for approved tracks public INSERT, replaced with authenticated_insert_play_logs (auth.uid()=user_id OR user_id IS NULL). ty_ai_emotion_records: dropped public Users can view own emotion records, recreated as authenticated. DB-only fix, no commit.
 
-Entry-194 | FIX-282 | CLO-482 | 2026-04-26 14:30 PDT | SS321 SS-FIX-179 � profiles admin UPDATE and tyai_autorun_config fixes. profiles: dropped public Admins can update any profile status, recreated as authenticated with has_role admin check. tyai_autorun_config: dropped Allow read autorun_config authenticated SELECT policy, replaced with admin_only_select. DB-only fix, no commit.
+Entry-194 | FIX-282 | CLO-482 | 2026-04-26 14:30 PDT | SS321 SS-FIX-179 — profiles admin UPDATE and tyai_autorun_config fixes. profiles: dropped public Admins can update any profile status, recreated as authenticated with has_role admin check. tyai_autorun_config: dropped Allow read autorun_config authenticated SELECT policy, replaced with admin_only_select. DB-only fix, no commit.
 
-Entry-195 | FIX-283 | CLO-483 | 2026-04-26 14:34 PDT | SS321 SS-FIX-180 � tyai_autorun_locks and ty_instance_registry fixes. tyai_autorun_locks: dropped Authenticated can view locks policy, replaced with admin_only_select. ty_instance_registry: dropped public SELECT policy exposing 51 unowned instances to unauthenticated users, replaced with authenticated_only_select. DB-only fix, no commit.
+Entry-195 | FIX-283 | CLO-483 | 2026-04-26 14:34 PDT | SS321 SS-FIX-180 — tyai_autorun_locks and ty_instance_registry fixes. tyai_autorun_locks: dropped Authenticated can view locks policy, replaced with admin_only_select. ty_instance_registry: dropped public SELECT policy exposing 51 unowned instances to unauthenticated users, replaced with authenticated_only_select. DB-only fix, no commit.
 
-Entry-196 | FIX-284 | CLO-484 | 2026-04-26 14:38 PDT | SS321 SS-FIX-181 � tis_track_emotion_analysis SELECT restricted to admin only. Previous fix set authenticated_only_select � scanner requires admin-only consistent with similar internal AI analysis tables. Dropped authenticated_only_select, replaced with admin_only_select using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
+Entry-196 | FIX-284 | CLO-484 | 2026-04-26 14:38 PDT | SS321 SS-FIX-181 — tis_track_emotion_analysis SELECT restricted to admin only. Previous fix set authenticated_only_select — scanner requires admin-only consistent with similar internal AI analysis tables. Dropped authenticated_only_select, replaced with admin_only_select using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
 
-Entry-197 | FIX-285 | CLO-485 | 2026-04-26 14:42 PDT | SS321 SS-FIX-182 � tyai_autorun_runs permissive policy removed. Dropped Allow read autorun_runs policy (authenticated, USING: true) exposing all autorun history to every authenticated user. admin_only_select policy already existed and remains as sole SELECT policy. DB-only fix, no commit.
+Entry-197 | FIX-285 | CLO-485 | 2026-04-26 14:42 PDT | SS321 SS-FIX-182 — tyai_autorun_runs permissive policy removed. Dropped Allow read autorun_runs policy (authenticated, USING: true) exposing all autorun history to every authenticated user. admin_only_select policy already existed and remains as sole SELECT policy. DB-only fix, no commit.
 
-Entry-198 | FIX-286 | CLO-486 | 2026-04-26 14:47 PDT | SS321 SS-FIX-183 � ai_system_state SELECT restricted to admin only. Dropped Authenticated can read ai_system_state policy (authenticated, USING: true) exposing AI mode, disablement UUID, reason, and auto-recovery timestamps to all authenticated users. Replaced with admin_only_select. Note: distinct from ty_ai_system_state fixed in SS-FIX-149. DB-only fix, no commit.
+Entry-198 | FIX-286 | CLO-486 | 2026-04-26 14:47 PDT | SS321 SS-FIX-183 — ai_system_state SELECT restricted to admin only. Dropped Authenticated can read ai_system_state policy (authenticated, USING: true) exposing AI mode, disablement UUID, reason, and auto-recovery timestamps to all authenticated users. Replaced with admin_only_select. Note: distinct from ty_ai_system_state fixed in SS-FIX-149. DB-only fix, no commit.
 
-Entry-199 | FIX-287 | CLO-487 | 2026-04-26 14:50 PDT | SS321 SS-FIX-184 � ty_instance_registry broad SELECT policy removed. Dropped authenticated_only_select (USING: true) granting all authenticated users full read access to all instance registry rows. Correctly scoped Users can view instances for verification policy remains as sole SELECT policy. DB-only fix, no commit.
+Entry-199 | FIX-287 | CLO-487 | 2026-04-26 14:50 PDT | SS321 SS-FIX-184 — ty_instance_registry broad SELECT policy removed. Dropped authenticated_only_select (USING: true) granting all authenticated users full read access to all instance registry rows. Correctly scoped Users can view instances for verification policy remains as sole SELECT policy. DB-only fix, no commit.
 
-Entry-200 | FIX-288 | CLO-488 | 2026-04-26 15:09 PDT | SS321 SS-FIX-185 � TYAILogger RLS write loop fixed. Browser client was attempting ty_ai_logs INSERT every 30s using anon/authenticated key which violates service_role_only_insert RLS policy. Fix: persistToDatabase defaulted to false in TYAILogger.ts; flush timer not started when disabled; flushToDatabase short-circuits when disabled; setPersistToDatabase(true) preserved for legitimate service-role callers. No DB migration, no edge function changes. Commit f888146.
+Entry-200 | FIX-288 | CLO-488 | 2026-04-26 15:09 PDT | SS321 SS-FIX-185 — TYAILogger RLS write loop fixed. Browser client was attempting ty_ai_logs INSERT every 30s using anon/authenticated key which violates service_role_only_insert RLS policy. Fix: persistToDatabase defaulted to false in TYAILogger.ts; flush timer not started when disabled; flushToDatabase short-circuits when disabled; setPersistToDatabase(true) preserved for legitimate service-role callers. No DB migration, no edge function changes. Commit f888146.
 
-Entry-201 | FIX-289 | CLO-489 | 2026-04-26 17:24 PDT | SS321 SS-FIX-186 � 16 disabled edge function stubs deleted. Removed: health-check-worker, security-maintenance-worker, ty-cross-instance-api, tyai-autorun-scheduled, run_phase17_audit through run_phase28_guardian_audit. All were HTTP 410 stubs consuming deployment cycles. Removed from codebase and Supabase deployment. 8 admin dashboard caller files left untouched � will receive 404 instead of 410; cleanup deferred to unused components pass. Commit a9d0d8f.
+Entry-201 | FIX-289 | CLO-489 | 2026-04-26 17:24 PDT | SS321 SS-FIX-186 — 16 disabled edge function stubs deleted. Removed: health-check-worker, security-maintenance-worker, ty-cross-instance-api, tyai-autorun-scheduled, run_phase17_audit through run_phase28_guardian_audit. All were HTTP 410 stubs consuming deployment cycles. Removed from codebase and Supabase deployment. 8 admin dashboard caller files left untouched — will receive 404 instead of 410; cleanup deferred to unused components pass. Commit a9d0d8f.
 
-Entry-202 | FIX-290 | CLO-490 | 2026-04-26 17:31 PDT | SS321 SS-FIX-187 � 17 unused files archived. Moved 12 components and 5 hooks to src/_archive/components/ and src/_archive/hooks/ respectively. Initial move broke 6 relative imports � fixed by switching to absolute @/ path aliases. Files preserved for future use. No deletions, no active import changes. Commits d11df27 (move) + f06ef9c (import fix).
+Entry-202 | FIX-290 | CLO-490 | 2026-04-26 17:31 PDT | SS321 SS-FIX-187 — 17 unused files archived. Moved 12 components and 5 hooks to src/_archive/components/ and src/_archive/hooks/ respectively. Initial move broke 6 relative imports — fixed by switching to absolute @/ path aliases. Files preserved for future use. No deletions, no active import changes. Commits d11df27 (move) + f06ef9c (import fix).
 
-Entry-203 | FIX-291 | CLO-491 | 2026-04-26 20:07 PDT | SS321 SS-FIX-188 � get-audio-url HTTP status codes fixed. Audit confirmed generate-track-embedding, search-tracks-semantic, ty-ai-chat already used correct 401/403. Only get-audio-url was returning 400 for all errors. Fixed: Authentication required for paid tracks returns 401, Purchase required/Track not available returns 403, Track not found returns 404, other errors remain 400. Commit 76eef0b.
+Entry-203 | FIX-291 | CLO-491 | 2026-04-26 20:07 PDT | SS321 SS-FIX-188 — get-audio-url HTTP status codes fixed. Audit confirmed generate-track-embedding, search-tracks-semantic, ty-ai-chat already used correct 401/403. Only get-audio-url was returning 400 for all errors. Fixed: Authentication required for paid tracks returns 401, Purchase required/Track not available returns 403, Track not found returns 404, other errors remain 400. Commit 76eef0b.
 
-Entry-204 | FIX-292 | CLO-492 | 2026-04-26 20:34 PDT | SS321 SS-FIX-189 � TYAIEnabledPacksPage mega-file split completed in two phases. Phase 1: extracted types.ts, constants.ts, utils/packDisplay.tsx, utils/clipboard.ts, utils/reports.ts, 4 section components. Phase 2: extracted PackToggleProofHarnessCard, D1RuntimeProofPackCard, VerifyAllButtonsCard, VerificationModal, ToggleProofModal, CloseTheLoopModal, ButtonAuditMapModal; rewired parent return() to flat composition. Parent reduced 3,418 to 2,389 lines (-30%). All hooks, state, refs, handlers stay in parent. TypeScript compile clean. Zero behavior changes. Commits 92e617f (Phase 1) + 3f7a285 (Phase 2).
+Entry-204 | FIX-292 | CLO-492 | 2026-04-26 20:34 PDT | SS321 SS-FIX-189 — TYAIEnabledPacksPage mega-file split completed in two phases. Phase 1: extracted types.ts, constants.ts, utils/packDisplay.tsx, utils/clipboard.ts, utils/reports.ts, 4 section components. Phase 2: extracted PackToggleProofHarnessCard, D1RuntimeProofPackCard, VerifyAllButtonsCard, VerificationModal, ToggleProofModal, CloseTheLoopModal, ButtonAuditMapModal; rewired parent return() to flat composition. Parent reduced 3,418 to 2,389 lines (-30%). All hooks, state, refs, handlers stay in parent. TypeScript compile clean. Zero behavior changes. Commits 92e617f (Phase 1) + 3f7a285 (Phase 2).
 
-Entry-205 | FIX-293 | CLO-493 | 2026-04-26 21:31 PDT | SS321: Removed migrate-tracks-storage edge function � deleted from Supabase (0 invocations, no auth guard, obsolete per SS-FIX-169) and codebase | commit 234adf2
+Entry-205 | FIX-293 | CLO-493 | 2026-04-26 21:31 PDT | SS321: Removed migrate-tracks-storage edge function — deleted from Supabase (0 invocations, no auth guard, obsolete per SS-FIX-169) and codebase | commit 234adf2
 
-Entry-206 | FIX-294 | CLO-494 | 2026-04-26 21:49 PDT | SS321: Removed all 6 RLS policies from legacy tracks bucket (SS-FIX-170 follow-up) � SELECT/DELETE/UPDATE/INSERT authenticated + 2 public DELETE/UPDATE policies removed. All audio confirmed in tracks-private per SS-FIX-169. Bucket files retained, client access fully locked. Supabase Dashboard change only, no commit.
+Entry-206 | FIX-294 | CLO-494 | 2026-04-26 21:49 PDT | SS321: Removed all 6 RLS policies from legacy tracks bucket (SS-FIX-170 follow-up) — SELECT/DELETE/UPDATE/INSERT authenticated + 2 public DELETE/UPDATE policies removed. All audio confirmed in tracks-private per SS-FIX-169. Bucket files retained, client access fully locked. Supabase Dashboard change only, no commit.
 
-Entry-207 | FIX-295 | CLO-495 | 2026-04-26 22:06 PDT | SS321: Made legacy tracks bucket private � disabled Public bucket toggle in Supabase Storage settings. Objects now require signed URLs or auth headers. Closes security scan Error: paid tracks freely downloadable via public storage bucket. All audio served from tracks-private per SS-FIX-169. Stale orphan files remain in bucket, inaccessible to clients. Supabase Dashboard change only, no commit.
+Entry-207 | FIX-295 | CLO-495 | 2026-04-26 22:06 PDT | SS321: Made legacy tracks bucket private — disabled Public bucket toggle in Supabase Storage settings. Objects now require signed URLs or auth headers. Closes security scan Error: paid tracks freely downloadable via public storage bucket. All audio served from tracks-private per SS-FIX-169. Stale orphan files remain in bucket, inaccessible to clients. Supabase Dashboard change only, no commit.
 
-Entry-208 | FIX-296 | CLO-496 | 2026-04-26 22:30 PDT | SS321: Restricted ty_instance_registry SELECT policy from public to authenticated � edited policy 'Users can view instances for verification'; changed Target Role from public to authenticated; USING expression unchanged. Closes security scan Warning: Internal system instance registry readable by unauthenticated users. Supabase Dashboard change only, no commit.
+Entry-208 | FIX-296 | CLO-496 | 2026-04-26 22:30 PDT | SS321: Restricted ty_instance_registry SELECT policy from public to authenticated — edited policy 'Users can view instances for verification'; changed Target Role from public to authenticated; USING expression unchanged. Closes security scan Warning: Internal system instance registry readable by unauthenticated users. Supabase Dashboard change only, no commit.
 
-Entry-209 | FIX-297 | CLO-497 | 2026-04-27 10:04 PDT | SS321: Restricted track_skips_log and track_download_log policies from public to authenticated � altered 6 policies across both tables; INSERT policies now require authentication and auth.uid() = user_id ownership check; 4 SELECT policies changed from public to authenticated. Closes security scan Warning: unauthenticated users can inject analytics records attributed to any user. Supabase SQL Editor change only, no commit.
+Entry-209 | FIX-297 | CLO-497 | 2026-04-27 10:04 PDT | SS321: Restricted track_skips_log and track_download_log policies from public to authenticated — altered 6 policies across both tables; INSERT policies now require authentication and auth.uid() = user_id ownership check; 4 SELECT policies changed from public to authenticated. Closes security scan Warning: unauthenticated users can inject analytics records attributed to any user. Supabase SQL Editor change only, no commit.
 
-Entry-210 | FIX-298 | CLO-498 | 2026-04-27 10:11 PDT | SS321: Restricted AI test result tables from public to authenticated � dropped open SELECT policy 'Anyone can view test results' (qual: true) from ty_ai_test_results; altered 6 policies across ty_ai_test_results, ty_ai_test_history, beta_test_results, beta_test_runs; all changed from public to authenticated. Closes security scan Warning: Internal AI system test results publicly readable without authentication. Supabase SQL Editor change only, no commit.
+Entry-210 | FIX-298 | CLO-498 | 2026-04-27 10:11 PDT | SS321: Restricted AI test result tables from public to authenticated — dropped open SELECT policy 'Anyone can view test results' (qual: true) from ty_ai_test_results; altered 6 policies across ty_ai_test_results, ty_ai_test_history, beta_test_results, beta_test_runs; all changed from public to authenticated. Closes security scan Warning: Internal AI system test results publicly readable without authentication. Supabase SQL Editor change only, no commit.
 
-Entry-211 | FIX-299 | CLO-499 | 2026-04-27 10:52 PDT | SS321: Implemented anonymous browse restriction � added get-anonymous-tracks edge function (public, no JWT, daily-seeded, genre-varied, 7 free tracks, audio_url never returned); modified useInfiniteTracks.ts to branch on auth state (anon calls edge function, authenticated path unchanged); added sign-up banner to Browse.tsx for anonymous visitors. Clean TypeScript compile. Closes security scan Error: paid track audio file paths readable by unauthenticated users (browse path). Commit a0b62c2.
+Entry-211 | FIX-299 | CLO-499 | 2026-04-27 10:52 PDT | SS321: Implemented anonymous browse restriction — added get-anonymous-tracks edge function (public, no JWT, daily-seeded, genre-varied, 7 free tracks, audio_url never returned); modified useInfiniteTracks.ts to branch on auth state (anon calls edge function, authenticated path unchanged); added sign-up banner to Browse.tsx for anonymous visitors. Clean TypeScript compile. Closes security scan Error: paid track audio file paths readable by unauthenticated users (browse path). Commit a0b62c2.
 
-Entry-212 | FIX-300 | CLO-500 | 2026-04-27 11:23 PDT | SS321: Fixed get-anonymous-tracks edge function column name errors � replaced cover_art_url with album_art_url, removed non-existent duration column from SAFE_COLUMNS and result map. Function now returns 200 with 7 genre-varied free tracks. Anonymous browse page confirmed working � 7 tracks visible, no audio_url in response. Commits a0b62c2 (initial implementation) + e5b7a89 (column fix).
+Entry-212 | FIX-300 | CLO-500 | 2026-04-27 11:23 PDT | SS321: Fixed get-anonymous-tracks edge function column name errors — replaced cover_art_url with album_art_url, removed non-existent duration column from SAFE_COLUMNS and result map. Function now returns 200 with 7 genre-varied free tracks. Anonymous browse page confirmed working — 7 tracks visible, no audio_url in response. Commits a0b62c2 (initial implementation) + e5b7a89 (column fix).
 
-Entry-213 | FIX-301 | CLO-501 | 2026-04-27 11:36 PDT | SS321: Restricted ty_ai_attil_progression SELECT policy to admin only � altered policy 'Authenticated users can view AttIL progression'; changed USING expression from true to has_role(auth.uid(), 'admin'::app_role). Previously any authenticated user could read all TY AI AttIL progression records. Now admin only. Closes security scan Warning: all authenticated users can read every AI instance's progression records. Supabase SQL Editor change only, no commit.
+Entry-213 | FIX-301 | CLO-501 | 2026-04-27 11:36 PDT | SS321: Restricted ty_ai_attil_progression SELECT policy to admin only — altered policy 'Authenticated users can view AttIL progression'; changed USING expression from true to has_role(auth.uid(), 'admin'::app_role). Previously any authenticated user could read all TY AI AttIL progression records. Now admin only. Closes security scan Warning: all authenticated users can read every AI instance's progression records. Supabase SQL Editor change only, no commit.
 
-Entry-214 | FIX-302 | CLO-502 | 2026-04-27 12:07 PDT | SS321: Split TYAIToolGatewayPage from 2,541 lines into 6 extracted files � verificationTypes.ts, useSnapshotVerification.ts, useMapboxVerification.ts, SnapshotVerificationModal.tsx, MapboxVerificationModal.tsx, GatewayEventsTable.tsx. Parent reduced to 864 lines (-66%). TSTP-99 FIX 0.A.2/0.A.3 lock comments preserved on parent and propagated to new files. Clean TypeScript compile. Zero behavior changes. Commit de504f8.
+Entry-214 | FIX-302 | CLO-502 | 2026-04-27 12:07 PDT | SS321: Split TYAIToolGatewayPage from 2,541 lines into 6 extracted files — verificationTypes.ts, useSnapshotVerification.ts, useMapboxVerification.ts, SnapshotVerificationModal.tsx, MapboxVerificationModal.tsx, GatewayEventsTable.tsx. Parent reduced to 864 lines (-66%). TSTP-99 FIX 0.A.2/0.A.3 lock comments preserved on parent and propagated to new files. Clean TypeScript compile. Zero behavior changes. Commit de504f8.
 
-Entry-215 | FIX-303 | CLO-503 | 2026-04-27 12:24 PDT | SS321: Hid TY AI and mic from anonymous users + added graceful 401 handling � Fix A: gated TYAIAvatar and TYAIPanelContainer in App.tsx on !!user and !authLoading; Fix B: satisfied transitively by Fix A (all mic buttons inside hidden subtrees); Fix C: 401 detection at both ty-ai-chat invoke sites in useTYAIChatProcessor.ts, main chat returns 'Please sign in to chat with TY AI.' on 401. Edge function untouched. Verified in incognito � no TY AI or mic visible to anonymous visitors. Clean compile. Commit b6e9296.
+Entry-215 | FIX-303 | CLO-503 | 2026-04-27 12:24 PDT | SS321: Hid TY AI and mic from anonymous users + added graceful 401 handling — Fix A: gated TYAIAvatar and TYAIPanelContainer in App.tsx on !!user and !authLoading; Fix B: satisfied transitively by Fix A (all mic buttons inside hidden subtrees); Fix C: 401 detection at both ty-ai-chat invoke sites in useTYAIChatProcessor.ts, main chat returns 'Please sign in to chat with TY AI.' on 401. Edge function untouched. Verified in incognito — no TY AI or mic visible to anonymous visitors. Clean compile. Commit b6e9296.
 
-Entry-216 | FIX-304 | CLO-504 | 2026-04-27 12:40 PDT | SS321: Added React.memo to 6 feed and track list components � TrackCard (memo+forwardRef), TrackListRow, TrackDetailCard, TrendingNowCard, FeedRecommendationCard, FeedFilterBar; displayNames set on all; prefetchOnHover in usePredictiveFeedLoading confirmed already wrapped in useCallback � no hook changes needed. Zero logic changes. Clean TypeScript compile. Commit 87cb3e5.
+Entry-216 | FIX-304 | CLO-504 | 2026-04-27 12:40 PDT | SS321: Added React.memo to 6 feed and track list components — TrackCard (memo+forwardRef), TrackListRow, TrackDetailCard, TrendingNowCard, FeedRecommendationCard, FeedFilterBar; displayNames set on all; prefetchOnHover in usePredictiveFeedLoading confirmed already wrapped in useCallback — no hook changes needed. Zero logic changes. Clean TypeScript compile. Commit 87cb3e5.
 
-Entry-217 | FIX-305 | CLO-505 | 2026-04-27 12:51 PDT | SS321: Eliminated any types in AuthContext, EditTrack, useBackupRestore, Library � Fix 1: AuthError|null on 4 auth method return types in AuthContext; downstream isStorageError access in Auth.tsx narrowed with targeted cast. Fix 2a: catch(error:unknown) with instanceof narrowing in EditTrack.tsx (2 blocks). Fix 2b: catch(error:unknown) with instanceof narrowing in useBackupRestore.ts (3 blocks). Fix 3: Library.tsx callbacks typed with Track, Playlist, LibraryPurchase application types. All Supabase write casts and governance files untouched. Clean TypeScript compile. Zero behavior changes. Commit 3e07e54.
+Entry-217 | FIX-305 | CLO-505 | 2026-04-27 12:51 PDT | SS321: Eliminated any types in AuthContext, EditTrack, useBackupRestore, Library — Fix 1: AuthError|null on 4 auth method return types in AuthContext; downstream isStorageError access in Auth.tsx narrowed with targeted cast. Fix 2a: catch(error:unknown) with instanceof narrowing in EditTrack.tsx (2 blocks). Fix 2b: catch(error:unknown) with instanceof narrowing in useBackupRestore.ts (3 blocks). Fix 3: Library.tsx callbacks typed with Track, Playlist, LibraryPurchase application types. All Supabase write casts and governance files untouched. Clean TypeScript compile. Zero behavior changes. Commit 3e07e54.
 
 Entry-218 | FIX-306 | CLO-506 | 2026-04-27 14:04 PDT
 
@@ -6934,24 +6934,1282 @@ Entry-224 | FIX-312 | CLO-512 | 2026-04-27 21:49 PDT
 
 Entry-225 | FIX-313 | CLO-513 | 2026-04-27 23:59 PDT
 
-Entry-226 | FIX-314 | CLO-514 | 2026-04-28 09:04 PDT | SS-FIX-219 � Sanitized real company and artist names from Artists.tsx and About.tsx. Commits: 14efc19, cc473a1.
+Entry-226 | FIX-314 | CLO-514 | 2026-04-28 09:04 PDT | SS-FIX-219 — Sanitized real company and artist names from Artists.tsx and About.tsx. Commits: 14efc19, cc473a1.
 
-Entry-227 | FIX-315 | CLO-515 | 2026-04-28 11:03 PDT | SS-FIX-220 � Owner/admin bypass initial attempt, 400 error, superseded by FIX-316. Commits: f35e279, 75cca28.
+Entry-227 | FIX-315 | CLO-515 | 2026-04-28 11:03 PDT | SS-FIX-220 — Owner/admin bypass initial attempt, 400 error, superseded by FIX-316. Commits: f35e279, 75cca28.
 
-Entry-228 | FIX-316 | CLO-516 | 2026-04-28 11:03 PDT | SS-FIX-221 � Owner/admin bypass corrected and verified. Full playback confirmed for owner/admin. Commits: 2bf5557, 28df153.
+Entry-228 | FIX-316 | CLO-516 | 2026-04-28 11:03 PDT | SS-FIX-221 — Owner/admin bypass corrected and verified. Full playback confirmed for owner/admin. Commits: 2bf5557, 28df153.
 
-Entry-229 | FIX-317 | CLO-517 | 2026-04-28 12:23 PDT | SS-FIX-222 � Likes privacy hardening Option C DB migration. RLS rewrite + 11 SECURITY DEFINER RPCs. Commits: f3d4a02, 512cb29.
+Entry-229 | FIX-317 | CLO-517 | 2026-04-28 12:23 PDT | SS-FIX-222 — Likes privacy hardening Option C DB migration. RLS rewrite + 11 SECURITY DEFINER RPCs. Commits: f3d4a02, 512cb29.
 
-Entry-230 | FIX-318 | CLO-518 | 2026-04-28 12:23 PDT | SS-FIX-223 � Likes privacy hardening Option C frontend. 17 hook rewrites. All 8 smoke checks passed. Commits: 31fe385, 8c3af2d.
+Entry-230 | FIX-318 | CLO-518 | 2026-04-28 12:23 PDT | SS-FIX-223 — Likes privacy hardening Option C frontend. 17 hook rewrites. All 8 smoke checks passed. Commits: 31fe385, 8c3af2d.
 
-Entry-231 | FIX-319 | CLO-519 | 2026-04-28 12:42 PDT | SS-FIX-224 � Purchases INSERT policy restricted to status=pending. Payment bypass vulnerability closed. Commits: 1a3f797, baaaad2.
+Entry-231 | FIX-319 | CLO-519 | 2026-04-28 12:42 PDT | SS-FIX-224 — Purchases INSERT policy restricted to status=pending. Payment bypass vulnerability closed. Commits: 1a3f797, baaaad2.
 
-Entry-232 | FIX-320 | CLO-520 | 2026-04-28 13:32 PDT | SS-FIX-225 � Audio URL DB protection. REVOKE audio_url column from anon/authenticated. 29 columns re-granted. get_track_audio_url_owner RPC created. Commit: 6393f25.
+Entry-232 | FIX-320 | CLO-520 | 2026-04-28 13:32 PDT | SS-FIX-225 — Audio URL DB protection. REVOKE audio_url column from anon/authenticated. 29 columns re-granted. get_track_audio_url_owner RPC created. Commit: 6393f25.
 
-Entry-233 | FIX-321 | CLO-521 | 2026-04-28 13:32 PDT | SS-FIX-226 � Audio URL frontend protection. 25+ files updated. useOwnerAudioUrl hook created. All 9 smoke checks passed. Lead commit: 037d209.
+Entry-233 | FIX-321 | CLO-521 | 2026-04-28 13:32 PDT | SS-FIX-226 — Audio URL frontend protection. 25+ files updated. useOwnerAudioUrl hook created. All 9 smoke checks passed. Lead commit: 037d209.
 
-Entry-234 | FIX-322 | CLO-522 | 2026-04-28 13:42 PDT | Governance Rule Addition � POST-SESSION SECURITY SCAN RULE locked. Supabase scan mandatory every session. Column-level privilege review required for sensitive tables. Edge function assumption insufficient. All findings triaged before session close.
+Entry-234 | FIX-322 | CLO-522 | 2026-04-28 13:42 PDT | Governance Rule Addition — POST-SESSION SECURITY SCAN RULE locked. Supabase scan mandatory every session. Column-level privilege review required for sensitive tables. Edge function assumption insufficient. All findings triaged before session close.
 
-Entry-235 | FIX-323 | CLO-523 | 2026-04-28 13:45 PDT | Governance Rule Addition � PRE-CLOSE SECURITY AUDIT RULE locked. Dedicated security audit required before every major feature release involving payments or user data. No revenue feature releases until all critical/high findings closed. Rule permanent.
+Entry-235 | FIX-323 | CLO-523 | 2026-04-28 13:45 PDT | Governance Rule Addition — PRE-CLOSE SECURITY AUDIT RULE locked. Dedicated security audit required before every major feature release involving payments or user data. No revenue feature releases until all critical/high findings closed. Rule permanent.
 
-Entry-236 | FIX-324 | CLO-524 | 2026-04-28 14:18 PDT | SS-FIX-227 � Guardian backup exposure fixed. create_ty_ai_backup patched to 12-column safe select. 5 historical backup files purged. Purge confirmed 200 success. Commits: 83fd891, c1977dd.
+Entry-236 | FIX-324 | CLO-524 | 2026-04-28 14:18 PDT | SS-FIX-227 — Guardian backup exposure fixed. create_ty_ai_backup patched to 12-column safe select. 5 historical backup files purged. Purge confirmed 200 success. Commits: 83fd891, c1977dd.
+
+Entry-237 | FIX-325 | CLO-525 | 2026-04-28 15:54 PDT
+SS-FIX-234: guardian-token-manager auth gate restored — getClaims() replaced with getUser()
+
+Entry-238 | FIX-326 | CLO-526 | 2026-04-28 16:24 PDT
+SS-FIX-235: get_hek_state auth gate added -- was public endpoint, now requires JWT + admin role
+
+Entry-239 | FIX-327 | CLO-527 | 2026-04-28 16:24 PDT
+SS-FIX-236: set_hek_state auth pattern fixed (anon->service role) + wildcard update replaced with row ID targeted update
+
+Entry-240 | FIX-328 | CLO-528 | 2026-04-28 16:27 PDT
+SS-FIX-237: restore_system_backup fixed -- anon key->service role, wildcard->row ID update, payload validation added
+
+Entry-241 | FIX-329 | CLO-529 | 2026-04-28 16:35 PDT
+SS-FIX-238: create_system_backup auth pattern fixed -- anon key replaced with service role key pattern
+
+Entry-242 | FIX-330 | CLO-530 | 2026-04-28 16:51 PDT
+SS-FIX-239: /owner routes added to admin gate -- isAdminRoute() now covers /owner/* paths
+
+Entry-243 | FIX-331 | CLO-531 | 2026-04-28 16:57 PDT
+SS-FIX-240 through SS-FIX-251: 12 deferred security findings formally assigned and logged to SS321_FIX_INDEX
+
+---
+
+### Entry-244
+**Date:** 2026-04-28 18:26 PDT (San Diego)
+**FIX:** FIX-332
+**CLO:** CLO-532
+**Action:** TY-GOV-001 — Guardian token generation complete. AES-256-GCM confirmed. 5 tokens encrypted and stored. FLAG-128.1 resolved Option A. Founding Artist Program gate cleared.
+
+---
+
+### Entry-245
+**Date:** 2026-04-28 22:14 PDT (San Diego)
+**FIX:** FIX-333
+**CLO:** CLO-533
+**Action:** Founding Artist Program + Stripe Connect fully implemented. DB migration, create-connect-account, stripe-connect-webhook, fee split in create-checkout, account.updated webhook, first-upload trigger, admin UI panel. Pre-launch gate: Stripe identity verification pending.
+
+## Entry-246
+**Date:** 2026-04-28 22:59 PDT
+**CLO:** CLO-534
+**FIX:** FIX-334
+**SS-FIX:** SS-FIX-242
+**Title:** SS321 — Family Member Audio Access + UI Indicators
+**Status:** COMPLETE
+
+**Summary:**
+Family role users now receive full audio access on artist
+d883602b-da79-4fad-be93-6d84b2661b91 tracks via get-audio-url edge function
+bypass. Green Family Access pill added to track cards, track detail pages,
+and persistent nav bar header. useIsFamily hook and familyAccess.ts shared
+constant file added. No schema changes. No other artists or purchase flow
+affected. SS-FIX-242 closed.
+
+## Entry-247
+**Date:** 2026-04-28 23:17 PDT
+**CLO:** CLO-535
+**FIX:** FIX-335
+**SS-FIX:** SS-FIX-252
+**Title:** SS321 -- User Browse Preference Persistence
+**Status:** COMPLETE
+
+**Summary:**
+Per-user browse preferences (view mode, sort order, filters) now persist
+to profiles.browse_preferences JSONB column. Authenticated users see their
+last settings restored on return across all devices. Anonymous users
+unaffected. useBrowsePreferences hook added with optimistic updates,
+800ms debounced save, and unmount flush. Browse.tsx hydration wired with
+one-shot hasHydratedRef guard. SS-FIX-252 closed.
+
+## Entry-248
+**Date:** 2026-04-29 00:30 PDT
+**CLO:** CLO-536
+**FIX:** FIX-336
+**SS-FIX:** SS-FIX-253
+**Title:** SS321 -- Track Exclusion from Play All
+**Status:** COMPLETE
+
+**Summary:**
+Per-user track exclusion from Play All queue implemented. New
+track_exclusions table with RLS. useTrackExclusions hook with optimistic
+updates and EventTarget cross-card sync. Ban toggle button added to grid,
+list, and detail views for all authenticated users including owners.
+Excluded tracks show diagonal stripe + washed background overlay visible
+on mobile. Play All count updates dynamically and filters excluded tracks.
+ClearExclusionsButton auto-appears when exclusions active. Three patches
+applied during implementation. All checks confirmed on mobile phone.
+SS-FIX-253 closed.
+
+## Entry-249
+**Date:** 2026-04-29 01:06 PDT
+**CLO:** CLO-537
+**FIX:** FIX-337
+**SS-FIX:** SS-FIX-254
+**Title:** SS321 -- Multi-Select Filters Genre Style Country
+**Status:** COMPLETE
+
+**Summary:**
+Genre, Style, and Country filters converted from single-select to
+multi-select with checkmark dropdown and count badge. OR logic across
+selections. .in() Supabase query replaces .eq(). MultiSelectFilter
+component added and reused across desktop and mobile UIs. ActiveFilters
+chips support individual value removal. Arrays persisted to
+browse_preferences. Legacy genre key preserved for backward compat.
+SS-FIX-254 closed.
+
+## Entry-250
+**Date:** 2026-04-29 11:43 PDT
+**CLO:** CLO-538
+**FIX:** FIX-338
+**SS-FIX:** SS-FIX-255
+**Title:** SS321 -- Mini Player Skip Buttons + Quarter-Screen Expansion
+**Status:** COMPLETE
+
+**Summary:**
+Skip forward/backward buttons wired to queue navigation via next()/prev().
+hasQueue gate ensures buttons only show during Play All. Quarter-screen
+expanded drawer (max-h-[25vh]) added to mobile mini player with slide-up
+animation, album art, progress bar, and centered controls. Confirmed
+working on phone. SS-FIX-255 closed.
+
+## Entry-251
+**Date:** 2026-04-29 11:43 PDT
+**CLO:** CLO-539
+**FIX:** FIX-339
+**SS-FIX:** SS-FIX-256
+**Title:** SS321 -- Hide Diagnostics Overlay When Player Expanded
+**Status:** COMPLETE
+
+**Summary:**
+PreviewDiagnostics floating pill hides when expanded mini player drawer
+is open via window.__ss_player_expanded__ flag and CustomEvent pattern.
+Reappears immediately on collapse. Strictly additive and reversible.
+SS-FIX-256 closed.
+
+## Entry-252
+**Date:** 2026-04-29 11:43 PDT
+**CLO:** CLO-540
+**FIX:** FIX-340
+**SS-FIX:** SS-FIX-257
+**Title:** SS321 -- Active State Visuals Playback Buttons
+**Status:** COMPLETE
+
+**Summary:**
+Play All, Shuffle, and all three mini player Play/Pause buttons now show
+solid purple background and animate-pulse icon when active. isActive
+derived from isQueueActive. Inactive states unchanged. SS-FIX-257 closed.
+
+## Entry-253
+**Date:** 2026-04-29 11:43 PDT
+**CLO:** CLO-541
+**FIX:** FIX-341
+**SS-FIX:** SS-FIX-258
+**Title:** SS321 -- Play All Shuffle Toggle Off Soft clearQueue
+**Status:** COMPLETE
+
+**Summary:**
+Play All and Shuffle now toggle off on second click via clearQueue().
+clearQueue() is soft -- clears queue state only, no audio stop. Current
+song keeps playing after toggle off. State-aware tooltips added.
+SS-FIX-258 closed.
+
+## Entry-254
+**Date:** 2026-04-29 11:43 PDT
+**CLO:** CLO-542
+**FIX:** FIX-342
+**SS-FIX:** SS-FIX-259
+**Title:** SS321 -- isQueueActive Flag PlayerContext
+**Status:** COMPLETE
+
+**Summary:**
+Dedicated isQueueActive boolean flag added to PlayerContext. Set true on
+playQueue(), false on clearQueue(). Decouples active button visuals from
+isPlaying state. Pause no longer dims Play All/Shuffle buttons. clearQueue()
+immediately deactivates visuals. SS-FIX-259 closed.
+
+## Entry-255
+**Date:** 2026-04-29 11:43 PDT
+**CLO:** CLO-543
+**FIX:** FIX-343
+**SS-FIX:** SS-FIX-260
+**Title:** SS321 -- Free Paid Quick Price Edit Track Owners
+**Status:** COMPLETE
+
+**Summary:**
+PriceEditPopover component added. Owners click Free pill to navigate to
+edit page. Owners click price pill to open inline popover with price
+input, Save, Make Free, and Cancel. Non-owners see static pills unchanged.
+Wired into TrackCard, TrackListRow, TrackDetailCard. SS-FIX-260 closed.
+
+## Entry-256
+**Date:** 2026-04-29 11:43 PDT
+**CLO:** CLO-544
+**FIX:** FIX-344
+**SS-FIX:** SS-FIX-261
+**Title:** SS321 -- Return to Previous Page After Track Save
+**Status:** COMPLETE
+
+**Summary:**
+EditTrack.tsx save success handler changed from navigate('/track/\')
+to navigate(-1). User returns to whichever page they came from after
+saving track edits. Owner-guard redirect and Cancel button untouched.
+SS-FIX-261 closed.
+
+## Entry-257
+**Date:** 2026-04-29 11:43 PDT
+**CLO:** CLO-545
+**FIX:** FIX-345
+**SS-FIX:** SS-FIX-262
+**Title:** SS321 -- PriceEditPopover Instant UI Refresh
+**Status:** COMPLETE
+
+**Summary:**
+PriceEditPopover updated with localTrack optimistic state. All render
+references use localTrack.*. useQueryClient invalidates tracks query
+after each successful Save or Make Free. Pill updates instantly without
+waiting for parent re-render. SS-FIX-262 closed.
+
+## Entry-258
+**Date:** 2026-04-29 12:06 PDT
+**CLO:** CLO-546
+**FIX:** FIX-346
+**SS-FIX:** SS-FIX-263
+**Title:** SS321 -- Quick Genre Edit for Track Owners
+**Status:** COMPLETE
+
+**Summary:**
+GenreEditPopover component added. Owners click genre badge to open
+searchable Popover + Command dropdown with full GENRES list. Selected
+genre highlighted with checkmark. Single click selects, updates
+optimistic local state, invalidates tracks query, and closes popover.
+Non-owners see static badge unchanged. Wired into TrackCard, TrackListRow,
+and TrackDetailCard. All three tests confirmed passing. SS-FIX-263 closed.
+
+## Entry-259
+**Date:** 2026-04-29 16:37 PDT
+**CLO:** CLO-547
+**FIX:** FIX-347
+**SS-FIX:** SS-FIX-264
+**Title:** SS321 -- TY AI Mic Support + Live Audio Fix
+**Status:** COMPLETE
+
+**Summary:**
+TY AI mic re-checks SpeechRecognition support per tap. recognitionRef
+added. Green pulsing Mic icon when listening. MicOff removed from active
+state. onerror/onend reset cleanly, button stays enabled. No persistent
+lockout. SS-FIX-264 closed.
+
+## Entry-260
+**Date:** 2026-04-29 16:37 PDT
+**CLO:** CLO-548
+**FIX:** FIX-348
+**SS-FIX:** SS-FIX-265
+**Title:** SS321 -- TY AI Auto-Mic Continuous Listening OFF Command Panel Stabilize
+**Status:** COMPLETE
+
+**Summary:**
+Mic auto-activates 300ms after TY panel opens via setContinuousVoiceMode
++ startMicRecognition. Continuous loop enabled by auto-start. OFF voice
+command intercept in both recognition paths -- never sent as message.
+e.stopPropagation() added to header X and stop-voice buttons.
+SS-FIX-265 closed.
+
+## Entry-261
+**Date:** 2026-04-29 16:37 PDT
+**CLO:** CLO-549
+**FIX:** FIX-349
+**SS-FIX:** SS-FIX-266
+**Title:** SS321 -- TY AI Mobile No Auto-Focus Pinned Mic Strip
+**Status:** COMPLETE
+
+**Summary:**
+Textarea autoFocus disabled on mobile (isDesktop = window.innerWidth
+>= 640). Defensive blur() on mount. Mic status strip pinned above
+ScrollArea -- always visible above keyboard. Tappable toggle.
+Green pulse when active. SS-FIX-266 closed.
+
+## Entry-262
+**Date:** 2026-04-29 16:37 PDT
+**CLO:** CLO-550
+**FIX:** FIX-350
+**SS-FIX:** SS-FIX-267
+**Title:** SS321 -- TY AI Mobile Textarea Height Reduced
+**Status:** COMPLETE
+
+**Summary:**
+Textarea collapses to single row on mobile (max-h-[60px]). Auto-resize
+effect capped at 60px mobile / 120px desktop. Mic status strip now
+visible above fold on all mobile devices. Desktop unchanged.
+SS-FIX-267 closed.
+
+## Entry-263
+**Date:** 2026-04-29 16:37 PDT
+**CLO:** CLO-551
+**FIX:** FIX-351
+**SS-FIX:** SS-FIX-268
+**Title:** SS321 -- TY AI Voice Fragment Filter + Honesty Guard
+**Status:** COMPLETE
+
+**Summary:**
+Confidence guard (0.75) and word count guard (3 words) added to both
+voice paths. OFF command fires before all guards. TY system prompt
+updated with epistemic rules: no personal favorites, no fabricated
+emotional reactions, no drawn-to language. SS-FIX-268 closed.
+
+## Entry-264
+**Date:** 2026-04-29 16:37 PDT
+**CLO:** CLO-552
+**FIX:** FIX-352
+**SS-FIX:** SS-FIX-269
+**Title:** SS321 -- TY AI OFF Broader Match Confidence Guard Removed
+**Status:** COMPLETE
+
+**Summary:**
+OFF command broadened -- normalized string match accepts off/of/offf
+with any punctuation. Confidence guard removed entirely -- Chrome
+reports 0 for all speech. Word count guard (>= 2) only. Console
+confirmed: TY hears speech, OFF closes panel, continuous loop working
+on PC and phone. SS-FIX-269 closed.
+
+## Entry-265
+**Date:** 2026-04-29 18:06 PDT
+**CLO:** CLO-553
+**FIX:** FIX-353
+**SS-FIX:** SS-FIX-270
+**Title:** SS321 -- Dialog forwardRef Wrapper Fix Ref Warning
+**Status:** COMPLETE
+
+**Summary:**
+Dialog component in src/components/ui/dialog.tsx wrapped in
+React.forwardRef. _ref intentionally unused. displayName set.
+Eliminates "Function components cannot be given refs" warning
+from Settings.tsx. No behavior change. SS-FIX-270 closed.
+
+## Entry-266
+**Date:** 2026-04-29 18:06 PDT
+**CLO:** CLO-554
+**FIX:** FIX-354
+**SS-FIX:** SS-FIX-271
+**Title:** SS321 -- Skip Buttons Always Visible When Track Playing
+**Status:** COMPLETE
+
+**Summary:**
+GlobalAudioPlayer.tsx hasQueue changed from queue.length > 1 to
+!!currentTrack. Skip forward and back buttons now visible whenever
+any track is loaded in player. Works during single track play and
+Play All. All three layouts updated. SS-FIX-271 closed.
+
+## Entry-267
+**Date:** 2026-04-29 18:06 PDT
+**CLO:** CLO-555
+**FIX:** FIX-355
+**SS-FIX:** SS-FIX-272
+**Title:** SS321 -- Remove Excessive Player Console Log
+**Status:** COMPLETE
+
+**Summary:**
+console.log('[Player] currentTrack') removed from
+GlobalAudioPlayer.tsx line 39. Was firing on every timeupdate
+event (~4x/sec). No re-render loop confirmed. No behavior changes.
+SS-FIX-272 closed.
+
+## Entry-268
+**Date:** 2026-04-29 18:06 PDT
+**CLO:** CLO-556
+**FIX:** FIX-356
+**SS-FIX:** SS-FIX-273
+**Title:** SS321 -- AutoRunConfigPanel confirmDialog Optional Chaining
+**Status:** COMPLETE
+
+**Summary:**
+AutoRunConfigPanel.tsx line 751 changed from open={confirmDialog.open}
+to open={!!confirmDialog?.open}. Ensures value is always boolean,
+never undefined. Prevents potential Radix controlled/uncontrolled
+warning. SS-FIX-273 closed.
+
+---
+
+## Entry-269
+**Date:** 2026-04-29 21:15 PDT (San Diego)
+**CLO:** CLO-557
+**Fix:** SS-FIX-274
+**Summary:** TY Learning System Part A complete. ty_conversations and ty_user_preferences tables live with RLS. pg_cron nightly cleanup at 03:00 UTC. persistMessage() wired at useTYAIChatHistory chokepoint covering all TY chat paths. validatedUserId auth scope corrected in ty-ai-chat edge function. SOC803 confirmed orphaned. Production verified: 3 rows saved, console audit log confirmed.
+
+---
+
+## Entry-270
+**Date:** 2026-04-29 21:23 PDT (San Diego)
+**CLO:** CLO-558
+**Fix:** SS-FIX-275
+**Summary:** Deleted SOC803 and SOC805 orphaned dead code and panel-state machinery. These components caused the SS-FIX-274 debugging session due to surface confusion during testing. SOC850 remains the sole live TY chat surface. Zero references remaining. Build passed.
+
+---
+
+## Entry-271
+**Date:** 2026-04-29 22:32 PDT (San Diego)
+**CLO:** CLO-559
+**Fix:** SS-FIX-240
+**Summary:** Rate limiting live on 5 edge functions. Shared in-process utility created. system_rate_limits table updated with atomic upsert support and nightly cleanup cron. Verified: get-audio-url row confirmed in system_rate_limits after live test.
+
+---
+
+## Entry-272
+**Date:** 2026-04-29 22:58 PDT (San Diego)
+**CLO:** CLO-560
+**Fix:** SS-FIX-241
+**Summary:** Column privilege hardening complete. Sensitive plaintext Stripe IDs revoked from anon/authenticated on purchases and subscriptions. admin_rejection_reason revoked from anon/authenticated on tracks. Migration applied via Supabase. Verified via authenticated role permission denied test.
+
+---
+
+## Entry-273
+**Date:** 2026-04-29 23:09 PDT (San Diego)
+**CLO:** CLO-561
+**Fix:** SS-FIX-243
+**Summary:** admin-purchase-details edge function now returns correct HTTP status codes. 401 for unauthenticated, 403 for non-admin, 400 for bad input, 404 for not found, 500 generic for unexpected. Raw error.message no longer leaked on 500 responses.
+
+---
+
+## Entry-274
+**Date:** 2026-04-29 23:30 PDT (San Diego)
+**CLO:** CLO-562
+**Fix:** SS-FIX-276
+**Summary:** TY voice output live. Orion (warm male) added as default persona. speak() wired at useTYAIChatHistory chokepoint. Voice toggle and persona selector in TY panel header. Preferences saved to ty_user_preferences. Verified live on production via headphone test.
+
+---
+
+## Entry-276
+**Date:** 2026-04-30 10:20 PDT (San Diego)
+**CLO:** CLO-564
+**Fix:** SS-FIX-278
+**Summary:** OpenAI TTS live. TY now speaks with natural human voice via openai-tts edge function. Orion persona mapped to onyx voice. Admin kill switch live at /admin/ty-ai/settings. Silent browser fallback on failure. Cost ~.50/month per 100 active voice users.
+
+---
+
+## Entry-275
+**Date:** 2026-04-30 10:20 PDT (San Diego)
+**CLO:** CLO-563
+**Fix:** SS-FIX-277
+**Summary:** Production incident — SS-FIX-241 column hardening broke all track queries via 403. Rolled back REVOKE/GRANT pattern on tracks/purchases/subscriptions. Frontend hotfix removed admin_rejection_reason from public queries. Tracks restored. RLS confirmed as correct security boundary for Supabase.
+
+---
+
+## Entry-277
+**Date:** 2026-04-30 12:16 PDT (San Diego)
+**CLO:** CLO-565
+**Fix:** SS-FIX-279
+**Summary:** OpenAI TTS fully working on production. Root cause was VITE_SUPABASE_URL undefined in production build causing silent early return in speakWithOpenAI. Fixed with hardcoded URL. Voice guard changed to default-on. TY now speaks naturally using OpenAI onyx voice. All 8 production tests passed.
+
+---
+
+## Entry-278
+**Date:** 2026-04-30 14:25 PDT (San Diego)
+**CLO:** CLO-566
+**Fix:** SS-FIX-280
+**Summary:** TY voice finalized. Simultaneous text+speech attempted via SSE streaming and sentence FIFO queue — reverted due to two-voice overlap on Tier 0-2 responses. Single reliable voice path confirmed working. Greeting speaks, OpenAI TTS natural voice, all 5 tests passed. SS321-FUTURE-003 logged for future session.
+
+---
+
+## Entry-279
+**Date:** 2026-04-30 15:00 PDT (San Diego)
+**CLO:** CLO-567
+**Fix:** SS-FIX-281
+**Summary:** openai-tts rate limit reverted from 100 to 20/hr after testing complete. system_rate_limits rows cleared.
+
+---
+
+## Entry-280
+**Date:** 2026-04-30 15:10 PDT (San Diego)
+**CLO:** CLO-568
+**Fix:** SS-FIX-246
+**Summary:** create-checkout hardened: duplicate purchase 409 guard, generic error responses, Stripe idempotency key. Users can no longer re-purchase owned tracks. Raw errors no longer exposed to client.
+
+---
+
+## Entry-281
+**Date:** 2026-04-30 16:04 PDT (San Diego)
+**CLO:** CLO-569
+**Fix:** SS-FIX-247
+**Summary:** download_ty_ai_backup hardened. URL query param path removed, body-only enforced, UUID validation added, generic error responses. No client changes needed.
+
+---
+
+## Entry-282
+**Date:** 2026-04-30 16:18 PDT (San Diego)
+**CLO:** CLO-570
+**Fix:** SS-FIX-248
+**Summary:** create_ty_ai_backup hardened. SELECT * replaced with explicit safe column lists on 7 tables. guardian_key_hash excluded from backup output. POST-only gate added. Generic error responses on all error paths.
+
+---
+
+## Entry-283
+**Date:** 2026-04-30 18:26 PDT (San Diego)
+**CLO:** CLO-571
+**Fix:** SS-FIX-282
+**Summary:** Password reset emails working via Resend SMTP. Inbox delivery confirmed.
+
+---
+
+## Entry-284
+**Date:** 2026-04-30 20:35 PDT (San Diego)
+**CLO:** CLO-572
+**Fix:** SS-FIX-249
+**Summary:** /track/:id/edit now requires auth via ProtectedRoute. Render-time ownership gate prevents form flash. vite.config.ts base path fixed from './' to '/' — resolves direct URL navigation blank page for all multi-segment routes site-wide.
+
+---
+
+## Entry-285
+**Date:** 2026-04-30 20:48 PDT (San Diego)
+**CLO:** CLO-573
+**Fix:** SS-FIX-250
+**Summary:** stripe-webhook hardened. Fail-open else branch removed. Function fails closed with 500 when STRIPE_WEBHOOK_SECRET missing. Signature verification now unconditional.
+
+---
+
+## Entry-286
+**Date:** 2026-04-30 21:00 PDT (San Diego)
+**CLO:** CLO-574
+**Fix:** SS-FIX-251
+**Summary:** get-audio-url preview hardened. Guests blocked from paid previews. Preview TTL reduced to 60s. Full server-side preview asset deferred to future session.
+
+### Entry-287
+**Date:** 2026-04-30 23:34 PDT
+**Session:** SS321 Family Access Full Fix
+**Fixes:** SS-FIX-284, SS-FIX-285, SS-FIX-286
+
+**Summary:**
+Family Access feature repaired end-to-end on silversounds321.com.
+Six layered bugs resolved: duplicate RLS policy removed, PGRST116
+fixed in four hooks by switching from .single()/.maybeSingle() to
+array queries, TrackListRow full playback gate added for family users.
+Full song playback and Free for Family pill confirmed live on
+production 2026-04-30 23:34 PDT.
+
+### Entry-288
+**Date:** 2026-05-01 00:54 PDT
+**Session:** SS321 Browse Clear All Filter Persistence Fix
+**Fixes:** SS-FIX-287
+
+**Summary:**
+Browse page Clear All button was not clearing server-side
+browse_preferences in profiles table. Hydration effect restored
+filters from database on every Browse remount, defeating the clear.
+Fixed by adding handleClearAll in Browse.tsx to wipe server
+preferences simultaneously with local state, and fixing hydration
+effect dependency array to prevent re-firing. Confirmed live on
+silversounds321.com 2026-05-01 00:54 PDT.
+
+### Entry-289
+**Date:** 2026-05-01 11:03 PDT
+**Session:** SS321 New Track Notification System
+**Fixes:** SS-FIX-288
+
+**Summary:**
+Full new track notification system built and deployed on
+silversounds321.com. Database migration added notify_new_tracks
+to profiles and new_track enum value. Edge function notify-new-track
+deployed with Resend email delivery. Database trigger fires on track
+approval via pg_net. Settings UI toggle wired to server with optimistic
+update. Bell icon updated with Music icon for new_track type.
+Confirmed live 2026-05-01 11:03 PDT.
+
+### Entry-290
+**Date:** 2026-05-01 13:00 PDT
+**Session:** SS321 Admin Card Visual + Notification Trigger Fix + Resend Domain
+**Fixes:** SS-FIX-289, SS-FIX-290, SS-FIX-291
+
+**Summary:**
+Three fixes deployed. Pending Review card now shows amber pulse
+ring and count badge when tracks await approval. Notification
+trigger fixed with hardcoded service role key — was returning
+NULL causing all edge function calls to fail with 401.
+Resend domain silversounds321.com verified via GoDaddy Domain
+Connect. SMTP sender updated to noreply@silversounds321.com.
+New user signup confirmation emails now delivering correctly.
+Confirmed live 2026-05-01 13:00 PDT.
+
+### Entry-291
+**Date:** 2026-05-01 14:34 PDT
+**Session:** SS321 Admin Dashboard UX Improvements
+**Fixes:** SS-FIX-292
+
+**Summary:**
+Admin dashboard significantly improved. Pending tracks count
+badge added to Manage nav button visible on every page.
+System Overview cards AD101-AD104 and AD108 made clickable
+with correct destinations. Quick Actions cards AD201 and AD203
+show live counts. AD201 gets amber ring when pending > 0.
+Two broken hrefs fixed in AdminQuickActions. Admin UX rule
+locked: all admin cards requiring attention must have
+noticeable visual signal. Confirmed live 2026-05-01 14:34 PDT.
+
+### Entry-292
+**Date:** 2026-05-01 14:51 PDT
+**Session:** SS321 Admin All Tracks Page
+**Fixes:** SS-FIX-293
+
+**Summary:**
+New admin page /admin/tracks built and deployed. Shows all
+tracks on the platform with status, paid, and title filters.
+Album art, artist name, genre, status badge, paid/price,
+plays, format, and upload date columns. Row click navigates
+to track page. useTracks hook extended with all status.
+Route registered in routeConfig. AD103 Total Tracks card
+now navigates to /admin/tracks. Confirmed live 31 tracks
+visible 2026-05-01 14:51 PDT.
+
+Entry-293 | SS-FIX-294 | 2026-05-01 15:44 PDT San Diego
+Total Purchases Card + /admin/purchases Page. Created useAdminPurchases hook with batched profiles fetch. Created /admin/purchases page. Registered route in routeConfig.ts. Wired AD105 card. Closes SS321-FUTURE-007. Verified live.
+
+Entry-294 | SS-FIX-295 | 2026-05-01 15:44 PDT San Diego
+Admin Purchases Page Summary Cards Filter. Updated Purchases.tsx to filter both summary cards to completed only. Total Purchases (completed) = 2. Total Revenue (completed) = 1.50 USD. Table shows all 7 rows. Verified live.
+
+Entry-295 | SS-FIX-296 | 2026-05-01 16:31 PDT San Diego
+Email Deliverability -- DMARC record added to silversounds321.com.
+Duplicate removed. MXToolbox clean: DKIM + SPF + DMARC all passing.
+Supabase Auth SMTP confirmed correct via Resend. Live test pending.
+
+Entry-296 | SS-FIX-297 | 2026-05-01 16:45 PDT San Diego
+PWA Auto-Update Toast. Bumped cache ss321-v1 to ss321-v2. Removed
+skipWaiting from install. Added SKIP_WAITING message listener. Updated
+main.tsx to poll for updates every 60s and show sonner toast with
+Update now action. controllerchange reloads on SW takeover. Deployed
+and confirmed.
+
+Entry-297 | SS-FIX-298 | 2026-05-01 18:10 PDT San Diego
+TY Dynamic Contextual Greeting. New get-greeting-context edge fn.
+New useGreetingContext hook. generateDynamicGreeting() added to
+TYAIDailyGreeting.ts. Panel open calls dynamic greeting with static
+fallback. Verified live: name, new track state, TTS all correct.
+
+Entry-298 | SS-FIX-299 | 2026-05-01 18:47 PDT San Diego
+TY Voice ContinuousMode Guard + Firefox TTS Fallback. isSpeakingRef
+added, mic re-arm polls until TTS done, 30s safety timeout. Firefox
+routed to Web Speech API fallback. CDN cache pending propagation --
+verify new bundle hash next session.
+
+Entry-299 | SS-FIX-300 | 2026-05-01 19:33 PDT San Diego
+Firefox Browser Warning Toast. One-time-per-session sonner toast
+added to TYAIPanelContainer.tsx. Static import, important:true,
+15s duration. Verified live in Firefox. Firefox voice input is
+known platform limitation per SS-FIX-299 addendum.
+
+Entry-300 | SS-FIX-301/302/303/304-PREP | 2026-05-01 20:23 PDT San Diego
+TY KB notification patterns expanded (SS-FIX-301, partial).
+Version normalization added to ty-ai-chat (SS-FIX-302, confirmed).
+System prompt observer contradiction fixed (SS-FIX-303).
+search_similar_tracks search_path fixed, 500 error resolved
+(SS-FIX-304-PREP). Play "Oh my Girl version 10" confirmed working.
+Notification follow-up still failing -- Haiku classifying as OTHER
+not NAVIGATE. Fix needed in system prompt context (SS-FIX-304).
+
+Entry-301 | SS-FIX-304 | 2026-05-01 20:58 PDT San Diego
+Notification Intent Context Fix complete. Haiku CONTEXT RULE,
+strict single-token output, NAVIGATE:/<route> prefix handler,
+search_similar_tracks search_path all fixed. Verified live --
+TY navigates to /notifications correctly. SS-FIX-305 opened
+for KB notification pattern too broad issue.
+
+Entry-302 | SS-FIX-305 | 2026-05-01 21:06 PDT San Diego
+KB notification patterns tightened. Removed broad single-word
+patterns. Added specific multi-word patterns. Haiku CONTEXT RULE
+handles follow-up affirmations. Verified live.
+Next: SS-FIX-306 -- KB redesign, reduce to action-only entries,
+let Claude Sonnet handle all conversation.
+
+Entry-303 | SS-FIX-306 | 2026-05-01 21:40 PDT San Diego
+TY KB redesign complete. 54 entries reduced to 14 action-only.
+Claude Sonnet now handles all conversation. System prompt enriched
+with platform knowledge. All memory intact. Verified live.
+SS-FIX-307 opened for CATALOG_QUERY misclassification.
+
+Entry-303 | SS-FIX-307 + SS-FIX-308 | 2026-05-01 22:20 PDT San Diego
+SS-FIX-307: Haiku CATALOG_QUERY disambiguation + Tier 2 catalogPatternsQ
+expanded. Platform knowledge questions now reach Claude Sonnet.
+Verified live: pricing and follow artist questions answered naturally.
+SS-FIX-308: Pre-existing build error cleared (important:true removed
+from sonner toast in TYAIPanelContainer.tsx).
+
+Entry-304 | SS-FIX-309 | 2026-05-01 23:00 PDT San Diego
+TY Mic Ready Visual Indicator. Pulsing glowing dot above input
+box shows listening/speaking/thinking states. 16px with glow.
+Verified live. Accessibility improvement for impaired users.
+SS-FIX-310 opened: Claude Sonnet saying Now playing but not
+triggering actual playTrack() call.
+
+Entry-304 | SS-FIX-309 | 2026-05-01 23:00 PDT San Diego
+TY Mic Ready Visual Indicator. Pulsing glowing dot above input
+box shows listening/speaking/thinking states. 16px with glow.
+Verified live. Accessibility improvement for impaired users.
+SS-FIX-310 opened: Claude Sonnet saying Now playing but not
+triggering actual playTrack() call.
+
+Entry-305 | SS-FIX-310 | 2026-05-01 23:32 PDT San Diego
+Replay + Not Playing handlers. TIER 0b1/0b2 added. Claude Sonnet
+generates natural response, shouldPlay triggers actual playback.
+Verified live. SS-FIX-311 opened: short words yes/no/stop not
+being captured by Speech Recognition API.
+
+Entry-306 | SS-FIX-311 | 2026-05-01 23:49 PDT San Diego
+Short word fix. interimResults enabled, maxAlternatives=3,
+whitelist guard, punctuation strip. Yes/no now captured.
+New bugs: no routes to notifications, yes double-triggers,
+TY echo. SS-FIX-312 opened.
+
+Entry-307 | SS-FIX-312 | 2026-05-02 00:07 PDT San Diego
+No/Yes routing fix. Negative response handler added before KB.
+Notification CONTEXT RULE one-shot guard. interimResults disabled.
+Verified live: single capture, no echo, no false notifications.
+All short words working correctly.
+
+Entry-308 | SS-FIX-313 | 2026-05-02 01:35 PDT San Diego
+Responsive nav fix. xl breakpoint, 100dvh drawer, iOS momentum
+scroll, More pill indicator. Verified live on iPhone landscape.
+All tabs reachable. Pill shows/hides correctly.
+
+Entry-309 | SS-FIX-314 + SS-FIX-315 | 2026-05-02 11:59 PDT San Diego
+Privacy settings (4 toggles). Live Activity page with two-step
+fetch, privacy filter, action buttons. Visual redesign with
+gradient header, color-coded rows, contrast fixes. Nav link
+added. Verified live in light and dark mode.
+
+Entry-310 | SS-FIX-316 | 2026-05-02 12:42 PDT San Diego
+Real-time online presence. user_presence table + RLS.
+useOnlinePresence hook with heartbeat. Header avatar stack
+with pulsing rings. Row avatars with spinning arc when online.
+Privacy via RLS + activity_anonymous. Verified live.
+
+Entry-311 | SS-FIX-317 | 2026-05-02 13:24 PDT San Diego
+Activity feed dedup + expandable groups. Grouped rows show
+count, expand shows individual tracks with actions.
+timeAgo shows actual dates for older items. Verified live.
+Next: SS-FIX-318 time filter, SS-FIX-319 follow filter,
+SS-FIX-320 infinite scroll.
+
+Entry-312 | SS-FIX-319 + SS-FIX-320 | 2026-05-02 14:25 PDT San Diego
+SS-FIX-319: Follow filter added to activity feed. Toggle in
+filter modal, banner when following nobody, Following only badge.
+SS-FIX-320: Live presence pill in nav. Desktop + mobile compact
+pill with yellow blinking dot. useOnlineCount hook. Verified live
+on desktop and phone.
+
+Entry-313 | SS-FIX-321 | 2026-05-02 14:39 PDT San Diego
+Activity feed infinite scroll. Load More button with
+pagination. PAGE_SIZE=20, .range() fetch, append on
+load more, reset on filter change. End of feed message.
+Verified live.
+
+Entry-314 | SS-FIX-322 | 2026-05-02 15:07 PDT San Diego
+TY Live Activity awareness. KB entry with contractions.
+Greeting context queries followed artist activity.
+System prompt updated with Live Activity knowledge.
+All 6 TY tier tests passing. Full voice system verified.
+
+Entry-315 | SS-FIX-323 | 2026-05-02 15:33 PDT San Diego
+TY taste preference inference pipeline. update-taste-
+preferences edge fn. Plays/likes/skips analyzed, top
+genres/styles/moods written to ty_user_preferences.
+Triggered every 5 plays from PlayerContext. Loop
+confirmed closed. TY now learns from listening behavior.
+
+Entry-316 | VERIFICATION | 2026-05-02 15:44 PDT San Diego
+TY learning loop verified end-to-end live. TY correctly
+identified user prefers R&B, romantic/energetic/calm moods
+from ty_user_preferences. Named specific liked tracks.
+Recommendations respect learned taste + G-41 objective
+signals. Personalization confirmed working in production.
+
+Entry-317 | SS-FIX-324 | 2026-05-02 16:13 PDT San Diego
+TY deeper learning complete. taste_rebuild scheduler
+activated. ty_preference_evolution wired with magnitude
+tracking. Greeting mentions taste shifts. TY describes
+full taste profile from learned preferences. All verified
+live. SS321-FUTURE-008 substantially complete.
+
+Entry-318 | SS-FIX-325 | 2026-05-02 16:45-17:52 PDT San Diego
+Track approval notification trigger + edge function fix. Created
+notify-new-track in Lovable codebase. Fixed email sender to
+noreply@silversounds321.com. Created on_track_approved DB trigger.
+Dropped orphaned trigger + function with exposed key. Deleted exposed
+secret API key. In-app + email notifications verified working
+end-to-end. References SS-FIX-085 canonical pattern set.
+
+Entry-319 | SS-FIX-326 | 2026-05-02 17:55-18:09 PDT San Diego
+Database secret scan built + trigger vault hardening. pg_proc
+scan SQL created covering Bearer tokens, Stripe, Resend, hardcoded
+auth headers. notify_new_track_trigger hardcoded key removed.
+Service role key stored in Supabase Vault. Trigger reads from
+vault. All 65 public functions CLEAN. New governance pattern:
+database-level secret scan alongside S1/S2. References
+SS-FIX-085 canonical pattern set.
+
+Entry-320 | SS-FIX-327 | 2026-05-02 18:18-18:38 PDT San Diego
+Notification switches server migration. 3 columns added to
+profiles (notify_follows, notify_comments, notify_purchases).
+3 trigger functions built (notify_on_follow, notify_on_comment,
+notify_on_purchase). Settings.tsx updated — all 3 toggles now
+read/write to profiles, localStorage removed. S1 corruption
+detected and fixed post-Lovable pull. All 3 toggles verified
+server-side. SS321-FUTURE-004 CLOSED.
+
+Entry-321 | SS-FIX-328 | 2026-05-02 18:43-18:48 PDT San Diego
+Email delivery for follow, comment, purchase notifications.
+notify-user shared edge function created in Lovable. Handles
+new_follow, new_comment, new_purchase types. All 3 trigger
+functions updated to call notify-user via vault key. Database
+secret scan post-fix — zero exposed secrets. All clean.
+
+Entry-322 | SS-FIX-329 | 2026-05-02 19:10 PDT San Diego
+SS321 favicon replaced. Lovable heart removed. SS321 logo
+converted to favicon formats with transparent background.
+favicon.ico + favicon-32x32.png + favicon-192x192.png installed
+in public/. index.html updated. Verified live in browser tab.
+
+Entry-323 | SS-FIX-330 | 2026-05-02 19:10-19:39 PDT San Diego
+SS321 header + hero badge logo update. Header music note replaced
+with black SS321 logo. Hero circle badge replaced with white SS321
+logo on purple gradient. White logo files added to public/.
+Global Music Platform pill and Browse Music button icons unchanged
+-- logo too small at those sizes. Verified live.
+
+Entry-324 | SS-FIX-331 | 2026-05-02 19:53-20:36 PDT San Diego
+PWA app badge unread count on home screen icon. NotificationBell
+useEffect wired to setAppBadge/clearAppBadge. iOS permission
+banner built (NotificationPermissionBanner.tsx) -- purple banner
+with Enable button triggers permission from user gesture. Timer-
+based approach removed -- iOS blocks it. Badge verified working
+on iPhone 15 PWA. Clears on mark all read.
+
+Entry-325 | SS-FIX-333 | 2026-05-02 23:51-2026-05-03 00:01 PDT San Diego
+Free track label renamed to Showcase platform-wide. Headphones
+icon added to badge as listen-only signal. 7 files updated.
+DB fields, filter values, URL params unchanged. All current
+and future track cards affected. Verified live.
+
+Entry-326 | SS-FIX-334 | 2026-05-03 00:01-01:05 PDT San Diego
+Inline comment button + dropdown added to all 3 track card views
+(grid, list, details). New TrackCommentDropdown component built.
+Comment button in electric-purple. RLS verified — edit only for
+comment owner. All 3 views: TrackCard, TrackListRow,
+TrackDetailCard updated. TrackPage updated with outline button
+style. Future track card features must update all 3 components.
+
+Entry-327 | SS-FIX-332 | 2026-05-02 21:53-22:36 PDT San Diego
+TY AI routing fixes. Question pattern guard added before TIER 0c
+-- questions bypass play intent routing. Contextual reference
+guard -- 9 ordinal/pronoun patterns route to Claude Sonnet.
+Session context merging -- last 10 in-memory messages passed
+as sessionMessages to edge function, eliminating persistence
+race condition. Pattern patch attempted and reverted -- principle
+locked: grow Haiku/Claude not pattern lists. All 6 tier tests
+passing. Context retention verified.
+
+### Entry-328
+Date: 2026-05-03 09:33 San Diego
+Fix: SS-FIX-335
+Title: Comment icon color uniformity â€” TrackListRow purple sync
+Summary: TrackListRow.tsx comment button was using text-muted-foreground
+         instead of text-electric-purple. Updated to match TrackCard.tsx
+         and TrackDetailCard.tsx exactly. All 3 track card views now
+         render comment icon and count in uniform electric purple.
+         Style-only change. No logic, no DB, no RLS affected.
+Status: CLOSED
+
+### Entry-329
+Date: 2026-05-03 10:03 San Diego
+Fix: SS-FIX-336
+Title: User-deletable notifications â€” individual delete + Clear All
+Summary: Three-part fix. Part A: per-row X button and Clear All added
+         to bell dropdown and full /notifications page. Part B: pg_cron
+         job (ID 7) registered to auto-purge notifications older than
+         10 days, running daily at 3:00 AM UTC. Part C: RLS DELETE
+         policy added so authenticated users can delete only their own
+         notifications. Hard delete throughout. No schema changes.
+         No new columns. React Query invalidation ensures immediate
+         UI update on delete.
+Status: CLOSED
+
+### Entry-330
+Date: 2026-05-03 11:19 San Diego
+Fix: SS-FIX-337
+Title: Email relay auth guard â€” notify-user edge function
+Summary: Lovable security scan flagged notify-user edge function as
+         open email relay â€” any caller could supply user_id and send
+         arbitrary email to any SS321 user. Auth guard added requiring
+         SUPABASE_SERVICE_ROLE_KEY in Authorization header. Unauthorized
+         callers receive 401 with CORS headers preserved. All internal
+         DB trigger callers already pass service role key via Vault â€”
+         legitimate traffic unaffected. Live attack surface closed.
+Status: CLOSED
+
+### Entry-331
+Date: 2026-05-03 11:19 San Diego
+Fix: SS-FIX-338
+Title: Follow button repair â€” trigger enum fix + resilience hardening
+Summary: Follow button silently failing with 400 Bad Request. Six-layer
+         diagnostic chain traced root cause to notify_on_follow trigger
+         using invalid notification_type enum value 'new_follow' (correct
+         value: 'follow'). Secondary issues: both DB triggers lacked
+         EXCEPTION blocks causing any failure to roll back the entire
+         user_follows INSERT; frontend hook using broken upsert pattern.
+         All three issues resolved. Stale orphaned row manually deleted.
+         Follow/Unfollow/Re-follow fully operational with clean console.
+         Triggers now resilient to future HTTP and DB failures.
+Status: CLOSED
+
+### Entry-332
+Date: 2026-05-03 11:58 San Diego
+Fix: SS-FIX-339
+Title: Auth guard â€” notify-new-track edge function
+Summary: Lovable security scan flagged notify-new-track edge function
+         as unauthenticated bulk notification sender â€” any caller could
+         trigger bulk in-app notifications and marketing emails to all
+         subscribed users for any track_id, enabling spam and Resend
+         quota exhaustion. Same auth guard pattern as SS-FIX-337 applied.
+         Service role key required in Authorization header. Unauthorized
+         callers receive 401. Internal DB trigger callers unaffected.
+Status: CLOSED
+
+### Entry-333
+Date: 2026-05-03 12:04 San Diego
+Fix: SS-FIX-340
+Title: SECURITY DEFINER function exposure â€” revoke excess grants
+Summary: Lovable security scan flagged SECURITY DEFINER functions
+         callable by anon and authenticated roles without restriction.
+         Audit identified 9 functions with excess grants: 4 anon grants
+         (revenue, subscriber, internal trigger, internal timestamp
+         functions) and 5 authenticated grants (4 trigger-only notify
+         functions + admin-only likes count). All 9 revoked and verified
+         clean. Intentionally public functions left untouched.
+         DB-only fix. No code or schema changes.
+Status: CLOSED
+
+### Entry-334
+Date: 2026-05-03 13:21 San Diego
+Fix: SS-FIX-341
+Title: Guardian recovery tokens encryption migration
+Summary: Lovable security scan flagged guardian_authority table storing
+         guardian_master_token, offline_recovery_token, and
+         successor_activation_token in plaintext. GUARDIAN_ENCRYPTION_KEY
+         confirmed in Edge Function secrets. One-time migration edge
+         function created using identical AES-256-GCM scheme as
+         guardian-token-manager. All 5 plaintext tokens across 2 guardian
+         rows encrypted successfully. Zero errors. All tokens verified
+         ENCRYPTED in DB post-migration. Migration function deleted from
+         codebase and Supabase immediately after execution. Security
+         finding fully resolved.
+Status: CLOSED
+
+### Entry-335
+Date: 2026-05-03 13:25 San Diego
+Fix: SS-FIX-342
+Title: Function search_path hardening â€” 5 trigger functions
+Summary: Lovable security scan flagged functions missing search_path
+         parameter, leaving them vulnerable to schema injection attacks.
+         Audit identified 5 affected functions: insert_follow_activity,
+         notify_new_track_trigger, notify_on_comment, notify_on_follow,
+         notify_on_purchase. SET search_path = public applied to all 5.
+         Verified zero functions missing search_path post-fix.
+         DB-only change. No code or schema changes.
+Status: CLOSED
+
+### Entry-336
+Date: 2026-05-03 14:27 San Diego
+Fix: SS-FIX-343
+Title: Guardian token write enforcement â€” plaintext rejection trigger
+Summary: Lovable security scan error persisted after SS-FIX-341
+         because guardian_authority columns remained plain text type
+         with no write enforcement. Created BEFORE INSERT OR UPDATE
+         trigger via Lovable migration to reject any non-null token
+         write shorter than 40 characters. Trigger deployed via
+         migration (SQL editor lacked sufficient privileges).
+         Verified live via pg_trigger system catalog. Tested â€”
+         plaintext write correctly throws P0001 exception.
+         Guardian token columns now enforced encrypted at DB level.
+Status: CLOSED
+
+### Entry-337
+Date: 2026-05-03 14:54 San Diego
+Fix: SS-FIX-344
+Title: Auth guard â€” create-purchase-snapshot edge function
+Summary: Lovable security scan flagged create-purchase-snapshot edge
+         function as unauthenticated â€” any caller could POST with any
+         purchase_id enabling arbitrary snapshot creation, storage
+         writes, and audit log tampering. Service role key auth guard
+         added matching SS-FIX-337 and SS-FIX-339 pattern. Stripe-
+         webhook caller already uses service role key â€” no breaking
+         changes. Attack vector closed.
+Status: CLOSED
+
+### Entry-338
+Date: 2026-05-03 14:58 San Diego
+Fix: SS-FIX-345
+Title: Raw error suppression â€” 3 edge functions
+Summary: Lovable security scan flagged get-anonymous-tracks,
+         get-greeting-context, and update-taste-preferences edge
+         functions returning raw String(err) and err.message to
+         callers, exposing DB internals. All three catch blocks
+         updated to return generic 'Internal server error' response.
+         Actual errors preserved in console.error for Supabase log
+         visibility. No DB error strings exposed to any caller.
+Status: CLOSED
+
+### Entry-339
+Date: 2026-05-03 15:00 San Diego
+Fix: SS-FIX-346
+Title: Family members SELECT policy â€” user own record access
+Summary: Lovable security scan flagged family_members table having
+         no SELECT policy for users or account owners â€” only admins
+         could read. Family members could not verify their own
+         membership. Added RLS SELECT policy USING (auth.uid() =
+         user_id) for authenticated role. Verified 2 policies exist
+         post-fix. No code changes. DB only.
+Status: CLOSED
+
+### Entry-340
+Date: 2026-05-03 15:02 San Diego
+Fix: SS-FIX-347
+Title: Rate limiting â€” verify-certificate edge function
+Summary: Lovable security scan flagged verify-certificate edge
+         function inserting into observability_metrics and
+         ai_certification_ledger on every request with no rate
+         limiting â€” enabling DB flood by unauthenticated callers.
+         IP-based in-memory rate limit added (10 req/min per IP).
+         Per-instance limitation acknowledged â€” standard approach
+         for edge functions without Redis infrastructure.
+         HTTP 429 returned on exceeded limit.
+Status: CLOSED
+
+### Entry-341
+Date: 2026-05-03 15:06 San Diego
+Fix: SS-FIX-348
+Title: SECURITY DEFINER function excess grants â€” second audit
+Summary: Second audit of SECURITY DEFINER function grants following
+         SS-FIX-340. Three internal functions identified with excess
+         authenticated grants: enforce_encrypted_guardian_tokens
+         (trigger function), cleanup_expired_rate_limits, and
+         cleanup_old_ty_conversations. All three revoked and verified
+         clean. Remaining grants are intentionally public functions
+         by design. Lovable scan SECURITY DEFINER warnings to be
+         marked Ignored.
+Status: CLOSED
+
+### Entry-342
+Date: 2026-05-03 15:20 San Diego
+Fix: SS-FIX-349
+Title: RLS privilege escalation fixes â€” subscriptions + tracks
+Summary: Security memory update revealed two real privilege
+         escalation vectors. Fix 1: subscriptions INSERT policy
+         restricted to status='pending' â€” users can no longer
+         bypass Stripe and self-grant active subscriptions. Fix 2:
+         tracks UPDATE policy restricted to preserve current status
+         â€” artists can no longer self-approve own tracks bypassing
+         admin review. Both fixes applied via Lovable migration.
+         Stripe webhook and admin flows unaffected.
+Status: CLOSED
+
+### Entry-343
+Date: 2026-05-03 15:35 San Diego
+Fix: SS-FIX-350
+Title: Admin email hardcode replaced with has_role() RPC
+Summary: Security memory audit identified hardcoded ADMIN_EMAILS
+         allowlist in AUDEAutoSync.ts and DocumentationWriter.ts
+         gating admin functionality by email comparison instead of
+         DB-backed role check. Inconsistent with platform pattern
+         and fragile. Both files updated to use supabase.rpc(
+         'has_role', { _user_id, _role: 'admin' }). RPC errors and
+         false results treated as non-admin. DB RLS still protects
+         actual writes independently.
+Status: CLOSED
+
+### Entry-344
+Date: 2026-05-03 15:41 San Diego
+Fix: SS-FIX-351
+Title: verify-certificate rate limit â€” in-memory to DB-backed
+Summary: Security memory audit noted verify-certificate in-memory
+         rate limit (SS-FIX-347) resets on cold starts â€” not
+         persistent across edge function instances. Switched to
+         shared DB-backed checkRateLimit helper using
+         system_rate_limits table. 10 req/min per IP limit
+         preserved. Rate limit now survives cold starts and is
+         shared across all instances. In-memory implementation
+         fully removed.
+Status: CLOSED
+
+### Entry-345
+Date: 2026-05-03 16:13 San Diego
+Fix: SS-FIX-352
+Title: Following filter â€” Browse page filter panel
+Summary: Added Following filter as first option in Browse page
+         filter panel (desktop FilterBar + MobileFilterDrawer).
+         New useFollowingArtistIds hook queries user_follows table.
+         Filter applied at data layer via useInfiniteTracks â€”
+         works across all 3 views automatically. URL param
+         following=true persists state on refresh. Anonymous users
+         see no filter. Users following nobody see inline notice
+         with Browse Artists button and all tracks still shown.
+         ActiveFilters chip allows removal. All 4 test cases pass.
+Status: CLOSED
+
+### Entry-346
+Date: 2026-05-03 17:50 San Diego
+Fix: SS-FIX-353
+Title: Fun features batch â€” 7 visual and social enhancements
+Summary: Seven visual and social enhancements added to SS321:
+         equalizer bars on mini player and now-playing cards,
+         confetti+Thank You on purchase confirmation, floating
+         music notes on homepage, genre-specific glow on track
+         card hover, live listener count via Supabase Realtime
+         presence, and First to Like gold badge with DB migration.
+         Artist card flip deferred pending artist cards page.
+         All 7 confirmed passing on live site.
+Status: CLOSED
+
+### Entry-347
+Date: 2026-05-03 20:06 San Diego
+Fix: SS-FIX-354
+Title: Enhanced features batch â€” artist flip cards, waveform, animations
+Summary: Artist flip cards added to all 3 track card views â€”
+         clicking artist name flips card to show artist profile,
+         gold Follow and green View Profile buttons on back face.
+         WaveSurfer.js waveform added to TrackPage (80px, seekable)
+         and Browse page (48px, sticky while playing). Flying SS321
+         logo Option E animation added â€” burst, arc spin, landing
+         flash, hold, fade. Logo 64px, holds at waveform before
+         fading. Sticky waveform behavior on Browse. Channel
+         collision fix on useListenerCount. All confirmed passing.
+Status: CLOSED
+
+### Entry-348
+Date: 2026-05-03 20:18 San Diego
+Fix: SS-FIX-355
+Title: Animated pointing finger on Live pill
+Summary: Added animated ðŸ‘† finger emoji to the right of
+         the Live listener count pill in Header.tsx.
+         Rotated -90deg to point left toward the pill.
+         Slow 2s ease-in-out pulse animation. Only renders
+         when onlineCount >= 1 â€” hidden when no users online.
+         Applied to both mobile and desktop pill renders.
+         animate-pulse-slow keyframe added to index.css.
+Status: CLOSED
+
+### Entry-349
+Date: 2026-05-03 20:59 San Diego
+Fix: SS-FIX-356
+Title: Waveform fix + mobile animation repair batch
+Summary: WaveSurfer was making duplicate getAudioUrl calls
+         causing 429 rate limit errors and missing purple wave
+         bars. Refactored WaveformPlayer to accept audioUrl as
+         prop from PlayerContext (new currentAudioUrl state).
+         Single URL fetch per track confirmed. Flying logo
+         animation repaired for mobile by replacing
+         document.activeElement with touchstart/mousedown
+         event tracking. Animation duration increased to 4800ms
+         on mobile. All confirmed working on desktop and phone.
+         Console clean. No 429 or CORS errors.
+Status: CLOSED
+
+### Entry-350
+Date: 2026-05-03 22:19 San Diego
+Fix: SS-FIX-357
+Title: Add to Queue from artist flip card back face
+Summary: Added Queue random button next to follower count
+         on artist flip card back face in all 3 track card
+         components. Fetches random approved track from artist
+         pool of 50, selects client-side. Fixed artist_name
+         column mismatch (column does not exist on tracks table)
+         by merging from parent track prop. Toast confirms
+         addition. Works confirmed on live site.
+Status: CLOSED
+
+### Entry-351
+Date: 2026-05-03 22:38 San Diego
+Fix: SS-FIX-358
+Title: Activity feed â€” show comment text inline
+Summary: Live Activity feed was showing "commented" pill
+         without the actual comment text. feed_activity
+         metadata stores comment_id only. Added batch fetch
+         from comments table using collected comment_ids.
+         Comment text rendered inline next to pill â€” italic,
+         muted, 60 char truncation, quoted. Single batched
+         query per page load for efficiency. Confirmed passing.
+Status: CLOSED
+
+### Entry-352
+Date: 2026-05-03 22:49 San Diego
+Fix: SS-FIX-359
+Title: Header avatar not updating after profile picture change
+Summary: Header avatar was reading from Supabase auth
+         user_metadata which Profile.tsx never updated â€” only
+         the profiles table row was updated. Header refactored
+         to use useQuery on profiles table with auth metadata
+         as fallback. Profile.tsx invalidates query after
+         successful avatar upload. Header avatar now updates
+         immediately without page refresh. Confirmed passing.
+Status: CLOSED
+
+### Entry-353
+Date: 2026-05-03 22:56 San Diego
+Fix: SS-FIX-360
+Title: Mini player showing Unknown Artist instead of artist name
+Summary: Mini player displayed Unknown Artist when tracks were
+         added via Queue random flip card feature which omits
+         artist_name. Added useQuery fallback in
+         GlobalAudioPlayer.tsx to fetch display_name from
+         profiles table when artist_name missing on track object.
+         Resolution chain: artist_name †’ profiles.display_name
+         †’ Unknown Artist. Only fetches when needed, 5min stale.
+         Confirmed passing on live site.
+Status: CLOSED
+
+### Entry-354
+Date: 2026-05-04 01:00 San Diego
+Fix: SS-FIX-361
+Title: Privacy Review Modal â€” full implementation
+Summary: Built complete privacy review system. Updated
+         /privacy page with 12-section SS321-specific
+         statement covering TY AI, Claude, no data selling,
+         CCPA/GDPR. Built undismissable Privacy Review Modal
+         with 11 toggles (7 privacy + 4 notifications).
+         3-day grace period soft lock implemented â€” 6 new
+         DB columns on profiles. Privacy/Terms links open
+         700x600 popup windows. Modal excluded from /privacy
+         and /terms routes. First login + monthly trigger.
+         All tests passing on live site.
+Status: CLOSED
+
+
+
+### Entry-355
+**DATE:** 2026-05-04 | San Diego
+**SESSION:** SS-FIX-362 — Unknown Artist mini player regression fix
+**CLO:** JAYA-CLO-121
+
+**WHAT WAS DONE:**
+- Diagnosed Unknown Artist regression affecting both PC and phone mini player
+- Confirmed SS-FIX-360 code (GlobalAudioPlayer.tsx fallback query) intact and correct
+- Full call site audit across 28 playTrack/playQueue/addToQueue locations
+- Identified 6 problem call sites with missing artist_id or artist_name
+- Fixed ActivityPage.tsx, usePersonalizedRecommendations.ts, SmartQueueWidget.tsx,
+  AIDailyMixCard.tsx, AIDiscoverWeeklyCard.tsx — missing artist fields
+- Identified true root cause: TrackListRow.tsx line 218 playTrack spread omitting
+  artist_name mapping from nested track.profiles.display_name
+- Applied single line fix: artist_name: track.profiles?.display_name ?? undefined
+  added to TrackListRow.tsx playTrack call at line 220
+- Published to production and verified on both PC and phone
+
+**WHAT WAS VERIFIED:**
+- PC: mini player shows correct artist name — PASS
+- Phone: mini player shows correct artist name — PASS
+- TrackCard.tsx playTrack call sites already correctly mapping profiles.display_name
+- TrackDetailCard.tsx random-pick query already correct — no change needed
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS321-FUTURE-008 — Guest modal position on mobile
+- Phase 8 — TYOVA Documentation Integrity Audit (Dormant A)
+- Patent — Walker Weitzel response + $4,500 provisional fee
+
+---
