@@ -8414,3 +8414,62 @@ Status: CLOSED
 - Patent -- Walker Weitzel response + USD 4,500 provisional fee
 
 ---
+
+### Entry-362
+**DATE:** 2026-05-04 | San Diego
+**SESSION:** SS-FIX-369 — SS321 Global Billboard Top 21 full feature build
+**CLO:** JAYA-CLO-128
+
+**WHAT WAS DONE:**
+- Designed and built SS321 Global Billboard Top 21 feature end to end
+- Data audit: confirmed track_plays_log, likes, purchases,
+  track_download_log all available with timestamps for composite scoring
+- Composite score formula locked: completed plays x3, partial x1,
+  likes x5, purchases x10, downloads x4, 30-day window
+- Built billboard_cache table with RLS public read, refresh function,
+  read RPC, initial seed, daily pg_cron job at 00:05 UTC
+- Built useGlobalBillboard hook (1hr staleTime, RPC + track join)
+- Built /billboard page: podium top 3 gold/silver/bronze, ranks 4-21
+  rows, score badge, play button, auth gate for anonymous users
+- Built BillboardPreviewSection on landing page with top 3 preview
+  and CTA (logged in vs anonymous paths)
+- Moved BillboardPreviewSection above FeaturedSection on landing page
+- Built BillboardScoringModal explaining formula in plain language
+  (listening, liking, purchasing, downloading) -- visible to all users
+- Info buttons added to Billboard page header and landing preview
+- Top 21 branding locked (SS3-21 brand alignment)
+- Start fresh from May 2026 -- no historical backfill
+- Trophy system architecture designed (3 phases):
+  Phase 1: Data foundation (monthly archive, badges, admin preview)
+  Phase 2: Badge display on all 3 track card views
+  Phase 3: Trophy collection pages (/trophies + artist profile)
+- Trophy system design decisions locked:
+  Monthly archive first day of each month 00:05 AM
+  Annual scoring Option A (sum of monthly scores with rank multipliers)
+  Rank multipliers: #1x1.5, #2x1.25, #3x1.1, #4-21x1.0
+  Champion glow: gold + electric purple, triggers at 3+ badges
+  Monthly badge: silver small compact
+  Annual trophy badge: gold bigger more prominent
+  Admin-only running annual standings preview panel
+
+**WHAT WAS VERIFIED:**
+- Landing page Billboard section visible -- PASS
+- /billboard page loads with tracks ranked -- PASS
+- Top 3 gold/silver/bronze styling -- PASS
+- Scoring modal opens on both locations -- PASS
+- Non-registered users see preview, redirected to /auth on play -- PASS
+- Info button visible to non-registered users -- PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS-FIX-370 Phase 1: Trophy system data foundation
+  (billboard_monthly_archive, track_badges, monthly cron, annual
+  scoring with multipliers, admin preview panel)
+- SS-FIX-371 Phase 2: Badge display on track cards (all 3 views)
+- SS-FIX-372 Phase 3: Trophy collection pages
+- SS321-FUTURE-008 -- Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse
+- SS321-FUTURE: TrackPage prev/next (single track route)
+- Phase 8 -- TYOVA Documentation Integrity Audit (Dormant A)
+- Patent -- Walker Weitzel response + USD 4,500 provisional fee
+
+---
