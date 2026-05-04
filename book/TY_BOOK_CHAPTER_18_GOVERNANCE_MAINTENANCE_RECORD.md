@@ -8213,3 +8213,34 @@ Status: CLOSED
 - Patent — Walker Weitzel response + $4,500 provisional fee
 
 ---
+
+### Entry-356
+**DATE:** 2026-05-04 | San Diego
+**SESSION:** SS-FIX-363 — Desktop animation tune + waveform normalize + diagnostic cleanup
+**CLO:** JAYA-CLO-122
+
+**WHAT WAS DONE:**
+- Tuned desktop flying logo animation in usePlayAnimation.ts: duration 700ms to
+  2000ms, arrivalOffset 0.75 to 0.80, burstDuration 200ms to 400ms, waveform
+  flash delay 530ms to 1650ms. Mobile values untouched. PC confirmed smoother.
+- Added normalize: true to WaveSurfer config in WaveformPlayer.tsx. Covers both
+  Browse and track/:id pages (same component).
+- Added diagnostic console.error to WaveSurfer error handler to diagnose flat
+  waveform appearance. Console confirmed zero WaveformPlayer errors. WaveSurfer
+  decoding successfully. Flat appearance confirmed as accurate representation of
+  consistently mastered audio. Diagnostic line removed same session.
+- Decision locked: waveform stays as-is (Option A). Accurate, not broken.
+
+**WHAT WAS VERIFIED:**
+- Desktop flying logo: smoother, slower, longer linger at waveform -- PASS
+- WaveSurfer error handler: zero errors in console -- PASS
+- Diagnostic console.error removed from production -- PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS-FIX-364 — Mobile list view layout fix (track title truncated on narrow screens)
+- SS321-FUTURE-008 — Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse (bandwidth)
+- Phase 8 -- TYOVA Documentation Integrity Audit (Dormant A)
+- Patent -- Walker Weitzel response + $4,500 provisional fee
+
+---
