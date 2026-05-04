@@ -8244,3 +8244,34 @@ Status: CLOSED
 - Patent -- Walker Weitzel response + $4,500 provisional fee
 
 ---
+
+### Entry-357
+**DATE:** 2026-05-04 | San Diego
+**SESSION:** SS-FIX-364 — Mobile list view layout restructure
+**CLO:** JAYA-CLO-123
+
+**WHAT WAS DONE:**
+- Diagnosed mobile list view truncation — thumbnail and title sharing flex-wrap
+  line on narrow viewports leaving insufficient width for track titles
+- Full JSX audit of TrackListRow.tsx return block (lines 154-526)
+- Restructured mobile layout using sm:contents wrapper divs:
+  1. Wrapped thumbnail + title in flex items-center gap-4 w-full sm:contents
+     div — thumbnail and title share one clean row on mobile
+  2. Wrapped Genre, Price, AudioFormat, Explicit badges in flex flex-wrap
+     items-center gap-2 w-full sm:contents div — badges on own row on mobile
+  3. Added flex-shrink-0 to trending rank span
+- Desktop layout (sm+) completely unchanged — sm:contents removes wrappers
+  from box tree at desktop breakpoint
+
+**WHAT WAS VERIFIED:**
+- Phone: track title shows fully in list view — PASS
+- Phone: badges sit cleanly on own row below title — PASS
+- PC: desktop list view unchanged — PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS321-FUTURE-008 — Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse (bandwidth)
+- Phase 8 — TYOVA Documentation Integrity Audit (Dormant A)
+- Patent — Walker Weitzel response + $4,500 provisional fee
+
+---
