@@ -8321,3 +8321,35 @@ Status: CLOSED
 - Patent — Walker Weitzel response + USD 4,500 provisional fee
 
 ---
+
+### Entry-359
+**DATE:** 2026-05-04 | San Diego
+**SESSION:** SS-FIX-366 — Comment dropdown close button
+**CLO:** JAYA-CLO-125
+
+**WHAT WAS DONE:**
+- Diagnosed missing close affordance on TrackCommentDropdown
+- Confirmed click-outside handler already present and working (lines 53-66)
+  but not discoverable by users
+- Added red X close button to src/components/track/TrackCommentDropdown.tsx
+  as absolute top-right child of dropdown container
+- Added relative to container className for correct button positioning
+- X icon already imported from lucide-react -- no new import needed
+- Single file change covers all three views (list, tile, details) since
+  all three parent components use the same TrackCommentDropdown
+
+**WHAT WAS VERIFIED:**
+- List view: red X visible, closes dropdown -- PASS
+- Tile view: red X visible, closes dropdown -- PASS
+- Details view: red X visible, closes dropdown -- PASS
+- PC: PASS
+- Phone: PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS321-FUTURE-008 -- Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse (bandwidth)
+- SS321-FUTURE: TrackPage prev/next (single track route)
+- Phase 8 -- TYOVA Documentation Integrity Audit (Dormant A)
+- Patent -- Walker Weitzel response + USD 4,500 provisional fee
+
+---
