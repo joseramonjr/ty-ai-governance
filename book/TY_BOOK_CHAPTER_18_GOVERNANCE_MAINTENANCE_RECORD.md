@@ -8353,3 +8353,34 @@ Status: CLOSED
 - Patent -- Walker Weitzel response + USD 4,500 provisional fee
 
 ---
+
+### Entry-360
+**DATE:** 2026-05-04 | San Diego
+**SESSION:** SS-FIX-367 — Tile card hover blur fix
+**CLO:** JAYA-CLO-126
+
+**WHAT WAS DONE:**
+- Diagnosed tile card hover blur in grid/tile view
+- Compared TrackCard.tsx vs TrackDetailCard.tsx to isolate differentiator
+- Both reports independently confirmed root cause: hover:scale-[1.02] on
+  outermost Card container combined with backdrop-blur-sm + backface-visibility:
+  hidden from .artist-card-front in index.css
+- Classic Chromium/WebKit compositor layer rasterization at non-integer scale
+  causing album art and text to appear blurry on hover
+- TrackDetailCard unaffected: no hover:scale class present
+- Removed hover:scale-[1.02] from TrackCard.tsx line 179
+- All other hover effects preserved: shadow-xl, electric-purple border glow
+- One class removed, one file changed
+
+**WHAT WAS VERIFIED:**
+- Tile view hover: album art sharp, no blur -- PASS
+- PC: PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS321-FUTURE-008 -- Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse (bandwidth)
+- SS321-FUTURE: TrackPage prev/next (single track route)
+- Phase 8 -- TYOVA Documentation Integrity Audit (Dormant A)
+- Patent -- Walker Weitzel response + USD 4,500 provisional fee
+
+---
