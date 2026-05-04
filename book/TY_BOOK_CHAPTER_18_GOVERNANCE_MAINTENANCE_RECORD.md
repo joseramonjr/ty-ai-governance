@@ -8384,3 +8384,33 @@ Status: CLOSED
 - Patent -- Walker Weitzel response + USD 4,500 provisional fee
 
 ---
+
+### Entry-361
+**DATE:** 2026-05-04 | San Diego
+**SESSION:** SS-FIX-368 — Excluded diagonal stripe missing from Details view
+**CLO:** JAYA-CLO-127
+
+**WHAT WAS DONE:**
+- Diagnosed missing excluded visual treatment on TrackDetailCard.tsx
+- Confirmed excluded derived locally via useTrackExclusions (line 100)
+  but only used for toggle button styling -- no card-level treatment
+- TrackCard.tsx and TrackListRow.tsx both had full excluded treatment
+- Added two treatments to TrackDetailCard.tsx to match:
+  1. excluded and "bg-muted/60 grayscale-[40%]" on Card container cn()
+  2. Diagonal stripe overlay div (repeating-linear-gradient 45deg) added
+     after Card opening tag, absolute inset-0 pointer-events-none z-10
+- No new imports or hooks needed
+- One file changed
+
+**WHAT WAS VERIFIED:**
+- Details view excluded track: diagonal stripe visible -- PASS
+- Details view excluded track: grayscale treatment visible -- PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS321-FUTURE-008 -- Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse (bandwidth)
+- SS321-FUTURE: TrackPage prev/next (single track route)
+- Phase 8 -- TYOVA Documentation Integrity Audit (Dormant A)
+- Patent -- Walker Weitzel response + USD 4,500 provisional fee
+
+---
