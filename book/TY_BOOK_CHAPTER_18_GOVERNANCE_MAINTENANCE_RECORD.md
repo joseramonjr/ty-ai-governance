@@ -8275,3 +8275,49 @@ Status: CLOSED
 - Patent — Walker Weitzel response + $4,500 provisional fee
 
 ---
+
+### Entry-358
+**DATE:** 2026-05-04 | San Diego
+**SESSION:** SS-FIX-365 — Windowed queue architecture
+**CLO:** JAYA-CLO-124
+
+**WHAT WAS DONE:**
+- Diagnosed prev/next disabled on single track play across all surfaces
+- Full call site audit: all 28 playTrack/playQueue/addToQueue locations mapped
+- Confirmed root cause: every individual track click called playTrack (single
+  track only) — no surrounding tracks loaded into queue
+- Designed and implemented windowed queue architecture:
+  * New useQueueWindow hook: playFromWindow seeds queue with currently visible
+    tracks (up to 20), starts at clicked index. extendForward/extendBackward
+    fetch next/prev WINDOW_SIZE=20 tracks from Supabase using same filters.
+    Auto-extends at EXTEND_THRESHOLD=3 tracks from queue edge.
+  * PlayerContext extended: prependToQueue, setOnQueueNearEnd,
+    setOnQueueNearStart, EXTEND_THRESHOLD useEffect firing callbacks
+  * TrackGrid, TrackCard, TrackListRow, TrackDetailCard: onPlayTrack prop
+    added, canListen branch wired, canPreview branches untouched
+  * Browse, Library, MyTracks, PublicProfile: handlers wired with correct
+    track arrays and filter contexts
+- Corrected path discrepancy: src/components/browse/TrackGrid.tsx not
+  src/components/TrackGrid.tsx
+- Discovered Library/MyTracks/PublicProfile bypass TrackGrid — wired inline
+  at each map call
+- Included TrackDetailCard (details view mode) for consistent UX
+- TrackPage.tsx excluded by design — single track route, no surrounding list
+- Confirmed 10 files created/changed, no TypeScript errors
+
+**WHAT WAS VERIFIED:**
+- Browse page single track play: prev/next enabled -- PASS
+- Next track navigation: advances correctly -- PASS
+- Prev track navigation: goes back correctly -- PASS
+- PC: PASS
+- Phone: PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS321-FUTURE-008 — Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse (bandwidth)
+- SS321-FUTURE: TrackPage prev/next (single track route — needs related
+  tracks as queue seed)
+- Phase 8 — TYOVA Documentation Integrity Audit (Dormant A)
+- Patent — Walker Weitzel response + USD 4,500 provisional fee
+
+---
