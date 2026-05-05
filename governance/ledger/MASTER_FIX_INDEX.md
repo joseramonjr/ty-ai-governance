@@ -7541,3 +7541,19 @@ Date: 2026-05-05 10:59 San Diego
 Destination: SS321
 Title: Billboard s superscript + Sound Story Soul morph animation
 Status: CLOSED
+
+## FIX-357
+- Date: 2026-05-05 14:11 PDT
+- SS-FIX: SS-FIX-375
+- CLO: CLO-357
+- Title: TY AI Sound Story Soul Knowledge Repair
+- Status: COMPLETE
+- Destination: SS321 (Lovable)
+
+## FIX-358
+- Date: 2026-05-05 14:11 PDT
+- SS-FIX: SS-FIX-376
+- CLO: CLO-358
+- Title: TY AI Catalog Awareness Track Name Lookup — ROLLED BACK / DEFERRED
+- Status: ROLLED BACK
+- Destination: SS321 (Lovable)

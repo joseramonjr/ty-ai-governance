@@ -8698,3 +8698,11 @@ Status: CLOSED
 - Patent -- Walker Weitzel response + USD 4,500 provisional fee
 
 ---
+
+Entry-368 | FIX-357 | CLO-357 | 2026-05-05 14:11 PDT
+SS-FIX-375 — TY AI Sound Story Soul Knowledge Repair — COMPLETE
+Part A: Sound Story Soul philosophy, language barrier manifesto, and soul definition added to ty-ai-chat system prompt PLATFORM KNOWLEDGE block. TYAISS321Knowledge.ts action-only contract preserved per SS-FIX-306. Part B: currentTrackId wired from TYAIPanelContainer PlayerContext through useTYAIChatProcessor into edge function request body. Split profiles join into two separate SELECT queries. Corrected column name mood to mood_tags (PostgREST rejection was root cause of NULL trackData). Service role client confirmed correct at line 276. Diagnostic logs added and removed. Tests 1, 2, 4 passing. Test 3 language barrier intent routing deferred.
+
+Entry-369 | FIX-358 | CLO-358 | 2026-05-05 14:11 PDT
+SS-FIX-376 — TY AI Catalog Awareness Track Name Lookup — ROLLED BACK / DEFERRED
+Attempted word-based title matcher in ty-ai-chat edge function to enable catalog lookup for tracks not actively playing. TypeScript type annotations caused Deno compilation issues and edge function instability. Rolled back to post-SS-FIX-375 state. Track context works correctly for actively playing tracks via SS-FIX-375 Part B. Full catalog awareness without active playback deferred to future session.
