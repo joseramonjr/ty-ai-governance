@@ -8706,3 +8706,6 @@ Part A: Sound Story Soul philosophy, language barrier manifesto, and soul defini
 Entry-369 | FIX-358 | CLO-358 | 2026-05-05 14:11 PDT
 SS-FIX-376 — TY AI Catalog Awareness Track Name Lookup — ROLLED BACK / DEFERRED
 Attempted word-based title matcher in ty-ai-chat edge function to enable catalog lookup for tracks not actively playing. TypeScript type annotations caused Deno compilation issues and edge function instability. Rolled back to post-SS-FIX-375 state. Track context works correctly for actively playing tracks via SS-FIX-375 Part B. Full catalog awareness without active playback deferred to future session.
+
+Entry-370 | FIX-359 | CLO-359 | 2026-05-05 14:11 PDT
+SECURITY INCIDENT — Raw tokens file accidentally committed in 546b38e via git add -A picking up untracked files in book/ directory. File contained guardian master token, recovery token, activation token, and Resend API key in plaintext. Immediate response: file deleted in 84cdff3, .gitignore updated to block *.txt and *TOKENS* patterns. Resend API key rotated — old key revoked, new SS321-Production key issued and saved to Supabase secrets. Guardian tokens flagged for dedicated rotation session. Git history purge of 546b38e deferred. Permanent rule added: always run git status before git add -A.

@@ -7557,3 +7557,10 @@ Status: CLOSED
 - Title: TY AI Catalog Awareness Track Name Lookup — ROLLED BACK / DEFERRED
 - Status: ROLLED BACK
 - Destination: SS321 (Lovable)
+
+## FIX-359
+- Date: 2026-05-05 14:11 PDT
+- CLO: CLO-359
+- Title: SECURITY INCIDENT — Raw tokens file committed, Resend key rotated
+- Status: PARTIAL — Resend rotated, guardian tokens deferred, git history purge deferred
+- Destination: ty-ai-governance
