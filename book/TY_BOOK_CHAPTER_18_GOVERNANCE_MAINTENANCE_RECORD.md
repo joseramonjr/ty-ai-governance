@@ -8662,3 +8662,39 @@ Status: CLOSED
 - Patent -- Walker Weitzel response + USD 4,500 provisional fee
 
 ---
+
+### Entry-367
+**DATE:** 2026-05-05 | San Diego
+**SESSION:** SS-FIX-374 — Billboard s superscript + Sound Story Soul animation
+**CLO:** JAYA-CLO-133
+
+**WHAT WAS DONE:**
+- Added superscript s above the 3 in SS321 Billboard title
+- s represents Sound Story Soul -- the three pillars of SS321
+- Tuned s appearance: font-sans font-medium 18px electric-purple,
+  positioned top-right of the 3, tooltip showing full meaning
+- Fixed gradient clipping issue: 3 needed own gradient span inside
+  relative wrapper to render visibly with bg-clip-text parent
+- Added s morph pill animation: useEffect cycle fires at 3s then
+  every 18s, expands s into Sound Story Soul pill for 3 seconds
+  then collapses back. CSS transition-all duration-500.
+- Created SS321_ANIMATION_PATTERNS.md in governance folder:
+  documents 21 spin pattern (Web Animations API) and s morph
+  pill pattern (React state + CSS) with full reuse notes
+  Committed as d56c76d
+
+**WHAT WAS VERIFIED:**
+- s superscript visible and readable on /billboard -- PASS
+- s morphs to Sound Story Soul pill and returns -- PASS
+- Animation patterns file committed to ty-ai-governance -- PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS-FIX-375 Phase 2: Badge display on track cards (all 3 views)
+- SS-FIX-376 Phase 3: Trophy collection pages
+- SS321-FUTURE-008 -- Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse
+- SS321-FUTURE: TrackPage prev/next (single track route)
+- Phase 8 -- TYOVA Documentation Integrity Audit (Dormant A)
+- Patent -- Walker Weitzel response + USD 4,500 provisional fee
+
+---
