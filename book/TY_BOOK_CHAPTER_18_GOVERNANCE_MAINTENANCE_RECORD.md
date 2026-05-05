@@ -8578,3 +8578,49 @@ Status: CLOSED
 - Patent -- Walker Weitzel response + USD 4,500 provisional fee
 
 ---
+
+### Entry-365
+**DATE:** 2026-05-05 | San Diego
+**SESSION:** SS-FIX-372 — Sound Story Soul branding + track fields + TY AI
+**CLO:** JAYA-CLO-131
+
+**WHAT WAS DONE:**
+- Implemented Sound Story Soul as SS321 brand philosophy across platform:
+  * HeroSection.tsx: tagline between badge and H1
+  * About.tsx: full section with three pillar cards and manifesto
+    including music has no language barrier philosophy
+  * Footer.tsx: mini-bar above copyright
+- Added track_story and track_soul columns to tracks table via migration
+- Added Story and Soul textarea fields to Upload.tsx and EditTrack.tsx
+- Added collapsible Story and Soul display sections to TrackPage.tsx
+- Fixed read path bug: TRACK_SELECT_COLUMNS in useTracks.ts did not
+  include track_story or track_soul -- data was saving to DB correctly
+  but never returned to client -- fixed by appending to constant and
+  adding to Track interface
+- Updated TY AI system prompt with Sound/Story/Soul knowledge:
+  three pillar definitions, artist-authored fields awareness,
+  language barrier encouragement, translation guidance,
+  Story/Soul reference in track descriptions
+- Populated first real track Story and Soul: BAB To Clair Ver3
+  Story: written about niece's college best friend Claire
+  Soul: you are never alone, friendship holds you up in hard times
+
+**WHAT WAS VERIFIED:**
+- Landing page Sound Story Soul tagline -- PASS
+- About page full manifesto -- PASS
+- Footer tagline -- PASS
+- Story and Soul fields on upload/edit pages -- PASS
+- Story and Soul display on track page -- PASS
+- Database confirmed: track_story and track_soul saved correctly
+- useTracks.ts read path fix -- PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS-FIX-373 Phase 2: Badge display on track cards (all 3 views)
+- SS-FIX-374 Phase 3: Trophy collection pages
+- SS321-FUTURE-008 -- Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse
+- SS321-FUTURE: TrackPage prev/next (single track route)
+- Phase 8 -- TYOVA Documentation Integrity Audit (Dormant A)
+- Patent -- Walker Weitzel response + USD 4,500 provisional fee
+
+---
