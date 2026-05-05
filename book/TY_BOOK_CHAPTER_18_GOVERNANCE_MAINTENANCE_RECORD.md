@@ -8473,3 +8473,50 @@ Status: CLOSED
 - Patent -- Walker Weitzel response + USD 4,500 provisional fee
 
 ---
+
+### Entry-363
+**DATE:** 2026-05-04 | San Diego
+**SESSION:** SS-FIX-370 — Trophy System Phase 1 + AdminRoute race fix
+**CLO:** JAYA-CLO-129
+
+**WHAT WAS DONE:**
+- Built Trophy System Phase 1 data foundation:
+  * billboard_monthly_archive table + RLS public read
+  * track_badges table + RLS public read
+  * archive_monthly_billboard() SECURITY DEFINER: top 21 prior month,
+    rank multipliers #1x1.5 #2x1.25 #3x1.1, badges top 3, idempotent
+  * get_annual_standings(year) admin-only SECURITY DEFINER function
+  * pg_cron job archive_billboard_monthly at 5 0 1 monthly
+  * useAnnualStandings hook (30min staleTime)
+  * BillboardAdmin page at /admin/billboard
+- Diagnosed and fixed AdminRoute race condition:
+  * Root cause: roleLoading became false before useUserRole DB query
+    returned, role was null, AdminRoute redirected to / prematurely
+  * Fix: added (!!user and role === null) to loading condition line 52
+  * Verified in console: AdminRoute now shows spinner until admin
+    confirmed from DB, then grants access
+- Fixed /admin/billboard 404: routeOverride bypassed AdminRoute wrapper,
+  added explicit route in App.tsx instead, removed routeOverride
+- Added Billboard Admin to AdminQuickActions and AdminNavigationHub
+- 406 errors on ai_system_metrics are pre-existing TY AI diagnostic
+  queries -- not related to billboard work, no user-facing impact
+
+**WHAT WAS VERIFIED:**
+- /admin/billboard loads correctly via nav link -- PASS
+- AdminRoute race condition resolved -- PASS
+- Empty state message visible -- PASS
+- Year selector present -- PASS
+- Billboard Admin in admin nav -- PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS-FIX-371 Phase 2: Badge display on track cards (all 3 views)
+  Champion glow gold+purple at 3+ badges, monthly silver compact,
+  annual gold prominent
+- SS-FIX-372 Phase 3: Trophy collection pages (/trophies + artist profile)
+- SS321-FUTURE-008 -- Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse
+- SS321-FUTURE: TrackPage prev/next (single track route)
+- Phase 8 -- TYOVA Documentation Integrity Audit (Dormant A)
+- Patent -- Walker Weitzel response + USD 4,500 provisional fee
+
+---
