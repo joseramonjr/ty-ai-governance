@@ -8624,3 +8624,41 @@ Status: CLOSED
 - Patent -- Walker Weitzel response + USD 4,500 provisional fee
 
 ---
+
+### Entry-366
+**DATE:** 2026-05-05 | San Diego
+**SESSION:** SS-FIX-373 — Billboard two-level opt-in control
+**CLO:** JAYA-CLO-132
+
+**WHAT WAS DONE:**
+- Designed and built two-level Billboard opt-in system:
+  Level 1: Artist master toggle in Settings (profiles.billboard_opt_in)
+  Level 2: Per-track toggle on Upload and EditTrack pages
+    (tracks.billboard_opt_in)
+- Logic: Master OFF excludes all tracks regardless of per-track setting.
+  Master ON + Track ON = included. Master ON + Track OFF = excluded.
+  Past badges preserved -- scoring functions filter only.
+- Migration applied: billboard_opt_in boolean DEFAULT true added to
+  both profiles and tracks tables
+- All 3 scoring functions updated with two-level opt-in filter
+- Fixed read path bug: billboard_opt_in not in TRACK_SELECT_COLUMNS
+  caused state to always hydrate as undefined ?? true = true.
+  Fixed by appending to TRACK_SELECT_COLUMNS and Track interface
+  in useTracks.ts -- same pattern as SS-FIX-372 track_story fix
+- Settings.tsx profile select already included billboard_opt_in --
+  no additional fix needed there
+
+**WHAT WAS VERIFIED:**
+- EditTrack billboard toggle saves and persists OFF -- PASS
+- Settings master toggle saves and persists OFF -- PASS
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS-FIX-374 Phase 2: Badge display on track cards (all 3 views)
+- SS-FIX-375 Phase 3: Trophy collection pages
+- SS321-FUTURE-008 -- Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse
+- SS321-FUTURE: TrackPage prev/next (single track route)
+- Phase 8 -- TYOVA Documentation Integrity Audit (Dormant A)
+- Patent -- Walker Weitzel response + USD 4,500 provisional fee
+
+---
