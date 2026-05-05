@@ -8520,3 +8520,61 @@ Status: CLOSED
 - Patent -- Walker Weitzel response + USD 4,500 provisional fee
 
 ---
+
+### Entry-364
+**DATE:** 2026-05-04 | San Diego
+**SESSION:** SS-FIX-371 — Billboard fixes + integrity system + podium redesign
+**CLO:** JAYA-CLO-130
+
+**WHAT WAS DONE:**
+- Fixed get_annual_standings() LIMIT 10 to 21, switched to has_role() RPC
+- Created seed_billboard_month() for historical month seeding
+- Seeded Jan-Apr 2026 historical data (Jan/Feb/Mar = 0 rows no activity,
+  Apr = 21 tracks -- later reseeded to 0 after integrity fix applied)
+- Fixed refresh_global_billboard() LIMIT 20 to 21, reseeded cache
+- Applied full Billboard integrity fix to all 3 scoring functions:
+  * Self-activity excluded using IS DISTINCT FROM artist_id on all CTEs
+    (plays, likes, purchases, downloads)
+  * Minimum 3 unique non-self listeners required via unique_listeners CTE
+  * Family members NOT excluded -- play fair decision locked
+  * seed_billboard_month PUBLIC execute grant revoked
+- Wording fixes: Top 20 to Top 21 in Billboard.tsx and
+  BillboardPreviewSection.tsx
+- 21 animation tuned: spin offsets 0.55/0.83, scale 2.1, duration 1584ms
+- Top 3 podium redesigned: side-by-side (#2 left #1 center #3 right),
+  PodiumCard with shimmer/pulsing border/float animations, CHAMPION label,
+  canvas-confetti with hearts and musical notes on page load
+- BillboardStatsModal added to all 21 cards: score breakdown table,
+  comparison bars vs #1, signal rank badges (#N of 21)
+- Admin year selector fixed: starts 2026, grows automatically
+- Duplicate rank chip removed from podium rows
+- Informative empty state added explaining integrity rules
+- Billboard cache now 0 rows -- correct honest result, will populate
+  as real audience grows beyond artist self-testing
+
+**WHAT WAS VERIFIED:**
+- All 21 billboard tracks showing -- PASS (before integrity fix)
+- Top 3 podium side-by-side layout -- PASS
+- Confetti with hearts and musical notes -- PASS
+- Stats modal score breakdown -- PASS
+- Comparison bars vs #1 with signal ranks -- PASS
+- Integrity fix applied to all 3 functions -- PASS
+- billboard_cache = 0 after integrity reseed -- PASS (honest result)
+- Empty state informative message -- PASS
+
+**INTEGRITY DECISIONS LOCKED:**
+- Self-plays excluded: artist cannot inflate own score
+- Minimum 3 unique non-self listeners to qualify
+- Family role NOT excluded
+- All three scoring functions consistent
+
+**OPEN ITEMS CARRIED FORWARD:**
+- SS-FIX-372 Phase 2: Badge display on track cards (all 3 views)
+- SS-FIX-373 Phase 3: Trophy collection pages
+- SS321-FUTURE-008 -- Guest modal position on mobile
+- SS321-FUTURE: WaveSurfer double-downloading full audio on Browse
+- SS321-FUTURE: TrackPage prev/next (single track route)
+- Phase 8 -- TYOVA Documentation Integrity Audit (Dormant A)
+- Patent -- Walker Weitzel response + USD 4,500 provisional fee
+
+---
