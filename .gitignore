@@ -35,3 +35,6 @@ book/key*.txt
 .DS_Store
 Thumbs.db
 ~$*
+*.txt
+TOKENS*
+*TOKENS*
