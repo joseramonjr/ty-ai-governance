@@ -8771,3 +8771,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable)
 **Summary:** Added user-facing preferred lyrics language setting to three locations. Created shared preferredLanguage.ts module (LANGUAGES list, savePreferredLanguage upsert helper, fetchPreferredLanguage, DEFAULT_LANGUAGE). Added Lyrics Language row to Settings.tsx Preferences section (auto-save on change). Added Preferred Lyrics Language field to Edit Profile modal in PublicProfile.tsx (loaded on open, saved on submit). Created LanguageWelcomeModal.tsx (one-time post-signup modal, sessionStorage flag, browser language default, Save & Continue + Skip). Mounted in App.tsx alongside GlobalAudioPlayer and LyricsLanguageDetector. All three confirmed working on live site. 5 files touched.
 **Status:** COMPLETE
+
+### Entry-380 — SS-FIX-386: Soul Word Card Link Underline Pulse Animation
+**Date:** 2026-05-06 10:58 PDT
+**Fix ID:** SS-FIX-386
+**Ledger:** FIX-369
+**Destination:** SS321 (Lovable)
+**Summary:** Added pulsing underline animation to all three clickable links on both soul word cards. Added underline-pulse keyframe to tailwind.config.ts (transparent to currentColor, 2s ease-in-out infinite). Applied to track title, artist name, and TY AI label links in both SoulWordsCard.tsx and SoulWordsCardHero.tsx. All 6 links confirmed pulsing on live site. 3 files touched.
+**Status:** COMPLETE
