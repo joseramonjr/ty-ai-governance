@@ -8715,3 +8715,27 @@ SS-FIX-377 -- Trophy badge display on all 3 track card views. Created TrackBadge
 
 Entry-372 | FIX-361 | 2026-05-05 17:55 PDT
 SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual Awards + Monthly Archive sections, collapsible month groups, rank-based badge colors, champion glow, empty state all viewers). Created Trophies.tsx (/trophies auth-guarded personal Trophy Room). Added Trophies tab to PublicProfile.tsx. Added /trophies to protectedRoutes. Added Trophies link to Library dropdown Header.tsx (desktop + mobile). New routes: /trophies. COMPLETE 2026-05-05 17:55 PDT.
+
+### Entry-373 — SS-FIX-379: TY Soul Words
+**Date:** 2026-05-05 19:10 PDT
+**Fix ID:** SS-FIX-379
+**Ledger:** FIX-362
+**Destination:** SS321 (Lovable + Supabase)
+**Summary:** Built TY Soul Words end-to-end. Created ty_soul_words table with RLS (public read active, admin read all, admin update, service-role insert). Deployed generate-soul-word Edge Function (Anthropic Claude Sonnet 4, validated output format). Created SoulWordsCard.tsx placed on Browse page between subtitle and search bar. Created SoulWordsAdminPanel.tsx (soft delete, regenerate, active display). Configured pg_cron job ID 10 (0 9 * * * UTC) for daily auto-generation. 7 files touched.
+**Status:** COMPLETE
+
+### Entry-374 — SS-FIX-380: TY Soul Words Admin History View
+**Date:** 2026-05-05 19:25 PDT
+**Fix ID:** SS-FIX-380
+**Ledger:** FIX-363
+**Destination:** SS321 (Lovable)
+**Summary:** Added collapsible Past Soul Words history section to SoulWordsAdminPanel.tsx. Fetches all is_active=false rows ordered by generated_at descending. Collapsed by default with entry count in trigger. Each entry shows content, attribution, generated_at timestamp, and Deleted badge when deleted_at is non-null. Refreshes after Delete and Regenerate actions. 1 file touched.
+**Status:** COMPLETE
+
+### Entry-375 — SS-FIX-381: TY Soul Words Landing Page Hero Card
+**Date:** 2026-05-05 19:34 PDT
+**Fix ID:** SS-FIX-381
+**Ledger:** FIX-364
+**Destination:** SS321 (Lovable)
+**Summary:** Created SoulWordsCardHero.tsx — premium hero variant of the soul word card placed on the landing page between HeroSection and SearchSection in Index.tsx. Design: animated gradient border (6s cycle, yellow/purple/cyan), dark backdrop blur background, TY TODAY'S SOUL WORD label, pulsing Sparkles icon, large centered italic message, attribution. Added gradient-shift keyframe to tailwind.config.ts. 3 files touched.
+**Status:** COMPLETE

@@ -7568,3 +7568,7 @@ Status: CLOSED
 FIX-360 | SS-FIX-377 | 2026-05-05 17:03 PDT | Trophy badge display on all 3 track card views -- TrackBadgeStrip + TrophyHistoryModal + rank-based colors (gold/silver/bronze/gray) + champion glow + 3-badge cap + overflow modal. COMPLETE.
 
 FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophies page + ArtistTrophyDisplay + PublicProfile Trophies tab + Library nav link (desktop + mobile). COMPLETE.
+
+| FIX-362 | SS-FIX-379 | TY Soul Words — table, edge function, Browse card, admin panel | SS321 | 2026-05-05 | COMPLETE |
+| FIX-363 | SS-FIX-380 | TY Soul Words — admin history view | SS321 | 2026-05-05 | COMPLETE |
+| FIX-364 | SS-FIX-381 | TY Soul Words — landing page hero card | SS321 | 2026-05-05 | COMPLETE |
