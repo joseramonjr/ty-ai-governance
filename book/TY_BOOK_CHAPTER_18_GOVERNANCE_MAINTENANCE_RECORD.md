@@ -8779,3 +8779,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable)
 **Summary:** Added pulsing underline animation to all three clickable links on both soul word cards. Added underline-pulse keyframe to tailwind.config.ts (transparent to currentColor, 2s ease-in-out infinite). Applied to track title, artist name, and TY AI label links in both SoulWordsCard.tsx and SoulWordsCardHero.tsx. All 6 links confirmed pulsing on live site. 3 files touched.
 **Status:** COMPLETE
+
+### Entry-381 — SS-FIX-387: Billboard Celebration Floating Elements
+**Date:** 2026-05-06 12:04 PDT
+**Fix ID:** SS-FIX-387
+**Ledger:** FIX-370
+**Destination:** SS321 (Lovable)
+**Summary:** Enhanced Billboard top 3 podium celebration. Created FloatingCelebration.tsx component — 15 floating emoji elements (balloons, hearts, musical notes, stars) with CSS keyframe animations (floatUp + sway), rising 90% of viewport over 10-15 seconds, auto-hide at 16s. Wired into Billboard.tsx celebration trigger at t+1200ms. Slowed confetti burst sequence from 0/300/600/900ms to 0/800/1600/2400ms. Added balloon shapeFromText to confetti burst 1. Two hotfixes applied: slow confetti timing and float rise height fix (translateY -120px → -90vh), duration increase (4-7s → 10-15s). Confirmed working on live site with test row. 2 files touched.
+**Status:** COMPLETE

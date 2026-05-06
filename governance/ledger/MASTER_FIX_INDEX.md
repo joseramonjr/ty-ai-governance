@@ -7582,3 +7582,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-368 | SS-FIX-385 | Language preference setting — Settings, Profile modal, welcome modal | SS321 | 2026-05-05 | COMPLETE |
 
 | FIX-369 | SS-FIX-386 | Soul Word card link underline pulse animation — both cards, 6 links | SS321 | 2026-05-06 | COMPLETE |
+
+| FIX-370 | SS-FIX-387 | Billboard celebration floating elements — balloons, hearts, notes, stars | SS321 | 2026-05-06 | COMPLETE |
