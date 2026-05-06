@@ -7591,3 +7591,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-374 | SS-FIX-391 | Video watch count 30s rule — RPC, timer, sessionStorage, instant UI update | SS321 | 2026-05-06 | COMPLETE |
 
 | FIX-375 | SS-FIX-392 | TY Soul Word Heart — Souls Touched, 5-phase animation, 1 like per user | SS321 | 2026-05-06 | COMPLETE |
+
+| FIX-376 | SS-FIX-393 | WaveSurfer pre-computed peaks — eliminates double audio download | SS321 | 2026-05-06 | COMPLETE |

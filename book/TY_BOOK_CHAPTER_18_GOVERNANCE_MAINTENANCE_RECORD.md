@@ -8827,3 +8827,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable + Supabase)
 **Summary:** Added special like heart to both soul word cards. Migration created ty_soul_word_likes table (unique user_id + soul_word_id, RLS public read, authenticated insert/delete own). Created SoulWordHeart.tsx component with 5-phase state machine: idle (half heart tilted, prompt text) → revealing (clip-path draws outline 1.5s) → filling (purple fill 0.5s) → exploding (2.5x scale, blur glow, 1s) → beating (heartbeat infinite). Prompt text: "This heart is half — only you can make it whole". Thank you flash after explosion. Count displays "X Souls touched". 1 like per user per soul word enforced at DB level. Both cards share same soul_word_id. 4 files touched.
 **Status:** COMPLETE
+
+### Entry-387 — SS-FIX-393: WaveSurfer Pre-Computed Peaks
+**Date:** 2026-05-06 16:39 PDT
+**Fix ID:** SS-FIX-393
+**Ledger:** FIX-376
+**Destination:** SS321 (Lovable)
+**Summary:** Eliminated WaveSurfer double audio download. Added extractWaveformPeaks() helper to Upload.tsx using Web Audio API (1000 peaks, fire-and-forget post-create upsert to track_intelligence.waveform_vector). WaveformPlayer.tsx fetches waveform_vector by trackId, passes to ws.load(url, peaks) so WaveSurfer skips audio re-download for visualization. Legacy tracks fall back gracefully. Confirmed working: new track shows 1000 peaks in DB, network tab shows single get-audio-url fetch instead of two. No migration needed — waveform_vector column already existed. 2 files touched.
+**Status:** COMPLETE
