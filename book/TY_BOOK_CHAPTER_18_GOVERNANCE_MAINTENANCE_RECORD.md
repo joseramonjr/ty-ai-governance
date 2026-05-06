@@ -8739,3 +8739,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable)
 **Summary:** Created SoulWordsCardHero.tsx — premium hero variant of the soul word card placed on the landing page between HeroSection and SearchSection in Index.tsx. Design: animated gradient border (6s cycle, yellow/purple/cyan), dark backdrop blur background, TY TODAY'S SOUL WORD label, pulsing Sparkles icon, large centered italic message, attribution. Added gradient-shift keyframe to tailwind.config.ts. 3 files touched.
 **Status:** COMPLETE
+
+### Entry-376 — SS-FIX-382: Soul Words Interactive Attribution
+**Date:** 2026-05-05 20:22 PDT
+**Fix ID:** SS-FIX-382
+**Ledger:** FIX-365
+**Destination:** SS321 (Lovable)
+**Summary:** Made soul word attribution fully interactive on both SoulWordsCard.tsx (Browse) and SoulWordsCardHero.tsx (Landing). Track title links to /track/:track_id. Artist name links to /profile/:artist_id. Added TY AI label linking to /ty-ai below attribution on both cards. Hotfix 1: changed hover to text-yellow-400. Hotfix 2: Browse card label set to text-black base, both cards hover set to text-purple-500. All links conditional on data presence. 2 files touched.
+**Status:** COMPLETE
