@@ -8787,3 +8787,35 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable)
 **Summary:** Enhanced Billboard top 3 podium celebration. Created FloatingCelebration.tsx component — 15 floating emoji elements (balloons, hearts, musical notes, stars) with CSS keyframe animations (floatUp + sway), rising 90% of viewport over 10-15 seconds, auto-hide at 16s. Wired into Billboard.tsx celebration trigger at t+1200ms. Slowed confetti burst sequence from 0/300/600/900ms to 0/800/1600/2400ms. Added balloon shapeFromText to confetti burst 1. Two hotfixes applied: slow confetti timing and float rise height fix (translateY -120px → -90vh), duration increase (4-7s → 10-15s). Confirmed working on live site with test row. 2 files touched.
 **Status:** COMPLETE
+
+### Entry-382 — SS-FIX-388: External Video Link for Tracks
+**Date:** 2026-05-06 14:19 PDT
+**Fix ID:** SS-FIX-388
+**Ledger:** FIX-371
+**Destination:** SS321 (Lovable + Supabase)
+**Summary:** Added external video URL support to tracks. Migration added video_url text column. Upload.tsx and EditTrack.tsx got Video Link field. TrackPage.tsx got Watch Video button. useTracks.ts TRACK_SELECT_COLUMNS extended with video_url. Initial implementation used new tab — hotfix converted to draggable floating mini-player (VideoModal.tsx complete rewrite). Drag, resize, minimize, close, external link. YouTube/Vimeo embed with fallback to new tab for non-embeddable platforms. Gold gradient Watch Video button applied to all 4 locations. 7 files touched.
+**Status:** COMPLETE
+
+### Entry-383 — SS-FIX-389: Watch Video button on all three track card components
+**Date:** 2026-05-06 14:19 PDT
+**Fix ID:** SS-FIX-389
+**Ledger:** FIX-372
+**Destination:** SS321 (Lovable)
+**Summary:** Added Watch Video trigger to TrackCard.tsx, TrackListRow.tsx, TrackDetailCard.tsx. All open VideoModal. Gated on track.video_url. stopPropagation on all buttons. video_url natively typed via Track type. 3 files touched.
+**Status:** COMPLETE
+
+### Entry-384 — SS-FIX-390: Draggable floating VideoModal + resize + gold style
+**Date:** 2026-05-06 14:19 PDT
+**Fix ID:** SS-FIX-390
+**Ledger:** FIX-373
+**Destination:** SS321 (Lovable)
+**Summary:** Converted VideoModal from blocking Dialog to draggable floating mini-player. Fixed position bottom-right, drag handle, minimize/expand, close, external link. Resize handle added (width 280-viewport, 16:9 preserved). Gold gradient styling applied to all 4 Watch Video buttons. 2 files touched for modal, 4 files for styling.
+**Status:** COMPLETE
+
+### Entry-385 — SS-FIX-391: Video watch count (30s rule)
+**Date:** 2026-05-06 14:19 PDT
+**Fix ID:** SS-FIX-391
+**Ledger:** FIX-374
+**Destination:** SS321 (Lovable + Supabase)
+**Summary:** Added video_view_count integer column to tracks (default 0). Created increment_video_view_count RPC (security definer, granted to anon + authenticated). VideoModal fires 30s timer on open, increments via RPC, sessionStorage dedup per session. React Query cache invalidation for immediate UI update. Count displayed on all 4 Watch Video buttons. Confirmed working: DB shows count 2 after 2 separate 30s watches. 7 files touched.
+**Status:** COMPLETE

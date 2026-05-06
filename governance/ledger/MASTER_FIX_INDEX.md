@@ -7584,3 +7584,8 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-369 | SS-FIX-386 | Soul Word card link underline pulse animation — both cards, 6 links | SS321 | 2026-05-06 | COMPLETE |
 
 | FIX-370 | SS-FIX-387 | Billboard celebration floating elements — balloons, hearts, notes, stars | SS321 | 2026-05-06 | COMPLETE |
+
+| FIX-371 | SS-FIX-388 | External video link — upload, edit, track page, floating modal | SS321 | 2026-05-06 | COMPLETE |
+| FIX-372 | SS-FIX-389 | Watch Video button on all three track card components | SS321 | 2026-05-06 | COMPLETE |
+| FIX-373 | SS-FIX-390 | Draggable floating VideoModal + resize + gold style | SS321 | 2026-05-06 | COMPLETE |
+| FIX-374 | SS-FIX-391 | Video watch count 30s rule — RPC, timer, sessionStorage, instant UI update | SS321 | 2026-05-06 | COMPLETE |
