@@ -8712,3 +8712,6 @@ SECURITY INCIDENT — Raw tokens file accidentally committed in 546b38e via git 
 
 Entry-371 | FIX-360 | 2026-05-05 17:03 PDT
 SS-FIX-377 -- Trophy badge display on all 3 track card views. Created TrackBadgeStrip.tsx (rank-based colors: gold #1, silver #2, bronze #3, gray #4-21, dark: variants). Created TrophyHistoryModal.tsx (full badge history modal, rank-based colors). Updated TrackCard.tsx, TrackListRow.tsx, TrackDetailCard.tsx. TRACK_SELECT_COLUMNS extended with track_badges nested join. Champion glow (gold ring + purple shadow) at 3+ badges. Badge strip capped at 3 + overflow +N purple button. COMPLETE 2026-05-05 15:43-17:03 PDT.
+
+Entry-372 | FIX-361 | 2026-05-05 17:55 PDT
+SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual Awards + Monthly Archive sections, collapsible month groups, rank-based badge colors, champion glow, empty state all viewers). Created Trophies.tsx (/trophies auth-guarded personal Trophy Room). Added Trophies tab to PublicProfile.tsx. Added /trophies to protectedRoutes. Added Trophies link to Library dropdown Header.tsx (desktop + mobile). New routes: /trophies. COMPLETE 2026-05-05 17:55 PDT.

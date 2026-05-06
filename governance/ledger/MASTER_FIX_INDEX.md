@@ -7566,3 +7566,5 @@ Status: CLOSED
 - Destination: ty-ai-governance
 
 FIX-360 | SS-FIX-377 | 2026-05-05 17:03 PDT | Trophy badge display on all 3 track card views -- TrackBadgeStrip + TrophyHistoryModal + rank-based colors (gold/silver/bronze/gray) + champion glow + 3-badge cap + overflow modal. COMPLETE.
+
+FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophies page + ArtistTrophyDisplay + PublicProfile Trophies tab + Library nav link (desktop + mobile). COMPLETE.
