@@ -7578,3 +7578,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-366 | SS-FIX-383 | TY Lyrics Translation — edge function, track page UI, TY chat | SS321 | 2026-05-05 | COMPLETE |
 
 | FIX-367 | SS-FIX-384 | TY Language Detection Modal — global detector, edge function, modal, auto-translate | SS321 | 2026-05-05 | COMPLETE |
+
+| FIX-368 | SS-FIX-385 | Language preference setting — Settings, Profile modal, welcome modal | SS321 | 2026-05-05 | COMPLETE |

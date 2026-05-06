@@ -8763,3 +8763,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable + Supabase)
 **Summary:** Built global TY language detection modal. Created detect-lyrics-language Edge Function (Claude Haiku, ISO 639-1 detection from 150-char snippet, silent-fail contract). Created LyricsLanguageDetector.tsx global component mounted in root layout alongside GlobalAudioPlayer. Detects current track lyrics language vs user preferred_language from ty_ai_language_settings (fallback to navigator.language). On mismatch shows LyricsLanguageModal with Yes/No — Yes navigates to /track/:id?translate=true&lang=XX triggering auto-translation. Created LyricsLanguageModal.tsx. Updated TrackPage.tsx to detect URL params and auto-trigger translation. Rearchitected from Browse.tsx to global layout after Browse re-render issue. 6 files touched.
 **Status:** COMPLETE
+
+### Entry-379 — SS-FIX-385: Language Preference Setting
+**Date:** 2026-05-05 23:46 PDT
+**Fix ID:** SS-FIX-385
+**Ledger:** FIX-368
+**Destination:** SS321 (Lovable)
+**Summary:** Added user-facing preferred lyrics language setting to three locations. Created shared preferredLanguage.ts module (LANGUAGES list, savePreferredLanguage upsert helper, fetchPreferredLanguage, DEFAULT_LANGUAGE). Added Lyrics Language row to Settings.tsx Preferences section (auto-save on change). Added Preferred Lyrics Language field to Edit Profile modal in PublicProfile.tsx (loaded on open, saved on submit). Created LanguageWelcomeModal.tsx (one-time post-signup modal, sessionStorage flag, browser language default, Save & Continue + Skip). Mounted in App.tsx alongside GlobalAudioPlayer and LyricsLanguageDetector. All three confirmed working on live site. 5 files touched.
+**Status:** COMPLETE
