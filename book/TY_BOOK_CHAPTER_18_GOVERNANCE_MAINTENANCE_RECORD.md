@@ -8755,3 +8755,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable + Supabase)
 **Summary:** Built full lyrics translation feature. Created translate-lyrics Edge Function (Anthropic Claude Sonnet 4, 12 languages, preserves poetic structure). Added translate button, language dropdown, Show Original toggle, and Translated by TY AI footer to TrackPage.tsx. Updated TY AI system prompt to allow in-chat translation. Extended currentTrackContext to include lyrics so TY chat can translate on request. Browser language auto-detected as default. 4 files touched.
 **Status:** COMPLETE
+
+### Entry-378 — SS-FIX-384: TY Language Detection Modal
+**Date:** 2026-05-05 23:00 PDT
+**Fix ID:** SS-FIX-384
+**Ledger:** FIX-367
+**Destination:** SS321 (Lovable + Supabase)
+**Summary:** Built global TY language detection modal. Created detect-lyrics-language Edge Function (Claude Haiku, ISO 639-1 detection from 150-char snippet, silent-fail contract). Created LyricsLanguageDetector.tsx global component mounted in root layout alongside GlobalAudioPlayer. Detects current track lyrics language vs user preferred_language from ty_ai_language_settings (fallback to navigator.language). On mismatch shows LyricsLanguageModal with Yes/No — Yes navigates to /track/:id?translate=true&lang=XX triggering auto-translation. Created LyricsLanguageModal.tsx. Updated TrackPage.tsx to detect URL params and auto-trigger translation. Rearchitected from Browse.tsx to global layout after Browse re-render issue. 6 files touched.
+**Status:** COMPLETE
