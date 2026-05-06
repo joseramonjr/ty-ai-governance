@@ -8709,3 +8709,6 @@ Attempted word-based title matcher in ty-ai-chat edge function to enable catalog
 
 Entry-370 | FIX-359 | CLO-359 | 2026-05-05 14:11 PDT
 SECURITY INCIDENT — Raw tokens file accidentally committed in 546b38e via git add -A picking up untracked files in book/ directory. File contained guardian master token, recovery token, activation token, and Resend API key in plaintext. Immediate response: file deleted in 84cdff3, .gitignore updated to block *.txt and *TOKENS* patterns. Resend API key rotated — old key revoked, new SS321-Production key issued and saved to Supabase secrets. Guardian tokens flagged for dedicated rotation session. Git history purge of 546b38e deferred. Permanent rule added: always run git status before git add -A.
+
+Entry-371 | FIX-360 | 2026-05-05 17:03 PDT
+SS-FIX-377 -- Trophy badge display on all 3 track card views. Created TrackBadgeStrip.tsx (rank-based colors: gold #1, silver #2, bronze #3, gray #4-21, dark: variants). Created TrophyHistoryModal.tsx (full badge history modal, rank-based colors). Updated TrackCard.tsx, TrackListRow.tsx, TrackDetailCard.tsx. TRACK_SELECT_COLUMNS extended with track_badges nested join. Champion glow (gold ring + purple shadow) at 3+ badges. Badge strip capped at 3 + overflow +N purple button. COMPLETE 2026-05-05 15:43-17:03 PDT.
