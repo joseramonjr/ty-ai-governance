@@ -8747,3 +8747,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable)
 **Summary:** Made soul word attribution fully interactive on both SoulWordsCard.tsx (Browse) and SoulWordsCardHero.tsx (Landing). Track title links to /track/:track_id. Artist name links to /profile/:artist_id. Added TY AI label linking to /ty-ai below attribution on both cards. Hotfix 1: changed hover to text-yellow-400. Hotfix 2: Browse card label set to text-black base, both cards hover set to text-purple-500. All links conditional on data presence. 2 files touched.
 **Status:** COMPLETE
+
+### Entry-377 — SS-FIX-383: TY Lyrics Translation
+**Date:** 2026-05-05 21:36 PDT
+**Fix ID:** SS-FIX-383
+**Ledger:** FIX-366
+**Destination:** SS321 (Lovable + Supabase)
+**Summary:** Built full lyrics translation feature. Created translate-lyrics Edge Function (Anthropic Claude Sonnet 4, 12 languages, preserves poetic structure). Added translate button, language dropdown, Show Original toggle, and Translated by TY AI footer to TrackPage.tsx. Updated TY AI system prompt to allow in-chat translation. Extended currentTrackContext to include lyrics so TY chat can translate on request. Browser language auto-detected as default. 4 files touched.
+**Status:** COMPLETE

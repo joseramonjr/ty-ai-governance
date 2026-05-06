@@ -7574,3 +7574,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-364 | SS-FIX-381 | TY Soul Words — landing page hero card | SS321 | 2026-05-05 | COMPLETE |
 
 | FIX-365 | SS-FIX-382 | Soul Words interactive attribution — track/artist/TY AI links, hover colors | SS321 | 2026-05-05 | COMPLETE |
+
+| FIX-366 | SS-FIX-383 | TY Lyrics Translation — edge function, track page UI, TY chat | SS321 | 2026-05-05 | COMPLETE |
