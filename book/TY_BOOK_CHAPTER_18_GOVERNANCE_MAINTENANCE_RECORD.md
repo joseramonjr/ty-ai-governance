@@ -8819,3 +8819,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable + Supabase)
 **Summary:** Added video_view_count integer column to tracks (default 0). Created increment_video_view_count RPC (security definer, granted to anon + authenticated). VideoModal fires 30s timer on open, increments via RPC, sessionStorage dedup per session. React Query cache invalidation for immediate UI update. Count displayed on all 4 Watch Video buttons. Confirmed working: DB shows count 2 after 2 separate 30s watches. 7 files touched.
 **Status:** COMPLETE
+
+### Entry-386 — SS-FIX-392: TY Soul Word Heart — Souls Touched
+**Date:** 2026-05-06 16:07 PDT
+**Fix ID:** SS-FIX-392
+**Ledger:** FIX-375
+**Destination:** SS321 (Lovable + Supabase)
+**Summary:** Added special like heart to both soul word cards. Migration created ty_soul_word_likes table (unique user_id + soul_word_id, RLS public read, authenticated insert/delete own). Created SoulWordHeart.tsx component with 5-phase state machine: idle (half heart tilted, prompt text) → revealing (clip-path draws outline 1.5s) → filling (purple fill 0.5s) → exploding (2.5x scale, blur glow, 1s) → beating (heartbeat infinite). Prompt text: "This heart is half — only you can make it whole". Thank you flash after explosion. Count displays "X Souls touched". 1 like per user per soul word enforced at DB level. Both cards share same soul_word_id. 4 files touched.
+**Status:** COMPLETE

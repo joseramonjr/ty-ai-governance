@@ -7589,3 +7589,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-372 | SS-FIX-389 | Watch Video button on all three track card components | SS321 | 2026-05-06 | COMPLETE |
 | FIX-373 | SS-FIX-390 | Draggable floating VideoModal + resize + gold style | SS321 | 2026-05-06 | COMPLETE |
 | FIX-374 | SS-FIX-391 | Video watch count 30s rule — RPC, timer, sessionStorage, instant UI update | SS321 | 2026-05-06 | COMPLETE |
+
+| FIX-375 | SS-FIX-392 | TY Soul Word Heart — Souls Touched, 5-phase animation, 1 like per user | SS321 | 2026-05-06 | COMPLETE |
