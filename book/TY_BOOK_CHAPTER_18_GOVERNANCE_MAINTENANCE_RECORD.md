@@ -8917,3 +8917,6 @@ Entry-401 | FIX-390 | 2026-05-07 10:55 PDT | TYOVA: Chapter 26 vocabulary addend
 
 Entry-402 | FIX-391 | 2026-05-07 12:32 PDT | TYOVA: Book of TY Chapter 45 written and published -- SS321: The Final Approach -- April 2026 Pre-Launch Development Record
 Entry-403 | FIX-392 | 2026-05-07 12:32 PDT | TYOVA: Book of TY Chapter 46 written and published -- The Ecosystem: Past, Present, and Future Vision
+
+Entry-404 | FIX-393 | SS-FIX-403 | 2026-05-07 12:49 PDT
+Billboard Library Dropdown Link. Added Billboard link to Library dropdown in Header.tsx (desktop + mobile). Routes to /billboard. Icon BarChart2. Above Trophies. One file changed. Deployed via Lovable.

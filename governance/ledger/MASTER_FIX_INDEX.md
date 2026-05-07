@@ -7649,3 +7649,10 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Destination: TYOVA
 - Action: Book of TY Chapter 46 written and published to TYOVA -- The Ecosystem: Past, Present, and Future Vision. Full ecosystem overview covering origin August 2025 through May 7 2026 present state and future integration vision. Includes ChatGPT-to-Claude transition record, six repositories, INV-TY-PRIV-1, trademark portfolio, Luke AI canonical definition, honest integration gap statement, and FUTURE WORK section clearly labeled. Model: Claude Sonnet 4.6.
 - Status: COMPLETE
+
+## FIX-393
+**Date:** 2026-05-07 12:49 PDT
+**SS-FIX:** SS-FIX-403
+**Title:** Billboard Library Dropdown Link
+**Status:** COMPLETE
+**Description:** Added Billboard nav link to Library dropdown (desktop + mobile) in Header.tsx. Routes to /billboard. Icon BarChart2. Positioned above Trophies link. Pattern mirrors SS-FIX-378 Trophies implementation.
