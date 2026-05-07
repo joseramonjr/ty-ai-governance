@@ -8899,3 +8899,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable)
 **Summary:** Removed currentTrack?.id !== track.id from Rewind/FastForward disabled condition. Changed to disabled={!canListen} in first pass. Second pass changed to disabled={!canListen && !canPreview} to match play button condition — allows seek during preview playback. Confirmed working. 1 file touched.
 **Status:** COMPLETE
+
+### Entry-396 — SS-FIX-402: Most Watched Videos — Billboard section + Browse widget
+**Date:** 2026-05-06 21:00 PDT
+**Fix ID:** SS-FIX-402
+**Ledger:** FIX-385
+**Destination:** SS321 (Lovable)
+**Summary:** Created MostWatchedVideos.tsx shared component with two variants. Full variant (Billboard): ranked list with album art, title, artist, view count, gold Watch button. Widget variant (Browse): compact vertical list, row-level click opens VideoModal. Both query tracks by video_view_count desc, filtered by video_url not null, status approved. Billboard shows top 21, Browse shows top 6. VideoModal reused. Browse widget changed from horizontal cards to compact vertical list after feedback. 3 files touched.
+**Status:** COMPLETE
