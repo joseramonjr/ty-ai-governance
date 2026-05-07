@@ -7663,3 +7663,10 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 **Title:** Soul Word Card White Text Contrast Fix
 **Status:** COMPLETE
 **Description:** SoulWordHeart.tsx: white text + dark drop shadow on Souls Touched count, label, thank-you text. Attribution line in both Soul Word card variants updated to white + drop shadow. Fixes mobile off-white background contrast failure.
+
+## FIX-395
+**Date:** 2026-05-07 13:38 PDT
+**Operation:** TY-GOV-002
+**Title:** Guardian Token Rotation — All 5 Tokens
+**Status:** COMPLETE
+**Description:** Formal rotation of all guardian authority tokens following security incident 546b38e (2026-05-05). Five new AES-256-GCM encrypted tokens generated via RNGCryptoServiceProvider and stored via guardian-token-manager edge function. All 5 tokens verified readable via decrypt action. Jose Ramon (ORIGIN_GUARDIAN): guardian_master_token, offline_recovery_token, successor_activation_token — all rotated. Janet L McHerron (SUCCESSOR): offline_recovery_token, successor_activation_token — both rotated. Guardian authority chain integrity restored.

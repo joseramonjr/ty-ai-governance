@@ -8923,3 +8923,6 @@ Billboard Library Dropdown Link. Added Billboard link to Library dropdown in Hea
 
 Entry-405 | FIX-394 | SS-FIX-404 | 2026-05-07 13:07 PDT
 Soul Word Card White Text Contrast Fix. SoulWordHeart.tsx: text-white + drop-shadow on Souls Touched count, label, and thank-you text. Attribution text in both Browse and Landing Soul Word card variants updated to white + drop shadow. Resolves mobile readability failure on off-white card background.
+
+Entry-406 | FIX-395 | TY-GOV-002 | 2026-05-07 13:38 PDT
+Guardian Token Rotation — All 5 Tokens. Formal execution of TY-GOV-002 following security incident 546b38e. Five guardian authority tokens rotated: Jose Ramon (guardian_master_token, offline_recovery_token, successor_activation_token) and Janet L McHerron (offline_recovery_token, successor_activation_token). New tokens generated with RNGCryptoServiceProvider (32 bytes, base64, length=44). Encrypted via AES-256-GCM through guardian-token-manager edge function. All 5 verified via decrypt action. Sensitive variables cleared from PowerShell memory post-execution. Guardian authority chain integrity restored as of this entry.
