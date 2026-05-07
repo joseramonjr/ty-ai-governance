@@ -7603,3 +7603,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-381 | SS-FIX-398 | Prev/next inline in TrackPage controls row | SS321 | 2026-05-06 | COMPLETE |
 | FIX-382 | SS-FIX-399 | Auto-play on prev/next track navigation | SS321 | 2026-05-06 | COMPLETE |
 | FIX-383 | SS-FIX-400 | WaveSurfer peaks quality threshold >= 500 | SS321 | 2026-05-06 | COMPLETE |
+
+| FIX-384 | SS-FIX-401 | Rewind/FastForward disabled condition fix — matches play button | SS321 | 2026-05-06 | COMPLETE |

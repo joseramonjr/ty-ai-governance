@@ -8891,3 +8891,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable)
 **Summary:** Raised precomputedPeaks acceptance threshold in WaveformPlayer.tsx from > 0 to >= 500. Prevents 32-peak TIS pipeline entries from being passed to WaveSurfer causing sparse rendering. Only high-quality 1000-peak extractions used. Legacy tracks fall back to WaveSurfer audio download — full dense waveform. 1 file touched.
 **Status:** COMPLETE
+
+### Entry-395 — SS-FIX-401: Relax Rewind/FastForward disabled condition
+**Date:** 2026-05-06 20:24 PDT
+**Fix ID:** SS-FIX-401
+**Ledger:** FIX-384
+**Destination:** SS321 (Lovable)
+**Summary:** Removed currentTrack?.id !== track.id from Rewind/FastForward disabled condition. Changed to disabled={!canListen} in first pass. Second pass changed to disabled={!canListen && !canPreview} to match play button condition — allows seek during preview playback. Confirmed working. 1 file touched.
+**Status:** COMPLETE
