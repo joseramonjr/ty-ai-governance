@@ -7625,3 +7625,15 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Destination: TYOVA
 - Action: Book of TY Chapter 44 written and published to TYOVA -- The Patent Record: Establishing Priority. Covers Walker Weitzel engagement, 11 confirmed patent components, USPTO Application 19/433,835, TYOVA prior publication December 15 2025. Model: Claude Sonnet 4.6.
 - Status: COMPLETE
+
+### FIX-389
+- Date: 2026-05-07 10:55 PDT
+- Destination: TYOVA
+- Action: Chapter 26 TY AI OS Vocabulary updated -- 53 new terms added across Sections 5, 9, 14, and new Sections 15 and 16. Section 15: Guardian Authority Operations Terms (8 terms). Section 16: SS321 Platform Governance and Identity Terms (33 terms). Additions to Sections 5, 9, 14 (12 terms). Total vocabulary: 306 terms. Published to TYOVA. Model: Claude Sonnet 4.6.
+- Status: COMPLETE
+
+### FIX-390
+- Date: 2026-05-07 10:55 PDT
+- Destination: TYOVA
+- Action: Chapter 26 vocabulary addendum -- 4 additional terms identified via comprehensive chat history audit and added: SS-FIX-085 Canonical Pattern Set (Section 9), B-SS321-NNN Format (Section 16), TY AI Hybrid Architecture (Section 16), Stripe Connect (Section 16). Final vocabulary total: 310 terms across 16 sections. Published to TYOVA. Model: Claude Sonnet 4.6.
+- Status: COMPLETE
