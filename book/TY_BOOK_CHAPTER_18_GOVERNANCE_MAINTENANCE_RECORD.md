@@ -8907,3 +8907,7 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable)
 **Summary:** Created MostWatchedVideos.tsx shared component with two variants. Full variant (Billboard): ranked list with album art, title, artist, view count, gold Watch button. Widget variant (Browse): compact vertical list, row-level click opens VideoModal. Both query tracks by video_view_count desc, filtered by video_url not null, status approved. Billboard shows top 21, Browse shows top 6. VideoModal reused. Browse widget changed from horizontal cards to compact vertical list after feedback. 3 files touched.
 **Status:** COMPLETE
+
+Entry-397 | FIX-386 | 2026-05-07 00:53 PDT | TYOVA: Book of TY Chapter 42 written and published -- The Discipline Holds: Security, Hardening, and the First Real Test
+Entry-398 | FIX-387 | 2026-05-07 00:53 PDT | TYOVA: Book of TY Chapter 43 written and published -- SilverSounds321: The Living Platform
+Entry-399 | FIX-388 | 2026-05-07 00:53 PDT | TYOVA: Book of TY Chapter 44 written and published -- The Patent Record: Establishing Priority
