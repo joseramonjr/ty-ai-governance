@@ -7699,3 +7699,20 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - **S1/S2:** N/A (markdown only)
 - **cargo check:** N/A
 - **Status:** COMPLETE
+## FIX-398
+- **Date:** 2026-05-07 16:29 PDT | San Diego
+- **Destination:** TYOVA
+- **SS-FIX:** N/A (Phase 8 Track 3 remediation)
+- **Commit:** 34d9ef4
+- **Description:** Phase 8 Track 3 remediation. Six edits across three files.
+  EcosystemStatus.tsx: TY AI OS phase updated to Phase 8 active, TYOVA chapter
+  count corrected from 37 to 46 chapters 42 sealed, TYOVA URL reference removed,
+  Jaya Runtime phases corrected from Phases 1-6 to Phases 1-5.
+  JayaProofConditions.tsx: B1 and B2 phase labels corrected from Phase 5 Track A
+  to Phase 5 Track B.
+  JayaOverview.tsx: Footer updated from Phase 7 active to Phase 7 complete and
+  sealed. Phase 8 active.
+  Closes F-T3-001, F-T3-002, F-T3-003, F-T3-005, F-T3-006, F-T3-007.
+- **S1/S2:** N/A (TYOVA only)
+- **cargo check:** N/A
+- **Status:** COMPLETE
