@@ -7716,3 +7716,20 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - **S1/S2:** N/A (TYOVA only)
 - **cargo check:** N/A
 - **Status:** COMPLETE
+## FIX-399
+- **Date:** 2026-05-07 16:44 PDT | San Diego
+- **Destination:** TYOVA
+- **SS-FIX:** N/A (Phase 8 Track 3 remediation)
+- **Commit:** 9acef03
+- **Description:** Phase 8 Track 3 remediation continued. Four edits across
+  three files. EcosystemExplainedPage.tsx: Phase 5 seal date corrected from
+  2026-03-22 to 2026-03-23. WhyGovernanceMattersPage.tsx: outdated stats
+  updated from 93 parts/5 phases/30 chapters/191 terms to 390+ fixes/8
+  phases/42 chapters/310 terms. GlossaryPage.tsx: Attestonic entry corrected
+  from incorrectly retired to active registered trademark with Global
+  Attestonic Layer reference. GlossaryPage.tsx footer: term count corrected
+  from 232 to 310.
+  Closes F-T3-008, F-T3-009, F-T3-010, F-T3-011.
+- **S1/S2:** N/A (TYOVA only)
+- **cargo check:** N/A
+- **Status:** COMPLETE
