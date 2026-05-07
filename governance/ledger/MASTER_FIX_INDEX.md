@@ -7597,3 +7597,9 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-377 | SS-FIX-394 | TrackPage prev/next — attempted, rolled back, deferred | SS321 | 2026-05-06 | ATTEMPTED-ROLLED-BACK-DEFERRED |
 
 | FIX-378 | SS-FIX-395 | WaveSurfer duration fix — dense waveform bars restored | SS321 | 2026-05-06 | COMPLETE |
+
+| FIX-379 | SS-FIX-396 | WaveformPlayer prev/next initial attempt — superseded | SS321 | 2026-05-06 | COMPLETE |
+| FIX-380 | SS-FIX-397 | Replace useNavigate with window.location.href | SS321 | 2026-05-06 | COMPLETE |
+| FIX-381 | SS-FIX-398 | Prev/next inline in TrackPage controls row | SS321 | 2026-05-06 | COMPLETE |
+| FIX-382 | SS-FIX-399 | Auto-play on prev/next track navigation | SS321 | 2026-05-06 | COMPLETE |
+| FIX-383 | SS-FIX-400 | WaveSurfer peaks quality threshold >= 500 | SS321 | 2026-05-06 | COMPLETE |

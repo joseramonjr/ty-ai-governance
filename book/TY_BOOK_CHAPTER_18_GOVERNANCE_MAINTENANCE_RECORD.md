@@ -8851,3 +8851,43 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable + Supabase)
 **Summary:** Fixed sparse waveform bars caused by SS-FIX-393 missing duration. Added duration_seconds float column to track_intelligence (migration). Upload.tsx now stores duration_seconds alongside waveform_vector peaks in the post-create upsert. WaveformPlayer.tsx fetches duration_seconds alongside waveform_vector and passes it to ws.load(url, peaks, duration) so WaveSurfer correctly spaces precomputed peaks. Legacy tracks unchanged (null duration falls back to existing behavior). Waveform bars confirmed dense and full on live site. 3 files touched.
 **Status:** COMPLETE
+
+### Entry-390 — SS-FIX-396: WaveformPlayer Prev/Next — Initial Attempt
+**Date:** 2026-05-06 20:00 PDT
+**Fix ID:** SS-FIX-396
+**Ledger:** FIX-379
+**Destination:** SS321 (Lovable)
+**Summary:** Added SkipBack/SkipForward to WaveformPlayer.tsx as a separate div below waveform. Used useNavigate() — navigate() did not fire. Buttons appeared in wrong position. Superseded by SS-FIX-397 and SS-FIX-398.
+**Status:** COMPLETE (superseded)
+
+### Entry-391 — SS-FIX-397: Replace useNavigate with window.location.href
+**Date:** 2026-05-06 20:00 PDT
+**Fix ID:** SS-FIX-397
+**Ledger:** FIX-380
+**Destination:** SS321 (Lovable)
+**Summary:** Replaced useNavigate() with window.location.href in WaveformPlayer.tsx prev/next buttons. Removed useNavigate import. Confirmed window.location.href fires correctly.
+**Status:** COMPLETE
+
+### Entry-392 — SS-FIX-398: Prev/Next inline in TrackPage controls row
+**Date:** 2026-05-06 20:00 PDT
+**Fix ID:** SS-FIX-398
+**Ledger:** FIX-381
+**Destination:** SS321 (Lovable)
+**Summary:** Moved prev/next navigation from WaveformPlayer.tsx to TrackPage.tsx controls row. WaveformPlayer restored to pure waveform component. TrackPage controls row now: [SkipBack] [Rewind] [Play/Pause] [FastForward] [SkipForward] [Slider]. sessionStorage ss321_browse_context read in TrackPage. GlobalAudioPlayer untouched. 2 files touched.
+**Status:** COMPLETE
+
+### Entry-393 — SS-FIX-399: Auto-play on prev/next track navigation
+**Date:** 2026-05-06 20:00 PDT
+**Fix ID:** SS-FIX-399
+**Ledger:** FIX-382
+**Destination:** SS321 (Lovable)
+**Summary:** Added ?autoplay=true URL param to prev/next navigation URLs. TrackPage detects param via useSearchParams and triggers playButtonRef.current.click() after track loads. Users skip 1 click when navigating between tracks. Confirmed working both directions.
+**Status:** COMPLETE
+
+### Entry-394 — SS-FIX-400: WaveSurfer peaks quality threshold fix
+**Date:** 2026-05-06 20:00 PDT
+**Fix ID:** SS-FIX-400
+**Ledger:** FIX-383
+**Destination:** SS321 (Lovable)
+**Summary:** Raised precomputedPeaks acceptance threshold in WaveformPlayer.tsx from > 0 to >= 500. Prevents 32-peak TIS pipeline entries from being passed to WaveSurfer causing sparse rendering. Only high-quality 1000-peak extractions used. Legacy tracks fall back to WaveSurfer audio download — full dense waveform. 1 file touched.
+**Status:** COMPLETE
