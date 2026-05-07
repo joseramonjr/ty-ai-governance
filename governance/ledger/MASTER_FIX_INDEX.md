@@ -7593,3 +7593,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-375 | SS-FIX-392 | TY Soul Word Heart — Souls Touched, 5-phase animation, 1 like per user | SS321 | 2026-05-06 | COMPLETE |
 
 | FIX-376 | SS-FIX-393 | WaveSurfer pre-computed peaks — eliminates double audio download | SS321 | 2026-05-06 | COMPLETE |
+
+| FIX-377 | SS-FIX-394 | TrackPage prev/next — attempted, rolled back, deferred | SS321 | 2026-05-06 | ATTEMPTED-ROLLED-BACK-DEFERRED |

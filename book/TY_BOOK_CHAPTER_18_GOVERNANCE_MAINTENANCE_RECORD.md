@@ -8835,3 +8835,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable)
 **Summary:** Eliminated WaveSurfer double audio download. Added extractWaveformPeaks() helper to Upload.tsx using Web Audio API (1000 peaks, fire-and-forget post-create upsert to track_intelligence.waveform_vector). WaveformPlayer.tsx fetches waveform_vector by trackId, passes to ws.load(url, peaks) so WaveSurfer skips audio re-download for visualization. Legacy tracks fall back gracefully. Confirmed working: new track shows 1000 peaks in DB, network tab shows single get-audio-url fetch instead of two. No migration needed — waveform_vector column already existed. 2 files touched.
 **Status:** COMPLETE
+
+### Entry-388 — SS-FIX-394: TrackPage Prev/Next Navigation (ATTEMPTED-ROLLED-BACK-DEFERRED)
+**Date:** 2026-05-06 18:32 PDT
+**Fix ID:** SS-FIX-394
+**Ledger:** FIX-377
+**Destination:** SS321 (Lovable)
+**Summary:** Attempted TrackPage prev/next navigation using sessionStorage browse context. Browse.tsx writes ordered track IDs to ss321_browse_context on every render (preserved). TrackPage.tsx received Previous Track / Next Track buttons but navigate() did not trigger reliably and buttons caused visual confusion alongside existing mini player skip controls. Buttons removed via reversal. sessionStorage write in Browse.tsx retained as foundation for future implementation. Feature deferred — correct placement is inside WaveformPlayer controls.
+**Status:** ATTEMPTED-ROLLED-BACK-DEFERRED
