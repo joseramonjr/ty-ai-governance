@@ -7685,3 +7685,17 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - **S1/S2:** N/A (PowerShell only)
 - **cargo check:** N/A
 - **Status:** COMPLETE
+## FIX-397
+- **Date:** 2026-05-07 16:05 PDT | San Diego
+- **Destination:** ty-ai-governance -- book/
+- **SS-FIX:** N/A (Phase 8 Track 2 remediation)
+- **Commit:** 0bd2986
+- **Description:** Phase 8 Track 2 F-002 remediation. Five source .md files
+  created for Chapters 42-46 in ty-ai-governance book/ directory. These
+  chapters existed in TYOVA bookChapterContent.ts but had no backing source
+  files in ty-ai-governance. Files derived from TYOVA content with encoding
+  corrections (mojibake em-dashes and apostrophes resolved). 842 lines
+  inserted across 5 files. F-002 closed.
+- **S1/S2:** N/A (markdown only)
+- **cargo check:** N/A
+- **Status:** COMPLETE
