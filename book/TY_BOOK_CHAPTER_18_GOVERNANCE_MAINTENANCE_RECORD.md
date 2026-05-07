@@ -8926,3 +8926,5 @@ Soul Word Card White Text Contrast Fix. SoulWordHeart.tsx: text-white + drop-sha
 
 Entry-406 | FIX-395 | TY-GOV-002 | 2026-05-07 13:38 PDT
 Guardian Token Rotation — All 5 Tokens. Formal execution of TY-GOV-002 following security incident 546b38e. Five guardian authority tokens rotated: Jose Ramon (guardian_master_token, offline_recovery_token, successor_activation_token) and Janet L McHerron (offline_recovery_token, successor_activation_token). New tokens generated with RNGCryptoServiceProvider (32 bytes, base64, length=44). Encrypted via AES-256-GCM through guardian-token-manager edge function. All 5 verified via decrypt action. Sensitive variables cleared from PowerShell memory post-execution. Guardian authority chain integrity restored as of this entry.
+
+Entry-407 | FIX-396 | 2026-05-07 15:37 PDT | Pre-Flight v3 -- regex fixes for ## FIX- and inline Entry- detection -- commit 9ff2f9f | ty-ai-governance
