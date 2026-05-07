@@ -7595,3 +7595,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-376 | SS-FIX-393 | WaveSurfer pre-computed peaks — eliminates double audio download | SS321 | 2026-05-06 | COMPLETE |
 
 | FIX-377 | SS-FIX-394 | TrackPage prev/next — attempted, rolled back, deferred | SS321 | 2026-05-06 | ATTEMPTED-ROLLED-BACK-DEFERRED |
+
+| FIX-378 | SS-FIX-395 | WaveSurfer duration fix — dense waveform bars restored | SS321 | 2026-05-06 | COMPLETE |

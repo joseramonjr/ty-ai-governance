@@ -8843,3 +8843,11 @@ SS-FIX-378 -- Trophy collection pages. Created ArtistTrophyDisplay.tsx (Annual A
 **Destination:** SS321 (Lovable)
 **Summary:** Attempted TrackPage prev/next navigation using sessionStorage browse context. Browse.tsx writes ordered track IDs to ss321_browse_context on every render (preserved). TrackPage.tsx received Previous Track / Next Track buttons but navigate() did not trigger reliably and buttons caused visual confusion alongside existing mini player skip controls. Buttons removed via reversal. sessionStorage write in Browse.tsx retained as foundation for future implementation. Feature deferred — correct placement is inside WaveformPlayer controls.
 **Status:** ATTEMPTED-ROLLED-BACK-DEFERRED
+
+### Entry-389 — SS-FIX-395: WaveSurfer Duration Fix — Dense Waveform Bars
+**Date:** 2026-05-06 18:45 PDT
+**Fix ID:** SS-FIX-395
+**Ledger:** FIX-378
+**Destination:** SS321 (Lovable + Supabase)
+**Summary:** Fixed sparse waveform bars caused by SS-FIX-393 missing duration. Added duration_seconds float column to track_intelligence (migration). Upload.tsx now stores duration_seconds alongside waveform_vector peaks in the post-create upsert. WaveformPlayer.tsx fetches duration_seconds alongside waveform_vector and passes it to ws.load(url, peaks, duration) so WaveSurfer correctly spaces precomputed peaks. Legacy tracks unchanged (null duration falls back to existing behavior). Waveform bars confirmed dense and full on live site. 3 files touched.
+**Status:** COMPLETE
