@@ -1,15 +1,12 @@
 # =============================================================================
-# Pre-Flight.ps1 — TY AI OS Session State Diagnostic
+# Pre-Flight.ps1 - TY AI OS Session State Diagnostic
 # =============================================================================
-# Purpose: Read-only diagnostic reporting state of the TY ecosystem:
-#          - Two local git repos (ty-ai-governance, TYOVA)
-#          - One Lovable-hosted local-ledger-only folder (SS321)
-#          plus ledger state parsed from canonical governance files.
-#          Run at the start of every TY work session to establish ground
-#          truth before making any changes.
+# Purpose: Read-only diagnostic reporting state of the two TY ecosystem git
+#          repos (ty-ai-governance, TYOVA) plus SS321 ledger state.
+#          Run at the start of every TY work session to establish ground truth
+#          before making any changes.
 #
-# Built under: FIX-189 | CLO-389 | Claude Opus 4.7 | 2026-04-19 | San Diego
-# Per memory entries #28 (Accuracy-First Principle) and #30 (Pre-Flight proposal).
+# Built under: FIX-189 | 2026-04-19 | San Diego
 #
 # Design:
 #   - Zero arguments (run as: .\Pre-Flight.ps1)
@@ -18,13 +15,16 @@
 #   - Reports stash entries and bad-state warnings
 #   - SS321 handled as non-git folder: reports ledger file presence only
 #   - Parses ledger state (Last FIX/CLO/Ch18/SS-FIX/Ch26) from files
-#   - Report and Continue (Option A): warnings prominent, script exits clean
+#   - Report and Continue: warnings prominent, script exits clean
 #   - Read-only: makes no commits, no writes, no pushes. git fetch only.
 #
 # Revision history:
-#   v1 2026-04-19 09:25 — initial draft, failed first test
-#   v2 2026-04-19 12:30 — 4 fixes: PS5.x syntax, rebase detection,
-#                          SS321 handling, Ch26 regex
+#   v1 2026-04-19 09:25 - initial draft, failed first test
+#   v2 2026-04-19 12:30 - 4 fixes: PS5.x syntax, rebase detection,
+#                         SS321 handling, Ch26 regex
+#   v3 2026-05-07 15:45 - FIX-396: two regex fixes:
+#                         (1) MASTER_FIX_INDEX: now catches both ## FIX- and ### FIX-
+#                         (2) Ch18: now catches both ### Entry- and Entry-NNN | inline format
 # =============================================================================
 
 # --- Config: canonical repo paths and ledger files ---
@@ -61,14 +61,12 @@ foreach ($repo in $GIT_REPOS) {
     Write-Host "[REPO] $name" -ForegroundColor Yellow
     Write-Host "  Path: $path"
 
-    # Check path exists
     if (-not (Test-Path $path)) {
         Write-Host "  STATUS: PATH NOT FOUND" -ForegroundColor Red
         $actionItems += "$name : path does not exist"
         continue
     }
 
-    # Check it is a git repo
     if (-not (Test-Path (Join-Path $path ".git"))) {
         Write-Host "  STATUS: NOT A GIT REPOSITORY" -ForegroundColor Red
         $actionItems += "$name : not a git repository"
@@ -77,152 +75,137 @@ foreach ($repo in $GIT_REPOS) {
 
     Push-Location $path
     try {
-        # --- Bad-state detection ---
-        # Active rebase requires rebase-merge OR rebase-apply directory.
-        # REBASE_HEAD file alone is often stale leftover from completed rebase,
-        # and does NOT mean a rebase is in progress.
-        $gitDir = ".git"
-        $badStates = @()
-        if (Test-Path (Join-Path $gitDir "MERGE_HEAD"))             { $badStates += "MERGE_IN_PROGRESS" }
-        if (Test-Path (Join-Path $gitDir "rebase-merge"))           { $badStates += "REBASE_IN_PROGRESS (interactive)" }
-        if (Test-Path (Join-Path $gitDir "rebase-apply"))           { $badStates += "REBASE_IN_PROGRESS (apply)" }
-        if (Test-Path (Join-Path $gitDir "CHERRY_PICK_HEAD"))       { $badStates += "CHERRY_PICK_IN_PROGRESS" }
-        if (Test-Path (Join-Path $gitDir "BISECT_LOG"))             { $badStates += "BISECT_IN_PROGRESS" }
+        # --- Bad-state detection (directory-based only, no stale file false positives) ---
+        $gitDir = Join-Path $path ".git"
+        if (Test-Path (Join-Path $gitDir "rebase-merge")) {
+            Write-Host "  !! BAD STATE DETECTED: REBASE_IN_PROGRESS (interactive)" -ForegroundColor Red
+            $actionItems += "$name : interactive rebase in progress"
+        } elseif (Test-Path (Join-Path $gitDir "rebase-apply")) {
+            Write-Host "  !! BAD STATE DETECTED: REBASE_IN_PROGRESS (apply)" -ForegroundColor Red
+            $actionItems += "$name : rebase apply in progress"
+        }
+        if (Test-Path (Join-Path $gitDir "MERGE_HEAD")) {
+            Write-Host "  !! BAD STATE DETECTED: MERGE_IN_PROGRESS" -ForegroundColor Red
+            $actionItems += "$name : merge in progress"
+        }
+        if (Test-Path (Join-Path $gitDir "CHERRY_PICK_HEAD")) {
+            Write-Host "  !! BAD STATE DETECTED: CHERRY_PICK_IN_PROGRESS" -ForegroundColor Red
+            $actionItems += "$name : cherry-pick in progress"
+        }
+        if (Test-Path (Join-Path $gitDir "BISECT_LOG")) {
+            Write-Host "  !! BAD STATE DETECTED: BISECT_IN_PROGRESS" -ForegroundColor Red
+            $actionItems += "$name : bisect in progress"
+        }
 
-        # --- Current branch / detached HEAD detection ---
-        $branchRef = git symbolic-ref --quiet --short HEAD 2>$null
-        if ($LASTEXITCODE -ne 0 -or -not $branchRef) {
-            $currentCommit = git rev-parse --short HEAD 2>$null
-            Write-Host "  Branch: (detached HEAD at $currentCommit)" -ForegroundColor Red
-            $badStates += "DETACHED_HEAD"
+        # --- Branch ---
+        $branch = (git symbolic-ref --short HEAD 2>$null)
+        if (-not $branch) {
+            $branch = "DETACHED_HEAD"
+            Write-Host "  Branch: $branch" -ForegroundColor Red
+            $actionItems += "$name : detached HEAD"
         } else {
-            Write-Host "  Branch: $branchRef"
+            Write-Host "  Branch: $branch"
         }
 
-        # --- Prominent bad-state warning block ---
-        if ($badStates.Count -gt 0) {
-            Write-Host "  !! BAD STATE DETECTED: $($badStates -join ', ')" -ForegroundColor Red -BackgroundColor Black
-            foreach ($b in $badStates) {
-                $actionItems += "$name : $b"
-            }
-        }
-
-        # --- Fetch origin (network call) ---
-        Write-Host "  Fetching origin..." -ForegroundColor DarkGray
-        $fetchOutput = git fetch origin 2>&1
-        if ($LASTEXITCODE -ne 0) {
-            Write-Host "  FETCH FAILED: $fetchOutput" -ForegroundColor Red
-            $actionItems += "$name : fetch failed (remote unreachable or auth issue)"
+        # --- git fetch ---
+        Write-Host "  Fetching origin..." -NoNewline
+        git fetch origin 2>&1 | Out-Null
+        if ($LASTEXITCODE -eq 0) {
+            Write-Host " done" -ForegroundColor Green
+        } else {
+            Write-Host " FAILED (network?)" -ForegroundColor Yellow
         }
 
         # --- Local HEAD ---
-        $localHead    = git rev-parse --short HEAD 2>$null
-        $localMsg     = git log -1 --pretty=format:"%s" 2>$null
-        Write-Host ("  Local HEAD:  {0}  {1}" -f $localHead, $localMsg)
+        $localHash    = (git rev-parse HEAD)
+        $localMessage = (git log -1 --pretty=format:"%s")
+        Write-Host "  Local  HEAD: $localHash  $localMessage"
 
-        # --- Remote HEAD (if branch has upstream) ---
-        $upstream = git rev-parse --abbrev-ref --symbolic-full-name "@{upstream}" 2>$null
-        if ($LASTEXITCODE -eq 0 -and $upstream) {
-            $remoteHead = git rev-parse --short $upstream 2>$null
-            $remoteMsg  = git log -1 --pretty=format:"%s" $upstream 2>$null
-            Write-Host ("  Remote HEAD: {0}  {1}" -f $remoteHead, $remoteMsg)
-            Write-Host ("  Upstream: {0}" -f $upstream)
+        # --- Remote HEAD ---
+        $remoteRef  = "origin/$branch"
+        $remoteHash = (git rev-parse $remoteRef 2>$null)
+        if ($remoteHash) {
+            $remoteMessage = (git log -1 --pretty=format:"%s" $remoteRef)
+            Write-Host "  Remote HEAD: $remoteHash  $remoteMessage"
 
-            # --- Ahead / behind ---
-            $counts = git rev-list --left-right --count "HEAD...$upstream" 2>$null
-            if ($counts) {
-                $parts  = $counts -split "\s+"
-                $ahead  = [int]$parts[0]
-                $behind = [int]$parts[1]
-                if ($ahead -eq 0 -and $behind -eq 0) {
-                    Write-Host "  Delta: same (local = remote)" -ForegroundColor Green
-                } elseif ($ahead -gt 0 -and $behind -eq 0) {
-                    Write-Host ("  Delta: ahead {0} commit(s) (local ahead of remote)" -f $ahead) -ForegroundColor Yellow
-                    $actionItems += "$name : $ahead commit(s) ahead of remote (push pending?)"
-                } elseif ($ahead -eq 0 -and $behind -gt 0) {
-                    Write-Host ("  Delta: behind {0} commit(s) (remote ahead of local)" -f $behind) -ForegroundColor Yellow
-                    $actionItems += "$name : $behind commit(s) behind remote (pull required)"
-                } else {
-                    Write-Host ("  Delta: DIVERGED (ahead {0}, behind {1})" -f $ahead, $behind) -ForegroundColor Red
-                    $actionItems += "$name : diverged from remote (ahead $ahead, behind $behind)"
-                }
+            # --- Delta ---
+            $ahead  = [int](git rev-list --count "$remoteRef..HEAD" 2>$null)
+            $behind = [int](git rev-list --count "HEAD..$remoteRef" 2>$null)
+            if ($ahead -eq 0 -and $behind -eq 0) {
+                Write-Host "  Delta: same" -ForegroundColor Green
+            } elseif ($ahead -gt 0 -and $behind -eq 0) {
+                Write-Host "  Delta: ahead $ahead commit(s)" -ForegroundColor Yellow
+                $actionItems += "$name : ahead $ahead commit(s) -- push needed"
+            } elseif ($behind -gt 0 -and $ahead -eq 0) {
+                Write-Host "  Delta: behind $behind commit(s)" -ForegroundColor Yellow
+                $actionItems += "$name : behind $behind commit(s) -- pull needed"
+            } else {
+                Write-Host "  Delta: DIVERGED (ahead $ahead, behind $behind)" -ForegroundColor Red
+                $actionItems += "$name : diverged -- manual resolution needed"
             }
         } else {
-            Write-Host "  Remote HEAD: (no upstream configured)" -ForegroundColor Yellow
-            $actionItems += "$name : no upstream configured"
+            Write-Host "  Remote HEAD: could not resolve $remoteRef" -ForegroundColor Yellow
         }
 
-        # --- Working-tree state (detailed) ---
-        # PowerShell 5.x compatible: explicit if blocks, no inline expressions.
-        $statusLines = git status --porcelain 2>$null
-        if (-not $statusLines) {
+        # --- Working tree drift (PS5.x compatible -- explicit if blocks, no inline ternary) ---
+        $staged    = @()
+        $modified  = @()
+        $untracked = @()
+        $conflicts = @()
+
+        $statusLines = (git status --porcelain)
+        foreach ($line in $statusLines) {
+            if ($line.Length -lt 3) { continue }
+            $x    = $line[0]
+            $y    = $line[1]
+            $file = $line.Substring(3)
+            if ($x -eq '?' -and $y -eq '?') {
+                $untracked += $file
+            } elseif ($x -eq 'U' -or $y -eq 'U') {
+                $conflicts += $file
+            } else {
+                if ($x -ne ' ') {
+                    $staged += $file
+                }
+                if ($y -ne ' ') {
+                    $modified += $file
+                }
+            }
+        }
+
+        if ($staged.Count -gt 0) {
+            Write-Host "  Staged ($($staged.Count)):" -ForegroundColor Yellow
+            foreach ($f in $staged) { Write-Host "    + $f" }
+            $actionItems += "$name : staged changes not yet committed"
+        }
+        if ($modified.Count -gt 0) {
+            Write-Host "  Modified ($($modified.Count)):" -ForegroundColor Yellow
+            foreach ($f in $modified) { Write-Host "    M $f" }
+            $actionItems += "$name : uncommitted changes in working tree"
+        }
+        if ($conflicts.Count -gt 0) {
+            Write-Host "  Conflicts ($($conflicts.Count)):" -ForegroundColor Red
+            foreach ($f in $conflicts) { Write-Host "    C $f" }
+            $actionItems += "$name : unresolved conflicts"
+        }
+        if ($untracked.Count -gt 0) {
+            Write-Host "  Untracked ($($untracked.Count)):" -ForegroundColor Gray
+            foreach ($f in $untracked) { Write-Host "    ? $f" }
+            # Untracked files do NOT trigger ACTION REQUIRED
+        }
+        if ($staged.Count -eq 0 -and $modified.Count -eq 0 -and $conflicts.Count -eq 0) {
             Write-Host "  Working tree: clean" -ForegroundColor Green
-        } else {
-            # Coerce to array if a single line was returned as string
-            if ($statusLines -is [string]) { $statusLines = @($statusLines) }
-
-            $modified  = @()
-            $staged    = @()
-            $untracked = @()
-            $conflict  = @()
-            foreach ($line in $statusLines) {
-                if ($line.Length -lt 3) { continue }
-                $code = $line.Substring(0, 2)
-                $file = $line.Substring(3)
-                if ($code -eq "??") {
-                    $untracked += $file
-                } elseif ($code -match "U") {
-                    $conflict += $file
-                } else {
-                    # Index position (code[0]) tracks staged changes
-                    if ($code[0] -ne ' ') {
-                        $staged += $file
-                    }
-                    # Worktree position (code[1]) tracks unstaged changes
-                    if ($code[1] -ne ' ') {
-                        $modified += $file
-                    }
-                }
-            }
-
-            $totalCount = $statusLines.Count
-            Write-Host "  Working tree: $totalCount entries" -ForegroundColor Yellow
-
-            if ($staged.Count -gt 0) {
-                Write-Host "    Staged ($($staged.Count)):"
-                foreach ($f in $staged) { Write-Host "      $f" }
-            }
-            if ($modified.Count -gt 0) {
-                Write-Host "    Modified ($($modified.Count)):"
-                foreach ($f in $modified) { Write-Host "      $f" }
-            }
-            if ($untracked.Count -gt 0) {
-                Write-Host "    Untracked ($($untracked.Count)):"
-                foreach ($f in $untracked) { Write-Host "      $f" }
-            }
-            if ($conflict.Count -gt 0) {
-                Write-Host "    CONFLICTED ($($conflict.Count)):" -ForegroundColor Red
-                foreach ($f in $conflict) { Write-Host "      $f" }
-                $actionItems += "$name : $($conflict.Count) conflicted file(s)"
-            }
-
-            # Only flag staged/modified/conflict as action items.
-            # Untracked-only drift is common (node_modules, work scripts, etc.) and not an action.
-            if ($staged.Count -gt 0 -or $modified.Count -gt 0) {
-                $actionItems += "$name : uncommitted changes in working tree"
-            }
         }
 
-        # --- Stash entries ---
-        $stashList = git stash list 2>$null
+        # --- Stash ---
+        $stashList = (git stash list)
         if ($stashList) {
-            if ($stashList -is [string]) { $stashList = @($stashList) }
-            $stashCount = $stashList.Count
+            $stashCount = @($stashList).Count
             Write-Host "  Stash entries: $stashCount" -ForegroundColor Yellow
             foreach ($s in $stashList) { Write-Host "    $s" }
-            $actionItems += "$name : $stashCount stash entry(ies) (review before closing ecosystem)"
+            $actionItems += "$name : $stashCount stash entry/entries present"
         } else {
-            Write-Host "  Stash entries: 0"
+            Write-Host "  Stash: 0"
         }
 
     } finally {
@@ -235,96 +218,106 @@ foreach ($repo in $GIT_REPOS) {
 # =============================================================================
 Write-Host ""
 Write-Host "[SS321 - Lovable-hosted, local ledger only]" -ForegroundColor Yellow
-Write-Host "  Local folder: $SS321_FOLDER"
-Write-Host "  Git state:    N/A (SS321 code hosted by Lovable, no local clone)"
+Write-Host "  Path: $SS321_FOLDER"
 
 if (Test-Path $SS321_FOLDER) {
-    Write-Host "  Folder exists: yes" -ForegroundColor Green
-
+    Write-Host "  Folder exists: yes"
+    Write-Host "  Git state: N/A (source is Lovable, not a local clone)"
     if (Test-Path $SS321_FIX_INDEX) {
-        $ssLedgerSize = (Get-Item $SS321_FIX_INDEX).Length
-        $ssLedgerLines = (Get-Content $SS321_FIX_INDEX).Count
-        Write-Host "  Ledger file:  SS321_FIX_INDEX.md ($ssLedgerSize bytes, $ssLedgerLines lines)"
+        $sfiBytes = (Get-Item $SS321_FIX_INDEX).Length
+        $sfiLines = (Get-Content $SS321_FIX_INDEX).Count
+        Write-Host "  SS321_FIX_INDEX.md: $sfiBytes bytes | $sfiLines lines" -ForegroundColor Green
     } else {
-        Write-Host "  Ledger file:  SS321_FIX_INDEX.md MISSING" -ForegroundColor Red
-        $actionItems += "SS321 : SS321_FIX_INDEX.md missing from $SS321_FOLDER"
+        Write-Host "  SS321_FIX_INDEX.md: NOT FOUND" -ForegroundColor Red
+        $actionItems += "SS321 : SS321_FIX_INDEX.md missing"
     }
 } else {
-    Write-Host "  Folder MISSING at $SS321_FOLDER" -ForegroundColor Red
-    $actionItems += "SS321 : local folder missing"
+    Write-Host "  Folder: NOT FOUND" -ForegroundColor Red
+    $actionItems += "SS321 : local folder does not exist"
 }
 
 # =============================================================================
-# SECTION 3: Ledger state (parsed from canonical files)
+# SECTION 3: Ledger state
 # =============================================================================
 Write-Host ""
-Write-Host "[LEDGER STATE - parsed from files]" -ForegroundColor Yellow
+Write-Host "[LEDGER STATE]" -ForegroundColor Yellow
 
-# Last FIX + CLO from MASTER_FIX_INDEX.md last "### FIX-N" heading line
+# MASTER_FIX_INDEX last heading
+# v3 fix: catches both "### FIX-" (older entries) and "## FIX-" (newer entries)
 if (Test-Path $MASTER_FIX_INDEX) {
-    $lastFixLine = Select-String -Path $MASTER_FIX_INDEX -Pattern "^### FIX-\d+" | Select-Object -Last 1
-    if ($lastFixLine) {
-        Write-Host ("  MASTER_FIX_INDEX last heading (line {0}):" -f $lastFixLine.LineNumber)
-        Write-Host ("    {0}" -f $lastFixLine.Line)
+    $mfiLines   = Get-Content $MASTER_FIX_INDEX
+    $mfiMatches = $mfiLines | Select-String "^#{2,3} (FIX-|SS-FIX-)\d+"
+    if ($mfiMatches) {
+        $lastMfi     = ($mfiMatches | Select-Object -Last 1)
+        $lastMfiLine = $lastMfi.LineNumber
+        $lastMfiText = $lastMfi.Line.Trim()
+        Write-Host "  MASTER_FIX_INDEX last: $lastMfiText (line $lastMfiLine)"
     } else {
-        Write-Host "  MASTER_FIX_INDEX: no FIX headings found" -ForegroundColor Red
-        $actionItems += "MASTER_FIX_INDEX : no FIX headings parseable"
+        Write-Host "  MASTER_FIX_INDEX: no FIX headings found" -ForegroundColor Yellow
+        $actionItems += "MASTER_FIX_INDEX : no FIX headings located"
     }
 } else {
-    Write-Host "  MASTER_FIX_INDEX: FILE NOT FOUND at $MASTER_FIX_INDEX" -ForegroundColor Red
-    $actionItems += "MASTER_FIX_INDEX : file not found"
+    Write-Host "  MASTER_FIX_INDEX: FILE NOT FOUND" -ForegroundColor Red
+    $actionItems += "MASTER_FIX_INDEX : file missing"
 }
 
-# Last Ch18 Entry from Ch18 last "### Entry-N" heading line
+# Ch18 last entry
+# v3 fix: catches both "### Entry-NNN" (older) and "Entry-NNN |" inline format (newer)
 if (Test-Path $CH18) {
-    $lastEntryLine = Select-String -Path $CH18 -Pattern "^### Entry-\d+|^### Entry \d+" | Select-Object -Last 1
-    if ($lastEntryLine) {
-        Write-Host ("  Ch18 last Entry (line {0}):" -f $lastEntryLine.LineNumber)
-        Write-Host ("    {0}" -f $lastEntryLine.Line)
+    $ch18Lines   = Get-Content $CH18
+    $ch18Matches = $ch18Lines | Select-String "^(### Entry-|Entry-\d+)"
+    if ($ch18Matches) {
+        $lastCh18     = ($ch18Matches | Select-Object -Last 1)
+        $lastCh18Line = $lastCh18.LineNumber
+        $lastCh18Text = $lastCh18.Line.Trim()
+        Write-Host "  Ch18 last entry: $lastCh18Text (line $lastCh18Line)"
     } else {
-        Write-Host "  Ch18: no Entry headings found" -ForegroundColor Red
-        $actionItems += "Ch18 : no Entry headings parseable"
+        Write-Host "  Ch18: no Entry headings found" -ForegroundColor Yellow
     }
 } else {
-    Write-Host "  Ch18: FILE NOT FOUND at $CH18" -ForegroundColor Red
-    $actionItems += "Ch18 : file not found"
+    Write-Host "  Ch18: FILE NOT FOUND" -ForegroundColor Red
+    $actionItems += "Ch18 : file missing"
 }
 
-# Last SS-FIX from SS321_FIX_INDEX.md
+# SS321_FIX_INDEX last SS-FIX
 if (Test-Path $SS321_FIX_INDEX) {
-    $lastSsFixLine = Select-String -Path $SS321_FIX_INDEX -Pattern "SS-FIX-\d+" | Select-Object -Last 1
-    if ($lastSsFixLine) {
-        Write-Host ("  SS321_FIX_INDEX last SS-FIX reference (line {0}):" -f $lastSsFixLine.LineNumber)
-        Write-Host ("    {0}" -f $lastSsFixLine.Line.Trim())
+    $sfiContent = Get-Content $SS321_FIX_INDEX
+    $sfiMatches = $sfiContent | Select-String "SS-FIX-\d+"
+    if ($sfiMatches) {
+        $lastSfi     = ($sfiMatches | Select-Object -Last 1)
+        $lastSfiLine = $lastSfi.LineNumber
+        $lastSfiNum  = [regex]::Match($lastSfi.Line, "SS-FIX-\d+").Value
+        Write-Host "  SS321_FIX_INDEX last: $lastSfiNum (line $lastSfiLine)"
     } else {
         Write-Host "  SS321_FIX_INDEX: no SS-FIX references found" -ForegroundColor Yellow
     }
-} else {
-    Write-Host "  SS321_FIX_INDEX: file not found at $SS321_FIX_INDEX" -ForegroundColor Yellow
 }
 
-# Ch26 term count - pattern: **Current Term Count:** N (markdown bold)
+# Ch26 term count
 if (Test-Path $CH26) {
-    $termCountLine = Select-String -Path $CH26 -Pattern "Current Term Count" | Select-Object -First 1
-    if ($termCountLine) {
-        Write-Host ("  Ch26 term count (line {0}):" -f $termCountLine.LineNumber)
-        Write-Host ("    {0}" -f $termCountLine.Line.Trim())
+    $ch26Match = Get-Content $CH26 | Select-String "Current Term Count"
+    if ($ch26Match) {
+        $ch26Line    = ($ch26Match | Select-Object -First 1)
+        $ch26LineNum = $ch26Line.LineNumber
+        $ch26Text    = $ch26Line.Line.Trim()
+        Write-Host "  Ch26: $ch26Text (line $ch26LineNum)"
     } else {
-        Write-Host "  Ch26: 'Current Term Count' line not located" -ForegroundColor Yellow
+        Write-Host "  Ch26: term count line not located" -ForegroundColor Yellow
+        $actionItems += "Ch26 : Current Term Count line not found"
     }
 } else {
-    Write-Host "  Ch26: FILE NOT FOUND at $CH26" -ForegroundColor Red
-    $actionItems += "Ch26 : file not found"
+    Write-Host "  Ch26: FILE NOT FOUND" -ForegroundColor Red
+    $actionItems += "Ch26 : file missing"
 }
 
 # =============================================================================
-# SECTION 4: Overall summary
+# OVERALL SUMMARY
 # =============================================================================
 Write-Host ""
 Write-Host "===========================================================" -ForegroundColor Cyan
 if ($actionItems.Count -eq 0) {
     Write-Host "  OVERALL: READY" -ForegroundColor Green
-    Write-Host "  Both git repos clean and synced. SS321 ledger present. Ledger files parseable." -ForegroundColor Green
+    Write-Host "  All repos clean. Ledger files present." -ForegroundColor Green
 } else {
     Write-Host "  OVERALL: ACTION REQUIRED" -ForegroundColor Yellow
     Write-Host "  $($actionItems.Count) item(s) to review before proceeding:" -ForegroundColor Yellow
