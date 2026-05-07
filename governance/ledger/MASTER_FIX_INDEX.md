@@ -7656,3 +7656,10 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 **Title:** Billboard Library Dropdown Link
 **Status:** COMPLETE
 **Description:** Added Billboard nav link to Library dropdown (desktop + mobile) in Header.tsx. Routes to /billboard. Icon BarChart2. Positioned above Trophies link. Pattern mirrors SS-FIX-378 Trophies implementation.
+
+## FIX-394
+**Date:** 2026-05-07 13:07 PDT
+**SS-FIX:** SS-FIX-404
+**Title:** Soul Word Card White Text Contrast Fix
+**Status:** COMPLETE
+**Description:** SoulWordHeart.tsx: white text + dark drop shadow on Souls Touched count, label, thank-you text. Attribution line in both Soul Word card variants updated to white + drop shadow. Fixes mobile off-white background contrast failure.

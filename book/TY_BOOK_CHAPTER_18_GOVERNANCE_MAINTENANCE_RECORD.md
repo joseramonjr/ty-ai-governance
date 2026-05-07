@@ -8920,3 +8920,6 @@ Entry-403 | FIX-392 | 2026-05-07 12:32 PDT | TYOVA: Book of TY Chapter 46 writte
 
 Entry-404 | FIX-393 | SS-FIX-403 | 2026-05-07 12:49 PDT
 Billboard Library Dropdown Link. Added Billboard link to Library dropdown in Header.tsx (desktop + mobile). Routes to /billboard. Icon BarChart2. Above Trophies. One file changed. Deployed via Lovable.
+
+Entry-405 | FIX-394 | SS-FIX-404 | 2026-05-07 13:07 PDT
+Soul Word Card White Text Contrast Fix. SoulWordHeart.tsx: text-white + drop-shadow on Souls Touched count, label, and thank-you text. Attribution text in both Browse and Landing Soul Word card variants updated to white + drop shadow. Resolves mobile readability failure on off-white card background.
