@@ -7733,3 +7733,11 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - **S1/S2:** N/A (TYOVA only)
 - **cargo check:** N/A
 - **Status:** COMPLETE
+## FIX-400
+- Date: 2026-05-07 21:37 PDT
+- Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+- Model: Claude Sonnet 4.6
+- Destination: TYOVA
+- Commit: d37fa6a
+- Summary: Add .gitignore to TYOVA repo -- excludes node_modules/ from tracking. Pre-Flight housekeeping prior to Phase 8 seal.
+- Ch18: Entry-411

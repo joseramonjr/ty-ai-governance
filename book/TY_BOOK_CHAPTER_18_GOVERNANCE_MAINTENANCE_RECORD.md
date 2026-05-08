@@ -8931,3 +8931,4 @@ Entry-407 | FIX-396 | 2026-05-07 15:37 PDT | Pre-Flight v3 -- regex fixes for ##
 Entry-408 | FIX-397 | 2026-05-07 16:05 PDT | Phase 8 Track 2 F-002 remediation -- Ch42-46 source files created in ty-ai-governance book/ -- commit 0bd2986 | ty-ai-governance
 Entry-409 | FIX-398 | 2026-05-07 16:29 PDT | Phase 8 Track 3 remediation -- EcosystemStatus, JayaProofConditions, JayaOverview -- 6 edits -- commit 34d9ef4 | TYOVA
 Entry-410 | FIX-399 | 2026-05-07 16:44 PDT | Phase 8 Track 3 remediation -- EcosystemExplained, WhyGovernanceMatters, GlossaryPage -- 4 edits -- commit 9acef03 | TYOVA
+### Entry-411 | FIX-400 | 2026-05-07 21:37 PDT | TYOVA .gitignore -- node_modules/ excluded -- commit d37fa6a | TYOVA
