@@ -7832,3 +7832,13 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Commit: 199dd48
 - Summary: supabase_reader.rs -- Jaya Runtime Supabase governance event reader. Reads governance_events table via REST API. Validates events against ADR-002 invariants (8 rules). Nonce replay protection. SQLite state tables (supabase_reader_state, supabase_seen_nonces). Writes validation results to local ledger. reqwest 0.12 added to Cargo.toml. cargo check zero errors. Config at jaya/supabase_governance_config.json (local only). Step 4.3 complete.
 - Ch18: Entry-421
+
+## FIX-410
+- Date: 2026-05-08 09:57 PDT
+- Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+- Model: Claude Sonnet 4.6
+- Destination: ty-ai-governance
+- Commit: 7973f86
+- Tag: phase9-proof-condition-met
+- Summary: ADR-001-PC-001 declared MET. Jaya Runtime read governance event from SS321 Supabase (event 5d983a28), validated against ADR-002 invariants, zero violations, ledger entry written. First time in TY AI OS history that a live production system is governed by Jaya Runtime. PHASE_9_PROOF_CONDITION.md committed.
+- Ch18: Entry-422
