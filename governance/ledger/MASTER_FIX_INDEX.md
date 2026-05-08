@@ -7787,3 +7787,12 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Commit: 68bdf48
 - Summary: Luke AI unit tests -- 11 tests added to luke.rs -- 11/11 passing. LC-001 LC-002 LC-003 LC-007 LC-013 verified by cargo test. Three template word fixes (stopped->rejected/blocked/prevented) to satisfy LC-007 prescriptive language check. Step 2.3 complete.
 - Ch18: Entry-416
+
+## FIX-405
+- Date: 2026-05-08 08:31 PDT
+- Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+- Model: Claude Sonnet 4.6
+- Destination: ty-ai-governance
+- Commit: b686525
+- Summary: ADR-001 Governance Bridge Architecture -- Path 1 (Supabase as shared state) accepted. Path 2 rejected (violates local-first doctrine). General pattern defined for any governed application. SS321 designated as first implementation. Proof condition ADR-001-PC-001 defined. Step 3.1 complete.
+- Ch18: Entry-417
