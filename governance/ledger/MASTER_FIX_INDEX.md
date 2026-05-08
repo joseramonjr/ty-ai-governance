@@ -7823,3 +7823,12 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Commit: N/A (Lovable-hosted)
 - Summary: SS-FIX-405 -- TY AI OS governance event emission added to ty-ai-chat edge function. SHA-256 hashes of input/output, session_id, nonce, governance_tier, g41_applied. Fires on Tier 2 (Claude Sonnet) responses only. ADR-002-PC-001 met -- live governance event verified in production Supabase at 16:13:58 UTC 2026-05-08. All 15 fields confirmed correct. Step 4.2 complete.
 - Ch18: Entry-420
+
+## FIX-409
+- Date: 2026-05-08 09:38 PDT
+- Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+- Model: Claude Sonnet 4.6
+- Destination: Jaya-Runtime
+- Commit: 199dd48
+- Summary: supabase_reader.rs -- Jaya Runtime Supabase governance event reader. Reads governance_events table via REST API. Validates events against ADR-002 invariants (8 rules). Nonce replay protection. SQLite state tables (supabase_reader_state, supabase_seen_nonces). Writes validation results to local ledger. reqwest 0.12 added to Cargo.toml. cargo check zero errors. Config at jaya/supabase_governance_config.json (local only). Step 4.3 complete.
+- Ch18: Entry-421

@@ -8950,3 +8950,5 @@ Entry-410 | FIX-399 | 2026-05-07 16:44 PDT | Phase 8 Track 3 remediation -- Ecos
 ### Entry-419 | FIX-407 | 2026-05-08 08:41 PDT | governance_events table created -- SS321 Supabase -- 15 cols 3 RLS policies 5 indexes -- Step 4.1 complete | SS321
 
 ### Entry-420 | FIX-408 | 2026-05-08 09:20 PDT | SS-FIX-405 governance event emission -- ADR-002-PC-001 met -- live row verified -- Step 4.2 complete | SS321
+
+### Entry-421 | FIX-409 | 2026-05-08 09:38 PDT | supabase_reader.rs -- Jaya Supabase governance event reader -- cargo check clean -- commit 199dd48 | Jaya-Runtime
