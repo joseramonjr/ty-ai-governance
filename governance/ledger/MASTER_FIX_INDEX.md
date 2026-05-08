@@ -7751,3 +7751,12 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Tag: phase8-complete-sealed
 - Summary: Phase 8 formal seal -- TYOVA Documentation Integrity Audit complete. All tracks closed. F-T3-012 deferred (very low priority). PHASE_8_SEAL.md committed.
 - Ch18: Entry-412
+
+## FIX-402
+- Date: 2026-05-07 21:53 PDT
+- Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+- Model: Claude Sonnet 4.6
+- Destination: ty-ai-governance
+- Commit: e218f34 (rewritten HEAD post-purge)
+- Summary: Git history purge -- removed "book/TOKENS MASTER FOR JOSE AND JANET.txt" from all 510 commits using git filter-repo. Token file introduced in 546b38e. All tags force-pushed with rewritten hashes. Origin re-added after purge.
+- Ch18: Entry-413
