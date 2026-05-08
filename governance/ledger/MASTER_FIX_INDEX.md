@@ -7814,3 +7814,12 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Commit: N/A (Supabase SQL Editor operation)
 - Summary: governance_events table created in SS321 Supabase. 15 columns, 3 RLS policies (service_insert_only, service_read_all, user_read_own), 5 indexes including unique nonce. Append-only enforced. ADR-002-PC-001 partially verified -- table structure confirmed. Step 4.1 complete.
 - Ch18: Entry-419
+
+## FIX-408
+- Date: 2026-05-08 09:20 PDT
+- Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+- Model: Claude Sonnet 4.6
+- Destination: SS321 (Lovable edge function)
+- Commit: N/A (Lovable-hosted)
+- Summary: SS-FIX-405 -- TY AI OS governance event emission added to ty-ai-chat edge function. SHA-256 hashes of input/output, session_id, nonce, governance_tier, g41_applied. Fires on Tier 2 (Claude Sonnet) responses only. ADR-002-PC-001 met -- live governance event verified in production Supabase at 16:13:58 UTC 2026-05-08. All 15 fields confirmed correct. Step 4.2 complete.
+- Ch18: Entry-420
