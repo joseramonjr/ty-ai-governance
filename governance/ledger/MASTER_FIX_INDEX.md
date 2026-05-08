@@ -7796,3 +7796,12 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Commit: b686525
 - Summary: ADR-001 Governance Bridge Architecture -- Path 1 (Supabase as shared state) accepted. Path 2 rejected (violates local-first doctrine). General pattern defined for any governed application. SS321 designated as first implementation. Proof condition ADR-001-PC-001 defined. Step 3.1 complete.
 - Ch18: Entry-417
+
+## FIX-406
+- Date: 2026-05-08 08:35 PDT
+- Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+- Model: Claude Sonnet 4.6
+- Destination: ty-ai-governance
+- Commit: 32190fe
+- Summary: ADR-002 Governance Event Schema -- governance_events table fully defined. 15 fields, 5 action types, 4 execution statuses, RLS policies, append-only enforcement, privacy design (hash-only), Jaya validation logic preview, indexes. Step 3.2 complete.
+- Ch18: Entry-418
