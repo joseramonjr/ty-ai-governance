@@ -7778,3 +7778,12 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Commit: ab0d324
 - Summary: Luke AI MVP -- luke.rs created (24,454 bytes, 26 event type templates, 14 proof conditions LC-001 through LC-014). lib.rs integrated -- mod luke, 3 Tauri commands (luke_explain_entry, luke_session_summary, luke_system_state), registered in generate_handler. cargo check zero errors (LC-010 passed). Step 2.2 complete.
 - Ch18: Entry-415
+
+## FIX-404.1
+- Date: 2026-05-08 08:19 PDT
+- Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+- Model: Claude Sonnet 4.6
+- Destination: Jaya-Runtime
+- Commit: 68bdf48
+- Summary: Luke AI unit tests -- 11 tests added to luke.rs -- 11/11 passing. LC-001 LC-002 LC-003 LC-007 LC-013 verified by cargo test. Three template word fixes (stopped->rejected/blocked/prevented) to satisfy LC-007 prescriptive language check. Step 2.3 complete.
+- Ch18: Entry-416
