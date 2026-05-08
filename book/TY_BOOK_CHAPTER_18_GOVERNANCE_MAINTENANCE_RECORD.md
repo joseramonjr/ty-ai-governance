@@ -8954,3 +8954,5 @@ Entry-410 | FIX-399 | 2026-05-07 16:44 PDT | Phase 8 Track 3 remediation -- Ecos
 ### Entry-421 | FIX-409 | 2026-05-08 09:38 PDT | supabase_reader.rs -- Jaya Supabase governance event reader -- cargo check clean -- commit 199dd48 | Jaya-Runtime
 
 ### Entry-422 | FIX-410 | 2026-05-08 09:57 PDT | Phase 9 Proof Condition ADR-001-PC-001 MET -- Jaya governs live SS321 -- tag phase9-proof-condition-met -- commit 7973f86 | ty-ai-governance
+
+### Entry-423 | FIX-411 | 2026-05-08 10:36 PDT | Chapter 47 The First Governance -- Phase 9 record -- 10 sections -- commit 1a2f0d1 | ty-ai-governance
