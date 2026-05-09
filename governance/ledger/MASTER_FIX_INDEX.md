@@ -7921,3 +7921,12 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Destination: jayme-ai
 - Summary: JDM-PC-001 proof condition declared met. drift_proof.rs binary created -- reads live SS321 governance events from Supabase via Jaya config. 1 event analyzed -- drift_detected: false -- findings_count: 0 -- all 7 pattern checks passed -- no panic. Run timestamp: 2026-05-09T04:24:42 UTC. Jayme append-only ledger written. Governance is clean.
 - Ch18: Entry-431
+
+## FIX-420
+- Date: 2026-05-08 21:34 PDT
+- Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+- Model: Claude Sonnet 4.6
+- Destination: Jaya-Runtime
+- Commit: 3428028
+- Summary: INV-L2 structural fix. get_readonly_connection() added to ledger.rs using OpenFlags::SQLITE_OPEN_READ_ONLY. Luke AI get_entry_by_id, get_all_ledger_entries, get_system_state all updated to use read-only connection. INV-L2 now enforced at Rust connection level -- zero write capability structurally impossible. 18/18 tests passing. Resolves deferred note from FIX-414.
+- Ch18: Entry-432

@@ -8990,3 +8990,5 @@ LC-014 deferred to Step 6 per Option B decision -- frontend panel not yet built.
 ### Entry-430 | FIX-418 | 2026-05-08 20:46 PDT | DistributionPage.tsx updated -- TY-0001.B + SHA-256 3A48E33B -- GitHub Release published -- Step 6.4 complete -- TYOVA @ fb4e960
 
 ### Entry-431 | FIX-419 | 2026-05-08 21:26 PDT | JDM-PC-001 PROOF CONDITION MET -- Jayme drift monitor live -- 1 SS321 event analyzed -- no drift -- jayme-ai committed
+
+### Entry-432 | FIX-420 | 2026-05-08 21:34 PDT | INV-L2 structural fix -- get_readonly_connection -- Luke read-only SQLite enforced -- 18/18 tests -- Jaya-Runtime @ 3428028
