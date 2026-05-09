@@ -9035,3 +9035,10 @@ LC-014 deferred to Step 6 per Option B decision -- frontend panel not yet built.
 - **Destination:** TYOVA
 - **Action:** Chapter 50 line count correction. Jaya-Runtime corrected from 194,609 to 5,523 (src only, excludes node_modules). jayme-ai corrected from 176,202 to 5,591 (src only). Verified total corrected from 436,306 to 76,609. Explanatory note added to code table. Zero-Fabrication Rule applied — inflated counts caused by node_modules TypeScript declaration files.
 - **Result:** Chapter 50 line counts verified and corrected. 76,609 is the honest authored line count.
+
+### Entry-442
+- **Fix:** FIX-430
+- **Date:** 2026-05-09 16:02 PDT | San Diego
+- **Destination:** TYOVA
+- **Action:** Chapter 50 tilde rendering fix. All ~ symbols before numbers replaced with approx. in Chapter50Stats.tsx and bookChapterContent.ts. Tilde was rendering as negative sign (-) in TYOVA font. Affected values: approx. 75 sessions, approx. 389 fixes, approx. 396 entries, approx. 984/1,060/1,122 hours, approx. 4.5 each, approx. 1,268 changes. Zero TypeScript errors.
+- **Result:** Chapter 50 approximate values now display correctly with no negative sign confusion.
