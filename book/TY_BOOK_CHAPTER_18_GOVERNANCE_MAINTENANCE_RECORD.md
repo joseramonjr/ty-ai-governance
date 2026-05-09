@@ -9028,3 +9028,10 @@ LC-014 deferred to Step 6 per Option B decision -- frontend panel not yet built.
 - **Destination:** TYOVA
 - **Action:** Added ReactMarkdown + remarkGfm to BookOfTyChapter.tsx. Built dedicated Chapter50Stats.tsx React component with fully styled Tailwind tables. Tables confirmed rendering correctly in TYOVA preview. All 50 chapters markdown-capable. Zero TypeScript errors.
 - **Result:** Chapter 50 displays all stats as properly styled tables. Rendering confirmed.
+
+### Entry-441
+- **Fix:** FIX-429
+- **Date:** 2026-05-09 15:49 PDT | San Diego
+- **Destination:** TYOVA
+- **Action:** Chapter 50 line count correction. Jaya-Runtime corrected from 194,609 to 5,523 (src only, excludes node_modules). jayme-ai corrected from 176,202 to 5,591 (src only). Verified total corrected from 436,306 to 76,609. Explanatory note added to code table. Zero-Fabrication Rule applied — inflated counts caused by node_modules TypeScript declaration files.
+- **Result:** Chapter 50 line counts verified and corrected. 76,609 is the honest authored line count.
