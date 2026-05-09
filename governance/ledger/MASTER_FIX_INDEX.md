@@ -7878,3 +7878,11 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 - Commit: 3cea76b
 - Summary: Luke AI LC-008/009/010/011/012 verified. 7 new unit tests added to luke.rs (3 resilience, 2 performance, 2 determinism). WAL pragma added to ledger.rs for LC-012 concurrent read safety. 18/18 tests passing. LC-013 confirmed pre-existing. LC-014 deferred to Step 6 -- frontend panel pending per Option B decision. Luke AI 13/14 LC verified.
 - Ch18: Entry-426
+## FIX-415
+- Date: 2026-05-08 19:47 PDT
+- Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+- Model: Claude Sonnet 4.6
+- Destination: TYOVA
+- Commit: 8170679
+- Summary: TY-0001.B bundle metadata. version.json updated to TY-0001.B buildNumber 2, stale legacy fields removed. manifest.json created as new file -- was missing but referenced in VERIFY.md. VERIFY.md updated to TY-0001.B with PENDING SHA-256 placeholder. install-config.json _version updated to 2026-05-08. Step 6.1 of Master Action Plan complete.
+- Ch18: Entry-427
