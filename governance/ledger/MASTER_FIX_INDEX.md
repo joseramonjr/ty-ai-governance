@@ -7987,3 +7987,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-434 | 2026-05-09 22:08-22:13 PDT | SS321 | Mobile footer text clipping fix. Added overflow-wrap/word-break/px-4/w-full to footer container. Email link wraps on mobile. Verified: CONFIRMED. CLOSED |
 
 | FIX-435 | 2026-05-09 22:20-22:27 PDT | SS321 | TY Soul Words card all text forced to pure white (#FFFFFF). Updated SoulWordsCardHero.tsx, SoulWordsCard.tsx, SoulWordHeart.tsx. All breakpoints including mobile. Verified: CONFIRMED. CLOSED |
+
+| FIX-436 | 2026-05-09 22:38-22:58 PDT | SS321 | Live listener count fix attempted. Channel collision caused mobile regression. Reverted to per-instance channel. Mobile restored. Original bug deferred - requires singleton/broadcast redesign. REVERTED-DEFERRED |

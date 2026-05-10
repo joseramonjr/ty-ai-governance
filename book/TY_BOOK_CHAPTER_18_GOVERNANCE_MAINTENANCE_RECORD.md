@@ -9085,3 +9085,18 @@ SoulWordHeart.tsx. All text overrides applied to
 background, layout, spacing, or other styling changed.
 Verified on desktop and mobile: CONFIRMED.
 Status: CLOSED
+
+### Entry-448
+FIX-436 | 2026-05-09 22:38-22:58 PDT | SS321 (Lovable)
+Live listener count bug - attempted fix, reverted.
+Root cause confirmed: useListenerCount used per-instance
+channel name (track-presence-trackId-instanceId) isolated
+from shared tracker channel (track-presence-trackId).
+Fix attempt caused mobile regression - phone showed
+Loading Failed on all tracks due to channel collision
+and empty presence key throwing in Realtime client.
+Reverted useListenerCount.ts to per-instance channel.
+Mobile restored. Original bug persists: late joiner
+sees own count only. Proper fix requires singleton
+shared channel or broadcast pattern redesign.
+Status: REVERTED - DEFERRED
