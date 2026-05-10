@@ -9116,3 +9116,23 @@ Supabase and privacy settings.
 Deferred: investigate why activity_anonymous defaulted to
 true for those accounts - possible earlier migration bug.
 Verified: screen names now showing correctly. CLOSED
+
+### Entry-450
+FIX-438 | 2026-05-10 09:13-11:41 PDT | SS321 (Lovable)
+Platform-wide online presence navbar pill delay fix.
+Multiple sub-fixes applied across session:
+- Heartbeat reduced 60s to 20s, DB freshness 2min to 45s
+- useOnlineCount switched to Realtime presence as primary
+  source with DB poll as safety net
+- Logout cleanup: async IIFE teardown with proper await
+  order: untrack() -> updatePresence(false) -> 150ms -> 
+  removeChannel()
+- useOnlinePresence refactored to session-driven effect
+  with user?.id as sole dep - eliminates stale closure
+  on manual re-login
+- Math.max replaced with hasReceivedSync flag so Realtime
+  is authoritative after first SYNC
+- Late joiner request-count broadcast pattern added
+Confirmed working: login detection fast, logout detection
+~2 seconds. Late joiner ~7 seconds (improved from 2-3 min).
+Manual re-login partially resolved. CLOSED

@@ -7991,3 +7991,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-436 | 2026-05-09 22:38-22:58 PDT | SS321 | Live listener count fix attempted. Channel collision caused mobile regression. Reverted to per-instance channel. Mobile restored. Original bug deferred - requires singleton/broadcast redesign. REVERTED-DEFERRED |
 
 | FIX-439 | 2026-05-10 10:49-11:38 PDT | SS321 | Live Activity showing Someone instead of names. RLS blocked profiles join. Created get_activity_profiles SECURITY DEFINER RPC. ActivityPage.tsx updated to bulk RPC. activity_anonymous reset to false for 2 accounts. Verified: names showing. CLOSED |
+
+| FIX-438 | 2026-05-10 09:13-11:41 PDT | SS321 | Platform online presence navbar pill delay. Multiple sub-fixes: heartbeat 20s, Realtime primary source, async teardown, session-driven effect, hasReceivedSync flag, request-count broadcast. Login/logout fast. Late joiner ~7s improved from 2-3min. CLOSED |
