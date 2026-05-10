@@ -9063,3 +9063,15 @@ LC-014 deferred to Step 6 per Option B decision -- frontend panel not yet built.
 - **Destination:** Jaya-Runtime
 - **Action:** App.tsx health check white screen fix. Line 639: invoke<string> changed to invoke<any>. Line 640: setStatus(result) replaced with formatted string displaying all health check fields (passed, tier, recent_executions, recent_failures, failure_rate_pct, cpu_count, timestamp). Root cause: Rust command returns object but TypeScript typed as string — React crashed trying to render object in <p> tag. Health check confirmed PASSED after fix. Commit 1fb7ed3.
 - **Result:** Health check button displays results correctly. No white screen. Jaya Runtime confirmed healthy.
+
+### Entry-446
+FIX-434 | 2026-05-09 22:08-22:13 PDT | SS321 (Lovable)
+Mobile footer text clipping fix.
+Footer bottom line "Silver Sounds 321 is a project of
+TYOVA LLC. Support: support@tyova.ai" was getting cut off
+on small screens. Applied px-4 w-full break-words
+[word-break:break-word] to footer bottom text container.
+Email link set to break-words inline-block so it wraps
+onto its own line on mobile when needed.
+Verified on device: CONFIRMED.
+Status: CLOSED
