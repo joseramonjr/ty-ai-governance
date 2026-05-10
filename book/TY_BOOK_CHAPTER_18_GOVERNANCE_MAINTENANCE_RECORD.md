@@ -9136,3 +9136,24 @@ Multiple sub-fixes applied across session:
 Confirmed working: login detection fast, logout detection
 ~2 seconds. Late joiner ~7 seconds (improved from 2-3 min).
 Manual re-login partially resolved. CLOSED
+
+### Entry-451
+FIX-440 | 2026-05-10 11:44-13:05 PDT | SS321 (Lovable)
+Live Activity online card delay + hard refresh regression.
+Attempt 1: Added Realtime presence useEffect to
+ActivityPage.tsx to fix 2-3 min online card delay.
+Caused Loading Failed on page load - reverted.
+Regression discovered: hard refresh (Ctrl+Shift+R)
+consistently showing Loading Failed after today's
+useOnlinePresence and useOnlineCount changes.
+Root cause: cold start race condition - both hooks
+subscribing to online-presence-global before auth
+resolved, throwing synchronously on cold start,
+caught by SuspenseErrorBoundary.
+Fix: hardened useOnlineCount (try/catch, queueMicrotask
+deferral, drop empty presence key when no auth) and
+useOnlinePresence (subscribed flag guard before
+untrack/removeChannel). Hard refresh confirmed clean.
+Live Activity online card 2-3 min delay: DEFERRED -
+Realtime fix needs isolated testing in dedicated session.
+Hard refresh regression: FIXED. CLOSED

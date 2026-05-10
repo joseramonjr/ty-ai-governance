@@ -7993,3 +7993,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-439 | 2026-05-10 10:49-11:38 PDT | SS321 | Live Activity showing Someone instead of names. RLS blocked profiles join. Created get_activity_profiles SECURITY DEFINER RPC. ActivityPage.tsx updated to bulk RPC. activity_anonymous reset to false for 2 accounts. Verified: names showing. CLOSED |
 
 | FIX-438 | 2026-05-10 09:13-11:41 PDT | SS321 | Platform online presence navbar pill delay. Multiple sub-fixes: heartbeat 20s, Realtime primary source, async teardown, session-driven effect, hasReceivedSync flag, request-count broadcast. Login/logout fast. Late joiner ~7s improved from 2-3min. CLOSED |
+
+| FIX-440 | 2026-05-10 11:44-13:05 PDT | SS321 | Live Activity online card delay + hard refresh regression. Realtime fix for card delay caused crash - reverted - deferred. Hard refresh cold start race in useOnlineCount/useOnlinePresence fixed via try/catch, queueMicrotask, subscribed flag. Hard refresh clean. CLOSED |
