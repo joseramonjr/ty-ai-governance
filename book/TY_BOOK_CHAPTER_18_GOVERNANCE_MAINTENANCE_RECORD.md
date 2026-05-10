@@ -9170,3 +9170,20 @@ cards. Applied code is harmless but was solving a problem
 that did not exist in visible UI. Original bug was fully
 resolved by FIX-438 (platform online presence fixes).
 Status: CANCELLED
+
+### Entry-453
+FIX-441 | 2026-05-10 12:23-13:19 PDT | SS321 (Lovable)
+Per-track live listener count badge - partially complete.
+Badge markup added to all 3 track card components:
+TrackCard.tsx (tiles), TrackListRow.tsx (list),
+TrackDetailCard.tsx (detail). Shows green 🎧 N Live pill
+when count >= 1. Badge UI complete and deployed.
+Count mechanism deferred - two approaches failed:
+1. Broadcast pattern (useTrackPresence -> useListenerCount)
+   - race condition, count never delivered locally.
+2. Presence observer on same channel - mobile crash
+   Loading Failed on login. Reverted.
+Both Realtime approaches caused mobile instability.
+Requires dedicated architectural session for safe fix.
+Badge shows 0 / hidden until count mechanism resolved.
+Status: PARTIALLY COMPLETE - count mechanism DEFERRED

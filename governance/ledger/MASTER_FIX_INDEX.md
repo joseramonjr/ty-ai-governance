@@ -7997,3 +7997,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-440 | 2026-05-10 11:44-13:05 PDT | SS321 | Live Activity online card delay + hard refresh regression. Realtime fix for card delay caused crash - reverted - deferred. Hard refresh cold start race in useOnlineCount/useOnlinePresence fixed via try/catch, queueMicrotask, subscribed flag. Hard refresh clean. CLOSED |
 
 | FIX-437 | 2026-05-10 08:39-12:17 PDT | SS321 | Per-track listener count broadcast pattern. CANCELLED - mis-scoped. Original bug was header navbar pill count (fixed by FIX-438). Per-track hooks modified but no visible UI badge exists. Code harmless. CANCELLED |
+
+| FIX-441 | 2026-05-10 12:23-13:19 PDT | SS321 | Per-track live listener badge. Badge markup added to TrackCard, TrackListRow, TrackDetailCard. Count mechanism deferred - broadcast race + presence observer both caused mobile crashes. Badge UI ready, count shows 0 until mechanism fixed. PARTIAL-DEFERRED |
