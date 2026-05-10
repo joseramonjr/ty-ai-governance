@@ -9042,3 +9042,17 @@ LC-014 deferred to Step 6 per Option B decision -- frontend panel not yet built.
 - **Destination:** TYOVA
 - **Action:** Chapter 50 tilde rendering fix. All ~ symbols before numbers replaced with approx. in Chapter50Stats.tsx and bookChapterContent.ts. Tilde was rendering as negative sign (-) in TYOVA font. Affected values: approx. 75 sessions, approx. 389 fixes, approx. 396 entries, approx. 984/1,060/1,122 hours, approx. 4.5 each, approx. 1,268 changes. Zero TypeScript errors.
 - **Result:** Chapter 50 approximate values now display correctly with no negative sign confusion.
+
+### Entry-443
+- **Fix:** FIX-431
+- **Date:** 2026-05-09 18:08 PDT | San Diego
+- **Destination:** ty-ai-governance
+- **Action:** TY_BOOK_CHAPTER_49_FOR_EVERYONE.md committed to book directory. All corrections applied: message count 26,112, TSTP-99 corrected, Luke AI Phase 8/9 corrected, TYOVA full name corrected, Transcendent Yield definition moved to Dec 12 2025, Part Nine reordered, 108 sessions, first Claude session date added, closing extended. Commit 415698b.
+- **Result:** Chapter 49 source file now in ty-ai-governance repository.
+
+### Entry-444
+- **Fix:** FIX-432
+- **Date:** 2026-05-09 18:08 PDT | San Diego
+- **Destination:** ty-ai-governance
+- **Action:** TY_BOOK_CHAPTER_50_THE_NUMBERS.md committed to book directory. All corrections applied: line count 436,306 corrected to 76,609, Jaya-Runtime 194,609 corrected to 5,523 src only, jayme-ai 176,202 corrected to 5,591 src only, tilde replaced with approx. throughout. Commit 415698b.
+- **Result:** Chapter 50 source file now in ty-ai-governance repository. Book directory complete through Chapter 50.

@@ -7977,3 +7977,7 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-429 | 2026-05-09 15:49 PDT | TYOVA | Chapter 50 line count correction — Jaya-Runtime 194,609 to 5,523, jayme-ai 176,202 to 5,591, verified total 436,306 to 76,609. node_modules inflation corrected. Zero-Fabrication Rule applied. | COMPLETE |
 
 | FIX-430 | 2026-05-09 16:02 PDT | TYOVA | Chapter 50 tilde rendering fix — ~ replaced with approx. in Chapter50Stats.tsx and bookChapterContent.ts. Negative sign display corrected. Zero TypeScript errors. | COMPLETE |
+
+| FIX-431 | 2026-05-09 18:08 PDT | ty-ai-governance | Chapter 49 source TY_BOOK_CHAPTER_49_FOR_EVERYONE.md committed to book directory. All corrections applied. Commit 415698b. | COMPLETE |
+
+| FIX-432 | 2026-05-09 18:08 PDT | ty-ai-governance | Chapter 50 source TY_BOOK_CHAPTER_50_THE_NUMBERS.md committed to book directory. Line counts corrected 436k to 76,609. Tildes replaced with approx. Commit 415698b. | COMPLETE |
