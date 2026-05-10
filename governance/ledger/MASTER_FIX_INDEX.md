@@ -7989,3 +7989,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-435 | 2026-05-09 22:20-22:27 PDT | SS321 | TY Soul Words card all text forced to pure white (#FFFFFF). Updated SoulWordsCardHero.tsx, SoulWordsCard.tsx, SoulWordHeart.tsx. All breakpoints including mobile. Verified: CONFIRMED. CLOSED |
 
 | FIX-436 | 2026-05-09 22:38-22:58 PDT | SS321 | Live listener count fix attempted. Channel collision caused mobile regression. Reverted to per-instance channel. Mobile restored. Original bug deferred - requires singleton/broadcast redesign. REVERTED-DEFERRED |
+
+| FIX-439 | 2026-05-10 10:49-11:38 PDT | SS321 | Live Activity showing Someone instead of names. RLS blocked profiles join. Created get_activity_profiles SECURITY DEFINER RPC. ActivityPage.tsx updated to bulk RPC. activity_anonymous reset to false for 2 accounts. Verified: names showing. CLOSED |

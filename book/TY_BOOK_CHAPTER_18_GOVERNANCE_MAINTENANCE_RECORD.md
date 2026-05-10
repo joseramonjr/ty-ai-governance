@@ -9100,3 +9100,19 @@ Mobile restored. Original bug persists: late joiner
 sees own count only. Proper fix requires singleton
 shared channel or broadcast pattern redesign.
 Status: REVERTED - DEFERRED
+
+### Entry-449
+FIX-439 | 2026-05-10 10:49-11:38 PDT | SS321 (Lovable)
+Live Activity feed showing "Someone" instead of screen names.
+Root cause 1: profiles RLS lockdown (owner_or_admin_select)
+blocking embedded profiles:user_id join in ActivityPage.tsx.
+Root cause 2: activity_anonymous = true on both active
+accounts (Jose Ramon, susan.bobadilla23) set unintentionally.
+Fix: new SECURITY DEFINER RPC get_activity_profiles(uuid[])
+created. ActivityPage.tsx fetchFeed and fetchOnlineUsers
+updated to use bulk RPC instead of embedded join.
+activity_anonymous reset to false for both accounts via
+Supabase and privacy settings.
+Deferred: investigate why activity_anonymous defaulted to
+true for those accounts - possible earlier migration bug.
+Verified: screen names now showing correctly. CLOSED
