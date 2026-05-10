@@ -9157,3 +9157,16 @@ untrack/removeChannel). Hard refresh confirmed clean.
 Live Activity online card 2-3 min delay: DEFERRED -
 Realtime fix needs isolated testing in dedicated session.
 Hard refresh regression: FIXED. CLOSED
+
+### Entry-452
+FIX-437 | 2026-05-10 08:39-12:17 PDT | SS321 (Lovable)
+Per-track listener count broadcast pattern - CANCELLED.
+Mis-scoped fix. Original bug report was the header navbar
+pill showing wrong count when 2 users were online - not
+a per-track listener badge. Broadcast pattern changes to
+useTrackPresence and useListenerCount were applied to
+per-track hooks that have no visible UI badge on track
+cards. Applied code is harmless but was solving a problem
+that did not exist in visible UI. Original bug was fully
+resolved by FIX-438 (platform online presence fixes).
+Status: CANCELLED

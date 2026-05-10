@@ -7995,3 +7995,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-438 | 2026-05-10 09:13-11:41 PDT | SS321 | Platform online presence navbar pill delay. Multiple sub-fixes: heartbeat 20s, Realtime primary source, async teardown, session-driven effect, hasReceivedSync flag, request-count broadcast. Login/logout fast. Late joiner ~7s improved from 2-3min. CLOSED |
 
 | FIX-440 | 2026-05-10 11:44-13:05 PDT | SS321 | Live Activity online card delay + hard refresh regression. Realtime fix for card delay caused crash - reverted - deferred. Hard refresh cold start race in useOnlineCount/useOnlinePresence fixed via try/catch, queueMicrotask, subscribed flag. Hard refresh clean. CLOSED |
+
+| FIX-437 | 2026-05-10 08:39-12:17 PDT | SS321 | Per-track listener count broadcast pattern. CANCELLED - mis-scoped. Original bug was header navbar pill count (fixed by FIX-438). Per-track hooks modified but no visible UI badge exists. Code harmless. CANCELLED |
