@@ -9075,3 +9075,13 @@ Email link set to break-words inline-block so it wraps
 onto its own line on mobile when needed.
 Verified on device: CONFIRMED.
 Status: CLOSED
+
+### Entry-447
+FIX-435 | 2026-05-09 22:20-22:27 PDT | SS321 (Lovable)
+TY Soul Words card - all text forced to pure white.
+Updated SoulWordsCardHero.tsx, SoulWordsCard.tsx, and
+SoulWordHeart.tsx. All text overrides applied to
+#FFFFFF at all breakpoints including mobile. No
+background, layout, spacing, or other styling changed.
+Verified on desktop and mobile: CONFIRMED.
+Status: CLOSED
