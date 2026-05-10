@@ -9187,3 +9187,21 @@ Both Realtime approaches caused mobile instability.
 Requires dedicated architectural session for safe fix.
 Badge shows 0 / hidden until count mechanism resolved.
 Status: PARTIALLY COMPLETE - count mechanism DEFERRED
+
+### Entry-454
+FIX-442 | 2026-05-10 13:19-16:26 PDT | SS321 (Supabase)
+Billboard Trophy Cron verification and threshold fix.
+Verified pg_cron enabled. Two Billboard cron jobs active:
+refresh_billboard_daily (daily 00:05) and
+archive_billboard_monthly (1st of month 00:05 - June 1).
+Critical issue found: unique listener threshold was 3 -
+zero tracks qualified. Platform launched April 25, not
+enough users yet. Threshold reduced from 3 to 1 in both
+refresh_global_billboard() and archive_monthly_billboard()
+via CREATE OR REPLACE FUNCTION in Supabase SQL Editor.
+Post-fix: 13 tracks now qualify for Billboard.
+Badge dry-run confirmed: top 3 for May identified.
+Manual refresh_global_billboard() executed - Billboard
+live on SS321 showing 13 tracks with correct rankings.
+June 1 archive cron verified ready to award badges.
+Status: CLOSED
