@@ -9371,3 +9371,27 @@ for listener, Settings button navigates correctly, role change
 to Both triggers toast and auto-return to /upload, upload form
 renders. Role system sequence FIX-448 through FIX-451 complete.
 CLOSED
+
+### Entry-464 | FIX-452 | 2026-05-11 09:29-10:19 PDT San Diego
+SS321. Artist intelligence layer — TY reads and presents
+artist's own track performance data. Three changes to
+ty-ai-chat/index.ts: getArtistTracks() function added,
+queries tracks table by artist_id ordered by play_count
+desc limit 10, returns formatted string with title/genre/
+moods/plays/views/status/story-status/soul-status. userRole
+fetched sequentially before parallel fetch — enables
+conditional artist track fetch. getArtistTracks added to
+Promise.all conditionally for artist/both roles only.
+ARTIST TRACK DATA block injected into system prompt for
+artist/both users. Three-stage debugging required: (1) Haiku
+classifier amendment added NOT CATALOG_QUERY artist examples
+— wrong location, classifyIntent() was actual culprit. (2)
+artistSelfQuestions bypass guard added before classifyIntent()
+in useTYAIChatProcessor.ts — correct location but return used
+response:'' instead of null. (3) Return corrected to
+response:null plus claudeContext instruction — triggers edge
+function call per container logic (response===null AND
+claudeContext truthy). source corrected to claude_api per
+ChatSource type. Verified live: TY listed real tracks with
+actual play counts and view counts, identified Story/Soul
+gaps, artist peer tone confirmed. CLOSED
