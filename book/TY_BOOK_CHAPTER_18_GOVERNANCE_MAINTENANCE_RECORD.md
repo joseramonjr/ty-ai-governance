@@ -9436,3 +9436,25 @@ Claude AI response with real platform data, artist release
 timing returns Claude AI correctly. No pattern additions.
 No other files touched. Tier System integrity preserved.
 CLOSED
+
+### Entry-467 | FIX-455 | 2026-05-11 11:01-11:26 PDT San Diego
+SS321. Proactive TY greeting — specific artist uploads,
+inactivity detection, and greeting variety. Two files:
+get-greeting-context edge function and TYAIDailyGreeting.ts.
+Edge function: added newArtistTracks query — fetches tracks
+from followed artists uploaded in last 24 hours with title
+and artist display name, limit 3. Added daysSinceLastPlay
+query — finds most recent track_plays_log entry for user,
+calculates days elapsed. Both returned in context JSON.
+TYAIDailyGreeting.ts: greeting now names specific artist
+and track title when newArtistTracks present, falls back
+to recentFollowedActivity count otherwise. Inactivity
+message fires when daysSinceLastPlay >= 3. Amendment:
+greeting variety added — opening rotates across 4 variants
+using getDay() as deterministic index, caught-up message
+rotates across 4 variants same way. Verified live: caught-up
+message rotated correctly (Nothing new in the catalog...),
+opening rotation confirmed working deterministically by day.
+newArtistTracks fallback confirmed correct — no followed
+artist uploads in last 24 hours, SQL verified zero rows.
+Direction 2 Option B foundation complete. CLOSED
