@@ -9333,3 +9333,22 @@ Listener question served naturally with organic role bridging —
 TY referenced artist identity while answering listener question
 without being prompted. Tier System untouched. Frontend untouched.
 CLOSED
+
+### Entry-462 | FIX-450 | 2026-05-11 08:28-09:00 PDT San Diego
+SS321. Platform role selector in Settings + TY conversational
+role guidance. Settings.tsx Profile card updated: platform_role
+added to profiles fetch, platformRoleSaving state added,
+handlePlatformRoleChange handler with optimistic update and
+rollback on error, Select dropdown (Listener/Artist/Both)
+inserted between Country row and Edit Profile button, Loader2
+spinner during save, toast on success. KB entry for role change
+patterns drafted then removed per SS-FIX-306 discipline —
+pattern list approach rejected. Claude Sonnet handles role
+change questions conversationally via platform knowledge.
+TYAISS321Knowledge.ts returned to canonical state (235 lines).
+Haiku notification context bleed identified as edge case —
+not a Tier System defect. Verified live: dropdown present in
+Settings, toast fires on change, Supabase profiles.platform_role
+confirmed updated. TY conversational flow verified: Sonnet
+answered role question naturally, KB navigated to /settings
+on follow-up command. CLOSED
