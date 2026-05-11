@@ -9315,3 +9315,21 @@ selection correct, layout on-brand. Supabase profiles column
 confirmed added. Trigger write verified on next real signup.
 No TY changes in this fix — TY role awareness is SS-FIX-449.
 No new routes. No new pages. CLOSED
+
+### Entry-461 | FIX-449 | 2026-05-10 22:00-22:14 PDT San Diego
+SS321. TY platform role awareness. getUserRole() async function
+added to ty-ai-chat edge function — reads profiles.platform_role
+for current user, fallback listener. userRole hoisted alongside
+userContext/objectiveSignals/platformKnowledge. Added to parallel
+Promise.all fetch — zero added latency. IDENTITY AND ROLE block
+in systemPrompt extended with dynamic role line and conditional
+ARTIST CONTEXT block for artist/both users. Migration: 5 artist
+rows added to ty_platform_knowledge (Track Performance, Story
+Soul Guidance, Billboard for Artists, Upload Best Practices,
+Stripe Connect). Verified live: artist mode responds as peer
+creator — opened with 'as a fellow creator', referenced BAB To
+Clair Ver3 by name, gave specific Story/Soul writing guidance.
+Listener question served naturally with organic role bridging —
+TY referenced artist identity while answering listener question
+without being prompted. Tier System untouched. Frontend untouched.
+CLOSED
