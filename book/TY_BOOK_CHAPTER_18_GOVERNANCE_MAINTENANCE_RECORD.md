@@ -9482,3 +9482,23 @@ notify-new-track and notify-user edge functions already
 exist — FIX-457 will extend notify-new-track with push.
 Verified live: subscription row confirmed in Supabase,
 browser push notification displayed successfully. CLOSED
+
+### Entry-469 | FIX-457 | 2026-05-11 12:24-13:16 PDT San Diego
+SS321. Wire notify-new-track to track approval flow —
+Direction 2 Option A trigger 1. Root cause: notify-new-track
+existed but was never called from any code path. Three-file
+fix: (1) config.toml — verify_jwt = false added for
+notify-new-track. (2) useTrackReview.ts — fire-and-forget
+supabase.functions.invoke notify-new-track added to
+useApproveTrack onSuccess alongside existing embedding
+invocation. (3) notify-new-track/index.ts — auth gate
+upgraded from service-role-only to accept EITHER service-role
+key OR admin JWT verified via getClaims + has_role RPC,
+service-role client still used for bulk ops after gate.
+Push fan-out block (SS-FIX-457) already in function from
+FIX-457 amendment. Verified live: in-app notification
+appeared in test user bell — Jose Ramon just uploaded a new
+free track Electric Smile Ver14. Browser push popup fired
+on approval. Test user push subscription confirmed in
+push_subscriptions table. Direction 2 Option A trigger 1
+complete. CLOSED
