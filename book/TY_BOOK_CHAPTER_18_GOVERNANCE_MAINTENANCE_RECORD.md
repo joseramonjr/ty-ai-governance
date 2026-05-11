@@ -9221,3 +9221,24 @@ Two changes:
 Both changes ensure what users see matches exactly what
 determines badge winners on June 1.
 Status: CLOSED
+
+### Entry-456
+FIX-444 | 2026-05-10 17:05-18:28 PDT | SS321 (Lovable)
+Billboard Competition vs Reveal Mode redesign.
+Two display modes implemented in Billboard.tsx:
+COMPETITION MODE (default during month): plain ranked
+list for all tracks, no podium, no crown, no medals,
+no confetti. All Stats buttons and BillboardStatsModal
+remain available.
+REVEAL MODE (June 1+): full podium with Champion crown,
+gold/silver/bronze medals, confetti, all 21 standings.
+Trigger: isRevealMode checks billboard_monthly_archive
+for previous month record. No archive = Competition Mode.
+Archive exists = Reveal Mode.
+QA test: Reveal Mode temporarily forced true - full
+celebration confirmed rendering correctly - reverted.
+Competition Mode restored. Cache investigation: 6 tracks
+in billboard_cache correct for May 1-10 window. Earlier
+13-track count was from 30-day window before switch.
+List grows automatically as May activity accumulates.
+Status: CLOSED

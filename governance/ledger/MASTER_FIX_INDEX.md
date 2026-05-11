@@ -8003,3 +8003,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-442 | 2026-05-10 13:19-16:26 PDT | SS321 | Billboard Trophy Cron verified. Threshold 3->1 in both Billboard functions. 13 tracks qualify. Badge dry-run confirmed top 3. Billboard live on SS321. June 1 archive cron ready. CLOSED |
 
 | FIX-443 | 2026-05-10 16:26-17:05 PDT | SS321 | Billboard month-to-date window. refresh_global_billboard updated from 30-day rolling to DATE_TRUNC month start. Date display updated May 1 to today. Live Billboard and competition window now match exactly. CLOSED |
+
+| FIX-444 | 2026-05-10 17:05-18:28 PDT | SS321 | Billboard Competition vs Reveal Mode. Plain list during month, full podium/celebration on June 1. Triggered by billboard_monthly_archive previous month check. QA tested. Competition Mode live. CLOSED |
