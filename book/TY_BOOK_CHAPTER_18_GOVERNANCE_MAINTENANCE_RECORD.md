@@ -9395,3 +9395,25 @@ claudeContext truthy). source corrected to claude_api per
 ChatSource type. Verified live: TY listed real tracks with
 actual play counts and view counts, identified Story/Soul
 gaps, artist peer tone confirmed. CLOSED
+
+### Entry-465 | FIX-453 | 2026-05-11 10:20-10:48 PDT San Diego
+SS321. Artist release timing guidance — Option A and B
+combined. Migration: 5 rows added to ty_platform_knowledge
+category artist_release (Story/Soul Before Publishing,
+Billboard Upload Strategy, Post-Upload Promotion, Stripe
+Connect Before Publishing, Track Metadata Quality).
+Edge function: getPlatformActivity() function added —
+queries track_plays_log last 30 days, computes peak
+listening day and hour by UTC, returns directional summary
+with early-data caveat. Hoisted platformActivity. Extended
+Promise.all to 5 entries — artist tracks and platform
+activity fetched conditionally for artist/both roles.
+PLATFORM ACTIVITY DATA block injected into system prompt.
+Artist self-question guard amended from flat pattern list
+to semantic check: hasPossessive + hasArtistNoun OR
+hasArtistAction — eliminates pattern proliferation.
+classifyIntent() architectural issue identified — deferred
+to dedicated fix after FIX-453. Verified live: Tuesday 7am
+UTC peak data cited correctly, real track play count
+rankings returned accurately, Story/Soul gap detection
+active. Direction 1 Artist-Facing TY complete. CLOSED
