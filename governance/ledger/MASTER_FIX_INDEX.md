@@ -8005,3 +8005,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-443 | 2026-05-10 16:26-17:05 PDT | SS321 | Billboard month-to-date window. refresh_global_billboard updated from 30-day rolling to DATE_TRUNC month start. Date display updated May 1 to today. Live Billboard and competition window now match exactly. CLOSED |
 
 | FIX-444 | 2026-05-10 17:05-18:28 PDT | SS321 | Billboard Competition vs Reveal Mode. Plain list during month, full podium/celebration on June 1. Triggered by billboard_monthly_archive previous month check. QA tested. Competition Mode live. CLOSED |
+
+| FIX-445 | 2026-05-10 18:36-18:58 PDT | SS321 | Landing page BillboardPreviewSection reveal mode gate. 3 track cards hidden during month, visible June 1. Title and CTA always render. Dynamic subtitle with month name on reveal. Mirrors Billboard.tsx isRevealMode. Verified live. CLOSED |

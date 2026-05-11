@@ -9242,3 +9242,23 @@ in billboard_cache correct for May 1-10 window. Earlier
 13-track count was from 30-day window before switch.
 List grows automatically as May activity accumulates.
 Status: CLOSED
+
+### Entry-457
+FIX-445 | 2026-05-10 18:36-18:58 PDT | SS321 (Lovable)
+Landing page BillboardPreviewSection reveal mode gate.
+Hidden the 3 preview track cards (crown/medals) during
+competition month. Title, subtitle, How are rankings
+calculated link, and View Full Top 21 button always
+visible. On June 1 when archive_monthly_archive has
+previous month record: 3 track cards appear with crown
+and medals, subtitle updates dynamically to include
+month name: The hottest tracks on the planet for May
+2026 - ranked by real listeners.
+Initial fix hid entire section - refined to only gate
+the 3 track cards. Title and CTA always render.
+isRevealMode pattern mirrors Billboard.tsx exactly.
+Verified on live site: title visible, cards hidden.
+Full automation confirmed: June 1 cron triggers reveal
+on both landing page and full Billboard page with no
+manual action required.
+Status: CLOSED
