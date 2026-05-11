@@ -9417,3 +9417,22 @@ to dedicated fix after FIX-453. Verified live: Tuesday 7am
 UTC peak data cited correctly, real track play count
 rankings returned accurately, Story/Soul gap detection
 active. Direction 1 Artist-Facing TY complete. CLOSED
+
+### Entry-466 | FIX-454 | 2026-05-11 10:49-11:00 PDT San Diego
+SS321. Remove music_question catch-all from INTENT_PATTERNS.
+Root cause of recurring artist question misclassification
+identified: last entry in INTENT_PATTERNS array was a
+broad catch-all matching any message containing music, song,
+track, artist, album, playlist, or genre — returned
+music_question intent, blocking Claude Sonnet for all
+music-keyword messages regardless of context. Single entry
+removed from useTYAIChatProcessor.ts INTENT_PATTERNS array.
+All 57 remaining entries untouched. Messages containing
+music keywords that do not match a specific pattern now
+fall through to general_chat and route to Claude Sonnet.
+Verified live: jazz catalog query correctly routed through
+catalog search path, genre popularity question now returns
+Claude AI response with real platform data, artist release
+timing returns Claude AI correctly. No pattern additions.
+No other files touched. Tier System integrity preserved.
+CLOSED
