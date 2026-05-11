@@ -9352,3 +9352,22 @@ Settings, toast fires on change, Supabase profiles.platform_role
 confirmed updated. TY conversational flow verified: Sonnet
 answered role question naturally, KB navigated to /settings
 on follow-up command. CLOSED
+
+### Entry-463 | FIX-451 | 2026-05-11 09:01-09:28 PDT San Diego
+SS321. Upload gate for Listener role + return flow.
+Upload.tsx: userRole and roleLoading state added. useEffect
+fetches profiles.platform_role on user.id change, fallback
+listener. if roleLoading return null. if user and role equals
+listener renders role gate card — Artist Access Required
+message, explanation text referencing Listener/Artist/Both,
+Go to Settings button navigating with state returnTo /upload.
+Upload form completely hidden for listeners. Amendment added
+same fix: Upload.tsx button passes returnTo /upload in router
+state. Settings.tsx: useLocation added at component top level,
+handlePlatformRoleChange extended — after successful save if
+new role is not listener and returnTo exists auto-navigates
+back to returnTo path. Full flow verified live: gate shows
+for listener, Settings button navigates correctly, role change
+to Both triggers toast and auto-return to /upload, upload form
+renders. Role system sequence FIX-448 through FIX-451 complete.
+CLOSED
