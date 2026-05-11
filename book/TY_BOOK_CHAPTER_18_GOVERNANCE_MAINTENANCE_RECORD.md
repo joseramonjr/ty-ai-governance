@@ -9297,3 +9297,21 @@ falls back to displayName + 's Playlist'. (3) ty-ai-chat.ts types
 interface. Verified live: 'Create a playlist called Road Trip'
 created 'Road Trip'. Unnamed request created 'Jose Ramon's
 Playlist' (correct fallback). Open since April 25 launch. CLOSED
+
+### Entry-460 | FIX-448 | 2026-05-10 20:35-21:58 PDT San Diego
+SS321. Platform role system foundation. New profiles column:
+platform_role text NOT NULL DEFAULT 'listener' CHECK IN
+('listener','artist','both'). handle_new_user() trigger updated
+to read raw_user_meta_data->>'platform_role' with 'listener'
+fallback. Existing users default to listener automatically.
+Auth.tsx signup form: three role selection cards added between
+password field and privacy checkbox — Listener (default),
+Artist, Both. Selected card highlights with border-primary
+ring. useAuth.tsx signUp signature updated to accept optional
+options parameter. AuthContext.tsx type updated to match.
+platform_role passed via signUp options.data metadata on
+submit. UI verified live: cards render correctly, default
+selection correct, layout on-brand. Supabase profiles column
+confirmed added. Trigger write verified on next real signup.
+No TY changes in this fix — TY role awareness is SS-FIX-449.
+No new routes. No new pages. CLOSED
