@@ -9522,3 +9522,22 @@ Cron will fire automatically when users become inactive.
 Direction 2 complete — both Option B (greeting) and
 Option A (push infrastructure + two triggers) sealed.
 CLOSED
+
+### Entry-471 | FIX-459 | 2026-05-11 15:17-15:26 PDT San Diego
+SS321. Cross-user taste aggregation — Direction 3 fix 1.
+getCrossUserTrends() function added to ty-ai-chat edge
+function. Queries track_plays_log last 7 days excluding
+current user, joins tracks title and genre, filters to
+tracks whose genre matches user's top_genres preferences
+(substring case-insensitive), aggregates play counts per
+track, returns top 5 sorted by count. Hoisted
+crossUserTrends variable. Added as 6th entry in parallel
+Promise.all fetch. CROSS-USER TRENDS block injected into
+system prompt after PLATFORM ACTIVITY block — instructs
+TY to reference naturally as listeners who enjoy what you
+do are gravitating toward. Verified live: TY referenced
+trending among listeners with similar taste and other
+listeners who enjoy your style are gravitating toward this
+week in recommendation response. Bonus: FIX-455 greeting
+correctly named two unheard tracks by title and artist.
+CLOSED
