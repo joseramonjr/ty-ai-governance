@@ -9502,3 +9502,23 @@ free track Electric Smile Ver14. Browser push popup fired
 on approval. Test user push subscription confirmed in
 push_subscriptions table. Direction 2 Option A trigger 1
 complete. CLOSED
+
+### Entry-470 | FIX-458 | 2026-05-11 13:17-13:28 PDT San Diego
+SS321. Inactivity re-engagement push notification —
+Direction 2 Option A trigger 2. Migration: created
+send_inactivity_push_notifications() SECURITY DEFINER
+function — queries push_subscriptions for users who have
+at least one track_plays_log row but none in last 3 days,
+fires net.http_post to send-push-notification edge function
+for each qualifying user with title SS321 misses you and
+re-engagement body. pg_cron job inactivity_push_daily
+scheduled at 0 17 * * * (17:00 UTC daily, jobid 11).
+No auth header needed — send-push-notification has
+verify_jwt=false. Smoke test ran without error, returned
+void correctly. Zero qualifying users confirmed via direct
+SQL — all users with push subscriptions have played within
+last 3 days. Edge function logs confirm no spurious calls.
+Cron will fire automatically when users become inactive.
+Direction 2 complete — both Option B (greeting) and
+Option A (push infrastructure + two triggers) sealed.
+CLOSED
