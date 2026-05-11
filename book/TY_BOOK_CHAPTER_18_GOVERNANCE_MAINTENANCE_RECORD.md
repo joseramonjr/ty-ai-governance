@@ -9281,3 +9281,19 @@ Reveal Mode, month-to-date window, online presence system, Live
 Activity screen names, Billboard /billboard route. Verified live:
 Billboard description correct, Who is online navigates /activity,
 Sound Story Soul full philosophy returned. CLOSED
+
+### Entry-459 | FIX-447 | 2026-05-10 20:05-20:34 PDT San Diego
+SS321. TY AI playlist naming bug fix. Root cause: TYAIPanelContainer
+shouldCreatePlaylist handler always constructed name as
+displayName + 's Playlist' — user-requested name was never
+extracted or used. Three files changed: (1) useTYAIChatProcessor.ts
+— added extractPlaylistName() helper with two regex patterns,
+wired into both CREATE_PLAYLIST handlers (Tier 0c2 keyword match
+and Tier 0.5 Haiku classifier case), returns suggestedPlaylistName
+alongside shouldCreatePlaylist flag. (2) TYAIPanelContainer.tsx —
+playlistName now uses result.suggestedPlaylistName if present,
+falls back to displayName + 's Playlist'. (3) ty-ai-chat.ts types
+— suggestedPlaylistName?: string added to ChatProcessResult
+interface. Verified live: 'Create a playlist called Road Trip'
+created 'Road Trip'. Unnamed request created 'Jose Ramon's
+Playlist' (correct fallback). Open since April 25 launch. CLOSED
