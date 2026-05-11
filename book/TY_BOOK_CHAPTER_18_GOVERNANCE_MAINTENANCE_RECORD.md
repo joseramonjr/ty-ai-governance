@@ -9205,3 +9205,19 @@ Manual refresh_global_billboard() executed - Billboard
 live on SS321 showing 13 tracks with correct rankings.
 June 1 archive cron verified ready to award badges.
 Status: CLOSED
+
+### Entry-455
+FIX-443 | 2026-05-10 16:26-17:05 PDT | SS321 (Lovable + Supabase)
+Billboard date range display + month-to-date window fix.
+Two changes:
+1. refresh_global_billboard() updated from rolling 30-day
+   window to month-to-date (DATE_TRUNC('month', NOW())).
+   Now matches archive_monthly_billboard() competition
+   window exactly. Manual refresh executed.
+2. Billboard.tsx date range display updated from rolling
+   30 days to month-to-date (first day of current month
+   to today). Shows: "Rankings from: May 1, 2026 to
+   May 10, 2026". Updates daily as month progresses.
+Both changes ensure what users see matches exactly what
+determines badge winners on June 1.
+Status: CLOSED

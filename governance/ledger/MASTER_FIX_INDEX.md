@@ -8001,3 +8001,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-441 | 2026-05-10 12:23-13:19 PDT | SS321 | Per-track live listener badge. Badge markup added to TrackCard, TrackListRow, TrackDetailCard. Count mechanism deferred - broadcast race + presence observer both caused mobile crashes. Badge UI ready, count shows 0 until mechanism fixed. PARTIAL-DEFERRED |
 
 | FIX-442 | 2026-05-10 13:19-16:26 PDT | SS321 | Billboard Trophy Cron verified. Threshold 3->1 in both Billboard functions. 13 tracks qualify. Badge dry-run confirmed top 3. Billboard live on SS321. June 1 archive cron ready. CLOSED |
+
+| FIX-443 | 2026-05-10 16:26-17:05 PDT | SS321 | Billboard month-to-date window. refresh_global_billboard updated from 30-day rolling to DATE_TRUNC month start. Date display updated May 1 to today. Live Billboard and competition window now match exactly. CLOSED |
