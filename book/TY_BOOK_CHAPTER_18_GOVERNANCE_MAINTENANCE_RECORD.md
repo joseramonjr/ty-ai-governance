@@ -9541,3 +9541,22 @@ listeners who enjoy your style are gravitating toward this
 week in recommendation response. Bonus: FIX-455 greeting
 correctly named two unheard tracks by title and artist.
 CLOSED
+
+### Entry-472 | FIX-460 | 2026-05-11 15:27-15:35 PDT San Diego
+SS321. Momentum detection — Direction 3 fix 2 and final.
+getMomentumTracks() function added to ty-ai-chat edge
+function. Queries track_plays_log last 48 hours, splits
+into two 24-hour buckets (recent vs previous), aggregates
+per track_id, filters to tracks with 2+ recent plays and
+recent count exceeding previous count, returns top 3
+sorted by recent count. Hoisted momentumTracks variable.
+Added as 7th entry in parallel Promise.all fetch.
+MOMENTUM TRACKS block injected into system prompt after
+CROSS-USER TRENDS block — instructs TY to surface
+naturally as this track is gaining momentum. Verified
+live: TY referenced cross-user traction and gaining
+momentum among your listener cohort naturally in
+recommendation response. Named real tracks. All three
+directions complete — Direction 1 Artist TY, Direction 2
+Proactive TY, Direction 3 Cross-Catalog Intelligence.
+CLOSED
