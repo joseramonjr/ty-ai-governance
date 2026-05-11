@@ -9458,3 +9458,27 @@ opening rotation confirmed working deterministically by day.
 newArtistTracks fallback confirmed correct — no followed
 artist uploads in last 24 hours, SQL verified zero rows.
 Direction 2 Option B foundation complete. CLOSED
+
+### Entry-468 | FIX-456 | 2026-05-11 11:27-12:23 PDT San Diego
+SS321. Push notification infrastructure — Direction 2
+Option A. VAPID keys generated and stored as Supabase
+secrets (VAPID_PUBLIC_KEY, VAPID_PRIVATE_KEY,
+VAPID_SUBJECT). Four components built: (1) push_subscriptions
+table with RLS — user_id FK auth.users CASCADE, endpoint,
+p256dh, auth_key, UNIQUE user_id+endpoint, policy users
+manage own rows only. (2) public/sw.js extended with push
+event listener and notificationclick listener — parses JSON
+payload, shows browser notification with icon-192.png and
+icon-512.png, handles click to focus or open window. (3)
+usePushNotifications hook created — checks serviceWorker
+and PushManager support, waits for SW ready, upserts
+subscription to push_subscriptions on login, silent error
+handling. Wired into AppContent in App.tsx. (4) Edge function
+send-push-notification created — fetches user push
+subscriptions, sends via npm:web-push with VAPID, auto-
+deletes expired 410 subscriptions, returns sent count,
+verify_jwt false for server-to-server calls. Discovered
+notify-new-track and notify-user edge functions already
+exist — FIX-457 will extend notify-new-track with push.
+Verified live: subscription row confirmed in Supabase,
+browser push notification displayed successfully. CLOSED
