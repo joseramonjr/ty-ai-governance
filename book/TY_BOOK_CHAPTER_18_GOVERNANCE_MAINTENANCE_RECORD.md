@@ -9262,3 +9262,22 @@ Full automation confirmed: June 1 cron triggers reveal
 on both landing page and full Billboard page with no
 manual action required.
 Status: CLOSED
+
+### Entry-458 | FIX-446 | 2026-05-10 19:44-20:04 PDT San Diego
+SS321. TY AI dynamic platform knowledge layer. Created
+ty_platform_knowledge Supabase table (26 rows, 5 categories:
+platform/navigation/feature/behavior/philosophy). RLS enabled,
+service role read. Added getPlatformKnowledge() async function
+to ty-ai-chat edge function immediately before serve(). Hoisted
+platformKnowledge variable alongside userContext/objectiveSignals.
+Added to parallel Promise.all fetch with getUserContext and
+getObjectiveSignals — zero added latency. Replaced hardcoded
+20-bullet PLATFORM KNOWLEDGE system prompt block with dynamic
+DB fetch. Fallback static string on error — no crash path.
+Tier System untouched. sessionMessages merge untouched.
+ty_conversations and ty_user_preferences untouched. May 10
+additions seeded as rows: Billboard Competition Mode, Billboard
+Reveal Mode, month-to-date window, online presence system, Live
+Activity screen names, Billboard /billboard route. Verified live:
+Billboard description correct, Who is online navigates /activity,
+Sound Story Soul full philosophy returned. CLOSED
