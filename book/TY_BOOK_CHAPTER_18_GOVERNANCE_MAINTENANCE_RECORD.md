@@ -9560,3 +9560,21 @@ recommendation response. Named real tracks. All three
 directions complete — Direction 1 Artist TY, Direction 2
 Proactive TY, Direction 3 Cross-Catalog Intelligence.
 CLOSED
+
+### Entry-473 | FIX-461 | 2026-05-11 15:36-16:23 PDT San Diego
+SS321. Billboard coaching for artists. getArtistBillboardCoaching()
+function added to ty-ai-chat edge function. Fetches artist's
+approved tracks, queries billboard_cache for their rankings
+in parallel with top 3, calculates gap to top 3, days
+remaining in month, constructs coaching string with exact
+rank, score, gap, and days remaining. Top 3 path: maintain
+and promote message with Trophy Badge reminder. Outside top
+3 path: specific gap and days remaining. NOT_ON_BILLBOARD
+fallback. Hoisted artistBillboardCoaching. Added as 8th
+conditional Promise.all entry for artist/both users. ARTIST
+BILLBOARD COACHING block injected into system prompt inside
+artist context region after PLATFORM ACTIVITY DATA. Verified
+live: TY correctly identified Oh My Girl OMG ver10 at rank
+1 score 19, stated top 3 position, mentioned Trophy Badge
+June 1, gave specific promotion coaching. Badge ✨ Claude AI.
+CLOSED
