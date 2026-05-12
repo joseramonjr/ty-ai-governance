@@ -9658,3 +9658,23 @@ No migration. No new edge function. Verified live: dialog
 opens, TY generates Story draft, Use this fills textarea.
 Works on both Upload and Edit pages. Option B complete.
 CLOSED
+
+### Entry-478 | FIX-466 | 2026-05-11 18:41-20:06 PDT San Diego
+SS321. TY Preference Transparency — Option C. System
+prompt TRANSPARENCY RULES block added to ty-ai-chat
+edge function immediately after Known user preferences
+injection. Block instructs TY to give warm honest
+specific answer when user asks what TY knows — state
+top genres moods styles from preferences, acknowledge
+if no preferences yet, explain learning from plays likes
+skips, confirm 21-day conversation memory then forgotten,
+never claim more than context contains, end with Settings
+clearing instruction. No phrase lists, no routing changes,
+no pattern additions — query routes naturally via Haiku
+OTHER path to Claude Sonnet. Verified live: TY correctly
+stated role listener and artist, top genres R&B Soul
+Country, moods Romantic Energetic Happy, 30 plays and
+20 likes analyzed, artist Billboard stats, 21-day memory
+explained, Settings reminder included. Continuous voice
+mode ambient pickup identified as separate non-issue.
+Option C complete. CLOSED

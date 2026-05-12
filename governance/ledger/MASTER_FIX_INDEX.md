@@ -8047,3 +8047,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-464 | 2026-05-11 17:56-18:26 PDT | SS321 | Per-track live listener count DB polling. useListenerCountDB hook polls user_presence current_page every 30s, 45s freshness window. Math.max(rt,db) merge in TrackCard, TrackListRow, TrackDetailCard simultaneously. No migration. Verified live: 1 live badge confirmed. Option A deferred fix complete. CLOSED |
 
 | FIX-465 | 2026-05-11 18:27-18:40 PDT | SS321 | TY Story/Soul Coach. TYStoryCoach component — dialog with guided question, ty-ai-chat claudeContext generation, draft display, Use this/Try again buttons. Wired into Upload.tsx and EditTrack.tsx for both story and soul fields. No migration. Verified live. Option B complete. CLOSED |
+
+| FIX-466 | 2026-05-11 18:41-20:06 PDT | SS321 | TY Preference Transparency. TRANSPARENCY RULES block added to system prompt — instructs TY to give honest taste breakdown, explain learning mechanism, 21-day memory, Settings clearing. No routing changes. Verified live: full taste profile, artist stats, memory explanation, Settings reminder all returned correctly. Option C complete. CLOSED |
