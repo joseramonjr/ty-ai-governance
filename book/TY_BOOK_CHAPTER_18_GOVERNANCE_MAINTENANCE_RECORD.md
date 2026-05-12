@@ -9697,3 +9697,17 @@ failures caught silently — playlist creation always
 succeeds. Verified live: Create a playlist of chill R&B
 music created Jose Ramon's Playlist with 5 tracks.
 Option D complete. CLOSED
+
+### Entry-480 | FIX-468 | 2026-05-11 20:22-20:43 PDT San Diego
+SS321. KB all-words matching architectural fix — E3 deferred
+item. Root cause: getKnowledgeBaseAnswer in TYAISS321Knowledge.ts
+used normalized.includes(p) — exact substring match. Articles
+and filler words between pattern words caused misses. Example:
+open library did not match open the library for me. Fix: changed
+one line to p.split(/\s+/).every(word => normalized.includes(word))
+— all words in pattern must appear in input in any order. No new
+patterns added. No KB entries changed. No processor changes.
+Longest-match-wins logic preserved. Verified live: open the library
+for me navigated to library. Playlist with 5 TY-created tracks
+confirmed visible. KB pattern growth eliminated permanently.
+CLOSED

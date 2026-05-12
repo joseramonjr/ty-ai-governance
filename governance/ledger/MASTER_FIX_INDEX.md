@@ -8051,3 +8051,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-466 | 2026-05-11 18:41-20:06 PDT | SS321 | TY Preference Transparency. TRANSPARENCY RULES block added to system prompt — instructs TY to give honest taste breakdown, explain learning mechanism, 21-day memory, Settings clearing. No routing changes. Verified live: full taste profile, artist stats, memory explanation, Settings reminder all returned correctly. Option C complete. CLOSED |
 
 | FIX-467 | 2026-05-11 20:07-20:21 PDT | SS321 | TY Smart Playlists. smartPlaylistQuery added to type + both CREATE_PLAYLIST handlers. Container calls search-tracks-semantic, bulk-inserts up to 5 tracks. Three-way addAIMessage fallback. Verified live: 5 chill R&B tracks seeded into new playlist. Option D complete. CLOSED |
+
+| FIX-468 | 2026-05-11 20:22-20:43 PDT | SS321 | KB all-words matching fix. getKnowledgeBaseAnswer single line changed from normalized.includes(p) to p.split whitespace every word present. Articles and filler words no longer break KB matching. Verified live: open the library for me navigated correctly. KB pattern growth eliminated permanently. CLOSED |
