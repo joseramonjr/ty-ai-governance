@@ -9731,3 +9731,24 @@ single-artist branch uses action.includes uploaded to
 pick correct follow-up. Verified live: joseeamonjr
 followed someone new. Want to see the Live Activity.
 Artist name in greeting confirmed. CLOSED
+
+### Entry-482 | FIX-470 | 2026-05-11 21:01-21:14 PDT San Diego
+SS321. Remove accidental preference phrases from
+catalogPatternsQ — systematic audit and cleanup.
+Full audit of all pattern arrays conducted: KB
+14 entries all routed clean, hasArtistAction 7
+phrases clean, artistMusicNouns 9 words clean,
+all playback pattern arrays clean. Found 10
+accidental entries at bottom of catalogPatternsQ
+in useTYAIChatProcessor.ts: what do you know,
+what do you know about, my taste, my music taste,
+my preferences, what i like, my listening, my
+history, know about me, tell me about my. These
+were intercepting preference and transparency
+queries via the catalog path. Removed all 10.
+File from 1449 to 1439 lines. Preference and
+transparency questions now fall through to Claude
+Sonnet naturally. Verified live: What do you know
+about me returned full honest taste breakdown with
+genres moods plays billboard rank 21-day memory
+and Settings reminder. Badge ✨ Claude AI. CLOSED
