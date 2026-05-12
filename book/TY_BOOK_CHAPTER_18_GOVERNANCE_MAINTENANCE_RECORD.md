@@ -9855,3 +9855,29 @@ after commit.
 
 **Commit:** a19a0b3
 **Status:** CLOSED
+
+### Entry-488 | FIX-476 | 2026-05-11 23:11-23:34 PDT San Diego
+
+**Destination:** SS321 — supabase/functions/ty-ai-chat/index.ts + src/hooks/ty-ai-chat/useTYAIChatProcessor.ts
+**Type:** TY AI Intelligence Fix — Option C (New Releases Matched to Taste)
+
+**Problem:** newReleasesPatterns block short-circuited "what's new" queries before
+reaching Claude Sonnet. Returned hardcoded template with 5 most-recent tracks --
+no taste filtering, no personalization, same response for every user.
+
+**Fix:**
+1. Removed newReleasesPatterns intercept from useTYAIChatProcessor.ts. Replaced
+   with governance comment (FIX-476 pattern). Questions now fall through to edge fn.
+2. Added getNewReleasesForTaste() to ty-ai-chat edge function. Reads user top_genres
+   from ty_user_preferences. Queries approved tracks last 7 days. Scores by genre
+   overlap. Two-step PostgREST profiles query (FIX-462/473 pattern). Returns top 5
+   taste-matched results.
+3. Added 11th Promise.all entry (nrt). NEW RELEASES FOR YOUR TASTE block injected
+   into system prompt after momentumTracks block.
+
+**Verified live:**
+- "what's new?" -- Claude Sonnet response, personalized context, no hardcoded template
+- "any new music I might like?" -- taste-matched R&B/Soul/Country tracks returned,
+  cross-user trend signal synthesized simultaneously
+
+**Status:** CLOSED
