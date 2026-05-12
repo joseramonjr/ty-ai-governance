@@ -9881,3 +9881,29 @@ no taste filtering, no personalization, same response for every user.
   cross-user trend signal synthesized simultaneously
 
 **Status:** CLOSED
+
+### Entry-489 | FIX-477 | 2026-05-11 23:35-23:54 PDT San Diego
+
+**Destination:** SS321 — supabase/functions/ty-ai-chat/index.ts
+**Type:** TY AI Intelligence Fix — Option D (Conversation History Summarization)
+
+**Problem:** No handler existed for "what have we talked about?" or "what do you
+remember about me?" queries. Questions fell through to general_chat but Sonnet had
+no temporal structure or explicit guidance to synthesize conversation history.
+ty_conversations query fetched role+content only -- no created_at, no timeframe
+grouping, no summarization instruction.
+
+**Fix:** Added getConversationContext() as 12th Promise.all entry (cc). Queries
+ty_conversations for last 50 user-role messages with created_at. Buckets by
+timeframe: Today / This week / Earlier. Builds CONVERSATION MEMORY block with
+grouped message snippets (80 char truncated) and explicit Sonnet instruction to
+summarize by topic and timeframe. Injected into system prompt after
+newReleasesForTaste block.
+
+**Verified live:**
+- "what have we talked about?" -- Today/This week summary with specific topics,
+  key themes synthesized. Claude Sonnet responding.
+- "what do you remember about me?" -- Full personalized profile: taste, role,
+  Billboard standing, 21-day conversation summary, voice preference.
+
+**Status:** CLOSED
