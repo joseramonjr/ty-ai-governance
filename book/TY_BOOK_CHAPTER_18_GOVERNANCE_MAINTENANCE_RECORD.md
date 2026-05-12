@@ -9752,3 +9752,21 @@ Sonnet naturally. Verified live: What do you know
 about me returned full honest taste breakdown with
 genres moods plays billboard rank 21-day memory
 and Settings reminder. Badge ✨ Claude AI. CLOSED
+
+### Entry-483 | FIX-471 | 2026-05-11 21:15-21:19 PDT San Diego
+SS321. Governance comments on pattern arrays —
+systematic prevention fix. Three comment blocks
+added to useTYAIChatProcessor.ts: (1) above
+catalogPatternsQ — requires FIX number, exact
+phrase, and reason why Claude Sonnet cannot handle
+it before any addition. States unauthorized
+additions will be audited and removed. (2) above
+catalogPatternsMood — same rule referenced.
+(3) above hasArtistAction — requires FIX
+authorization and stated reason why semantic
+hasPossessive plus hasArtistNoun check is
+insufficient. No logic changes. No pattern changes.
+Comments only. Makes governance rule machine-readable
+and visible to Lovable when it reads the file.
+Prevents repeat of FIX-470 accidental addition
+pattern. CLOSED
