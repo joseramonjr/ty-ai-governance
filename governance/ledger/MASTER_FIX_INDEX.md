@@ -8065,3 +8065,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-473 | 2026-05-11 21:33-22:23 PDT | SS321 | TY Artist Follow Recommendations. getArtistRecommendations() two-step function. PostgREST FK fix applied. Parallel fetch wired for listener/both. Data verified correct. Claude Sonnet override of MUST directives noted — generic follow query deferred to post-growth phase. CLOSED |
 
 | FIX-474 | 2026-05-11 22:24-22:33 PDT | SS321 | TY Track Performance Deep Insights. getArtistTrackInsights() — total plays, completion rate, best completion track, peak day/hour from track_plays_log. Verified live: 366 plays, Tuesday 7am peak, completion rate 0% (flag: completed flag never set in audio player). Option B complete. CLOSED |
+
+| FIX-475 | 2026-05-11 23:04-23:10 PDT | ty-ai-governance | Pre-Flight MFI detection v4. Pattern ^#{2,3}(FIX-) blind to pipe-table entries FIX-425 through FIX-474. Updated to dual-format match (heading + pipe-table). Verified: FIX-474 now detected at line 8067. Commit a19a0b3. CLOSED |

@@ -9833,3 +9833,25 @@ track_plays_log — plays_completed 0 on all billboard
 entries — audio player may not be setting completed
 flag. Separate investigation deferred. Option B complete.
 CLOSED
+
+
+### Entry-487 | FIX-475 | 2026-05-11 23:04-23:10 PDT San Diego
+
+**Destination:** ty-ai-governance — tools/Pre-Flight.ps1
+**Type:** Governance Tooling Fix
+
+**Problem:** Pre-Flight.ps1 MFI detection pattern `^#{2,3} (FIX-|SS-FIX-)\d+` matched
+heading-format entries only. FIX-425 through FIX-474 all use pipe-table format
+(`| FIX-NNN |`) and were invisible to Pre-Flight. Script reported FIX-424 as last
+MFI entry instead of FIX-474 -- a 50-fix blind spot.
+
+**Fix:** Pattern updated to dual-format match:
+`(^#{2,3} (FIX-|SS-FIX-)\d+|^\| (FIX-|SS-FIX-)\d+)`
+Comment block updated from v3 to v4. One logical line changed.
+
+**Verification:** Pre-Flight re-run confirmed FIX-474 detected at line 8067. OVERALL: ACTION
+REQUIRED resolved to single uncommitted file item (Pre-Flight.ps1 itself), then READY
+after commit.
+
+**Commit:** a19a0b3
+**Status:** CLOSED
