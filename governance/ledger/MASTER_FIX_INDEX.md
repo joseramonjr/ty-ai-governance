@@ -8063,3 +8063,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-472 | 2026-05-11 21:20-21:32 PDT | SS321 | Correct TY rolling memory description. cleanup_old_ty_conversations confirmed rolling 21-day window not cliff wipe. TRANSPARENCY RULES updated to accurately describe nightly prune and retained 21-day history. Verified live. Zero Fabrication Rule applied. CLOSED |
 
 | FIX-473 | 2026-05-11 21:33-22:23 PDT | SS321 | TY Artist Follow Recommendations. getArtistRecommendations() two-step function. PostgREST FK fix applied. Parallel fetch wired for listener/both. Data verified correct. Claude Sonnet override of MUST directives noted — generic follow query deferred to post-growth phase. CLOSED |
+
+| FIX-474 | 2026-05-11 22:24-22:33 PDT | SS321 | TY Track Performance Deep Insights. getArtistTrackInsights() — total plays, completion rate, best completion track, peak day/hour from track_plays_log. Verified live: 366 plays, Tuesday 7am peak, completion rate 0% (flag: completed flag never set in audio player). Option B complete. CLOSED |

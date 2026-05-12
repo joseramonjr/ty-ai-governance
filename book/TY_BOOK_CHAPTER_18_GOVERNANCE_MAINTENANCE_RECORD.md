@@ -9813,3 +9813,23 @@ artist queries. Deferred generic follow recommendation
 to post-growth phase when catalog has more artists.
 artistListPatterns false positive identified (intercepts
 what artists are in your recommendations). CLOSED
+
+### Entry-486 | FIX-474 | 2026-05-11 22:24-22:33 PDT San Diego
+SS321. TY Track Performance Deep Insights — Option B.
+getArtistTrackInsights() function created. Fetches
+artist approved tracks, queries track_plays_log for
+up to 500 rows (track_id, completed, duration_seconds,
+played_at), computes: total plays, overall completion
+rate, highest completion track (min 2 plays), peak UTC
+day of week, peak UTC hour formatted 12am/Xam/12pm/Xpm.
+Returns newline-joined summary. Wired as 10th conditional
+Promise.all entry for artist/both. Injected as ARTIST
+TRACK PERFORMANCE INSIGHTS block after ARTIST BILLBOARD
+COACHING in system prompt. Verified live: TY returned
+366 total plays, top tracks with play counts, Tuesday
+7am UTC peak, Billboard 1 score 19, completion rate 0%.
+Flag identified: completed column always false in
+track_plays_log — plays_completed 0 on all billboard
+entries — audio player may not be setting completed
+flag. Separate investigation deferred. Option B complete.
+CLOSED
