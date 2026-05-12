@@ -9638,3 +9638,23 @@ migration — user_presence current_page column already
 stores /track/:id paths. show_activity RLS respected.
 Verified live: 1 live badge appeared on track card after
 navigating to track page and returning to browse. CLOSED
+
+### Entry-477 | FIX-465 | 2026-05-11 18:27-18:40 PDT San Diego
+SS321. TY Story/Soul Coach — Option B. New TYStoryCoach
+component created. Props: field story/soul, trackTitle,
+trackGenre, onDraft callback. Ghost button ✨ Ask TY opens
+Dialog. Step 1: question shown (What inspired this track
+for story, What feeling to leave for soul), artist types
+answer in textarea. Generate with TY button calls ty-ai-chat
+edge function with field-specific claudeContext — instructs
+TY to return only the paragraph, no labels or preamble.
+Draft displayed in muted box with Use this and Try again
+buttons. Use this calls onDraft and closes dialog. Try again
+clears draft. Error handling for failed invocation. Component
+wired into Upload.tsx after track_story and track_soul
+textareas with setTrackStory/setTrackSoul callbacks.
+Component wired into EditTrack.tsx same pattern.
+No migration. No new edge function. Verified live: dialog
+opens, TY generates Story draft, Use this fills textarea.
+Works on both Upload and Edit pages. Option B complete.
+CLOSED
