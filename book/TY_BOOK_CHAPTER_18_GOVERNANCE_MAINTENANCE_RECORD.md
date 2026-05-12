@@ -9711,3 +9711,23 @@ Longest-match-wins logic preserved. Verified live: open the library
 for me navigated to library. Playlist with 5 TY-created tracks
 confirmed visible. KB pattern growth eliminated permanently.
 CLOSED
+
+### Entry-481 | FIX-469 | 2026-05-11 20:44-21:00 PDT San Diego
+SS321. Artist names in greeting context. Two files:
+(1) get-greeting-context edge function — replaced
+count-only recentFollowedActivity integer with rich
+object. Fetches feed_activity rows for followed artists
+(user_id IN followedIds, is_public, cutoff), gets unique
+artist IDs, looks up display_names from profiles, maps
+activity_type to readable action (upload/like/follow/
+purchase), deduplicates to one entry per artist, returns
+count and artists array. (2) TYAIDailyGreeting.ts — type
+updated from number to count+artists object. Three-way
+phrasing: 1 artist names them directly with action-aware
+follow-up (Want to hear it for uploads, Want to see Live
+Activity for other actions), 2 artists names both, 3+
+names first two with remaining count. Amendment applied:
+single-artist branch uses action.includes uploaded to
+pick correct follow-up. Verified live: joseeamonjr
+followed someone new. Want to see the Live Activity.
+Artist name in greeting confirmed. CLOSED

@@ -8053,3 +8053,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-467 | 2026-05-11 20:07-20:21 PDT | SS321 | TY Smart Playlists. smartPlaylistQuery added to type + both CREATE_PLAYLIST handlers. Container calls search-tracks-semantic, bulk-inserts up to 5 tracks. Three-way addAIMessage fallback. Verified live: 5 chill R&B tracks seeded into new playlist. Option D complete. CLOSED |
 
 | FIX-468 | 2026-05-11 20:22-20:43 PDT | SS321 | KB all-words matching fix. getKnowledgeBaseAnswer single line changed from normalized.includes(p) to p.split whitespace every word present. Articles and filler words no longer break KB matching. Verified live: open the library for me navigated correctly. KB pattern growth eliminated permanently. CLOSED |
+
+| FIX-469 | 2026-05-11 20:44-21:00 PDT | SS321 | Artist names in greeting. get-greeting-context returns rich recentFollowedActivity object with count and artists array. TYAIDailyGreeting three-way phrasing with action-aware follow-up. Verified live: artist name and action in greeting. CLOSED |
