@@ -9789,3 +9789,27 @@ retention. Response also included taste learning
 mechanism, platform data scope, and Settings clearing
 instruction. Zero Fabrication Rule applied — memory
 description now matches actual implementation. CLOSED
+
+### Entry-485 | FIX-473 | 2026-05-11 21:33-22:23 PDT San Diego
+SS321. TY Artist Follow Recommendations — Option A.
+getArtistRecommendations() function created — queries
+user_follows to build excludeIds, gets approved tracks,
+filters to user top_genres, scores artists by play_count,
+returns top 3 not yet followed. Initial version used
+profiles(display_name) embed — failed same PostgREST FK
+issue as FIX-462 (tracks.artist_id points to auth.users
+not profiles). Fixed to two-step: query tracks without
+embed, filter qualifyingIds, separate profiles lookup,
+nameMap. Wired as 9th conditional Promise.all entry for
+listener/both roles. Injected as DIRECT ARTIST
+RECOMMENDATIONS block after CROSS-USER TRENDS. Verified
+data correct: joseeamonjr R&B tracks approved, excluded
+from test user (follows Jose Ramon), visible to main
+account. Two instruction strengthening attempts —
+Claude Sonnet overrides MUST/REQUIRED directives for
+generic who should I follow query. Decision: accept
+current behavior. Block works correctly for direct
+artist queries. Deferred generic follow recommendation
+to post-growth phase when catalog has more artists.
+artistListPatterns false positive identified (intercepts
+what artists are in your recommendations). CLOSED

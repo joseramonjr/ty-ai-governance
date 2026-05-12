@@ -8061,3 +8061,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-471 | 2026-05-11 21:15-21:19 PDT | SS321 | Governance comments on pattern arrays. Three comment blocks added to useTYAIChatProcessor.ts above catalogPatternsQ, catalogPatternsMood, and hasArtistAction. Requires FIX authorization before any addition. No logic changes. Systematic prevention of accidental phrase additions. CLOSED |
 
 | FIX-472 | 2026-05-11 21:20-21:32 PDT | SS321 | Correct TY rolling memory description. cleanup_old_ty_conversations confirmed rolling 21-day window not cliff wipe. TRANSPARENCY RULES updated to accurately describe nightly prune and retained 21-day history. Verified live. Zero Fabrication Rule applied. CLOSED |
+
+| FIX-473 | 2026-05-11 21:33-22:23 PDT | SS321 | TY Artist Follow Recommendations. getArtistRecommendations() two-step function. PostgREST FK fix applied. Parallel fetch wired for listener/both. Data verified correct. Claude Sonnet override of MUST directives noted — generic follow query deferred to post-growth phase. CLOSED |
