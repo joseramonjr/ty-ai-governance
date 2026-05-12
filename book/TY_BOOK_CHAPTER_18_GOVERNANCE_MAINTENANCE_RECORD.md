@@ -9598,3 +9598,24 @@ Ramon's message Thank you for listening appeared at end
 of test user greeting. No other platform has artist-to-
 listener personal message delivery via AI companion.
 CLOSED
+
+### Entry-475 | FIX-463 | 2026-05-11 17:01-17:55 PDT San Diego
+SS321. TY Governance transparency page. Three components:
+(1) get_governance_event_count SECURITY DEFINER RPC —
+allows anon and authenticated users to read total count
+from governance_events by app_id without row-level access.
+(2) New page src/pages/Governance.tsx at /governance —
+six sections: header How TY Works, No one can pay to be
+recommended card, Forced Objectivity G-41 card with
+prohibited list, Non-weaponization guardrail card, Every
+TY Response Is on Record card with live governance_events
+count via RPC (showed 25 events live), Your Data
+Transparently card. tyova.ai footer link. Auto-routes via
+AutoRoute on filename. (3) Footer.tsx: How TY Works link
+added. Amendment: TY AI navbar item converted to dropdown
+with two items — TY AI (/ty-ai) and How TY Works
+(/governance) using existing dropdown pattern from Browse.
+Verified live: all six cards render, governance events
+count 25 confirmed live, footer link present, TY AI
+dropdown functional. New route /governance — manually
+reviewed. CLOSED
