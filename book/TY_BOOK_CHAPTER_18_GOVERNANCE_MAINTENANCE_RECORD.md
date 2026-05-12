@@ -9770,3 +9770,22 @@ Comments only. Makes governance rule machine-readable
 and visible to Lovable when it reads the file.
 Prevents repeat of FIX-470 accidental addition
 pattern. CLOSED
+
+### Entry-484 | FIX-472 | 2026-05-11 21:20-21:32 PDT San Diego
+SS321. Correct TY memory description in TRANSPARENCY
+RULES. Root cause: system prompt stated conversations
+are remembered for 21 days then automatically forgotten
+— implies cliff-edge wipe of all memory. Verified actual
+behavior via cleanup_old_ty_conversations function:
+DELETE WHERE created_at < now() - interval 21 days —
+runs nightly, rolling window not one-time wipe. Corrected
+to: TY maintains a rolling 21-day conversation window.
+Each night conversations older than 21 days are
+automatically pruned — most recent 21 days always
+retained. One line change in ty-ai-chat edge function
+TRANSPARENCY RULES block. Verified live: TY correctly
+described rolling window, nightly prune, 21-day
+retention. Response also included taste learning
+mechanism, platform data scope, and Settings clearing
+instruction. Zero Fabrication Rule applied — memory
+description now matches actual implementation. CLOSED

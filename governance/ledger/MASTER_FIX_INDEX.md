@@ -8059,3 +8059,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-470 | 2026-05-11 21:01-21:14 PDT | SS321 | Remove accidental preference phrases from catalogPatternsQ. Full audit conducted — 10 phrases removed (what do you know, my taste, my preferences, etc.). Preference queries now route cleanly to Claude Sonnet. Verified live: full transparency response confirmed. CLOSED |
 
 | FIX-471 | 2026-05-11 21:15-21:19 PDT | SS321 | Governance comments on pattern arrays. Three comment blocks added to useTYAIChatProcessor.ts above catalogPatternsQ, catalogPatternsMood, and hasArtistAction. Requires FIX authorization before any addition. No logic changes. Systematic prevention of accidental phrase additions. CLOSED |
+
+| FIX-472 | 2026-05-11 21:20-21:32 PDT | SS321 | Correct TY rolling memory description. cleanup_old_ty_conversations confirmed rolling 21-day window not cliff wipe. TRANSPARENCY RULES updated to accurately describe nightly prune and retained 21-day history. Verified live. Zero Fabrication Rule applied. CLOSED |
