@@ -9578,3 +9578,23 @@ live: TY correctly identified Oh My Girl OMG ver10 at rank
 1 score 19, stated top 3 position, mentioned Trophy Badge
 June 1, gave specific promotion coaching. Badge ✨ Claude AI.
 CLOSED
+
+### Entry-474 | FIX-462 | 2026-05-11 16:24-17:00 PDT San Diego
+SS321. Artist-to-listener message delivery via TY. Four
+components: (1) artist_messages table — one row per artist,
+message 280 char limit, is_active toggle, updated_at trigger,
+RLS artist manages own row plus authenticated read of active
+messages. (2) Artist Dashboard new card — Message to Your
+Listeners, textarea with char counter, Save and Remove
+buttons, upsert on conflict artist_id, toast confirmation.
+(3) get-greeting-context edge function — queries
+artist_messages for followed artists, two-step lookup
+(message then separate profiles query for display_name —
+PostgREST embedded join failed due to FK pointing to
+auth.users not profiles). Returns artistMessage object.
+(4) TYAIDailyGreeting.ts — artistMessage injected at end
+of greeting after all other parts. Verified live: Jose
+Ramon's message Thank you for listening appeared at end
+of test user greeting. No other platform has artist-to-
+listener personal message delivery via AI companion.
+CLOSED
