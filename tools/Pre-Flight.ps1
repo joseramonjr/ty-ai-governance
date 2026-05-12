@@ -1,4 +1,4 @@
-# =============================================================================
+﻿# =============================================================================
 # Pre-Flight.ps1 - TY AI OS Session State Diagnostic
 # =============================================================================
 # Purpose: Read-only diagnostic reporting state of the two TY ecosystem git
@@ -243,10 +243,10 @@ Write-Host ""
 Write-Host "[LEDGER STATE]" -ForegroundColor Yellow
 
 # MASTER_FIX_INDEX last heading
-# v3 fix: catches both "### FIX-" (older entries) and "## FIX-" (newer entries)
+# v4 fix: catches heading format (## FIX-, ### FIX-) and pipe-table format (| FIX-NNN |)
 if (Test-Path $MASTER_FIX_INDEX) {
     $mfiLines   = Get-Content $MASTER_FIX_INDEX
-    $mfiMatches = $mfiLines | Select-String "^#{2,3} (FIX-|SS-FIX-)\d+"
+    $mfiMatches = $mfiLines | Select-String "(^#{2,3} (FIX-|SS-FIX-)\d+|^\| (FIX-|SS-FIX-)\d+)"
     if ($mfiMatches) {
         $lastMfi     = ($mfiMatches | Select-Object -Last 1)
         $lastMfiLine = $lastMfi.LineNumber
