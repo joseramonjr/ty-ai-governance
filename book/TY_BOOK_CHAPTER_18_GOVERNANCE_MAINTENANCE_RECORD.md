@@ -9619,3 +9619,22 @@ Verified live: all six cards render, governance events
 count 25 confirmed live, footer link present, TY AI
 dropdown functional. New route /governance — manually
 reviewed. CLOSED
+
+### Entry-476 | FIX-464 | 2026-05-11 17:56-18:26 PDT San Diego
+SS321. Per-track live listener count via DB polling —
+Option A deferred fix. useListenerCountDB hook created —
+polls user_presence table every 30 seconds, queries
+current_page = /track/trackId with is_online=true and
+45s freshness window via last_seen_at cutoff, returns
+count. Silent on error. No Realtime, no broadcast
+channels, no mobile crashes. Math.max(rtCount, dbCount)
+merge pattern applied in all three track card components
+simultaneously per Future Track Card Rule: TrackCard.tsx,
+TrackListRow.tsx, TrackDetailCard.tsx. Realtime useListenerCount
+retained as primary sub-second signal where it works.
+DB polling is the fallback — catches users whose presence
+is in user_presence but not in Realtime channels. No
+migration — user_presence current_page column already
+stores /track/:id paths. show_activity RLS respected.
+Verified live: 1 live badge appeared on track card after
+navigating to track page and returning to browse. CLOSED
