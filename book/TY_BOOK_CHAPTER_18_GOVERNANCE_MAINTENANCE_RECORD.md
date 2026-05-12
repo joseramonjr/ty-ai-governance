@@ -9678,3 +9678,22 @@ Country, moods Romantic Energetic Happy, 30 plays and
 explained, Settings reminder included. Continuous voice
 mode ambient pickup identified as separate non-issue.
 Option C complete. CLOSED
+
+### Entry-479 | FIX-467 | 2026-05-11 20:07-20:21 PDT San Diego
+SS321. TY Smart Playlists — Option D. Three files: (1)
+ty-ai-chat.ts type — smartPlaylistQuery added to
+ChatProcessResult interface. (2) useTYAIChatProcessor.ts —
+smartPlaylistQuery: cleanText added to both CREATE_PLAYLIST
+return objects (Tier 0c2 keyword match and Tier 0.5 Haiku
+case). Full user message passed as query for semantic
+matching. (3) TYAIPanelContainer.tsx — shouldCreatePlaylist
+handler extended with smart search block: calls
+search-tracks-semantic with smartPlaylistQuery limit 5,
+maps track IDs to playlist_tracks rows, bulk inserts,
+smartTrackCount returned. Three-way addAIMessage decision:
+smart tracks found says N tracks picked, fallback to current
+track if playing, fallback to empty playlist. All search
+failures caught silently — playlist creation always
+succeeds. Verified live: Create a playlist of chill R&B
+music created Jose Ramon's Playlist with 5 tracks.
+Option D complete. CLOSED
