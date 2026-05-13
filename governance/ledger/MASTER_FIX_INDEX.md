@@ -8088,3 +8088,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-490 | 2026-05-13 | SS321 | /library page mobile overflow — ViewToggle cut off on right edge; fixed Library.tsx action bar to flex-col on mobile, flex-wrap on inner buttons row; supplementary fixes to artist-card CSS and card wrappers | Entry-501 |
 
 | FIX-491 | 2026-05-13 | SS321 | UI-BACK-001 debug badge visible to non-admin users — added isAdmin guard to BackButton.tsx; badge now requires showCardIds AND isAdmin | Entry-502 |
+
+| FIX-492 | 2026-05-13 | SS321 | Closure of SS-FIX-086/087/088/089 — all four security follow-ups from FIX-085 confirmed resolved: mystery key investigated, anon key consolidated, CORS allowlist updated, unused OpenAI keys audited and revoked | Entry-503 |
