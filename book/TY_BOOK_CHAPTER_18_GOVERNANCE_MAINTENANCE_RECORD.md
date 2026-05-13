@@ -10132,3 +10132,31 @@ loads correctly. UUID links preserved for backward compat.
 (free when seoEnabled=false, locked when seoEnabled=true).
 
 **Status:** CLOSED
+
+### Entry-498 | FIX-486 | 2026-05-12 21:53-22:02 PDT San Diego
+
+**Destination:** SS321 — Supabase + supabase/functions/sitemap + public/robots.txt + 2 profile pages
+**Type:** SS321 SEO — Sitemap + Slug Regeneration on Name Change
+
+**What was built:**
+1. regenerate_slugs_on_name_change() trigger on profiles table. Fires BEFORE
+   UPDATE when display_name changes. Reads seoEnabled from system_config_secure.
+   If SEO is OFF: regenerates profile slug AND all artist track slugs automatically.
+   If SEO is ON: slugs locked, no change.
+2. Sitemap edge function (supabase/functions/sitemap/index.ts). Public endpoint
+   (verify_jwt=false). Returns application/xml. Queries all approved tracks and
+   profiles with slugs. Includes static pages (/, /browse, /billboard, /about).
+   Track URLs use slug format. Cache-Control: public, max-age=3600.
+3. public/robots.txt updated -- Sitemap directive added pointing to edge function:
+   https://tsmyhzjmkampssjwshqh.supabase.co/functions/v1/sitemap
+4. Profile.tsx and ArtistProfile.tsx -- query invalidation added after successful
+   display_name update so UI refreshes with new slugs immediately.
+
+**Verified live:** Sitemap endpoint returns correct XML with slug-based track
+URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
+
+**SEO Party checklist (all deferred until SEO enabled):**
+- Flip toggle at /admin/seo
+- Submit sitemap to Google Search Console (search.google.com/search-console)
+
+**Status:** CLOSED
