@@ -10057,3 +10057,48 @@ depth-weighted scores. plays_completed = 0 expected -- most historical plays log
 before FIX-479 completed flag fix.
 
 **Status:** CLOSED
+
+### Entry-496 | FIX-484 | 2026-05-12 20:19-21:18 PDT San Diego
+
+**Destination:** SS321 — Multiple files + Supabase system_config_secure
+**Type:** SS321 SEO Infrastructure — Full Build (noindex OFF by default)
+
+**What was built:**
+1. SystemConfig.ts: added seoEnabled (bool) and seoLaunchDate (string) to
+   SystemConfigValues interface and DEFAULT_CONFIG.
+2. react-helmet-async installed. App wrapped in HelmetProvider in main.tsx.
+3. SEOHead component created (src/components/SEOHead.tsx). Reads seoEnabled
+   via getConfig. If false: noindex, nofollow. If true: index, follow.
+   Accepts title, description, ogImage, ogUrl, type props with SS321 defaults.
+4. PageWrapper: SEOHead mounted as fallback for all pages.
+5. TrackPage: track-specific SEOHead (title, description, artwork, og:type
+   music.song) injected after track loads.
+6. PublicProfile: artist-specific SEOHead injected after profile loads.
+7. SEOActivationPage created (src/pages/admin/SEOActivationPage.tsx):
+   -- Amber border + HIDDEN FROM SEARCH ENGINES badge when OFF
+   -- Green border + LIVE ON SEARCH ENGINES badge when ON
+   -- Toggle with confirmation dialog (Are you ready for the SEO Party?)
+   -- SEO Party Launch Planner with datetime picker
+   -- Live countdown timer (DAYS / HRS / MINS / SECS) to launch date
+   -- Party Time message at countdown zero
+   -- Warning box (contrast fixed: text-amber-900 on amber-100 bg)
+8. Route: /admin/seo registered under AdminRoute + PageWrapper.
+9. AdminNavigationHub + AdminQuickActions: SEO Activation card added (AD211)
+   with live OFF/LIVE badge.
+10. system_config_secure: seoEnabled=false, seoLaunchDate='' seeded.
+
+**Status:** noindex ACTIVE. SEO infrastructure built and tested. 
+SEO is NOT live until toggle is flipped in /admin/seo.
+
+**DEFERRED ACTION (do not forget):**
+When SEO is enabled -- submit sitemap to Google Search Console.
+URL: https://search.google.com/search-console
+Steps: verify ownership of silversounds321.com, submit sitemap URL.
+This tells Google to prioritize crawling SS321 immediately rather than
+discovering it passively. Do this the same day the toggle is flipped.
+
+**Verified live:** /admin/seo loads correctly. Amber border, OFF status,
+countdown timer, date picker, warning box all confirmed. AD211 in Admin
+Dashboard showing amber OFF badge.
+
+**Status:** CLOSED
