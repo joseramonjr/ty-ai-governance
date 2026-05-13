@@ -10186,3 +10186,14 @@ URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
 - Supabase: CREATE POLICY "Public can view profile display names" ON profiles FOR SELECT TO public USING (true).
 **Verified:** Soul word card with soul text and inspiration lines confirmed on desktop and mobile (both landing page and /browse), for admin, regular user, and logged-out sessions.
 **Governance:** No new routes or pages introduced.
+
+### Entry-500 | FIX-489 | 2026-05-13 00:10-00:32 PDT San Diego
+**Destination:** SS321
+**Fix:** TY AI dropdown missing in mobile sidebar nav
+**Root cause:** Mobile drawer in Header.tsx rendered TY AI as a plain Link with no dropdown. "How TY Works" link was missing entirely. A second flat link was added but without dropdown behavior. DropdownMenuContent with side="right" caused the dropdown to render off-screen on narrow phone viewports.
+**Changes:**
+- Header.tsx: Replaced two flat Links (TY AI → /ty-ai, How TY Works → /how-ty-works) in mobile drawer with a DropdownMenu block matching desktop header pattern.
+- Corrected route: How TY Works → /governance (matching desktop dropdown).
+- DropdownMenuContent side changed from "right" to "bottom" so dropdown renders downward within the phone viewport.
+**Verified:** TY AI dropdown opens correctly in mobile sidebar on phone with both items (TY AI, How TY Works) visible. Desktop header dropdown unchanged and working.
+**Governance:** No new routes or pages introduced.
