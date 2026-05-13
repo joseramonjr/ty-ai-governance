@@ -9979,3 +9979,29 @@ depth. TY artist insights had no way to distinguish casual plays from genuine li
 - Skip at 48s: completed = false, listened_seconds = 48
 
 **Status:** CLOSED
+
+### Entry-493 | FIX-481 | 2026-05-12 17:12-17:37 PDT San Diego
+
+**Destination:** SS321 — src/hooks/ty-ai-chat/useTYAIChatProcessor.ts
+**Type:** SS321 TY Fix — artistListPatterns intercept removed
+
+**Problem:** artistListPatterns short-circuited artist discovery queries before
+reaching Claude Sonnet. Returned hardcoded template: "Artists currently on
+SilverSounds321: {list}. New artists join regularly -- check Browse." Same class
+of problem as FIX-476 (newReleasesPatterns) and FIX-454 (music_question).
+
+**Fix:** Removed artistListPatterns array and handler (lines 717-747). Replaced
+with governance comment (FIX-481 pattern). Artist discovery queries now fall
+through to ty-ai-chat edge function and reach Claude Sonnet with full catalog
+context and objective signal data.
+
+**Verified live:**
+- "what artists are on here?" -- Claude Sonnet responding with real catalog
+  context, track listings, discovery navigation. No hardcoded template.
+- "which artists do you recommend?" -- Taste-matched response, R&B/Soul/Jazz
+  filtering, specific tracks with mood context surfaced.
+
+**Note:** Follow-up FIX-482 opened -- TY incorrectly recommends the logged-in
+user's own tracks back to themselves. getArtistRecommendations() filter needed.
+
+**Status:** CLOSED
