@@ -10235,3 +10235,21 @@ URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
 **SS-FIX-089:** Audit Unused OpenAI Keys — completed, unused keys revoked.
 **Originally opened:** 2026-04-18 as PENDING follow-ups to SS-FIX-085 Secret Rotation Incident.
 **Governance:** No code changes in this session — closure by verified confirmation.
+
+### Entry-504 | FIX-493 | 2026-05-13 14:11-15:17 PDT San Diego
+**Destination:** SS321
+**Fix:** profiles table column overexposure + inspiration lines broken on landing page
+**Root cause (layered):**
+1. FIX-488 public profiles policy (USING: true) exposed all columns including email, stripe_account_id, privacy fields to anon — Supabase security advisor flagged as Error.
+2. profiles_public view fix used SECURITY INVOKER — RLS on profiles still blocked regular users from reading other users' profiles, breaking inspiration lines for non-admin users.
+3. Two different components discovered: SoulWordsCard (/browse) and SoulWordsCardHero (landing page) — only SoulWordsCard was updated initially.
+4. Pre-existing wrong argument name (p_user_id vs p_id) in useArtists.ts, usePublicProfile.ts, ToolRegistry.ts, APIEndpointTests.ts — fixed.
+5. SoulWordsCardHero had silent bug: .rpc().maybeSingle() returns single object not array, but code indexed as artistData[0] — display_name always null.
+**Changes:**
+- Supabase: Dropped broad public profiles policy. Created profiles_public view (later dropped). Created get_public_profile(uuid) SECURITY DEFINER function exposing only id, display_name, avatar_url, slug, bio, banner_url. Granted EXECUTE to anon and authenticated.
+- SoulWordsCard.tsx: Updated profiles query to use get_public_profile RPC.
+- SoulWordsCardHero.tsx: Updated to use get_public_profile RPC + fixed artistData[0] ? artistData indexing bug.
+- useArtists.ts, usePublicProfile.ts, ToolRegistry.ts, APIEndpointTests.ts: Fixed p_user_id ? p_id argument name.
+- usePublicProfile.ts: Fixed type cast to as unknown as PublicProfile.
+**Verified:** Inspiration lines confirmed on landing page and /browse for regular users and anon. CI green (TY Laws Tests #1584, commit bbb8740).
+**Governance:** No new routes or pages introduced.
