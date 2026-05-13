@@ -10102,3 +10102,33 @@ countdown timer, date picker, warning box all confirmed. AD211 in Admin
 Dashboard showing amber OFF badge.
 
 **Status:** CLOSED
+
+### Entry-497 | FIX-485 | 2026-05-12 21:32-21:50 PDT San Diego
+
+**Destination:** SS321 — Supabase + src/hooks/useTracks.ts + 3 card components
+**Type:** SS321 SEO — Slug-based URLs
+
+**What was built:**
+1. generate_slug() function -- converts text to clean URL-safe string.
+2. generate_unique_track_slug() -- title + artist name, collision-safe.
+3. generate_unique_profile_slug() -- display name, collision-safe.
+4. slug column added to tracks and profiles tables.
+5. All existing tracks and profiles populated with slugs.
+6. UNIQUE constraints added. NOT NULL enforced.
+7. Triggers set_track_slug() and set_profile_slug() -- auto-generate
+   slugs on every new INSERT. Permanent. No manual work ever.
+8. TRACK_SELECT_COLUMNS updated -- slug added to track fields and
+   profiles embed (display_name, avatar_url, country, slug).
+9. Track interface extended -- slug, profiles.slug added.
+10. useTrack hook -- UUID vs slug detection. Queries by id or slug
+    automatically. Old UUID links continue working.
+11. TrackCard, TrackListRow, TrackDetailCard -- trackHref and artist
+    Link updated to use slug instead of UUID.
+
+**Verified live:** silversounds321.com/track/electric-smile-ver14-jose-ramon
+loads correctly. UUID links preserved for backward compat.
+
+**Deferred as FIX-486:** Slug regeneration on display name change
+(free when seoEnabled=false, locked when seoEnabled=true).
+
+**Status:** CLOSED
