@@ -10031,3 +10031,29 @@ taste" was appearing in responses to the user who IS Jose Ramon.
 TY correctly redirects to Browse, Global Billboard, Live Activity.
 
 **Status:** CLOSED
+
+### Entry-495 | FIX-483 | 2026-05-12 19:53-20:11 PDT San Diego
+
+**Destination:** SS321 — Supabase database functions
+**Type:** SS321 Billboard Scoring — listened_seconds depth weighting
+
+**Problem:** Billboard composite score treated all partial plays equally (weight 1)
+regardless of listen depth. A 31-second gaming play and a 2-minute genuine listen
+scored identically. No mechanism to distinguish real engagement from threshold gaming.
+
+**Fix:** Updated plays CTE in all three Billboard functions to add listen depth tiers:
+- completed = true: weight 3 (unchanged)
+- deep_listen (listened_seconds >= 120): weight 2
+- genuine_listen (listened_seconds 60-119): weight 2
+- short_listen (listened_seconds < 60 OR = 0): weight 1 (backward compatible)
+- plays_partial column preserved in billboard_cache (no schema change)
+
+Functions updated: refresh_global_billboard(), archive_monthly_billboard(),
+seed_billboard_month(). Manual refresh confirmed. Scores populated correctly.
+Historical plays (listened_seconds = 0) correctly score as short_listen weight 1.
+
+**Verified live:** Billboard cache refreshed. Top 5 rankings populated with correct
+depth-weighted scores. plays_completed = 0 expected -- most historical plays logged
+before FIX-479 completed flag fix.
+
+**Status:** CLOSED
