@@ -8084,3 +8084,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-488 | 2026-05-12/13 | SS321 | SoulWordsCard inspiration lines missing on mobile — fixed generated_at order clause, added public RLS on ty_soul_words and profiles, split PostgREST joins into separate queries, added 2s retry for auth race condition | Entry-499 |
 
 | FIX-489 | 2026-05-13 | SS321 | TY AI dropdown missing in mobile sidebar — replaced flat links with DropdownMenu, corrected /governance route, changed side="right" to side="bottom" for phone viewport | Entry-500 |
+
+| FIX-490 | 2026-05-13 | SS321 | /library page mobile overflow — ViewToggle cut off on right edge; fixed Library.tsx action bar to flex-col on mobile, flex-wrap on inner buttons row; supplementary fixes to artist-card CSS and card wrappers | Entry-501 |

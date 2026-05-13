@@ -10197,3 +10197,20 @@ URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
 - DropdownMenuContent side changed from "right" to "bottom" so dropdown renders downward within the phone viewport.
 **Verified:** TY AI dropdown opens correctly in mobile sidebar on phone with both items (TY AI, How TY Works) visible. Desktop header dropdown unchanged and working.
 **Governance:** No new routes or pages introduced.
+
+### Entry-501 | FIX-490 | 2026-05-13 07:53-11:10 PDT San Diego
+**Destination:** SS321
+**Fix:** /library page cards overflowing viewport on mobile — responsive layout fix
+**Root cause (layered investigation):**
+1. Initially misidentified as card width/overflow — no fixed widths found in TrackCard, TrackListRow, TrackDetailCard, or Library.tsx grid containers.
+2. artist-card-container had no width declaration — added width: 100%.
+3. artist-card-front had no width declaration — added width: 100%.
+4. artist-card-inner uses transform-style: preserve-3d which bypasses overflow: hidden — disabled flip on mobile via @media (max-width: 639px).
+5. overflow-x: hidden added to html, body, and page wrapper.
+6. w-full overflow-hidden added to TrackCard, TrackListRow, TrackDetailCard outermost wrappers.
+7. Action button rows in TrackListRow and TrackDetailCard given overflow-x: auto.
+8. ACTUAL ROOT CAUSE: Library.tsx action bar (Liked + History tabs) had outer container flex flex-wrap justify-between — on mobile, the inner row (PlayAllButton + Shuffle + ViewToggle) exceeded the viewport width, pushing ViewToggle off the right edge.
+**Final fix:** Library.tsx outer action bar changed to flex-col on mobile / flex-row sm+. Inner buttons row changed to flex-wrap items-center gap-2. Applied to both Liked and History tabs.
+**Files changed:** src/index.css, src/components/TrackCard.tsx, src/components/browse/TrackListRow.tsx, src/components/browse/TrackDetailCard.tsx, src/pages/Library.tsx
+**Verified:** ViewToggle wraps to second row on mobile. All three view modes (tile, list, details) fit within screen on phone.
+**Governance:** No new routes or pages introduced.
