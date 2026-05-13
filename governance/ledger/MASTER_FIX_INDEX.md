@@ -8086,3 +8086,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-489 | 2026-05-13 | SS321 | TY AI dropdown missing in mobile sidebar — replaced flat links with DropdownMenu, corrected /governance route, changed side="right" to side="bottom" for phone viewport | Entry-500 |
 
 | FIX-490 | 2026-05-13 | SS321 | /library page mobile overflow — ViewToggle cut off on right edge; fixed Library.tsx action bar to flex-col on mobile, flex-wrap on inner buttons row; supplementary fixes to artist-card CSS and card wrappers | Entry-501 |
+
+| FIX-491 | 2026-05-13 | SS321 | UI-BACK-001 debug badge visible to non-admin users — added isAdmin guard to BackButton.tsx; badge now requires showCardIds AND isAdmin | Entry-502 |
