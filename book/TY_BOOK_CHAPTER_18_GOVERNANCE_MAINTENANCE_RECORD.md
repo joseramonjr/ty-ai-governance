@@ -10005,3 +10005,29 @@ context and objective signal data.
 user's own tracks back to themselves. getArtistRecommendations() filter needed.
 
 **Status:** CLOSED
+
+### Entry-494 | FIX-482 | 2026-05-12 17:55-18:26 PDT San Diego
+
+**Destination:** SS321 — supabase/functions/ty-ai-chat/index.ts
+**Type:** SS321 TY Fix — self-recommendation bug
+
+**Problem:** TY was recommending the logged-in user's own artist profile and tracks
+back to themselves when asked for artist recommendations. getArtistRecommendations()
+correctly excluded userId from results but when it returned empty (no other qualifying
+artists found), Claude Sonnet fell back to broader catalog context and surfaced the
+user's own tracks as recommendations. "Jose Ramon has great tracks matching your
+taste" was appearing in responses to the user who IS Jose Ramon.
+
+**Fix:** Three iterations on the ARTIST RECOMMENDATION RULES system prompt block:
+1. Added permanent ARTIST RECOMMENDATION RULES section for listener/both roles --
+   not gated on artistRecommendations being non-empty.
+2. Added NO OTHER ARTISTS MATCHED YET fallback branch directing to Browse/Billboard/
+   Live Activity instead of substituting own tracks.
+3. Added CRITICAL instruction using activeUserName variable: "The person you are
+   talking to IS . Never recommend  to
+   ." Makes the rule explicit and name-specific.
+
+**Verified live:** "which artists do you recommend?" -- Jose Ramon not mentioned.
+TY correctly redirects to Browse, Global Billboard, Live Activity.
+
+**Status:** CLOSED
