@@ -10168,3 +10168,21 @@ URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
 **File changed:** src/components/SoulWordsCard.tsx
 **Verified:** Dark purple card surface with readable white text confirmed on desktop and mobile.
 **Governance:** No new routes or pages introduced.
+
+### Entry-499 | FIX-488 | 2026-05-12 23:07 – 2026-05-13 00:04 PDT San Diego
+**Destination:** SS321
+**Fix:** SoulWordsCard inspiration lines missing on mobile — multi-layer RLS + auth timing fix
+**Root cause (layered):**
+1. ty_soul_words fetch used non-existent column created_at in .order() — corrected to generated_at.
+2. ty_soul_words had no public SELECT RLS policy — anon users received 401 on unauthenticated render.
+3. Embedded PostgREST joins (tracks(title), profiles(display_name)) bypassed table-level RLS, failing for anon and unauthenticated sessions even after soul words policy was added.
+4. profiles table had no public SELECT policy — regular (non-admin) authenticated users could not read other users' display_name, causing artistName to evaluate null and suppressing the inspiration block.
+5. Auth race condition on mobile /browse — component mounts before Supabase session resolves.
+**Changes:**
+- SoulWordsCard.tsx: .order('generated_at', { ascending: false }) corrected.
+- Supabase: CREATE POLICY "Public can view active soul words" ON ty_soul_words FOR SELECT TO public USING (is_active = true AND deleted_at IS NULL).
+- SoulWordsCard.tsx: Retry mechanism added — on error or empty data, retries fetch after 2000ms to allow auth session to establish.
+- SoulWordsCard.tsx: Embedded joins removed. Separate queries added for tracks.title and profiles.display_name after soul word row is received, in both initial fetch and retry block.
+- Supabase: CREATE POLICY "Public can view profile display names" ON profiles FOR SELECT TO public USING (true).
+**Verified:** Soul word card with soul text and inspiration lines confirmed on desktop and mobile (both landing page and /browse), for admin, regular user, and logged-out sessions.
+**Governance:** No new routes or pages introduced.
