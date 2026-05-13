@@ -10160,3 +10160,11 @@ URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
 - Submit sitemap to Google Search Console (search.google.com/search-console)
 
 **Status:** CLOSED
+### Entry-499 | FIX-487 | 2026-05-12 22:54-23:03 PDT San Diego
+**Destination:** SS321
+**Fix:** SoulWordsCard contrast repair — dark background
+**Root cause:** g-card/80 on inner panel resolved to a light lavender/near-white color in the current theme, rendering 	ext-white soul text nearly unreadable on both desktop and mobile.
+**Change:** Replaced g-card/80 with g-[#1a0a2e]/90 in src/components/SoulWordsCard.tsx inner panel div. No responsive prefix — fix applies at all breakpoints.
+**File changed:** src/components/SoulWordsCard.tsx
+**Verified:** Dark purple card surface with readable white text confirmed on desktop and mobile.
+**Governance:** No new routes or pages introduced.
