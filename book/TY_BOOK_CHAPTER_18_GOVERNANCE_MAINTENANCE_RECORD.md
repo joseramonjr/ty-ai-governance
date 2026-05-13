@@ -9930,3 +9930,52 @@ All three required TYOVA book files updated simultaneously per book discipline.
 
 **Commit:** 867ba2e (TYOVA main)
 **Status:** CLOSED
+
+### Entry-491 | FIX-479 | 2026-05-12 14:41-16:46 PDT San Diego
+
+**Destination:** SS321 — src/contexts/PlayerContext.tsx + Supabase RLS
+**Type:** SS321 Bug Fix — completed flag always false
+
+**Problem:** track_plays_log.completed was never set to true. The insert only wrote
+track_id and user_id. No completion logic existed anywhere. Every artist track showed
+0% completion rate in TY performance insights and Billboard scoring.
+
+**Fix:**
+1. Added loggedPlayRowIdRef to capture the inserted row UUID at insert time using
+   .select('id').single().
+2. Added completion update in onEnded handler: sets completed = true AND
+   listened_seconds = Math.floor(listenedTimeRef.current) in one DB call.
+3. Added reset of loggedPlayRowIdRef on track change.
+4. Added RLS UPDATE policy -- Users can update own play logs -- on track_plays_log.
+   Root cause: no UPDATE policy existed; updates were silently blocked by RLS.
+
+**Verified live:** completed = true, listened_seconds = 190 confirmed in DB after
+natural track completion.
+
+**Status:** CLOSED
+
+### Entry-492 | FIX-480 | 2026-05-12 16:50-17:11 PDT San Diego
+
+**Destination:** SS321 — src/contexts/PlayerContext.tsx + supabase/functions/ty-ai-chat/index.ts
+**Type:** SS321 Feature — listened_seconds tracking
+
+**Problem:** 30-second play threshold easy to game -- users could play 31 seconds to
+inflate play counts without genuine engagement. No signal existed for actual listen
+depth. TY artist insights had no way to distinguish casual plays from genuine listens.
+
+**Fix:**
+1. listened_seconds column confirmed present on track_plays_log.
+2. PlayerContext.tsx onEnded: combined update -- completed = true AND
+   listened_seconds = Math.floor(listenedTimeRef.current) in one DB call.
+3. PlayerContext.tsx track change: skip flush moved BEFORE all ref resets so
+   listenedTimeRef.current is read before being zeroed. Fires listened_seconds
+   update for skipped tracks.
+4. getArtistTrackInsights() in ty-ai-chat: added listened_seconds to select,
+   totalListenedSecs accumulation per track, avgListenStr calculation, and
+   Average listen depth output line in TY artist response.
+
+**Verified live:**
+- Natural end: completed = true, listened_seconds = 190 (3m 10s)
+- Skip at 48s: completed = false, listened_seconds = 48
+
+**Status:** CLOSED
