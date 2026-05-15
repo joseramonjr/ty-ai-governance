@@ -8104,3 +8104,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-501 | 2026-05-15 | ty-ai-governance | Ch26 term count header corrected. Declared count 253 (as of 2026-04-08) was inaccurate. File-verified count via pattern scan: 244 terms. Header updated: Current Term Count 253 → 244, Updated date 2026-03-19 → 2026-05-15. No terms added or removed. Documentation accuracy fix. | Entry-512 |
 
 | FIX-502 | 2026-05-15 | TYOVA | F-T3-012 closed. Removed stale Post-Phase-5 note from VerifyPage.tsx. Four lines removed (lines 144-147, 0-indexed): paragraph containing 'Post-Phase-5 adoption strategy is pending.' No governance impact. Cosmetic accuracy fix. File: src/pages/VerifyPage.tsx. | Entry-513 |
+
+| FIX-503 | 2026-05-15 | TYOVA | TY-0001.B registered in VerifyPage.tsx KNOWN_FINGERPRINTS. Hash: 3a48e33baae0691e22fbae879424eb3f0b4541534e5968673a85f16476d77782. Label: TY AI OS Bundle -- TY-0001.B (Phase 9 Complete). Version: TY-0001.B. GitHub release and DistributionPage.tsx were already updated via FIX-418 (2026-05-08). This completes TY-0001.B registration. File: src/pages/VerifyPage.tsx. | Entry-514 |
