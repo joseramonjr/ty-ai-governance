@@ -8092,3 +8092,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-492 | 2026-05-13 | SS321 | Closure of SS-FIX-086/087/088/089 — all four security follow-ups from FIX-085 confirmed resolved: mystery key investigated, anon key consolidated, CORS allowlist updated, unused OpenAI keys audited and revoked | Entry-503 |
 
 | FIX-493 | 2026-05-13 | SS321 | profiles column overexposure + inspiration lines broken — replaced broad public policy with SECURITY DEFINER function get_public_profile(); fixed SoulWordsCardHero to use RPC; fixed artistData[0] indexing bug; fixed p_user_id arg names; CI green | Entry-504 |
+
+| FIX-494 | 2026-05-15 | SS321 | Next track not advancing when phone screen off — added next-track URL pre-fetching in PlayerContext.tsx; signed URL cached 3s after track start; load useEffect uses cached URL synchronously eliminating throttled network call | Entry-505 |

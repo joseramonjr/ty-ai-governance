@@ -10253,3 +10253,13 @@ URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
 - usePublicProfile.ts: Fixed type cast to as unknown as PublicProfile.
 **Verified:** Inspiration lines confirmed on landing page and /browse for regular users and anon. CI green (TY Laws Tests #1584, commit bbb8740).
 **Governance:** No new routes or pages introduced.
+
+### Entry-505 | FIX-494 | 2026-05-15 10:21-10:40 PDT San Diego
+**Destination:** SS321
+**Fix:** Next track does not advance when phone screen turns off during Play All
+**Root cause:** When screen locks, mobile browser throttles JavaScript network calls. onEnded fired correctly and setCurrentIndex updated synchronously, but the useEffect watching currentIndex called getAudioUrl() — a network call to the edge function — which was throttled/failed with the screen off. Next track URL never loaded so playback stopped.
+**MediaSession API status:** Already fully implemented (SS-FIX-210, April 2026) — metadata, action handlers, nexttrack, playbackState all present in PlayerContext.tsx. The issue was not missing MediaSession but the async URL fetch at track transition.
+**Fix:** Added next-track URL pre-fetching in PlayerContext.tsx. Two new refs (nextTrackUrlRef, nextTrackIdRef) store the pre-fetched signed URL. A new useEffect fires 3 seconds after each track change, fetches the next track URL via getAudioUrl() while the screen is still on and stores it. The load useEffect now checks for a pre-fetched URL first — if available, sets audio.src synchronously with no network call. Falls back to normal getAudioUrl() fetch if no pre-fetch is available.
+**File changed:** src/contexts/PlayerContext.tsx
+**Verified:** Next track advances automatically when phone screen turns off during Play All queue playback.
+**Governance:** No new routes or pages introduced.
