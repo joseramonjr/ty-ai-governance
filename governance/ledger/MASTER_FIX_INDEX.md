@@ -8094,3 +8094,4 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-493 | 2026-05-13 | SS321 | profiles column overexposure + inspiration lines broken — replaced broad public policy with SECURITY DEFINER function get_public_profile(); fixed SoulWordsCardHero to use RPC; fixed artistData[0] indexing bug; fixed p_user_id arg names; CI green | Entry-504 |
 
 | FIX-494 | 2026-05-15 | SS321 | Next track not advancing when phone screen off — added next-track URL pre-fetching in PlayerContext.tsx; signed URL cached 3s after track start; load useEffect uses cached URL synchronously eliminating throttled network call | Entry-505 |
+| FIX-495 | 2026-05-15 | ty-ai-governance | Administrative — Phase 8 (TYOVA Documentation Integrity Audit) formally resumed from Dormant A. No ledger record of pause existed. Resumption recorded in Ch18 Entry-506. Read-only drift audit begins this session. TYOVA HEAD: 867ba2e | 51 chapters. | Entry-506 |
