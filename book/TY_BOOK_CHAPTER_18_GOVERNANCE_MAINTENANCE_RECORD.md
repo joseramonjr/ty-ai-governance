@@ -10363,3 +10363,10 @@ URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
 **Phase 8 second pass duration:** 2026-05-15 11:03 PDT (resumption, Entry-506) to 2026-05-15 14:03 PDT (seal, this entry). San Diego.
 **Git tag:** phase8-second-pass-sealed applied to this commit.
 **Next phase:** Phase 10 -- scope to be defined before any Phase 10 work begins.
+
+### Entry-512 | FIX-501 | 2026-05-15 14:16 PDT San Diego
+**Action:** Ch26 term count header corrected.
+**Finding:** Pre-Flight discrepancy flagged between declared term count (253, as of 2026-04-08) and memory claim (315). File scan via PowerShell pattern match (^\*\* minus 7 metadata lines) established true count: 244 terms. Header line updated from 253 to 244. Updated date corrected from 2026-03-19 to 2026-05-15. No terms added or removed. Documentation accuracy only.
+**Discrepancy 2 (SS321_FIX_INDEX):** False alarm. SS-FIX-405 confirmed correct as last SS321 fix. Previous flag caused by conflation of TY governance FIX numbering with SS-FIX numbering.
+**Files changed:** book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
+**Status:** COMPLETE
