@@ -8102,3 +8102,5 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-500 | 2026-05-15 | ty-ai-governance | Phase 8 second pass formally sealed. Track 1 drift audit Ch1-Ch52 complete. Track 2 remediation complete (FIX-496 Ch52, FIX-497 Ch8 postscript, FIX-498 Ch26+Ch51). Track 3 surface fixes complete (FIX-499). Deferred: F-T3-012 (low priority), TY-0001.B (builder call). Tag: phase8-second-pass-sealed. | Entry-511 |
 
 | FIX-501 | 2026-05-15 | ty-ai-governance | Ch26 term count header corrected. Declared count 253 (as of 2026-04-08) was inaccurate. File-verified count via pattern scan: 244 terms. Header updated: Current Term Count 253 → 244, Updated date 2026-03-19 → 2026-05-15. No terms added or removed. Documentation accuracy fix. | Entry-512 |
+
+| FIX-502 | 2026-05-15 | TYOVA | F-T3-012 closed. Removed stale Post-Phase-5 note from VerifyPage.tsx. Four lines removed (lines 144-147, 0-indexed): paragraph containing 'Post-Phase-5 adoption strategy is pending.' No governance impact. Cosmetic accuracy fix. File: src/pages/VerifyPage.tsx. | Entry-513 |
