@@ -10395,3 +10395,23 @@ URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
 **Purpose:** Prevent future sessions from re-opening completed work. All three items removed from open items list permanently.
 **Files changed:** None -- record only.
 **Status:** COMPLETE
+
+### Entry-516 | FIX-505 | 2026-05-15 15:29 PDT San Diego
+**Action:** Phase 10, 11, and 12 scope formally defined by builder.
+**Phase 10 -- External User Governance**
+- Flags: F-17 + F-20
+- Scope: Define and implement governance rules for external users interacting with TY-governed systems. Establish Model D four-path user governance framework. Build advanced human behavioral verification protocol beyond fingerprint checking. SS321 serves as primary context.
+- Seal condition: F-17 closed + F-20 closed + documentation complete.
+**Phase 11 -- Governed Update Delivery**
+- Flag: F-18
+- Scope: Define and implement how TY AI OS updates are delivered to a running live system without breaking the authority chain or trust model.
+- Prerequisite: Phase 10 sealed.
+- Seal condition: F-18 closed + documentation complete.
+**Phase 12 -- Governed Evolution**
+- Flag: F-19
+- Scope: Define the governed evolution process for TY AI OS itself -- how the system changes over time, who approves changes, how they are validated, and how the authority chain is preserved across versions.
+- Prerequisite: Phase 11 sealed.
+- Seal condition: F-19 closed + documentation complete.
+**Rationale:** F-17 and F-20 paired -- cannot define advanced verification without first defining external user relationships. F-18 and F-19 paired -- update delivery is operational side of evolution governance. All four flags originated Part 118 (2026-04-01) Guardian Codex session.
+**Files changed:** None -- record only.
+**Status:** COMPLETE -- Phase 10 scope defined. Phase 10 work may now begin.
