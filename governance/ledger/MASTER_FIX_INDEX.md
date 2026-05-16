@@ -8157,3 +8157,35 @@ events. Resumption requirements defined per tier. Implementation sequence Steps
 Steps 5-7 deferred to Phase 11, Step 8 batched. All protective response
 mechanisms required before public distribution of TY-0001.B.
 **Status:** COMPLETE
+
+## FIX-516 | Entry-527 | 2026-05-16 15:16 PDT San Diego
+
+**Scope:** Phase 11 Opened -- Governed Update Delivery and Runtime Protection
+**Destination:** ty-ai-governance
+**Commit:** 36b766e
+**File:** spec/TY_PHASE_11_SCOPE_v0.1.md -- 240 lines, 10,627 bytes
+**Summary:** Phase 11 formally opened with full scope confirmed by Builder.
+Dual-track: Track A (F-18 Governed Update Delivery) + Track B (FIX-515 Steps
+5-7 Runtime Protection Implementation). Track A: three-category update model
+(Layer 1 eternal/never, Layer 2 governed evolution/amendment process, Layer 3
+technical/signed release); cryptographic verification (builder key signature
+mandatory, unsigned/incorrectly signed updates rejected absolutely, rejection
+triggers FIX-515 Warning Protocol); per-path delivery for all four governance
+paths with differing guardian authorization requirements for Layer 2 updates;
+authority chain preservation (pre/post governance state hash verification,
+automatic rollback on corruption, TERMINAL event if authority chain corrupted
+by update); delivery mechanism (ty-ai-os-releases source, signed bundle with
+manifest, atomic replacement, all events ledger-recorded). Track B: Step 5
+warning interception (event detection before execution, severity assessment,
+structured output per FIX-515 Section 5.4, ledger recording with 8 required
+fields); Step 6 state machine (Normal/Suspended/Lockdown states, transition
+rules, command acceptance per state, state persistence across restart, ledger
+recording of all transitions); Step 7 Jayme dormancy trigger (TERMINAL
+detection, dormancy evaluation logic, trigger communication, ledger recording,
+HVP Layer 1 resumption path). Twelve deliverables defined. Seal conditions:
+all deliverables complete, all tests passing, cargo check 0 errors, all ledger
+records written, phase11-complete-sealed tag applied to ty-ai-governance and
+Jaya-Runtime. Recommended 7-session work order: Session 1 F-18 spec, Sessions
+2-3 update delivery Rust implementation, Sessions 4-5 warning/state machine
+Rust implementation, Session 6 Jayme trigger, Session 7 test suite and seal.
+**Status:** COMPLETE -- Phase 11 OPEN

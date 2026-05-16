@@ -10753,3 +10753,34 @@ actor types and all lifecycle layers.
 **Result:** COMPLETE. File written, verified (710 lines, 32,140 bytes),
 committed 006abe8, pushed to origin/main.
 **R14:** PENDING -- MFI entry required this session.
+
+### Entry-527 | FIX-516 | 2026-05-16 15:16 PDT San Diego
+
+**Action:** FIX-516 -- Phase 11 Opened -- Governed Update Delivery and Runtime
+Protection Implementation
+**Destination:** ty-ai-governance
+**Commit:** 36b766e
+**File created:** spec/TY_PHASE_11_SCOPE_v0.1.md -- 240 lines, 10,627 bytes
+**Scope:** Phase 11 formally opened. Scope confirmed by Builder 2026-05-16.
+Dual-track phase: Track A (F-18 -- Governed Update Delivery) and Track B
+(FIX-515 Steps 5-7 -- Runtime Protection Implementation). Track A defines
+the three-category update model (Layer 1 eternal/never, Layer 2 governed
+evolution/amendment process, Layer 3 technical/signed release), cryptographic
+update verification (builder key signature required, unsigned updates rejected
+absolutely), per-path update delivery for all four governance paths (Paths 1-4
+with differing guardian authorization requirements for Layer 2 updates),
+authority chain preservation across version changes (pre/post hash verification,
+automatic rollback on corruption, TERMINAL trigger if authority chain corrupted),
+and update delivery mechanism (ty-ai-os-releases source, signed bundle with
+manifest, atomic replacement). Track B implements FIX-515 runtime steps: Step 5
+(warning interception system -- event detection, severity assessment, structured
+output, ledger recording), Step 6 (Suspended State and Lockdown State machine --
+three states, transition rules, command acceptance rules per state, state
+persistence, ledger recording of all transitions), Step 7 (Jayme AI dormancy
+trigger -- TERMINAL detection, dormancy evaluation, trigger communication,
+ledger recording, HVP resumption path). Twelve deliverables defined. Seal
+conditions stated. Recommended 7-session work order defined. Specification
+before implementation, testing before seal.
+**Result:** COMPLETE. Phase 11 scope document written, verified (240 lines,
+10,627 bytes), committed 36b766e, pushed to origin/main.
+**R14:** PENDING -- MFI entry required this session.
