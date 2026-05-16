@@ -10612,3 +10612,54 @@ explicitly stated: less guardian control in exchange for
 not managing a personal chain.
 
 **R14:** CLEAR
+### Entry-523 | FIX-512 | 2026-05-16 10:30 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Fix:** FIX-512
+**Scope:** F-17 Track A -- Federation Membership Protocol
+**File Created:** spec/TY_FEDERATION_MEMBERSHIP_PROTOCOL_v0.1.md
+**Size:** 349 lines | 10,163 bytes
+
+**Summary:** Defines TY AI OS federation membership for
+Paths 3 and 4. Eleven sections: I What a Federation Is,
+II Core Doctrine in Federation, III Member Obligations
+(eight items), IV What Members May and May Not Do,
+V Federation Registry (append-only), VI Path 3 Membership,
+VII Path 4 Membership, VIII Shared Guardian Structure
+(Path 4 -- closed chain rule, conservative hold on
+failure), IX Compliance in Federation (self-attested),
+X Withdrawal, XI Member Signature. Core principle:
+federation shares governance standards not governance
+authority.
+
+**R14:** CLEAR
+### Entry-524 | FIX-513 | 2026-05-16 10:30 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Fix:** FIX-513
+**Scope:** F-17 Track A -- Compliance Certification Standard
+**File Created:** spec/TY_COMPLIANCE_CERTIFICATION_STANDARD_v0.1.md
+**Size:** 286 lines | 8,068 bytes
+
+**Summary:** Final F-17 document. Defines what compliance
+means for all four paths. Seven sections: I Compliance
+Principle (one sentence: a system that modifies the core
+doctrine is not TY AI OS), II What Compliance Requires
+(core doctrine integrity, ledger integrity, path
+requirements, operational integrity), III What
+Disqualifies an Installation (six conditions),
+IV The Name TY AI OS (name belongs to compliant
+unmodified system), V Self-Attestation (current
+mechanism), VI Future Technical Verification (Phase 11+),
+VII Self-Attestation Declaration (installer to complete).
+
+Phase 10 Track A (F-17) is now complete.
+All six deliverables committed:
+  FIX-508 External User Governance Guide
+  FIX-509 User Charter Path 2
+  FIX-510 User Charter Path 3
+  FIX-511 User Charter Path 4
+  FIX-512 Federation Membership Protocol
+  FIX-513 Compliance Certification Standard
+
+**R14:** CLEAR
