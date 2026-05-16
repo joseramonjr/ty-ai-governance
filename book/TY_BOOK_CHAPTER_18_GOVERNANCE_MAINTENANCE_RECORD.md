@@ -10522,3 +10522,35 @@ Remaining before F-20 is fully operational:
   knowledge items (personal session -- not governance record).
 
 **R14:** CLEAR
+### Entry-519 | FIX-508 | 2026-05-16 10:26 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Fix:** FIX-508
+**Scope:** F-17 Track A -- External User Governance Guide
+**File Created:** spec/TY_EXTERNAL_USER_GOVERNANCE_GUIDE_v0.1.md
+**Size:** 412 lines | 12,106 bytes
+
+**Summary:** Phase 10 Track A (F-17) first deliverable.
+Primary governance guide for all external TY AI OS users.
+Defines the four governance paths, core doctrine that
+never changes, what users agree to by installing TY AI OS,
+and references to all path-specific charter templates.
+
+Sections:
+  -- What TY AI OS Is: mission from Master Charter
+  -- Core Doctrine: seven principles + non-weaponization
+     prohibitions -- permanent across all paths
+  -- What You Are Agreeing To: six explicit commitments
+  -- The Four Paths: Path 1 Solo No Guardian, Path 2
+     Independent Own Guardian, Path 3 Federated Own
+     Guardian, Path 4 Federated Shared Guardian --
+     each with full definition, requirements, and
+     who it suits
+  -- How to Choose: two-question decision tree
+  -- Updates: Phase 11 governed delivery (pending)
+  -- Compliance and Certification: self-attested,
+     references TY_COMPLIANCE_CERTIFICATION_STANDARD
+  -- Document References: full table of all F-17 docs
+  -- A Note on the Name: governance clarity statement
+
+**R14:** CLEAR
