@@ -8212,3 +8212,20 @@ source repository requirements (ty-ai-os-releases); Track B integration points
 
 **Phase 11 Track A:** Spec sealed. Next: FIX-518 deferred notice items or
 Phase 11 Sessions 2-3 Jaya-Runtime implementation per builder priority.
+## FIX-521 | Entry-529 | 2026-05-16 16:38 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** c5f7742
+**Scope:** Phase 11 Track A Session 2 -- Governed Update Delivery Rust implementation
+
+Three files delivered:
+
+1. update_manifest.rs (new -- 10,683 bytes) -- UpdateLayer enum (Layer1/2/3 locked invariant), UpdateManifest struct (all Section 3.3 fields), ParsedPackage, locate_package() enforcing REJECT-1, verify_manifest_hash() REJECT-5 absolute, check_layer1_rejection() REJECT-3 absolute, verify_content_hashes(), sha256_bytes(), sha256_file(), read_signature_bytes(), read_manifest_bytes()
+
+2. update_state_machine.rs (new -- 10,317 bytes) -- UpdateState (9 states per Section 6), UpdateEvent (all Section 7 mandatory fields), validate_transition() enforcing exactly 13 defined transitions, transition() with mandatory ledger write before transition completes, reject() convenience wrapper. Circular dependency resolved: log_update_event called with individual parameters -- no struct crosses the ledger boundary.
+
+3. ledger.rs (modified -- 38,016 bytes) -- update_events table added to initialize_ledger() (12 columns per Section 7), log_update_event() accepting individual parameters, UpdateEventRecord struct, fetch_update_events() returning 50 most recent records newest-first.
+
+**FIX number note:** FIX-518/519/520 pre-assigned to NOTICE items per session handoff. Session 2 Rust work assigned FIX-521. Confirmed by builder 2026-05-16 16:38 PDT.
+
+**Session 3 pending:** update_rollback.rs + update_delivery.rs + lib.rs registration + cargo check to zero errors.

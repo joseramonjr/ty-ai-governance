@@ -10815,3 +10815,19 @@ confirmed). Deferred notice items shift to FIX-518 through FIX-520.
 this document is sealed. Next: Phase 11 Sessions 2-3 (Jaya-Runtime implementation).
 
 **R14:** CLEAR pending MFI write this session.
+### Entry-529 | FIX-521 | 2026-05-16 16:38 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** c5f7742
+**Scope:** Phase 11 Track A Session 2 -- Governed Update Delivery Rust implementation
+
+**Files delivered:**
+- src-tauri/src/update_manifest.rs (new -- 10,683 bytes) -- UpdateLayer enum (Layer1/2/3), UpdateManifest struct, ParsedPackage, locate_package(), verify_manifest_hash() REJECT-5, check_layer1_rejection() REJECT-3, verify_content_hashes(), sha256_bytes(), sha256_file(), read_signature_bytes(), read_manifest_bytes()
+- src-tauri/src/update_state_machine.rs (new -- 10,317 bytes) -- UpdateState (9 states), UpdateEvent (all Section 7 mandatory fields), validate_transition() enforcing 13 defined transitions, transition() with mandatory ledger write before completion, reject() convenience wrapper
+- src-tauri/src/ledger.rs (modified -- 38,016 bytes) -- update_events table added to initialize_ledger(), log_update_event() (individual params -- no circular dependency), UpdateEventRecord struct, fetch_update_events() query
+
+**Spec reference:** TY_GOVERNED_UPDATE_DELIVERY_SPEC_v0.1.md (FIX-517 / Entry-528 / e66cf4a)
+
+**FIX number note:** FIX-518/519/520 pre-assigned to NOTICE items per session handoff. Session 2 Rust work assigned FIX-521 (next available after pre-assigned block). Confirmed by builder 2026-05-16 16:38 PDT.
+
+**Session 3 pending:** update_rollback.rs, update_delivery.rs, lib.rs registration, cargo check to zero errors.
