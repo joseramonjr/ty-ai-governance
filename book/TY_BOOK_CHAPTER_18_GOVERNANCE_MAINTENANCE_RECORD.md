@@ -10663,3 +10663,59 @@ All six deliverables committed:
   FIX-513 Compliance Certification Standard
 
 **R14:** CLEAR
+### Entry-525 | FIX-514 | 2026-05-16 13:28 PDT San Diego
+
+**Destination:** TYOVA
+**Fix:** FIX-514
+**Scope:** Installer Governance Integration v2
+**Files Changed:**
+  INSTALL/install.html -- 643 lines | 37,791 bytes
+  INSTALL/install.js   -- 938 lines | 53,334 bytes
+  INSTALL/install-config.json -- 13 lines
+
+**Summary:** Complete installer rewrite integrating the
+F-17 governance framework into the TY-0001 installation
+flow.
+
+New governance flow added:
+  WELCOME -> CORE_DOCTRINE -> PATH_SELECTION ->
+  PATH_REQUIREMENTS -> QUESTIONS -> COMPLIANCE ->
+  CONFIRMATION -> EXIT
+
+Questions updated from 18 to 24:
+  Q-01 through Q-17 -- rewritten with full
+    consequence-informed format for every choice.
+    Every Yes/No explains what happens if chosen
+    and what the user gives up.
+  Q-18 -- guarantees updated to accurately reflect
+    Jaya Runtime network and file access behavior.
+  Q-19 -- NEW: Jaya Runtime governance monitoring
+  Q-20 -- NEW: Luke AI explanations
+  Q-21 -- NEW: Governance ledger permanence
+    acknowledgment (required)
+  Q-22 -- NEW: Governance alert behavior
+  Q-23 -- NEW: Default action when alert dismissed
+  Q-24 -- NEW: Jayme AI constitutional successor
+    (Paths 2/3/4 only -- path-conditional)
+
+Governance alert exemption notices added to Q-03,
+Q-04, Q-05, Q-08, Q-13 -- users informed that
+governance violation alerts always appear regardless
+of their response timing or visibility settings.
+
+Changeability banner added to questions screen --
+users informed that all choices are changeable
+except governance ledger records.
+
+Expandable sections filled in:
+  About Luke AI and Jayme AI
+  Why multiple AIs?
+  Why trust this?
+  Show me everything TY will never do
+  What TY can do for you
+
+install-config.json schema extended with governance
+object: coreDoctrineAcknowledged, selectedPath,
+pathRequirementsPresented, complianceAttestation.
+
+**R14:** CLEAR
