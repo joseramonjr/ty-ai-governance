@@ -8189,3 +8189,26 @@ Jaya-Runtime. Recommended 7-session work order: Session 1 F-18 spec, Sessions
 2-3 update delivery Rust implementation, Sessions 4-5 warning/state machine
 Rust implementation, Session 6 Jayme trigger, Session 7 test suite and seal.
 **Status:** COMPLETE -- Phase 11 OPEN
+
+## FIX-517 | Entry-528 | 2026-05-16 15:37-15:56 PDT San Diego
+
+**Scope:** Phase 11 Track A -- TY Governed Update Delivery Specification v0.1
+**Destination:** ty-ai-governance
+**Commit:** e66cf4a
+**File:** spec/TY_GOVERNED_UPDATE_DELIVERY_SPEC_v0.1.md -- 645 lines -- 28,294 bytes
+
+**Summary:** Produced the initial F-18 specification document. Defines three-category
+update model (Layer 1 eternal / Layer 2 governed amendment / Layer 3 standard signed
+release); Ed25519 signing requirements (Rules S-1 through S-5, absolute); per-path
+delivery behavior for all four governance paths (Paths 1-4); authority chain hash
+preservation (pre/post verification); 9-state update state machine with 13 defined
+transitions; mandatory ledger recording fields; rollback protocol (Option A --
+post-hash mismatch trigger, guardian-initiated rollback within 14-day window for
+Layer 2); Layer 2 amendment process (7-day deliberation period minimum, anti-capture
+rules ANTI-CAPTURE-1 through ANTI-CAPTURE-5); absolute rejection criteria REJECT-1
+through REJECT-5; conditional rejection criteria REJECT-C1 through REJECT-C3;
+source repository requirements (ty-ai-os-releases); Track B integration points
+(FIX-515 Steps 5-7); 5 open design questions (ODQ-1 through ODQ-5).
+
+**Phase 11 Track A:** Spec sealed. Next: FIX-518 deferred notice items or
+Phase 11 Sessions 2-3 Jaya-Runtime implementation per builder priority.

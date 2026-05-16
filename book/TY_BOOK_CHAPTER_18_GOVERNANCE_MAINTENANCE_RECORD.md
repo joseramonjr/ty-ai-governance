@@ -10784,3 +10784,34 @@ before implementation, testing before seal.
 **Result:** COMPLETE. Phase 11 scope document written, verified (240 lines,
 10,627 bytes), committed 36b766e, pushed to origin/main.
 **R14:** PENDING -- MFI entry required this session.
+
+### Entry-528 | FIX-517 | 2026-05-16 15:37-15:56 PDT San Diego
+
+**Scope:** Phase 11 Session 1 -- TY Governed Update Delivery Specification v0.1
+**Destination:** ty-ai-governance
+**Commit:** e66cf4a
+**File:** spec/TY_GOVERNED_UPDATE_DELIVERY_SPEC_v0.1.md -- 645 lines -- 28,294 bytes
+
+**Action:** Produced the initial F-18 specification document (Phase 11 Track A).
+Defines: three-category update model (Layer 1 eternal / Layer 2 governed amendment /
+Layer 3 standard signed release); Ed25519 signing and verification requirements
+(Rules S-1 through S-5, all absolute); per-path delivery behavior for all four
+governance paths; authority chain hash preservation protocol (pre/post verification);
+9-state update state machine with 13 defined transitions; mandatory ledger recording
+fields for all update events; rollback protocol (Option A -- post-hash mismatch
+triggers rollback, guardian-initiated rollback within 14-day window for Layer 2);
+Layer 2 amendment process (7-day deliberation period minimum, anti-capture rules
+ANTI-CAPTURE-1 through ANTI-CAPTURE-5); absolute rejection criteria REJECT-1 through
+REJECT-5; conditional rejection criteria REJECT-C1 through REJECT-C3; source
+repository requirements (ty-ai-os-releases); Phase 11 Track B integration points
+(FIX-515 Steps 5-7); 5 open design questions (ODQ-1 through ODQ-5); Phase 11
+Track A seal conditions.
+
+**FIX number determination:** FIX-515 committed document does not pre-assign FIX
+numbers to deferred items. FIX-517 assigned to this spec as Priority 1 (builder
+confirmed). Deferred notice items shift to FIX-518 through FIX-520.
+
+**Phase 11 Track A status:** Spec sealed. No Rust implementation proceeds until
+this document is sealed. Next: Phase 11 Sessions 2-3 (Jaya-Runtime implementation).
+
+**R14:** CLEAR pending MFI write this session.
