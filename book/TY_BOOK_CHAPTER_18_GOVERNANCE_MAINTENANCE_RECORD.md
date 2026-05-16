@@ -10415,3 +10415,110 @@ URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
 **Rationale:** F-17 and F-20 paired -- cannot define advanced verification without first defining external user relationships. F-18 and F-19 paired -- update delivery is operational side of evolution governance. All four flags originated Part 118 (2026-04-01) Guardian Codex session.
 **Files changed:** None -- record only.
 **Status:** COMPLETE -- Phase 10 scope defined. Phase 10 work may now begin.
+
+### Entry-517 | FIX-506 | 2026-05-15 19:47 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Fix:** FIX-506
+**Scope:** F-20 Track B -- Human Verification Protocol
+**File Created:** spec/TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md
+**Size:** 569 lines | 17,739 bytes
+
+**Summary:** Phase 10 Track B (F-20) first deliverable.
+Created TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md -- the
+formal specification defining the specific verification
+methods for Guardian Codex Section XII. The Codex defines
+the structure and requirements. This document defines the
+methods.
+
+Sections defined:
+  L1 -- Oral Testimony Protocol: two stories (A primary,
+        B backup), guardian ring physically present, two
+        witnesses with signed attestation, story verified
+        against governance ledger hash. Declaration
+        required before testimony. No mid-session
+        switching.
+  L2 -- Guardian Ring Protocol: unique engraving hashed
+        to governance ledger. Single physical object
+        satisfies both Layer 1 and Layer 2 simultaneously.
+        Lost ring increases Layer 3 and Layer 4 burden
+        but does not automatically fail verification.
+        Cryptographic obsolescence path defined.
+  L3 -- Personal Chain Knowledge: two items -- duress
+        signal (FLAG-128.1, Jose personal decision only)
+        and one additional unwritten knowledge item
+        (Jose personal decision only). Neither item
+        recorded here. Both passed orally during
+        guardian handoff only.
+  I1 -- Jayme Initialization Requirements: Layer 1 and
+        Layer 2 hashes registered in governance ledger
+        by builder privately. Layer 3 hashes stored in
+        Jaya Runtime Private Verification Store
+        (AES-256-GCM, not in any public ledger or
+        document) -- requires FIX-507 to be built.
+        Initialization sequence defined. Re-initialization
+        after guardian handoff defined.
+  W1 -- Waiting period: 7 days (168 hours) after any
+        layer failure. Gate 0 failure permanent.
+  B1 -- Biometric Upgrade Provision: future guardians
+        may adopt facial, retinal, blood/DNA verification
+        as additional Layer 1 method via signed Charter
+        amendment. Physical presence requirement
+        preserved. Oral Testimony and ring remain valid
+        indefinitely unless formally superseded.
+
+New open item registered: FIX-507 -- Jaya Runtime
+Private Verification Store -- new Rust module required
+for Layer 3 hash storage. Dedicated session required.
+
+**R14:** CLEAR
+### Entry-518 | FIX-507 | 2026-05-15 22:16 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Fix:** FIX-507
+**Scope:** Phase 10 Track B -- F-20 -- Private Verification Store
+**Files Changed:** 5 | 518 insertions
+**Commit:** 4b095ea
+
+**Files:**
+  src-tauri/Cargo.toml -- aes-gcm 0.10 + argon2 0.5 added
+  src-tauri/Cargo.lock -- dependency lock updated
+  src-tauri/src/private_verification_store.rs -- new module 368 lines
+  src-tauri/src/lib.rs -- mod + use + 4 commands registered (2738->2746 lines)
+  src-tauri/tauri.conf.json -- withGlobalTauri: true (pre-existing, now committed)
+
+**Summary:** Phase 10 Track B (F-20) runtime deliverable. Built the
+Jaya Runtime Private Verification Store -- the encrypted module that
+holds Layer 3 guardian verification hashes defined in
+TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md Section I1.D.
+
+Architecture:
+  -- AES-256-GCM encryption at rest (pvs_store.enc in app data dir)
+  -- Argon2id salted hashing per knowledge item (PHC string format)
+  -- Separate 32-byte random key file (pvs_key.bin in app data dir)
+  -- Not in any public ledger, document, or external record
+  -- Not replicated to any external system
+
+Tauri commands registered:
+  pvs_initialize -- first-time builder setup
+  pvs_verify_item -- compare candidate against stored hash
+  pvs_reinitialize -- guardian handoff replacement
+  pvs_status -- check initialization state
+
+Tests: 4 passed | 0 failed
+  test_argon2_correct_value_passes -- ok
+  test_argon2_wrong_value_fails -- ok
+  test_aes_gcm_roundtrip -- ok
+  test_tampered_ciphertext_fails_decryption -- ok
+
+Cargo check: 0 errors | 7 warnings (pre-existing)
+
+Phase 10 Track B (F-20) is now complete:
+  FIX-506 -- Human Verification Protocol spec -- DONE
+  FIX-507 -- Private Verification Store runtime -- DONE
+
+Remaining before F-20 is fully operational:
+  Builder must privately initialize the store with Layer 3
+  knowledge items (personal session -- not governance record).
+
+**R14:** CLEAR
