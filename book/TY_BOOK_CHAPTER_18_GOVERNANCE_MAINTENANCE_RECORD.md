@@ -10573,3 +10573,42 @@ I, VII, X, XI are USER TO COMPLETE. All other sections
 are PRE-FILLED core doctrine -- user may not modify.
 
 **R14:** CLEAR
+### Entry-521 | FIX-510 | 2026-05-16 10:30 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Fix:** FIX-510
+**Scope:** F-17 Track A -- User Charter Template Path 3
+**File Created:** spec/TY_USER_CHARTER_PATH3_v0.1.md
+**Size:** 505 lines | 15,036 bytes
+
+**Summary:** Path 3 (Federated, Own Guardian) charter
+template. Twelve sections: same core doctrine sections
+as Path 2 plus Section III Federation Obligations
+(pre-filled) and Section XI Installation and Federation
+Context (user to complete). Key distinction from Path 2:
+federation obligations formally acknowledged, guardian
+authority remains personal not federated, both this
+charter and Federation Membership Protocol required.
+
+**R14:** CLEAR
+### Entry-522 | FIX-511 | 2026-05-16 10:30 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Fix:** FIX-511
+**Scope:** F-17 Track A -- User Charter Template Path 4
+**File Created:** spec/TY_USER_CHARTER_PATH4_v0.1.md
+**Size:** 429 lines | 12,705 bytes
+
+**Summary:** Path 4 (Federated, Shared Guardian) charter
+template. Simplest of the three charter templates -- no
+personal guardian designation section. Ten sections:
+I User Identity, II Core Doctrine Acknowledgment,
+III Federation Obligations, IV Shared Guardian Structure
+(pre-filled -- user joins existing shared chain),
+V Activation Conditions, VI Jayme Scope, VII Halt and
+Compromise, VIII Verification Protocol, IX Installation
+and Federation Context, X User Signature. Key trade-off
+explicitly stated: less guardian control in exchange for
+not managing a personal chain.
+
+**R14:** CLEAR
