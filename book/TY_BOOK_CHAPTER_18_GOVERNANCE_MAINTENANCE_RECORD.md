@@ -10554,3 +10554,22 @@ Sections:
   -- A Note on the Name: governance clarity statement
 
 **R14:** CLEAR
+### Entry-520 | FIX-509 | 2026-05-16 10:30 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Fix:** FIX-509
+**Scope:** F-17 Track A -- User Charter Template Path 2
+**File Created:** spec/TY_USER_CHARTER_PATH2_v0.1.md
+**Size:** 463 lines | 13,806 bytes
+
+**Summary:** Path 2 (Independent, Own Guardian) charter
+template. Eleven sections: I User Identity, II Core
+Doctrine Acknowledgment, III Activation Conditions,
+IV Scope of Jayme AI Authority, V Halt Conditions,
+VI Compromise and Attack, VII Guardian Designation,
+VIII Verification Protocol, IX Duration and Succession,
+X Installation Context, XI User Signature. Sections
+I, VII, X, XI are USER TO COMPLETE. All other sections
+are PRE-FILLED core doctrine -- user may not modify.
+
+**R14:** CLEAR
