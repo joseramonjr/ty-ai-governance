@@ -1,4 +1,4 @@
-# MASTER_FIX_INDEX
+﻿# MASTER_FIX_INDEX
 
 Status: Active
 
@@ -8119,3 +8119,41 @@ FIX-361 | SS-FIX-378 | 2026-05-05 17:55 PDT | Trophy collection pages -- /trophi
 | FIX-512 | 2026-05-16 | ty-ai-governance | Phase 10 Track A (F-17) -- Created TY_FEDERATION_MEMBERSHIP_PROTOCOL_v0.1.md (349 lines, 10,163 bytes). Defines federation for Paths 3 and 4. Covers member obligations, federation registry (append-only), Path 3 and 4 membership rules, shared guardian structure for Path 4, compliance self-attestation, and withdrawal protocol. Core principle: federation shares standards not authority. | Entry-523 |
 | FIX-513 | 2026-05-16 | ty-ai-governance | Phase 10 Track A (F-17) COMPLETE -- Created TY_COMPLIANCE_CERTIFICATION_STANDARD_v0.1.md (286 lines, 8,068 bytes). Defines compliance for all four paths. Core principle: a system that modifies the core doctrine is not TY AI OS. Covers core doctrine integrity, ledger integrity, path requirements, disqualification conditions, name usage, self-attestation, and future technical verification (Phase 11+). F-17 six-document set now complete. | Entry-524 |
 | FIX-514 | 2026-05-16 | TYOVA | Installer Governance Integration v2 -- Complete installer rewrite. New 8-state governance flow (Welcome, Core Doctrine, Path Selection, Path Requirements, Questions, Compliance, Confirmation, Exit). Questions expanded from 18 to 24 with full consequence-informed format. New: Q-19 Jaya monitoring, Q-20 Luke AI, Q-21 ledger permanence, Q-22 alert behavior, Q-23 alert dismissal default, Q-24 Jayme AI (path-conditional). Governance alert exemption notices on Q-03/04/05/08/13. Changeability banner. Expandable sections filled. install-config.json extended with governance object. | Entry-525 |
+
+## FIX-515 | Entry-526 | 2026-05-16 14:39 PDT San Diego
+
+**Scope:** TY AI OS Notice and Warning Protocol v0.1
+**Destination:** ty-ai-governance
+**Commit:** 006abe8
+**File:** spec/TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md -- 710 lines, 32,140 bytes
+**Summary:** Created the Notice and Warning Protocol establishing three
+interlocking requirements across the full TY AI OS lifecycle. Notice Doctrine:
+notice precedes consequence, warning precedes execution, protection precedes
+harm. Layer 1 Installation: NOTICE screen before CORE_DOCTRINE, non-skippable,
+six-point notice text covering core doctrine permanence, path binding, prohibited
+modification, ledger recording, warning commitment, and formal notification.
+Layer 2 Runtime Warning: interception fires before action executes, 8 trigger
+conditions, structured warning format with 7 required fields, 4 severity levels
+(ADVISORY/WARNING/CRITICAL/TERMINAL), ledger recording for WARNING and above
+with 8 required fields per record. Layer 3 Distribution: NOTICE.md template
+covering governance constraints, patent notice, and formal notification clause
+for all 6 repositories; Rust and TypeScript header comment standard for governed
+components. Layer 4 Compliance Certification: certification failure notice clause
+added to FIX-513 standard, structured certification failure warning format.
+Protective Response Protocol (Section 6): Ecosystem Protection Principle --
+TY restricts itself rather than acting autonomously, human authority primacy
+upheld even under TERMINAL threat. Tier 1 (ADVISORY) log/continue. Tier 2
+(WARNING) block/notify/ledger. Tier 3 (CRITICAL) Suspended State -- Jaya refuses
+non-essential commands, Jayme enters heightened monitoring, federation peers
+notified, guardian acknowledgment required before resumption. Tier 4 (TERMINAL)
+Lockdown State -- Jaya accepts only HVP verification, Jayme dormancy evaluation
+triggered, Luke strict read-only, federation isolated, emergency guardian
+notification, HVP Layer 1 physical verification required to resume. 9 permitted
+protective actions defined. 7 prohibited autonomous actions defined (including
+prohibition on self-modification and exceeding autonomy tier even under attack).
+All-Agent Protection Protocol: 8-step coordinated response sequence for TERMINAL
+events. Resumption requirements defined per tier. Implementation sequence Steps
+1-8: Step 1 complete (this document), Steps 2-4 deferred to FIX-516/517/518,
+Steps 5-7 deferred to Phase 11, Step 8 batched. All protective response
+mechanisms required before public distribution of TY-0001.B.
+**Status:** COMPLETE
