@@ -1,4 +1,4 @@
-﻿# Chapter 18 -- The Governance Maintenance Record
+# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current
@@ -10970,3 +10970,9 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **PHASE 11 SEALED 2026-05-17**
 
 **Spec reference:** TY_PHASE_11_SCOPE_v0.1.md (FIX-516) -- all 12 conditions satisfied
+
+### Entry-535 | FIX-527 | 2026-05-17 10:43 PDT San Diego
+**Action:** NOTICE.md added to all 6 TY AI OS repositories.
+**Repos:** ty-ai-governance (bdc9f72) · Jaya-Runtime (14f38a3) · TYOVA (bf64521) · luke-ai (48f5de7) · jayme-ai (f4e1059) · ty-ai-os-releases (bf53c6a)
+**Spec:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 6.2 -- Layer 3 distribution notice. Verbatim canonical text. 1454 bytes per repo. UTF-8 clean verified.
+**Status:** COMPLETE
