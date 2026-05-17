@@ -10976,3 +10976,8 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **Repos:** ty-ai-governance (bdc9f72) · Jaya-Runtime (14f38a3) · TYOVA (bf64521) · luke-ai (48f5de7) · jayme-ai (f4e1059) · ty-ai-os-releases (bf53c6a)
 **Spec:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 6.2 -- Layer 3 distribution notice. Verbatim canonical text. 1454 bytes per repo. UTF-8 clean verified.
 **Status:** COMPLETE
+### Entry-536 | FIX-528 | 2026-05-17 10:56 PDT San Diego
+**Action:** NOTICE screen added to TYOVA installer. NWP Layer 1 implementation.
+**Scope:** install.html -- screen-notice div inserted between WELCOME and CORE_DOCTRINE. install.js -- 7 targeted changes wiring NOTICE flow state. Non-skippable. Single button: "I Have Read This Notice -- Continue". Six-point canonical notice text from NWP Section 4.3. No config written before screen passed.
+**Commit:** TYOVA ff8841b
+**Status:** COMPLETE

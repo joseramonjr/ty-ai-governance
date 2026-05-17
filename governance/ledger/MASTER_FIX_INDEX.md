@@ -8355,3 +8355,12 @@ Five files modified (test blocks added):
 **Spec reference:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 6.2
 **cargo check:** N/A -- notice files only
 **Status:** COMPLETE
+## FIX-528 | Entry-536 | 2026-05-17 10:56 PDT San Diego
+**Description:** NOTICE screen added to TYOVA installer -- NWP Layer 1 implementation. Non-skippable screen inserted between WELCOME and CORE_DOCTRINE. Single button: "I Have Read This Notice -- Continue". Six-point canonical notice text from TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 4.3. No config data written before screen is passed. Flow updated: WELCOME to NOTICE to CORE_DOCTRINE.
+**Files:**
+  src/ty-ai-admin-core/bundle/package/INSTALL/install.html -- screen-notice div added
+  src/ty-ai-admin-core/bundle/package/INSTALL/install.js -- NOTICE flow state wired (7 changes)
+**Repo:** TYOVA -- ff8841b
+**Spec reference:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 4.2 and 4.3
+**cargo check:** N/A -- HTML/JS installer files only
+**Status:** COMPLETE
