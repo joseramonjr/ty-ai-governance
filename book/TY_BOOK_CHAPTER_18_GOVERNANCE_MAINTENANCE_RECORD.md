@@ -10935,3 +10935,38 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **Spec reference:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md (FIX-515) Section 6.10
                    TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md (FIX-506) Section L1
                    TY_PHASE_11_SCOPE_v0.1.md Session 6
+
+### Entry-534 | FIX-526 | 2026-05-17 10:11 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 7c78396
+**Tag:** phase11-complete-sealed (applied to Jaya-Runtime @ 7c78396 and ty-ai-governance @ 93ba943)
+**Scope:** Phase 11 Session 7 -- Full Test Suite + Phase 11 Seal
+
+**Files delivered:**
+- src-tauri/src/update_manifest.rs (modified -- 14,293 bytes) -- test block added: REJECT-3 Layer1 rejection, REJECT-3 Layer2/Layer3 pass, REJECT-5 hash mismatch, REJECT-5 hash match, sha256_bytes determinism, sha256_bytes different inputs differ, UpdateLayer display, is_layer1 detection. Duplicate test block removed (92 lines). 9 tests.
+- src-tauri/src/update_state_machine.rs (modified -- 15,481 bytes) -- validate_transition made pub(crate). Test block added: all 13 valid transitions pass, terminal states have no outgoing transitions, illegal transitions rejected, new event starts in Proposed state, all 9 state display strings, Proposed->Rejected valid, PendingGuardianTimeout->Authorized valid. 7 tests.
+- src-tauri/src/runtime_warning.rs (modified -- 33,649 bytes) -- test block added: assess_severity all 8 triggers, severity ordering Advisory<Warning<Critical<Terminal, escalation permitted, de-escalation blocked, build_warning_output all Section 5.4 fields, severity display all 4 values, trigger condition display key values, all WARNING+ events blocked, ledger hash 64 hex chars, ledger hash differs for different events, PVS unauthorized TERMINAL+BLOCKED, core invariant CRITICAL+BLOCKED, ledger tampering TERMINAL. 13 tests.
+- src-tauri/src/protection_state.rs (modified -- 28,463 bytes) -- test block added: from_str all values, display all values, new manager starts Normal, gate Normal allows all, gate Suspended blocks non-whitelist, gate Suspended allows whitelist, gate Lockdown blocks all non-HVP, gate Lockdown allows HVP only, record default, load+to_record round trip, suspended correctly identified, lockdown correctly identified. 12 tests.
+- src-tauri/src/jayme_dormancy.rs (modified -- 19,974 bytes) -- test block added: from_str all values, display all values, new manager starts Active, load dormant state, load heightened monitoring, record default, to_record round trip, dormant not active, state equality, consecutive loads independent. 10 tests.
+
+**cargo test result:** 104 tests passed. 0 failed. 0 ignored. Finished in 0.41s.
+**cargo check result:** Zero errors. 44 warnings (dead_code/unused -- expected).
+
+**Phase 11 seal conditions satisfied:**
+1. TY_GOVERNED_UPDATE_DELIVERY_SPEC_v0.1.md -- FIX-517 SEALED
+2. Cryptographic update verification -- FIX-521/522 SEALED
+3. Per-path update delivery logic -- FIX-521/522 SEALED
+4. Authority chain preservation and rollback -- FIX-521/522 SEALED
+5. Governance ledger recording for update events -- FIX-521/522 SEALED
+6. Runtime warning interception system -- FIX-523/525 SEALED
+7. Suspended State and Lockdown State machine -- FIX-524 SEALED
+8. Jayme AI dormancy trigger -- FIX-525 SEALED
+9. Full test suite 104 tests 0 failed -- FIX-526 SEALED
+10. cargo check 0 errors -- FIX-526 SEALED
+11. All Ch18 entries and MFI records -- FIX-526 SEALED
+12. Phase 11 seal tag applied both repos -- FIX-526 SEALED
+
+**PHASE 11 SEALED 2026-05-17**
+
+**Spec reference:** TY_PHASE_11_SCOPE_v0.1.md (FIX-516) -- all 12 conditions satisfied

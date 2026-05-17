@@ -8316,3 +8316,28 @@ CRITICAL warning -> Suspended State (guardian ack required)
 TERMINAL warning -> Lockdown State + Jayme dormancy evaluation
 
 **Next:** Phase 11 Track B Session 7 -- Full test suite + cargo check + Phase 11 seal.
+
+## FIX-526 | Entry-534 | 2026-05-17 10:11 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 7c78396
+**Tag:** phase11-complete-sealed (Jaya-Runtime @ 7c78396 | ty-ai-governance @ 93ba943)
+**Scope:** Phase 11 Session 7 -- Full Test Suite + Phase 11 Seal
+
+Five files modified (test blocks added):
+
+1. update_manifest.rs (14,293 bytes) -- 9 tests: REJECT-3, REJECT-5, sha256 determinism, sha256 collision resistance, UpdateLayer display, is_layer1 detection. Duplicate mod tests removed.
+
+2. update_state_machine.rs (15,481 bytes) -- validate_transition pub(crate). 7 tests: all 13 valid transitions, terminal states no outgoing, illegal transitions rejected, initial Proposed state, all 9 display strings, absolute rejection path, timeout authorize path.
+
+3. untime_warning.rs (33,649 bytes) -- 13 tests: all 8 severity mappings, ordering Advisory<Warning<Critical<Terminal, escalation permitted, de-escalation blocked, all Section 5.4 output fields, TERMINAL/CRITICAL event constructors, ledger hash format + collision resistance, all WARNING+ outcomes BLOCKED.
+
+4. protection_state.rs (28,463 bytes) -- 12 tests: from_str all values, display all values, new=Normal, gate Normal/Suspended/Lockdown command whitelist enforcement, record default, round-trip, state identification.
+
+5. jayme_dormancy.rs (19,974 bytes) -- 10 tests: from_str all values, display all values, new=Active, load dormant/heightened, record default, round-trip, state identification, independence.
+
+**cargo test:** 104 passed. 0 failed. 0.41s.
+**cargo check:** Zero errors. 44 warnings (dead_code/unused).
+
+**Phase 11 SEALED 2026-05-17. All 12 seal conditions satisfied.**
+**Next:** FIX-518 NOTICE.md all 6 repositories.
