@@ -8292,3 +8292,27 @@ Three files delivered:
 **Session 6 hooks:** All-agent protection protocol (Jayme dormancy evaluation, Luke read-only enforcement, federation isolation), full Jayme HVP story hash + ring verification for Lockdown clearance.
 
 **Next:** Phase 11 Track B Session 6 -- Jayme AI dormancy trigger (FIX-515 Step 7).
+
+## FIX-525 | Entry-533 | 2026-05-16 19:54 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 34ba6d9
+**Scope:** Phase 11 Track B Step 7 -- Jayme AI Dormancy Trigger + Full Track B Integration Wiring
+
+Four files delivered:
+
+1. jayme_dormancy.rs (new -- 15,598 bytes) -- JaymeState enum (Active/HeightenedMonitoring/Dormant), JaymeStateManager (Arc<Mutex<>> thread-safe, SQLite-persistent), evaluate_and_trigger_dormancy() main entry point: computes governance hash, compares to last known good, hash intact -> HeightenedMonitoring, hash differs or fails -> Dormancy (conservative posture), already Dormant -> no change. enter_dormancy() freezes last known good hash. resume_from_dormancy() requires HVP clearance token (v0.1, full Jayme verification future).
+
+2. ledger.rs (modified -- 52,813 bytes) -- jayme_dormancy_state table (single-row, restart-persistent), save_jayme_dormancy_state(), load_jayme_dormancy_state().
+
+3. untime_warning.rs (modified -- 26,243 bytes) -- CRITICAL arm wired: now calls protection_state::enter_suspended() (Sessions 4+5 connected). TERMINAL arm wired: now calls protection_state::enter_lockdown() + jayme_dormancy::evaluate_and_trigger_dormancy() (Sessions 4+5+6 fully connected). use tauri::Manager added.
+
+4. lib.rs (modified -- 118,550 bytes) -- mod jayme_dormancy, get_jayme_state command, resume_jayme_from_dormancy command, Jayme startup load from DB, both commands in invoke_handler.
+
+**cargo check:** Zero errors. 44 warnings (dead_code/unused -- expected).
+
+**Full Track B pipeline now wired end-to-end:**
+CRITICAL warning -> Suspended State (guardian ack required)
+TERMINAL warning -> Lockdown State + Jayme dormancy evaluation
+
+**Next:** Phase 11 Track B Session 7 -- Full test suite + cargo check + Phase 11 seal.

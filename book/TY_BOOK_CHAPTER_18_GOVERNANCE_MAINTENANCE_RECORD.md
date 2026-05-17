@@ -10905,3 +10905,33 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 
 **Spec reference:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md (FIX-515) Sections 6.3-6.11
                    TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md (FIX-506) Section L1
+
+### Entry-533 | FIX-525 | 2026-05-16 19:54 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 34ba6d9
+**Scope:** Phase 11 Track B Step 7 -- Jayme AI Dormancy Trigger + Full Track B Integration Wiring
+
+**Files delivered:**
+- src-tauri/src/jayme_dormancy.rs (new -- 15,598 bytes) -- JaymeState enum (Active/HeightenedMonitoring/Dormant), JaymeStateManager with Arc<Mutex<>> thread safety, JaymeStateRecord for SQLite persistence, enter_heightened_monitoring() CRITICAL response (governance state intact), enter_dormancy() TERMINAL response (governance state at risk, last known good hash frozen), resume_from_dormancy() HVP clearance path (v0.1 token, full Jayme verification future), evaluate_and_trigger_dormancy() main evaluation entry point (hash comparison logic, conservative posture defaults to Dormancy)
+- src-tauri/src/ledger.rs (modified -- 52,813 bytes) -- jayme_dormancy_state table (single-row persistence, restart-survival), save_jayme_dormancy_state(), load_jayme_dormancy_state()
+- src-tauri/src/runtime_warning.rs (modified -- 26,243 bytes) -- CRITICAL hook wired to protection_state::enter_suspended() (Sessions 4-5 now connected), TERMINAL hook wired to protection_state::enter_lockdown() + jayme_dormancy::evaluate_and_trigger_dormancy() (Sessions 4-5-6 now fully connected), use tauri::Manager added for app.state() access
+- src-tauri/src/lib.rs (modified -- 118,550 bytes) -- mod jayme_dormancy declared, get_jayme_state and resume_jayme_from_dormancy Tauri commands added and registered, Jayme state startup load from DB in setup closure
+
+**cargo check result:** Zero errors. 44 warnings (dead_code/unused -- expected). All warnings acceptable.
+
+**Full Track B integration now complete:**
+- CRITICAL warning -> enter_suspended() -> Suspended State (guardian acknowledgment required)
+- TERMINAL warning -> enter_lockdown() + evaluate_and_trigger_dormancy() -> Lockdown State + Jayme dormancy/heightened monitoring
+- All-agent hooks documented: Luke read-only (structural by design), federation isolation (Session 6 note), guardian emergency notification (logged)
+
+**Dormancy evaluation algorithm:**
+- Compute current governance hash
+- Compare to last known good hash
+- Hash intact -> HeightenedMonitoring
+- Hash differs or computation fails -> Dormancy (conservative/fail-safe posture)
+- Already Dormant -> no state change, TERMINAL noted
+
+**Spec reference:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md (FIX-515) Section 6.10
+                   TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md (FIX-506) Section L1
+                   TY_PHASE_11_SCOPE_v0.1.md Session 6
