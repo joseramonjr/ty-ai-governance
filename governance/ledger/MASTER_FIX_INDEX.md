@@ -8364,3 +8364,11 @@ Five files modified (test blocks added):
 **Spec reference:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 4.2 and 4.3
 **cargo check:** N/A -- HTML/JS installer files only
 **Status:** COMPLETE
+## FIX-529 | Entry-537 | 2026-05-17 11:00 PDT San Diego
+**Description:** Section VIII Certification Failure Notice added to TY_COMPLIANCE_CERTIFICATION_STANDARD_v0.1.md. Canonical text from TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 8.2 appended verbatim. Establishes that a system failing compliance certification has received formal notice and cannot claim ignorance. Includes federation protective response consequence.
+**Files:**
+  spec/TY_COMPLIANCE_CERTIFICATION_STANDARD_v0.1.md -- Section VIII appended (19 lines)
+**Repo:** ty-ai-governance -- 1062558
+**Spec reference:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 8.2
+**cargo check:** N/A -- governance document only
+**Status:** COMPLETE

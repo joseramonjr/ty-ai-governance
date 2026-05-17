@@ -10981,3 +10981,8 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **Scope:** install.html -- screen-notice div inserted between WELCOME and CORE_DOCTRINE. install.js -- 7 targeted changes wiring NOTICE flow state. Non-skippable. Single button: "I Have Read This Notice -- Continue". Six-point canonical notice text from NWP Section 4.3. No config written before screen passed.
 **Commit:** TYOVA ff8841b
 **Status:** COMPLETE
+### Entry-537 | FIX-529 | 2026-05-17 11:00 PDT San Diego
+**Action:** Section VIII Certification Failure Notice appended to TY_COMPLIANCE_CERTIFICATION_STANDARD_v0.1.md.
+**Scope:** Canonical text from NWP Section 8.2 appended verbatim. Establishes formal notice to any system that fails compliance certification. Federation protective response consequence documented. Amendment reference included.
+**Commit:** ty-ai-governance 1062558
+**Status:** COMPLETE
