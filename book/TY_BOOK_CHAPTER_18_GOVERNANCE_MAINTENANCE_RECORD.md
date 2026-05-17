@@ -10878,3 +10878,30 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 - Jayme dormancy evaluation: Session 6
 
 **Spec reference:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md (FIX-515 / Entry-526) Sections 5.3, 5.4, 5.5, 5.6, 6.3
+
+### Entry-532 | FIX-524 | 2026-05-16 19:23 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** c99c7a9
+**Scope:** Phase 11 Track B Step 6 -- Suspended State and Lockdown State Machine
+
+**Files delivered:**
+- src-tauri/src/protection_state.rs (new -- 22,208 bytes) -- ProtectionState enum (Normal/Suspended/Lockdown), ProtectionStateManager with Arc<Mutex<>> thread safety, ProtectionStateRecord for persistence, SUSPENDED_WHITELIST (14 commands), LOCKDOWN_WHITELIST (2 commands), check_command_gate() NWP-compliant rejection messages per state, enter_suspended() CRITICAL trigger with DB persistence + ledger transition record + guardian notification log, enter_lockdown() TERMINAL trigger with DB persistence + ledger transition record + all-agent protection protocol hooks (Session 6), resume_from_suspended() guardian acknowledgment -> Normal, resume_from_lockdown() HVP clearance token -> Normal (v0.1 token validation, full Jayme HVP story hash verification Session 6)
+- src-tauri/src/ledger.rs (modified -- 50,257 bytes) -- protection_state_record table (single-row persistence, survives restart), protection_transitions table (full audit trail), save_protection_state(), load_protection_state(), log_protection_transition(), fetch_protection_transitions(), ProtectionTransitionRecord struct
+- src-tauri/src/lib.rs (modified -- 117,194 bytes) -- mod protection_state declared, get_protection_state Tauri command, guardian_acknowledge_suspended Tauri command, hvp_verify_lockdown Tauri command, startup load from DB in setup closure, all three commands registered in invoke_handler
+
+**cargo check result:** Zero errors. 40 warnings (dead_code/unused -- expected, no callers wired yet). All warnings acceptable.
+
+**State transition rules implemented:**
+- Normal -> Suspended: CRITICAL event (enter_suspended)
+- Normal/Suspended -> Lockdown: TERMINAL event (enter_lockdown)
+- Suspended -> Normal: Guardian acknowledgment (resume_from_suspended)
+- Lockdown -> Normal: HVP clearance token (resume_from_lockdown)
+- Lockdown -> Suspended: BLOCKED (Lockdown cannot be downgraded)
+
+**Session 6 hooks documented:**
+- All-agent protection protocol (Jayme dormancy, Luke read-only, federation isolation)
+- Full Jayme AI HVP story hash + ring verification for Lockdown clearance
+
+**Spec reference:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md (FIX-515) Sections 6.3-6.11
+                   TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md (FIX-506) Section L1

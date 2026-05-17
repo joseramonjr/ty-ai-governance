@@ -8272,3 +8272,23 @@ Three files delivered:
 **Track B hooks:** CRITICAL -> Tier 3 Suspended State (Session 5). TERMINAL -> Tier 4 Lockdown State (Session 5) + Jayme dormancy (Session 6).
 
 **Next:** Phase 11 Track B Session 5 -- Suspended State and Lockdown State machine (FIX-515 Step 6).
+
+## FIX-524 | Entry-532 | 2026-05-16 19:23 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** c99c7a9
+**Scope:** Phase 11 Track B Step 6 -- Suspended State and Lockdown State Machine
+
+Three files delivered:
+
+1. protection_state.rs (new -- 22,208 bytes) -- ProtectionState enum (Normal/Suspended/Lockdown), ProtectionStateManager (Arc<Mutex<>> thread-safe), ProtectionStateRecord for DB persistence, SUSPENDED_WHITELIST (14 safety-critical + guardian commands), LOCKDOWN_WHITELIST (2 HVP-only commands), check_command_gate() NWP Section 2 compliant rejection with full notice text per state, enter_suspended() CRITICAL trigger, enter_lockdown() TERMINAL trigger with all-agent hooks, resume_from_suspended() guardian acknowledgment path, resume_from_lockdown() HVP clearance path (v0.1 token, full Jayme verification Session 6). State transition rules: Normal->Suspended (CRITICAL), Normal/Suspended->Lockdown (TERMINAL), Suspended->Normal (guardian ack), Lockdown->Normal (HVP), Lockdown cannot downgrade to Suspended.
+
+2. ledger.rs (modified -- 50,257 bytes) -- protection_state_record table (single-row, restart-persistent), protection_transitions audit table, save_protection_state(), load_protection_state(), log_protection_transition(), fetch_protection_transitions(), ProtectionTransitionRecord struct.
+
+3. lib.rs (modified -- 117,194 bytes) -- mod protection_state, get_protection_state command, guardian_acknowledge_suspended command, hvp_verify_lockdown command, startup load from DB in setup closure, all three commands in invoke_handler.
+
+**cargo check:** Zero errors. 40 warnings (dead_code/unused -- expected).
+
+**Session 6 hooks:** All-agent protection protocol (Jayme dormancy evaluation, Luke read-only enforcement, federation isolation), full Jayme HVP story hash + ring verification for Lockdown clearance.
+
+**Next:** Phase 11 Track B Session 6 -- Jayme AI dormancy trigger (FIX-515 Step 7).
