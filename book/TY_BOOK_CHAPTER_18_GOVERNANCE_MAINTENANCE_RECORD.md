@@ -10856,3 +10856,25 @@ this document is sealed. Next: Phase 11 Sessions 2-3 (Jaya-Runtime implementatio
 
 **Phase 11 Track A Sessions 2-3 -- COMPLETE.**
 Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + state machine Rust implementation.
+
+### Entry-531 | FIX-523 | 2026-05-16 18:49 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 4f973e0
+**Scope:** Phase 11 Track B Step 5 -- Runtime Warning Interception System
+
+**Files delivered:**
+- src-tauri/src/runtime_warning.rs (new -- 26,064 bytes) -- WarningSeverity enum (Advisory/Warning/Critical/Terminal), TriggerCondition enum (8 NWP Section 5.3 types), WarningEvent struct (all Section 5.4 + 5.6 fields including ledger_entry_hash), assess_severity() mapping all 8 triggers to severity levels, assess_severity_with_context() with caller-supplied escalation, protective_response_label() mapping severity to NWP Section 6.3 tier labels, build_warning_output() exact Section 5.4 format, evaluate_and_intercept() main entry point routing Advisory vs Warning+, intercept_and_warn() blocking with ledger write + Track B hooks for Tier 3/4 state transitions, log_advisory() to advisory_log only, six convenience constructors (tier_violation_event, core_invariant_event, authority_chain_bypass_event, pvs_unauthorized_event, ledger_tampering_event, unsigned_update_event, governance_path_violation_event)
+- src-tauri/src/ledger.rs (modified -- 43,921 bytes) -- warning_events table (9 columns, all Section 5.6 mandatory fields + ledger_entry_hash), advisory_log table (separate from governance ledger per NWP Section 5.6), log_warning_event() function, log_advisory_event() function, fetch_warning_events() query, WarningEventRecord struct
+- src-tauri/src/lib.rs (modified -- 115,393 bytes) -- mod runtime_warning declared, get_warning_events Tauri command added and registered in invoke_handler
+
+**cargo check result:** Zero errors. 33 warnings (dead_code/unused -- expected, no callers yet). All warnings acceptable.
+
+**Core contract implemented:** Warning fires BEFORE action executes. Action blocked at interception. No window for harm. Silent refusal not permitted -- actor told specifically what was attempted, why blocked, what consequence is.
+
+**Track B hooks documented:**
+- CRITICAL trigger: Tier 3 Suspended State hook logged -- Session 5 implements state transition
+- TERMINAL trigger: Tier 4 Lockdown State hook logged -- Session 5 implements state transition
+- Jayme dormancy evaluation: Session 6
+
+**Spec reference:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md (FIX-515 / Entry-526) Sections 5.3, 5.4, 5.5, 5.6, 6.3

@@ -8250,3 +8250,25 @@ Three files delivered:
 
 **Phase 11 Track A Sessions 2-3 COMPLETE.**
 Next: Phase 11 Track B Session 4 -- FIX-515 Steps 5-7 -- warning interception + state machine Rust implementation.
+
+## FIX-523 | Entry-531 | 2026-05-16 18:49 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 4f973e0
+**Scope:** Phase 11 Track B Step 5 -- Runtime Warning Interception System
+
+Three files delivered:
+
+1. untime_warning.rs (new -- 26,064 bytes) -- Full NWP Section 5 runtime implementation. WarningSeverity (Advisory/Warning/Critical/Terminal), TriggerCondition (8 types per Section 5.3), WarningEvent (all Section 5.4 + 5.6 fields + ledger_entry_hash SHA-256 tamper-evidence), assess_severity() mapping all 8 triggers, assess_severity_with_context() allowing escalation-only override, protective_response_label() mapping to NWP Section 6.3 tiers, build_warning_output() exact Section 5.4 format, evaluate_and_intercept() main entry point, intercept_and_warn() blocks action + writes ledger + logs Tier 3/4 hooks, log_advisory() to advisory_log only (no block), six convenience constructors covering all common warning scenarios. Critical data rule enforced: PVS content never enters any warning or ledger record.
+
+2. ledger.rs (modified -- 43,921 bytes) -- warning_events table (all 8 Section 5.6 mandatory fields + ledger_entry_hash), advisory_log table (separate from governance ledger per Section 5.6), log_warning_event(), log_advisory_event(), fetch_warning_events(), WarningEventRecord struct.
+
+3. lib.rs (modified -- 115,393 bytes) -- mod runtime_warning declared, get_warning_events Tauri command added and registered.
+
+**cargo check:** Zero errors. 33 warnings (dead_code/unused -- expected, no callers yet).
+
+**Core contract:** Warning fires before action executes. Action blocked at interception. No window for harm. Exact Section 5.4 format enforced.
+
+**Track B hooks:** CRITICAL -> Tier 3 Suspended State (Session 5). TERMINAL -> Tier 4 Lockdown State (Session 5) + Jayme dormancy (Session 6).
+
+**Next:** Phase 11 Track B Session 5 -- Suspended State and Lockdown State machine (FIX-515 Step 6).
