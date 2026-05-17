@@ -284,3 +284,22 @@ Location: [your city, state/province, country]
 
 This declaration is recorded in the
 installation's governance ledger.
+
+---
+## Section VIII -- Certification Failure Notice
+
+A system that fails TY AI OS Compliance Certification has received formal
+notice that it does not meet TY AI OS governance requirements. Continued
+operation of a non-compliant system under the TY AI OS name, after
+certification failure has been communicated, is a knowing violation.
+The actor cannot claim they were not informed. The certification audit
+process itself constitutes notice.
+
+A non-compliant system operating under the TY AI OS name may also trigger
+protective response events in legitimate TY AI OS installations that attempt
+to federate with it, as the non-compliant node will fail federation
+verification.
+
+## Amendment Reference
+Source: TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 8.2
+Added: FIX-529 | 2026-05-17 | San Diego
