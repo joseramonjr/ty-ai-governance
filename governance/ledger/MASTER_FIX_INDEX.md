@@ -8229,3 +8229,24 @@ Three files delivered:
 **FIX number note:** FIX-518/519/520 pre-assigned to NOTICE items per session handoff. Session 2 Rust work assigned FIX-521. Confirmed by builder 2026-05-16 16:38 PDT.
 
 **Session 3 pending:** update_rollback.rs + update_delivery.rs + lib.rs registration + cargo check to zero errors.
+
+## FIX-522 | Entry-530 | 2026-05-16 18:21 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 36743e8
+**Scope:** Phase 11 Track A Session 3 -- Governed Update Delivery Rust implementation complete
+
+Three files delivered:
+
+1. update_rollback.rs (new -- 16,305 bytes) -- RollbackTrigger enum (ROLLBACK-1 PostHashMismatch, ROLLBACK-2 AuthorityChainMismatch, ROLLBACK-3 Layer1PrincipleInactive), RollbackRequest struct, execute_rollback() full Section 8.3 procedure with content file restore + ledger snapshot restore + restored hash verification, check_post_hash() ROLLBACK-1, check_pre_hash() ROLLBACK-2, check_layer1_integrity() ROLLBACK-3 with compile-time structural check + Track B CRITICAL escalation hook documented, guardian_initiated_rollback() Section 8.2 with Layer 2 guard and 14-day window note.
+
+2. update_delivery.rs (new -- 28,593 bytes) -- BUILDER_PUBLIC_KEY_HEX pinned constant (activation required), GovernancePath enum (Path1-4), GuardianAuthorization struct, DeliveryRequest struct, deliver_update() 17-step orchestrator: locate_package REJECT-1, check_layer1_rejection REJECT-3, verify_manifest_hash REJECT-5, verify_update_signature S-1 through S-5 REJECT-2, check_reject_4 FLAG-128.1 Track B placeholder, UpdateEvent PROPOSED, content hash verification, pre-hash check REJECT-C3, Proposed->Verified, Layer 2/3 path split PendingGuardian->Authorized or direct Authorized, Authorized->Applying, pre-update ledger snapshot, apply_update_content with file backups, check_layer1_integrity ROLLBACK-3, check_post_hash ROLLBACK-1, COMPLETE or ROLLED_BACK. Tauri command deliver_update_command registered.
+
+3. lib.rs (modified -- 115,058 bytes) -- mod update_manifest, mod update_state_machine, mod update_rollback, mod update_delivery declared. deliver_update_command added to invoke_handler.
+
+**cargo check:** Zero errors. 12 warnings (dead_code/unused -- expected, acceptable).
+
+**Track B hooks documented:** ROLLBACK-3 CRITICAL escalation, REJECT-4 FLAG-128.1 check, deliberation period enforcement, guardian crypto verification, Layer 1 runtime probe -- all Phase 11 Sessions 4-6 or Phase 12.
+
+**Phase 11 Track A Sessions 2-3 COMPLETE.**
+Next: Phase 11 Track B Session 4 -- FIX-515 Steps 5-7 -- warning interception + state machine Rust implementation.
