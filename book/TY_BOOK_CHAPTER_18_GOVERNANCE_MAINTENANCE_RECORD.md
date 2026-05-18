@@ -10996,3 +10996,8 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **Scope:** Section 17 (6 terms): Governance Path, Model D, HVP, PVS, External User Governance Guide, Compliance Certification Standard. Section 18 (13 terms): Governed Update Delivery, Update Layer, Update Manifest, REJECT-1/3/5, Update State Machine, Runtime Warning Protocol, Suspended State, Lockdown State, Jayme Dormancy, Protective Response Protocol, Installation Notice, Distribution Notice, Certification Failure Notice. Warning Severity not duplicated -- already in Section 11. Total terms 315 to 334. Sections 16 to 18.
 **Commit:** TYOVA 8274e69
 **Status:** COMPLETE
+### Entry-540 | FIX-535 | 2026-05-17 20:09 PDT San Diego
+**Action:** TY_PHASE_10_SCOPE_v0.1.md created and committed to ty-ai-governance spec folder.
+**Scope:** Phase 10 scope document created from verified primary sources Ch18 Entry-516 and MFI FIX-505 (2026-05-15 15:29 PDT). Covers F-17 and F-20 flags, four-path governance framework, all eight FIX-506 through FIX-513 deliverables, seal record, and relationship to adjacent phases. Phase 11 had TY_PHASE_11_SCOPE_v0.1.md -- Phase 10 now has equivalent. Audit gap FIX-535 closed.
+**Commit:** ty-ai-governance cce4d11
+**Status:** COMPLETE
