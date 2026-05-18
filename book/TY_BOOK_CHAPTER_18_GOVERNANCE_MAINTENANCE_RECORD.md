@@ -11001,3 +11001,8 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **Scope:** Phase 10 scope document created from verified primary sources Ch18 Entry-516 and MFI FIX-505 (2026-05-15 15:29 PDT). Covers F-17 and F-20 flags, four-path governance framework, all eight FIX-506 through FIX-513 deliverables, seal record, and relationship to adjacent phases. Phase 11 had TY_PHASE_11_SCOPE_v0.1.md -- Phase 10 now has equivalent. Audit gap FIX-535 closed.
 **Commit:** ty-ai-governance cce4d11
 **Status:** COMPLETE
+### Entry-541 | FIX-536 | 2026-05-17 20:09 PDT San Diego
+**Action:** Chapter 51 local markdown file created and committed to ty-ai-governance book folder.
+**Scope:** TY_BOOK_CHAPTER_51_THE_OPERATOR_GOVERNANCE_QUESTION.md -- 187 lines, 7,861 bytes. Content sourced verbatim from TYOVA bookChapterContent.ts verified by builder 2026-05-17. Standard metadata block and compiledNote added -- both were flagged as missing by Phase 8 audit. Audit gap FIX-536 closed.
+**Commit:** ty-ai-governance 5f554a6
+**Status:** COMPLETE
