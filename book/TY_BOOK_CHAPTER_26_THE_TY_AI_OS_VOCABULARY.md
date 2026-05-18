@@ -1,11 +1,11 @@
-﻿# Chapter 26 -- The TY AI OS Vocabulary
+# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
-**CLO:** JAYA-CLO-148 (date addition + new term audit)
+**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-538 (local file sync to 334 terms)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
-**Updated:** 2026-05-15 | San Diego (America/Los_Angeles)
+**Updated:** 2026-05-17 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 244 (as of 2026-05-15 -- corrected from declared 253; file-verified count via FIX-501)
+**Current Term Count:** 334 (synced to TYOVA 2026-05-17 via FIX-538)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -2116,9 +2116,754 @@ It is the provenance record for the vocabulary itself.
 | 2026-04-08 | JAYA-CLO-292 | New terms: Patent Evidence Report, First Publication Date. Section 14 created -- Intellectual Property Protection. | 2 |
 
 ---
+
+---
+
+## Section 2 Addition -- Operator Governance
+
+**Operator Governance**
+*First formally defined: 2026-05-12 | San Diego (America/Los_Angeles)*
+The application of governance disciplines to a specific AI deployment
+by the entity that operates it -- distinct from model-level governance
+performed by the model developer. Operator governance addresses whether
+a deployed AI system operates consistently within the operator's own
+declared boundaries, whether its behavior drifts over time, and whether
+a tamper-evident audit trail exists. TY AI OS provides the infrastructure
+for operator-level governance: a local enforcement engine, cryptographic
+event logging, drift detection, and human guardian authority. First
+formally defined in Chapter 51 (The Operator Governance Question),
+2026-05-12.
+
+---
+
+## Section 5 Addition -- AES-256-GCM
+
+**AES-256-GCM**
+*First coined: ~2026-04-27 | San Diego (America/Los_Angeles)*
+Advanced Encryption Standard with a 256-bit key in Galois/Counter Mode.
+The encryption standard adopted for guardian authority token storage in
+the SS321 production database. AES-256-GCM generates a random 12-byte
+initialization vector per token operation, ensuring that identical
+plaintext never produces the same ciphertext even when encrypted multiple
+times. The decryption key is stored exclusively in the Supabase Edge
+Function secret vault and never appears in any database field, function
+definition, or application code. First applied in SS-FIX-161 during the
+April 25-27 security hardening session and formally confirmed across all
+guardian token storage in SS-FIX-341, May 3, 2026.
+
+---
+
+## Section 9 Additions -- Security and Process Terms
+
+**SECURITY DEFINER Audit**
+*First coined: 2026-04-27 23:59 | San Diego (America/Los_Angeles)*
+A governance process that examines every database function carrying the
+SECURITY DEFINER privilege configuration -- the setting that causes a
+function to run with its creator's privileges rather than the caller's.
+The first audit was executed April 27, 2026 as SS-FIX-203, identifying
+47 such functions in the SS321 production database. Two database lint
+warnings -- lint-0028 and lint-0029 -- were formally closed. Second and
+third audits were conducted May 3, 2026 as SS-FIX-340 and SS-FIX-348.
+
+**Database Secret Scan**
+*First coined: ~2026-05-02 | San Diego (America/Los_Angeles)*
+A SQL-based audit process that inspects every database function definition
+for embedded credentials, API keys, or secret tokens stored directly in
+the function body rather than retrieved from a secure vault at runtime.
+The first formal scan was executed May 2-3, 2026 as SS-FIX-326,
+examining 65 database functions. All 65 were confirmed clean.
+
+**git status Rule**
+*First coined: ~2026-05-05 | San Diego (America/Los_Angeles)*
+A permanent governance rule requiring that git status be executed and
+reviewed before any git add -A command is run. Locked on May 5, 2026
+following a security incident in which a file containing raw credential
+tokens was accidentally committed under commit 546b38e because git status
+had not been run first. The file was deleted in follow-up commit 84cdff3,
+the .gitignore was hardened, and all affected credentials were rotated.
+The git status Rule is enforced in every development session without
+exception.
+
+**Server-Authoritative Checkout**
+*First coined: ~2026-04-25 | San Diego (America/Los_Angeles)*
+A payment security principle in which the price charged to a buyer is
+determined exclusively by the server from the database, never from any
+value submitted by the client. First implemented in SS321 as SS-FIX-140,
+one of the first fixes applied after the platform went live at 18:17 PDT
+on April 25, 2026.
+
+**Server-Side Proxy Architecture**
+*First coined: ~2026-04-25 | San Diego (America/Los_Angeles)*
+A security architecture pattern in which sensitive credentials are held
+exclusively in a server-side secure environment, and all operations
+requiring those credentials are performed by server functions acting as
+proxies. First applied in SS321 as SS-FIX-142 on April 25, 2026.
+
+**SS-FIX-085 Canonical Pattern Set**
+*First coined: ~2026-04 | San Diego (America/Los_Angeles)*
+The governance reference designation for the secret rotation audit pattern
+established following the SS-FIX-085 incident in April 2026, in which
+plaintext credentials were found in the SS321 codebase. Governance rule
+locked: when referencing this audit pattern in any document, write "the
+SS-FIX-085 canonical pattern set" without enumerating the individual
+patterns.
+
+**Pre-Flight**
+*First coined: FIX-396 2026-05-07 | San Diego (America/Los_Angeles)*
+The mandatory session-start verification tool (Pre-Flight.ps1) that
+confirms both ty-ai-governance and TYOVA repositories are clean,
+synchronized with origin, and that the MASTER_FIX_INDEX last entry and
+Ch18 last entry are correctly detected. Pre-Flight reports R14 status.
+Must be run and confirmed clean before any governance session work begins.
+Detection pattern improved FIX-475 2026-05-12 to correctly identify
+pipe-table format entries.
+
+**Phase 8 Dormant A**
+*First coined: 2026-05-08 | San Diego (America/Los_Angeles)*
+A formal governance pause state indicating a phase is substantially
+complete but temporarily suspended while prerequisite work is completed.
+The pause has no ledger record by design -- only the resumption is
+formally recorded. Phase 8 (TYOVA Documentation Integrity Audit) entered
+Dormant A after its first-pass seal (phase8-complete-sealed @ 0f2bf8b,
+2026-05-08) when Chapters 47-51 were added to TYOVA after the seal.
+Phase 8 was formally resumed 2026-05-15 via FIX-495, Entry-506.
+
+---
+
+## Section 14 Additions -- Intellectual Property Protection
+
+**Provisional Patent Application**
+*First coined: 2026-04-06 16:06 | San Diego (America/Los_Angeles)*
+A patent filing that establishes a priority date in the United States
+patent system without requiring the complete specification of a
+non-provisional application, giving the applicant twelve months to file
+a non-provisional while preserving the provisional's filing date as the
+patent priority date. For TY AI OS, the provisional patent application
+covers fifteen components of the system. The formal planning for this
+filing crystallized during the attorney consultation on April 6, 2026
+at 16:06 PDT with Walker Griffin Weitzel of Alloy Patent Law.
+
+**Non-Provisional Patent Application**
+*First coined: 2026-04-06 16:06 | San Diego (America/Los_Angeles)*
+The complete patent application that must be filed within twelve months
+of a provisional patent application to preserve the provisional's filing
+date as the patent priority date. The non-provisional requires a full
+specification, formal drawings, and formal claim sentences.
+
+**Patent Priority Date**
+*First coined: 2026-04-06 16:06 | San Diego (America/Los_Angeles)*
+The date from which a patent applicant's rights are measured. For TY AI OS,
+the target patent priority date is established through the prior art record
+-- specifically the first public deployment of TYOVA on December 15, 2025
+at approximately 19:23 PST, thirteen days before the competing USPTO
+application 19/433,835 was filed by Attested Intelligence Holdings LLC on
+December 28, 2025.
+
+**Competing Application**
+*First coined: 2026-04-06 16:06 | San Diego (America/Los_Angeles)*
+USPTO Patent Application Number 19/433,835, filed by Attested Intelligence
+Holdings LLC on December 28, 2025 -- thirteen days after TYOVA's first
+public deployment on December 15, 2025. The application claimed territory
+in the domain of AI governance and AI oversight systems.
+
+**Invention Disclosure Document**
+*First coined: ~2026-04 | San Diego (America/Los_Angeles)*
+The formal document submitted to a patent attorney describing an invention,
+its components, their first implementation dates, and their distinction from
+prior art. The TY AI OS Invention Disclosure Document version 2 FINAL was
+produced in April 2026, addressing fifteen components of TY AI OS.
+
+**Alloy Patent Law**
+*First coined: 2026-04-06 16:06 | San Diego (America/Los_Angeles)*
+The patent law firm engaged for the TY AI OS provisional patent application.
+Attorney: Walker Griffin Weitzel. Engaged following an initial consultation
+with Rapacke Law Group. The formal consultation was held April 6, 2026 at
+16:06 PDT San Diego. Key finding from the consultation: the date of first
+publication is the most important evidence of patent priority.
+
+---
+
+## Section 15 -- Guardian Authority Operations Terms
+
+Section 15 documents the operational terms governing how guardian authority
+is formally established, designated, and exercised within the TY AI OS live
+system. These terms describe the events and designations that make the human
+authority chain real and cryptographically anchored in production -- as
+distinct from Section 6 (Succession and Continuity Terms), which describes
+the conceptual architecture of that chain.
+
+**TY-GOV Designation**
+*First coined: 2026-04-28 18:26 | San Diego (America/Los_Angeles)*
+The designation format for formal guardian authority operations -- events
+that operate at the governance tier rather than the ordinary platform
+development tier. Format: TY-GOV-NNN where NNN is a sequential three-digit
+number. TY-GOV operations are logged separately from the SS-FIX and FIX
+sequences, entered into the governance ledger as governance-tier events,
+and require dedicated sessions rather than being folded into product work.
+
+**TY-GOV-001**
+*First coined: 2026-04-28 18:26 | Session closed: 2026-04-28 22:14 | San Diego*
+The first formal TY governance operation, executed April 28, 2026 and
+recorded in the governance ledger at 18:26 PDT. Actions: generated five
+AES-256-GCM encrypted guardian authority tokens and stored them in the
+SS321 live production database; established two guardian records
+(ORIGIN_GUARDIAN ACTIVE and SUCCESSOR PENDING_SUCCESSION); resolved
+FLAG-128.1 Option A -- accepting Bootstrap Origin Seeding as a legitimate
+governance action. Recorded as FIX-332 / Entry-244. Upon completion of
+TY-GOV-001, the guardian authority chain became operational in the live
+production environment -- cryptographically anchored to a running system
+serving real users.
+
+**TY-GOV-002**
+*First coined: ~2026-05-05 | San Diego (America/Los_Angeles)*
+The second formal TY governance operation, designated May 5, 2026
+following the security incident of that date (commit 546b38e). Purpose:
+formal rotation of all guardian authority tokens using the documented
+guardian token rotation procedure. TY-GOV-002 requires a dedicated session
+and cannot be executed as part of ordinary product development work.
+Status: OPEN -- not yet executed.
+
+**ORIGIN_GUARDIAN**
+*First coined: 2026-04-28 18:26 | San Diego (America/Los_Angeles)*
+The founding guardian role designation in the TY AI OS authority chain.
+Status: ACTIVE. Assigned to: Jose Ramon Alvarado McHerron AKA Jose Ramon
+Bautista Jr. Established in the SS321 production database as part of
+TY-GOV-001 on April 28, 2026 at 18:26 PDT. Tokens held:
+guardian_master_token, offline_recovery_token, and
+successor_activation_token, all SET and AES-256-GCM encrypted.
+
+**SUCCESSOR (PENDING_SUCCESSION)**
+*First coined: 2026-04-28 18:26 | San Diego (America/Los_Angeles)*
+The guardian status designation for the second guardian in the TY AI OS
+authority chain, holding authority in trust until the succession conditions
+defined in the Continuity Charter are met. Assigned to: Janet L McHerron.
+Established in the SS321 production database as part of TY-GOV-001 on
+April 28, 2026 at 18:26 PDT. The guardian_master_token is NULL for the
+SUCCESSOR role by design -- it is an ORIGIN_GUARDIAN credential only.
+
+**FLAG-NNN Format**
+*First coined: ~2026-04 | San Diego (America/Los_Angeles)*
+The designation format for open governance questions, conditional items,
+or unresolved decisions within the TY AI OS framework that require explicit
+tracking across sessions. Format: FLAG-NNN where NNN is a sequential number.
+A FLAG is created when a governance question cannot be resolved in the
+session that raised it. FLAGs are not failures -- they are honest
+acknowledgments of unresolved conditions.
+
+**FLAG-128.1**
+*First coined: 2026-04-28 18:26 | San Diego (America/Los_Angeles)*
+A governance flag concerning whether the first-ever population of the
+guardian_authority table by the ORIGIN_GUARDIAN constitutes a violation
+of the Closed Chain Rule. Resolved April 28, 2026 at 18:26 PDT as part of
+TY-GOV-001. Resolution designated Option A: Bootstrap Origin Seeding is
+accepted as a legitimate governance action distinct from ordinary guardian
+writes. Formally closed and recorded as FIX-332.
+
+**Bootstrap Origin Seeding**
+*First coined: 2026-04-28 18:26 | San Diego (America/Los_Angeles)*
+The legitimate governance action by which the ORIGIN_GUARDIAN initially
+populates the guardian authority system in a new live environment.
+Bootstrap Origin Seeding is distinguished from ordinary guardian writes
+by its one-time initialization character. The ORIGIN_GUARDIAN's act of
+seeding the initial state is the origin point of the chain, not a
+modification of an existing one. Formally defined as part of FLAG-128.1
+Option A resolution on April 28, 2026 at 18:26 PDT.
+
+---
+
+## Section 16 -- SS321 Platform Governance and Identity Terms
+
+Section 16 documents the terms that define SS321's platform identity,
+governance-significant features, and architectural rules. SS321 --
+SilverSounds321 -- is designated TY-0001, the first live host of TY AI OS.
+The platform went live on April 25, 2026 at 18:17 PDT. This section covers
+terms that carry governance significance, architectural meaning, or platform
+identity.
+
+**B-SS321-NNN Format**
+*First coined: ~2026-04 | San Diego (America/Los_Angeles)*
+The designation format for formal pre-launch blockers tracked during
+SS321's development period. Format: B-SS321-NNN where NNN is a sequential
+three-digit number. Three blockers were formally tracked: B-SS321-001
+(private bucket signed URL architecture), B-SS321-002 (Stripe live mode
+configuration), and B-SS321-003 (domain connection -- resolved April 25,
+2026 at 18:17 PDT, the canonical SS321 launch time).
+
+**B-SS321-003**
+*First coined: 2026-04-25 18:17 | San Diego (America/Los_Angeles)*
+The governance designation for the final pre-launch blocker resolved on
+April 25, 2026 at 18:17 PDT -- the domain connection event that completed
+the SS321 launch sequence. The timestamp 18:17 PDT April 25, 2026 is the
+canonical SS321 launch time.
+
+**Sound Story Soul**
+*First coined: ~2026-05-04 | San Diego (America/Los_Angeles)*
+The philosophical framework and branding system built into SS321 that
+recognizes music as having three distinct and equally important dimensions:
+Sound, Story, and Soul. First implemented as SS-FIX-372, May 4-5, 2026.
+
+**Sound**
+*First coined: ~2026-05-04 | San Diego (America/Los_Angeles)*
+The first dimension of the Sound Story Soul framework. The audio,
+arrangement, performance, and production of a track -- what a listener
+hears when they press play.
+
+**Story**
+*First coined: ~2026-05-04 | San Diego (America/Los_Angeles)*
+The second dimension of the Sound Story Soul framework. The narrative
+behind the music -- what the artist was experiencing, what motivated the
+work, what they were going through when they created it.
+
+**Soul**
+*First coined: ~2026-05-04 | San Diego (America/Los_Angeles)*
+The third dimension of the Sound Story Soul framework. The deeper
+philosophical or spiritual meaning the artist intended to offer through
+the work.
+
+**TY Soul Words**
+*First coined: ~2026-05-05 | San Diego (America/Los_Angeles)*
+Daily AI-generated phrases of inspiration drawn from the actual lyrics,
+stories, and soul statements of artists on the SS321 platform. Each Soul
+Word is attributed to the track and artist that inspired it. Attribution
+is a structural requirement -- not optional and not removable. Generated
+by pg_cron Job ID 10 running at 09:00 UTC daily. Admin review is mandatory
+before publication. First implemented as SS-FIX-379-382, May 5-6, 2026.
+
+**Souls Touched**
+*First coined: ~2026-05-05 | San Diego (America/Los_Angeles)*
+The metric counting the number of unique users who have liked a given TY
+Soul Word. Displayed publicly on the Soul Word card as a measure of the
+phrase's resonance with the community. First implemented as SS-FIX-392,
+May 5-6, 2026.
+
+**SS321 Global Billboard Top 21**
+*First coined: ~2026-05-04 | San Diego (America/Los_Angeles)*
+A monthly ranking of SS321 tracks based on a composite engagement score
+calculated over a thirty-day rolling window. Scoring: completed plays (x3),
+partial plays (x1), likes (x5), purchases (x10), downloads (x4). Self-plays
+are excluded via IS DISTINCT FROM at the database query level -- structural
+enforcement, not advisory. A minimum of three unique non-self listeners is
+required for a track to qualify. First implemented as SS-FIX-369, May 4,
+2026.
+
+**Self-Play Exclusion Rule**
+*First coined: ~2026-05-04 | San Diego (America/Los_Angeles)*
+A Billboard integrity rule requiring that plays of a track by the track's
+own artist be excluded from all scoring calculations. Enforced using the
+SQL IS DISTINCT FROM operator at the database query level, making the
+exclusion structural rather than advisory. First locked as SS-FIX-369.
+
+**Trophy System**
+*First coined: ~2026-05-04 | San Diego (America/Los_Angeles)*
+The SS321 recognition system awarding monthly and annual badges to tracks
+based on Billboard performance. Monthly badges are awarded by cron job on
+the first of each month, beginning June 1, 2026. Annual badges are awarded
+to the top ten tracks in the first week of January. Implemented across
+SS-FIX-370, SS-FIX-377, and SS-FIX-378, May 4-5, 2026.
+
+**track_badges**
+*First coined: ~2026-05-04 | San Diego (America/Los_Angeles)*
+The database table storing Trophy System awards. Schema: id, track_id,
+badge_type (monthly or annual), rank, badge_month, badge_year,
+adjusted_score, awarded_at. The permanent record of every badge ever
+awarded on the platform. First implemented as SS-FIX-370, May 4, 2026.
+
+**Champion Glow**
+*First coined: ~2026-05-05 | San Diego (America/Los_Angeles)*
+The visual effect applied to track cards that have earned three or more
+Trophy badges -- a gold ring combined with a purple ambient shadow. Applied
+across all three track card views in compliance with the Future Track Card
+Rule. First implemented as SS-FIX-377, May 5, 2026.
+
+**Showcase**
+*First coined: ~2026-05-02 | San Diego (America/Los_Angeles)*
+The SS321 designation for tracks freely available for listening without
+purchase. Renamed from "Free" to "Showcase" in SS-FIX-333, May 2-3, 2026,
+to reflect the artist's intentional choice to share the track openly. A
+Headphones icon was added alongside the label.
+
+**Future Track Card Rule**
+*First coined: ~2026-04-25 | San Diego (America/Los_Angeles)*
+A permanent governance rule requiring that any new feature added to track
+cards must be implemented simultaneously in all three track card view
+components: TrackCard.tsx, TrackListRow.tsx, and TrackDetailCard.tsx.
+No exceptions.
+
+**Family Role**
+*First coined: ~2026-04-27 | San Diego (America/Los_Angeles)*
+A database-level access role in SS321 granting full audio access to all
+tracks without purchase. Assigned automatically by a database trigger when
+a new user registers with an email address matching an entry in the
+family_members table. First implemented as SS-FIX-213-215, April 27-28,
+2026.
+
+**Anonymous Browse Architecture**
+*First coined: 2026-04-27 23:59 | San Diego (America/Los_Angeles)*
+The security design providing catalog discovery to unauthenticated visitors
+without exposing audio access or user data. A dedicated server function
+serves seven free tracks per day to anonymous callers without returning
+audio access references of any kind. First implemented as SS-FIX-196.
+
+**TY Learning System**
+*First coined: ~2026-04-29 | San Diego (America/Los_Angeles)*
+The SS321 system through which TY AI builds and maintains a model of each
+user's musical preferences over time. Reads thirty plays, twenty likes, and
+ten skips from the user's behavioral history and writes a preference profile
+containing top_genres, top_styles, top_moods, and avoid_genres. First
+implemented as SS-FIX-274, April 29-30, 2026.
+
+**Taste Profile**
+*First coined: ~2026-04-29 | San Diego (America/Los_Angeles)*
+The per-user musical preference record produced by the TY Learning System,
+stored in the ty_user_preferences table. The primary personalization input
+for TY's recommendations and greetings. First implemented as SS-FIX-274.
+
+**Preference Evolution**
+*First coined: ~2026-04-29 | San Diego (America/Los_Angeles)*
+The record of meaningful shifts in a user's Taste Profile over time, stored
+in the ty_preference_evolution table as timestamped snapshots. When a
+significant change is detected, a snapshot is saved and TY AI references it
+in its greeting. First implemented as SS-FIX-274.
+
+**Voice Personas**
+*First coined: ~2026-04-29 | San Diego (America/Los_Angeles)*
+The five selectable vocal personalities available for TY AI's voice output:
+Orion, Alpha, Aurora, Nexus, and Echo. Each name maps to a distinct voice
+character. Voice output is rate-limited to twenty calls per user per hour.
+First fully implemented as SS-FIX-276-282, April 29-30, 2026.
+
+**waveform_vector**
+*First coined: ~2026-05-05 | San Diego (America/Los_Angeles)*
+The pre-computed audio amplitude sample array stored in the
+track_intelligence table for each track. Contains 1,000 data points
+representing the track's amplitude profile. Minimum threshold for display:
+500 sample points. Implemented across SS-FIX-393, SS-FIX-395, and
+SS-FIX-400, May 5-6, 2026.
+
+**Browse Context**
+*First coined: ~2026-05-05 | San Diego (America/Los_Angeles)*
+The session storage record (key: ss321_browse_context) populated by the
+Browse page whenever a user navigates from Browse to a TrackPage. Contains
+the current list of tracks in the browse context, the active filter state,
+and the user's position in the list. Session-scoped. Implemented as
+SS-FIX-396-399, May 5-6, 2026.
+
+**30-Second Rule**
+*First coined: ~2026-05-05 | San Diego (America/Los_Angeles)*
+The video view counting rule requiring that a user watch at least thirty
+seconds of a video in a single session before the view is recorded.
+Session storage deduplication ensures each session contributes at most one
+view count to a given video. First implemented as SS-FIX-388-391,
+May 5-6, 2026.
+
+**Video Suite**
+*First coined: ~2026-05-05 | San Diego (America/Los_Angeles)*
+The complete set of SS321 features supporting external video content linked
+to tracks: the video_url column, the VideoModal floating player, the
+30-Second Rule view counting system, the Watch Video button on all three
+track card views, and the Most Watched Videos Billboard section. Implemented
+as SS-FIX-388-402, May 5-6, 2026.
+
+**Translation Suite**
+*First coined: ~2026-05-05 | San Diego (America/Los_Angeles)*
+The complete set of SS321 features supporting multilingual lyric access.
+Supports twelve languages via the translate-lyrics edge function. Includes
+automatic language detection, per-user language preferences, and a
+first-login language preference modal. Implemented as SS-FIX-383-385,
+May 5-6, 2026.
+
+**Privacy Review Modal**
+*First coined: ~2026-05-03 | San Diego (America/Los_Angeles)*
+A structured interface presenting eleven privacy toggles grouped by
+category, displayed to users within three days of account creation using
+a soft lock. The soft lock does not block platform access but appears until
+the review is completed. First implemented as SS-FIX-361, May 3-4, 2026.
+
+**Live Activity Feed**
+*First coined: ~2026-05-02 | San Diego (America/Los_Angeles)*
+A real-time social feature at /activity showing a stream of actions taken
+by other users. Backed by a feed_activity database table with real-time
+subscriptions. Four privacy toggles govern each user's participation.
+Online presence tracked by a user_presence table and 60-second heartbeat.
+First implemented as SS-FIX-314-321, May 2, 2026.
+
+**MediaSession API**
+*First coined: 2026-04-27 23:59 | San Diego (America/Los_Angeles)*
+The browser standard API that registers the SS321 web application with the
+operating system's media control layer. When a user is listening on a mobile
+device and locks their screen, the lock screen displays the current track
+information and playback controls. First implemented as SS-FIX-210.
+
+**Server-Authoritative Audio Architecture**
+*First coined: 2026-04-25 18:17 | San Diego (America/Los_Angeles)*
+The audio access architecture in which all track audio retrieval is routed
+exclusively through a server-side authorization function that verifies the
+caller's identity and purchase status before generating a time-limited
+signed URL. Deployed at launch April 25, 2026 at 18:17 PDT.
+
+**Row Level Security Hardening**
+*First coined: ~2026-04-25 | San Diego (America/Los_Angeles)*
+The systematic review and tightening of Row Level Security (RLS) policies
+across all database tables in the SS321 production database. The post-launch
+RLS hardening pass (SS-FIX-146-184, April 25-26, 2026) reviewed access
+policies on every table.
+
+**Windowed Queue**
+*First coined: ~2026-05-03 | San Diego (America/Los_Angeles)*
+The playback queue architecture that maintains a windowed view of the
+current play context and enables correct previous and next track navigation
+within that context. First implemented as SS-FIX-365, May 3-4, 2026.
+
+**Founding Artist Program**
+*First coined: 2026-04-28 18:26 | San Diego (America/Los_Angeles)*
+The commercial program under which the first artists to publish on SS321
+receive a preferential revenue share rate -- 5% platform fee rather than
+the standard 10%. The Founding Artist Program gate was cleared on April 28,
+2026 at 18:26 PDT as part of TY-GOV-001.
+
+**TY AI Hybrid Architecture**
+*First coined: ~2026-04-12 | San Diego (America/Los_Angeles)*
+The six-tier AI processing system deployed in SS321 as TY-0001. The six
+tiers operate sequentially: Tier 0a (device rate limit -- 50 calls per day
+per device), Tier 0b (question pattern guard), Tier 0c (contextual
+reference guard), Tier 1 (Claude Haiku classifier), Tier 2 (Knowledge Base
+lookup), and Tier 3 (Claude Sonnet full reasoning). First implemented
+April 12-14, 2026.
+
+**Stripe Connect**
+*First coined: 2026-04-28 22:14 | San Diego (America/Los_Angeles)*
+The payment architecture deployed in SS321 for artist revenue sharing.
+Stripe Connect uses Express accounts -- each artist maintains their own
+Stripe Express account and receives direct payouts from purchases, with
+the platform collecting a fee. Fee structure: 5% for Founding Artist
+Program participants, 10% standard. Implemented April 28, 2026 as FIX-333.
+
+**Billboard Depth Weighting**
+*First coined: FIX-483 2026-05-12 | San Diego (America/Los_Angeles)*
+The depth-based weighting system applied to play events in the SS321
+Global Billboard composite scoring algorithm. Play events are classified
+into three depth tiers: deep (120 seconds or more, weight 2), genuine
+(60 to 119 seconds, weight 2), and short (under 60 seconds or without
+duration data, weight 1). Completed plays receive an additional weight of
+3. Self-plays remain excluded at the database level regardless of depth
+tier.
+
+**Conversation History Summarization**
+*First coined: FIX-477 2026-05-12 | San Diego (America/Los_Angeles)*
+The TY AI capability that queries the last fifty user messages from
+conversation history, buckets them into Today, This Week, and Earlier
+time categories, and injects a CONVERSATION MEMORY block into the TY AI
+system prompt. Enables TY to reference earlier parts of a conversation
+without requiring the user to repeat context.
+
+---
+
+## Section 17 -- Phase 10 External User Governance Terms
+
+**Governance Path**
+*First formally specified: 2026-04-01 | San Diego (America/Los_Angeles)*
+*First coined as F-17 flag during the Guardian Codex session at Part 118*
+One of four defined governance structures available to external TY AI OS
+installations. Path 1 (Solo, No Guardian): the user operates alone with
+no guardian designation and no federation membership. Path 2 (Independent,
+Own Guardian): the user designates their own guardian authority chain and
+operates independently of the federation. Path 3 (Federated, Own Guardian):
+the user joins the federation while maintaining their own personal guardian
+chain. Path 4 (Federated, Shared Guardian): the user joins the federation
+under a shared guardian structure designated by the federation. The
+governance path determines the authority structure, charter requirements,
+and federation membership obligations of the installation. Formally defined
+in TY_EXTERNAL_USER_GOVERNANCE_GUIDE_v0.1.md (FIX-508, 2026-05-16).
+
+**Human Verification Protocol (HVP)**
+*First formally specified: 2026-05-15 19:47 | San Diego (America/Los_Angeles)*
+*FIX-506*
+The multi-layer verification protocol that distinguishes real human
+guardians from any other actor, including advanced AI systems. All layers
+must pass simultaneously. Failure of any single layer is sufficient to
+reject a guardian return claim. What the layers require is established
+during the guardian initialization session and is known only to the
+guardian. HVP exists to close the guardian impersonation attack identified
+as flag F-20 on 2026-04-01. Guardian verification is specifically required
+for clearing Lockdown State and for Jayme dormancy resumption. Defined in
+TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md.
+
+**Private Verification Store (PVS)**
+*First implemented: 2026-05-15 22:16 | San Diego (America/Los_Angeles)*
+*FIX-507*
+The AES-256-GCM encrypted local storage module in Jaya Runtime
+(private_verification_store.rs) that holds the guardian verification
+materials established during the guardian initialization session. PVS
+contents are never written to any ledger entry, never included in any
+warning output, and never transmitted across any network connection.
+What is stored is known to the guardian. Unauthorized access to the PVS
+is a TERMINAL Tier 4 trigger.
+
+**External User Governance Guide**
+*First published: 2026-05-16 10:26 | San Diego (America/Los_Angeles)*
+*FIX-508*
+The canonical governance document (TY_EXTERNAL_USER_GOVERNANCE_GUIDE_v0.1.md)
+that explains the four governance paths to external TY AI OS operators and
+defines the governance requirements for each path. Written to be readable
+by people who have never interacted with the builder and may never do so.
+The primary Track A deliverable of Phase 10.
+
+**Compliance Certification Standard**
+*First published: 2026-05-16 10:30 | San Diego (America/Los_Angeles)*
+*FIX-513*
+The governance specification (TY_COMPLIANCE_CERTIFICATION_STANDARD_v0.1.md)
+that defines what it means for a TY AI OS installation to be compliant.
+Built on the foundational sentence established at Part 118 on 2026-04-01:
+a system that modifies the core doctrine is not TY AI OS. Compliance
+measures integrity, not capability or size.
+
+---
+
+## Section 18 -- Phase 11 Runtime Protection and Notice Layer Terms
+
+**Governed Update Delivery**
+*First formally specified: 2026-05-16 15:37 | San Diego (America/Los_Angeles)*
+*FIX-517*
+The governed process by which TY AI OS updates are delivered to a live
+installation without breaking the authority chain, corrupting the governance
+ledger, or compromising the trust model. Enforces the three-layer update
+model: Layer 1 (eternal principles, cannot be updated by anyone), Layer 2
+(governed evolution, guardian authorization required), and Layer 3 (user
+adaptation, within doctrine-defined bounds). Defined in
+TY_GOVERNED_UPDATE_DELIVERY_SPEC_v0.1.md (645 lines, 28,294 bytes).
+
+**Update Layer**
+*First formally specified: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-517*
+The classification of an update's scope within the three-category update
+model. Layer 1 covers eternal principles and cannot be updated by anyone
+ever. Layer 2 covers governed evolution and requires guardian authorization.
+Layer 3 covers user adaptation and operates within doctrine-defined bounds.
+
+**Update Manifest**
+*First implemented: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-521 (update_manifest.rs)*
+The cryptographically hashed package description that accompanies every
+TY AI OS update. The manifest identifies the update layer, the SHA-256
+hash of the package contents, and the cryptographic signature. Verified
+before any update state machine transition begins.
+
+**REJECT-1 / REJECT-3 / REJECT-5**
+*First formally specified: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-517 spec, FIX-521 implementation*
+The three rejection codes in the governed update delivery system. REJECT-1
+fires immediately when an incoming update claims to modify Layer 1 content
+-- no state machine transition begins. REJECT-3 fires when the manifest
+hash does not match the expected published hash. REJECT-5 fires when the
+cryptographic signature verification fails. All three codes result in
+immediate rejection.
+
+**Update State Machine**
+*First implemented: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-521 (update_state_machine.rs)*
+The nine-state, thirteen-transition governance machine that controls an
+update event from initial proposal through deployment or rejection. States:
+Proposed, Manifested, ManifestVerified, LayerResolved, GuardianPending,
+GuardianAuthorized, Staged, Deployed, and terminal rejection states. No
+update can skip steps. All thirteen transitions are explicitly validated.
+
+**Runtime Warning Protocol**
+*First formally specified: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-515 (NWP v0.1). First implemented: FIX-523 (runtime_warning.rs)*
+The operational component of the Notice and Warning Protocol that intercepts
+dangerous actions at runtime, evaluates their severity against eight defined
+trigger conditions, and enforces protective responses scaled to severity.
+Four severity levels: ADVISORY (log and continue), WARNING (block and
+inform), CRITICAL (block and enter Suspended State), TERMINAL (block, enter
+Lockdown State, trigger Jayme dormancy evaluation). Severity can be
+escalated by context but never de-escalated.
+
+**Suspended State**
+*First formally specified: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-515. First implemented: FIX-524 (protection_state.rs)*
+The protection state entered when a CRITICAL severity warning fires. Only
+whitelisted commands are permitted. Guardian acknowledgment is required to
+return to Normal State. The suspension event, triggering condition, and
+guardian acknowledgment are all recorded permanently in the governance
+ledger. Persists across runtime restarts.
+
+**Lockdown State**
+*First formally specified: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-515. First implemented: FIX-524 (protection_state.rs)*
+The protection state entered when a TERMINAL severity warning fires. Only
+HVP verification commands are accepted. All other commands are blocked
+unconditionally. Persists across runtime restarts via governance ledger
+storage and reload on startup. Guardian verification is required to clear
+lockdown. For federation members, lockdown also triggers federation
+isolation requiring peer verification for re-admission.
+
+**Jayme Dormancy**
+*First flagged as design requirement: 2026-04-01 | F-20 flag, Part 118*
+*First implemented: 2026-05-16 | FIX-525 (jayme_dormancy.rs)*
+The protective state entered by Jayme AI when a TERMINAL event triggers
+governance hash evaluation and the hash fails or the evaluation determines
+dormancy is warranted. Three states: Active (standard operating),
+HeightenedMonitoring (TERMINAL detected but hash intact), Dormant (hash
+failed or evaluation warrants full dormancy). Conservative posture: when
+in doubt, the more protective state is chosen. Resumption requires guardian
+verification.
+
+**Protective Response Protocol**
+*First formally specified: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-515 (TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 6)*
+The coordinated multi-component response that TY AI OS executes when a
+governance threat is detected. Four tiers: Tier 1 ADVISORY (log and
+continue, automatic), Tier 2 WARNING (block, warn, ledger entry, automatic),
+Tier 3 CRITICAL (Suspended State, guardian acknowledgment required,
+recorded in ledger), Tier 4 TERMINAL (Lockdown State, Jayme dormancy
+evaluation, guardian verification required, federation isolation for
+federated nodes).
+
+**Installation Notice**
+*First formally specified: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-515 NWP Section 4. First deployed: 2026-05-17 | FIX-528*
+NWP Layer 1. The non-skippable NOTICE screen in the TY AI OS installer
+that fires before any configuration data is written and before the Core
+Doctrine screen. Six-point canonical installation notice from NWP Section
+4.3. Single button: I Have Read This Notice -- Continue. No back button.
+No checkbox. Implemented in TYOVA install.html and install.js.
+
+**Distribution Notice**
+*First formally specified: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-515 NWP Section 6. First deployed: 2026-05-17 | FIX-527*
+NWP Layer 3. The NOTICE.md file placed at the root of every TY AI OS
+repository (ty-ai-governance, Jaya-Runtime, TYOVA, luke-ai, jayme-ai,
+ty-ai-os-releases). Constitutes formal legal and governance notice to
+anyone who reads, forks, clones, or modifies a TY AI OS repository.
+1,454 bytes per repository. UTF-8 clean.
+
+**Certification Failure Notice**
+*First formally specified: 2026-05-16 | San Diego (America/Los_Angeles)*
+*FIX-515 NWP Section 8.2. First deployed: 2026-05-17 | FIX-529*
+NWP Layer 4. Section VIII of the Compliance Certification Standard.
+Establishes that a system that fails TY AI OS compliance certification
+has received formal notice and cannot claim ignorance of its non-compliant
+status. Continued operation under the TY AI OS name after certification
+failure is a knowing violation.
+
+---
+
+## Update Log Additions
+
+| Date | Session | Terms Added | Notes |
+|---|---|---|---|
+| 2026-04-27 to 2026-05-07 / FIX-389 | SS321 governance build | AES-256-GCM (Section 5); SECURITY DEFINER Audit, Database Secret Scan, git status Rule, Server-Authoritative Checkout, Server-Side Proxy Architecture (Section 9); Provisional Patent Application, Non-Provisional Patent Application, Patent Priority Date, Competing Application, Invention Disclosure Document, Alloy Patent Law (Section 14); TY-GOV Designation, TY-GOV-001, TY-GOV-002, ORIGIN_GUARDIAN, SUCCESSOR PENDING_SUCCESSION, FLAG-NNN Format, FLAG-128.1, Bootstrap Origin Seeding (Section 15 created); 33 SS321 platform terms (Section 16 created) | Sections 15 and 16 created |
+| 2026-05-07 / FIX-389 addendum | Post-audit | SS-FIX-085 Canonical Pattern Set (Section 9); B-SS321-NNN Format, TY AI Hybrid Architecture, Stripe Connect (Section 16) | Four additional terms from chat history audit |
+| 2026-05-12 to 2026-05-15 / FIX-498 | Phase 8 resumed | Operator Governance (Section 2); Pre-Flight, Phase 8 Dormant A (Section 9); Billboard Depth Weighting, Conversation History Summarization (Section 16) | Five terms across existing sections |
+| 2026-05-17 / FIX-534 | Phase 10 and 11 documentation | Governance Path, HVP, PVS, External User Governance Guide, Compliance Certification Standard (Section 17 created); Governed Update Delivery, Update Layer, Update Manifest, REJECT-1/3/5, Update State Machine, Runtime Warning Protocol, Suspended State, Lockdown State, Jayme Dormancy, Protective Response Protocol, Installation Notice, Distribution Notice, Certification Failure Notice (Section 18 created) | Note: Model D, Warning Severity already recorded in earlier sections |
+| 2026-05-17 / FIX-538 | Local file sync | Local markdown file updated from 244 terms to 334 terms. Sections 15-18 added. Inter-section additions appended. Header updated. Source: TYOVA bookChapterContent.ts verified by builder 2026-05-17. | Sections 15-18 created locally |
+
+---
+
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-04-08 | San Diego (America/Los_Angeles)*
+*Updated: 2026-05-17 | San Diego (America/Los_Angeles)*
+*Current Term Count: 334 | Sections: 18*
 *This document grows with the project. It is never finished.*
