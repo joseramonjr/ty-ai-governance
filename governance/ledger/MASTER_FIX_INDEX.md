@@ -8386,3 +8386,22 @@ Five files modified (test blocks added):
   src/data/bookChapterContent.ts -- Ch26 Sections 17 and 18 added (+15,044 bytes)
 **Repo:** TYOVA -- 8274e69
 **Status:** COMPLETE
+## FIX-535 | OPEN | Logged 2026-05-17 20:04 PDT San Diego
+**Description:** Create TY_PHASE_10_SCOPE_v0.1.md. Phase 10 scope was defined in MFI FIX-505 and Ch18 Entry-516 on 2026-05-15 but no standalone scope document was ever created or committed to the spec folder. Phase 11 has TY_PHASE_11_SCOPE_v0.1.md -- Phase 10 should have equivalent. Scope content source: Ch18 Entry-516 (verified primary source).
+**Destination:** ty-ai-governance spec folder
+**Status:** OPEN -- pending
+
+## FIX-536 | OPEN | Logged 2026-05-17 20:04 PDT San Diego
+**Description:** Create local Chapter 51 markdown file. TY_BOOK_CHAPTER_51_THE_OPERATOR_GOVERNANCE_QUESTION.md does not exist in ty-ai-governance book folder. Chapter 51 exists in TYOVA only. Phase 8 audit noted Chapter 51 was missing standard metadata block and compiledNote. Local file must be created from TYOVA content with corrections applied.
+**Destination:** ty-ai-governance book folder
+**Status:** OPEN -- pending
+
+## FIX-537 | OPEN | Logged 2026-05-17 20:04 PDT San Diego
+**Description:** Confirm or create local markdown files for Chapters 1-14. These earliest chapters exist in TYOVA but not as local markdown files in ty-ai-governance book folder. Pre-governance era chapters (pre-Part 15) were written during ChatGPT sessions and ported to TYOVA from export archives. Determination needed: intentional design (TYOVA-only) or gap requiring local files to be created.
+**Destination:** ty-ai-governance book folder (if required)
+**Status:** OPEN -- pending builder determination
+
+## FIX-538 | OPEN | Logged 2026-05-17 20:04 PDT San Diego
+**Description:** Sync local Ch26 markdown file with TYOVA. Local TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md shows 244 terms updated 2026-05-15. TYOVA Ch26 is at 334 terms across 18 sections updated 2026-05-17 (FIX-534). Gap: 90 terms. Local file needs full sync to match TYOVA current state including Sections 15-18 additions made since 2026-05-15.
+**Destination:** ty-ai-governance book folder
+**Status:** OPEN -- pending
