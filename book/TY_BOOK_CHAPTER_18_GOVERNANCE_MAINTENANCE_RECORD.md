@@ -10991,3 +10991,8 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **Scope:** Chapter 53 -- Phase 10 External User Governance and HVP (includes Section 53.9: nine confirmed HVP governance decisions, F-21 Multi-Guardian M-of-N flag). Chapter 54 -- Phase 11 Governed Update Delivery and Runtime Protection (104 tests, full module coverage). Chapter 55 -- The Notice Layer Deployed (FIX-527/528/529). All chapters zero-fabrication verified. Financial details and sensitive HVP artifacts removed before publication.
 **Commit:** TYOVA 2ca4bf7
 **Status:** COMPLETE
+### Entry-539 | FIX-534 | 2026-05-17 19:54 PDT San Diego
+**Action:** Ch26 vocabulary updated -- Sections 17 and 18 added to TYOVA.
+**Scope:** Section 17 (6 terms): Governance Path, Model D, HVP, PVS, External User Governance Guide, Compliance Certification Standard. Section 18 (13 terms): Governed Update Delivery, Update Layer, Update Manifest, REJECT-1/3/5, Update State Machine, Runtime Warning Protocol, Suspended State, Lockdown State, Jayme Dormancy, Protective Response Protocol, Installation Notice, Distribution Notice, Certification Failure Notice. Warning Severity not duplicated -- already in Section 11. Total terms 315 to 334. Sections 16 to 18.
+**Commit:** TYOVA 8274e69
+**Status:** COMPLETE

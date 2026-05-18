@@ -8380,3 +8380,9 @@ Five files modified (test blocks added):
   src/data/bookChapterContent.ts -- full content added (+61,600 bytes)
 **Repo:** TYOVA -- 2ca4bf7
 **Status:** COMPLETE
+## FIX-534 | Entry-539 | 2026-05-17 19:54 PDT San Diego
+**Description:** Ch26 vocabulary updated -- Sections 17 and 18 added to TYOVA bookChapterContent.ts. Section 17: Phase 10 External User Governance Terms (6 terms: Governance Path, Model D, Human Verification Protocol HVP, Private Verification Store PVS, External User Governance Guide, Compliance Certification Standard). Section 18: Phase 11 Runtime Protection and Notice Layer Terms (13 terms: Governed Update Delivery, Update Layer, Update Manifest, REJECT-1/REJECT-3/REJECT-5, Update State Machine, Runtime Warning Protocol, Suspended State, Lockdown State, Jayme Dormancy, Protective Response Protocol, Installation Notice, Distribution Notice, Certification Failure Notice). Note: Warning Severity already present in Section 11 (2026-03-22) -- not duplicated. Total term count updated 315 to 334. Section count updated 16 to 18. compiledNote date updated to 2026-05-17. Update Log timeline entry added.
+**Files:**
+  src/data/bookChapterContent.ts -- Ch26 Sections 17 and 18 added (+15,044 bytes)
+**Repo:** TYOVA -- 8274e69
+**Status:** COMPLETE
