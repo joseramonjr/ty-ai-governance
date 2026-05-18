@@ -10986,3 +10986,8 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **Scope:** Canonical text from NWP Section 8.2 appended verbatim. Establishes formal notice to any system that fails compliance certification. Federation protective response consequence documented. Amendment reference included.
 **Commit:** ty-ai-governance 1062558
 **Status:** COMPLETE
+### Entry-538 | FIX-533 | 2026-05-17 19:20 PDT San Diego
+**Action:** Chapters 53, 54, and 55 added to TYOVA Book of TY.
+**Scope:** Chapter 53 -- Phase 10 External User Governance and HVP (includes Section 53.9: nine confirmed HVP governance decisions, F-21 Multi-Guardian M-of-N flag). Chapter 54 -- Phase 11 Governed Update Delivery and Runtime Protection (104 tests, full module coverage). Chapter 55 -- The Notice Layer Deployed (FIX-527/528/529). All chapters zero-fabrication verified. Financial details and sensitive HVP artifacts removed before publication.
+**Commit:** TYOVA 2ca4bf7
+**Status:** COMPLETE
