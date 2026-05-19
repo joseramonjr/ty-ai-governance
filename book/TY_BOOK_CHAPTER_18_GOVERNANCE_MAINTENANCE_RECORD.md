@@ -11261,3 +11261,13 @@ both at 335 terms, 19 sections as of 2026-05-19.
 FIX-Open.ps1 entry chain bug fixed (MFI->Ch18 source, 99->101 lines). Ch26 header corrected: FIX-538 forward ref removed, term count 334->335, date 2026-05-17->2026-05-19, sections 18->19. TYOVA compiledNote synced (commit 3437028). All integrity violations resolved.
 
 **Status:** CLOSED
+
+### Entry-557 | FIX-538 | 2026-05-19 14:00 PDT San Diego -- 2026-05-19 14:02 PDT San Diego San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 253f3da
+**Scope:** Rename Ch01-14 local files: space to underscore in filename (TY BOOK_ -> TY_BOOK_). 13 files. Ch05 not touched (F-6 active). No content changes.
+
+13 Ch01-14 local files renamed from 'TY BOOK_' to 'TY_BOOK_' canonical convention. git mv used, history preserved at 100%. Ch05 not touched (F-6 active). No content changes.
+
+**Status:** CLOSED
