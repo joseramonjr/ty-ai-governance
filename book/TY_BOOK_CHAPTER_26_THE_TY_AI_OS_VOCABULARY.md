@@ -1,4 +1,4 @@
-# Chapter 26 -- The TY AI OS Vocabulary
+﻿# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
 **CLO:** FIX-534 (Sections 17 and 18 added) | FIX-538 (local file sync to 334 terms)
 **Model:** Claude Sonnet 4.6
@@ -2846,6 +2846,158 @@ has received formal notice and cannot claim ignorance of its non-compliant
 status. Continued operation under the TY AI OS name after certification
 failure is a knowing violation.
 
+
+---
+
+## Section 19 -- TY-ANCHOR Session Governance Tooling Terms
+
+*Created: FIX-535 | 2026-05-19 | San Diego (America/Los_Angeles)*
+*Note: Four additional terms (WARD, TY-SIGNAL, TY-MESH, TY-FABRIC) are reserved
+for this section pending Phase 12 TY-FABRIC build.*
+
+**TY-ANCHOR**
+*First coined: 2026-05-19 | San Diego (America/Los_Angeles)*
+*Named by builder 2026-05-19. Built: FIX-534 | 2026-05-19.*
+The TY AI OS Session Governance Tooling Suite. A set of governed PowerShell
+scripts that enforce session discipline structurally across every TY AI OS work
+session. Named by the builder on 2026-05-19.
+
+The name TY-ANCHOR reflects the function: anchoring every session to the
+governance chain. Just as a physical anchor prevents a vessel from drifting,
+TY-ANCHOR prevents governance drift -- the gradual erosion of session discipline
+that occurs when governance rules are maintained by memory rather than structure.
+When discipline depends on memory, a long session, a distraction, or simple
+fatigue can cause a missed step. When discipline is enforced by tools, the rules
+hold regardless of circumstances.
+
+Before TY-ANCHOR existed, every TY AI OS session relied on the builder and an
+AI working through a mental checklist. Opening a FIX required the AI to track
+it. Writing ledger entries required manual formatting and verification. Session
+close required running individual commands and manually checking the output. This
+worked when discipline was perfect. One missed step -- an unclosed FIX, a ledger
+entry with the wrong entry number, a Ch18 scan gate skipped -- could create a
+gap in the governance chain that would only be discovered later, possibly after
+several more sessions had built on top of the error. TY-ANCHOR eliminates this
+class of failure by moving the discipline from human memory into the tools.
+
+TY-ANCHOR is not an AI ecosystem component. It is not Jaya AI, Jayme AI, or
+Luke AI. It does not execute governance decisions. It does not hold authority in
+the TY AI OS authority chain. It is not a runtime system. It does not govern
+the AI. It is governed tooling -- PowerShell scripts that run on the builder's
+local machine in San Diego, enforcing the session discipline rules that the
+governance doctrine had already established but previously relied on manual
+compliance to uphold.
+
+The five tools that constitute TY-ANCHOR:
+
+Pre-Flight.ps1 (v5, FIX-532 and FIX-535): The session start gate. Run before
+any work begins in any TY AI OS session. A read-only diagnostic that checks all
+three active repositories (ty-ai-governance, TYOVA, Jaya-Runtime) against their
+expected state, verifies that working trees are clean and in sync with remote,
+reads ledger state from the MASTER_FIX_INDEX and Chapter 18, and reports either
+OVERALL: READY or OVERALL: ACTION REQUIRED with a specific list of items to
+resolve. No work may begin until Pre-Flight reports READY. Pre-Flight never
+writes, commits, or modifies anything -- it only reads and reports.
+
+FIX-Open.ps1 (FIX-534): Opens a new FIX at the start of any governance work.
+Accepts three parameters: the FIX ID, the destination repository, and the scope
+description. Reads the MASTER_FIX_INDEX to confirm the last recorded entry,
+computes the next sequential Entry number automatically, records the start
+timestamp from the local system clock (not from the AI -- local tooling reads
+the actual San Diego time directly), and writes a session working file at
+.ty-anchor-session.json. Guards against opening a second FIX while one is still
+open -- a structural check that prevents the most common source of ledger chain
+errors. The session working file persists across terminal sessions on the same
+machine so that FIX state survives terminal restarts.
+
+FIX-Close.ps1 (FIX-534): Closes an open FIX after the work is complete and
+committed to the appropriate repository. Reads the session working file created
+by FIX-Open. Writes the Chapter 18 governance maintenance record entry with all
+required fields: entry number, FIX ID, timestamp range, destination, scope, and
+close note. Writes the MASTER_FIX_INDEX pipe-table entry. Runs the Chapter 18
+scan gate automatically and displays the last three entries to confirm chain
+integrity. Marks the session working file CLOSED. Outputs the exact git add,
+git commit, and git push commands for ty-ai-governance so the ledger commit
+matches the session record precisely. What previously required ten to fifteen
+minutes of manual entry formatting and verification is now a single command with
+a close note parameter.
+
+Session-Close.ps1 (FIX-534): The full session close checklist enforced as a
+tool. Runs five gates in sequence: Gate 1 -- no open FIX (session working file
+must show CLOSED status; session close is blocked if any FIX is still open);
+Gate 2 -- repo states (all three repositories must show clean working trees with
+no uncommitted changes); Gate 3 -- Chapter 18 chain (displays last five entries,
+confirms no scan failures); Gate 4 -- MASTER_FIX_INDEX confirmed current
+(displays last recorded entry, confirms file is present and readable); Gate 5 --
+Chapter 26 vocabulary file present (confirms the living vocabulary document
+exists and displays current term count). Reports PASS or FAIL for each gate
+individually so the builder knows exactly what to resolve if any gate fails.
+R14 CLEAR -- the requirement that MASTER_FIX_INDEX is confirmed current before
+session close -- becomes a verifiable tool output rather than a manual
+assessment. The session cannot pass Session-Close until every gate passes.
+
+Verify.ps1 (FIX-534): An ad-hoc chain integrity checker that can be run at any
+point during or between sessions. Displays the current session working file
+state (which FIX is open, when it was opened, what its scope is), the Chapter 18
+last ten entries with automatic gap detection (if any Entry number is skipped,
+Verify reports the gap by name), and the MASTER_FIX_INDEX last five entries.
+Gap detection runs automatically -- Verify compares sequential entry numbers
+and flags any discontinuity in the chain. This makes it possible to detect
+a chain error immediately rather than discovering it during a session close gate.
+
+The session governance contract enforced by TY-ANCHOR has five steps: (1) run
+Pre-Flight.ps1 at session open and confirm OVERALL: READY before touching
+anything; (2) run FIX-Open.ps1 when beginning a new FIX, providing the ID,
+destination, and scope; (3) perform the work and commit it to the appropriate
+repository; (4) run FIX-Close.ps1 with the commit hash and a description of
+what was built, then run the output commit command to record the ledger; (5)
+run Session-Close.ps1 at session end and confirm all five gates pass before
+ending the session. No session may close with any gate in a FAIL state.
+
+Key design principles that govern TY-ANCHOR itself:
+
+Timestamps come from the local system clock. TY-ANCHOR tools run on the
+builder's machine in San Diego. They read the actual system time directly. The
+discipline of asking Claude for the San Diego time was established for AI-only
+sessions where the AI cannot know the true time. Local tooling does not have
+this limitation and must not introduce it artificially.
+
+Verification is always local and never depends on any external service.
+No cloud call, no AI response, no network request is ever used for any
+verification operation. Chain integrity is checked by reading files from disk.
+Ledger state is read by parsing the governance files directly. The moment
+verification depends on an external service, it is no longer verifiable in the
+structural sense that TY AI OS requires.
+
+TY-ANCHOR may call the Claude API for language generation tasks only -- for
+example, drafting a ledger close note, generating a session handoff summary, or
+producing a human-readable description of session state. It never calls the
+Claude API for verification. The boundary between language generation and
+verification is structural, not a matter of policy.
+
+Every change to a TY-ANCHOR tool itself is governed: it receives a sequential
+FIX ID, a Chapter 18 entry, and a MASTER_FIX_INDEX entry. TY-ANCHOR is subject
+to the same governance rules it enforces.
+
+Comparison to Gstack: Gstack is a personal AI workflow stack created by Garry
+Tan that reached 50,000 GitHub stars in sixteen days. Both Gstack and TY-ANCHOR
+use structure and AI tooling to accelerate development work. The fundamental
+difference is that Gstack suggests structure and the user may bypass it without
+consequence, while TY-ANCHOR enforces structure and actively blocks non-compliant
+actions -- a session with an open FIX cannot pass Session-Close, a new FIX
+cannot open while one is already open, and Pre-Flight must report READY before
+work begins. TY-ANCHOR is connected to a permanent, append-only, tamper-evident
+governance ledger. Every session that uses TY-ANCHOR produces a verifiable,
+traceable, gap-free record. This is the operational meaning of verifiable
+governance applied to the session layer.
+
+TY-ANCHOR is designed to outlast the builder. Its canonical specification lives
+in TY-ANCHOR-ETHOS.md. A future guardian who reads that document and these tool
+definitions will be able to operate every TY-ANCHOR tool without requiring
+knowledge of how previous sessions were conducted. The tools enforce the same
+session discipline regardless of who runs them. This is what it means to build
+governance infrastructure that is survivable, verifiable, and independent of any
+single person.
 ---
 
 ## Update Log Additions
@@ -2857,6 +3009,7 @@ failure is a knowing violation.
 | 2026-05-12 to 2026-05-15 / FIX-498 | Phase 8 resumed | Operator Governance (Section 2); Pre-Flight, Phase 8 Dormant A (Section 9); Billboard Depth Weighting, Conversation History Summarization (Section 16) | Five terms across existing sections |
 | 2026-05-17 / FIX-534 | Phase 10 and 11 documentation | Governance Path, HVP, PVS, External User Governance Guide, Compliance Certification Standard (Section 17 created); Governed Update Delivery, Update Layer, Update Manifest, REJECT-1/3/5, Update State Machine, Runtime Warning Protocol, Suspended State, Lockdown State, Jayme Dormancy, Protective Response Protocol, Installation Notice, Distribution Notice, Certification Failure Notice (Section 18 created) | Note: Model D, Warning Severity already recorded in earlier sections |
 | 2026-05-17 / FIX-538 | Local file sync | Local markdown file updated from 244 terms to 334 terms. Sections 15-18 added. Inter-section additions appended. Header updated. Source: TYOVA bookChapterContent.ts verified by builder 2026-05-17. | Sections 15-18 created locally |
+| 2026-05-19 / FIX-535 | TY-ANCHOR vocabulary | TY-ANCHOR (Section 19 created) | Section 19 created with one term. Four terms reserved for Phase 12: WARD, TY-SIGNAL, TY-MESH, TY-FABRIC |
 
 ---
 
@@ -2864,6 +3017,6 @@ failure is a knowing violation.
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-05-17 | San Diego (America/Los_Angeles)*
-*Current Term Count: 334 | Sections: 18*
+*Updated: 2026-05-19 | San Diego (America/Los_Angeles)*
+*Current Term Count: 335 | Sections: 19*
 *This document grows with the project. It is never finished.*
