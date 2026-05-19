@@ -65,7 +65,7 @@ Write-Host ""
 $ch18Entry = @"
 
 
-### $entryId | $fixId | $openTime -- $closeTime San Diego
+### $entryId | $fixId | $openTime -- $closeTime
 
 **Destination:** $dest
 **Commit:** $CommitHash
@@ -117,6 +117,6 @@ Write-Host "  PASS TO: PowerShell terminal" -ForegroundColor Yellow
 Write-Host "  cd E:\TY-Ecosystem\ty-ai-governance" -ForegroundColor Gray
 Write-Host "  git add book/TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md" -ForegroundColor Gray
 Write-Host "  git add governance/ledger/MASTER_FIX_INDEX.md" -ForegroundColor Gray
-Write-Host "  git commit -m `"GOV: $fixId $entryId -- $scope -- Ch18 + MFI | $closeTime | San Diego`"" -ForegroundColor Gray
+Write-Host "  git commit -m `"GOV: $fixId $entryId -- $scope -- Ch18 + MFI | $closeTime`"" -ForegroundColor Gray
 Write-Host "  git push origin main" -ForegroundColor Gray
 Write-Host ""
