@@ -10,7 +10,7 @@
 #   San Diego (America/Los_Angeles)
 # Builder: Jose Ramon Alvarado McHerron AKA
 #   Jose Ramon Bautista Jr.
-# Status: Active
+# Status: Active -- Amended 2026-05-18 by FIX-531 (Amendment 1: HVP Installation Policy)
 
 ---
 
@@ -410,3 +410,88 @@ entries per the applicable charter template.
 Paths 3 and 4 additionally require federation
 registry registration per
 TY_FEDERATION_MEMBERSHIP_PROTOCOL_v0.1.md.
+
+
+---
+
+## Section A1 -- Amendment 1: HVP Installation Policy
+## Amendment date: 2026-05-17 | San Diego (America/Los_Angeles)
+## Registered: FIX-531 | Entry-544
+## Authorized by: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+## Version: v0.2
+
+This amendment clarifies the Human Verification Protocol requirements
+for each governance path. The original path descriptions listed HVP
+initialization as a requirement without distinguishing between
+installation types or making the requirement conditional. This amendment
+corrects that. No existing section is removed. The path descriptions
+remain accurate -- this amendment adds precision to the HVP requirement
+they reference.
+
+The full HVP installation policy is defined in
+TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md Section A1 (FIX-530, 2026-05-17).
+This section summarizes its application to each path.
+
+### A1.1 -- Path 1: HVP Does Not Apply
+
+Path 1 (Solo, No Guardian) installations are not subject to the Human
+Verification Protocol. There is no designated guardian. Jayme AI is not
+enabled. There is no guardian return event for HVP to verify against.
+HVP initialization is not required and is not offered during Path 1
+installation.
+
+### A1.2 -- Paths 2, 3, and 4: HVP Is Tiered by Installation Type
+
+For Paths 2, 3, and 4, the original requirement states "Human
+Verification Protocol initialized per
+TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md." This remains correct. The
+following amendment adds that whether HVP initialization is required
+or optional depends on installation type:
+
+  Home and Personal Installations:
+    HVP is optional. The user receives a full explanation of what HVP
+    is and what protection they give up by declining before making the
+    choice. A user who declines HVP retains a passcode-based Lockdown
+    clearance fallback. HVP may be enabled at any time after
+    installation.
+
+  Government and Business Installations:
+    HVP is required. No opt-out is available. For deployments where the
+    organization requires this to be non-overridable by the end user,
+    a deployment configuration lock may be set before the installation
+    reaches the end user.
+
+### A1.3 -- How Installation Type Is Determined
+
+The installer does not rely solely on user self-declaration. At install
+time, Jaya Runtime silently checks two environmental signals:
+
+  -- Domain join status (a domain-joined machine is almost certainly
+     enterprise or government)
+  -- MDM enrollment (a managed device is almost certainly
+     organizational)
+
+If enterprise signals are detected, the installation is presented as
+government or business and HVP is pre-selected. If no enterprise signals
+are detected, HVP is presented as optional. The user may override the
+environmental default with full disclosure of what they are changing.
+A deployment configuration lock set by an organization cannot be
+overridden by the end user.
+
+### A1.4 -- HVP Explanation Is Mandatory Before the Choice
+
+Before any user on Paths 2, 3, or 4 is asked whether to enable HVP,
+the installer must present a plain-language explanation of what HVP
+does, what happens when it activates, and what protection is given up
+by declining. This explanation screen is not skippable. Full detail
+is defined in TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md Section A1.4.
+
+### A1.5 -- Cross-Reference
+
+The complete HVP installation policy including disable rules, passcode
+fallback, guardian transfer options, and the F-21 Multi-Guardian M-of-N
+future phase design goal is defined in:
+
+  TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md
+  Section A1 -- Amendment 1: HVP Installation Policy
+  FIX-530 | 2026-05-17 | San Diego
