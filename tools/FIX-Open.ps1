@@ -43,8 +43,10 @@ if (-not (Test-Path $MFI)) {
 $mfiLines  = [System.IO.File]::ReadAllLines($MFI)
 $lastMFI   = ($mfiLines | Select-String "(^#{2,3} (FIX-|FLAG-|SS-FIX-)\d+|^\| (FIX-|FLAG-|SS-FIX-)\d+)" | Select-Object -Last 1).Line.Trim()
 
-# -- Get last Entry number
-$lastEntryMatch = ($mfiLines | Select-String "Entry-(\d+)" | Select-Object -Last 1)
+# -- Get last Entry number from Ch18 (authoritative source for Entry chain)
+$CH18           = "E:\TY-Ecosystem\ty-ai-governance\book\TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md"
+$ch18Lines      = [System.IO.File]::ReadAllLines($CH18)
+$lastEntryMatch = ($ch18Lines | Select-String "^### Entry-(\d+)" | Select-Object -Last 1)
 $lastEntryNum   = 0
 if ($lastEntryMatch) {
     $lastEntryNum = [int]([regex]::Match($lastEntryMatch.Line, "Entry-(\d+)").Groups[1].Value)
