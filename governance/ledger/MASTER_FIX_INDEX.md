@@ -1,4 +1,4 @@
-# MASTER_FIX_INDEX
+﻿# MASTER_FIX_INDEX
 
 Status: Active
 
@@ -8487,3 +8487,5 @@ Five files modified (test blocks added):
 **Destination:** Jaya Runtime federation module extension + new spec document TY_FABRIC_SPEC_v0.1.md
 **Status:** OPEN -- future phase design goal
 **Prerequisite:** Phase 12 scope definition or TY-FABRIC dedicated sprint
+
+| FIX-532 | 2026-05-19 11:08-11:24 PDT | ty-ai-governance | Pre-Flight v5 -- Jaya-Runtime added to GIT_REPOS. Previously only ty-ai-governance and TYOVA monitored. All three active repos now tracked. 332 lines, 14,541 bytes. Commit 13e2560. CLOSED |

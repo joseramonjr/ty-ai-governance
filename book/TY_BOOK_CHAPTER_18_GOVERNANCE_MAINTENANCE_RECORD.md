@@ -1,4 +1,4 @@
-# Chapter 18 -- The Governance Maintenance Record
+﻿# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current
@@ -11041,3 +11041,20 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **Action:** FLAG-28 logged in MFI -- TY-FABRIC Governed Connectivity Layer.
 **Scope:** Three integrated components defined. WARD: new canonical term replacing NODE across all TY AI OS -- a governed sovereign accountable presence under guardian protection, named by builder 2026-05-19. TY-SIGNAL: governed intelligence propagation between WARDs -- guardian authorized, ledger recorded, governance_hash bound, three signal types only, kill switch dominant. TY-MESH: governed resource federation between WARDs -- guardian signed, scope declared and bounded, every contribution ledger recorded, kill switch stops sharing immediately. TY-FABRIC: the complete governed connectivity layer -- WARDs grow stronger with each new installation worldwide compounding governance resilience not just compute. Extends Phase 5 federation foundation (Parts 81-84) without modifying sealed code. Ch26 Section 19 terms when built: WARD, TY-SIGNAL, TY-MESH, TY-FABRIC. Not a copy of Hyperspace -- fundamentally different architecture, purpose, and governance model.
 **Status:** OPEN -- future phase
+
+### Entry-550 | FIX-532 | 2026-05-19 11:08-11:24 PDT San Diego
+
+**Destination:** ty-ai-governance -- tools/Pre-Flight.ps1
+**Type:** Governance Tooling Update
+
+**Change:** Pre-Flight.ps1 updated from v4 to v5. Jaya-Runtime added
+to $GIT_REPOS array. Previously Pre-Flight checked only ty-ai-governance
+and TYOVA. Jaya-Runtime is now tracked as a third monitored repo,
+consistent with all session handoffs which track all three repo HEADs.
+Revision history comment updated with v5 entry.
+
+**Verification:** 332 lines | 14,541 bytes. Commit 13e2560. Push confirmed.
+Pre-Flight re-run: OVERALL: READY. All three repos clean and in sync.
+
+**Commit:** 13e2560 (ty-ai-governance main)
+**Status:** CLOSED
