@@ -11011,3 +11011,8 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **Scope:** TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md updated from 244 terms to 334 terms. Sections 15-18 appended. Inter-section additions appended (Operator Governance, AES-256-GCM, 8 Section 9 terms, 6 Section 14 terms). Header updated: term count 244 to 334, date 2026-05-15 to 2026-05-17, sections 14 to 18. Old footer replaced with updated footer. Original file format preserved -- bold term names, italic dates, plain prose. Source: TYOVA bookChapterContent.ts verified by builder 2026-05-17. Audit gap FIX-538 closed.
 **Commit:** ty-ai-governance 53f95c9
 **Status:** COMPLETE
+### Entry-543 | FIX-530 | 2026-05-18 21:23 PDT San Diego
+**Action:** TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md amended -- Section A1 HVP Installation Policy added.
+**Scope:** Nine governance decisions from 2026-05-17 builder session formalized. Path applicability (Path 1 excluded), installation type tiers (home optional, gov/business required), environmental detection, explanation requirement, enable-later provision, disable rules, passcode fallback, guardian transfer options, F-21 Multi-Guardian M-of-N future flag. No existing sections modified. 202 lines added, 17739 to 26497 bytes.
+**Commit:** ty-ai-governance 2b2d18a
+**Status:** COMPLETE

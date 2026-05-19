@@ -8408,3 +8408,9 @@ Five files modified (test blocks added):
 **Destination:** ty-ai-governance book folder
 **Commit:** ty-ai-governance 53f95c9
 **Status:** COMPLETE
+## FIX-530 | Entry-543 | 2026-05-18 21:23 PDT San Diego
+**Description:** TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md amended. Section A1 -- Amendment 1: HVP Installation Policy added. Nine governance decisions from 2026-05-17 builder session (Chapter 53 Section 53.9) formalized into spec. A1.1 HVP applicability by path (Path 1 excluded). A1.2 HVP tiered by installation type (home optional, gov/business required). A1.3 Environmental detection (domain join, MDM). A1.4 HVP explanation requirement. A1.5 HVP enable after installation. A1.6 HVP disable rules (guardian only, blocked during protected states). A1.7 Passcode fallback. A1.8 Guardian transfer protocol options. A1.9 F-21 Multi-Guardian M-of-N future phase design goal. No existing sections modified. Header status updated to Active -- Amended.
+**Files:**
+  spec/TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md -- Section A1 added (+202 lines, 17739 to 26497 bytes)
+**Repo:** ty-ai-governance -- 2b2d18a
+**Status:** COMPLETE
