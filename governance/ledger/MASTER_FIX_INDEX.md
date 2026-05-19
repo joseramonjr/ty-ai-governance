@@ -8425,3 +8425,20 @@ Five files modified (test blocks added):
 **Destination:** Jaya Runtime ledger module -- future phase
 **Status:** OPEN -- future phase design goal
 **Prerequisite:** Phase 12 scope definition
+## FLAG-23 | OPEN | Logged 2026-05-19 09:13 PDT San Diego
+**Description:** Accountability Transparency Layer. Make governance decisions publicly verifiable in human-readable form -- not just cryptographically. A summary of decisions made, by whom at what guardian tier, and what category of action was authorized, published publicly. Not private details -- only the accountability record. When a human using TY AI OS makes a decision, a public record confirms a human made it with their authority chain. Directly addresses the core TY principle: AI is not bad, humans make it bad and then blame the AI. This layer makes that evasion structurally harder -- the public record shows who authorized what. No AI can be blamed for autonomous action because the accountability chain is visible. Inspired by builder conversation 2026-05-19.
+**Destination:** Jaya Runtime transparency layer -- future phase
+**Status:** OPEN -- future phase design goal
+**Prerequisite:** Phase 12 scope definition
+
+## FLAG-24 | OPEN | Logged 2026-05-19 09:13 PDT San Diego
+**Description:** Operator Accountability Statement. Require any external TY AI OS operator -- any government, hospital, company, or organization -- to publish a plain-language statement declaring: what they are using TY AI OS for, what governance boundaries they have set, and who the designated guardian is. This statement is cross-referenced against the governance ledger. If harm occurs, the accountability trail is already established before the harm happened. Turns the builder's principle into a public commitment: the operator declares the intended use, the ledger verifies whether the deployment stayed within declared boundaries. Extends Chapter 51 (The Operator Governance Question) into a formal operator commitment framework. Inspired by builder conversation 2026-05-19.
+**Destination:** TY_EXTERNAL_USER_GOVERNANCE_GUIDE_v0.1.md extension -- future phase
+**Status:** OPEN -- future phase design goal
+**Prerequisite:** Phase 12 scope definition
+
+## FLAG-25 | OPEN | Logged 2026-05-19 09:13 PDT San Diego
+**Description:** Misuse Pattern Library. A documented library of known AI misuse patterns -- surveillance, weaponization, population control, disinformation, autonomous harm, power concentration -- each with a corresponding structural response documenting how TY AI OS architecture prevents or detects that specific pattern. Not a policy list. A verifiable public document where each misuse pattern is matched to a specific governance mechanism already built into TY AI OS. Extends the Yampolskiy Gaps work (Gap 1 operator-independent verification, Gap 2 TY Compliance Proof Kit, Gap 3 future AI scalability research). Makes TY AI OS's protection of humanity explicitly auditable against known threat patterns. Any external auditor can verify the structural response to each pattern. Inspired by builder conversation 2026-05-19 on whether TY AI OS can do more to keep AI aligned with the future of humanity.
+**Destination:** ty-ai-governance spec folder -- new document TY_MISUSE_PATTERN_LIBRARY_v0.1.md
+**Status:** OPEN -- future phase design goal
+**Prerequisite:** Phase 12 scope definition
