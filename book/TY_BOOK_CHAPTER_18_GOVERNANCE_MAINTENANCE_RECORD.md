@@ -11271,3 +11271,13 @@ FIX-Open.ps1 entry chain bug fixed (MFI->Ch18 source, 99->101 lines). Ch26 heade
 13 Ch01-14 local files renamed from 'TY BOOK_' to 'TY_BOOK_' canonical convention. git mv used, history preserved at 100%. Ch05 not touched (F-6 active). No content changes.
 
 **Status:** CLOSED
+
+### Entry-558 | FIX-539 | 2026-05-19 14:05 PDT San Diego -- 2026-05-19 14:08 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 69cf8e8
+**Scope:** FIX-Close.ps1 cosmetic bug: remove duplicate 'San Diego' from Ch18 entry template and git commit message display. Two single-word removals.
+
+Removed trailing 'San Diego' from Ch18 entry template (line 68) and trailing '| San Diego' from git commit message display (line 120).  already contains 'PDT San Diego' -- duplication eliminated. 122 lines unchanged.
+
+**Status:** CLOSED
