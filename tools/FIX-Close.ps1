@@ -40,7 +40,17 @@ $entryId   = $session.entryId
 $dest      = $session.destination
 $scope     = $session.scope
 $openTime  = $session.openTimestamp
-$closeTime = Get-Date -Format "yyyy-MM-dd HH:mm PDT"
+$detectedClose = Get-Date -Format "yyyy-MM-dd HH:mm"
+Write-Host "  Detected close time  : $detectedClose" -ForegroundColor Gray
+Write-Host "  Press ENTER to accept or type correct San Diego time (HH:MM): " -NoNewline -ForegroundColor Yellow
+$closeInput = Read-Host
+if ($closeInput -eq "") {
+    $closeTime = "$detectedClose PDT San Diego"
+} else {
+    $datepartClose = Get-Date -Format "yyyy-MM-dd"
+    $closeTime = "$datepartClose $closeInput PDT San Diego"
+}
+Write-Host "  Close time confirmed : $closeTime" -ForegroundColor Green
 
 Write-Host "  FIX ID         : $fixId"
 Write-Host "  Entry          : $entryId"

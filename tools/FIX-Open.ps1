@@ -52,8 +52,18 @@ if ($lastEntryMatch) {
 $nextEntryNum = $lastEntryNum + 1
 $nextEntry    = "Entry-$nextEntryNum"
 
-# -- Timestamp from system clock (San Diego local machine)
-$timestamp = Get-Date -Format "yyyy-MM-dd HH:mm PDT"
+# -- Timestamp: show detected time, prompt for confirmation
+$detectedTime = Get-Date -Format "yyyy-MM-dd HH:mm"
+Write-Host "  Detected system time : $detectedTime" -ForegroundColor Gray
+Write-Host "  Press ENTER to accept or type correct San Diego time (HH:MM): " -NoNewline -ForegroundColor Yellow
+$userInput = Read-Host
+if ($userInput -eq "") {
+    $timestamp = "$detectedTime PDT San Diego"
+} else {
+    $datepart = Get-Date -Format "yyyy-MM-dd"
+    $timestamp = "$datepart $userInput PDT San Diego"
+}
+Write-Host "  Timestamp confirmed  : $timestamp" -ForegroundColor Green
 
 # -- Display
 Write-Host "  MFI last entry : $lastMFI"
