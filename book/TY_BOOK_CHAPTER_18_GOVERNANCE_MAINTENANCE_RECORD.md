@@ -11151,3 +11151,49 @@ lower assurance than automatic detection.
 **Phase:** TY-0001.B -- requires Tauri integration phase
 
 **Status:** OPEN -- deferred pending TY-0001.B
+
+### Entry-553 | FIX-534 | 2026-05-19 12:12-12:20 PDT San Diego
+
+**Destination:** ty-ai-governance -- tools/
+**Type:** Governance Tooling -- TY-ANCHOR v0.1
+**Commit:** 236ab0e
+
+**Scope:** TY-ANCHOR Session Governance Tooling Suite built. Five files
+created. FLAG-26 delivered.
+
+**Files written:**
+  TY-ANCHOR-ETHOS.md   -- 153 lines | 5,743 bytes
+    Canonical session discipline document. Defines the session governance
+    contract, all five tools, the session working file, and six TY-ANCHOR
+    governance rules. Authoritative reference for TY-ANCHOR operations.
+  FIX-Open.ps1         -- 89 lines | 3,471 bytes
+    Opens a new FIX. Reads MFI to confirm last entry. Computes next Entry
+    number. Records start state to .ty-anchor-session.json. Guards against
+    opening a second FIX while one is already open.
+  FIX-Close.ps1        -- 112 lines | 4,549 bytes
+    Closes an open FIX. Reads session file. Writes Ch18 entry. Writes MFI
+    entry. Runs Ch18 scan gate. Marks session file CLOSED. Outputs commit
+    command for ty-ai-governance.
+  Session-Close.ps1    -- 129 lines | 5,634 bytes
+    Full session close checklist. Five gates: open FIX check, repo states,
+    Ch18 chain scan, MFI confirmed current, Ch26 present. Reports PASS or
+    FAIL for each. Blocks session close if any gate fails.
+  Verify.ps1           -- 88 lines | 3,811 bytes
+    Ad-hoc chain integrity check. Displays session state, Ch18 last 10
+    entries with gap detection, MFI last 5 entries.
+
+**Design decisions locked:**
+  -- Timestamps from system clock (local tooling on San Diego machine --
+     no guessing required, unlike AI sessions)
+  -- Verification always local -- never Claude API, never external service
+  -- Session working file (.ty-anchor-session.json) local-only, not committed
+  -- FIX-Close outputs exact commit command for ty-ai-governance
+  -- Session-Close blocks if any FIX is still OPEN
+
+**TY-ANCHOR vs Gstack:** Gstack (Garry Tan) suggests. TY-ANCHOR enforces.
+Connected to permanent record. Zero-fabrication enforced. Chain-aware
+across sessions. Designed to outlast the builder.
+
+**Total:** 571 lines | 23,208 bytes across 5 files.
+
+**Status:** CLOSED
