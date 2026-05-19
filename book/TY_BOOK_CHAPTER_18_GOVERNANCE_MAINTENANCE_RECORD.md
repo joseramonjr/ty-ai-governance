@@ -11281,3 +11281,13 @@ FIX-Open.ps1 entry chain bug fixed (MFI->Ch18 source, 99->101 lines). Ch26 heade
 Removed trailing 'San Diego' from Ch18 entry template (line 68) and trailing '| San Diego' from git commit message display (line 120).  already contains 'PDT San Diego' -- duplication eliminated. 122 lines unchanged.
 
 **Status:** CLOSED
+
+### Entry-559 | FIX-540 | 2026-05-19 1427 PDT San Diego -- 2026-05-19 14:32 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 2ae2322
+**Scope:** Phase 12 Scope Definition -- F-19 Governed Evolution spec document
+
+Phase 12 Scope Definition produced and committed. TY_PHASE_12_SCOPE_v0.1.md 267 lines 10647 bytes. F-19 Governed Evolution scope defined across 10 sections: theme, core question, scope boundary, layer model, tracks A-C, 8 proof conditions, ODQ disposition, exclusions, session structure, seal condition.
+
+**Status:** CLOSED
