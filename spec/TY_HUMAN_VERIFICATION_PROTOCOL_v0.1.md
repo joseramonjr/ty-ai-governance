@@ -11,7 +11,7 @@
 #   San Diego (America/Los_Angeles)
 # Builder: Jose Ramon Alvarado McHerron AKA
 #   Jose Ramon Bautista Jr.
-# Status: Active
+# Status: Active -- Amended 2026-05-17 by FIX-530 (Amendment 1: HVP Installation Policy)
 
 ---
 
@@ -548,6 +548,207 @@ amendment must:
 An amendment that weakens any verification
 layer fails the Codex Section XIV test and
 cannot be applied.
+
+---
+
+
+---
+
+## Section A1 -- Amendment 1: HVP Installation Policy
+## Amendment date: 2026-05-17 | San Diego (America/Los_Angeles)
+## Registered: FIX-530 | Entry-543
+## Authorized by: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+## Version: v0.2
+
+This amendment adds nine governance decisions made by the builder on
+2026-05-17 during pre-publication review of Chapter 53 of the Book of TY.
+These decisions define when HVP applies, who must use it, and what rules
+govern its activation, deactivation, and fallback behavior. No existing
+section of this document is modified. This amendment extends the document
+by defining installation-level policy that was not addressed in v0.1.
+
+### A1.1 -- HVP Applicability by Governance Path
+
+HVP applies only where a guardian chain exists. The following applies
+by governance path:
+
+  Path 1 -- Solo, No Guardian:
+    HVP does not apply. Path 1 installations have no designated guardian.
+    Jayme AI is not enabled. There is no guardian return event for HVP to
+    verify against. HVP initialization is not required and is not offered
+    during installation.
+
+  Path 2 -- Independent, Own Guardian:
+    HVP applies. Whether it is required or optional depends on installation
+    type per Section A1.2.
+
+  Path 3 -- Federated, Own Guardian:
+    HVP applies. Whether it is required or optional depends on installation
+    type per Section A1.2.
+
+  Path 4 -- Federated, Shared Guardian:
+    HVP applies. Whether it is required or optional depends on installation
+    type per Section A1.2.
+
+### A1.2 -- HVP Tiered by Installation Type
+
+For Paths 2, 3, and 4, whether HVP is required depends on the type of
+installation:
+
+  Home and Personal Installations:
+    HVP is optional. The user chooses whether to enable it. The choice is
+    made after receiving the full explanation required by Section A1.4. A
+    home or personal user who declines HVP retains the passcode fallback
+    defined in Section A1.7.
+
+  Government and Business Installations:
+    HVP is required. No opt-out is available. The protection level
+    appropriate to institutional installations is not negotiable.
+    For deployments where the organization requires HVP to be mandatory
+    and non-overridable by the end user, a deployment configuration lock
+    may be set by the organization's IT or security team before the
+    installation reaches the end user. The end user cannot override a
+    deployment lock.
+
+### A1.3 -- Environmental Detection at Install Time
+
+The installer does not rely solely on user self-declaration to determine
+installation type. At install time, Jaya Runtime checks two environmental
+signals silently:
+
+  Signal 1 -- Domain join status:
+    A Windows machine that is joined to an Active Directory domain is
+    almost certainly an enterprise or government installation.
+
+  Signal 2 -- MDM enrollment:
+    A device enrolled in a Mobile Device Management system is almost
+    certainly managed by an organization.
+
+These signals set the recommended default for the HVP choice -- not a
+hard gate. If enterprise signals are detected, HVP is pre-selected and
+the installation is presented as a government or business installation.
+If no enterprise signals are detected, HVP is presented as optional.
+
+The user may override the environmental default in either direction with
+full disclosure of what they are changing. A deployment configuration
+lock set by an organization overrides the user and cannot itself be
+overridden by the end user.
+
+### A1.4 -- HVP Explanation Requirement
+
+Before any user on Paths 2, 3, or 4 is asked whether to enable HVP,
+the installer must present a plain-language explanation covering:
+
+  -- What HVP is and why it exists
+  -- What happens when a Lockdown State occurs and HVP is active:
+     Jaya notifies the guardian, and the guardian completes the
+     verification process defined in this document
+  -- What the installation loses if HVP is not enabled
+  -- That what the verification process requires is established during
+     the guardian initialization session and is known only to the guardian
+  -- That HVP can be enabled at any time after installation
+
+No user makes an HVP decision without having received this explanation.
+The explanation screen is not skippable.
+
+### A1.5 -- HVP May Be Enabled at Any Time After Installation
+
+A user who declines HVP at install time may enable it at any time
+after installation. There is no deadline. The guardian initialization
+session may be triggered from within the installer settings at any
+point after installation. The governance ledger records when HVP was
+initialized, by whom, and the San Diego timestamp.
+
+### A1.6 -- HVP Disable Rules
+
+The following rules govern disabling HVP once it has been initialized:
+
+  Who may disable:
+    Only the guardian who initialized HVP may disable it. No other user
+    may disable it. The AI component may never disable it.
+
+  Home and personal installations:
+    The guardian may disable HVP at any time. A governance ledger entry
+    is required recording the decision, the date, and the guardian identity.
+
+  Government and business installations:
+    Disabling HVP requires a formal governance process with documentation.
+    Standard installer settings alone are insufficient.
+
+  Lockdown State and Suspended State restriction:
+    HVP cannot be disabled while the installation is in Lockdown State or
+    Suspended State. The installation must be cleared from the protective
+    state before HVP settings may be changed. This rule cannot be overridden
+    by any instruction. It prevents the removal of the protective mechanism
+    while the installation is already under protection.
+
+### A1.7 -- Passcode Fallback for Non-HVP Installations
+
+Path 1 installations and Path 2 through 4 installations where the user
+declined HVP still have a Lockdown State clearance path. A simple
+passcode -- set during installation and stored encrypted in the Private
+Verification Store -- serves as the clearance mechanism.
+
+The passcode fallback:
+  -- Is lower security than full HVP
+  -- Is appropriate for personal installations where the guardian
+     impersonation threat is lower
+  -- Is set during the installation session
+  -- Is stored encrypted in the Private Verification Store (FIX-507)
+  -- Results in a governance ledger entry recording that clearance
+     was achieved via passcode rather than HVP
+
+A user who selected the passcode fallback may upgrade to full HVP at
+any time by completing the guardian initialization session.
+
+### A1.8 -- Guardian Transfer Protocol Options
+
+When a guardian change occurs -- a guardian leaves, a new guardian is
+designated -- the following applies:
+
+  Default behavior:
+    The incoming guardian undergoes a new HVP initialization session.
+    The outgoing guardian's verification materials in the Private
+    Verification Store are replaced with the incoming guardian's
+    materials per Section I1.F.
+
+  Organization option:
+    An organization may choose to retain the existing HVP settings
+    during a guardian transfer rather than reinitializing. This option
+    must be explicitly presented and chosen during the guardian transfer
+    process. It is not a default. It is not assumed.
+
+  Disclosure requirement:
+    The consequences of each choice must be disclosed to the organization
+    at the time of transfer. The choice and its consequences are recorded
+    in the governance ledger.
+
+  Incomplete handoff rule:
+    A guardian handoff is not complete until either the new HVP
+    initialization or the explicit retention decision has been recorded
+    in the governance ledger.
+
+### A1.9 -- Multi-Guardian Support: Future Phase Design Goal (F-21)
+
+The current TY AI OS guardian model is sequential: one Tier 1 guardian,
+one Tier 2 successor who activates only when Tier 1 is unreachable.
+Multi-guardian support -- multiple guardians with simultaneous authority
+-- is designated as a future phase design goal under flag F-21.
+
+The confirmed future model is Model B: Multiple Must Agree, using M-of-N
+logic with a minimum of 2 of 3. This means for an installation with three
+designated guardians, at least two must complete verification
+simultaneously or within a defined time window to clear a Lockdown State.
+No single guardian can act alone.
+
+This model is appropriate for high-security government, defense,
+intelligence, and financial regulatory installations where dual-authority
+control is operationally required.
+
+Multi-guardian M-of-N support is not implemented in this version of the
+HVP specification. It is recorded here as a confirmed future design goal
+with builder authorization. Implementation will require its own phase
+designation and FIX sequence.
 
 ---
 
