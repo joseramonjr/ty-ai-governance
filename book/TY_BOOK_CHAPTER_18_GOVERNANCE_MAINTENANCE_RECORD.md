@@ -11197,3 +11197,34 @@ across sessions. Designed to outlast the builder.
 **Total:** 571 lines | 23,208 bytes across 5 files.
 
 **Status:** CLOSED
+
+### Entry-554 | FIX-535 | 2026-05-19 12:51-13:00 PDT San Diego
+
+**Destination:** ty-ai-governance -- book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
+**Type:** Vocabulary Update -- Living Document
+**Commit:** 867b6fe
+
+**Scope:** Ch26 Section 19 created. TY-ANCHOR term added. Term count
+334 to 335. Sections 18 to 19. Updated date 2026-05-17 to 2026-05-19.
+
+**Section 19 -- TY-ANCHOR Session Governance Tooling Terms:**
+One term added: TY-ANCHOR. Full comprehensive definition covering:
+what TY-ANCHOR is, why it exists, the governance drift problem it solves,
+what it is not (not an AI component), all five tools (Pre-Flight, FIX-Open,
+FIX-Close, Session-Close, Verify) with full descriptions of each, the
+five-step session governance contract, key design principles (local
+timestamps, local verification only, Claude API for language only),
+comparison to Gstack, and the survivability design goal.
+
+**Four terms reserved for Section 19 pending Phase 12 TY-FABRIC build:**
+WARD, TY-SIGNAL, TY-MESH, TY-FABRIC.
+
+**Update Log row added:** FIX-535 | 2026-05-19 | TY-ANCHOR vocabulary.
+
+**File state:** 3,022 lines | 161,468 bytes (was 2,869 lines | 151,810 bytes)
++153 lines | +9,658 bytes
+
+**TYOVA sync:** Ch26 Section 19 sync to TYOVA bookChapterContent.ts
+is a follow-on step. Separate FIX.
+
+**Status:** CLOSED
