@@ -11311,3 +11311,13 @@ TY_GOVERNED_EVOLUTION_SPEC_v0.1.md produced and committed. F-19 Governed Evoluti
 Phase 12 Track B F-19 Rust modules. Three evolution modules written to Jaya-Runtime: evolution_proposal.rs (625L 23558B) -- ProposalStatus, LayerClassification, ProposerPath, layer_1_screen, anti_capture_check EVOL-AC-1 through EVOL-AC-5, classify_layer, create_proposal, 20 tests. evolution_deliberation.rs (447L 17759B) -- DeliberationRecordType, PeriodCheckResult, MINIMUM_DELIBERATION_PERIOD_SECONDS locked 604800s, is_deliberation_period_expired, create_deliberation_start_record, create_deliberation_close_record, create_deliberation_note, 12 tests. evolution_authorization.rs (434L 17525B) -- AuthorizationRecord, EvolutionEvent, validate_authorization_prerequisites, check_ac4_independence, create_authorization_record, create_evolution_event, 15 tests. lib.rs mod declarations added. Commit a1ac0a9.
 
 **Status:** CLOSED
+
+### Entry-562 | FIX-543 | 2026-05-19 15:08 PDT San Diego -- 2026-05-19 15:12 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 9a13ac0
+**Scope:** FIX-542 test string correction + ledger table additions for evolution modules
+
+FIX-542 test string correction: evolution_deliberation test_start_record_has_required_fields assert changed from '7 days' to '7-day' to match actual content string. Four F-19 evolution ledger tables added to initialize_ledger: evolution_proposals, evolution_deliberation_records, evolution_authorization_records, evolution_events. ledger.rs 1643->1694 lines. cargo test evolution: 51/51 PASS. Zero failures.
+
+**Status:** CLOSED
