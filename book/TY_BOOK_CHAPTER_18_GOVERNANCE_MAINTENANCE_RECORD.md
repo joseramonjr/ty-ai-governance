@@ -11228,3 +11228,26 @@ WARD, TY-SIGNAL, TY-MESH, TY-FABRIC.
 is a follow-on step. Separate FIX.
 
 **Status:** CLOSED
+
+### Entry-555 | FIX-536 | 2026-05-19 13:07-13:09 PDT San Diego
+
+**Destination:** TYOVA -- src/data/bookChapterContent.ts
+**Type:** Ch26 TYOVA Sync
+**Commit:** e8ad3c9
+
+**Scope:** Ch26 Section 19 synced to TYOVA. bookChapterContent.ts updated
+with TY-ANCHOR term and Section 19 header. Timeline entry added for FIX-536.
+
+**Changes:**
+  Section 19 block inserted before Update Log in Ch26 TYOVA block.
+  partHeading: Section 19 -- TY-ANCHOR Session Governance Tooling Terms
+  heading: TY-ANCHOR with 13 content strings covering full definition.
+  Timeline entry added: FIX-536 | 2026-05-19 | 335 terms.
+
+**File state:** 9,841 lines | 1,087,228 bytes (was 9,818 lines)
++23 lines | 24 insertions 1 deletion (git)
+
+**Ch26 now in sync:** ty-ai-governance (local) and TYOVA (public archive)
+both at 335 terms, 19 sections as of 2026-05-19.
+
+**Status:** CLOSED
