@@ -8420,3 +8420,8 @@ Five files modified (test blocks added):
   spec/TY_EXTERNAL_USER_GOVERNANCE_GUIDE_v0.1.md -- Section A1 added (+86 lines, 15808 bytes)
 **Repo:** ty-ai-governance -- 8ae8be3
 **Status:** COMPLETE
+## FLAG-22 | OPEN | Logged 2026-05-19 08:48 PDT San Diego
+**Description:** Reed-Solomon Error Correction for TY AI OS Governance Ledger Survivability. Future design consideration raised by builder 2026-05-19 after observing NASA Voyager 1 data recovery using polynomial mathematics. Reed-Solomon codes encode data redundantly by evaluating a polynomial at more points than strictly necessary -- corrupted points can be reconstructed from surviving ones. Two specific TY AI OS applications identified: (1) Ledger Block Encoding -- each governance ledger block Reed-Solomon encoded before storage, allowing partial reconstruction if physical storage degrades over a long-running installation (relevant given TY AI OS is designed to survive decades); (2) Federation Recovery -- when a federated node returns after hardware failure, Reed-Solomon reconstruction from peer nodes could restore its ledger rather than requiring full resync. This complements not replaces the existing SHA-256 hash chain and Ed25519 signatures -- Reed-Solomon addresses physical degradation and transmission corruption, cryptographic integrity addresses intentional tampering. These are different threat models. Implementation deferred to Phase 12 or beyond. Primary reference: Voyager program used Reed-Solomon since 1977 (concatenated error correction codes). Same mathematics used in CDs, DVDs, QR codes, RAID 6, satellite communications.
+**Destination:** Jaya Runtime ledger module -- future phase
+**Status:** OPEN -- future phase design goal
+**Prerequisite:** Phase 12 scope definition
