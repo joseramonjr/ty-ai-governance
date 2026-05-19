@@ -11016,3 +11016,8 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 **Scope:** Nine governance decisions from 2026-05-17 builder session formalized. Path applicability (Path 1 excluded), installation type tiers (home optional, gov/business required), environmental detection, explanation requirement, enable-later provision, disable rules, passcode fallback, guardian transfer options, F-21 Multi-Guardian M-of-N future flag. No existing sections modified. 202 lines added, 17739 to 26497 bytes.
 **Commit:** ty-ai-governance 2b2d18a
 **Status:** COMPLETE
+### Entry-544 | FIX-531 | 2026-05-18 21:33 PDT San Diego
+**Action:** TY_EXTERNAL_USER_GOVERNANCE_GUIDE_v0.1.md amended -- Section A1 HVP Installation Policy added.
+**Scope:** Path 1 HVP exclusion stated explicitly. Paths 2-4 HVP tiered by installation type. Environmental detection summarized. Explanation requirement confirmed. Cross-reference to HVP spec FIX-530 Section A1. No existing content modified. 86 lines added.
+**Commit:** ty-ai-governance 8ae8be3
+**Status:** COMPLETE

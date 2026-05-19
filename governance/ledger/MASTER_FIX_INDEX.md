@@ -8414,3 +8414,9 @@ Five files modified (test blocks added):
   spec/TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md -- Section A1 added (+202 lines, 17739 to 26497 bytes)
 **Repo:** ty-ai-governance -- 2b2d18a
 **Status:** COMPLETE
+## FIX-531 | Entry-544 | 2026-05-18 21:33 PDT San Diego
+**Description:** TY_EXTERNAL_USER_GOVERNANCE_GUIDE_v0.1.md amended. Section A1 -- Amendment 1: HVP Installation Policy added. Clarifies HVP requirements for all four paths. A1.1: Path 1 HVP does not apply. A1.2: Paths 2-4 tiered by installation type (home optional, gov/business required). A1.3: Environmental detection summary (domain join, MDM). A1.4: Explanation requirement mandatory before choice. A1.5: Cross-reference to TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md Section A1 (FIX-530). No existing path descriptions modified. Header status updated to Active -- Amended.
+**Files:**
+  spec/TY_EXTERNAL_USER_GOVERNANCE_GUIDE_v0.1.md -- Section A1 added (+86 lines, 15808 bytes)
+**Repo:** ty-ai-governance -- 8ae8be3
+**Status:** COMPLETE
