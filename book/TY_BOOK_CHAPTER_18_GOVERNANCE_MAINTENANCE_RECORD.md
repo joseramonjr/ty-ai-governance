@@ -11291,3 +11291,13 @@ Removed trailing 'San Diego' from Ch18 entry template (line 68) and trailing '| 
 Phase 12 Scope Definition produced and committed. TY_PHASE_12_SCOPE_v0.1.md 267 lines 10647 bytes. F-19 Governed Evolution scope defined across 10 sections: theme, core question, scope boundary, layer model, tracks A-C, 8 proof conditions, ODQ disposition, exclusions, session structure, seal condition.
 
 **Status:** CLOSED
+
+### Entry-560 | FIX-541 | 2026-05-19 14:35 PDT San Diego -- 2026-05-19 14:41 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** acf26c4
+**Scope:** TY Governed Evolution Spec v0.1 -- F-19 specification document Track A
+
+TY_GOVERNED_EVOLUTION_SPEC_v0.1.md produced and committed. F-19 Governed Evolution full specification. 14 sections: purpose, F-18 relationship, layer model, classification test, proposer eligibility, deliberation process, guardian authorization, 6 anti-capture rules EVOL-AC-1 through EVOL-AC-6, 4 ledger tables, post-evolution verification, 6 rejection criteria EVOL-REJECT-1 through EVOL-REJECT-6, ODQ-5 resolution Path 1 locked, single-guardian period rules, 2 open design questions. 456 lines 19553 bytes.
+
+**Status:** CLOSED
