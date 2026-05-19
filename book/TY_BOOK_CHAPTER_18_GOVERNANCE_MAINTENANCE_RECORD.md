@@ -11058,3 +11058,48 @@ Pre-Flight re-run: OVERALL: READY. All three repos clean and in sync.
 
 **Commit:** 13e2560 (ty-ai-governance main)
 **Status:** CLOSED
+
+### Entry-551 | FIX-533 | 2026-05-19 11:40-11:58 PDT San Diego
+
+**Destination:** TYOVA -- installer (install.js + install.html)
+**Type:** Installer Governance Feature
+
+**Scope:** HVP Explanation screen added to TY AI OS installer.
+Per HVP spec Section A1 (FIX-530) requirements A1.1-A1.4.
+
+**install.js changes (9):**
+- FLOW constant: HVP_EXPLANATION state added
+- governanceState: installationType, hvpEnabled, hvpExplanationPresented,
+  enterpriseSignalsDetected fields added
+- screens object: hvpExplanation DOM reference added
+- setFlow labels: Step: HVP Setup added
+- setFlow switch: HVP_EXPLANATION case added, calls renderHVPExplanation()
+- Flow comment: updated to reflect new screen in sequence
+- btnReqContinue: Path 1 routes to QUESTIONS, Paths 2/3/4 route to HVP_EXPLANATION
+- btnBackToReq: Path 1 returns to PATH_REQUIREMENTS, Paths 2/3/4 return to HVP_EXPLANATION
+- HVP EXPLANATION section: selectInstallType(), onHvpChoiceChange(),
+  updateHvpContinueState(), renderHVPExplanation() functions added
+
+**install.html changes (2):**
+- CSS: 28 HVP-namespaced rules added before </style>
+- Screen: screen-hvp-explanation div added before screen-questions
+
+**New flow:**
+WELCOME -> NOTICE -> CORE_DOCTRINE -> PATH_SELECTION -> PATH_REQUIREMENTS
+  -> HVP_EXPLANATION (Paths 2/3/4 only) -> QUESTIONS -> COMPLIANCE
+  -> CONFIRMATION -> EXIT
+
+**A1.1:** Path 1 excluded -- no HVP offered, no screen shown
+**A1.2:** Home/Personal = optional choice. Government/Business = required, no opt-out
+**A1.3:** Environmental detection (domain join, MDM) deferred -- requires Tauri
+  integration in TY-0001.B. User declaration used in this version.
+**A1.4:** Explanation screen non-skippable. Five-point explanation covers all
+  required content. Continue button disabled until valid selection made.
+
+**Verification:** install.js 1,017 lines | 57,832 bytes. install.html 691 lines |
+43,571 bytes. TYOVA commit b1d3d36. Push confirmed.
+
+**Open item logged:** A1.3 full environmental detection (domain join + MDM enrollment
+via Tauri invoke) deferred to TY-0001.B implementation phase.
+
+**Status:** CLOSED

@@ -8489,3 +8489,5 @@ Five files modified (test blocks added):
 **Prerequisite:** Phase 12 scope definition or TY-FABRIC dedicated sprint
 
 | FIX-532 | 2026-05-19 11:08-11:24 PDT | ty-ai-governance | Pre-Flight v5 -- Jaya-Runtime added to GIT_REPOS. Previously only ty-ai-governance and TYOVA monitored. All three active repos now tracked. 332 lines, 14,541 bytes. Commit 13e2560. CLOSED |
+
+| FIX-533 | 2026-05-19 11:40-11:58 PDT | TYOVA | HVP Explanation screen -- install.js + install.html. 9 JS changes: FLOW constant, governanceState, screens, setFlow labels, setFlow switch, flow comment, btnReqContinue, btnBackToReq, HVP section. HTML: CSS + screen div. New flow: PATH_REQUIREMENTS -> HVP_EXPLANATION (Paths 2/3/4) -> QUESTIONS. A1.1-A1.4 implemented. A1.3 environmental detection deferred pending Tauri. install.js 1,017 lines 57,832 bytes. install.html 691 lines 43,571 bytes. TYOVA commit b1d3d36. CLOSED |
