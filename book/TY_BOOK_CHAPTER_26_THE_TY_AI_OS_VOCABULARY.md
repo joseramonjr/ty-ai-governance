@@ -1,11 +1,11 @@
 ﻿# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
-**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction)
+**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-05-19 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 335 (synced to TYOVA 2026-05-19 via FIX-536)
+**Current Term Count:** 341 (335 + 6 Phase 12 F-19 terms added FIX-544 | TYOVA sync pending FIX-545)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -2090,6 +2090,124 @@ December 28, 2025) is the first known competing application against
 which TY's first publication dates have been formally compared. See
 also: Patent Evidence Report (this section), Attestonic (Section 13).
 
+
+## Section 20 -- Phase 12 Governed Evolution Terms
+*Created: FIX-544 | 2026-05-19 | San Diego (America/Los_Angeles)*
+
+**Governed Evolution**
+*First coined: 2026-05-19 | San Diego (America/Los_Angeles)*
+*Flag: F-19 | Phase 12 | Spec: TY_GOVERNED_EVOLUTION_SPEC_v0.1.md (FIX-541) | Built: FIX-542.*
+The process by which TY AI OS itself evolves as a governance system. Governed
+Evolution addresses the meta-governance question: what rules govern changes to
+governance rules? Distinct from F-18 (Governed Update Delivery), which defines
+how updates are delivered and verified technically. F-19 defines the authority
+process -- who may propose a governance change, what deliberation is required,
+who must authorize it, and how the ledger records the complete chain of events.
+The three-layer model defines what can change: Layer 1 (eternal principles --
+no amendment process exists, no change is permitted by anyone), Layer 2
+(governance policy -- full F-19 deliberation and guardian authorization
+required), Layer 3 (security and technical -- governed by the F-18 delivery
+channel). Without F-19, F-18 is a delivery channel with no defined governance
+over what enters it at Layer 2. F-19 closes that gap by establishing the
+legitimate authority process for governance-layer changes.
+---
+
+**Evolution Tier Classification**
+*First coined: 2026-05-19 | San Diego (America/Los_Angeles)*
+*Flag: F-19 | Phase 12 | Spec: TY_GOVERNED_EVOLUTION_SPEC_v0.1.md Section 4 (FIX-541) | Built: FIX-542.*
+The two-step test applied to every governance evolution proposal before
+deliberation opens. Step 1 is the Layer 1 screen: any proposed change touching
+eternal principles, core invariants, human-authority primacy, the Guardian
+Authority Chain structure, AI authority expansion, the Closed Chain Rule, or the
+Zero-Fabrication Rule is structurally rejected before deliberation
+(EVOL-REJECT-1). No deliberation record is opened for a Layer 1 rejection.
+Step 2 classifies the proposal as Layer 2 (governance policy content: codex
+rules, user charters, HVP procedures, anti-capture rules, federation membership
+protocols, guardian transfer protocols) or Layer 3 (technical implementation
+content: Rust module code, signing keys, installer updates, vocabulary
+additions). A proposed change touching both Layer 2 and Layer 3 content is
+classified Layer 2 and the full F-19 process governs the entire change. Applied
+in Jaya-Runtime evolution_proposal.rs via layer_1_screen() and classify_layer().
+---
+
+**Deliberation Period**
+*First coined: 2026-05-19 | San Diego (America/Los_Angeles)*
+*Flag: F-19 | Phase 12 | Spec: TY_GOVERNED_EVOLUTION_SPEC_v0.1.md Section 6.2 (FIX-541) | Built: FIX-542.*
+The minimum seven-day waiting period required before any Layer 2 governance
+evolution proposal may proceed to guardian authorization. The period was locked
+in FIX-517 (TY_GOVERNED_UPDATE_DELIVERY_SPEC_v0.1.md Section 9) and is not
+subject to amendment by any proposal (EVOL-AC-5 -- Deliberation Period
+Immutability). Value: 604,800 seconds (seven days). During the deliberation
+period the proposed change may not be applied and no authorization may be issued.
+Additional notes may be written to the ledger: clarifications, concerns,
+amendments, or withdrawals. An amendment restarts the period from the amendment
+timestamp. Authorization is structurally blocked before the period expires
+(EVOL-REJECT-4 -- Premature Authorization). Enforced in Jaya-Runtime
+evolution_deliberation.rs via is_deliberation_period_expired(). The minimum
+period provides time for the proposer to document concerns, for additional
+review to occur, and for the change to be examined before being applied to the
+governance chain.
+---
+
+**Evolution Proposal**
+*First coined: 2026-05-19 | San Diego (America/Los_Angeles)*
+*Flag: F-19 | Phase 12 | Spec: TY_GOVERNED_EVOLUTION_SPEC_v0.1.md Sections 4-5 (FIX-541) | Built: FIX-542.*
+A formal governance record initiating the Layer 2 governed evolution process.
+Created by create_proposal() in Jaya-Runtime evolution_proposal.rs after passing
+four sequential checks: proposer eligibility (EVOL-REJECT-3 -- Ineligible
+Proposer), non-empty description with document reference (EVOL-REJECT-2 --
+Incomplete Proposal Record), Layer 1 screen (EVOL-REJECT-1 -- Layer 1
+Violation), and anti-capture check (EVOL-AC-1 through EVOL-AC-5). Contains:
+proposal_id (UUID), layer_classification (2 or 3), proposer_path
+(builder/path2/path3/path4), proposed_change (full description including
+document reference and specific content to be changed), anti_capture_result,
+deliberation_start timestamp, deliberation_close timestamp (null until closed),
+and status. Persisted to the evolution_proposals SQLite ledger table. Status
+lifecycle: DELIBERATING -- AUTHORIZED -- APPLIED (or REJECTED / WITHDRAWN /
+ROLLED_BACK / SUSPENDED). Path 1 (Solo, No Guardian) users may not submit Layer
+2 proposals -- ODQ-5 resolved FIX-541 Section 12. No Layer 2 governance change
+takes effect without a completed evolution proposal record.
+---
+
+**Evolution Anti-Capture Rules**
+*First coined: 2026-05-19 | San Diego (America/Los_Angeles)*
+*Flag: F-19 | Phase 12 | Spec: TY_GOVERNED_EVOLUTION_SPEC_v0.1.md Section 8 (FIX-541) | Built: FIX-542.*
+Six structural rules protecting the governed evolution process from capture or
+weakening. Applied at proposal creation and deliberation opening before any
+deliberation record is opened. Build on ANTI-CAPTURE-1 through ANTI-CAPTURE-5
+from F-18 (TY_GOVERNED_UPDATE_DELIVERY_SPEC_v0.1.md FIX-517), which govern the
+delivery channel. The EVOL-AC rules govern the evolution process itself.
+EVOL-AC-1: Authority Expansion Prohibition -- proposals expanding AI autonomous
+authority are structurally rejected. EVOL-AC-2: Verification Weakening
+Prohibition -- proposals reducing any human verification requirement are
+structurally rejected. EVOL-AC-3: Layer 1 Reclassification Prohibition --
+proposals reclassifying Layer 1 content as Layer 2 or Layer 3 are structurally
+rejected. EVOL-AC-4: Author-Authorizer Independence -- after the single-guardian
+period, no external party may be sole author and sole authorizer of the same
+proposal without an independent deliberation review on record. EVOL-AC-5:
+Deliberation Period Immutability -- proposals to shorten the 7-day minimum are
+structurally rejected. EVOL-AC-6: Duress Suspension -- proposals submitted while
+FLAG-128.1 (duress signal) is active are automatically suspended until the
+duress signal clears. Enforced in evolution_proposal.rs via anti_capture_check().
+---
+
+**Single-Guardian Period**
+*First coined: 2026-05-19 | San Diego (America/Los_Angeles)*
+*Flag: F-19 | Phase 12 | Spec: TY_GOVERNED_EVOLUTION_SPEC_v0.1.md Section 13 (FIX-541) | Built: FIX-542.*
+The operational period from project inception through the first authorized
+external guardian transfer, during which Jose Ramon Alvarado McHerron AKA Jose
+Ramon Bautista Jr. is the sole guardian of the TY AI OS canonical installation.
+During this period: the builder holds full proposer and authorization authority
+for Layer 2 and Layer 3 governance changes; EVOL-AC-4 does not restrict builder
+self-authorization because no second party exists and capture cannot occur by
+definition; all deliberation and authorization acts are recorded in Chapter 18
+and the MASTER_FIX_INDEX under standard governance ledger discipline. Does not
+exempt any proposal from the 7-day deliberation period, the Layer 1 screen, or
+EVOL-AC-1 through EVOL-AC-5 checks. The single-guardian period ends when the
+first external guardian transfer is authorized and recorded per the Guardian
+Codex (TY_GUARDIAN_CODEX_v0.1.md). After that point EVOL-AC-4 applies to all
+external parties involved in governance evolution proposals.
+---
 ## Update Log
 This section records when terms were added and by which session.
 It is the provenance record for the vocabulary itself.
@@ -3010,6 +3128,7 @@ single person.
 | 2026-05-17 / FIX-534 | Phase 10 and 11 documentation | Governance Path, HVP, PVS, External User Governance Guide, Compliance Certification Standard (Section 17 created); Governed Update Delivery, Update Layer, Update Manifest, REJECT-1/3/5, Update State Machine, Runtime Warning Protocol, Suspended State, Lockdown State, Jayme Dormancy, Protective Response Protocol, Installation Notice, Distribution Notice, Certification Failure Notice (Section 18 created) | Note: Model D, Warning Severity already recorded in earlier sections |
 | 2026-05-17 / FIX-538 | Local file sync | Local markdown file updated from 244 terms to 334 terms. Sections 15-18 added. Inter-section additions appended. Header updated. Source: TYOVA bookChapterContent.ts verified by builder 2026-05-17. | Sections 15-18 created locally |
 | 2026-05-19 / FIX-535 | TY-ANCHOR vocabulary | TY-ANCHOR (Section 19 created) | Section 19 created with one term. Four terms reserved for Phase 12: WARD, TY-SIGNAL, TY-MESH, TY-FABRIC |
+| 2026-05-19 / FIX-544 | Phase 12 F-19 vocabulary | Governed Evolution, Evolution Tier Classification, Deliberation Period, Evolution Proposal, Evolution Anti-Capture Rules, Single-Guardian Period (Section 20 created) | Section 20 created with six terms. 335->341 terms. 19->20 sections. |
 
 ---
 
@@ -3018,5 +3137,5 @@ single person.
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
 *Updated: 2026-05-19 | San Diego (America/Los_Angeles)*
-*Current Term Count: 335 | Sections: 19*
+*Current Term Count: 341 | Sections: 20*
 *This document grows with the project. It is never finished.*
