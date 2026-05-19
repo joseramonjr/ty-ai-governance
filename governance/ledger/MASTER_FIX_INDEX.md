@@ -8442,3 +8442,18 @@ Five files modified (test blocks added):
 **Destination:** ty-ai-governance spec folder -- new document TY_MISUSE_PATTERN_LIBRARY_v0.1.md
 **Status:** OPEN -- future phase design goal
 **Prerequisite:** Phase 12 scope definition
+## FLAG-26 | OPEN | Logged 2026-05-19 10:04 PDT San Diego
+**Description:** TY-ANCHOR -- TY AI OS Session Governance Tooling Suite. A governed PowerShell tooling suite that enforces the TY AI OS session discipline structurally rather than relying on memory or manual execution. Lives in ty-ai-governance/tools/ alongside Pre-Flight.ps1 and Generate-Handoff.ps1. Not a new AI ecosystem component -- governed tooling infrastructure that calls Claude API only for bounded language assistance tasks (MFI description drafting, Ch18 scope language, zero-fabrication compliance checking). Never uses AI for verification tasks -- those remain deterministic.
+**Five core tools defined:**
+  TY-ANCHOR Pre-Flight extended -- continuous chain verification throughout session not just at start
+  TY-ANCHOR FIX-Open -- reads MFI for next sequential entry number, drafts MFI entry shell with correct header format
+  TY-ANCHOR FIX-Close -- updates MFI entry to COMPLETE, generates matching Ch18 entry, verifies commit hash from git log, confirms file sizes from disk
+  TY-ANCHOR Session-Close -- full close gate: Ch18 scan, chain integrity, all repos clean, no open FIX entries without commits
+  TY-ANCHOR Verify -- audits any historical FIX: MFI entry exists, Ch18 entry exists, git commit hash is real, file sizes match
+**TY-ANCHOR ETHOS.md** -- canonical document injected into every session containing all active write rules R1-R14, session discipline requirements, zero-fabrication rule, PASS TO routing rules, timestamp discipline, session close checklist.
+**Key differences from Gstack:** enforces not suggests; connected to permanent governance record; zero-fabrication rule enforced; ecosystem-aware across all six TY repos; chain-aware across sessions; designed to outlast builder; governed by same discipline it enforces; uses AI only for language tasks never for verification.
+**Named by builder 2026-05-19:** TY-ANCHOR. The anchor holds everything in the correct sequence, format, and chain regardless of session, phase, or time. Governance Precedes Intelligence principle applies -- build as governed tooling first.
+**Ch26 impact:** TY-ANCHOR to be added as new vocabulary term in Section 19 when built.
+**Destination:** ty-ai-governance/tools/ -- new governed tooling suite
+**Status:** OPEN -- future phase design goal
+**Prerequisite:** FIX-532 complete -- then scope as standalone tooling sprint or Phase 12
