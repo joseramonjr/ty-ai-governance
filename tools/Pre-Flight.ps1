@@ -23,6 +23,8 @@
 #   v2 2026-04-19 12:30 - 4 fixes: PS5.x syntax, rebase detection,
 #                         SS321 handling, Ch26 regex
 #   v3 2026-05-07 15:45 - FIX-396: two regex fixes:
+#   v4 2026-05-11 23:04 - FIX-475: MFI pipe-table detection fix
+#   v5 2026-05-19 11:08 - FIX-532: Jaya-Runtime added to GIT_REPOS
 #                         (1) MASTER_FIX_INDEX: now catches both ## FIX- and ### FIX-
 #                         (2) Ch18: now catches both ### Entry- and Entry-NNN | inline format
 # =============================================================================
@@ -30,7 +32,8 @@
 # --- Config: canonical repo paths and ledger files ---
 $GIT_REPOS = @(
     @{ Name = "ty-ai-governance"; Path = "E:\TY-Ecosystem\ty-ai-governance" },
-    @{ Name = "TYOVA";            Path = "E:\TY-Ecosystem\TYOVA" }
+    @{ Name = "TYOVA";            Path = "E:\TY-Ecosystem\TYOVA" },
+    @{ Name = "Jaya-Runtime";     Path = "E:\TY-Ecosystem\Jaya-Runtime" }
 )
 
 $SS321_FOLDER     = "E:\TY-Ecosystem\ss321"
