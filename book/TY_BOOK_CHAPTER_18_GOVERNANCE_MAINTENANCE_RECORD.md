@@ -11103,3 +11103,51 @@ WELCOME -> NOTICE -> CORE_DOCTRINE -> PATH_SELECTION -> PATH_REQUIREMENTS
 via Tauri invoke) deferred to TY-0001.B implementation phase.
 
 **Status:** CLOSED
+
+### Entry-552 | FLAG-29 | 2026-05-19 12:05 PDT San Diego
+
+**Destination:** ty-ai-governance -- governance/ledger/MASTER_FIX_INDEX.md
+**Type:** Future Work Flag
+
+**FLAG-29: A1.3 Environmental Detection -- Installer Tauri Integration**
+
+HVP spec Section A1.3 (FIX-530) requires the installer to silently check
+two environmental signals at install time to determine the recommended
+installation type without relying solely on user self-declaration:
+
+  Signal 1 -- Domain join status:
+    A Windows machine joined to an Active Directory domain is almost
+    certainly an enterprise or government installation.
+
+  Signal 2 -- MDM enrollment:
+    A device enrolled in a Mobile Device Management system is almost
+    certainly managed by an organization.
+
+These signals set the recommended HVP default -- not a hard gate.
+Enterprise signals detected: HVP pre-selected, presented as government
+or business. No signals: HVP presented as optional.
+
+**Why deferred:** Both signals require OS-level Windows API calls that
+cannot be made from the current HTML/JS installer. Implementation requires
+Tauri invoke calls from Jaya Runtime into the installer flow. The current
+installer is display-only. Tauri integration is pending for TY-0001.B.
+
+**Current behavior (FIX-533):** User declaration used as fallback.
+User selects Home/Personal or Government/Business manually. Full
+consequence disclosure provided either way. Governance-compliant but
+lower assurance than automatic detection.
+
+**What implementation requires:**
+  -- Jaya Runtime Rust function: detect_domain_join() via Windows API
+  -- Jaya Runtime Rust function: detect_mdm_enrollment() via Windows API
+  -- Tauri invoke from installer JS to call both functions at screen load
+  -- Result passed to selectInstallType() to pre-select default
+  -- User override still permitted with disclosure (per A1.3)
+  -- Deployment lock still overrides user (per A1.2)
+
+**Spec reference:** TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md Section A1.3
+**Implementation reference:** FIX-533 (HVP screen), FIX-507 (PVS)
+**Destination when built:** Jaya-Runtime + TYOVA installer
+**Phase:** TY-0001.B -- requires Tauri integration phase
+
+**Status:** OPEN -- deferred pending TY-0001.B
