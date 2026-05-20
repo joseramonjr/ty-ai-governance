@@ -8535,3 +8535,11 @@ Five files modified (test blocks added):
 | FIX-553 | 2026-05-19 20:07 PDT San Diego -- 2026-05-19 20:27 PDT San Diego | TYOVA | TYOVA admin login end-to-end verification -- confirm edge function works post FIX-549. TYOVA admin login verified working end-to-end. SHA-256 hash comparison implemented via Web Crypto API. VITE_ADMIN_PASSWORD_HASH set in .env. No Supabase, no Lovable Cloud, no backend dependency. AuthContext.tsx updated with hashPassword helper. supabase/client.ts replaced with null stub. vite-env.d.ts cleaned. Admin login at testing.tyova.ai/admin confirmed working. Commit fa976ee. Commit fa976ee. CLOSED |
 
 | FIX-554 | 2026-05-19 22:12 PDT San Diego -- 2026-05-19 22:37 PDT San Diego | Jaya-Runtime | Phase 12 Tauri wiring: 4 evolution DB tables in init_db, 6 DB persistence functions, 9 Tauri command wrappers in lib.rs, registered in generate_handler.. Phase 12 Evolution Tauri wiring complete. 4 evolution tables added to init_db. 6 DB persistence functions in db.rs. 9 Tauri commands in lib.rs registered in generate_handler. cargo check 0 errors. 155/155 tests passing. Evolution modules now UI-reachable. Commit 85d4ef4. CLOSED |
+### FIX-555 | Entry-574 | 2026-05-20 09:01-11:53 PDT San Diego
+
+**Destination:** TYOVA (Lovable — TYOVA Integrity Hub)
+**Scope:** Governed Evolution dashboard — Phase 12 seal record
+**Commits:** d1f0beb, 32ae6ae, 9a9ec20, 6de8f7c, e15805b, 69f3b31
+**TYOVA HEAD:** 69f3b31
+
+Added Phase 12 Governed Evolution transparency page to TYOVA. EvolutionDashboard.tsx created with five static panels. Registered in sections/index.ts, masterHubRegistry.ts (hubSections), and TYAIHubNavigation.tsx (hardcoded nav). Sidebar gap root cause: TYAIHubNavigation is hardcoded, not dynamic. Component failure root cause: DataTable<LayerRow> generic JSX + local WriteAllText encoding. Both resolved by git checkout 889a07a + direct nav insertion. All TYOVA files applied locally and pushed directly due to broken Lovable GitHub sync.

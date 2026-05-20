@@ -11431,3 +11431,17 @@ TYOVA admin login verified working end-to-end. SHA-256 hash comparison implement
 Phase 12 Evolution Tauri wiring complete. 4 evolution tables added to init_db. 6 DB persistence functions in db.rs. 9 Tauri commands in lib.rs registered in generate_handler. cargo check 0 errors. 155/155 tests passing. Evolution modules now UI-reachable.
 
 **Status:** CLOSED
+### Entry-574 | FIX-555 | 2026-05-20 09:01-11:53 PDT San Diego
+
+**Destination:** TYOVA (Lovable — TYOVA Integrity Hub)
+**Scope:** Governed Evolution dashboard — Phase 12 seal record
+
+Created src/ty-ai-admin-core/sections/evolution/EvolutionDashboard.tsx — read-only governance transparency page documenting Phase 12 Governed Evolution. Five panels: Phase Seal Record (phase 12, sealed 2026-05-19, commit 85d4ef4, 155/155 tests), Three-Layer Evolution Model (Immutable/Governed/Signed), Anti-Capture Rules (EVOL-AC-1 through EVOL-AC-6), Evolution Flow (6 steps), Runtime Enforcement Note (7-day deliberation enforced in Rust). Static content only — no Supabase, no state, no effects.
+
+Registered in three locations: sections/index.ts (export + import + SECTION_DASHBOARDS map), masterHubRegistry.ts (hubSections entry, group: governance, order: 14), TYAIHubNavigation.tsx (hardcoded nav list after kill-switch-verification).
+
+Root causes resolved: (1) TYAIHubNavigation.tsx is a hardcoded nav list — not dynamic from hubSections — required direct insertion. (2) DataTable<LayerRow> generic JSX syntax caused silent esbuild failure in local WriteAllText version — fixed by restoring Lovable 889a07a via git checkout. (3) Out-File/string pipeline UTF-8 em dash corruption — fixed by git checkout 889a07a bypassing PowerShell string pipeline. (4) Lovable GitHub sync was broken — all three files applied locally and pushed directly.
+
+Commits: d1f0beb, 32ae6ae, 9a9ec20, 6de8f7c, e15805b, 69f3b31
+TYOVA HEAD: 69f3b31
+Section count: 75 (correct — governed-evolution is entry 75 of 75 in hubSections)
