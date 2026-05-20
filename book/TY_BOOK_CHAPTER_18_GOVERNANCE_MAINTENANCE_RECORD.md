@@ -11401,3 +11401,13 @@ bookChapterContent.ts stray brace fixed at line 6039. Orphaned brace from FIX-54
 Critical regression fixed. supabaseUrl is required crash resolved. src/integrations/supabase/client.ts now returns null when VITE_SUPABASE_URL or VITE_SUPABASE_ANON_KEY are missing. AuthContext.tsx login function returns early with graceful error when supabase is null. testing.tyova.ai confirmed loading -- landing page visible -- zero red console errors. Commit bee25c9.
 
 **Status:** CLOSED
+
+### Entry-571 | FIX-552 | 2026-05-19 20:03 PDT San Diego -- 2026-05-19 20:04 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 677e301
+**Scope:** Ch26 header stale note cleanup -- TYOVA sync pending FIX-545 note is stale -- FIX-545 completed
+
+Ch26 header stale note cleaned. Current Term Count line updated from stale TYOVA sync pending FIX-545 to synced to TYOVA 2026-05-19 via FIX-545 and FIX-547. One line change. 3141 lines unchanged.
+
+**Status:** CLOSED
