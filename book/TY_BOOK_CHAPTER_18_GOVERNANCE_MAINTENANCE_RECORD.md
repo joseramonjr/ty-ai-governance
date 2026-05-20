@@ -11391,3 +11391,13 @@ TYOVA security hardening complete. VITE_ADMIN_PASSWORD removed from client bundl
 bookChapterContent.ts stray brace fixed at line 6039. Orphaned brace from FIX-547 Section 20 insertion repaired. Orphaned heading at line 6086 also corrected. Missing chapter metadata for chapters 53 54 55 restored. Build clean. Code verified zero VITE_ADMIN_PASSWORD references across all files. Lovable security scan pending build completion -- Update Scan button disabled during active build. Commit b8840aa.
 
 **Status:** CLOSED
+
+### Entry-570 | FIX-551 | 2026-05-19 19:37 PDT San Diego -- 2026-05-19 19:44 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** bee25c9
+**Scope:** Critical regression fix -- supabaseUrl is required crash -- TYOVA blank on startup -- safe Supabase client initialization
+
+Critical regression fixed. supabaseUrl is required crash resolved. src/integrations/supabase/client.ts now returns null when VITE_SUPABASE_URL or VITE_SUPABASE_ANON_KEY are missing. AuthContext.tsx login function returns early with graceful error when supabase is null. testing.tyova.ai confirmed loading -- landing page visible -- zero red console errors. Commit bee25c9.
+
+**Status:** CLOSED
