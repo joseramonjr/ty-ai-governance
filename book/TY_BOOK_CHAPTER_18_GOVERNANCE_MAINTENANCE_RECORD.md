@@ -11506,3 +11506,13 @@ FLAG-29 closed -- environmental_detection.rs -- detect_domain_join + detect_mdm_
 TY Compliance Certification surfacing -- proof example committed to docs (b73a009) + TYOVA compliance section live on Vercel -- GitHub sync pending
 
 **Status:** CLOSED
+
+### Entry-579 | 560 | 2026-05-20 14:05 PDT San Diego -- 2026-05-20 15:54 PDT San Diego
+
+**Destination:** TYOVA Compliance Kit publishing -- Book of TY chapters + standalone Compliance Kit page with dual entry points
+**Commit:** 560
+**Scope:** 1404
+
+ Book of TY Ch56-Ch61 source files + TYOVA chapters published + compliance-kit standalone page + stats updated -- TYOVA HEAD f73689d
+
+**Status:** CLOSED
