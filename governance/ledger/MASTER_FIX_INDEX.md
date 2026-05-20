@@ -8543,3 +8543,19 @@ Five files modified (test blocks added):
 **TYOVA HEAD:** 69f3b31
 
 Added Phase 12 Governed Evolution transparency page to TYOVA. EvolutionDashboard.tsx created with five static panels. Registered in sections/index.ts, masterHubRegistry.ts (hubSections), and TYAIHubNavigation.tsx (hardcoded nav). Sidebar gap root cause: TYAIHubNavigation is hardcoded, not dynamic. Component failure root cause: DataTable<LayerRow> generic JSX + local WriteAllText encoding. Both resolved by git checkout 889a07a + direct nav insertion. All TYOVA files applied locally and pushed directly due to broken Lovable GitHub sync.
+
+### FLAG-30 | 2026-05-20 12:28 PDT San Diego
+
+**TYOVA Dashboard Data Integrity — Hardcoded vs Verifiable Data**
+**Status:** OPEN — Deferred Phase 13+
+
+TYOVA section dashboards display hardcoded numbers resembling live metrics with no connection to Jaya Runtime. Two tiers not clearly separated: (1) Governance Record pages with verifiable commit hashes — correct. (2) System State dashboards with illustrative hardcoded numbers — misleading to verifiers. Resolution requires either live data bridge or explicit placeholder labeling. Verify page must be reinforced as primary verification surface. Scope: TYOVA Phase 13+.
+
+### FIX-556 | Entry-575 | 2026-05-20 12:01-12:28 PDT San Diego
+
+**Destination:** TYOVA (Lovable — TYOVA Integrity Hub)
+**Scope:** Complete TYAIHubNavigation — 7 missing sections + SS321 label fix
+**Commit:** 2378959
+**TYOVA HEAD:** 2378959
+
+Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause: TYAIHubNavigation is a vendored hardcoded component — new sections in hubSections do not appear automatically. Sections added: governance-repo, fix-ledger, clo-tag-system, seal-discipline, cri-cumulative-risk-index, non-weaponization-guardrail (governance block), book-of-ty (core block). SS321 separator label corrected to accurate architectural description. FLAG-30 logged for TYOVA dashboard data integrity deferred Phase 13+.

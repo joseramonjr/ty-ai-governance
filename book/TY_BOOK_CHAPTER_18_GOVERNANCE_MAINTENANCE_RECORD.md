@@ -11445,3 +11445,33 @@ Root causes resolved: (1) TYAIHubNavigation.tsx is a hardcoded nav list — not 
 Commits: d1f0beb, 32ae6ae, 9a9ec20, 6de8f7c, e15805b, 69f3b31
 TYOVA HEAD: 69f3b31
 Section count: 75 (correct — governed-evolution is entry 75 of 75 in hubSections)
+
+### FLAG-30 | 2026-05-20 12:28 PDT San Diego
+
+**TYOVA Dashboard Data Integrity — Hardcoded vs Verifiable Data**
+**Status:** OPEN — Deferred Phase 13+
+
+TYOVA section dashboards (Governance Center, Security Dashboard, Trust Score, and others) display hardcoded numbers that visually resemble live metrics (e.g. "Active Constraints: 47", "Compliance Score: 100%"). These values are static constants written into React components. They have no live connection to Jaya Runtime or any data source.
+
+Two tiers exist and are currently not clearly separated:
+(1) Governance Record pages (EvolutionDashboard, phase seal records) — correctly hardcoded historical facts with verifiable git commit hashes. A reader can verify every claim against the actual repo.
+(2) System State dashboard pages — hardcoded illustrative numbers that look like real metrics but are not connected to any running instance.
+
+The second tier is a governance integrity concern. A user relying on dashboard numbers for verification would be misled. The "Recorded Snapshot" label partially mitigates this but is insufficient for sophisticated verifiers.
+
+Required resolution (Phase 13+):
+- All dashboard sections showing metric-style numbers must either (a) connect to real data from a running Jaya instance via a defined data bridge, or (b) be explicitly labeled as illustrative placeholder data from a specific snapshot date with that date prominently displayed.
+- The Verify page should be reinforced as the primary verification surface.
+- Governance Record pages (sealed phase records with commit hashes) are correctly designed and require no change.
+
+Scope: TYOVA — requires architectural decision on live data bridge vs explicit placeholder labeling.
+
+### Entry-575 | FIX-556 | 2026-05-20 12:01-12:28 PDT San Diego
+
+**Destination:** TYOVA (Lovable — TYOVA Integrity Hub)
+**Scope:** Complete TYAIHubNavigation — 7 missing sections + SS321 label fix
+
+Added 7 missing sections to hardcoded getNavItems() array in TYAIHubNavigation.tsx: Governance Repo (governance-repo), FIX Ledger (fix-ledger), CLO Tag System (clo-tag-system), Seal Discipline (seal-discipline), CRI Cumulative Risk Index (cri-cumulative-risk-index), Non-Weaponization Guardrail (non-weaponization-guardrail) inserted before Governed Evolution in governance block. Book of TY (book-of-ty) inserted after Emotions Monitor in core block. All use already-imported lucide icons. SS321 separator label corrected from "SS321 only -- active when connected" to "Runtime sections — only active in SS321 admin panel" — the prior label was architecturally inaccurate in TYOVA context. TYOVA never enters runtime mode per locked ChatGPT design decision (TYOVA Part 4). FLAG-30 logged: TYOVA dashboard data integrity concern (hardcoded vs verifiable data) deferred to Phase 13+.
+
+Commit: 2378959
+TYOVA HEAD: 2378959
