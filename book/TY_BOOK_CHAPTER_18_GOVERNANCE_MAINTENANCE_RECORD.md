@@ -11421,3 +11421,13 @@ Ch26 header stale note cleaned. Current Term Count line updated from stale TYOVA
 TYOVA admin login verified working end-to-end. SHA-256 hash comparison implemented via Web Crypto API. VITE_ADMIN_PASSWORD_HASH set in .env. No Supabase, no Lovable Cloud, no backend dependency. AuthContext.tsx updated with hashPassword helper. supabase/client.ts replaced with null stub. vite-env.d.ts cleaned. Admin login at testing.tyova.ai/admin confirmed working. Commit fa976ee.
 
 **Status:** CLOSED
+
+### Entry-573 | FIX-554 | 2026-05-19 22:12 PDT San Diego -- 2026-05-19 22:37 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 85d4ef4
+**Scope:** Phase 12 Tauri wiring: 4 evolution DB tables in init_db, 6 DB persistence functions, 9 Tauri command wrappers in lib.rs, registered in generate_handler.
+
+Phase 12 Evolution Tauri wiring complete. 4 evolution tables added to init_db. 6 DB persistence functions in db.rs. 9 Tauri commands in lib.rs registered in generate_handler. cargo check 0 errors. 155/155 tests passing. Evolution modules now UI-reachable.
+
+**Status:** CLOSED
