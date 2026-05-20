@@ -11371,3 +11371,13 @@ TYOVA Ch26 Section 20 content sync. partHeading Section 20 Phase 12 Governed Evo
 VOIDED -- wrong destination. Opened as SS321 but security issue is in TYOVA Integrity Hub, not SS321. No code changes made. Superseded by FIX-549.
 
 **Status:** CLOSED
+
+### Entry-568 | FIX-549 | 2026-05-19 18:52 PDT San Diego -- 2026-05-19 19:00 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** lovable
+**Scope:** TYOVA security hardening -- remove VITE_ADMIN_PASSWORD from client bundle -- Lovable Cloud edge function admin auth
+
+TYOVA security hardening complete. VITE_ADMIN_PASSWORD removed from client bundle. Edge function verify-admin-password deployed to Lovable Cloud with constant-time comparison against ADMIN_PASSWORD secret. supabase/functions/verify-admin-password/index.ts created. src/integrations/supabase/client.ts created. AuthContext.tsx rewired to call edge function. vite-env.d.ts cleaned. .env.example cleaned. Critical Error RESOLVED. Auth bypass warning REDUCED. Pre-existing stray brace at bookChapterContent.ts line 6039 noted -- addressed in FIX-550.
+
+**Status:** CLOSED
