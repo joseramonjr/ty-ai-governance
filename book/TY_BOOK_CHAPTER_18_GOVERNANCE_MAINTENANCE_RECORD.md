@@ -11486,3 +11486,13 @@ TYOVA HEAD: 2378959
 8 evolution DB persistence tests added to db.rs -- 163/163 passing -- cargo check 0 errors
 
 **Status:** CLOSED
+
+### Entry-577 | 558 | 2026-05-20 12:47 PDT San Diego -- 2026-05-20 13:07 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 130e607
+**Scope:** FLAG-29 -- A1.3 environmental detection -- detect_domain_join and detect_mdm_enrollment Rust functions + Tauri wiring
+
+FLAG-29 closed -- environmental_detection.rs -- detect_domain_join + detect_mdm_enrollment + detect_environmental_signals -- 3 Tauri commands -- 167/167 passing
+
+**Status:** CLOSED

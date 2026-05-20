@@ -8562,3 +8562,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 
 
 | 557 | 2026-05-20 12:35 PDT San Diego -- 2026-05-20 12:42 PDT San Diego | Jaya-Runtime | DB persistence tests and integration tests for Phase 12 evolution modules. 8 evolution DB persistence tests added to db.rs -- 163/163 passing -- cargo check 0 errors Commit dfb5aa4. CLOSED |
+
+| 558 | 2026-05-20 12:47 PDT San Diego -- 2026-05-20 13:07 PDT San Diego | Jaya-Runtime | FLAG-29 -- A1.3 environmental detection -- detect_domain_join and detect_mdm_enrollment Rust functions + Tauri wiring. FLAG-29 closed -- environmental_detection.rs -- detect_domain_join + detect_mdm_enrollment + detect_environmental_signals -- 3 Tauri commands -- 167/167 passing Commit 130e607. CLOSED |
