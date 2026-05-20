@@ -8559,3 +8559,6 @@ TYOVA section dashboards display hardcoded numbers resembling live metrics with 
 **TYOVA HEAD:** 2378959
 
 Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause: TYAIHubNavigation is a vendored hardcoded component — new sections in hubSections do not appear automatically. Sections added: governance-repo, fix-ledger, clo-tag-system, seal-discipline, cri-cumulative-risk-index, non-weaponization-guardrail (governance block), book-of-ty (core block). SS321 separator label corrected to accurate architectural description. FLAG-30 logged for TYOVA dashboard data integrity deferred Phase 13+.
+
+
+| 557 | 2026-05-20 12:35 PDT San Diego -- 2026-05-20 12:42 PDT San Diego | Jaya-Runtime | DB persistence tests and integration tests for Phase 12 evolution modules. 8 evolution DB persistence tests added to db.rs -- 163/163 passing -- cargo check 0 errors Commit dfb5aa4. CLOSED |
