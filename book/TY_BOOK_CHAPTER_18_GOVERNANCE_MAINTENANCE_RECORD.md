@@ -11516,3 +11516,13 @@ TY Compliance Certification surfacing -- proof example committed to docs (b73a00
  Book of TY Ch56-Ch61 source files + TYOVA chapters published + compliance-kit standalone page + stats updated -- TYOVA HEAD f73689d
 
 **Status:** CLOSED
+
+### Entry-580 | 561 | 2026-05-20 15:57 PDT San Diego -- 2026-05-20 16:40 PDT San Diego
+
+**Destination:** Verify and fix /install route in TYOVA -- compliance-kit installer button target
+**Commit:** 561
+**Scope:** 15:55
+
+Verified install route -- /distribution correct target + View Compliance Kit fixed to /book/57 + DECISION LOCKED: TY-0001.C must bundle Compliance Kit v0.1 documents -- kit and release stay in sync
+
+**Status:** CLOSED
