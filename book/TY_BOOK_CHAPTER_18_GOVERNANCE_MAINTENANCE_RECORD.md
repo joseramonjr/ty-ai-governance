@@ -11496,3 +11496,13 @@ TYOVA HEAD: 2378959
 FLAG-29 closed -- environmental_detection.rs -- detect_domain_join + detect_mdm_enrollment + detect_environmental_signals -- 3 Tauri commands -- 167/167 passing
 
 **Status:** CLOSED
+
+### Entry-578 | 559 | 2026-05-20 13:27 PDT San Diego -- 2026-05-20 14:01 PDT San Diego
+
+**Destination:** TY Compliance Certification surfacing -- NWP amendment + proof artifact commit + TYOVA compliance section
+**Commit:** 559
+**Scope:** 13:26
+
+TY Compliance Certification surfacing -- proof example committed to docs (b73a009) + TYOVA compliance section live on Vercel -- GitHub sync pending
+
+**Status:** CLOSED
