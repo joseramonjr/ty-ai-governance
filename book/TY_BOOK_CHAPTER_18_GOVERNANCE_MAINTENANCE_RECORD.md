@@ -11586,3 +11586,13 @@ SS321 label cleanup applied to all 13 dedicated dashboard components. section pr
 Hub content populated — 16 sections updated in masterHubRegistry.ts. 11 speculative sections marked Planned Phase 13+ with honest labels and empty metrics. 5 active sections (cognitive-drift, meta-autonomy, supervisor-engine, attil-progression, auto-diagnosis) populated with verified features and metrics from confirmed Jaya Runtime modules. Zero-Fabrication Rule enforced throughout.
 
 **Status:** CLOSED
+
+### Entry-587 | FIX-568 | 2026-05-21 09:41 PDT San Diego -- 2026-05-21 09:46 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 8d4bf69
+**Scope:** Version label corrections — expansion Phase12Sealed, snapshotDate 2026-05-21, HubLayout snapshotVersion dynamic from HUB_VERSION.hubSchema
+
+masterHubRegistry.ts: expansion updated Phase5Complete to Phase12Sealed, snapshotDate updated 2026-03-22 to 2026-05-21. HubLayout.tsx: HUB_VERSION imported, snapshotVersion prop changed from hardcoded 14.4.0 to dynamic HUB_VERSION.hubSchema. Hub pages now display Recorded Snapshot v14.6.0.
+
+**Status:** CLOSED
