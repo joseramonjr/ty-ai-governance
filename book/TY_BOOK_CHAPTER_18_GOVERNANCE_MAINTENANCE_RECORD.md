@@ -11606,3 +11606,13 @@ masterHubRegistry.ts: expansion updated Phase5Complete to Phase12Sealed, snapsho
 Step 5.2 complete. supabase_writer.rs created — JayaAuditEvent struct, write_luke_explanation async fn, fire-and-forget from luke_explain_entry. lib.rs: mod supabase_writer added, luke_explain_entry made async, match arm updated with writer call. jaya_audit_events table created in SS321 Supabase with RLS. 169/169 tests passing including 2 new supabase_writer unit tests.
 
 **Status:** CLOSED
+
+### Entry-589 | FIX-570 | 2026-05-21 11:03 PDT San Diego -- 2026-05-21 11:53 PDT San Diego
+
+**Destination:** SS321
+**Commit:** Lovable-SS321
+**Scope:** Option B — /governance page expansion — live event feed, status indicator, public RPC with limited field exposure
+
+FIX-570 complete. New RPC get_governance_events_public — 5 fields only, no PII. /status page created — TY AI OS Live Status, status banner, live event feed 30s polling. /governance reverted to 6 cards. /governance renamed to TY AI Governance with updated subtitle. Nav dropdown updated: TY AI, Governance, Live Status. Verified live silversounds321.com. Lovable-managed SS321 source.
+
+**Status:** CLOSED
