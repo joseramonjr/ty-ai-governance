@@ -11576,3 +11576,13 @@ GenericDashboard SS321 badge now conditional — admin group sections retain SS3
 SS321 label cleanup applied to all 13 dedicated dashboard components. section prop threaded through MasterHubSection and index.ts. All non-admin dashboards now render clean labels. Live verified on governance-center.
 
 **Status:** CLOSED
+
+### Entry-586 | FIX-567 | 2026-05-21 08:50 PDT San Diego -- 2026-05-21 09:11 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** df1ebd6
+**Scope:** Hub content — populate Features and Metrics for 16 empty hub sections
+
+Hub content populated — 16 sections updated in masterHubRegistry.ts. 11 speculative sections marked Planned Phase 13+ with honest labels and empty metrics. 5 active sections (cognitive-drift, meta-autonomy, supervisor-engine, attil-progression, auto-diagnosis) populated with verified features and metrics from confirmed Jaya Runtime modules. Zero-Fabrication Rule enforced throughout.
+
+**Status:** CLOSED
