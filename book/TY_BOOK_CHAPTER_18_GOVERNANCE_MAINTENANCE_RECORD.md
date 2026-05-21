@@ -11596,3 +11596,13 @@ Hub content populated — 16 sections updated in masterHubRegistry.ts. 11 specul
 masterHubRegistry.ts: expansion updated Phase5Complete to Phase12Sealed, snapshotDate updated 2026-03-22 to 2026-05-21. HubLayout.tsx: HUB_VERSION imported, snapshotVersion prop changed from hardcoded 14.4.0 to dynamic HUB_VERSION.hubSchema. Hub pages now display Recorded Snapshot v14.6.0.
 
 **Status:** CLOSED
+
+### Entry-588 | FIX-569 | 2026-05-21 10:25 PDT San Diego -- 2026-05-21 10:34 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** fa7c613
+**Scope:** Step 5.2 — supabase_writer.rs — Luke explanation events written to jaya_audit_events table in SS321 Supabase
+
+Step 5.2 complete. supabase_writer.rs created — JayaAuditEvent struct, write_luke_explanation async fn, fire-and-forget from luke_explain_entry. lib.rs: mod supabase_writer added, luke_explain_entry made async, match arm updated with writer call. jaya_audit_events table created in SS321 Supabase with RLS. 169/169 tests passing including 2 new supabase_writer unit tests.
+
+**Status:** CLOSED
