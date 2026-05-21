@@ -11616,3 +11616,13 @@ Step 5.2 complete. supabase_writer.rs created — JayaAuditEvent struct, write_l
 FIX-570 complete. New RPC get_governance_events_public — 5 fields only, no PII. /status page created — TY AI OS Live Status, status banner, live event feed 30s polling. /governance reverted to 6 cards. /governance renamed to TY AI Governance with updated subtitle. Nav dropdown updated: TY AI, Governance, Live Status. Verified live silversounds321.com. Lovable-managed SS321 source.
 
 **Status:** CLOSED
+
+### Entry-590 | FIX-571 | 2026-05-21 12:51 PDT San Diego -- 2026-05-21 13:55 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 96945a0
+**Scope:** Restore 6 deleted hub sections with accurate names — Behavioral Alerts, Federation Network, Governance Consensus, Content Shield, Audit History, Rollback Protocol
+
+6 deleted hub sections restored with accurate names: Rollback Protocol, AI Behavior Alerts, Governance Audit History, Governance Verification Consensus, Content Governance Shield, Federation Deployment Network. 2 existing sections upgraded from Planned Phase 13+ to active: fix-simulation to Phase 12 evolution deliberation, healing-engine to protection_state.rs. All 8 changes verified. Governance Audit History page confirmed live with 6 features and 3 metrics.
+
+**Status:** CLOSED
