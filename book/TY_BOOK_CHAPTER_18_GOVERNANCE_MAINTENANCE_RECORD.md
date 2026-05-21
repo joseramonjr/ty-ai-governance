@@ -11566,3 +11566,13 @@ HubSection schema extended with features, metrics, status, lastRecorded fields. 
 GenericDashboard SS321 badge now conditional — admin group sections retain SS321 labels, all other sections render clean labels (Standard/Recorded/Standard). Live verified on seal-discipline and jayme-ai.
 
 **Status:** CLOSED
+
+### Entry-585 | FIX-566 | 2026-05-20 21:34 PDT San Diego -- 2026-05-20 21:44 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 7f2f211
+**Scope:** SS321 label cleanup in dedicated dashboard components — GovernanceDashboard and SecurityDashboard — same conditional fix applied in FIX-565
+
+SS321 label cleanup applied to all 13 dedicated dashboard components. section prop threaded through MasterHubSection and index.ts. All non-admin dashboards now render clean labels. Live verified on governance-center.
+
+**Status:** CLOSED
