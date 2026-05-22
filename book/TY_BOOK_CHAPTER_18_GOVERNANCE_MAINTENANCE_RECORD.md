@@ -11824,3 +11824,13 @@ Jaya Runtime dashboard completely redesigned. App.css: 628 lines governance desi
 Book of TY Ch62-Ch66 written and committed. Ch62: governance bridge completes, supabase_writer.rs, first write 2026-05-21 19:05:23 UTC. Ch63: hub audit, Zero-Fabrication applied, 5 verified vs 11 planned. Ch64: TYOVA accuracy audit FIX-575 through FIX-588, single source of truth, import path bug found. Ch65: Jaya Runtime dashboard redesign, 628-line CSS system, sidebar nav, metric cards. Ch66: road ahead, patent, TY-0001.C, Phase 13 flags. chaptersSealed updated 61 to 66. Build verified clean 6.55s.
 
 **Status:** CLOSED
+
+### Entry-610 | FIX-591 | 2026-05-22 11:17 PDT San Diego -- 2026-05-22 11:32 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 0b6354d
+**Scope:** Ch26 vocabulary update — new terms from Phase 12, governance bridge, TYOVA audit, dashboard redesign, Phase 13 flags
+
+Ch26 vocabulary updated. Sections 21-23 created. 16 new terms added. Section 21: supabase_writer.rs, jaya_audit_events, get_governance_events_public, Bidirectional Governance Bridge, Live Governance Feed, email_alert.rs. Section 22: masterHubRegistry.ts, ECOSYSTEM_STATS, HUB_VERSION, Dynamic Wiring, Single Source of Truth Principle. Section 23: Governance Dashboard, CSS Governance Design System, FLAG-31, FLAG-32, TY-0001.C. Total terms 341->357. Sections 20->23. File: 3514 lines.
+
+**Status:** CLOSED
