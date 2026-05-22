@@ -11646,3 +11646,13 @@ Option A complete. email_alert.rs — Resend API client, load_resend_config, sen
 Version corrections complete. tyAiOs updated 5.0.0 to 2.0 reflecting TY-0001.C readiness. TyAiAdminCore default snapshotVersion 14.4.0 to 14.6.0 — fixes top bar on hub welcome page. BookLayout explicit snapshotVersion 14.4.0 to 14.6.0. EditModeContext CURRENT_VERSION 14.4.0 to 14.6.0. fingerprint.ts and test fixtures left untouched — historical records. TY-0001 release versioning scheme adopted.
 
 **Status:** CLOSED
+
+### Entry-593 | FIX-574 | 2026-05-21 20:10 PDT San Diego -- 2026-05-21 20:14 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** a206085
+**Scope:** Dynamic version wiring — TyAiAdminCore, BookLayout, EditModeContext import HUB_VERSION from masterHubRegistry — single source of truth
+
+Dynamic version wiring complete. TyAiAdminCore, BookLayout, EditModeContext now import HUB_VERSION from masterHubRegistry.ts and read hubSchema dynamically. Single source of truth established — update masterHubRegistry.ts once and all displays cascade automatically.
+
+**Status:** CLOSED
