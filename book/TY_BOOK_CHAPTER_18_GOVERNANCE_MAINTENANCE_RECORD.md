@@ -11636,3 +11636,13 @@ FIX-570 complete. New RPC get_governance_events_public — 5 fields only, no PII
 Option A complete. email_alert.rs — Resend API client, load_resend_config, send_governance_alert. StatusPanel.tsx — 4 connection cards with blinking amber on disconnect, auto-email alert on transition to disconnected, 30s polling, Send Test Alert button. lib.rs — mod email_alert, 6 new Tauri commands: check_supabase_connection, check_jaya_audit_connection, check_luke_status, check_local_ledger, get_governance_bridge_stats, send_governance_alert_email. App.tsx — StatusPanel import, status tab type, TY Status button, render. 171/171 passing.
 
 **Status:** CLOSED
+
+### Entry-592 | FIX-573 | 2026-05-21 19:58 PDT San Diego -- 2026-05-21 20:02 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** f918592
+**Scope:** Version corrections — tyAiOs v2.0, top bar v14.4.0 fixed to v14.6.0, TY-0001 release versioning scheme adopted
+
+Version corrections complete. tyAiOs updated 5.0.0 to 2.0 reflecting TY-0001.C readiness. TyAiAdminCore default snapshotVersion 14.4.0 to 14.6.0 — fixes top bar on hub welcome page. BookLayout explicit snapshotVersion 14.4.0 to 14.6.0. EditModeContext CURRENT_VERSION 14.4.0 to 14.6.0. fingerprint.ts and test fixtures left untouched — historical records. TY-0001 release versioning scheme adopted.
+
+**Status:** CLOSED
