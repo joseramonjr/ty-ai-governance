@@ -11726,3 +11726,13 @@ DistributionPage.tsx: Installation Question Registry description corrected from 
 VerifyPage.tsx: TY-0001.A version corrected from placeholder 5.0.0 to TY-0001.A. KNOWN_FINGERPRINTS registry architecture confirmed append-only, version strings are immutable per-entry. Distribution status updated -- TY-0001.B is live on GitHub Releases. All SHA-256 hashes verified accurate.
 
 **Status:** CLOSED
+
+### Entry-601 | FIX-582 | 2026-05-21 22:19 PDT San Diego -- 2026-05-21 22:25 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 5b3a927
+**Scope:** Page accuracy audit — /artifacts — stale data remediation
+
+ArtifactsPage.tsx: Book of TY type and description now dynamic via ECOSYSTEM_STATS.chaptersSealed and phasesSealed. ECOSYSTEM_STATS import added. Distribution status updated TY-0001.B live. Template literal fix required two-pass correction due to PowerShell dollar-sign expansion in first attempt.
+
+**Status:** CLOSED
