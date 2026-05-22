@@ -11686,3 +11686,13 @@ HowTyAiOsWorksPage conceptual notes corrected. Governance Scope paragraph update
 TyAiOsIndex accuracy fixed. Phase 5 Track B badge updated to Phase 12 Sealed dynamic. Chapters 1-30 Sealed badge updated to 61 Chapters dynamic. Book of TY 30 chapters updated to 61 dynamic. Wording updated from actively under development to 12 phases sealed proven live. ECOSYSTEM_STATS added to existing masterHubRegistry import.
 
 **Status:** CLOSED
+
+### Entry-597 | FIX-578 | 2026-05-21 21:41 PDT San Diego -- 2026-05-21 21:41 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 1f4fa14
+**Scope:** TyAiOsAboutPage accuracy — Phase 12 Governed Evolution, stats dynamic ECOSYSTEM_STATS, 161 proof conditions
+
+TyAiOsAboutPage accuracy fixed. ECOSYSTEM_STATS import added. Current Status paragraph updated: As of 2026-05-21, Phase 12 Governed Evolution, proven live. Stats array updated: Parts Sealed 122 to Phases Sealed dynamic, Phases Complete 7 to Tests Passing dynamic, Chapters 38 to dynamic, Proof Conditions 4 to 161. Historical timeline entries untouched.
+
+**Status:** CLOSED
