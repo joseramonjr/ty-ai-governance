@@ -11626,3 +11626,13 @@ FIX-570 complete. New RPC get_governance_events_public — 5 fields only, no PII
 6 deleted hub sections restored with accurate names: Rollback Protocol, AI Behavior Alerts, Governance Audit History, Governance Verification Consensus, Content Governance Shield, Federation Deployment Network. 2 existing sections upgraded from Planned Phase 13+ to active: fix-simulation to Phase 12 evolution deliberation, healing-engine to protection_state.rs. All 8 changes verified. Governance Audit History page confirmed live with 6 features and 3 metrics.
 
 **Status:** CLOSED
+
+### Entry-591 | FIX-572 | 2026-05-21 19:02 PDT San Diego -- 2026-05-21 19:23 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 8316b64
+**Scope:** Option A — Status Panel with connection indicators, blinking cards, Resend email alerts on component disconnect
+
+Option A complete. email_alert.rs — Resend API client, load_resend_config, send_governance_alert. StatusPanel.tsx — 4 connection cards with blinking amber on disconnect, auto-email alert on transition to disconnected, 30s polling, Send Test Alert button. lib.rs — mod email_alert, 6 new Tauri commands: check_supabase_connection, check_jaya_audit_connection, check_luke_status, check_local_ledger, get_governance_bridge_stats, send_governance_alert_email. App.tsx — StatusPanel import, status tab type, TY Status button, render. 171/171 passing.
+
+**Status:** CLOSED
