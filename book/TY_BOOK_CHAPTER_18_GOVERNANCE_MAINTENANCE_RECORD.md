@@ -11716,3 +11716,13 @@ JayaOverview.tsx: Current Status updated Phases 1-12, Phases Complete appended 8
 DistributionPage.tsx: Installation Question Registry description corrected from 18 to 24 questions per FIX-514 installer expansion. All other content accurate -- TY-0001.B, SHA-256, GitHub link all verified correct.
 
 **Status:** CLOSED
+
+### Entry-600 | FIX-581 | 2026-05-21 22:11 PDT San Diego -- 2026-05-21 22:17 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 6ea7497
+**Scope:** Page accuracy audit — /verify — stale data remediation
+
+VerifyPage.tsx: TY-0001.A version corrected from placeholder 5.0.0 to TY-0001.A. KNOWN_FINGERPRINTS registry architecture confirmed append-only, version strings are immutable per-entry. Distribution status updated -- TY-0001.B is live on GitHub Releases. All SHA-256 hashes verified accurate.
+
+**Status:** CLOSED
