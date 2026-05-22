@@ -11766,3 +11766,13 @@ BookOfTyIndex.tsx: ECOSYSTEM_STATS import added. Hero description simplified -- 
 Import path corrected from @/data to @/config/masterHubRegistry in ArtifactsPage.tsx, CanonLedgerPage.tsx, BookOfTyIndex.tsx. TyAiOsIndex.tsx audited -- line 36 hardcoded 12 phases made dynamic via ECOSYSTEM_STATS.phasesSealed. TyAiOsIndex was not in original audit list -- now confirmed clean.
 
 **Status:** CLOSED
+
+### Entry-605 | FIX-586 | 2026-05-21 22:59 PDT San Diego -- 2026-05-21 23:00 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 115a279
+**Scope:** TyAiOsAboutPage.tsx — hardcoded date 2026-05-21 made dynamic via HUB_VERSION.snapshotDate
+
+TyAiOsAboutPage.tsx: HUB_VERSION added to import. Hardcoded date 2026-05-21 replaced with HUB_VERSION.snapshotDate. All 11 audited pages now fully verified -- all imports use @/config/masterHubRegistry, all appropriate stats are dynamic.
+
+**Status:** CLOSED
