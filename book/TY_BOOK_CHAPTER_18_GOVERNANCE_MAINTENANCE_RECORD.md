@@ -11834,3 +11834,51 @@ Book of TY Ch62-Ch66 written and committed. Ch62: governance bridge completes, s
 Ch26 vocabulary updated. Sections 21-23 created. 16 new terms added. Section 21: supabase_writer.rs, jaya_audit_events, get_governance_events_public, Bidirectional Governance Bridge, Live Governance Feed, email_alert.rs. Section 22: masterHubRegistry.ts, ECOSYSTEM_STATS, HUB_VERSION, Dynamic Wiring, Single Source of Truth Principle. Section 23: Governance Dashboard, CSS Governance Design System, FLAG-31, FLAG-32, TY-0001.C. Total terms 341->357. Sections 20->23. File: 3514 lines.
 
 **Status:** CLOSED
+### FLAG-33 | Entry-611-A | 2026-05-22 12:43 PDT San Diego
+**TY AI OS Clean Uninstall Protocol**
+Deferred: Phase 13+. Triggered by governance discussion 2026-05-22.
+
+**Core Design Principles (locked by builder 2026-05-22):**
+1. The user/owner has complete sovereignty over all uninstall decisions.
+2. Every file category must be individually presented to the user with a clear
+   explanation of what it is, what it contains, and what happens if deleted.
+3. Every deletion must be explicitly confirmed by the user -- no silent removals.
+4. Permanent deletions must display an irreversibility warning before proceeding:
+   "Once deleted this cannot be recovered."
+5. The user always has the option to save any file to their local system before
+   deletion. File saves happen only with explicit user permission and to a
+   user-specified location.
+6. The uninstaller never makes autonomous decisions about what to keep or delete.
+
+**File categories requiring individual user decisions:**
+- Jaya Runtime executable and application files (remove -- standard)
+- Governance ledger (SQLite, append-only audit record) -- warn: permanent loss
+- Ed25519 keypair (signing keys -- signed proofs unverifiable after deletion)
+- Governance snapshots and exports
+- Configuration files
+- Local logs
+- Any personal data files associated with the installation
+
+**Implementation requirements (Phase 13):**
+- Ledger export function before deletion (signed archive, JSON or SQLite backup)
+- Per-category confirmation dialogs with irreversibility warnings
+- User-specified save path for any files the user wants to keep
+- Complete removal of all TY AI OS files and registry entries after confirmation
+- No files left behind without explicit user choice to keep them
+- Tauri uninstaller configuration for clean Windows uninstall
+- Formal uninstall protocol specification document (TY_UNINSTALL_PROTOCOL_v0.1.md)
+
+**Governance alignment:** Consistent with Two Protection Directions doctrine --
+protecting the user from AI (their data is theirs) and protecting AI from
+corrupt human misuse (the ledger record belongs to the system's history).
+
+
+### Entry-611 | FIX-592 | 2026-05-22 12:43 PDT San Diego -- 2026-05-22 12:44 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 74ee3ea
+**Scope:** FLAG-33 -- TY AI OS Clean Uninstall Protocol -- Phase 13 design specification logged
+
+FLAG-33 logged -- TY AI OS Clean Uninstall Protocol -- Phase 13 design principles locked -- user sovereignty, per-category confirmation, irreversibility warnings, optional file save to user system, no silent deletions.
+
+**Status:** CLOSED
