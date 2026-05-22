@@ -11666,3 +11666,13 @@ Dynamic version wiring complete. TyAiAdminCore, BookLayout, EditModeContext now 
 HowTyAiOsWorksPage accuracy fixed. ECOSYSTEM_STATS added to masterHubRegistry.ts: phasesSealed 12, chaptersSealed 61, testsTotal 171, testsPass 171, releaseVersion TY-0001.B. HowTyAiOsWorksPage imports ECOSYSTEM_STATS and reads dynamically — 7 Phases corrected to 12 Sealed, 122 Parts corrected to 12 Phases Sealed, 34 Chapters corrected to 61. Single source of truth extended.
 
 **Status:** CLOSED
+
+### Entry-595 | FIX-576 | 2026-05-21 21:21 PDT San Diego -- 2026-05-21 21:24 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 4595b73
+**Scope:** HowTyAiOsWorksPage conceptual notes accuracy — 2 statements updated to reflect Jaya Runtime as real deployable software
+
+HowTyAiOsWorksPage conceptual notes corrected. Governance Scope paragraph updated: Jaya Runtime acknowledged as deployable execution engine implemented in working software. No Execution paragraph updated: TYOVA described as non-executing canonical archive, Jaya Runtime described as local governance enforcer with human-granted authority.
+
+**Status:** CLOSED
