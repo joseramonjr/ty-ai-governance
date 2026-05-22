@@ -11656,3 +11656,13 @@ Version corrections complete. tyAiOs updated 5.0.0 to 2.0 reflecting TY-0001.C r
 Dynamic version wiring complete. TyAiAdminCore, BookLayout, EditModeContext now import HUB_VERSION from masterHubRegistry.ts and read hubSchema dynamically. Single source of truth established — update masterHubRegistry.ts once and all displays cascade automatically.
 
 **Status:** CLOSED
+
+### Entry-594 | FIX-575 | 2026-05-21 21:13 PDT San Diego -- 2026-05-21 21:16 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 00b6b07
+**Scope:** HowTyAiOsWorksPage accuracy + dynamic ECOSYSTEM_STATS — phases, chapters, tests wired to masterHubRegistry single source of truth
+
+HowTyAiOsWorksPage accuracy fixed. ECOSYSTEM_STATS added to masterHubRegistry.ts: phasesSealed 12, chaptersSealed 61, testsTotal 171, testsPass 171, releaseVersion TY-0001.B. HowTyAiOsWorksPage imports ECOSYSTEM_STATS and reads dynamically — 7 Phases corrected to 12 Sealed, 122 Parts corrected to 12 Phases Sealed, 34 Chapters corrected to 61. Single source of truth extended.
+
+**Status:** CLOSED
