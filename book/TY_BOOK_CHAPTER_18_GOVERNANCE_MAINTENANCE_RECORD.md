@@ -11736,3 +11736,13 @@ VerifyPage.tsx: TY-0001.A version corrected from placeholder 5.0.0 to TY-0001.A.
 ArtifactsPage.tsx: Book of TY type and description now dynamic via ECOSYSTEM_STATS.chaptersSealed and phasesSealed. ECOSYSTEM_STATS import added. Distribution status updated TY-0001.B live. Template literal fix required two-pass correction due to PowerShell dollar-sign expansion in first attempt.
 
 **Status:** CLOSED
+
+### Entry-602 | FIX-583 | 2026-05-21 22:26 PDT San Diego -- 2026-05-21 22:35 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** ca7754e
+**Scope:** Page accuracy audit — /canon-ledger — stale data remediation
+
+CanonLedgerPage.tsx: Date now dynamic via HUB_VERSION.snapshotDate. Phases Complete and Chapters Sealed now dynamic via ECOSYSTEM_STATS. Vocabulary Terms corrected 232 to 341 hardcoded. Phase 7 status corrected ACTIVE to SEALED, parts corrected 113-122+ to 113-122. Phases 8-12 added to Sealed Phases list with verified FIX ranges and seal dates.
+
+**Status:** CLOSED
