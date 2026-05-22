@@ -11746,3 +11746,13 @@ ArtifactsPage.tsx: Book of TY type and description now dynamic via ECOSYSTEM_STA
 CanonLedgerPage.tsx: Date now dynamic via HUB_VERSION.snapshotDate. Phases Complete and Chapters Sealed now dynamic via ECOSYSTEM_STATS. Vocabulary Terms corrected 232 to 341 hardcoded. Phase 7 status corrected ACTIVE to SEALED, parts corrected 113-122+ to 113-122. Phases 8-12 added to Sealed Phases list with verified FIX ranges and seal dates.
 
 **Status:** CLOSED
+
+### Entry-603 | FIX-584 | 2026-05-21 22:36 PDT San Diego -- 2026-05-21 22:41 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** f8ac2ac
+**Scope:** Page accuracy audit — /book — stale data remediation
+
+BookOfTyIndex.tsx: ECOSYSTEM_STATS import added. Hero description simplified -- stale 47 chapters count removed. Stats grid now fully dynamic: Total Chapters via chapters.length, Sealed via chapters.filter sealed, Living via chapters.filter living, Phases Documented via ECOSYSTEM_STATS.phasesSealed. 167 tests updated to ECOSYSTEM_STATS.testsTotal.
+
+**Status:** CLOSED
