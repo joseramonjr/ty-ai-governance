@@ -11949,3 +11949,13 @@ FLAG-28 addendum logged -- blockchain security discussion -- TY-FABRIC distribut
 HomePage.tsx enhanced -- added animated stats bar (ECOSYSTEM_STATS counters), four pillars section, proof panel with governance hash and SHA-256 fingerprints, three-step verification guide -- existing logo wordmark and design language fully preserved -- build clean 2.64s.
 
 **Status:** CLOSED
+
+### Entry-615 | FIX-596 | 2026-05-22 13:50 PDT San Diego -- 2026-05-22 13:50 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 6888ed8
+**Scope:** HomePage.tsx proof panel accuracy fix -- verification requires Jaya Runtime running locally on port 7777 -- clarified for honest user expectation
+
+HomePage.tsx proof panel text corrected -- verification description now states Jaya Runtime must be installed and running locally on port 7777 -- honest and accurate user expectation set. Build clean 2.66s.
+
+**Status:** CLOSED
