@@ -319,7 +319,7 @@ OPEN ITEMS CARRIED FORWARD:
 - Full ecosystem corruption scan performed: Jaya Runtime, ty-ai-governance, TYOVA all clean
 
 
-- R12 added as permanent write rule: after every file write run Select-String "Ã" scan immediately
+- R12 added as permanent write rule: after every file write run Select-String "?" scan immediately
 
 
 - Committed: 06a9fe6
@@ -5639,22 +5639,22 @@ to 251. Committed 1350a2d.
 ### Entry-090 | JAYA-CLO-291 | Claude Sonnet 4.6 | 2026-04-07 10:21 | San Diego
 Date: 2026-04-07 San Diego
 Parts: 131-132
-Phase: 7 — The Delivery
+Phase: 7 ? The Delivery
 
 WHAT HAPPENED:
 - Rapacke Law Group call attended April 7 11:00
 - Alloy Patent Law selected for provisional patent filing
 - USPTO 19/433,835 (Attested Intelligence Holdings LLC) confirmed via applicant website
-- Full competitive analysis completed — TY uniquely differentiated by Guardian Codex, Incapacitation Protocol, Duress Signal, Two Protection Directions, Closed Chain Rule
+- Full competitive analysis completed ? TY uniquely differentiated by Guardian Codex, Incapacitation Protocol, Duress Signal, Two Protection Directions, Closed Chain Rule
 - Patent Evidence Report v3 produced, v4 CORRECTED produced (8 errors fixed, 6 applied)
-- GoDaddy DNS remediation completed — FIX-131.1
+- GoDaddy DNS remediation completed ? FIX-131.1
 - support@tyova.ai email confirmed working via Microsoft 365 / Outlook
 - SPF updated to spf.protection.outlook.com
-- WebsiteBuilder A record deleted — website root deferred pending testing completion
+- WebsiteBuilder A record deleted ? website root deferred pending testing completion
 - testing.tyova.ai operational throughout
 
 OPEN:
-- FIX-131.1 Steps 5+6 deferred — Vercel A record and www CNAME when testing complete
+- FIX-131.1 Steps 5+6 deferred ? Vercel A record and www CNAME when testing complete
 - FLAG-128.1 duress signal personal decision pending
 - G-B compromise signal not in active Codex
 - Alloy engagement letter + $4,500 provisional fee pending
@@ -5681,7 +5681,7 @@ All six fixes committed. testing.tyova.ai/book/chapter-26 verified live with Sec
 ### Entry-092 | FIX-180 | SS-FIX-083 | 2026-04-18 13:40 PDT | San Diego
 
 **Fix:** Canonical TYOVA LLC relationship statement rollout + codebase URL audit
-**Destination:** SS321 — testing.silversounds321.com
+**Destination:** SS321 ? testing.silversounds321.com
 **CLO:** CLO-380
 
 **Governance note.** The canonical SS321/TYOVA LLC relationship statement
@@ -5735,7 +5735,7 @@ scope discipline):**
 ### Entry-093 | FIX-181 | SS-FIX-084 | 2026-04-18 14:21 PDT | San Diego
 
 **Fix:** mailto subject pre-population on SS321 canonical support links
-**Destination:** SS321 — testing.silversounds321.com
+**Destination:** SS321 ? testing.silversounds321.com
 **CLO:** CLO-381
 
 **Governance note.** This fix originates from a requirement surfaced during
@@ -5753,7 +5753,7 @@ client: "SS321 Support".
 - src/pages/About.tsx line 144
 
 **Purpose:** Inbound mail arriving at support@tyova.ai is now immediately
-identifiable as originating from SilverSounds321 — the inbound equivalent
+identifiable as originating from SilverSounds321 ? the inbound equivalent
 of the existing outbound bracketed-tag pattern used on the TYOVA support
 side. Reinforces the single-inbox operational model where support@tyova.ai
 serves both TYOVA and SS321.
@@ -6321,13 +6321,13 @@ Deferred to future controlled session. Scope extended to include .env:2 stale JW
 **Canonical path correction locked:** src/system/env/supabaseConfig.ts
 (prior records incorrectly stated src/integrations/supabase/supabaseConfig.ts).
 
-**Session-Level Governance Finding — Evidence-First Rule (locked 2026-04-20 ~10:50 PDT):**
+**Session-Level Governance Finding ? Evidence-First Rule (locked 2026-04-20 ~10:50 PDT):**
 Claude must gather all data from all relevant sources before making any decision,
 recommendation, or analysis. Decisions made without complete facts are wrong or will be
 wrong. Past session records from conversation history are primary-source evidence and must
 be folded into the evidence set.
 
-Case study — first post-lock application: SS-FIX-090 near-miss false-positive. Browser
+Case study ? first post-lock application: SS-FIX-090 near-miss false-positive. Browser
 evidence (2xx everywhere) almost caused SS-FIX-090 to close as fully-applied. V1-V9
 structured source-of-truth audit revealed .env:2 was never updated despite Lovable's
 self-report. Runtime worked due to defensive fallback (hardcoded literal in client.ts),
@@ -6340,26 +6340,26 @@ and prevented a false governance close.
 
 **Action:** SS-FIX-090 closed as CLOSED-PARTIAL (runtime-verified, env-sync-deferred).
 
-**Scope:** Supabase JWT rotation — client.ts active path update. New JWT (iat: 1776553526)
+**Scope:** Supabase JWT rotation ? client.ts active path update. New JWT (iat: 1776553526)
 applied to client.ts:6 hardcoded literal by Lovable.
 
 **Verification chain (2026-04-20 session):**
-- P1-P5 Pre-publish audit (Supabase/code): GREEN — active client uses new JWT; no .env
+- P1-P5 Pre-publish audit (Supabase/code): GREEN ? active client uses new JWT; no .env
   read in active path; critical paths (auth, Stripe edge functions, TY AI, RLS, Build Mode
   gate) present and not stubbed
-- S1-S7 Stripe code readiness audit: GREEN — 7 edge functions deployed, webhook signature
+- S1-S7 Stripe code readiness audit: GREEN ? 7 edge functions deployed, webhook signature
   verification implemented, redirect URLs dynamic from origin header, purchase recording
   path uses service-role key correctly, signed-URL access control intact (B-SS321-001)
-- Browser F12: GREEN — 2xx on all Supabase calls, 101 on WebSocket
-- Supabase dashboard: GREEN — STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
+- Browser F12: GREEN ? 2xx on all Supabase calls, 101 on WebSocket
+- Supabase dashboard: GREEN ? STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET,
   PAYMENT_ENCRYPTION_KEY all present
-- Stripe dashboard: GREEN — live webhook active (SS321 Live Webhook), URL matches code,
+- Stripe dashboard: GREEN ? live webhook active (SS321 Live Webhook), URL matches code,
   1 real event processed successfully 2026-04-17, 0 failed deliveries this week
 
 **Material discrepancy documented:**
 Lovable self-reported .env:2 updated to new JWT. V1-V9 structured source-of-truth audit
 found this false. .env:2 still holds old JWT (iat: 1776103054). Active client path
-(client.ts) does not read .env — hardcoded literal is the operative value. Stale .env:2
+(client.ts) does not read .env ? hardcoded literal is the operative value. Stale .env:2
 is architecturally dead weight, not functional risk. .env:2 sync deferred into SS-FIX-087
 scope.
 
@@ -6372,7 +6372,7 @@ this session.**
 
 ### Entry-105 | FIX-193 | SS321 | 2026-04-21 14:41 PDT | San Diego
 
-**Action:** SS-FIX-091 closed — paid track access gate investigation and
+**Action:** SS-FIX-091 closed ? paid track access gate investigation and
 full remediation.
 
 **Trigger:** Pre-launch audit revealed paid track 'My One and Only ver3
@@ -6381,7 +6381,7 @@ NEW UPDATED 7' playing in full for regular users with no paywall enforcement.
 **Root cause:** Audio file stored in public tracks bucket
 (tracks/d883602b-.../0.32686880049635625.mp3) instead of private
 tracks-private bucket. The get-audio-url edge function and purchase gate
-were bypassed entirely — the client read audio_url directly from the
+were bypassed entirely ? the client read audio_url directly from the
 tracks table, which pointed to a publicly accessible URL.
 
 **Remediation steps:**
@@ -6391,7 +6391,7 @@ tracks table, which pointed to a publicly accessible URL.
 4. audio_url updated to bare path in tracks table:
    d883602b-da79-4fad-be93-6d84b2661b91/0.32686880049635625.mp3
 5. Access gate confirmed working: regular user had completed purchase
-   record (purchases table, status completed) — full playback was
+   record (purchases table, status completed) ? full playback was
    legitimate, not a gate failure
 6. EditDraft.tsx fixed: uploadAudio (public) replaced with
    uploadAudioPrivate (private) + audioPreviewUrl state added
@@ -6405,7 +6405,7 @@ Lovable observing calls from its own sandbox environment.
 
 **Pre-launch audit results (all 7 items):**
 - Sign-out / sign-in: PASS
-- Search: PASS (two separate systems — TY AI docs + Browse catalog)
+- Search: PASS (two separate systems ? TY AI docs + Browse catalog)
 - Library page: PASS
 - TY AI chat: PASS (no fabricated catalog content)
 - Voice button: PASS (present on live site)
@@ -6422,7 +6422,7 @@ Lovable observing calls from its own sandbox environment.
 
 ### Entry-106 | FIX-194 | SS321 | 2026-04-21 15:26 PDT | San Diego
 
-**Action:** SS-FIX-092 closed — Purchased badge added to all track
+**Action:** SS-FIX-092 closed ? Purchased badge added to all track
 card views.
 
 **Scope:** Three files changed: TrackCard.tsx (tile view),
@@ -6430,24 +6430,24 @@ TrackListRow.tsx (list view), TrackDetailCard.tsx (detail view).
 Each received the same pattern: useQuery keyed by
 ['purchase-date', track.id, user?.id] fetching purchased_at from
 the purchases table, rendered as a green Badge component showing
-'Purchased · MMM DD, YYYY' below the artist name.
+'Purchased ? MMM DD, YYYY' below the artist name.
 
 **Render guard:** badge only renders when user is authenticated AND
 access?.hasPurchased is true. Non-purchased tracks and logged-out
 users see no change.
 
 **Verification:** Confirmed in all three browse views in Lovable
-preview as regular user — 'My One and Only ver3 NEW UPDATED 7'
-shows 'Purchased · Apr 17, 2026' correctly in tile, list, and
+preview as regular user ? 'My One and Only ver3 NEW UPDATED 7'
+shows 'Purchased ? Apr 17, 2026' correctly in tile, list, and
 detail views.
 
 **Resolves SS321-FUTURE-003.**
 
 ### Entry-107 | FIX-195 | SS321 | 2026-04-21 18:02 PDT | San Diego
 
-**Action:** SS-FIX-093 closed — three related price and checkout fixes.
+**Action:** SS-FIX-093 closed ? three related price and checkout fixes.
 
-**Fix 1 — TrackPaywallCard price fallback:**
+**Fix 1 ? TrackPaywallCard price fallback:**
 product_catalog table is empty. Previous code fell back to
 hardcoded default_price_cents (100 cents / \.00) for all tracks.
 Updated fallback logic: track.price converted to cents via
@@ -6455,7 +6455,7 @@ Math.round(track.price * 100) is now used as secondary fallback
 before the hardcoded default. Applied to both handlePurchase and
 display price calculation (lines 38 and 70).
 
-**Fix 2 — create-checkout edge function upsert:**
+**Fix 2 ? create-checkout edge function upsert:**
 Purchases table has unique constraint on (user_id, track_id).
 When user cancelled Stripe checkout and retried, the pending
 purchase record from the first attempt caused a duplicate key
@@ -6464,7 +6464,7 @@ with onConflict: 'user_id,track_id' to overwrite stale pending
 records automatically. Stale pending records cleaned from
 purchases table before deployment.
 
-**Fix 3 — Minimum price validation:**
+**Fix 3 ? Minimum price validation:**
 Stripe requires minimum charge of \.50 USD. Added min='0.50'
 to price input in Upload.tsx and EditDraft.tsx. Placeholder
 updated to '0.50'. Helper text added: 'Minimum price is \.50
@@ -6475,36 +6475,36 @@ site after all three fixes applied.
 
 ### Entry-108 | FIX-196 | SS321 | 2026-04-21 19:38 PDT | San Diego
 
-**Action:** SS-FIX-094 closed — preview playback, counter, and toast
+**Action:** SS-FIX-094 closed ? preview playback, counter, and toast
 notification system.
 
 **Trigger:** Paid tracks ver4 and ver5 not playing preview on landing
 page cards. Track detail page play button not working for unpurchased
 paid tracks.
 
-**Fix 1 — get-audio-url edge function:**
+**Fix 1 ? get-audio-url edge function:**
 Function was throwing Purchase required for all unpurchased paid tracks,
-blocking even preview playback. Updated to check preview_duration — if
+blocking even preview playback. Updated to check preview_duration ? if
 > 0, returns signed URL with is_preview: true and preview_duration in
 response. Preview enforcement remains client-side in PlayerContext.
 
-**Fix 2 — TrackCard.tsx preview overlay:**
+**Fix 2 ? TrackCard.tsx preview overlay:**
 Added three-way logic: canListen (full play) / canPreview (30s preview
 with slightly dimmed purple button) / locked (lock icon). Mirrors
 pattern already in TrackListRow and TrackDetailCard.
 
-**Fix 3 — PlayerContext.tsx preview counter:**
+**Fix 3 ? PlayerContext.tsx preview counter:**
 Added previewCounts state (Record<string, number>) tracking how many
 times each track has been previewed this session. Counter increments
 each time preview enforcement triggers. Resets on page refresh.
 No database writes.
 
-**Fix 4 — GlobalAudioPlayer.tsx toast:**
+**Fix 4 ? GlobalAudioPlayer.tsx toast:**
 Added useEffect watching previewEnded. Fires sonner toast showing
 track title and remaining previews (max 5). Message:
-'Preview ended — purchase [title] to listen in full. X previews remaining.'
+'Preview ended ? purchase [title] to listen in full. X previews remaining.'
 
-**Fix 5 — App.tsx toast position:**
+**Fix 5 ? App.tsx toast position:**
 Sonner Toaster position changed from default (bottom-right) to
 top-center for better visibility.
 
@@ -6514,7 +6514,7 @@ remaining preview count.
 
 ### Entry-109 | FIX-197 | SS321 | 2026-04-21 22:06 PDT | San Diego
 
-**Action:** SS-FIX-095 closed — artist subscription toggle added.
+**Action:** SS-FIX-095 closed ? artist subscription toggle added.
 
 **Scope:** Three files changed: Upload.tsx, EditDraft.tsx,
 TrackPaywallCard.tsx.
@@ -6536,7 +6536,7 @@ Monetization card after Allow Listening toggle with helper text:
 Added useArtistSettings(track.artist_id, false) hook call.
 Derived subscriptionEnabled from artistSettings?.subscription_enabled ?? false.
 Wrapped Subscribe button in {subscriptionEnabled && (...)} conditional.
-Buy Track button unchanged — always visible for paid tracks.
+Buy Track button unchanged ? always visible for paid tracks.
 
 **Verified:**
 - Toggle ON ?? Subscribe button appears on track detail page
@@ -6545,7 +6545,7 @@ Buy Track button unchanged — always visible for paid tracks.
 
 ### Entry-110 | FIX-198 | SS321 | 2026-04-21 23:04 PDT | San Diego
 
-**Action:** SS-FIX-096 closed — non-registered user access control.
+**Action:** SS-FIX-096 closed ? non-registered user access control.
 
 **Policy locked:**
 - Non-registered users: free tracks limited to 20s preview only;
@@ -6567,193 +6567,193 @@ previews also trigger the pause/reset enforcement.
 
 TrackCard.tsx, TrackListRow.tsx, TrackDetailCard.tsx: !!user passed
 as isAuthenticated to both access control functions. Preview branch
-playTrack call uses conditional meta — free tracks get
+playTrack call uses conditional meta ? free tracks get
 {is_paid: false, is_free_preview: true, preview_duration: 20,
 userHasAccess: false}; paid tracks keep existing behavior.
 
 GlobalAudioPlayer.tsx: useAuthContext imported and user destructured.
 Toast useEffect expanded to three branches: non-authenticated user
-sees 'Preview ended — register to listen to [title] in full.';
+sees 'Preview ended ? register to listen to [title] in full.';
 authenticated unpurchased user sees purchase prompt with remaining
 preview count; zero remaining shows final no-more-previews message.
 
 **Verified on live site (non-registered user):**
 - Free track plays 20s then stops
-- Toast: 'Preview ended — register to listen in full'
+- Toast: 'Preview ended ? register to listen in full'
 - Paid track fully locked, no play button
 
 Entry-111 | FIX-199 | CLO-399 | 2026-04-22 10:27 PDT
-SS-FIX-097 CLOSED — Registered /profile/:userId/taste-map route in App.tsx. UserTasteMap page now reachable. Single file change.
+SS-FIX-097 CLOSED ? Registered /profile/:userId/taste-map route in App.tsx. UserTasteMap page now reachable. Single file change.
 
 Entry-112 | FIX-200 | CLO-400 | 2026-04-22 10:27 PDT
-SS-FIX-098 CLOSED — TasteWheel.tsx random placeholder replaced with honest empty state. No synthetic data shown to users.
+SS-FIX-098 CLOSED ? TasteWheel.tsx random placeholder replaced with honest empty state. No synthetic data shown to users.
 
 Entry-113 | FIX-201 | CLO-401 | 2026-04-22 10:27 PDT
-SS-FIX-099 CLOSED — Duplicate BackButton removed from UserTasteMap.tsx. Single Back button now rendered via PageWrapper only.
+SS-FIX-099 CLOSED ? Duplicate BackButton removed from UserTasteMap.tsx. Single Back button now rendered via PageWrapper only.
 
 Entry-114 | FIX-202 | CLO-402 | 2026-04-23 10:15 PDT
-SS-FIX-100 CLOSED — Added Library and My Tracks links to mobile nav Library section in Header.tsx. Mobile nav now has parity with desktop dropdown.
+SS-FIX-100 CLOSED ? Added Library and My Tracks links to mobile nav Library section in Header.tsx. Mobile nav now has parity with desktop dropdown.
 
 Entry-115 | FIX-203 | CLO-403 | 2026-04-23 12:54 PDT
-SS-FIX-102 CLOSED — Guest paid track preview fully enabled end-to-end.
+SS-FIX-102 CLOSED ? Guest paid track preview fully enabled end-to-end.
 accessControl.ts, TrackCard.tsx, storage.ts, PlayerContext.tsx, and
 get-audio-url edge function all updated. Bucket-aware signed URL resolution
 and null-user guest detection confirmed working on live site.
 
 Entry-116 | FIX-204 | CLO-404 | 2026-04-23 13:25 PDT
-SS-FIX-101 CLOSED — Track card preview button wired with play/pause toggle.
+SS-FIX-101 CLOSED ? Track card preview button wired with play/pause toggle.
 isActive used for click condition, isActivelyPlaying for icon swap. Pause/resume
 from card confirmed working for guests on live site. TrackCard.tsx only.
 
 Entry-117 | FIX-205 | CLO-405 | 2026-04-23 13:45 PDT
-SS-FIX-103 CLOSED — Guest preview-end toast replaced with modal popup.
+SS-FIX-103 CLOSED ? Guest preview-end toast replaced with modal popup.
 X close button added. Cadence gate: 1st preview end then every 5th.
 GlobalAudioPlayer.tsx only. Confirmed working on live site.
 
 Entry-118 | FIX-206 | CLO-406 | 2026-04-23 14:27 PDT
-SS-FIX-104 CLOSED — Buy Track button on TrackCard invokes Stripe checkout
+SS-FIX-104 CLOSED ? Buy Track button on TrackCard invokes Stripe checkout
 directly. Guests to /auth, logged-in users get checkout in new tab. CLOSED.
 
 Entry-119 | FIX-207 | CLO-407 | 2026-04-23 14:27 PDT
-SS-FIX-105 CLOSED — Buy button z-index raised, row container propagation
+SS-FIX-105 CLOSED ? Buy button z-index raised, row container propagation
 stopped. Prevents title Link intercepting mobile tap. TrackCard.tsx only.
 
 Entry-120 | FIX-208 | CLO-408 | 2026-04-23 14:27 PDT
-SS-FIX-106 CLOSED — Stripe Checkout shows real track title and artist name.
+SS-FIX-106 CLOSED ? Stripe Checkout shows real track title and artist name.
 Track metadata fetched in create-checkout edge function. 404 guard added.
 
 Entry-121 | FIX-209 | CLO-409 | 2026-04-23 19:25 PDT
-SS-FIX-107 CLOSED — Direct Stripe checkout applied to TrackListRow.tsx and
+SS-FIX-107 CLOSED ? Direct Stripe checkout applied to TrackListRow.tsx and
 TrackDetailCard.tsx. Buy buttons invoke createTrackCheckout directly.
 
 Entry-122 | FIX-210 | CLO-410 | 2026-04-23 19:25 PDT
-SS-FIX-108 CLOSED — All / Free / Paid segmented control replaces Free Only
+SS-FIX-108 CLOSED ? All / Free / Paid segmented control replaces Free Only
 toggle in FilterBar.tsx. Paid filter now reachable from UI.
 
 Entry-123 | FIX-211 | CLO-411 | 2026-04-23 20:16 PDT
-SS-FIX-109 CLOSED — Auto-populate title from audio filename on upload.
+SS-FIX-109 CLOSED ? Auto-populate title from audio filename on upload.
 Clean derivation from filename. Only fills when title field is empty.
 
 Entry-124 | FIX-212 | CLO-412 | 2026-04-23 20:16 PDT
-SS-FIX-110 CLOSED — Country field pre-fills from user profile on Upload page.
+SS-FIX-110 CLOSED ? Country field pre-fills from user profile on Upload page.
 useEffect fetches profiles.country on mount. Upload.tsx only.
 
 Entry-125 | FIX-213 | CLO-413 | 2026-04-23 20:16 PDT
-SS-FIX-111 CLOSED — Working clear/remove buttons for audio and album art.
+SS-FIX-111 CLOSED ? Working clear/remove buttons for audio and album art.
 onClear callback added to FileUpload.tsx. Parent state fully reset on clear.
 
 Entry-126 | FIX-214 | CLO-414 | 2026-04-23 21:14 PDT
-SS-FIX-112 CLOSED — Direct Edit button added for track owners on TrackCard
+SS-FIX-112 CLOSED ? Direct Edit button added for track owners on TrackCard
 and TrackListRow. isOwner derived internally from useAuthContext. Owner
 controls appear on Browse, Library, Profile. Non-owners unaffected.
 View Track tooltip deferred as SS321-FUTURE-004.
 
 Entry-127 | FIX-215 | CLO-415 | 2026-04-24 13:18 PDT
-SS-FIX-113 CLOSED — Purchases tab added to Library page. 4th tab using
+SS-FIX-113 CLOSED ? Purchases tab added to Library page. 4th tab using
 usePurchases hook and PurchaseCard component. Library.tsx only.
 
 Entry-128 | FIX-216 | CLO-416 | 2026-04-24 13:18 PDT
-SS-FIX-114 CLOSED — Remove button for pending purchases in PurchaseCard.tsx.
+SS-FIX-114 CLOSED ? Remove button for pending purchases in PurchaseCard.tsx.
 RLS DELETE policy added to purchases table.
 
 Entry-129 | FIX-217 | CLO-417 | 2026-04-24 13:18 PDT
-SS-FIX-115 CLOSED — create-purchase-snapshot edge function fixed: bucket-aware
+SS-FIX-115 CLOSED ? create-purchase-snapshot edge function fixed: bucket-aware
 download, dynamic content-type. Retroactive ver4 snapshot recovery confirmed.
 
 Entry-130 | FIX-218 | CLO-418 | 2026-04-24 13:18 PDT
-SS-FIX-116 CLOSED — Library tab persists via localStorage. Controlled Tabs
+SS-FIX-116 CLOSED ? Library tab persists via localStorage. Controlled Tabs
 replaces defaultValue. Library.tsx only.
 
 Entry-131 | FIX-219 | CLO-419 | 2026-04-24 13:18 PDT
-SS-FIX-117 CLOSED — LikeButton and ShareMenu added to TrackListRow.tsx.
+SS-FIX-117 CLOSED ? LikeButton and ShareMenu added to TrackListRow.tsx.
 
 Entry-132 | FIX-220 | CLO-420 | 2026-04-24 13:18 PDT
-SS-FIX-118 CLOSED — Full parity additions to TrackListRow.tsx: title link,
+SS-FIX-118 CLOSED ? Full parity additions to TrackListRow.tsx: title link,
 follow, duration, upload date, queue, now playing, active ring.
 
 Entry-133 | FIX-221 | CLO-421 | 2026-04-24 13:18 PDT
-SS-FIX-119 CLOSED — Full parity additions to TrackDetailCard.tsx: LikeButton,
+SS-FIX-119 CLOSED ? Full parity additions to TrackDetailCard.tsx: LikeButton,
 ShareMenu, Edit, Queue, follow, stats, active ring, clickable title.
 
 Entry-134 | FIX-222 | CLO-422 | 2026-04-24 13:46 PDT
-SS-FIX-120 CLOSED — License: prefix added to license_type badge in
+SS-FIX-120 CLOSED ? License: prefix added to license_type badge in
 TrackDetailCard.tsx. Neon-blue semantic token applied for visual distinction
 from mood badges. TrackDetailCard.tsx only.
 
 Entry-135 | FIX-223 | CLO-423 | 2026-04-24 14:48 PDT
-SS-FIX-121 CLOSED — Header search wired to real music search via useSearch
+SS-FIX-121 CLOSED ? Header search wired to real music search via useSearch
 hook and search_tracks RPC. Popular searches updated to music terms.
 CommandItem value props fixed cmdk empty state bug. SearchEngine.ts and
 SearchCommand.tsx only.
 
 Entry-136 | FIX-224 | CLO-424 | 2026-04-24 15:29 PDT
-SS-FIX-122 CLOSED — Revenue button added to Artist Dashboard Quick Actions
+SS-FIX-122 CLOSED ? Revenue button added to Artist Dashboard Quick Actions
 row. Links to /dashboard/revenue. Dashboard.tsx only.
 
 Entry-137 | FIX-225 | CLO-425 | 2026-04-24 18:23 PDT
-SS-FIX-123 CLOSED — Support link added to guest-visible nav on desktop
+SS-FIX-123 CLOSED ? Support link added to guest-visible nav on desktop
 and mobile. Between About and TY AI. HelpCircle icon. Header.tsx only.
 
 Entry-138 | FIX-226 | CLO-426 | 2026-04-24 20:05 PDT
-SS-FIX-124 CLOSED — Footer.tsx: Profile fallback to /auth for guests.
+SS-FIX-124 CLOSED ? Footer.tsx: Profile fallback to /auth for guests.
 Support mailto pre-filled with subject and body template. Footer.tsx only.
 
 Entry-139 | FIX-227 | CLO-427 | 2026-04-24 22:02 PDT
-SS-FIX-125 CLOSED — resetPreviewEnded added to PlayerContext. GlobalAudioPlayer
+SS-FIX-125 CLOSED ? resetPreviewEnded added to PlayerContext. GlobalAudioPlayer
 reverted to post-SS-FIX-103 working state. Modal working on mobile.
 Position deferred as SS321-FUTURE-008.
 
 Entry-140 | FIX-228 | CLO-428 | 2026-04-25 11:50 PDT
-SS-FIX-126 CLOSED — TrackListRow mobile responsive two-row layout. flex-wrap
+SS-FIX-126 CLOSED ? TrackListRow mobile responsive two-row layout. flex-wrap
 sm:flex-nowrap on outer row, w-full sm:w-auto on title column and actions
 cluster. Title full-width on mobile, actions wrap to second line. Desktop
 unchanged. src/components/browse/TrackListRow.tsx only.
 
 Entry-141 | FIX-229 | CLO-429 | 2026-04-25 11:50 PDT
-SS-FIX-127 CLOSED — Footer pb-24 added so TY AI floating buttons no longer
+SS-FIX-127 CLOSED ? Footer pb-24 added so TY AI floating buttons no longer
 overlap footer content. src/components/Footer.tsx only.
 
 Entry-142 | FIX-230 | CLO-430 | 2026-04-25 11:50 PDT
-SS-FIX-128 CLOSED — AudioFormatBadge theme-aware colors. WAV green light /
+SS-FIX-128 CLOSED ? AudioFormatBadge theme-aware colors. WAV green light /
 gold dark. MP3 blue light / cyan dark.
 src/components/track/AudioFormatBadge.tsx only.
 
 Entry-143 | FIX-231 | CLO-431 | 2026-04-25 11:50 PDT
-SS-FIX-129 CLOSED — PlayAllButton component on Browse, Library Liked, and
+SS-FIX-129 CLOSED ? PlayAllButton component on Browse, Library Liked, and
 My Tracks. Uses playQueue from index 0. Returns null when zero tracks.
 Files: PlayAllButton.tsx (new), Browse.tsx, Library.tsx, MyTracks.tsx.
 
 Entry-144 | FIX-232 | CLO-432 | 2026-04-25 11:50 PDT
-SS-FIX-130 CLOSED — 3-state Repeat button on mini player (none/all/one).
+SS-FIX-130 CLOSED ? 3-state Repeat button on mini player (none/all/one).
 Spotify-style cycle. Files: PlayerContext.tsx, GlobalAudioPlayer.tsx.
 
 Entry-145 | FIX-233 | CLO-433 | 2026-04-25 11:50 PDT
-SS-FIX-131 NO-OP CLOSED — About page TYOVA link audit only. href on
+SS-FIX-131 NO-OP CLOSED ? About page TYOVA link audit only. href on
 src/pages/About.tsx line 126 already https://tyova.ai. Link text on line 131.
 No change applied. No file modifications.
 
 Entry-146 | FIX-234 | CLO-434 | 2026-04-25 13:00 PDT
-SS-FIX-132 CLOSED — TY AI KB entries added for Shuffle, Repeat, and
+SS-FIX-132 CLOSED ? TY AI KB entries added for Shuffle, Repeat, and
 Play All. Repeat HOW questions verified working. Shuffle and Play All
-HOW questions blocked by Tier 0 handler priority — SS-FIX-133 to fix.
+HOW questions blocked by Tier 0 handler priority ? SS-FIX-133 to fix.
 src/ty-ai/TYAISS321Knowledge.ts only.
 
 Entry-147 | FIX-235 | CLO-435 | 2026-04-25 13:13 PDT
-SS-FIX-133 CLOSED — TY AI handler fixes. Three Tier 0 guards added to
+SS-FIX-133 CLOSED ? TY AI handler fixes. Three Tier 0 guards added to
 useTYAIChatProcessor.ts: Shuffle HOW-question guard, Play All HOW-question
 guard, Repeat command handler. All 9 verification tests passed.
 src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only.
 
 Entry-148 | FIX-236 | CLO-436 | 2026-04-25 13:33 PDT
-SS-FIX-134 CLOSED — TY AI catalog intelligence. Five live Supabase
+SS-FIX-134 CLOSED ? TY AI catalog intelligence. Five live Supabase
 query handlers added to useTYAIChatProcessor.ts: track count, artist
 list, genre list, new releases, specific track lookup. All query live
 DB with approved+is_deleted filters. All 8 verification tests passed.
-TY now self-updates as catalog grows — no KB maintenance required.
+TY now self-updates as catalog grows ? no KB maintenance required.
 src/hooks/ty-ai-chat/useTYAIChatProcessor.ts only.
 
 Entry-149 | FIX-237 | CLO-437 | 2026-04-25 14:39 PDT
-SS-FIX-135 CLOSED — TY AI player execution wiring. Five Tier 0
+SS-FIX-135 CLOSED ? TY AI player execution wiring. Five Tier 0
 handlers: What's Playing (reads currentTrack), Pause (togglePlay),
 Resume (togglePlay), Repeat Execute (toggleRepeat), Ordered Play All
 (playQueue 50 tracks asc). ChatProcessResult type extended. currentTrack
@@ -6761,74 +6761,74 @@ passed into processMessage. All 9 verification tests passed.
 Files: ty-ai-chat.ts, useTYAIChatProcessor.ts, TYAIPanelContainer.tsx.
 
 Entry-150 | FIX-238 | CLO-438 | 2026-04-25 15:15 PDT
-SS-FIX-136 CLOSED — TY AI lyric-phrase search. Tier 0 handler at top
+SS-FIX-136 CLOSED ? TY AI lyric-phrase search. Tier 0 handler at top
 of processor detects lyric-search intent, extracts phrase, calls
 search-tracks-semantic, returns top result with confirmation prompt.
 useTYAIChatProcessor.ts only.
 
 Entry-151 | FIX-239 | CLO-439 | 2026-04-25 15:15 PDT
-SS-FIX-137 CLOSED — TY AI confirm-play handler. Two patches. Final:
+SS-FIX-137 CLOSED ? TY AI confirm-play handler. Two patches. Final:
 lastLyricResultRef stores result at search time; confirm-play reads
 ref directly bypassing stale closure. 'yes play it' ?? correct track
 plays. useTYAIChatProcessor.ts only.
 
 Entry-152 | FIX-240 | CLO-440 | 2026-04-25 15:42 PDT
-SS-FIX-138 CLOSED — Claude/Anthropic disclosure added to About page
+SS-FIX-138 CLOSED ? Claude/Anthropic disclosure added to About page
 (Powered by TY AI section) and TY AI page (Governed by Design card).
 Matches transparency doctrine. Legal pages already disclosed;
 user-facing pages now consistent. src/pages/About.tsx, TyAi.tsx.
 
 Entry-153 | FIX-241 | CLO-441 | 2026-04-25 18:17 PDT
-B-SS321-003 CLOSED — SilverSounds321 domain cutover complete.
+B-SS321-003 CLOSED ? SilverSounds321 domain cutover complete.
 silversounds321.com live via Entri/Lovable DNS. www redirects to
 apex. Supabase auth URLs updated. testing.silversounds321.com
 retained as staging. SS321 IS NOW LIVE AT silversounds321.com.
 
 Entry-154 | FIX-242 | CLO-442 | 2026-04-25 18:43 PDT
-SS-FIX-139 CLOSED — profiles email exposure fix attempt. Public
+SS-FIX-139 CLOSED ? profiles email exposure fix attempt. Public
 SELECT policy dropped, SECURITY DEFINER function created. Regression
 discovered (anon embedded joins broken). Policy restored. Root cause:
 PostgreSQL RLS row-level only. Deferred as SS321-FUTURE-009.
 Practical risk low. Site confirmed healthy post-restore.
 
-Entry-155 | FIX-243 | CLO-443 | 2026-04-25 19:31 PDT | SS321 SS-FIX-140 — Server-authoritative checkout price. create-checkout edge function patched: priceInCents from client ignored entirely; price fetched from public.tracks.price (numeric, dollars), converted to cents via Math.round(track.price * 100); guard throws if dbPriceInCents <= 0. Stripe unit_amount and purchases.amount_cents both use DB price. Commit 266e7e1.
+Entry-155 | FIX-243 | CLO-443 | 2026-04-25 19:31 PDT | SS321 SS-FIX-140 ? Server-authoritative checkout price. create-checkout edge function patched: priceInCents from client ignored entirely; price fetched from public.tracks.price (numeric, dollars), converted to cents via Math.round(track.price * 100); guard throws if dbPriceInCents <= 0. Stripe unit_amount and purchases.amount_cents both use DB price. Commit 266e7e1.
 
-Entry-156 | FIX-244 | CLO-444 | 2026-04-25 19:42 PDT | SS321 SS-FIX-141 — Email column exposure fix. public.profiles table had anon SELECT access to email column via Public profiles are viewable by everyone RLS policy. Fixed via column-level privilege revocation: REVOKE SELECT (email) ON public.profiles FROM anon. No schema migration, no policy rewrite, no app code changes. DB-only fix applied directly in Supabase SQL Editor.
+Entry-156 | FIX-244 | CLO-444 | 2026-04-25 19:42 PDT | SS321 SS-FIX-141 ? Email column exposure fix. public.profiles table had anon SELECT access to email column via Public profiles are viewable by everyone RLS policy. Fixed via column-level privilege revocation: REVOKE SELECT (email) ON public.profiles FROM anon. No schema migration, no policy rewrite, no app code changes. DB-only fix applied directly in Supabase SQL Editor.
 
-Entry-157 | FIX-245 | CLO-445 | 2026-04-25 20:21 PDT | SS321 SS-FIX-142 — OpenAI key server-side proxy. Deleted get-openai-key edge function and fetchServerApiKey.ts. Added two authenticated proxy functions: openai-chat (JWT + admin gate, serves AUDE/AIDRE) and openai-transcribe (JWT gate, 25 MB cap, serves VoiceEngine/RealtimeConversationController). Client refactors: VoiceEngine.ts, RealtimeConversationController.ts, useTyAiVoice.ts, AUDEAutoAbstractEngine.ts, AIDRERefinementEngine.ts — all direct browser-to-OpenAI calls eliminated. OPENAI_API_KEY remains in Supabase Function secrets only. Commit 8f97863.
+Entry-157 | FIX-245 | CLO-445 | 2026-04-25 20:21 PDT | SS321 SS-FIX-142 ? OpenAI key server-side proxy. Deleted get-openai-key edge function and fetchServerApiKey.ts. Added two authenticated proxy functions: openai-chat (JWT + admin gate, serves AUDE/AIDRE) and openai-transcribe (JWT gate, 25 MB cap, serves VoiceEngine/RealtimeConversationController). Client refactors: VoiceEngine.ts, RealtimeConversationController.ts, useTyAiVoice.ts, AUDEAutoAbstractEngine.ts, AIDRERefinementEngine.ts ? all direct browser-to-OpenAI calls eliminated. OPENAI_API_KEY remains in Supabase Function secrets only. Commit 8f97863.
 
-Entry-158 | FIX-246 | CLO-446 | 2026-04-25 20:51 PDT | SS321 SS-FIX-143 — Email column isolation (corrects SS-FIX-141). Initial column-level REVOKE SELECT (email) ON public.profiles FROM anon failed — Supabase table-level grants override column-level revokes. Correct fix: (1) REVOKE SELECT ON public.profiles FROM anon; (2) GRANT SELECT (id, display_name, avatar_url, country, created_at, updated_at, banner_url, status, deleted_at, privacy_behavioral_tracking, privacy_emotion_tracking, privacy_proactive_engagement, bio) ON public.profiles TO anon. Verified via information_schema.column_privileges — 13 columns granted, email absent. DB-only fix, no commit.
+Entry-158 | FIX-246 | CLO-446 | 2026-04-25 20:51 PDT | SS321 SS-FIX-143 ? Email column isolation (corrects SS-FIX-141). Initial column-level REVOKE SELECT (email) ON public.profiles FROM anon failed ? Supabase table-level grants override column-level revokes. Correct fix: (1) REVOKE SELECT ON public.profiles FROM anon; (2) GRANT SELECT (id, display_name, avatar_url, country, created_at, updated_at, banner_url, status, deleted_at, privacy_behavioral_tracking, privacy_emotion_tracking, privacy_proactive_engagement, bio) ON public.profiles TO anon. Verified via information_schema.column_privileges ? 13 columns granted, email absent. DB-only fix, no commit.
 
-Entry-159 | FIX-247 | CLO-447 | 2026-04-25 21:17 PDT | SS321 SS-FIX-144 — Auth guards for 5 unauthenticated AI/embedding edge functions. Closes unauthenticated_ai_endpoints finding. Guards: ty-ai-chat (JWT required, any authenticated user); search-tracks-semantic (service role key OR valid JWT); evolution-ml-analyze, generate-track-embedding, backfill-embeddings (JWT + has_role admin check, 401/403 respectively). Missing createClient import added to evolution-ml-analyze. All guards inserted immediately after OPTIONS preflight block. No other logic changed. Commit d97ac93.
+Entry-159 | FIX-247 | CLO-447 | 2026-04-25 21:17 PDT | SS321 SS-FIX-144 ? Auth guards for 5 unauthenticated AI/embedding edge functions. Closes unauthenticated_ai_endpoints finding. Guards: ty-ai-chat (JWT required, any authenticated user); search-tracks-semantic (service role key OR valid JWT); evolution-ml-analyze, generate-track-embedding, backfill-embeddings (JWT + has_role admin check, 401/403 respectively). Missing createClient import added to evolution-ml-analyze. All guards inserted immediately after OPTIONS preflight block. No other logic changed. Commit d97ac93.
 
-Entry-160 | FIX-248 | CLO-448 | 2026-04-25 21:30 PDT | SS321 SS-FIX-145 — Client-side admin email shortcut removed. useUserRole.tsx contained hardcoded ADMIN_EMAILS list and isAdminByEmail short-circuit granting admin status purely from email match in browser JS without server-side validation. Fix: removed ADMIN_EMAILS constant, isAdminByEmail field, all email-based short-circuit paths. isAdmin now derives solely from user_roles table query. Pre-flight DB check confirmed joseramonjr@hotmail.com has role=admin in user_roles before shipping. Commit 7ea8e7f.
+Entry-160 | FIX-248 | CLO-448 | 2026-04-25 21:30 PDT | SS321 SS-FIX-145 ? Client-side admin email shortcut removed. useUserRole.tsx contained hardcoded ADMIN_EMAILS list and isAdminByEmail short-circuit granting admin status purely from email match in browser JS without server-side validation. Fix: removed ADMIN_EMAILS constant, isAdminByEmail field, all email-based short-circuit paths. isAdmin now derives solely from user_roles table query. Pre-flight DB check confirmed joseramonjr@hotmail.com has role=admin in user_roles before shipping. Commit 7ea8e7f.
 
-Entry-161 | FIX-249 | CLO-449 | 2026-04-25 21:43 PDT | SS321 SS-FIX-146 — TY AI autorun tables restricted to admin-only SELECT. Four internal governance tables (tyai_autorun_config, tyai_autorun_locks, tyai_autorun_runs, tyai_autorun_fail_safe_alerts) had open SELECT policies applying to all authenticated users with USING: true and no user scoping. Fix: dropped existing authenticated SELECT policies, created admin_only_select policy on each table using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
+Entry-161 | FIX-249 | CLO-449 | 2026-04-25 21:43 PDT | SS321 SS-FIX-146 ? TY AI autorun tables restricted to admin-only SELECT. Four internal governance tables (tyai_autorun_config, tyai_autorun_locks, tyai_autorun_runs, tyai_autorun_fail_safe_alerts) had open SELECT policies applying to all authenticated users with USING: true and no user scoping. Fix: dropped existing authenticated SELECT policies, created admin_only_select policy on each table using has_role(auth.uid(), 'admin'::app_role). DB-only fix, no commit.
 
-Entry-162 | FIX-250 | CLO-450 | 2026-04-25 21:47 PDT | SS321 SS-FIX-147 — ty_ai_recovery_attempts restricted to admin-only SELECT. Table had SELECT policy applying to {public} (unauthenticated) with USING: true — exposing pre/post fix system states and internal instance IDs without any auth. Fix: dropped public policy, created admin_only_select policy using has_role(auth.uid(), 'admin'::app_role) scoped to authenticated role. DB-only fix, no commit.
+Entry-162 | FIX-250 | CLO-450 | 2026-04-25 21:47 PDT | SS321 SS-FIX-147 ? ty_ai_recovery_attempts restricted to admin-only SELECT. Table had SELECT policy applying to {public} (unauthenticated) with USING: true ? exposing pre/post fix system states and internal instance IDs without any auth. Fix: dropped public policy, created admin_only_select policy using has_role(auth.uid(), 'admin'::app_role) scoped to authenticated role. DB-only fix, no commit.
 
-Entry-163 | FIX-251 | CLO-451 | 2026-04-25 22:22 PDT | SS321 SS-FIX-148 — Core AI table INSERT/UPDATE lockdown. ty_ai_system_state had public UPDATE policy (System can update state) allowing anonymous users to flip AI safety controls — dropped and replaced with service_role_only_update. 20 core AI operational tables (ty_ai_logs, ty_ai_kernel_runtime_events, ty_ai_memory_events, ty_ai_resource_events, ty_ai_scaling_events, ty_ai_kse_events, ty_ai_kse_snapshots, ty_ai_uce_context_events, ty_ai_mesh_events, ty_ai_mesh_repairs, ty_ai_threat_events, ty_ai_task_failures, ty_ai_task_runs, ty_ai_tasks, ty_ai_memory_snapshots, ty_ai_memory_integrity_reports, ty_ai_test_history, ty_cross_instance_violations, ty_evolution_marl_agents) had public INSERT policies — all dropped, RLS enabled on each. DB-only fix, no commit.
+Entry-163 | FIX-251 | CLO-451 | 2026-04-25 22:22 PDT | SS321 SS-FIX-148 ? Core AI table INSERT/UPDATE lockdown. ty_ai_system_state had public UPDATE policy (System can update state) allowing anonymous users to flip AI safety controls ? dropped and replaced with service_role_only_update. 20 core AI operational tables (ty_ai_logs, ty_ai_kernel_runtime_events, ty_ai_memory_events, ty_ai_resource_events, ty_ai_scaling_events, ty_ai_kse_events, ty_ai_kse_snapshots, ty_ai_uce_context_events, ty_ai_mesh_events, ty_ai_mesh_repairs, ty_ai_threat_events, ty_ai_task_failures, ty_ai_task_runs, ty_ai_tasks, ty_ai_memory_snapshots, ty_ai_memory_integrity_reports, ty_ai_test_history, ty_cross_instance_violations, ty_evolution_marl_agents) had public INSERT policies ? all dropped, RLS enabled on each. DB-only fix, no commit.
 
-Entry-164 | FIX-252 | CLO-452 | 2026-04-25 22:28 PDT | SS321 SS-FIX-149 — ty_ai_system_state SELECT and INSERT restricted to service_role only. Table had two remaining public policies: System can read state (SELECT, public) and System can insert state (INSERT, public) — both dropped. Replaced with service_role_only_select and service_role_only_insert policies. Completes full lockdown of ty_ai_system_state (UPDATE locked in SS-FIX-148). DB-only fix, no commit.
+Entry-164 | FIX-252 | CLO-452 | 2026-04-25 22:28 PDT | SS321 SS-FIX-149 ? ty_ai_system_state SELECT and INSERT restricted to service_role only. Table had two remaining public policies: System can read state (SELECT, public) and System can insert state (INSERT, public) ? both dropped. Replaced with service_role_only_select and service_role_only_insert policies. Completes full lockdown of ty_ai_system_state (UPDATE locked in SS-FIX-148). DB-only fix, no commit.
 
-Entry-165 | FIX-253 | CLO-453 | 2026-04-25 22:40 PDT | SS321 SS-FIX-150 — Batch RLS lockdown. guardian_fail_safe_alerts: dropped public Anyone can view fail-safe alerts SELECT policy, replaced with admin_only_select. comments: dropped Anyone can view comments policy, replaced with authenticated_can_view_comments. INSERT restricted to service_role on: ty_ai_test_results, ty_ai_simulation_runs, ty_ai_self_improvement_log, ty_ai_recovery_attempts, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_sync_log, ty_evolution_performance_metrics, ty_evolution_maintenance_predictions, ty_evolution_marl_coordination. UPDATE restricted to service_role on: ty_ai_mesh_repairs, ty_ai_task_runs, ty_ai_tasks, ty_evolution_marl_agents, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_maintenance_predictions. DB-only fix, no commit.
+Entry-165 | FIX-253 | CLO-453 | 2026-04-25 22:40 PDT | SS321 SS-FIX-150 ? Batch RLS lockdown. guardian_fail_safe_alerts: dropped public Anyone can view fail-safe alerts SELECT policy, replaced with admin_only_select. comments: dropped Anyone can view comments policy, replaced with authenticated_can_view_comments. INSERT restricted to service_role on: ty_ai_test_results, ty_ai_simulation_runs, ty_ai_self_improvement_log, ty_ai_recovery_attempts, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_sync_log, ty_evolution_performance_metrics, ty_evolution_maintenance_predictions, ty_evolution_marl_coordination. UPDATE restricted to service_role on: ty_ai_mesh_repairs, ty_ai_task_runs, ty_ai_tasks, ty_evolution_marl_agents, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_maintenance_predictions. DB-only fix, no commit.
 
-Entry-166 | FIX-254 | CLO-454 | 2026-04-25 22:54 PDT | SS321 SS-FIX-151 — Dropped anon SELECT policy on public.profiles entirely. Scanner continued flagging email exposure despite column grant fix (SS-FIX-143) because it reads RLS policy definitions statically. Root fix: dropped Public profiles are viewable by everyone policy (anon, USING: true) entirely. Unauthenticated users now have zero access to profiles table. Authenticated users retain their own policy. DB-only fix, no commit.
+Entry-166 | FIX-254 | CLO-454 | 2026-04-25 22:54 PDT | SS321 SS-FIX-151 ? Dropped anon SELECT policy on public.profiles entirely. Scanner continued flagging email exposure despite column grant fix (SS-FIX-143) because it reads RLS policy definitions statically. Root fix: dropped Public profiles are viewable by everyone policy (anon, USING: true) entirely. Unauthenticated users now have zero access to profiles table. Authenticated users retain their own policy. DB-only fix, no commit.
 
-Entry-167 | FIX-255 | CLO-455 | 2026-04-25 23:02 PDT | SS321 SS-FIX-152 — Profiles authenticated SELECT restricted to owner+admin; AI table INSERT/UPDATE lockdown continued. Dropped Authenticated users can view public profile fields policy (authenticated, USING: true); replaced with owner_or_admin_select (auth.uid()=id OR has_role admin). Dropped remaining public INSERT policies on 26 ty_ai/ty_evolution tables. Added service_role_only_insert on ty_ai_upe_prediction_events. DB-only fix, no commit.
+Entry-167 | FIX-255 | CLO-455 | 2026-04-25 23:02 PDT | SS321 SS-FIX-152 ? Profiles authenticated SELECT restricted to owner+admin; AI table INSERT/UPDATE lockdown continued. Dropped Authenticated users can view public profile fields policy (authenticated, USING: true); replaced with owner_or_admin_select (auth.uid()=id OR has_role admin). Dropped remaining public INSERT policies on 26 ty_ai/ty_evolution tables. Added service_role_only_insert on ty_ai_upe_prediction_events. DB-only fix, no commit.
 
-Entry-168 | FIX-256 | CLO-456 | 2026-04-26 10:16 PDT | SS321 SS-FIX-153 — Batch AI table and storage lockdown. admin_only_select applied to: ty_ai_consensus_sessions, ty_ai_consensus_votes, ty_ai_learning_events, ty_ai_simulation_runs, ty_ai_improvements, ty_ai_guardian_notifications. service_role_only_insert/update applied to: ty_ai_test_results, ty_ai_test_history, ty_ai_tasks, ty_ai_task_runs, ty_ai_task_failures, ty_ai_mesh_events, ty_ai_mesh_repairs, ty_ai_memory_snapshots, ty_ai_memory_integrity_reports, ty_ai_kernel_runtime_events, ty_ai_scaling_events, ty_ai_resource_events, ty_ai_kse_events, ty_ai_kse_snapshots, ty_ai_uce_context_events, ty_ai_self_improvement_log, ty_ai_threat_events, ty_ai_recovery_attempts, ty_ai_logs, ty_cross_instance_violations, ty_evolution_marl_agents, ty_evolution_marl_coordination, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_sync_log, ty_evolution_performance_metrics, ty_evolution_maintenance_predictions. Storage: certification bucket restricted to service_role; broad authenticated upload policies dropped from tracks/album_art/playlist_covers. DB-only fix, no commit.
+Entry-168 | FIX-256 | CLO-456 | 2026-04-26 10:16 PDT | SS321 SS-FIX-153 ? Batch AI table and storage lockdown. admin_only_select applied to: ty_ai_consensus_sessions, ty_ai_consensus_votes, ty_ai_learning_events, ty_ai_simulation_runs, ty_ai_improvements, ty_ai_guardian_notifications. service_role_only_insert/update applied to: ty_ai_test_results, ty_ai_test_history, ty_ai_tasks, ty_ai_task_runs, ty_ai_task_failures, ty_ai_mesh_events, ty_ai_mesh_repairs, ty_ai_memory_snapshots, ty_ai_memory_integrity_reports, ty_ai_kernel_runtime_events, ty_ai_scaling_events, ty_ai_resource_events, ty_ai_kse_events, ty_ai_kse_snapshots, ty_ai_uce_context_events, ty_ai_self_improvement_log, ty_ai_threat_events, ty_ai_recovery_attempts, ty_ai_logs, ty_cross_instance_violations, ty_evolution_marl_agents, ty_evolution_marl_coordination, ty_evolution_preemptive_actions, ty_evolution_device_learning_state, ty_evolution_sync_log, ty_evolution_performance_metrics, ty_evolution_maintenance_predictions. Storage: certification bucket restricted to service_role; broad authenticated upload policies dropped from tracks/album_art/playlist_covers. DB-only fix, no commit.
 
-Entry-169 | FIX-257 | CLO-457 | 2026-04-26 10:24 PDT | SS321 SS-FIX-154 — Dropped all real public System INSERT/UPDATE policies by exact name on 39 ty_ai/ty_evolution tables. Previous fixes used generic policy names that did not match actual policy names in DB. This fix queried pg_policies for exact names, dropped all matching public System policies, and recreated as service_role_only_insert/update. Admin-gated INSERT created for ty_ai_patent_certification_history, ty_ai_personality_audits, ty_tool_governance_audit, ty_tool_request_approvals, ty_tool_requests. DB-only fix, no commit.
+Entry-169 | FIX-257 | CLO-457 | 2026-04-26 10:24 PDT | SS321 SS-FIX-154 ? Dropped all real public System INSERT/UPDATE policies by exact name on 39 ty_ai/ty_evolution tables. Previous fixes used generic policy names that did not match actual policy names in DB. This fix queried pg_policies for exact names, dropped all matching public System policies, and recreated as service_role_only_insert/update. Admin-gated INSERT created for ty_ai_patent_certification_history, ty_ai_personality_audits, ty_tool_governance_audit, ty_tool_request_approvals, ty_tool_requests. DB-only fix, no commit.
 
-Entry-170 | FIX-258 | CLO-458 | 2026-04-26 10:31 PDT | SS321 SS-FIX-155 — monitoring_health_checks and tyai_autorun_fail_safe_alerts locked down. monitoring_health_checks: dropped Anyone can view health checks public SELECT, replaced with admin_only_select. tyai_autorun_fail_safe_alerts: dropped Allow insert autorun_alerts and Allow read autorun_alerts policies, replaced with service_role_only_insert and admin_only_select. guardian_authority plaintext token error deferred per FLAG-128.1 — Jose personal decision only. DB-only fix, no commit.
+Entry-170 | FIX-258 | CLO-458 | 2026-04-26 10:31 PDT | SS321 SS-FIX-155 ? monitoring_health_checks and tyai_autorun_fail_safe_alerts locked down. monitoring_health_checks: dropped Anyone can view health checks public SELECT, replaced with admin_only_select. tyai_autorun_fail_safe_alerts: dropped Allow insert autorun_alerts and Allow read autorun_alerts policies, replaced with service_role_only_insert and admin_only_select. guardian_authority plaintext token error deferred per FLAG-128.1 ? Jose personal decision only. DB-only fix, no commit.
 
-Entry-171 | FIX-259 | CLO-459 | 2026-04-26 10:37 PDT | SS321 SS-FIX-156 — Artist Stripe identifier exposure and backup bucket upload fixed. purchases: dropped Artists can view purchases of their tracks policy, recreated with track ownership USING check (tracks.artist_id = auth.uid()). ty-ai-backups storage: dropped public System can upload TY AI backups policy, replaced with service_role_only_upload_backups. DB-only fix, no commit.
+Entry-171 | FIX-259 | CLO-459 | 2026-04-26 10:37 PDT | SS321 SS-FIX-156 ? Artist Stripe identifier exposure and backup bucket upload fixed. purchases: dropped Artists can view purchases of their tracks policy, recreated with track ownership USING check (tracks.artist_id = auth.uid()). ty-ai-backups storage: dropped public System can upload TY AI backups policy, replaced with service_role_only_upload_backups. DB-only fix, no commit.
 
-Entry-172 | FIX-260 | CLO-460 | 2026-04-26 10:43 PDT | SS321 SS-FIX-157 — tyai_autorun_runs INSERT locked and artist_purchases_view created. tyai_autorun_runs: dropped Allow insert autorun_runs authenticated policy, replaced with service_role_only_insert. purchases: RLS cannot restrict columns so created artist_purchases_view projecting only safe columns (id, user_id, track_id, amount_cents, currency, status, purchased_at) — excludes stripe_session_id, stripe_payment_intent_id, encrypted_payment_intent_id, encrypted_session_id. SELECT granted to authenticated on view. DB-only fix, no commit.
+Entry-172 | FIX-260 | CLO-460 | 2026-04-26 10:43 PDT | SS321 SS-FIX-157 ? tyai_autorun_runs INSERT locked and artist_purchases_view created. tyai_autorun_runs: dropped Allow insert autorun_runs authenticated policy, replaced with service_role_only_insert. purchases: RLS cannot restrict columns so created artist_purchases_view projecting only safe columns (id, user_id, track_id, amount_cents, currency, status, purchased_at) ? excludes stripe_session_id, stripe_payment_intent_id, encrypted_payment_intent_id, encrypted_session_id. SELECT granted to authenticated on view. DB-only fix, no commit.
 
 
-Entry-174 | FIX-262 | CLO-462 | 2026-04-26 11:09 PDT | SS321 SS-FIX-159 — profiles email exposure final fix. Users can view own profile policy changed from {public} to {authenticated} role (auth.uid()=id). Admins can view all profiles policy recreated with has_role admin check scoped to authenticated. REVOKE SELECT (email) ON public.profiles FROM authenticated — removes email column access from all authenticated users. DB-only fix, no commit.
+Entry-174 | FIX-262 | CLO-462 | 2026-04-26 11:09 PDT | SS321 SS-FIX-159 ? profiles email exposure final fix. Users can view own profile policy changed from {public} to {authenticated} role (auth.uid()=id). Admins can view all profiles policy recreated with has_role admin check scoped to authenticated. REVOKE SELECT (email) ON public.profiles FROM authenticated ? removes email column access from all authenticated users. DB-only fix, no commit.
 
 Entry-173 | FIX-261 | CLO-461 | 2026-04-26 11:05 PDT | SS321 SS-FIX-158 ? ty_instance_registry and ai_certification_ledger locked down. ty_instance_registry: dropped open UPDATE policy allowing authenticated users to claim unowned instances (owner_user_id IS NULL rows); replaced with owner_or_admin_update (auth.uid()=owner_user_id OR has_role admin). ai_certification_ledger: dropped Anyone can view ledger public SELECT policy exposing real user names to unauthenticated users; replaced with authenticated_only_select. DB-only fix, no commit.
 
@@ -7810,7 +7810,7 @@ passing. Context retention verified.
 ### Entry-328
 Date: 2026-05-03 09:33 San Diego
 Fix: SS-FIX-335
-Title: Comment icon color uniformity — TrackListRow purple sync
+Title: Comment icon color uniformity ? TrackListRow purple sync
 Summary: TrackListRow.tsx comment button was using text-muted-foreground
          instead of text-electric-purple. Updated to match TrackCard.tsx
          and TrackDetailCard.tsx exactly. All 3 track card views now
@@ -7821,7 +7821,7 @@ Status: CLOSED
 ### Entry-329
 Date: 2026-05-03 10:03 San Diego
 Fix: SS-FIX-336
-Title: User-deletable notifications — individual delete + Clear All
+Title: User-deletable notifications ? individual delete + Clear All
 Summary: Three-part fix. Part A: per-row X button and Clear All added
          to bell dropdown and full /notifications page. Part B: pg_cron
          job (ID 7) registered to auto-purge notifications older than
@@ -7835,20 +7835,20 @@ Status: CLOSED
 ### Entry-330
 Date: 2026-05-03 11:19 San Diego
 Fix: SS-FIX-337
-Title: Email relay auth guard — notify-user edge function
+Title: Email relay auth guard ? notify-user edge function
 Summary: Lovable security scan flagged notify-user edge function as
-         open email relay — any caller could supply user_id and send
+         open email relay ? any caller could supply user_id and send
          arbitrary email to any SS321 user. Auth guard added requiring
          SUPABASE_SERVICE_ROLE_KEY in Authorization header. Unauthorized
          callers receive 401 with CORS headers preserved. All internal
-         DB trigger callers already pass service role key via Vault —
+         DB trigger callers already pass service role key via Vault ?
          legitimate traffic unaffected. Live attack surface closed.
 Status: CLOSED
 
 ### Entry-331
 Date: 2026-05-03 11:19 San Diego
 Fix: SS-FIX-338
-Title: Follow button repair — trigger enum fix + resilience hardening
+Title: Follow button repair ? trigger enum fix + resilience hardening
 Summary: Follow button silently failing with 400 Bad Request. Six-layer
          diagnostic chain traced root cause to notify_on_follow trigger
          using invalid notification_type enum value 'new_follow' (correct
@@ -7863,9 +7863,9 @@ Status: CLOSED
 ### Entry-332
 Date: 2026-05-03 11:58 San Diego
 Fix: SS-FIX-339
-Title: Auth guard — notify-new-track edge function
+Title: Auth guard ? notify-new-track edge function
 Summary: Lovable security scan flagged notify-new-track edge function
-         as unauthenticated bulk notification sender — any caller could
+         as unauthenticated bulk notification sender ? any caller could
          trigger bulk in-app notifications and marketing emails to all
          subscribed users for any track_id, enabling spam and Resend
          quota exhaustion. Same auth guard pattern as SS-FIX-337 applied.
@@ -7876,7 +7876,7 @@ Status: CLOSED
 ### Entry-333
 Date: 2026-05-03 12:04 San Diego
 Fix: SS-FIX-340
-Title: SECURITY DEFINER function exposure — revoke excess grants
+Title: SECURITY DEFINER function exposure ? revoke excess grants
 Summary: Lovable security scan flagged SECURITY DEFINER functions
          callable by anon and authenticated roles without restriction.
          Audit identified 9 functions with excess grants: 4 anon grants
@@ -7906,7 +7906,7 @@ Status: CLOSED
 ### Entry-335
 Date: 2026-05-03 13:25 San Diego
 Fix: SS-FIX-342
-Title: Function search_path hardening — 5 trigger functions
+Title: Function search_path hardening ? 5 trigger functions
 Summary: Lovable security scan flagged functions missing search_path
          parameter, leaving them vulnerable to schema injection attacks.
          Audit identified 5 affected functions: insert_follow_activity,
@@ -7919,14 +7919,14 @@ Status: CLOSED
 ### Entry-336
 Date: 2026-05-03 14:27 San Diego
 Fix: SS-FIX-343
-Title: Guardian token write enforcement — plaintext rejection trigger
+Title: Guardian token write enforcement ? plaintext rejection trigger
 Summary: Lovable security scan error persisted after SS-FIX-341
          because guardian_authority columns remained plain text type
          with no write enforcement. Created BEFORE INSERT OR UPDATE
          trigger via Lovable migration to reject any non-null token
          write shorter than 40 characters. Trigger deployed via
          migration (SQL editor lacked sufficient privileges).
-         Verified live via pg_trigger system catalog. Tested —
+         Verified live via pg_trigger system catalog. Tested ?
          plaintext write correctly throws P0001 exception.
          Guardian token columns now enforced encrypted at DB level.
 Status: CLOSED
@@ -7934,20 +7934,20 @@ Status: CLOSED
 ### Entry-337
 Date: 2026-05-03 14:54 San Diego
 Fix: SS-FIX-344
-Title: Auth guard — create-purchase-snapshot edge function
+Title: Auth guard ? create-purchase-snapshot edge function
 Summary: Lovable security scan flagged create-purchase-snapshot edge
-         function as unauthenticated — any caller could POST with any
+         function as unauthenticated ? any caller could POST with any
          purchase_id enabling arbitrary snapshot creation, storage
          writes, and audit log tampering. Service role key auth guard
          added matching SS-FIX-337 and SS-FIX-339 pattern. Stripe-
-         webhook caller already uses service role key — no breaking
+         webhook caller already uses service role key ? no breaking
          changes. Attack vector closed.
 Status: CLOSED
 
 ### Entry-338
 Date: 2026-05-03 14:58 San Diego
 Fix: SS-FIX-345
-Title: Raw error suppression — 3 edge functions
+Title: Raw error suppression ? 3 edge functions
 Summary: Lovable security scan flagged get-anonymous-tracks,
          get-greeting-context, and update-taste-preferences edge
          functions returning raw String(err) and err.message to
@@ -7960,9 +7960,9 @@ Status: CLOSED
 ### Entry-339
 Date: 2026-05-03 15:00 San Diego
 Fix: SS-FIX-346
-Title: Family members SELECT policy — user own record access
+Title: Family members SELECT policy ? user own record access
 Summary: Lovable security scan flagged family_members table having
-         no SELECT policy for users or account owners — only admins
+         no SELECT policy for users or account owners ? only admins
          could read. Family members could not verify their own
          membership. Added RLS SELECT policy USING (auth.uid() =
          user_id) for authenticated role. Verified 2 policies exist
@@ -7972,13 +7972,13 @@ Status: CLOSED
 ### Entry-340
 Date: 2026-05-03 15:02 San Diego
 Fix: SS-FIX-347
-Title: Rate limiting — verify-certificate edge function
+Title: Rate limiting ? verify-certificate edge function
 Summary: Lovable security scan flagged verify-certificate edge
          function inserting into observability_metrics and
          ai_certification_ledger on every request with no rate
-         limiting — enabling DB flood by unauthenticated callers.
+         limiting ? enabling DB flood by unauthenticated callers.
          IP-based in-memory rate limit added (10 req/min per IP).
-         Per-instance limitation acknowledged — standard approach
+         Per-instance limitation acknowledged ? standard approach
          for edge functions without Redis infrastructure.
          HTTP 429 returned on exceeded limit.
 Status: CLOSED
@@ -7986,7 +7986,7 @@ Status: CLOSED
 ### Entry-341
 Date: 2026-05-03 15:06 San Diego
 Fix: SS-FIX-348
-Title: SECURITY DEFINER function excess grants — second audit
+Title: SECURITY DEFINER function excess grants ? second audit
 Summary: Second audit of SECURITY DEFINER function grants following
          SS-FIX-340. Three internal functions identified with excess
          authenticated grants: enforce_encrypted_guardian_tokens
@@ -8000,13 +8000,13 @@ Status: CLOSED
 ### Entry-342
 Date: 2026-05-03 15:20 San Diego
 Fix: SS-FIX-349
-Title: RLS privilege escalation fixes — subscriptions + tracks
+Title: RLS privilege escalation fixes ? subscriptions + tracks
 Summary: Security memory update revealed two real privilege
          escalation vectors. Fix 1: subscriptions INSERT policy
-         restricted to status='pending' — users can no longer
+         restricted to status='pending' ? users can no longer
          bypass Stripe and self-grant active subscriptions. Fix 2:
          tracks UPDATE policy restricted to preserve current status
-         — artists can no longer self-approve own tracks bypassing
+         ? artists can no longer self-approve own tracks bypassing
          admin review. Both fixes applied via Lovable migration.
          Stripe webhook and admin flows unaffected.
 Status: CLOSED
@@ -8028,9 +8028,9 @@ Status: CLOSED
 ### Entry-344
 Date: 2026-05-03 15:41 San Diego
 Fix: SS-FIX-351
-Title: verify-certificate rate limit — in-memory to DB-backed
+Title: verify-certificate rate limit ? in-memory to DB-backed
 Summary: Security memory audit noted verify-certificate in-memory
-         rate limit (SS-FIX-347) resets on cold starts — not
+         rate limit (SS-FIX-347) resets on cold starts ? not
          persistent across edge function instances. Switched to
          shared DB-backed checkRateLimit helper using
          system_rate_limits table. 10 req/min per IP limit
@@ -8042,11 +8042,11 @@ Status: CLOSED
 ### Entry-345
 Date: 2026-05-03 16:13 San Diego
 Fix: SS-FIX-352
-Title: Following filter — Browse page filter panel
+Title: Following filter ? Browse page filter panel
 Summary: Added Following filter as first option in Browse page
          filter panel (desktop FilterBar + MobileFilterDrawer).
          New useFollowingArtistIds hook queries user_follows table.
-         Filter applied at data layer via useInfiniteTracks —
+         Filter applied at data layer via useInfiniteTracks ?
          works across all 3 views automatically. URL param
          following=true persists state on refresh. Anonymous users
          see no filter. Users following nobody see inline notice
@@ -8057,7 +8057,7 @@ Status: CLOSED
 ### Entry-346
 Date: 2026-05-03 17:50 San Diego
 Fix: SS-FIX-353
-Title: Fun features batch — 7 visual and social enhancements
+Title: Fun features batch ? 7 visual and social enhancements
 Summary: Seven visual and social enhancements added to SS321:
          equalizer bars on mini player and now-playing cards,
          confetti+Thank You on purchase confirmation, floating
@@ -8071,13 +8071,13 @@ Status: CLOSED
 ### Entry-347
 Date: 2026-05-03 20:06 San Diego
 Fix: SS-FIX-354
-Title: Enhanced features batch — artist flip cards, waveform, animations
-Summary: Artist flip cards added to all 3 track card views —
+Title: Enhanced features batch ? artist flip cards, waveform, animations
+Summary: Artist flip cards added to all 3 track card views ?
          clicking artist name flips card to show artist profile,
          gold Follow and green View Profile buttons on back face.
          WaveSurfer.js waveform added to TrackPage (80px, seekable)
          and Browse page (48px, sticky while playing). Flying SS321
-         logo Option E animation added — burst, arc spin, landing
+         logo Option E animation added ? burst, arc spin, landing
          flash, hold, fade. Logo 64px, holds at waveform before
          fading. Sticky waveform behavior on Browse. Channel
          collision fix on useListenerCount. All confirmed passing.
@@ -8091,7 +8091,7 @@ Summary: Added animated ?? finger emoji to the right of
          the Live listener count pill in Header.tsx.
          Rotated -90deg to point left toward the pill.
          Slow 2s ease-in-out pulse animation. Only renders
-         when onlineCount >= 1 — hidden when no users online.
+         when onlineCount >= 1 ? hidden when no users online.
          Applied to both mobile and desktop pill renders.
          animate-pulse-slow keyframe added to index.css.
 Status: CLOSED
@@ -8128,12 +8128,12 @@ Status: CLOSED
 ### Entry-351
 Date: 2026-05-03 22:38 San Diego
 Fix: SS-FIX-358
-Title: Activity feed — show comment text inline
+Title: Activity feed ? show comment text inline
 Summary: Live Activity feed was showing "commented" pill
          without the actual comment text. feed_activity
          metadata stores comment_id only. Added batch fetch
          from comments table using collected comment_ids.
-         Comment text rendered inline next to pill — italic,
+         Comment text rendered inline next to pill ? italic,
          muted, 60 char truncation, quoted. Single batched
          query per page load for efficiency. Confirmed passing.
 Status: CLOSED
@@ -8143,7 +8143,7 @@ Date: 2026-05-03 22:49 San Diego
 Fix: SS-FIX-359
 Title: Header avatar not updating after profile picture change
 Summary: Header avatar was reading from Supabase auth
-         user_metadata which Profile.tsx never updated — only
+         user_metadata which Profile.tsx never updated ? only
          the profiles table row was updated. Header refactored
          to use useQuery on profiles table with auth metadata
          as fallback. Profile.tsx invalidates query after
@@ -8168,13 +8168,13 @@ Status: CLOSED
 ### Entry-354
 Date: 2026-05-04 01:00 San Diego
 Fix: SS-FIX-361
-Title: Privacy Review Modal — full implementation
+Title: Privacy Review Modal ? full implementation
 Summary: Built complete privacy review system. Updated
          /privacy page with 12-section SS321-specific
          statement covering TY AI, Claude, no data selling,
          CCPA/GDPR. Built undismissable Privacy Review Modal
          with 11 toggles (7 privacy + 4 notifications).
-         3-day grace period soft lock implemented — 6 new
+         3-day grace period soft lock implemented ? 6 new
          DB columns on profiles. Privacy/Terms links open
          700x600 popup windows. Modal excluded from /privacy
          and /terms routes. First login + monthly trigger.
@@ -10376,7 +10376,7 @@ URLs (silversounds321.com/track/electric-smile-ver14-jose-ramon confirmed).
 **Finding:** VerifyPage.tsx contained a paragraph stating 'Post-Phase-5 adoption strategy is pending.' This note was written during the Phase 5 era and never updated. Identified as F-T3-012 during Phase 8 Track 3 audit. Deferred twice. Resolved this session on builder direction.
 **Change:** 4 lines removed (0-indexed lines 144-147). File reduced from 322 to 318 lines. No structural or governance impact.
 **Files changed:** src/pages/VerifyPage.tsx (TYOVA)
-**Status:** COMPLETE — F-T3-012 CLOSED
+**Status:** COMPLETE ? F-T3-012 CLOSED
 
 ### Entry-514 | FIX-503 | 2026-05-15 15:07 PDT San Diego
 **Action:** TY-0001.B registered in TYOVA VerifyPage.tsx KNOWN_FINGERPRINTS.
@@ -10973,7 +10973,7 @@ Session 4 begins Phase 11 Track B: FIX-515 Steps 5-7 -- warning interception + s
 
 ### Entry-535 | FIX-527 | 2026-05-17 10:43 PDT San Diego
 **Action:** NOTICE.md added to all 6 TY AI OS repositories.
-**Repos:** ty-ai-governance (bdc9f72) · Jaya-Runtime (14f38a3) · TYOVA (bf64521) · luke-ai (48f5de7) · jayme-ai (f4e1059) · ty-ai-os-releases (bf53c6a)
+**Repos:** ty-ai-governance (bdc9f72) ? Jaya-Runtime (14f38a3) ? TYOVA (bf64521) ? luke-ai (48f5de7) ? jayme-ai (f4e1059) ? ty-ai-os-releases (bf53c6a)
 **Spec:** TY_NOTICE_AND_WARNING_PROTOCOL_v0.1.md Section 6.2 -- Layer 3 distribution notice. Verbatim canonical text. 1454 bytes per repo. UTF-8 clean verified.
 **Status:** COMPLETE
 ### Entry-536 | FIX-528 | 2026-05-17 10:56 PDT San Diego
@@ -11433,29 +11433,29 @@ Phase 12 Evolution Tauri wiring complete. 4 evolution tables added to init_db. 6
 **Status:** CLOSED
 ### Entry-574 | FIX-555 | 2026-05-20 09:01-11:53 PDT San Diego
 
-**Destination:** TYOVA (Lovable — TYOVA Integrity Hub)
-**Scope:** Governed Evolution dashboard — Phase 12 seal record
+**Destination:** TYOVA (Lovable ? TYOVA Integrity Hub)
+**Scope:** Governed Evolution dashboard ? Phase 12 seal record
 
-Created src/ty-ai-admin-core/sections/evolution/EvolutionDashboard.tsx — read-only governance transparency page documenting Phase 12 Governed Evolution. Five panels: Phase Seal Record (phase 12, sealed 2026-05-19, commit 85d4ef4, 155/155 tests), Three-Layer Evolution Model (Immutable/Governed/Signed), Anti-Capture Rules (EVOL-AC-1 through EVOL-AC-6), Evolution Flow (6 steps), Runtime Enforcement Note (7-day deliberation enforced in Rust). Static content only — no Supabase, no state, no effects.
+Created src/ty-ai-admin-core/sections/evolution/EvolutionDashboard.tsx ? read-only governance transparency page documenting Phase 12 Governed Evolution. Five panels: Phase Seal Record (phase 12, sealed 2026-05-19, commit 85d4ef4, 155/155 tests), Three-Layer Evolution Model (Immutable/Governed/Signed), Anti-Capture Rules (EVOL-AC-1 through EVOL-AC-6), Evolution Flow (6 steps), Runtime Enforcement Note (7-day deliberation enforced in Rust). Static content only ? no Supabase, no state, no effects.
 
 Registered in three locations: sections/index.ts (export + import + SECTION_DASHBOARDS map), masterHubRegistry.ts (hubSections entry, group: governance, order: 14), TYAIHubNavigation.tsx (hardcoded nav list after kill-switch-verification).
 
-Root causes resolved: (1) TYAIHubNavigation.tsx is a hardcoded nav list — not dynamic from hubSections — required direct insertion. (2) DataTable<LayerRow> generic JSX syntax caused silent esbuild failure in local WriteAllText version — fixed by restoring Lovable 889a07a via git checkout. (3) Out-File/string pipeline UTF-8 em dash corruption — fixed by git checkout 889a07a bypassing PowerShell string pipeline. (4) Lovable GitHub sync was broken — all three files applied locally and pushed directly.
+Root causes resolved: (1) TYAIHubNavigation.tsx is a hardcoded nav list ? not dynamic from hubSections ? required direct insertion. (2) DataTable<LayerRow> generic JSX syntax caused silent esbuild failure in local WriteAllText version ? fixed by restoring Lovable 889a07a via git checkout. (3) Out-File/string pipeline UTF-8 em dash corruption ? fixed by git checkout 889a07a bypassing PowerShell string pipeline. (4) Lovable GitHub sync was broken ? all three files applied locally and pushed directly.
 
 Commits: d1f0beb, 32ae6ae, 9a9ec20, 6de8f7c, e15805b, 69f3b31
 TYOVA HEAD: 69f3b31
-Section count: 75 (correct — governed-evolution is entry 75 of 75 in hubSections)
+Section count: 75 (correct ? governed-evolution is entry 75 of 75 in hubSections)
 
 ### FLAG-30 | 2026-05-20 12:28 PDT San Diego
 
-**TYOVA Dashboard Data Integrity — Hardcoded vs Verifiable Data**
-**Status:** OPEN — Deferred Phase 13+
+**TYOVA Dashboard Data Integrity ? Hardcoded vs Verifiable Data**
+**Status:** OPEN ? Deferred Phase 13+
 
 TYOVA section dashboards (Governance Center, Security Dashboard, Trust Score, and others) display hardcoded numbers that visually resemble live metrics (e.g. "Active Constraints: 47", "Compliance Score: 100%"). These values are static constants written into React components. They have no live connection to Jaya Runtime or any data source.
 
 Two tiers exist and are currently not clearly separated:
-(1) Governance Record pages (EvolutionDashboard, phase seal records) — correctly hardcoded historical facts with verifiable git commit hashes. A reader can verify every claim against the actual repo.
-(2) System State dashboard pages — hardcoded illustrative numbers that look like real metrics but are not connected to any running instance.
+(1) Governance Record pages (EvolutionDashboard, phase seal records) ? correctly hardcoded historical facts with verifiable git commit hashes. A reader can verify every claim against the actual repo.
+(2) System State dashboard pages ? hardcoded illustrative numbers that look like real metrics but are not connected to any running instance.
 
 The second tier is a governance integrity concern. A user relying on dashboard numbers for verification would be misled. The "Recorded Snapshot" label partially mitigates this but is insufficient for sophisticated verifiers.
 
@@ -11464,14 +11464,14 @@ Required resolution (Phase 13+):
 - The Verify page should be reinforced as the primary verification surface.
 - Governance Record pages (sealed phase records with commit hashes) are correctly designed and require no change.
 
-Scope: TYOVA — requires architectural decision on live data bridge vs explicit placeholder labeling.
+Scope: TYOVA ? requires architectural decision on live data bridge vs explicit placeholder labeling.
 
 ### Entry-575 | FIX-556 | 2026-05-20 12:01-12:28 PDT San Diego
 
-**Destination:** TYOVA (Lovable — TYOVA Integrity Hub)
-**Scope:** Complete TYAIHubNavigation — 7 missing sections + SS321 label fix
+**Destination:** TYOVA (Lovable ? TYOVA Integrity Hub)
+**Scope:** Complete TYAIHubNavigation ? 7 missing sections + SS321 label fix
 
-Added 7 missing sections to hardcoded getNavItems() array in TYAIHubNavigation.tsx: Governance Repo (governance-repo), FIX Ledger (fix-ledger), CLO Tag System (clo-tag-system), Seal Discipline (seal-discipline), CRI Cumulative Risk Index (cri-cumulative-risk-index), Non-Weaponization Guardrail (non-weaponization-guardrail) inserted before Governed Evolution in governance block. Book of TY (book-of-ty) inserted after Emotions Monitor in core block. All use already-imported lucide icons. SS321 separator label corrected from "SS321 only -- active when connected" to "Runtime sections — only active in SS321 admin panel" — the prior label was architecturally inaccurate in TYOVA context. TYOVA never enters runtime mode per locked ChatGPT design decision (TYOVA Part 4). FLAG-30 logged: TYOVA dashboard data integrity concern (hardcoded vs verifiable data) deferred to Phase 13+.
+Added 7 missing sections to hardcoded getNavItems() array in TYAIHubNavigation.tsx: Governance Repo (governance-repo), FIX Ledger (fix-ledger), CLO Tag System (clo-tag-system), Seal Discipline (seal-discipline), CRI Cumulative Risk Index (cri-cumulative-risk-index), Non-Weaponization Guardrail (non-weaponization-guardrail) inserted before Governed Evolution in governance block. Book of TY (book-of-ty) inserted after Emotions Monitor in core block. All use already-imported lucide icons. SS321 separator label corrected from "SS321 only -- active when connected" to "Runtime sections ? only active in SS321 admin panel" ? the prior label was architecturally inaccurate in TYOVA context. TYOVA never enters runtime mode per locked ChatGPT design decision (TYOVA Part 4). FLAG-30 logged: TYOVA dashboard data integrity concern (hardcoded vs verifiable data) deferred to Phase 13+.
 
 Commit: 2378959
 TYOVA HEAD: 2378959
@@ -11531,7 +11531,7 @@ Verified install route -- /distribution correct target + View Compliance Kit fix
 
 **Destination:** TYOVA
 **Commit:** cd3c38f
-**Scope:** TY AI Master Hub audit — remove 6 sections (Emotions Monitor, Multiverse, Reality Consensus, Global IP Shield GIPS-X, Time Machine, Repair Blueprints), update phase header from Phase 5 to Phase 12
+**Scope:** TY AI Master Hub audit ? remove 6 sections (Emotions Monitor, Multiverse, Reality Consensus, Global IP Shield GIPS-X, Time Machine, Repair Blueprints), update phase header from Phase 5 to Phase 12
 
 Removed 6 sections (Emotions Monitor, Multiverse, Reality Consensus, Global IP Shield GIPS-X, Time Machine, Repair Blueprints) from masterHubRegistry.ts and TYAIHubNavigation.tsx. Phase header updated from Phase 5 to Phase 12 Sealed. Live verified.
 
@@ -11541,7 +11541,7 @@ Removed 6 sections (Emotions Monitor, Multiverse, Reality Consensus, Global IP S
 
 **Destination:** TYOVA
 **Commit:** 838eb80
-**Scope:** TY AI Master Hub — add 6 missing sections: Human Verification Protocol, External User Governance, Governed Update Delivery, Luke AI, Jayme AI, Guardian Codex
+**Scope:** TY AI Master Hub ? add 6 missing sections: Human Verification Protocol, External User Governance, Governed Update Delivery, Luke AI, Jayme AI, Guardian Codex
 
 Added 6 missing sections to TY AI Master Hub: Human Verification Protocol, External User Governance, Governed Update Delivery, Guardian Codex (governance group), Luke AI, Jayme AI (autonomy group). Registered in masterHubRegistry.ts and TYAIHubNavigation.tsx. All 6 sections live and verified.
 
@@ -11553,7 +11553,7 @@ Added 6 missing sections to TY AI Master Hub: Human Verification Protocol, Exter
 **Commit:** 688122f
 **Scope:** Extend HubSection schema with features, metrics, status, lastRecorded fields. Populate 6 new sections with full content. Modify GenericDashboard to render enriched fields.
 
-HubSection schema extended with features, metrics, status, lastRecorded fields. GenericDashboard updated with conditional rendering and fallback. 6 new sections populated with full content. Live verified — all fields rendering correctly.
+HubSection schema extended with features, metrics, status, lastRecorded fields. GenericDashboard updated with conditional rendering and fallback. 6 new sections populated with full content. Live verified ? all fields rendering correctly.
 
 **Status:** CLOSED
 
@@ -11561,9 +11561,9 @@ HubSection schema extended with features, metrics, status, lastRecorded fields. 
 
 **Destination:** TYOVA
 **Commit:** 238ae0e
-**Scope:** GenericDashboard SS321 label cleanup — remove SS321 badges from Component Status, Data Record, and Operation Mode fields for non-SS321 sections
+**Scope:** GenericDashboard SS321 label cleanup ? remove SS321 badges from Component Status, Data Record, and Operation Mode fields for non-SS321 sections
 
-GenericDashboard SS321 badge now conditional — admin group sections retain SS321 labels, all other sections render clean labels (Standard/Recorded/Standard). Live verified on seal-discipline and jayme-ai.
+GenericDashboard SS321 badge now conditional ? admin group sections retain SS321 labels, all other sections render clean labels (Standard/Recorded/Standard). Live verified on seal-discipline and jayme-ai.
 
 **Status:** CLOSED
 
@@ -11571,7 +11571,7 @@ GenericDashboard SS321 badge now conditional — admin group sections retain SS321
 
 **Destination:** TYOVA
 **Commit:** 7f2f211
-**Scope:** SS321 label cleanup in dedicated dashboard components — GovernanceDashboard and SecurityDashboard — same conditional fix applied in FIX-565
+**Scope:** SS321 label cleanup in dedicated dashboard components ? GovernanceDashboard and SecurityDashboard ? same conditional fix applied in FIX-565
 
 SS321 label cleanup applied to all 13 dedicated dashboard components. section prop threaded through MasterHubSection and index.ts. All non-admin dashboards now render clean labels. Live verified on governance-center.
 
@@ -11581,9 +11581,9 @@ SS321 label cleanup applied to all 13 dedicated dashboard components. section pr
 
 **Destination:** TYOVA
 **Commit:** df1ebd6
-**Scope:** Hub content — populate Features and Metrics for 16 empty hub sections
+**Scope:** Hub content ? populate Features and Metrics for 16 empty hub sections
 
-Hub content populated — 16 sections updated in masterHubRegistry.ts. 11 speculative sections marked Planned Phase 13+ with honest labels and empty metrics. 5 active sections (cognitive-drift, meta-autonomy, supervisor-engine, attil-progression, auto-diagnosis) populated with verified features and metrics from confirmed Jaya Runtime modules. Zero-Fabrication Rule enforced throughout.
+Hub content populated ? 16 sections updated in masterHubRegistry.ts. 11 speculative sections marked Planned Phase 13+ with honest labels and empty metrics. 5 active sections (cognitive-drift, meta-autonomy, supervisor-engine, attil-progression, auto-diagnosis) populated with verified features and metrics from confirmed Jaya Runtime modules. Zero-Fabrication Rule enforced throughout.
 
 **Status:** CLOSED
 
@@ -11591,7 +11591,7 @@ Hub content populated — 16 sections updated in masterHubRegistry.ts. 11 speculat
 
 **Destination:** TYOVA
 **Commit:** 8d4bf69
-**Scope:** Version label corrections — expansion Phase12Sealed, snapshotDate 2026-05-21, HubLayout snapshotVersion dynamic from HUB_VERSION.hubSchema
+**Scope:** Version label corrections ? expansion Phase12Sealed, snapshotDate 2026-05-21, HubLayout snapshotVersion dynamic from HUB_VERSION.hubSchema
 
 masterHubRegistry.ts: expansion updated Phase5Complete to Phase12Sealed, snapshotDate updated 2026-03-22 to 2026-05-21. HubLayout.tsx: HUB_VERSION imported, snapshotVersion prop changed from hardcoded 14.4.0 to dynamic HUB_VERSION.hubSchema. Hub pages now display Recorded Snapshot v14.6.0.
 
@@ -11601,9 +11601,9 @@ masterHubRegistry.ts: expansion updated Phase5Complete to Phase12Sealed, snapsho
 
 **Destination:** Jaya-Runtime
 **Commit:** fa7c613
-**Scope:** Step 5.2 — supabase_writer.rs — Luke explanation events written to jaya_audit_events table in SS321 Supabase
+**Scope:** Step 5.2 ? supabase_writer.rs ? Luke explanation events written to jaya_audit_events table in SS321 Supabase
 
-Step 5.2 complete. supabase_writer.rs created — JayaAuditEvent struct, write_luke_explanation async fn, fire-and-forget from luke_explain_entry. lib.rs: mod supabase_writer added, luke_explain_entry made async, match arm updated with writer call. jaya_audit_events table created in SS321 Supabase with RLS. 169/169 tests passing including 2 new supabase_writer unit tests.
+Step 5.2 complete. supabase_writer.rs created ? JayaAuditEvent struct, write_luke_explanation async fn, fire-and-forget from luke_explain_entry. lib.rs: mod supabase_writer added, luke_explain_entry made async, match arm updated with writer call. jaya_audit_events table created in SS321 Supabase with RLS. 169/169 tests passing including 2 new supabase_writer unit tests.
 
 **Status:** CLOSED
 
@@ -11611,9 +11611,9 @@ Step 5.2 complete. supabase_writer.rs created — JayaAuditEvent struct, write_luk
 
 **Destination:** SS321
 **Commit:** Lovable-SS321
-**Scope:** Option B — /governance page expansion — live event feed, status indicator, public RPC with limited field exposure
+**Scope:** Option B ? /governance page expansion ? live event feed, status indicator, public RPC with limited field exposure
 
-FIX-570 complete. New RPC get_governance_events_public — 5 fields only, no PII. /status page created — TY AI OS Live Status, status banner, live event feed 30s polling. /governance reverted to 6 cards. /governance renamed to TY AI Governance with updated subtitle. Nav dropdown updated: TY AI, Governance, Live Status. Verified live silversounds321.com. Lovable-managed SS321 source.
+FIX-570 complete. New RPC get_governance_events_public ? 5 fields only, no PII. /status page created ? TY AI OS Live Status, status banner, live event feed 30s polling. /governance reverted to 6 cards. /governance renamed to TY AI Governance with updated subtitle. Nav dropdown updated: TY AI, Governance, Live Status. Verified live silversounds321.com. Lovable-managed SS321 source.
 
 **Status:** CLOSED
 
@@ -11621,7 +11621,7 @@ FIX-570 complete. New RPC get_governance_events_public — 5 fields only, no PII. 
 
 **Destination:** TYOVA
 **Commit:** 96945a0
-**Scope:** Restore 6 deleted hub sections with accurate names — Behavioral Alerts, Federation Network, Governance Consensus, Content Shield, Audit History, Rollback Protocol
+**Scope:** Restore 6 deleted hub sections with accurate names ? Behavioral Alerts, Federation Network, Governance Consensus, Content Shield, Audit History, Rollback Protocol
 
 6 deleted hub sections restored with accurate names: Rollback Protocol, AI Behavior Alerts, Governance Audit History, Governance Verification Consensus, Content Governance Shield, Federation Deployment Network. 2 existing sections upgraded from Planned Phase 13+ to active: fix-simulation to Phase 12 evolution deliberation, healing-engine to protection_state.rs. All 8 changes verified. Governance Audit History page confirmed live with 6 features and 3 metrics.
 
@@ -11631,9 +11631,9 @@ FIX-570 complete. New RPC get_governance_events_public — 5 fields only, no PII. 
 
 **Destination:** Jaya-Runtime
 **Commit:** 8316b64
-**Scope:** Option A — Status Panel with connection indicators, blinking cards, Resend email alerts on component disconnect
+**Scope:** Option A ? Status Panel with connection indicators, blinking cards, Resend email alerts on component disconnect
 
-Option A complete. email_alert.rs — Resend API client, load_resend_config, send_governance_alert. StatusPanel.tsx — 4 connection cards with blinking amber on disconnect, auto-email alert on transition to disconnected, 30s polling, Send Test Alert button. lib.rs — mod email_alert, 6 new Tauri commands: check_supabase_connection, check_jaya_audit_connection, check_luke_status, check_local_ledger, get_governance_bridge_stats, send_governance_alert_email. App.tsx — StatusPanel import, status tab type, TY Status button, render. 171/171 passing.
+Option A complete. email_alert.rs ? Resend API client, load_resend_config, send_governance_alert. StatusPanel.tsx ? 4 connection cards with blinking amber on disconnect, auto-email alert on transition to disconnected, 30s polling, Send Test Alert button. lib.rs ? mod email_alert, 6 new Tauri commands: check_supabase_connection, check_jaya_audit_connection, check_luke_status, check_local_ledger, get_governance_bridge_stats, send_governance_alert_email. App.tsx ? StatusPanel import, status tab type, TY Status button, render. 171/171 passing.
 
 **Status:** CLOSED
 
@@ -11641,9 +11641,9 @@ Option A complete. email_alert.rs — Resend API client, load_resend_config, send_
 
 **Destination:** TYOVA
 **Commit:** f918592
-**Scope:** Version corrections — tyAiOs v2.0, top bar v14.4.0 fixed to v14.6.0, TY-0001 release versioning scheme adopted
+**Scope:** Version corrections ? tyAiOs v2.0, top bar v14.4.0 fixed to v14.6.0, TY-0001 release versioning scheme adopted
 
-Version corrections complete. tyAiOs updated 5.0.0 to 2.0 reflecting TY-0001.C readiness. TyAiAdminCore default snapshotVersion 14.4.0 to 14.6.0 — fixes top bar on hub welcome page. BookLayout explicit snapshotVersion 14.4.0 to 14.6.0. EditModeContext CURRENT_VERSION 14.4.0 to 14.6.0. fingerprint.ts and test fixtures left untouched — historical records. TY-0001 release versioning scheme adopted.
+Version corrections complete. tyAiOs updated 5.0.0 to 2.0 reflecting TY-0001.C readiness. TyAiAdminCore default snapshotVersion 14.4.0 to 14.6.0 ? fixes top bar on hub welcome page. BookLayout explicit snapshotVersion 14.4.0 to 14.6.0. EditModeContext CURRENT_VERSION 14.4.0 to 14.6.0. fingerprint.ts and test fixtures left untouched ? historical records. TY-0001 release versioning scheme adopted.
 
 **Status:** CLOSED
 
@@ -11651,9 +11651,9 @@ Version corrections complete. tyAiOs updated 5.0.0 to 2.0 reflecting TY-0001.C r
 
 **Destination:** TYOVA
 **Commit:** a206085
-**Scope:** Dynamic version wiring — TyAiAdminCore, BookLayout, EditModeContext import HUB_VERSION from masterHubRegistry — single source of truth
+**Scope:** Dynamic version wiring ? TyAiAdminCore, BookLayout, EditModeContext import HUB_VERSION from masterHubRegistry ? single source of truth
 
-Dynamic version wiring complete. TyAiAdminCore, BookLayout, EditModeContext now import HUB_VERSION from masterHubRegistry.ts and read hubSchema dynamically. Single source of truth established — update masterHubRegistry.ts once and all displays cascade automatically.
+Dynamic version wiring complete. TyAiAdminCore, BookLayout, EditModeContext now import HUB_VERSION from masterHubRegistry.ts and read hubSchema dynamically. Single source of truth established ? update masterHubRegistry.ts once and all displays cascade automatically.
 
 **Status:** CLOSED
 
@@ -11661,9 +11661,9 @@ Dynamic version wiring complete. TyAiAdminCore, BookLayout, EditModeContext now 
 
 **Destination:** TYOVA
 **Commit:** 00b6b07
-**Scope:** HowTyAiOsWorksPage accuracy + dynamic ECOSYSTEM_STATS — phases, chapters, tests wired to masterHubRegistry single source of truth
+**Scope:** HowTyAiOsWorksPage accuracy + dynamic ECOSYSTEM_STATS ? phases, chapters, tests wired to masterHubRegistry single source of truth
 
-HowTyAiOsWorksPage accuracy fixed. ECOSYSTEM_STATS added to masterHubRegistry.ts: phasesSealed 12, chaptersSealed 61, testsTotal 171, testsPass 171, releaseVersion TY-0001.B. HowTyAiOsWorksPage imports ECOSYSTEM_STATS and reads dynamically — 7 Phases corrected to 12 Sealed, 122 Parts corrected to 12 Phases Sealed, 34 Chapters corrected to 61. Single source of truth extended.
+HowTyAiOsWorksPage accuracy fixed. ECOSYSTEM_STATS added to masterHubRegistry.ts: phasesSealed 12, chaptersSealed 61, testsTotal 171, testsPass 171, releaseVersion TY-0001.B. HowTyAiOsWorksPage imports ECOSYSTEM_STATS and reads dynamically ? 7 Phases corrected to 12 Sealed, 122 Parts corrected to 12 Phases Sealed, 34 Chapters corrected to 61. Single source of truth extended.
 
 **Status:** CLOSED
 
@@ -11671,7 +11671,7 @@ HowTyAiOsWorksPage accuracy fixed. ECOSYSTEM_STATS added to masterHubRegistry.ts
 
 **Destination:** TYOVA
 **Commit:** 4595b73
-**Scope:** HowTyAiOsWorksPage conceptual notes accuracy — 2 statements updated to reflect Jaya Runtime as real deployable software
+**Scope:** HowTyAiOsWorksPage conceptual notes accuracy ? 2 statements updated to reflect Jaya Runtime as real deployable software
 
 HowTyAiOsWorksPage conceptual notes corrected. Governance Scope paragraph updated: Jaya Runtime acknowledged as deployable execution engine implemented in working software. No Execution paragraph updated: TYOVA described as non-executing canonical archive, Jaya Runtime described as local governance enforcer with human-granted authority.
 
@@ -11681,7 +11681,7 @@ HowTyAiOsWorksPage conceptual notes corrected. Governance Scope paragraph update
 
 **Destination:** TYOVA
 **Commit:** 821a500
-**Scope:** TyAiOsIndex accuracy — Phase 5 to Phase 12 Sealed, 30 chapters to 61, dynamic ECOSYSTEM_STATS wiring
+**Scope:** TyAiOsIndex accuracy ? Phase 5 to Phase 12 Sealed, 30 chapters to 61, dynamic ECOSYSTEM_STATS wiring
 
 TyAiOsIndex accuracy fixed. Phase 5 Track B badge updated to Phase 12 Sealed dynamic. Chapters 1-30 Sealed badge updated to 61 Chapters dynamic. Book of TY 30 chapters updated to 61 dynamic. Wording updated from actively under development to 12 phases sealed proven live. ECOSYSTEM_STATS added to existing masterHubRegistry import.
 
@@ -11691,7 +11691,7 @@ TyAiOsIndex accuracy fixed. Phase 5 Track B badge updated to Phase 12 Sealed dyn
 
 **Destination:** TYOVA
 **Commit:** 1f4fa14
-**Scope:** TyAiOsAboutPage accuracy — Phase 12 Governed Evolution, stats dynamic ECOSYSTEM_STATS, 161 proof conditions
+**Scope:** TyAiOsAboutPage accuracy ? Phase 12 Governed Evolution, stats dynamic ECOSYSTEM_STATS, 161 proof conditions
 
 TyAiOsAboutPage accuracy fixed. ECOSYSTEM_STATS import added. Current Status paragraph updated: As of 2026-05-21, Phase 12 Governed Evolution, proven live. Stats array updated: Parts Sealed 122 to Phases Sealed dynamic, Phases Complete 7 to Tests Passing dynamic, Chapters 38 to dynamic, Proof Conditions 4 to 161. Historical timeline entries untouched.
 
@@ -11701,7 +11701,7 @@ TyAiOsAboutPage accuracy fixed. ECOSYSTEM_STATS import added. Current Status par
 
 **Destination:** TYOVA
 **Commit:** 97c7a47
-**Scope:** Page accuracy audit — /jaya/overview — JayaOverview.tsx stale data remediation
+**Scope:** Page accuracy audit ? /jaya/overview ? JayaOverview.tsx stale data remediation
 
 JayaOverview.tsx: Current Status updated Phases 1-12, Phases Complete appended 8-12, footer seal record updated with Phase 10/11/12. JayaPartsIndex.tsx: Phase Summary added Phase 10 (FIX-506-514), Phase 11 (FIX-515-526), Phase 12 (FIX-540-558). All dates verified from primary sources.
 
@@ -11711,7 +11711,7 @@ JayaOverview.tsx: Current Status updated Phases 1-12, Phases Complete appended 8
 
 **Destination:** TYOVA
 **Commit:** fcd2224
-**Scope:** Page accuracy audit — /distribution — stale data remediation
+**Scope:** Page accuracy audit ? /distribution ? stale data remediation
 
 DistributionPage.tsx: Installation Question Registry description corrected from 18 to 24 questions per FIX-514 installer expansion. All other content accurate -- TY-0001.B, SHA-256, GitHub link all verified correct.
 
@@ -11721,7 +11721,7 @@ DistributionPage.tsx: Installation Question Registry description corrected from 
 
 **Destination:** TYOVA
 **Commit:** 6ea7497
-**Scope:** Page accuracy audit — /verify — stale data remediation
+**Scope:** Page accuracy audit ? /verify ? stale data remediation
 
 VerifyPage.tsx: TY-0001.A version corrected from placeholder 5.0.0 to TY-0001.A. KNOWN_FINGERPRINTS registry architecture confirmed append-only, version strings are immutable per-entry. Distribution status updated -- TY-0001.B is live on GitHub Releases. All SHA-256 hashes verified accurate.
 
@@ -11731,7 +11731,7 @@ VerifyPage.tsx: TY-0001.A version corrected from placeholder 5.0.0 to TY-0001.A.
 
 **Destination:** TYOVA
 **Commit:** 5b3a927
-**Scope:** Page accuracy audit — /artifacts — stale data remediation
+**Scope:** Page accuracy audit ? /artifacts ? stale data remediation
 
 ArtifactsPage.tsx: Book of TY type and description now dynamic via ECOSYSTEM_STATS.chaptersSealed and phasesSealed. ECOSYSTEM_STATS import added. Distribution status updated TY-0001.B live. Template literal fix required two-pass correction due to PowerShell dollar-sign expansion in first attempt.
 
@@ -11741,7 +11741,7 @@ ArtifactsPage.tsx: Book of TY type and description now dynamic via ECOSYSTEM_STA
 
 **Destination:** TYOVA
 **Commit:** ca7754e
-**Scope:** Page accuracy audit — /canon-ledger — stale data remediation
+**Scope:** Page accuracy audit ? /canon-ledger ? stale data remediation
 
 CanonLedgerPage.tsx: Date now dynamic via HUB_VERSION.snapshotDate. Phases Complete and Chapters Sealed now dynamic via ECOSYSTEM_STATS. Vocabulary Terms corrected 232 to 341 hardcoded. Phase 7 status corrected ACTIVE to SEALED, parts corrected 113-122+ to 113-122. Phases 8-12 added to Sealed Phases list with verified FIX ranges and seal dates.
 
@@ -11751,7 +11751,7 @@ CanonLedgerPage.tsx: Date now dynamic via HUB_VERSION.snapshotDate. Phases Compl
 
 **Destination:** TYOVA
 **Commit:** f8ac2ac
-**Scope:** Page accuracy audit — /book — stale data remediation
+**Scope:** Page accuracy audit ? /book ? stale data remediation
 
 BookOfTyIndex.tsx: ECOSYSTEM_STATS import added. Hero description simplified -- stale 47 chapters count removed. Stats grid now fully dynamic: Total Chapters via chapters.length, Sealed via chapters.filter sealed, Living via chapters.filter living, Phases Documented via ECOSYSTEM_STATS.phasesSealed. 167 tests updated to ECOSYSTEM_STATS.testsTotal.
 
@@ -11761,7 +11761,7 @@ BookOfTyIndex.tsx: ECOSYSTEM_STATS import added. Hero description simplified -- 
 
 **Destination:** TYOVA
 **Commit:** 71ca56e
-**Scope:** Fix wrong import path @/data/masterHubRegistry ? @/config/masterHubRegistry in ArtifactsPage, CanonLedgerPage, BookOfTyIndex — and audit TyAiOsIndex.tsx
+**Scope:** Fix wrong import path @/data/masterHubRegistry ? @/config/masterHubRegistry in ArtifactsPage, CanonLedgerPage, BookOfTyIndex ? and audit TyAiOsIndex.tsx
 
 Import path corrected from @/data to @/config/masterHubRegistry in ArtifactsPage.tsx, CanonLedgerPage.tsx, BookOfTyIndex.tsx. TyAiOsIndex.tsx audited -- line 36 hardcoded 12 phases made dynamic via ECOSYSTEM_STATS.phasesSealed. TyAiOsIndex was not in original audit list -- now confirmed clean.
 
@@ -11771,7 +11771,7 @@ Import path corrected from @/data to @/config/masterHubRegistry in ArtifactsPage
 
 **Destination:** TYOVA
 **Commit:** 115a279
-**Scope:** TyAiOsAboutPage.tsx — hardcoded date 2026-05-21 made dynamic via HUB_VERSION.snapshotDate
+**Scope:** TyAiOsAboutPage.tsx ? hardcoded date 2026-05-21 made dynamic via HUB_VERSION.snapshotDate
 
 TyAiOsAboutPage.tsx: HUB_VERSION added to import. Hardcoded date 2026-05-21 replaced with HUB_VERSION.snapshotDate. All 11 audited pages now fully verified -- all imports use @/config/masterHubRegistry, all appropriate stats are dynamic.
 
@@ -11781,7 +11781,7 @@ TyAiOsAboutPage.tsx: HUB_VERSION added to import. Hardcoded date 2026-05-21 repl
 
 **Destination:** TYOVA
 **Commit:** 115a279
-**Scope:** Page accuracy audit — /how-ty-ai-os-works — HowTyAiOsWorksPage.tsx full line-by-line review
+**Scope:** Page accuracy audit ? /how-ty-ai-os-works ? HowTyAiOsWorksPage.tsx full line-by-line review
 
 HowTyAiOsWorksPage.tsx full line-by-line audit complete. No changes required. All ECOSYSTEM_STATS fields dynamic and correct. Import path @/config correct. Content accurate -- Four governed layers, Tier 0-3, authority flow diagram all verified. /architecture nav link confirmed valid. Page is clean.
 
@@ -11791,7 +11791,7 @@ HowTyAiOsWorksPage.tsx full line-by-line audit complete. No changes required. Al
 
 **Destination:** TYOVA
 **Commit:** 115a279
-**Scope:** Page accuracy audit — /architecture — full line-by-line review
+**Scope:** Page accuracy audit ? /architecture ? full line-by-line review
 
 PublicArchitectureIndex.tsx and ArchitectureDocument.tsx full audit complete. No changes required. No hardcoded stats -- document list fully dynamic via getDocumentsBySection. ArchitectureDocument fully dynamic via docRegistry and fetchDocument. Both files clean.
 
@@ -11809,7 +11809,7 @@ for users. Prerequisite: Phase 13 HTTP API expansion. Deferred Phase 13+.
 
 **Destination:** Jaya-Runtime
 **Commit:** e600f62
-**Scope:** Jaya Runtime dashboard UI enhancement — modern design, improved readability, wow-factor user experience
+**Scope:** Jaya Runtime dashboard UI enhancement ? modern design, improved readability, wow-factor user experience
 
 Jaya Runtime dashboard completely redesigned. App.css: 628 lines governance design system with CSS variables, dark navy theme, sidebar layout, metric cards, risk gauge, status badges, buttons, inputs. App.tsx: 475 lines -- sidebar navigation with 7 grouped sections, 4 live metric cards, animated risk gauge, clean action toolbar, tier selector. Zero logic changes -- all Tauri invoke calls, state, and handlers identical. Build passed 55 modules. FLAG-31 logged for Phase 13 browser-based admin dashboard.
 
@@ -11819,7 +11819,7 @@ Jaya Runtime dashboard completely redesigned. App.css: 628 lines governance desi
 
 **Destination:** TYOVA
 **Commit:** 388f96e
-**Scope:** Book of TY Ch62-Ch66 + Ch26 vocabulary update — Phase 12 completion record, governance bridge, TYOVA audit, dashboard redesign, road ahead
+**Scope:** Book of TY Ch62-Ch66 + Ch26 vocabulary update ? Phase 12 completion record, governance bridge, TYOVA audit, dashboard redesign, road ahead
 
 Book of TY Ch62-Ch66 written and committed. Ch62: governance bridge completes, supabase_writer.rs, first write 2026-05-21 19:05:23 UTC. Ch63: hub audit, Zero-Fabrication applied, 5 verified vs 11 planned. Ch64: TYOVA accuracy audit FIX-575 through FIX-588, single source of truth, import path bug found. Ch65: Jaya Runtime dashboard redesign, 628-line CSS system, sidebar nav, metric cards. Ch66: road ahead, patent, TY-0001.C, Phase 13 flags. chaptersSealed updated 61 to 66. Build verified clean 6.55s.
 
@@ -11829,7 +11829,7 @@ Book of TY Ch62-Ch66 written and committed. Ch62: governance bridge completes, s
 
 **Destination:** TYOVA
 **Commit:** 0b6354d
-**Scope:** Ch26 vocabulary update — new terms from Phase 12, governance bridge, TYOVA audit, dashboard redesign, Phase 13 flags
+**Scope:** Ch26 vocabulary update ? new terms from Phase 12, governance bridge, TYOVA audit, dashboard redesign, Phase 13 flags
 
 Ch26 vocabulary updated. Sections 21-23 created. 16 new terms added. Section 21: supabase_writer.rs, jaya_audit_events, get_governance_events_public, Bidirectional Governance Bridge, Live Governance Feed, email_alert.rs. Section 22: masterHubRegistry.ts, ECOSYSTEM_STATS, HUB_VERSION, Dynamic Wiring, Single Source of Truth Principle. Section 23: Governance Dashboard, CSS Governance Design System, FLAG-31, FLAG-32, TY-0001.C. Total terms 341->357. Sections 20->23. File: 3514 lines.
 
@@ -11967,5 +11967,15 @@ HomePage.tsx proof panel text corrected -- verification description now states J
 **Scope:** Ecosystem Flow diagram page -- EcosystemFlowPage.tsx, App.tsx route, navigation entry
 
 EcosystemFlowPage.tsx -- 22 WARDs 39 flows 7 zones canvas 1400x1580 -- route /ecosystem-flow -- nav under Jaya Runtime dropdown -- build clean 2.70s
+
+**Status:** CLOSED
+
+### Entry-617 | FIX-598 | 2026-05-22 16:48 PDT San Diego -- 2026-05-22 16:50 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 247cf87
+**Scope:** EcosystemFlowPage.tsx -- full-bleed escape from PublicLayout max-width container
+
+EcosystemFlowPage.tsx full-bleed escape -- width 100vw negative margin technique -- diagram now full viewport width -- build clean 2.79s
 
 **Status:** CLOSED
