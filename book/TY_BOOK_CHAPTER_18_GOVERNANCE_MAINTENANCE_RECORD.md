@@ -11756,3 +11756,13 @@ CanonLedgerPage.tsx: Date now dynamic via HUB_VERSION.snapshotDate. Phases Compl
 BookOfTyIndex.tsx: ECOSYSTEM_STATS import added. Hero description simplified -- stale 47 chapters count removed. Stats grid now fully dynamic: Total Chapters via chapters.length, Sealed via chapters.filter sealed, Living via chapters.filter living, Phases Documented via ECOSYSTEM_STATS.phasesSealed. 167 tests updated to ECOSYSTEM_STATS.testsTotal.
 
 **Status:** CLOSED
+
+### Entry-604 | FIX-585 | 2026-05-21 22:49 PDT San Diego -- 2026-05-21 22:53 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 71ca56e
+**Scope:** Fix wrong import path @/data/masterHubRegistry → @/config/masterHubRegistry in ArtifactsPage, CanonLedgerPage, BookOfTyIndex — and audit TyAiOsIndex.tsx
+
+Import path corrected from @/data to @/config/masterHubRegistry in ArtifactsPage.tsx, CanonLedgerPage.tsx, BookOfTyIndex.tsx. TyAiOsIndex.tsx audited -- line 36 hardcoded 12 phases made dynamic via ECOSYSTEM_STATS.phasesSealed. TyAiOsIndex was not in original audit list -- now confirmed clean.
+
+**Status:** CLOSED
