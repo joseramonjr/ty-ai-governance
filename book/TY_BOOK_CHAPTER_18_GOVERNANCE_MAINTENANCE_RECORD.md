@@ -11892,3 +11892,50 @@ FLAG-33 logged -- TY AI OS Clean Uninstall Protocol -- Phase 13 design principle
 Ch26 TYOVA display updated -- Sections 21-23 added to bookChapterContent.ts key 26 -- 16 new terms visible on TYOVA website -- compiledNote updated to 357 terms 23 sections 2026-05-22 -- timeline entry added for FIX-591 -- masterHubRegistry.ts snapshotDate updated to 2026-05-22 -- all temp files removed from Jaya-Runtime.
 
 **Status:** CLOSED
+### FLAG-28 ADDENDUM | Entry-613-A | 2026-05-22 13:12 PDT San Diego
+**Blockchain Security Discussion -- Distributed Ledger via TY-FABRIC**
+Discussion date: 2026-05-22 | San Diego
+
+Question raised: can blockchain help keep TY AI OS/TYOVA secure against hackers?
+
+Key findings from analysis:
+
+TY AI OS already implements blockchain-like properties locally:
+- Append-only ledger (records cannot be deleted or modified)
+- Ed25519 cryptographic signatures (tampering breaks the signature)
+- SHA-256 governance hash (canonical state anchor)
+- Chain integrity verification via TY-ANCHOR Verify.ps1
+
+What blockchain adds beyond what TY already has: DISTRIBUTION.
+Blockchain's core security property is tamper-evident distributed consensus --
+if one copy is attacked, every other node detects the mismatch.
+
+The real current gap: the governance ledger lives on one machine (SQLite).
+A hacker with system-level access could delete or corrupt the local database.
+No current protection exists against this specific threat.
+
+How TY-FABRIC (FLAG-28) closes this gap:
+When multiple WARDs exist, each holds a copy of the governance record.
+An attacker would need to simultaneously compromise all WARDs to destroy
+the record -- the same security property that makes blockchain valuable,
+implemented in TY's governance-first architecture without requiring a
+public blockchain, tokens, mining, or anonymous participation.
+
+FLAG-22 (Reed-Solomon error correction) addresses ledger corruption.
+FLAG-28 (TY-FABRIC) addresses ledger destruction and single-point-of-failure.
+Together they close the primary attack surface against the governance ledger.
+
+Reminder: do not adopt blockchain as a technology. Build TY-FABRIC so
+the ledger is no longer on a single machine. That IS the blockchain
+security property, in TY governance-first form.
+
+
+### Entry-613 | FIX-594 | 2026-05-22 13:12 PDT San Diego -- 2026-05-22 13:12 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** eef7501
+**Scope:** FLAG-28 addendum -- blockchain security discussion logged -- distributed ledger replication via TY-FABRIC as primary defense against ledger destruction
+
+FLAG-28 addendum logged -- blockchain security discussion -- TY-FABRIC distributed ledger replication closes single-machine ledger vulnerability -- reminder: build TY-FABRIC not adopt blockchain.
+
+**Status:** CLOSED
