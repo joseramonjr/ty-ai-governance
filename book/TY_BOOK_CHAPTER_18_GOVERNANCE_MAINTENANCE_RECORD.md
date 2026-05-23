@@ -12009,3 +12009,13 @@ FLAG-34 TY-SYNAPSE logged -- brain-inspired adaptive governance -- synaptic weig
 EcosystemFlowPage.tsx live data layer -- 30s Supabase poll get_governance_events_public -- WARD pulse rings on real events -- isLive green indicator -- silent fail when Jaya offline -- build clean 2.68s
 
 **Status:** CLOSED
+
+### Entry-621 | FIX-602 | 2026-05-22 19:00 PDT San Diego -- 2026-05-22 19:02 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 8526d2d
+**Scope:** EcosystemFlowPage.tsx -- live indicator fires on RPC connect -- cutoff 90s to 5min
+
+isLive fires on any successful RPC response -- cutoff extended 90s to 5min for WARD pulse -- build clean 2.85s
+
+**Status:** CLOSED
