@@ -12089,3 +12089,13 @@ Analysis only -- no code change required -- EVENT_WARD_MAP partial matching alre
 Governance monitoring thread added -- std::thread::spawn -- 60s cadence -- CRI_EVALUATION writes cri value -- LEDGER_WRITE confirms ledger active -- SENTINEL_SCAN writes anomaly count -- POLICY_CHECK writes policy id and version -- 0 errors 171/171 passing
 
 **Status:** CLOSED
+
+### Entry-629 | FIX-610 | 2026-05-23 09:56 PDT San Diego -- 2026-05-23 10:08 PDT San Diego
+
+**Destination:** Jaya-Runtime + TYOVA
+**Commit:** 59535fb+61a66d3
+**Scope:** Governance alert state -- FAILURE status on CRI critical and sentinel anomalies -- EcosystemFlowPage red WARD alert rendering
+
+Jaya-Runtime: CRI_EVALUATION FAILURE when cri>=75 -- SENTINEL_SCAN FAILURE when anomaly_count>0 -- TYOVA: alertWardsRef added -- FAILURE event detection -- drawNode alert state red fill red border '! ALERT' subtitle -- 171/171 passing build clean
+
+**Status:** CLOSED
