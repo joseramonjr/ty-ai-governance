@@ -12069,3 +12069,13 @@ WARD pulse fix -- detection time stored instead of event timestamp -- pulse fire
 write_governance_event_from_command added to supabase_writer.rs -- std::thread::spawn wrapper -- reqwest::blocking safe from Tauri command context -- 5 lib.rs call sites updated from write_governance_event_sync -- 0 errors 171/171 passing
 
 **Status:** CLOSED
+
+### Entry-627 | FIX-608 | 2026-05-22 21:58 PDT San Diego -- 2026-05-22 22:01 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** NO-COMMIT
+**Scope:** EcosystemFlowPage.tsx -- add event type to WARD pulse mapping for HEALTH_CHECK CRI_EVALUATION LEDGER_WRITE SENTINEL_SCAN POLICY_CHECK
+
+Analysis only -- no code change required -- EVENT_WARD_MAP partial matching already correctly maps all 5 event types -- HEALTH_CHECK defaults to jaya WARD (no dedicated health WARD exists in 22-node set) -- CRI_EVALUATION ledger sentinel policy all match via substring -- verification complete
+
+**Status:** CLOSED
