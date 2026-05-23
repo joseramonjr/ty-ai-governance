@@ -12146,3 +12146,19 @@ Jaya-Runtime: ELEVATED tier cri>=50 -- TYOVA: Option A live summary on WARD subt
 - Supabase: live SQL only -- no git commit
 
 **Tests:** 172/172 passing (was 171 -- net +1 from attestation test suite)
+### Entry-633 | FIX-614 | 2026-05-23 13:37 PDT San Diego
+
+**Destination:** TYOVA
+**Scope:** Attestation WARD added to EcosystemFlowPage -- 23rd WARD -- live SHA-256 verification status in governance ecosystem view
+
+**What was built:**
+- attestation WARD node added to N object -- cx=550, cy=1496 -- color green #10b981 -- label Attestation Chain -- sub SHA-256 VERIFIED
+- EVENT_WARD_MAP updated -- attestation added to proof and ss321 trigger entries -- WARD pulses when proof refresh or SS321 bridge events fire
+- Forward flow added to FWD array -- ss321 bottom to attestation left -- green dot -- labeled verify hash -- rate 3200ms
+- Jaya Runtime WARD sub updated -- 171 TESTS corrected to 172 TESTS
+- WARD count updated -- 22 WARDs to 23 WARDs in all 3 locations (canvas live text, canvas non-live text, JSX subtitle)
+- All 6 changes made via PowerShell ReadAllText/Replace/WriteAllText -- no Lovable required
+- Live verified: Attestation Chain WARD visible at testing.tyova.ai/ecosystem-flow -- pulses green alongside proof and SS321 WARDs
+
+**Commit:** TYOVA 9c6bd7e
+**Tests:** 172/172 passing (unchanged -- TYOVA only change)
