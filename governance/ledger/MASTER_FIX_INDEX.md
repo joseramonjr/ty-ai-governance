@@ -8646,3 +8646,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-598 | 2026-05-22 16:48 PDT San Diego -- 2026-05-22 16:50 PDT San Diego | TYOVA | EcosystemFlowPage.tsx -- full-bleed escape from PublicLayout max-width container. EcosystemFlowPage.tsx full-bleed escape -- width 100vw negative margin technique -- diagram now full viewport width -- build clean 2.79s Commit 247cf87. CLOSED |
 
 | FIX-599 | 2026-05-22 16:57 PDT San Diego -- 2026-05-22 16:59 PDT San Diego | TYOVA | EcosystemFlowPage.tsx -- mobile horizontal scroll -- min-width 800px canvas container. EcosystemFlowPage.tsx -- mobile horizontal scroll -- overflowX auto on canvas wrapper -- canvas minWidth 800px -- build clean 2.83s Commit 57d1468. CLOSED |
+
+| FIX-600 | 2026-05-22 17:13 PDT San Diego -- 2026-05-22 17:14 PDT San Diego | ty-ai-governance | FLAG-34 -- TY-SYNAPSE -- brain-inspired adaptive governance architecture -- Phase 13+. FLAG-34 TY-SYNAPSE logged -- brain-inspired adaptive governance -- synaptic weights, neural plasticity, Hebbian reinforcement -- Phase 13+ -- inspired by MICrONS Consortium 2025 connectome research Commit fbfd8ec. CLOSED |
