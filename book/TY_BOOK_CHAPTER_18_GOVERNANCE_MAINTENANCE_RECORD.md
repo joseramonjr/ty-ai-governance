@@ -12109,3 +12109,13 @@ Jaya-Runtime: CRI_EVALUATION FAILURE when cri>=75 -- SENTINEL_SCAN FAILURE when 
 Jaya-Runtime: AGENT_CHECK KEYCHAIN_CHECK EVOLUTION_CHECK SS321_BRIDGE GOVERNANCE_ALERT added to monitoring thread -- TYOVA: keychain evolution ss321 keys added to EVENT_WARD_MAP -- 12 WARDs now wired -- 171/171 passing build clean
 
 **Status:** CLOSED
+
+### Entry-631 | FIX-612 | 2026-05-23 11:15 PDT San Diego -- 2026-05-23 11:30 PDT San Diego
+
+**Destination:** Jaya-Runtime + Supabase + TYOVA
+**Commit:** 3d8c4e2+18c1903
+**Scope:** Live WARD values -- Option A summary on WARD card -- Option B color-coded pulse ring green amber red -- ELEVATED CRI tier 50-74
+
+Jaya-Runtime: ELEVATED tier cri>=50 -- TYOVA: Option A live summary on WARD subtitle when pulsing -- Option B color-coded pulse ring green SUCCESS amber ELEVATED red FAILURE -- wardStatusRef wardSummaryRef -- Supabase RPC updated to return summary field -- 171/171 passing build clean
+
+**Status:** CLOSED
