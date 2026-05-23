@@ -12119,3 +12119,30 @@ Jaya-Runtime: AGENT_CHECK KEYCHAIN_CHECK EVOLUTION_CHECK SS321_BRIDGE GOVERNANCE
 Jaya-Runtime: ELEVATED tier cri>=50 -- TYOVA: Option A live summary on WARD subtitle when pulsing -- Option B color-coded pulse ring green SUCCESS amber ELEVATED red FAILURE -- wardStatusRef wardSummaryRef -- Supabase RPC updated to return summary field -- 171/171 passing build clean
 
 **Status:** CLOSED
+### Entry-632 | FIX-613 | 2026-05-23 13:14 PDT San Diego
+
+**Destination:** Jaya-Runtime + Supabase + TYOVA
+**Scope:** Attestation verification chain -- SHA-256 event_hash on all governance writes -- live hash verification page at /attestation
+
+**What was built:**
+- compute_event_hash() added to supabase_writer.rs -- SHA-256 of operation_type|execution_status|entry_timestamp|entry_id
+- event_hash field added to JayaAuditEvent struct and from_explanation()
+- write_governance_event_sync() updated to compute and write event_hash on every governance event write
+- 3 attestation tests: test_compute_event_hash_deterministic (new), test_jaya_audit_event_from_explanation (hash assertions added), test_jaya_audit_event_serializes (hash in JSON added)
+- Supabase: ALTER TABLE jaya_audit_events ADD COLUMN event_hash TEXT, prev_hash TEXT (nullable -- existing rows unaffected)
+- Supabase: get_jaya_events_public RPC expanded -- now returns event_hash, entry_timestamp, entry_id, source_version, significance in addition to original 4 fields
+- TYOVA: AttestationPage.tsx created -- polls RPC every 30s -- recomputes SHA-256 client-side via Web Crypto API -- displays VERIFIED / MISMATCH / PRE-ATTESTATION per event
+- TYOVA: /attestation route added in App.tsx
+- TYOVA: TYAIHubNavigation.tsx -- Attestation Chain added after Formal Proof Engine with resolveSectionPath special case for sectionId attestation
+- TYOVA: PublicLayout.tsx -- Attestation Chain added to Jaya Runtime dropdown in main site header nav
+
+**Live verified:** testing.tyova.ai/attestation -- 50/50 VERIFIED -- 0 Mismatch -- 0 Pre-attestation
+**New page introduced:** /attestation
+
+**Commits:**
+- Jaya-Runtime: 9344573
+- TYOVA Lovable: 18a775d
+- TYOVA PublicLayout: 824f60a
+- Supabase: live SQL only -- no git commit
+
+**Tests:** 172/172 passing (was 171 -- net +1 from attestation test suite)

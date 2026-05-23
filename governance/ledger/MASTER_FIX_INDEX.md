@@ -8672,3 +8672,10 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-611 | 2026-05-23 10:43 PDT San Diego -- 2026-05-23 10:48 PDT San Diego | Jaya-Runtime + TYOVA | Add 5 more WARD pulses -- AGENT_CHECK KEYCHAIN_CHECK EVOLUTION_CHECK SS321_BRIDGE GOVERNANCE_ALERT -- EVENT_WARD_MAP keychain evolution ss321 keys. Jaya-Runtime: AGENT_CHECK KEYCHAIN_CHECK EVOLUTION_CHECK SS321_BRIDGE GOVERNANCE_ALERT added to monitoring thread -- TYOVA: keychain evolution ss321 keys added to EVENT_WARD_MAP -- 12 WARDs now wired -- 171/171 passing build clean Commit d7ad8eb+0bae504. CLOSED |
 
 | FIX-612 | 2026-05-23 11:15 PDT San Diego -- 2026-05-23 11:30 PDT San Diego | Jaya-Runtime + Supabase + TYOVA | Live WARD values -- Option A summary on WARD card -- Option B color-coded pulse ring green amber red -- ELEVATED CRI tier 50-74. Jaya-Runtime: ELEVATED tier cri>=50 -- TYOVA: Option A live summary on WARD subtitle when pulsing -- Option B color-coded pulse ring green SUCCESS amber ELEVATED red FAILURE -- wardStatusRef wardSummaryRef -- Supabase RPC updated to return summary field -- 171/171 passing build clean Commit 3d8c4e2+18c1903. CLOSED |
+## FIX-613 | Entry-632 | 2026-05-23 13:14 PDT San Diego
+- **Destination:** Jaya-Runtime + Supabase + TYOVA
+- **Scope:** Attestation verification chain -- SHA-256 event_hash -- live verification at /attestation
+- **Commits:** Jaya-Runtime 9344573 -- TYOVA Lovable 18a775d -- TYOVA PublicLayout 824f60a -- Supabase live SQL
+- **Tests:** 172/172 passing
+- **Live:** testing.tyova.ai/attestation -- 50/50 VERIFIED
+- **Status:** COMPLETE
