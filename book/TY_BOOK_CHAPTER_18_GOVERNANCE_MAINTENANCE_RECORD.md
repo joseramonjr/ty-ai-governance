@@ -12202,3 +12202,61 @@ does not know. The Human Guardian does not know. The return loop is broken.
 
 **Prerequisite:** prev_hash chain linking (also FIX-615 scope or separate FIX)
 **Deferred until:** Walker Weitzel patent response -- Phase 13 readiness
+---
+
+### FLAG-35 | GOVERNANCE CONFIRMATION LOOP | 2026-05-23 14:21 PDT San Diego
+
+**Classification:** Architectural Gap -- Phase 13+ Priority
+**Identified by:** Jose Ramon Alvarado McHerron -- post FIX-614 session review
+**Logged:** 2026-05-23 14:21 PDT San Diego
+
+**The Gap:**
+TY AI OS authority chain is downward-command and reactive-alert only. Commands and rules
+flow down from Human Guardian through TY AI OS Core to Jaya Runtime. Alerts flow up only
+on violations, anomalies, or critical CRI. Normal execution results flow into the SQLite
+ledger but are never actively confirmed back up the authority chain.
+
+Result: The Human Guardian governs without a proactive feedback loop. TY AI OS Core
+defines rules but cannot independently confirm they are being applied correctly from
+the authority source perspective. Jaya Runtime is the only entity that truly knows
+what happened. The ledger is a pull model -- you must go ask. The proof server is
+a pull model. The attestation chain is a pull model. None actively report upward.
+
+**The CEO Principle (Jose Ramon, 2026-05-23):**
+A CEO cannot be held responsible for outcomes if the information was never received.
+TY AI OS can say -- I was not informed of the final results -- and the accountability
+chain is broken. True governance requires: order issued, order executed, execution
+confirmed back to issuer. Without step 3 the chain is incomplete.
+
+**What FLAG-35 Requires:**
+
+1. EXECUTION RECEIPTS -- push model
+   After every significant governance action Jaya generates a signed receipt and
+   pushes it up the chain. Not only on violations -- on normal execution too.
+   Policy check executed -- result -- ledger entry confirmed -- timestamp -- signature.
+
+2. GOVERNANCE STATE REPORTS -- periodic upward attestation
+   Jaya periodically reports its governance state to the Human Guardian whether or
+   not anything went wrong. Enforced X checks -- denied Y requests -- recorded Z
+   entries -- detected W anomalies -- signed summary.
+
+3. CLOSED-LOOP ACCOUNTABILITY
+   TY AI OS must be able to answer: I gave this order AND I received confirmation
+   it was executed. Any gap between order and confirmation is a governance break.
+
+**Current model:**
+  Human Guardian -- receives alerts on crisis only
+
+**Target model after FLAG-35:**
+  Human Guardian -- receives governance state reports (periodic push)
+                 -- receives execution receipts on significant actions
+                 -- receives violation alerts (already exists)
+
+**Relationship to existing architecture:**
+- Extends supabase_writer.rs -- execution receipts written to Supabase
+- Extends supabase_reader.rs -- Jaya reads its own receipts to confirm delivery
+- New: TY Governance State Report -- signed periodic summary pushed upward
+- Possible Luke AI role -- reviews execution against orders -- reports discrepancies
+- FIX-615 attestation mismatch alert path is one instance of this broader pattern
+
+**Deferred until:** Phase 13 -- after Walker Weitzel patent response
