@@ -11999,3 +11999,13 @@ EcosystemFlowPage.tsx -- mobile horizontal scroll -- overflowX auto on canvas wr
 FLAG-34 TY-SYNAPSE logged -- brain-inspired adaptive governance -- synaptic weights, neural plasticity, Hebbian reinforcement -- Phase 13+ -- inspired by MICrONS Consortium 2025 connectome research
 
 **Status:** CLOSED
+
+### Entry-620 | FIX-601 | 2026-05-22 17:26 PDT San Diego -- 2026-05-22 17:54 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 2814de0
+**Scope:** EcosystemFlowPage.tsx -- live governance data -- WARD pulse on real Jaya events -- 30s Supabase poll
+
+EcosystemFlowPage.tsx live data layer -- 30s Supabase poll get_governance_events_public -- WARD pulse rings on real events -- isLive green indicator -- silent fail when Jaya offline -- build clean 2.68s
+
+**Status:** CLOSED
