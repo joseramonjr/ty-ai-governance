@@ -12059,3 +12059,13 @@ WARD pulse fix -- detection time stored instead of event timestamp -- pulse fire
 5 write_governance_event_sync calls added -- HEALTH_CHECK run_system_health_check -- CRI_EVALUATION record_cri_band -- LEDGER_WRITE run_file_read -- SENTINEL_SCAN evaluate_agent_action -- POLICY_CHECK reload_policy -- 0 errors 171/171 passing
 
 **Status:** CLOSED
+
+### Entry-626 | FIX-607 | 2026-05-22 21:23 PDT San Diego -- 2026-05-22 21:28 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 7d5fd08
+**Scope:** Add write_governance_event_from_command wrapper using std::thread::spawn -- fix silent failure of reqwest::blocking in Tauri command context -- update 5 lib.rs call sites
+
+write_governance_event_from_command added to supabase_writer.rs -- std::thread::spawn wrapper -- reqwest::blocking safe from Tauri command context -- 5 lib.rs call sites updated from write_governance_event_sync -- 0 errors 171/171 passing
+
+**Status:** CLOSED
