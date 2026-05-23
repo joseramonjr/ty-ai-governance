@@ -12019,3 +12019,13 @@ EcosystemFlowPage.tsx live data layer -- 30s Supabase poll get_governance_events
 isLive fires on any successful RPC response -- cutoff extended 90s to 5min for WARD pulse -- build clean 2.85s
 
 **Status:** CLOSED
+
+### Entry-622 | FIX-603 | 2026-05-22 19:28 PDT San Diego -- 2026-05-22 19:33 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 4a848e7
+**Scope:** supabase_writer.rs -- write_governance_event_sync -- proof refresh writes GOVERNANCE_PROOF_GENERATED to jaya_audit_events every 60s
+
+supabase_writer write_governance_event_sync added -- reqwest blocking feature enabled -- proof refresh now writes GOVERNANCE_PROOF_GENERATED every 60s -- 171/171 passing -- cargo check 0 errors
+
+**Status:** CLOSED
