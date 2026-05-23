@@ -11979,3 +11979,13 @@ EcosystemFlowPage.tsx -- 22 WARDs 39 flows 7 zones canvas 1400x1580 -- route /ec
 EcosystemFlowPage.tsx full-bleed escape -- width 100vw negative margin technique -- diagram now full viewport width -- build clean 2.79s
 
 **Status:** CLOSED
+
+### Entry-618 | FIX-599 | 2026-05-22 16:57 PDT San Diego -- 2026-05-22 16:59 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 57d1468
+**Scope:** EcosystemFlowPage.tsx -- mobile horizontal scroll -- min-width 800px canvas container
+
+EcosystemFlowPage.tsx -- mobile horizontal scroll -- overflowX auto on canvas wrapper -- canvas minWidth 800px -- build clean 2.83s
+
+**Status:** CLOSED
