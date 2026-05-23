@@ -12049,3 +12049,13 @@ RPC switched from get_governance_events_public to get_jaya_events_public -- now 
 WARD pulse fix -- detection time stored instead of event timestamp -- pulse fires for 7s on detection -- build clean 2.85s
 
 **Status:** CLOSED
+
+### Entry-625 | FIX-606 | 2026-05-22 20:41 PDT San Diego -- 2026-05-22 21:02 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 63c1c4f
+**Scope:** Add write_governance_event_sync calls for health_check, CRI_EVALUATION, LEDGER_WRITE, SENTINEL_SCAN, POLICY_CHECK
+
+5 write_governance_event_sync calls added -- HEALTH_CHECK run_system_health_check -- CRI_EVALUATION record_cri_band -- LEDGER_WRITE run_file_read -- SENTINEL_SCAN evaluate_agent_action -- POLICY_CHECK reload_policy -- 0 errors 171/171 passing
+
+**Status:** CLOSED
