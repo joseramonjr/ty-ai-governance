@@ -12079,3 +12079,13 @@ write_governance_event_from_command added to supabase_writer.rs -- std::thread::
 Analysis only -- no code change required -- EVENT_WARD_MAP partial matching already correctly maps all 5 event types -- HEALTH_CHECK defaults to jaya WARD (no dedicated health WARD exists in 22-node set) -- CRI_EVALUATION ledger sentinel policy all match via substring -- verification complete
 
 **Status:** CLOSED
+
+### Entry-628 | FIX-609 | 2026-05-23 09:24 PDT San Diego -- 2026-05-23 09:29 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** bb0f568
+**Scope:** Add background governance monitoring thread -- periodic CRI_EVALUATION LEDGER_WRITE SENTINEL_SCAN POLICY_CHECK writes every 60s -- all 5 WARDs live on EcosystemFlowPage
+
+Governance monitoring thread added -- std::thread::spawn -- 60s cadence -- CRI_EVALUATION writes cri value -- LEDGER_WRITE confirms ledger active -- SENTINEL_SCAN writes anomaly count -- POLICY_CHECK writes policy id and version -- 0 errors 171/171 passing
+
+**Status:** CLOSED
