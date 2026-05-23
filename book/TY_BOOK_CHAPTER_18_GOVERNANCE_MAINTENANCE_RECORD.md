@@ -12172,3 +12172,33 @@ Jaya-Runtime: ELEVATED tier cri>=50 -- TYOVA: Option A live summary on WARD subt
 Attestation WARD on EcosystemFlowPage -- 23 WARDs -- verify hash flow -- live verified testing.tyova.ai/ecosystem-flow
 
 **Status:** CLOSED
+---
+
+### FIX-615 SCOPE NOTE | 2026-05-23 14:05 PDT San Diego
+
+**Status:** DEFINED -- NOT YET OPEN
+**Destination:** Jaya-Runtime + Supabase + TYOVA
+**Identified:** During FIX-614 post-session review -- architectural gap in attestation return path
+
+**The Gap:**
+The Attestation Chain WARD and /attestation page verify governance records one-directionally.
+A MISMATCH (tampered record) is visible on the page but generates no alert. Jaya Runtime
+does not know. The Human Guardian does not know. The return loop is broken.
+
+**FIX-615 Scope -- Attestation Mismatch Alert Path:**
+- TYOVA /attestation page: on MISMATCH detection, write an alert row to Supabase
+  (requires TYOVA write access to a new jaya_alerts table or existing channel)
+- Jaya Runtime supabase_reader.rs: poll for alert rows -- if mismatch alert found,
+  trigger Guardian Alert email via Resend API
+- EcosystemFlowPage: add return flow -- Attestation Chain back to Guardian Alert WARD
+- Completes the governance loop -- tampering evidence reaches the Human Guardian
+
+**Return path when complete:**
+  Attestation Chain (MISMATCH detected)
+    -- write alert --> Supabase
+    -- read alert --> Jaya Runtime supabase_reader.rs
+    -- trigger --> Guardian Alert
+    -- email --> Human Guardian
+
+**Prerequisite:** prev_hash chain linking (also FIX-615 scope or separate FIX)
+**Deferred until:** Walker Weitzel patent response -- Phase 13 readiness
