@@ -1,4 +1,4 @@
-# Chapter 18 -- The Governance Maintenance Record
+﻿# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current
@@ -12037,5 +12037,15 @@ supabase_writer write_governance_event_sync added -- reqwest blocking feature en
 **Scope:** EcosystemFlowPage.tsx -- switch RPC from get_governance_events_public to get_jaya_events_public -- reads jaya_audit_events directly
 
 RPC switched from get_governance_events_public to get_jaya_events_public -- now reads jaya_audit_events where FIX-603 writes -- build clean 2.83s
+
+**Status:** CLOSED
+
+### Entry-624 | FIX-605 | 2026-05-22 20:20 PDT San Diego -- 2026-05-22 20:21 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 0517afa
+**Scope:** EcosystemFlowPage.tsx -- fix WARD pulse -- store detection time not event timestamp -- pulse fires correctly
+
+WARD pulse fix -- detection time stored instead of event timestamp -- pulse fires for 7s on detection -- build clean 2.85s
 
 **Status:** CLOSED

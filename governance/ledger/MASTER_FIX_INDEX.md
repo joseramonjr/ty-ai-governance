@@ -1,4 +1,4 @@
-# MASTER_FIX_INDEX
+﻿# MASTER_FIX_INDEX
 
 Status: Active
 
@@ -8656,3 +8656,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-603 | 2026-05-22 19:28 PDT San Diego -- 2026-05-22 19:33 PDT San Diego | Jaya-Runtime | supabase_writer.rs -- write_governance_event_sync -- proof refresh writes GOVERNANCE_PROOF_GENERATED to jaya_audit_events every 60s. supabase_writer write_governance_event_sync added -- reqwest blocking feature enabled -- proof refresh now writes GOVERNANCE_PROOF_GENERATED every 60s -- 171/171 passing -- cargo check 0 errors Commit 4a848e7. CLOSED |
 
 | FIX-604 | 2026-05-22 19:59 PDT San Diego -- 2026-05-22 20:01 PDT San Diego | TYOVA | EcosystemFlowPage.tsx -- switch RPC from get_governance_events_public to get_jaya_events_public -- reads jaya_audit_events directly. RPC switched from get_governance_events_public to get_jaya_events_public -- now reads jaya_audit_events where FIX-603 writes -- build clean 2.83s Commit 8813d66. CLOSED |
+
+| FIX-605 | 2026-05-22 20:20 PDT San Diego -- 2026-05-22 20:21 PDT San Diego | TYOVA | EcosystemFlowPage.tsx -- fix WARD pulse -- store detection time not event timestamp -- pulse fires correctly. WARD pulse fix -- detection time stored instead of event timestamp -- pulse fires for 7s on detection -- build clean 2.85s Commit 0517afa. CLOSED |
