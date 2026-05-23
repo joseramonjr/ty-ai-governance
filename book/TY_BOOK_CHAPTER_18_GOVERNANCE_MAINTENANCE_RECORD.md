@@ -12029,3 +12029,13 @@ isLive fires on any successful RPC response -- cutoff extended 90s to 5min for W
 supabase_writer write_governance_event_sync added -- reqwest blocking feature enabled -- proof refresh now writes GOVERNANCE_PROOF_GENERATED every 60s -- 171/171 passing -- cargo check 0 errors
 
 **Status:** CLOSED
+
+### Entry-623 | FIX-604 | 2026-05-22 19:59 PDT San Diego -- 2026-05-22 20:01 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 8813d66
+**Scope:** EcosystemFlowPage.tsx -- switch RPC from get_governance_events_public to get_jaya_events_public -- reads jaya_audit_events directly
+
+RPC switched from get_governance_events_public to get_jaya_events_public -- now reads jaya_audit_events where FIX-603 writes -- build clean 2.83s
+
+**Status:** CLOSED
