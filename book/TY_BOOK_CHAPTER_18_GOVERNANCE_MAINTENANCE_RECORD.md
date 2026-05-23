@@ -12099,3 +12099,13 @@ Governance monitoring thread added -- std::thread::spawn -- 60s cadence -- CRI_E
 Jaya-Runtime: CRI_EVALUATION FAILURE when cri>=75 -- SENTINEL_SCAN FAILURE when anomaly_count>0 -- TYOVA: alertWardsRef added -- FAILURE event detection -- drawNode alert state red fill red border '! ALERT' subtitle -- 171/171 passing build clean
 
 **Status:** CLOSED
+
+### Entry-630 | FIX-611 | 2026-05-23 10:43 PDT San Diego -- 2026-05-23 10:48 PDT San Diego
+
+**Destination:** Jaya-Runtime + TYOVA
+**Commit:** d7ad8eb+0bae504
+**Scope:** Add 5 more WARD pulses -- AGENT_CHECK KEYCHAIN_CHECK EVOLUTION_CHECK SS321_BRIDGE GOVERNANCE_ALERT -- EVENT_WARD_MAP keychain evolution ss321 keys
+
+Jaya-Runtime: AGENT_CHECK KEYCHAIN_CHECK EVOLUTION_CHECK SS321_BRIDGE GOVERNANCE_ALERT added to monitoring thread -- TYOVA: keychain evolution ss321 keys added to EVENT_WARD_MAP -- 12 WARDs now wired -- 171/171 passing build clean
+
+**Status:** CLOSED
