@@ -12474,3 +12474,13 @@ EcosystemFlowPage dynamic values -- ECOSYSTEM_STATS import -- chapters 69 vocab 
 HomePage terms count wired to ECOSYSTEM_STATS.vocabTerms -- all homepage metrics now dynamic -- afab683
 
 **Status:** CLOSED
+
+### Entry-649 | FIX-631 | 2026-05-24 14:52 PDT San Diego -- 2026-05-24 15:13 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 516fe36
+**Scope:** FLAG-35 design spec -- TY_GOVERNANCE_CONFIRMATION_LOOP_SPEC_v0.1.md -- execution receipts + governance state reports + closed-loop accountability
+
+FLAG-35 design spec complete -- tiered CL-1 CL-2 CL-3 confirmation model -- execution receipts + task aggregation + governance state reports -- 463 lines -- 516fe36
+
+**Status:** CLOSED
