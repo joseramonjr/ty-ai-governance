@@ -12270,3 +12270,13 @@ confirmed back to issuer. Without step 3 the chain is incomplete.
 Health banner + live stats bar + event ticker + unicode fix -- 4144 events live -- all verified -- testing.tyova.ai/ecosystem-flow
 
 **Status:** CLOSED
+
+### Entry-635 | FIX-617 | 2026-05-23 16:44 PDT San Diego -- 2026-05-23 17:08 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** a6a3556
+**Scope:** EcosystemFlowPage -- WARD click drill-down panel -- events per WARD + description + attestation link
+
+WARD click drill-down panel -- description + events per WARD + attestation link -- live verified testing.tyova.ai/ecosystem-flow
+
+**Status:** CLOSED

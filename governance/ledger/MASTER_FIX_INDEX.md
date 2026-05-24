@@ -8699,3 +8699,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 - **Status:** LOGGED -- DEFERRED Phase 13+
 
 | FIX-616 | 2026-05-23 16:21 PDT San Diego -- 2026-05-23 16:39 PDT San Diego | TYOVA | EcosystemFlowPage -- health banner + live stats bar + event ticker -- wow factor dashboard layer. Health banner + live stats bar + event ticker + unicode fix -- 4144 events live -- all verified -- testing.tyova.ai/ecosystem-flow Commit d7624e5. CLOSED |
+
+| FIX-617 | 2026-05-23 16:44 PDT San Diego -- 2026-05-23 17:08 PDT San Diego | TYOVA | EcosystemFlowPage -- WARD click drill-down panel -- events per WARD + description + attestation link. WARD click drill-down panel -- description + events per WARD + attestation link -- live verified testing.tyova.ai/ecosystem-flow Commit a6a3556. CLOSED |
