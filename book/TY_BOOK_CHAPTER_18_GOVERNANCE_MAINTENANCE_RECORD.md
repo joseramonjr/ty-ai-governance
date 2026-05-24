@@ -12310,3 +12310,13 @@ Zone pulse glow + event counter badges + animated intro -- all three verified --
 Book of TY Ch67 + Ch68 written -- governance ecosystem visible + correctness layer + CEO principle -- chaptersSealed 66->68 -- testing.tyova.ai/book
 
 **Status:** CLOSED
+
+### Entry-639 | FIX-621 | 2026-05-23 20:45 PDT San Diego -- 2026-05-23 21:28 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 7bfee27
+**Scope:** EcosystemFlowPage -- live flow dots circle vs diamond -- circle=live data square=architectural only -- honest visualization
+
+White blinking diamond=no data colored circle=live -- FLOW_DST lookup -- golden angle blink -- diamond in legend -- honest visualization -- testing.tyova.ai/ecosystem-flow
+
+**Status:** CLOSED
