@@ -8703,3 +8703,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-617 | 2026-05-23 16:44 PDT San Diego -- 2026-05-23 17:08 PDT San Diego | TYOVA | EcosystemFlowPage -- WARD click drill-down panel -- events per WARD + description + attestation link. WARD click drill-down panel -- description + events per WARD + attestation link -- live verified testing.tyova.ai/ecosystem-flow Commit a6a3556. CLOSED |
 
 | FIX-618 | 2026-05-23 17:10 PDT San Diego -- 2026-05-23 17:19 PDT San Diego | TYOVA | EcosystemFlowPage -- auto-scroll to drill-down panel on WARD click. Auto-scroll to drill-down panel on WARD click -- 90px offset for sticky nav -- all WARDs verified -- testing.tyova.ai/ecosystem-flow Commit bfdd774. CLOSED |
+
+| FIX-619 | 2026-05-23 17:28 PDT San Diego -- 2026-05-23 17:46 PDT San Diego | TYOVA | EcosystemFlowPage -- zone pulse glow + event counter badges + animated intro sequence. Zone pulse glow + event counter badges + animated intro -- all three verified -- testing.tyova.ai/ecosystem-flow Commit a72784f. CLOSED |

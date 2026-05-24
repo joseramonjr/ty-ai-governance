@@ -12290,3 +12290,13 @@ WARD click drill-down panel -- description + events per WARD + attestation link 
 Auto-scroll to drill-down panel on WARD click -- 90px offset for sticky nav -- all WARDs verified -- testing.tyova.ai/ecosystem-flow
 
 **Status:** CLOSED
+
+### Entry-637 | FIX-619 | 2026-05-23 17:28 PDT San Diego -- 2026-05-23 17:46 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** a72784f
+**Scope:** EcosystemFlowPage -- zone pulse glow + event counter badges + animated intro sequence
+
+Zone pulse glow + event counter badges + animated intro -- all three verified -- testing.tyova.ai/ecosystem-flow
+
+**Status:** CLOSED
