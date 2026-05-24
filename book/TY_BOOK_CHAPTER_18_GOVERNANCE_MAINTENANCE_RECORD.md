@@ -12320,3 +12320,13 @@ Book of TY Ch67 + Ch68 written -- governance ecosystem visible + correctness lay
 White blinking diamond=no data colored circle=live -- FLOW_DST lookup -- golden angle blink -- diamond in legend -- honest visualization -- testing.tyova.ai/ecosystem-flow
 
 **Status:** CLOSED
+
+### Entry-640 | FIX-622 | 2026-05-23 22:42 PDT San Diego -- 2026-05-23 22:51 PDT San Diego
+
+**Destination:** ty-ai-governance + TYOVA
+**Commit:** e763295
+**Scope:** Ch26 vocabulary -- un-retire Attestonic + add Attestonic State -- guardian decision 2026-05-23
+
+Ch26 Attestonic un-retired + Attestonic State coined -- 358 terms -- vocab count updated across TYOVA -- guardian decision Jose Ramon Alvarado McHerron 2026-05-23
+
+**Status:** CLOSED
