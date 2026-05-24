@@ -5,7 +5,7 @@
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-05-22 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 358 (357 + Attestonic State added FIX-622 2026-05-23 | Attestonic un-retired same session | guardian decision Jose Ramon Alvarado McHerron)
+**Current Term Count:** 359 (357 + Attestonic State added FIX-622 2026-05-23 | Attestonic un-retired same session | guardian decision Jose Ramon Alvarado McHerron)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -593,9 +593,32 @@ in Phase 4 -- the Global Attestonic Layer.
 
 **GAL** (Global Attestonic Layer)
 *First coined: 2026-01-01 06:12 | San Diego (America/Los_Angeles)*
-The cross-boundary attestation protocol enabling governed nodes to
-verify each other's governance state without trusting the other
-node's claims. Introduced in Phase 4 across Parts 67-76.
+*Updated: FIX-627 | 2026-05-24 | San Diego (America/Los_Angeles)*
+Two distinct meanings, both canonical:
+
+(1) Technical implementation (Phase 4): The cross-boundary attestation
+protocol enabling governed nodes to verify each other's governance
+state without trusting the other node's claims. Introduced in Phase 4
+across Parts 67-76. Uses Ed25519 keypairs, attestation payloads, and
+the governance_hash anchor to enable peer verification without a
+central authority.
+
+(2) Strategic aspiration: The governance position TY AI OS is
+architecturally designed to occupy -- a widely referenced governance
+specification that contracts, regulators, enterprises, and developers
+cite as the standard for provable AI governance. Not a central
+authority. A governance protocol standard. Global refers to
+governance scope, not current deployment scope. Sources: Jaya Runtime
+Part 35C; TYOVA Part 28 accuracy review (confirmed 2026).
+
+The canonical diagram asset TY AI OS: The Global Attestonic Layer
+was canonized December 31, 2025 as a book cover and documentation
+asset. Caption: A unified verification and governance framework
+designed to wrap every AI -- agentic or generative -- inside a
+provable, auditable, and self-healing trust boundary.
+
+Becomes real as a global standard through adoption, not declaration.
+See also: Attestonic State (Section 5), Attestonic Standard (Section 5).
 
 **Attestation Payload**
 *First coined: ~2025-12-08 06:44 | San Diego (America/Los_Angeles)*
@@ -822,6 +845,22 @@ governance. It proves it continuously, in real time, verifiably.
 See also: Attestonic (Section 5), GAL -- Global Attestonic Layer (Section 5),
 Attestonic (Canonical Framework -- Etymology) (Section 13), Verifiable Governance
 (Section 2), FLAG-36 (Ch18 Entry-641).
+
+**Attestonic Standard**
+*First named: FIX-623 | 2026-05-24 | San Diego (America/Los_Angeles)*
+The set of 13 criteria across three layers that a governed AI system
+must continuously satisfy to be recognized as being in Attestonic
+State. The three layers are: Structural (S-1 through S-6) --
+cryptographic and authority requirements; Operational (O-1 through
+O-4) -- live runtime and observability requirements; Doctrinal
+(D-1 through D-3) -- governance specification and invariant
+requirements. All 13 criteria must be met simultaneously and
+continuously. Partial compliance does not qualify. Self-declaration
+without independent verification is not compliance. TY AI OS is
+the originating system, the reference implementation, and the first
+system known to meet the full standard. Full criteria documented in
+Attestonic State entry (Section 5) and FIX-623 Ch18 Entry-641.
+See also: Attestonic State (Section 5), GAL (Section 5).
 
 ---
 ## Section 6 -- Succession and Continuity Terms
