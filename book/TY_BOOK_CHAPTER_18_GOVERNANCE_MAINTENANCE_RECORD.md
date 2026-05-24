@@ -12454,3 +12454,13 @@ Ch26 -- Attestonic Standard new term added -- GAL expanded two meanings + diagra
 Book of TY Ch69 The Attestonic Standard -- 192 lines -- ty-governance 26496f8 + TYOVA d7f9671 -- chaptersSealed 68->69 -- all four TYOVA book files updated
 
 **Status:** CLOSED
+
+### Entry-647 | FIX-629 | 2026-05-24 14:12 PDT San Diego -- 2026-05-24 14:18 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 5dc9be5
+**Scope:** EcosystemFlowPage -- TYOVA Archive WARD chapter count 66->69 -- stale value audit
+
+EcosystemFlowPage dynamic values -- ECOSYSTEM_STATS import -- chapters 69 vocab 359 tests 174 -- masterHubRegistry testsTotal testsPass vocabTerms snapshotDate updated -- 5dc9be5
+
+**Status:** CLOSED
