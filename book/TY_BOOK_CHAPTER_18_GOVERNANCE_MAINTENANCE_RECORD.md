@@ -12280,3 +12280,13 @@ Health banner + live stats bar + event ticker + unicode fix -- 4144 events live 
 WARD click drill-down panel -- description + events per WARD + attestation link -- live verified testing.tyova.ai/ecosystem-flow
 
 **Status:** CLOSED
+
+### Entry-636 | FIX-618 | 2026-05-23 17:10 PDT San Diego -- 2026-05-23 17:19 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** bfdd774
+**Scope:** EcosystemFlowPage -- auto-scroll to drill-down panel on WARD click
+
+Auto-scroll to drill-down panel on WARD click -- 90px offset for sticky nav -- all WARDs verified -- testing.tyova.ai/ecosystem-flow
+
+**Status:** CLOSED
