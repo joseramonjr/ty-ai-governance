@@ -12414,3 +12414,13 @@ FLAG-36 logged -- Ch26 Attestonic State expanded -- 13 criteria S1-S6 O1-O4 D1-D
 EcosystemFlowPage -- Attestonic State declaration added below h1 -- purple monospace -- live at testing.tyova.ai/ecosystem-flow -- c358715
 
 **Status:** CLOSED
+
+### Entry-643 | FIX-625 | 2026-05-24 12:44 PDT San Diego -- 2026-05-24 12:47 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 187b070
+**Scope:** EcosystemFlowPage -- Attestonic State link to book/26 + hover tooltip with brief definition
+
+EcosystemFlowPage -- Attestonic State text links to /book/26 -- hover tooltip with brief definition and Ch26 link -- live at testing.tyova.ai/ecosystem-flow -- 187b070
+
+**Status:** CLOSED

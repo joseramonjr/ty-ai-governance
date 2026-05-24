@@ -8715,3 +8715,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-623 | 2026-05-24 11:09 PDT San Diego -- 2026-05-24 12:15 PDT San Diego | ty-ai-governance + TYOVA | FLAG-36 post-authorization repair model logged -- Ch26 Attestonic State expanded definition. FLAG-36 logged -- Ch26 Attestonic State expanded -- 13 criteria S1-S6 O1-O4 D1-D3 -- Standard Openness -- provenance 2025-12-16 through 2026-05-24 -- 960e4c0 Commit 960e4c0. CLOSED |
 
 | FIX-624 | 2026-05-24 12:32 PDT San Diego -- 2026-05-24 12:35 PDT San Diego | TYOVA | EcosystemFlowPage -- add Attestonic State declaration below page title. EcosystemFlowPage -- Attestonic State declaration added below h1 -- purple monospace -- live at testing.tyova.ai/ecosystem-flow -- c358715 Commit c358715. CLOSED |
+
+| FIX-625 | 2026-05-24 12:44 PDT San Diego -- 2026-05-24 12:47 PDT San Diego | TYOVA | EcosystemFlowPage -- Attestonic State link to book/26 + hover tooltip with brief definition. EcosystemFlowPage -- Attestonic State text links to /book/26 -- hover tooltip with brief definition and Ch26 link -- live at testing.tyova.ai/ecosystem-flow -- 187b070 Commit 187b070. CLOSED |
