@@ -12464,3 +12464,13 @@ Book of TY Ch69 The Attestonic Standard -- 192 lines -- ty-governance 26496f8 + 
 EcosystemFlowPage dynamic values -- ECOSYSTEM_STATS import -- chapters 69 vocab 359 tests 174 -- masterHubRegistry testsTotal testsPass vocabTerms snapshotDate updated -- 5dc9be5
 
 **Status:** CLOSED
+
+### Entry-648 | FIX-630 | 2026-05-24 14:20 PDT San Diego -- 2026-05-24 14:49 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** afab683
+**Scope:** HomePage + other TYOVA pages -- wire hardcoded governance metrics to ECOSYSTEM_STATS -- stale value audit
+
+HomePage terms count wired to ECOSYSTEM_STATS.vocabTerms -- all homepage metrics now dynamic -- afab683
+
+**Status:** CLOSED
