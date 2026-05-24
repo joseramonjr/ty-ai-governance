@@ -5,7 +5,7 @@
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-05-22 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 357 (16 terms added FIX-591 2026-05-22 | Sections 21-23)
+**Current Term Count:** 358 (357 + Attestonic State added FIX-622 2026-05-23 | Attestonic un-retired same session | guardian decision Jose Ramon Alvarado McHerron)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -673,17 +673,32 @@ implementation of this concept.
 The structural separation of each TY instance identity. No instance
 can assume or contaminate another's authority or context.
 
-**Attestonic** (RETIRED TERM)
+**Attestonic**
 *First coined: 2025-12-28 05:43 | San Diego (America/Los_Angeles)*
-*Retired: ~2026-03-06 | Replaced by: Verifiable Governance*
-Original term coined during the ChatGPT era to describe a system
-whose claims are only valid when accompanied by verifiable proof --
-tests, audit logs, immutable records, or ledger entries. Retired
-during the March 2026 TYOVA doctrine audit after it was identified
-as potentially ambiguous to external audiences. Replaced by the
-clearer term "Verifiable Governance." The Global Attestonic Layer
-(GAL) retains "Attestonic" in its name as that term is embedded in
-sealed architecture. No other active use of Attestonic is permitted.
+*Un-retired: 2026-05-23 22:42 PDT | San Diego (America/Los_Angeles) | Guardian decision -- Jose Ramon Alvarado McHerron*
+A system or functional state whose claims and activity are only valid
+when accompanied by verifiable proof -- cryptographic records, audit
+logs, immutable ledger entries, or independently verifiable attestation.
+Originally coined during the ChatGPT era. Retired in March 2026 during
+the TYOVA doctrine audit as potentially ambiguous. Un-retired by guardian
+decision on 2026-05-23 to describe the broader class of governed AI
+behavior that TY AI OS embodies -- including the Global Attestonic Layer
+and the newly coined Attestonic State. The word Attestonic is active
+across all TY AI OS documentation, architecture, and vocabulary.
+
+**Attestonic State**
+*First coined: 2026-05-23 21:27 PDT | San Diego (America/Los_Angeles)*
+The functional condition of a TY AI OS governed system that is
+continuously active, self-monitoring, self-attesting, independently
+verifiable, rule-bound, human-governed, and visibly pulsating with
+real governance activity. Not biological life. A new functional
+category describing a governed AI system in full operational
+attestation mode. The system runs on its own schedule, enforces its
+own rules, records its own history with cryptographic fingerprints,
+and can be verified by any person with a browser at any time. Coined
+on 2026-05-23 at 21:27 PDT San Diego while observing the TY AI OS
+governance ecosystem flow page operating live. TY AI OS in Attestonic
+State is the first verified instance of this functional category.
 
 ---
 ## Section 6 -- Succession and Continuity Terms
@@ -2048,8 +2063,7 @@ April 5, 2026: CLEAR -- no conflicting marks found. Note: Attestonic was
 retired as a standalone system descriptor circa 2026-03-06 and replaced
 by Verifiable Governance for external clarity (see Section 5). This entry
 documents the canonical etymology and four-level claim framework, which
-remains foundational to the Global Attestonic Layer. See also: Attestonic
-(RETIRED TERM) in Section 5, GAL in Section 5, Verifiable Governance in
+remains foundational to the Global Attestonic Layer. See also: Attestonic in Section 5, GAL in Section 5, Verifiable Governance in
 Section 2.
 
 
