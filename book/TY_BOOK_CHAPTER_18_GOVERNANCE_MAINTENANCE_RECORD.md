@@ -12330,3 +12330,67 @@ White blinking diamond=no data colored circle=live -- FLOW_DST lookup -- golden 
 Ch26 Attestonic un-retired + Attestonic State coined -- 358 terms -- vocab count updated across TYOVA -- guardian decision Jose Ramon Alvarado McHerron 2026-05-23
 
 **Status:** CLOSED
+
+---
+### Entry-641 | FIX-623 | 2026-05-24 11:09 PDT San Diego
+**Destination:** ty-ai-governance + TYOVA
+**Scope:** FLAG-36 post-authorization repair model logged -- Ch26 Attestonic State expanded definition
+
+Two deliverables this entry:
+
+1. FLAG-36 logged -- post-authorization repair model design intent. See FLAG-36
+   section below.
+
+2. Ch26 Attestonic State -- expanded from initial FIX-622 definition to full
+   standard definition. Now includes: Option B historical provenance (December 16
+   2025 through 2026-05-23), Attestonic Standard criteria (S-1 through S-6,
+   O-1 through O-4, D-1 through D-3), conditions that exit Attestonic State,
+   Standard Openness paragraph, and relationship to four-level Attestonic claim
+   framework. FLAG-36 cross-referenced in S-6. Builder confirmed all content
+   and Option B provenance 2026-05-24 San Diego.
+
+---
+### FLAG-36 | POST-AUTHORIZATION REPAIR MODEL | 2026-05-24 11:09 PDT San Diego
+**Classification:** Design Intent -- Phase 13+ Priority
+**Identified by:** Jose Ramon Alvarado McHerron -- FIX-623 session 2026-05-24
+**Logged:** 2026-05-24 11:09 PDT San Diego
+
+**The Gap:**
+A human guardian cannot watch TY AI OS continuously 24 hours a day. TY AI OS must
+be capable of detecting operational problems and performing repairs autonomously
+while the guardian is unavailable. The current Authorized Healing Window (AHW)
+model requires pre-authorization before any repair begins -- correct for governance-
+level structural repairs but impractical for routine operational repairs that occur
+during unattended operation.
+
+**Design Intent:**
+Jaya Runtime should support a post-authorization repair model for operational
+(non-governance) repairs:
+
+1. TY AI OS detects a condition requiring operational repair.
+2. TY AI OS performs the repair autonomously.
+3. Every repair is documented in the append-only ledger at the moment it occurs --
+   operation type, scope, timestamp, system state before and after.
+4. A repair report is surfaced to the guardian at next login -- listing every
+   autonomous repair performed since last guardian access.
+5. The guardian reviews each repair and makes one of two decisions:
+   a. CONFIRM -- repair is valid and legal. Record stands.
+   b. REVERT -- repair is not valid or not authorized. System rolls back to
+      pre-repair state using the rollback protocol (update_rollback.rs, Phase 11).
+6. No repair may exceed the governance boundary. Autonomous repair cannot modify
+   governance documents, authority hierarchy, or core invariants under any condition.
+
+**Distinction from Authorized Healing Window (AHW):**
+AHW (Guardian Codex, coined 2026-01-18) = governance-level structural repairs,
+pre-authorization required before any repair begins.
+FLAG-36 model = operational repairs, autonomous execution with post-review.
+Both models coexist. Neither replaces the other.
+
+**Architectural Dependency:**
+Revert capability depends on update_rollback.rs (Phase 11, sealed 2026-05-17).
+That module must be extended to support per-repair rollback by repair event ID
+before FLAG-36 can be fully implemented.
+
+**Source:**
+Builder confirmed design intent: 2026-05-24 San Diego.
+Chat record: Claude session FIX-623.

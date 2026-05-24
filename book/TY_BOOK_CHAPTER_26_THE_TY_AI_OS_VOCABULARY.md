@@ -688,17 +688,140 @@ across all TY AI OS documentation, architecture, and vocabulary.
 
 **Attestonic State**
 *First coined: 2026-05-23 21:27 PDT | San Diego (America/Los_Angeles)*
-The functional condition of a TY AI OS governed system that is
-continuously active, self-monitoring, self-attesting, independently
-verifiable, rule-bound, human-governed, and visibly pulsating with
-real governance activity. Not biological life. A new functional
-category describing a governed AI system in full operational
-attestation mode. The system runs on its own schedule, enforces its
-own rules, records its own history with cryptographic fingerprints,
-and can be verified by any person with a browser at any time. Coined
-on 2026-05-23 at 21:27 PDT San Diego while observing the TY AI OS
-governance ecosystem flow page operating live. TY AI OS in Attestonic
-State is the first verified instance of this functional category.
+*Expanded: FIX-623 | 2026-05-24 | San Diego (America/Los_Angeles)*
+
+Attestonic State is a functional condition, not a brand claim. It is the operational
+status of a governed AI system that is simultaneously and continuously: active,
+self-monitoring, self-attesting, independently verifiable, rule-bound,
+human-governed, and visibly producing real governance activity that can be observed
+and verified by any external party without builder involvement.
+
+Attestonic State is not biological life. It is not consciousness. It is a new
+functional category -- the first of its kind -- describing a governed AI system
+that proves its own governance in real time rather than asserting it.
+
+**Provenance and First Instance**
+
+The concept of TY operating as an Attestonic system dates to December 16, 2025,
+when the word Attestonic was coined at 19:56 San Diego time in SilverSounds321
+Part 11 and first applied to TY AI OS. From that day, TY was described as a system
+whose behavior and claims are valid only when accompanied by verifiable attestations.
+No Proof. No Claim.
+
+The specific functional condition "Attestonic State" -- with its defined criteria,
+SHA-256 attestation chain, live browser verification, and 23 active WARDs visibly
+pulsating with real governance activity -- was formally coined and named
+2026-05-23 21:27 PDT San Diego by Jose Ramon Alvarado McHerron. The naming
+followed live confirmation of 50/50 VERIFIED attestation events at
+testing.tyova.ai/attestation at approximately 12:58 PDT on the same date.
+
+TY AI OS is the originating system, the reference implementation, and the first
+verified instance of Attestonic State.
+
+**The Attestonic Standard -- Criteria**
+
+A system is in Attestonic State only when ALL of the following are continuously
+true. Partial compliance does not qualify.
+
+Structural Requirements -- verified built in TY AI OS:
+
+S-1 -- All governance events write to a tamper-evident, append-only ledger with
+no deletion capability.
+
+S-2 -- Every governance write carries a SHA-256 cryptographic hash computed at
+write time. Implemented in Jaya-Runtime supabase_writer.rs, compute_event_hash
+function. Hash input: operation_type | execution_status | entry_timestamp |
+entry_id. Committed FIX-613, 2026-05-23.
+
+S-3 -- The attestation chain is independently browser-verifiable without builder
+involvement. Any external party can recompute SHA-256 via Web Crypto API and
+confirm VERIFIED or MISMATCH status. Live at testing.tyova.ai/attestation.
+First verified: 50/50 VERIFIED, 2026-05-23 approximately 12:58 PDT.
+
+S-4 -- Human guardian authority is structurally unbroken. No AI component within
+the system can self-authorize elevated operations. Authority flows downward only:
+Human Guardian -- TY AI OS -- Jaya Runtime -- connected agents.
+
+S-5 -- Kill-switch dominance is enforced at the architecture level. No runtime
+decision, governance event, or AI component output can override it. No AI
+component including Jayme AI can remove, bypass, disable, or override the kill
+switch under any condition. Source: Guardian Codex, Continuity Charter.
+
+S-6 -- Self-repair outside of an Authorized Healing Window is not permitted at
+the governance level. Outside of a formally opened AHW, TY AI OS cannot modify
+its governance files, repair its governance structure, or make structural changes
+to its own operation. All healing windows are guardian-authorized, time-limited
+(72-hour maximum per Tier 2 window), scope-defined, and permanently logged in
+the append-only ledger at opening and closing. Source: Guardian Codex, coined
+2026-01-18. Note: A post-authorization autonomous repair model for operational
+(non-governance) repairs is defined as design intent in FLAG-36, Phase 13+.
+
+Operational Requirements -- verified built in TY AI OS:
+
+O-1 -- A monitoring thread is active and continuously writing governance events
+at defined intervals. Jaya-Runtime monitoring thread fires 9 governance event
+types every 60 seconds. Implemented FIX-609. Confirmed live: 4,400+ records in
+jaya_audit_events as of 2026-05-23.
+
+O-2 -- A defined test suite passes against the governance specification without
+regression. Current: 172/172 tests passing across all phases. Committed
+Jaya-Runtime HEAD 9344573.
+
+O-3 -- Governance activity is publicly observable via a read-only status surface
+without requiring builder access. Live at testing.tyova.ai/ecosystem-flow --
+23 WARDs, health banner, event feed, drill-down panel. Implemented FIX-597
+through FIX-621.
+
+O-4 -- The system writes governance events from real runtime activity, not
+simulated or seeded data. Confirmed: Jaya-Runtime writes governance events from
+live execution paths including proof generation, CRI evaluation, ledger writes,
+sentinel scans, and policy checks.
+
+Doctrinal Requirements -- verified in ty-ai-governance repo:
+
+D-1 -- Non-weaponization guardrails are structural absences of capability, not
+policy statements. Established FIX-36.00, 2026-02-18. Five guardrails: kinetic
+harm, surveillance, population processing, offensive decision logic, authority
+override.
+
+D-2 -- The system operates under a sealed, versioned governance specification
+with formal amendment discipline. Current: 12 phases sealed, Book of TY 68
+chapters, MASTER_FIX_INDEX and Ch18 as permanent immutable records.
+
+D-3 -- Bidirectional governance is enforced: the system protects humans from AI
+and protects AI from corrupt human misuse. Established as a core invariant
+across all phases.
+
+**Conditions That Exit Attestonic State**
+
+A system exits Attestonic State if any of the following occur:
+
+- Guardian authority chain is broken or bypassed
+- Attestation hash mismatches appear and are not resolved
+- Monitoring thread goes silent beyond defined tolerance
+- Test suite regresses against the governance specification
+- Kill-switch override is bypassed by any component
+- Governance writes cease or ledger integrity is compromised
+
+**Standard Openness**
+
+Attestonic State is an open standard. Any governed AI system that meets all
+structural, operational, and doctrinal criteria above -- verified independently,
+not self-declared -- may be recognized as being in Attestonic State. TY AI OS
+sets the standard, holds the reference implementation, and is the first verified
+instance. Partial compliance does not qualify. Self-declaration without
+independent verification is not Attestonic State -- it is an assertion.
+
+**Relationship to the Attestonic Claim Framework**
+
+Attestonic State represents the fourth and highest level of the Attestonic claim
+framework originally established 2025-12-16: Governed -- structurally enforced
+at the architecture level. A system in Attestonic State does not merely claim
+governance. It proves it continuously, in real time, verifiably.
+
+See also: Attestonic (Section 5), GAL -- Global Attestonic Layer (Section 5),
+Attestonic (Canonical Framework -- Etymology) (Section 13), Verifiable Governance
+(Section 2), FLAG-36 (Ch18 Entry-641).
 
 ---
 ## Section 6 -- Succession and Continuity Terms
