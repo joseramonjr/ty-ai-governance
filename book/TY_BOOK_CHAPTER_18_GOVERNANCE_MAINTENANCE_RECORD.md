@@ -12594,3 +12594,5 @@ EcosystemFlowPage blue contrast -- zone opacity 0a->06 -- labels dd->ff -- blue 
 EcosystemFlowPage mobile canvas contrast -- zone borders 1a->3a -- zone fill 06->0e -- zone labels aa->cc -- WARD borders 55->88 -- flow paths opacity+width up -- dots 4/7->5/8 -- 6 canvas changes verified -- 66ddadd
 
 **Status:** CLOSED
+#### Addendum | FIX-642 | 2026-05-25 16:25 PDT San Diego
+Zone label contrast fix -- col+cc/ff replaced with near-white #c8d8ec/#ffffff -- high contrast on dark canvas -- commit 378776a
