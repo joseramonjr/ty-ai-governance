@@ -12574,3 +12574,13 @@ EcosystemFlowPage #475569 replaced with #94a3b8 -- 8 instances -- mobile and des
 EcosystemFlowPage 11 text color fixes -- #1e293b #334155 #64748b all replaced with #94a3b8 -- full contrast audit complete -- mobile and desktop readability -- f11fb22
 
 **Status:** CLOSED
+
+### Entry-659 | FIX-641 | 2026-05-25 12:32 PDT San Diego -- 2026-05-25 12:32 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 1d4110a
+**Scope:** EcosystemFlowPage blue contrast fix -- zone opacity reduced -- zone labels brightened -- blue flow paths #3b82f6 to #93c5fd -- mobile readability
+
+EcosystemFlowPage blue contrast -- zone opacity 0a->06 -- labels dd->ff -- blue flow paths #3b82f6->93c5fd 6 instances -- mobile readability improved -- 1d4110a
+
+**Status:** CLOSED
