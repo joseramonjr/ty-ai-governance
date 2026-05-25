@@ -12514,3 +12514,13 @@ SPEC_IMPLEMENTATION_REGISTRY updated -- F-15 formally closed -- F-12 Section-37.
 SPEC_IMPLEMENTATION_REGISTRY full rescan -- 9 TYOVA planned sections Section 4 -- 5 modules confirmed wired Section 5 -- registry_hash submodule confirmed -- no new critical gaps found -- 689 lines -- 8900c79
 
 **Status:** CLOSED
+
+### Entry-653 | FIX-635 | 2026-05-25 09:32 PDT San Diego -- 2026-05-25 09:47 PDT San Diego
+
+**Destination:** ty-ai-governance + Jaya-Runtime + TYOVA
+**Commit:** d41ecb4
+**Scope:** governance_hash recomputation -- GAL_HASH_ANCHOR update -- masterHubRegistry G-41 label fix -- pending-authorship page 5 docs marked complete
+
+governance_hash v0.2 11ee89f live -- Jaya 6e68cea + ty-gov e685e33 + TYOVA d41ecb4 -- G-41 label corrected -- pending-authorship 5 docs marked complete -- 174/174 passing
+
+**Status:** CLOSED
