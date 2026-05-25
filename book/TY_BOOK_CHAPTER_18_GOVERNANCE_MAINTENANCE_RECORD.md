@@ -12494,3 +12494,13 @@ FLAG-35 design spec complete -- tiered CL-1 CL-2 CL-3 confirmation model -- exec
 SPEC_IMPLEMENTATION_REGISTRY.md complete -- 25 specs audited -- 5 wiring gaps -- 10 ChatGPT era gaps -- NWP runtime_warning HIGH priority -- 526 lines -- 73781a8
 
 **Status:** CLOSED
+
+### Entry-651 | FIX-633 | 2026-05-25 08:59 PDT San Diego -- 2026-05-25 09:05 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** fff7c45
+**Scope:** SPEC_IMPLEMENTATION_REGISTRY update -- F-15 formal closure -- Parts 31-35 wiring gap verification -- rescan findings
+
+SPEC_IMPLEMENTATION_REGISTRY updated -- F-15 formally closed -- F-12 Section-37.10 Post-Phase-5 Yampolskiy-Gap-3 added -- Parts 31-35 wiring gaps verified RESOLVED -- 615 lines -- fff7c45
+
+**Status:** CLOSED
