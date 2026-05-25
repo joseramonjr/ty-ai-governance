@@ -12484,3 +12484,13 @@ HomePage terms count wired to ECOSYSTEM_STATS.vocabTerms -- all homepage metrics
 FLAG-35 design spec complete -- tiered CL-1 CL-2 CL-3 confirmation model -- execution receipts + task aggregation + governance state reports -- 463 lines -- 516fe36
 
 **Status:** CLOSED
+
+### Entry-650 | FIX-632 | 2026-05-24 15:21 PDT San Diego -- 2026-05-24 17:08 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 73781a8
+**Scope:** SPEC_IMPLEMENTATION_REGISTRY.md -- audit all spec documents current + ChatGPT era -- implementation status per section -- identify unimplemented gaps
+
+SPEC_IMPLEMENTATION_REGISTRY.md complete -- 25 specs audited -- 5 wiring gaps -- 10 ChatGPT era gaps -- NWP runtime_warning HIGH priority -- 526 lines -- 73781a8
+
+**Status:** CLOSED
