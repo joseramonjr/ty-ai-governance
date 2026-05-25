@@ -8752,3 +8752,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 
 | FIX-642 | 2026-05-25 15:26 PDT San Diego -- 2026-05-25 15:37 PDT San Diego | TYOVA | EcosystemFlowPage mobile contrast -- canvas WARD borders, zone backgrounds, animated dot visibility. EcosystemFlowPage mobile canvas contrast -- zone borders 1a->3a -- zone fill 06->0e -- zone labels aa->cc -- WARD borders 55->88 -- flow paths opacity+width up -- dots 4/7->5/8 -- 6 canvas changes verified -- 66ddadd Commit 66ddadd. CLOSED |
 | FIX-642 addendum | 2026-05-25 16:25 PDT San Diego | TYOVA | Zone label contrast -- col+cc/ff -> #c8d8ec/#ffffff -- 378776a |
+
+| FIX-642 addendum 2 | 2026-05-25 16:37 PDT San Diego | TYOVA | WARD sub-label lightenColor 55% -- live value + alert text -- 02a8ad7 |

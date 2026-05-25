@@ -12596,3 +12596,9 @@ EcosystemFlowPage mobile canvas contrast -- zone borders 1a->3a -- zone fill 06-
 **Status:** CLOSED
 #### Addendum | FIX-642 | 2026-05-25 16:25 PDT San Diego
 Zone label contrast fix -- col+cc/ff replaced with near-white #c8d8ec/#ffffff -- high contrast on dark canvas -- commit 378776a
+
+#### Addendum 2 | FIX-642 | 2026-05-25 16:37 PDT San Diego
+WARD sub-label contrast -- lightenColor helper 55% toward white -- live value + alert text lightened -- commit 02a8ad7
+
+#### Addendum 2 | FIX-642 | 2026-05-25 16:37 PDT San Diego
+WARD sub-label contrast -- lightenColor helper 55% toward white -- live value + alert text lightened -- commit 02a8ad7
