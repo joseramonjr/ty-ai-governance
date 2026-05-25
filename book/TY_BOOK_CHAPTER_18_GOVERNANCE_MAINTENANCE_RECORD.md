@@ -12554,3 +12554,13 @@ SPEC_REGISTRY Section 6 -- governance_hash autonomous check Phase 13 -- 3-step i
 SPEC_REGISTRY Section 7 -- self-healing loop Phase 13 priority 3 -- dead-man switch FLAG-36 Windows auto-start -- cross-platform future item -- Windows-first deployment declared -- 972 lines -- 682cd66
 
 **Status:** CLOSED
+
+### Entry-657 | FIX-639 | 2026-05-25 12:10 PDT San Diego -- 2026-05-25 12:10 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** dc57a9e
+**Scope:** EcosystemFlowPage text readability -- #475569 replaced with #94a3b8 -- 8 instances -- mobile and desktop dark background contrast fix
+
+EcosystemFlowPage #475569 replaced with #94a3b8 -- 8 instances -- mobile and desktop readability improved -- dc57a9e
+
+**Status:** CLOSED
