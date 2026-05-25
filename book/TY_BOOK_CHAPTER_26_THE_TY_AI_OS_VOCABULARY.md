@@ -628,12 +628,16 @@ Every payload is anchored to the governance_hash.
 
 **governance_hash**
 *First coined: ~2026-03-11 | San Diego (America/Los_Angeles)*
+*Recomputed: FIX-635 | 2026-05-25 | San Diego (America/Los_Angeles)*
 A SHA-256 hash computed from the canonical governance doctrine
 documents. Anchors all attestation payloads to the actual governance
-doctrine. Current value (v0.1):
+doctrine. Current value (v0.2):
+11ee89f117bad9dd54819792dff8bc0fd5190010b85ea2d9e951b2da5b0a35e2
+Previous value (v0.1 -- 2026-03-11 -- superseded):
 cd7ef6c73e8050394bec5b0e0289238cd000d7c4ce133ec951653531356a6e09
-A node whose documents do not produce this hash cannot generate a
-valid attestation.
+A node whose documents do not produce the current hash cannot generate
+a valid attestation. See GAL_HASH_ANCHOR.md for full recomputation
+record.
 
 **Node Identity**
 *First coined: 2025-12-10 15:53 | San Diego (America/Los_Angeles)*

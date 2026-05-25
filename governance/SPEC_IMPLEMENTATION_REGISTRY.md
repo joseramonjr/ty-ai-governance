@@ -24,7 +24,7 @@ Status codes:
 
 ### GAL_HASH_ANCHOR.md
 Status: SEALED
-Evidence: governance_hash cd7ef6c... confirmed in use.
+Evidence: governance_hash 11ee89f... confirmed in use.
 Phase 4 sealed 2026-03-13. Hash anchor operational.
 Gaps: None identified.
 
@@ -119,7 +119,7 @@ Implemented:
   Peer registry and key pinning: YES (Part 71)
   Verification engine VALID/INVALID: YES (Part 72)
   Human alert integration: YES (Part 73)
-  governance_hash anchor cd7ef6c: YES
+  governance_hash anchor 11ee89f: YES
   Phase 4 sealed: YES (2026-03-13)
 Gaps:
   sign_governance_state: WIRING_GAP (built, unused)
