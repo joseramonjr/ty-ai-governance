@@ -12524,3 +12524,13 @@ SPEC_IMPLEMENTATION_REGISTRY full rescan -- 9 TYOVA planned sections Section 4 -
 governance_hash v0.2 11ee89f live -- Jaya 6e68cea + ty-gov e685e33 + TYOVA d41ecb4 -- G-41 label corrected -- pending-authorship 5 docs marked complete -- 174/174 passing
 
 **Status:** CLOSED
+
+### Entry-654 | FIX-636 | 2026-05-25 10:05 PDT San Diego -- 2026-05-25 10:13 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 829c5d8
+**Scope:** Integrity-Scan.ps1 new TY-ANCHOR tool -- governance_hash check in Verify.ps1 -- governance_hash gate in Session-Close.ps1 -- prevent silent governance drift
+
+Integrity-Scan.ps1 created -- Verify.ps1 governance_hash check -- Session-Close.ps1 GATE 6 -- all three tools tested PASS -- governance drift prevention active -- 829c5d8
+
+**Status:** CLOSED
