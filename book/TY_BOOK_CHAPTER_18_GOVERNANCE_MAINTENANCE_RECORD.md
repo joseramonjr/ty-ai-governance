@@ -12544,3 +12544,13 @@ Integrity-Scan.ps1 created -- Verify.ps1 governance_hash check -- Session-Close.
 SPEC_REGISTRY Section 6 -- governance_hash autonomous check Phase 13 -- 3-step implementation -- startup verification CL-3 push TYOVA banner -- AC-1 through AC-6 -- 806 lines -- 57f1782
 
 **Status:** CLOSED
+
+### Entry-656 | FIX-638 | 2026-05-25 11:40 PDT San Diego -- 2026-05-25 11:56 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 682cd66
+**Scope:** SPEC_IMPLEMENTATION_REGISTRY -- self-healing loop Phase 13 priority 3 -- Windows-first deployment documented -- cross-platform future item
+
+SPEC_REGISTRY Section 7 -- self-healing loop Phase 13 priority 3 -- dead-man switch FLAG-36 Windows auto-start -- cross-platform future item -- Windows-first deployment declared -- 972 lines -- 682cd66
+
+**Status:** CLOSED
