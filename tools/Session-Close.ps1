@@ -2,31 +2,30 @@
 # Full session close checklist. Confirm R14. Display summary.
 # Usage: .\Session-Close.ps1
 # Built: FIX-534 | 2026-05-19 | San Diego
+# Updated: FIX-636 | 2026-05-25 | San Diego -- GATE 6 governance_hash added
 # Part of TY-ANCHOR v0.1 -- see TY-ANCHOR-ETHOS.md
-
 $ErrorActionPreference = "Stop"
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
-
 $CH18         = "E:\TY-Ecosystem\ty-ai-governance\book\TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md"
 $MFI          = "E:\TY-Ecosystem\ty-ai-governance\governance\ledger\MASTER_FIX_INDEX.md"
 $CH26         = "E:\TY-Ecosystem\ty-ai-governance\book\TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md"
 $SESSION_FILE = "E:\TY-Ecosystem\ty-ai-governance\tools\.ty-anchor-session.json"
-
+$ANCHOR       = "E:\TY-Ecosystem\ty-ai-governance\spec\GAL_HASH_ANCHOR.md"
+$F1_PATH      = "E:\TY-Ecosystem\ty-ai-governance\governance\01_CORE_INVARIANTS.md"
+$F2_PATH      = "E:\TY-Ecosystem\ty-ai-governance\governance\03_NON_WEAPONIZATION_GUARDRAIL.md"
+$F3_PATH      = "E:\TY-Ecosystem\ty-ai-governance\spec\TY_GAL_SPEC_v0.1.md"
 $repos = @(
     @{ name = "ty-ai-governance"; path = "E:\TY-Ecosystem\ty-ai-governance" },
     @{ name = "TYOVA";            path = "E:\TY-Ecosystem\TYOVA" },
     @{ name = "Jaya-Runtime";     path = "E:\TY-Ecosystem\Jaya-Runtime" }
 )
-
 $failures = 0
-
 Write-Host ""
 Write-Host "============================================================" -ForegroundColor Cyan
 Write-Host "  TY-ANCHOR -- Session-Close" -ForegroundColor Cyan
 Write-Host "  $(Get-Date -Format 'yyyy-MM-dd HH:mm') PDT | San Diego" -ForegroundColor Cyan
 Write-Host "============================================================" -ForegroundColor Cyan
 Write-Host ""
-
 # -- GATE 1: No open FIX
 Write-Host "GATE 1: Open FIX check" -ForegroundColor Yellow
 Write-Host "----------------------------------------------------------"
@@ -43,7 +42,6 @@ if (Test-Path $SESSION_FILE) {
     Write-Host "  [PASS] No session file found -- no open FIX." -ForegroundColor Green
 }
 Write-Host ""
-
 # -- GATE 2: Repo states
 Write-Host "GATE 2: Repo states" -ForegroundColor Yellow
 Write-Host "----------------------------------------------------------"
@@ -70,7 +68,6 @@ foreach ($r in $repos) {
     }
 }
 Write-Host ""
-
 # -- GATE 3: Ch18 scan
 Write-Host "GATE 3: Ch18 chain -- last 5 entries" -ForegroundColor Yellow
 Write-Host "----------------------------------------------------------"
@@ -85,7 +82,6 @@ if (Test-Path $CH18) {
     $failures++
 }
 Write-Host ""
-
 # -- GATE 4: MFI confirmed current
 Write-Host "GATE 4: MFI last entry" -ForegroundColor Yellow
 Write-Host "----------------------------------------------------------"
@@ -100,7 +96,6 @@ if (Test-Path $MFI) {
     $failures++
 }
 Write-Host ""
-
 # -- GATE 5: Ch26 present
 Write-Host "GATE 5: Ch26 vocabulary file" -ForegroundColor Yellow
 Write-Host "----------------------------------------------------------"
@@ -115,7 +110,32 @@ if (Test-Path $CH26) {
     $failures++
 }
 Write-Host ""
-
+# -- GATE 6: governance_hash currency (FIX-636)
+Write-Host "GATE 6: governance_hash currency" -ForegroundColor Yellow
+Write-Host "----------------------------------------------------------"
+try {
+    $anchorLines = Get-Content $ANCHOR
+    $storedHash = (($anchorLines | Where-Object { $_ -match '^governance_hash: [a-f0-9]{64}$' } | Select-Object -First 1) -replace 'governance_hash: ','').Trim()
+    $f1 = [System.IO.File]::ReadAllText($F1_PATH, [System.Text.Encoding]::UTF8)
+    $f2 = [System.IO.File]::ReadAllText($F2_PATH, [System.Text.Encoding]::UTF8)
+    $f3 = [System.IO.File]::ReadAllText($F3_PATH, [System.Text.Encoding]::UTF8)
+    $combined = $f1 + [char]10 + $f2 + [char]10 + $f3
+    $bytes = [System.Text.Encoding]::UTF8.GetBytes($combined)
+    $sha256 = [System.Security.Cryptography.SHA256]::Create()
+    $computed = ([BitConverter]::ToString($sha256.ComputeHash($bytes)) -replace '-','').ToLower()
+    if ($storedHash -eq $computed) {
+        Write-Host "  [PASS] governance_hash current: $($storedHash.Substring(0,16))..." -ForegroundColor Green
+    } else {
+        Write-Host "  [FAIL] governance_hash MISMATCH -- source files changed since anchor." -ForegroundColor Red
+        Write-Host "         Stored  : $storedHash" -ForegroundColor Red
+        Write-Host "         Computed: $computed" -ForegroundColor Red
+        Write-Host "         Run FIX to recompute before closing session." -ForegroundColor Red
+        $failures++
+    }
+} catch {
+    Write-Host "  [WARN] Could not verify governance_hash: $_" -ForegroundColor Yellow
+}
+Write-Host ""
 # -- VERDICT
 Write-Host "============================================================" -ForegroundColor Cyan
 if ($failures -eq 0) {
