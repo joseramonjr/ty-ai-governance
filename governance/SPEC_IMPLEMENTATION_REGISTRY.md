@@ -804,3 +804,169 @@ AC-6: The guardian can acknowledge and clear the mismatch alert
 ---
 
 Updated: FIX-637 | Entry-655 | 2026-05-25 | San Diego
+
+---
+
+## SECTION 7 -- Self-Healing Loop and Deployment Platform (Phase 13)
+
+Logged: FIX-638 | Entry-656 | 2026-05-25 | San Diego
+
+---
+
+### DEPLOYMENT PLATFORM DECLARATION
+
+Current canonical deployment platform: Windows
+Status: INTENTIONAL -- not accidental
+
+All TY AI OS components are built, tested, and verified on Windows:
+  File paths: E:\TY-Ecosystem\... (Windows format throughout)
+  TY-ANCHOR tools: PowerShell (Windows PowerShell)
+  Jaya Runtime: Tauri desktop app -- built and tested on Windows only
+  Installer: Windows executable
+  governance_hash source paths: hardcoded Windows paths in Rust constants
+
+This is a deliberate architectural decision made early to build
+something real and verified on one platform rather than something
+theoretical and untested on all platforms. TY AI OS does not claim
+to run everywhere. It claims to run correctly on the platform it
+supports. That is a stronger claim than broad untested compatibility.
+
+Cross-platform support is a future item -- see Section 7.3 below.
+
+---
+
+### PHASE 13 ITEM: Self-Healing Loop (Priority 3)
+
+Status: NOT_STARTED
+Priority: HIGH -- required for autonomous operation without guardian
+Depends on: FLAG-35 CL-3 push infrastructure, FLAG-36 repair model
+Platform: Windows (Phase 13). Cross-platform: future item.
+
+#### The Core Problem
+
+A process cannot reliably check itself. If Jaya Runtime crashes,
+the monitoring thread stops. No events are written. From Jaya's
+perspective nothing is wrong -- because Jaya is not running.
+The system goes silent. Nobody knows. No alert fires.
+
+A complete self-healing loop requires something outside Jaya
+to watch Jaya, and something to bring Jaya back if it goes down.
+
+#### Three Required Pieces
+
+**Piece 1 -- Supabase Dead-Man Switch**
+
+A pg_cron job that checks the last governance event timestamp
+every 5 minutes. If no new event has been written in 10 minutes,
+write a JAYA_SILENT event to jaya_audit_events and trigger a
+CL-3 guardian notification.
+
+This works even if Jaya is completely crashed -- Supabase runs
+independently. The absence of events is itself a detectable signal.
+
+Implementation:
+  pg_cron schedule: every 5 minutes
+  Check: SELECT MAX(entry_timestamp) FROM jaya_audit_events
+  Threshold: 10 minutes without a new event
+  Action: INSERT JAYA_SILENT event + CL-3 push to guardian
+  Clear condition: Jaya resumes writing events
+
+**Piece 2 -- FLAG-36 Autonomous Repair (Windows)**
+
+Within defined boundaries, Jaya Runtime detects operational
+problems and repairs them autonomously without guardian involvement.
+All repairs are logged to the append-only ledger and surfaced as
+a repair report at guardian next login.
+
+Repair scope (operational only -- not governance-level):
+  Restart a failed internal module
+  Re-establish a dropped Supabase connection
+  Clear a corrupted in-memory cache
+  Re-initialize a failed monitoring sub-thread
+
+Not in scope for autonomous repair:
+  Governance file modifications
+  Rule changes
+  Any action requiring guardian pre-authorization (AHW)
+
+Platform: Windows. Uses Windows process management APIs via Rust.
+
+**Piece 3 -- Windows Auto-Start on Machine Reboot**
+
+A Windows Task Scheduler entry that starts Jaya Runtime on
+machine boot without requiring manual launch. Ensures Jaya
+resumes governance monitoring after any machine restart.
+
+Implementation:
+  Task Scheduler entry: trigger on system startup
+  Action: launch Jaya Runtime executable
+  Run as: current user or system service account
+  Condition: start only if network available (Supabase dependency)
+
+This is the simplest form of external watchdog for the current
+Windows deployment model.
+
+#### Complete Self-Healing Loop (When All Three Are Built)
+
+  Jaya crashes
+      |
+      v (within 10 minutes)
+  Supabase dead-man switch fires
+      |
+      v
+  JAYA_SILENT event written + CL-3 push to guardian
+      |
+      v (on next machine boot or manual restart)
+  Windows Task Scheduler restarts Jaya Runtime
+      |
+      v
+  Jaya resumes -- FLAG-36 repair model logs recovery
+      |
+      v
+  Guardian receives repair report at next login
+
+No human intervention required for routine recovery.
+Guardian is notified. Guardian reviews. Guardian approves or reverts.
+
+#### Acceptance Criteria
+
+AC-1: Supabase pg_cron detects JAYA_SILENT within 10 minutes
+      of Jaya stopping event generation.
+AC-2: JAYA_SILENT event is classified CL-3 and pushed to guardian.
+AC-3: Jaya Runtime starts automatically on Windows machine boot.
+AC-4: Jaya restarts after crash within one machine boot cycle.
+AC-5: All autonomous repairs are logged to the append-only ledger.
+AC-6: Guardian can review and approve/revert all autonomous repairs
+      from the TYOVA interface.
+AC-7: The self-healing loop operates without any human action for
+      routine operational failures.
+
+---
+
+### FUTURE ITEM: Cross-Platform Deployment (Post-Phase-13)
+
+Status: NOT_STARTED -- deferred, requires hardware for testing
+Platforms: macOS, Linux
+
+What would be required:
+  File paths: replace hardcoded Windows paths with OS-agnostic
+    path construction using std::path::PathBuf in Rust
+  TY-ANCHOR tools: PowerShell Core runs on Mac/Linux but paths
+    and auto-start mechanisms would need platform-specific branches
+  Auto-start mechanisms:
+    macOS: launchd plist in /Library/LaunchDaemons/
+    Linux: systemd service unit file (.service)
+  governance_hash source paths: replace hardcoded strings with
+    runtime path detection
+  Testing requirement: a Mac and a Linux machine running the
+    full test suite (174 tests) before any cross-platform claim
+
+Decision basis: Jose Ramon builds and tests on Windows. Building
+for platforms that cannot be tested is a governance risk. Cross-
+platform support will be scoped when hardware is available and
+tests can be run to verify. Claiming cross-platform support before
+tests pass violates the Zero-Fabrication Rule.
+
+---
+
+Updated: FIX-638 | Entry-656 | 2026-05-25 | San Diego
