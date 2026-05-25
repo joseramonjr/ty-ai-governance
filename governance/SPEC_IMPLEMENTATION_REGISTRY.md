@@ -687,3 +687,120 @@ ChatGPT: 176 conversations (conversations-000.json + conversations-001.json)
 Claude: Full session history via conversation_search
 Date: 2026-05-25 09:06 PDT San Diego
 FIX: FIX-633 Entry-651
+
+
+---
+
+## SECTION 6 -- Governance Hash Autonomous Protection (Phase 13)
+
+Logged: FIX-637 | Entry-655 | 2026-05-25 | San Diego
+Context: The governance_hash went stale for two months (2026-03-11
+to 2026-05-25) without detection. FIX-636 added manual tools
+(Integrity-Scan.ps1, GATE 6 in Session-Close.ps1) that protect
+during active development. These tools require a human to run them.
+
+When TY AI OS transitions to autonomous operation -- where the
+guardian is not actively developing the system and may only log
+in periodically -- manual tools are insufficient. The system must
+detect and report governance drift without human initiation.
+
+The guardian in the autonomous phase receives governance state
+reports and exception alerts (FLAG-35 model). They do not watch
+logs. The system must push, not wait to be pulled.
+
+---
+
+### PHASE 13 ITEM: Governance Hash Autonomous Check
+
+Status: NOT_STARTED
+Priority: HIGH -- required before any public deployment
+Depends on: FLAG-35 confirmation loop (CL-3 push infrastructure)
+
+#### Step 1 -- Jaya Runtime Startup Verification
+
+At every Jaya Runtime startup, before any governance events are
+written, compute the governance_hash from the three source files:
+  01_CORE_INVARIANTS.md
+  03_NON_WEAPONIZATION_GUARDRAIL.md
+  TY_GAL_SPEC_v0.1.md
+
+Compare the computed hash to the hardcoded constant in lib.rs.
+
+If match: continue normally. No event written. No noise.
+If mismatch: write a GOVERNANCE_HASH_MISMATCH event to Supabase
+  with ELEVATED execution_status. Continue running. Do not stop.
+  The system must remain operational while the guardian is notified.
+
+Implementation: add hash verification function to lib.rs startup
+sequence. Reuse the SHA-256 computation pattern from FIX-635.
+New Supabase event type: GOVERNANCE_HASH_MISMATCH.
+CL classification: CL-3 (guardian notification required).
+
+#### Step 2 -- CL-3 Push Notification to Guardian
+
+When a GOVERNANCE_HASH_MISMATCH event is written, it must be
+routed as a CL-3 event per the FLAG-35 tiered confirmation model.
+The guardian receives a push notification -- not a log entry they
+must discover.
+
+Push mechanism options (builder decides):
+  Option A: Email via Resend API to guardian address
+  Option B: Supabase-triggered TYOVA banner (always visible)
+  Option C: Both A and B
+
+The guardian must be informed without needing to log in to find
+the alert. This is the CEO Principle applied to governance
+integrity: the system found them, not the other way around.
+
+Depends on: FLAG-35 CL-3 routing infrastructure (Phase 13).
+
+#### Step 3 -- TYOVA Governance Integrity Banner
+
+If the jaya_audit_events table contains any unresolved
+GOVERNANCE_HASH_MISMATCH event, TYOVA displays a visible
+integrity warning banner on the public site.
+
+This means even without the guardian being directly notified,
+any visitor to TYOVA would see the integrity issue. Three layers
+of visibility: ledger record, guardian push, public banner.
+
+Banner clears when the guardian acknowledges the mismatch and
+the hash is recomputed and updated.
+
+Implementation: EcosystemFlowPage or a new /governance-integrity
+route queries for GOVERNANCE_HASH_MISMATCH events on load.
+If any unresolved events exist, display banner with timestamp.
+
+---
+
+### Why Not a Hard Stop at Startup
+
+A hard stop (Jaya refuses to run if hash is wrong) was considered
+and rejected. Reason: if the hash drifts while the guardian is
+unavailable and no developer is present, Jaya Runtime would stop
+generating governance events entirely. The system goes dark at the
+moment it most needs to be visible. A running system that logs a
+mismatch is better than a silent stopped system.
+
+The correct response is: run, log, push, make visible. Let the
+guardian decide whether to investigate or approve the change.
+
+---
+
+### Acceptance Criteria
+
+AC-1: Jaya Runtime computes governance_hash at every startup.
+AC-2: Hash mismatch writes GOVERNANCE_HASH_MISMATCH to Supabase
+      within 5 seconds of startup.
+AC-3: GOVERNANCE_HASH_MISMATCH is classified as CL-3 and routed
+      to the guardian via push notification.
+AC-4: TYOVA displays an integrity warning banner when any
+      unresolved GOVERNANCE_HASH_MISMATCH event exists.
+AC-5: Hash match at startup writes no event and adds no latency
+      visible to the user.
+AC-6: The guardian can acknowledge and clear the mismatch alert
+      from TYOVA without requiring a development session.
+
+---
+
+Updated: FIX-637 | Entry-655 | 2026-05-25 | San Diego
