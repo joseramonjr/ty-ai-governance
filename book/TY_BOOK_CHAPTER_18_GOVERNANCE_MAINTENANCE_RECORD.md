@@ -12584,3 +12584,13 @@ EcosystemFlowPage 11 text color fixes -- #1e293b #334155 #64748b all replaced wi
 EcosystemFlowPage blue contrast -- zone opacity 0a->06 -- labels dd->ff -- blue flow paths #3b82f6->93c5fd 6 instances -- mobile readability improved -- 1d4110a
 
 **Status:** CLOSED
+
+### Entry-660 | FIX-642 | 2026-05-25 15:26 PDT San Diego -- 2026-05-25 15:37 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 66ddadd
+**Scope:** EcosystemFlowPage mobile contrast -- canvas WARD borders, zone backgrounds, animated dot visibility
+
+EcosystemFlowPage mobile canvas contrast -- zone borders 1a->3a -- zone fill 06->0e -- zone labels aa->cc -- WARD borders 55->88 -- flow paths opacity+width up -- dots 4/7->5/8 -- 6 canvas changes verified -- 66ddadd
+
+**Status:** CLOSED
