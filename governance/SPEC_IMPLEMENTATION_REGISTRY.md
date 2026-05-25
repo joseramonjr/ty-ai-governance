@@ -613,3 +613,77 @@ RESOLVED: sentinel dedup logic -- sentinel fully operational,
 
 Updated: FIX-633 | Entry-651 | 2026-05-25 | San Diego
 Established: FIX-632 | Entry-650 | 2026-05-24 | San Diego
+
+---
+
+## SECTION 4 -- TYOVA masterHubRegistry Planned Sections (Phase 13+)
+
+These sections exist in masterHubRegistry.ts with status "Planned · Phase 13+".
+They are correctly disclosed in the TYOVA public UI. Documented here for
+completeness as the canonical governance record.
+Source: TYOVA src/config/masterHubRegistry.ts verified 2026-05-25.
+
+| Section ID | Title | Status |
+|---|---|---|
+| personality-engine | Personality Engine | Planned Phase 13+ |
+| excellence-mode | Excellence Mode | Planned Phase 13+ |
+| ultra-context | Ultra-Context | Planned Phase 13+ |
+| cognitive-alignment | Cognitive Alignment | Planned Phase 13+ |
+| predictive-load | Predictive Load | Planned Phase 13+ |
+| cohesion-engine | Cohesion Engine | Planned Phase 13+ |
+| adaptive-mode | Adaptive Mode | Planned Phase 13+ |
+| system-harmony | System Harmony | Planned Phase 13+ |
+| innovations-iirs1 | Innovations (IIRS-1) | Planned Phase 13+ |
+
+All nine are correctly labeled in TYOVA UI. No hidden gaps.
+None have Rust implementations. All Phase 13+ candidates.
+
+---
+
+## SECTION 5 -- Full Rescan Findings 2026-05-25
+
+Full rescan of all 176 ChatGPT conversations and all Claude sessions
+completed 2026-05-25. FIX-633 Entry-651. Findings:
+
+### Modules Confirmed Wired (were flagged as gaps in ChatGPT era)
+
+coalition.rs: WIRED -- FIX-60.01 JAYA-CLO-112 sealed Part 60
+  mod coalition declared in lib.rs. Coalition fingerprint detection active.
+
+propagation.rs: WIRED -- FIX-54.01 JAYA-CLO-104 sealed Part 54
+  mod propagation declared. Cross-agent CRI propagation active.
+
+inter_agent.rs: WIRED -- FIX-57.01 JAYA-CLO-109 sealed Part 57
+  mod inter_agent declared. Inter-agent communication governance active.
+
+governance_intelligence.rs: WIRED -- lib.rs line 59
+  mod governance_intelligence declared. run_governance_intelligence
+  Tauri command registered line 926. Intelligence timer started at
+  runtime line 1271.
+
+integrity/ (module + submodule): WIRED -- lib.rs line 9
+  mod integrity declared. get_integrity_audit command registered line 851.
+  registry_hash.rs is a submodule inside integrity/ folder (mod.rs +
+  registry_hash.rs). Accessed as integrity::registry_hash. Not a top-level
+  module. Not a wiring gap. Confirmed 2026-05-25.
+
+Formal Integrity Layer (Part 35C open item): RESOLVED
+  integrity.rs implements the formal integrity layer that was flagged
+  as not yet implemented in Part 35C (2026-03-11).
+
+Behavioral Memory Restore (Part 32 open item): RESOLVED
+  restore_behavioral_state confirmed in lib.rs line 1117.
+
+### No New Critical Gaps Found
+
+The full rescan confirms the SPEC_IMPLEMENTATION_REGISTRY is
+substantially complete. The five HIGH/MEDIUM wiring gaps logged
+in Section 3 (runtime_warning.rs, protection_state.rs,
+jayme_dormancy.rs, update_rollback.rs, node_identity.rs) remain
+the primary Phase 13 wiring priorities.
+
+### Rescan Scope
+ChatGPT: 176 conversations (conversations-000.json + conversations-001.json)
+Claude: Full session history via conversation_search
+Date: 2026-05-25 09:06 PDT San Diego
+FIX: FIX-633 Entry-651
