@@ -524,3 +524,92 @@ before any public deployment or external audit.
 
 Established: FIX-632 | Entry-650 | 2026-05-24 | San Diego
 Next review: When Phase 13 opens or Walker Weitzel responds.
+
+---
+
+### F-12 (Academic Paper -- TY AI OS Structural Governance)
+Status: DEFERRED -- Jose decides
+Definition: A paper titled Structural Governance for AI Agents:
+An Implementation-First Response to the Controllability Problem
+was drafted in a Claude session (March 2026) but never committed
+to disk. The file does not exist in any repo. Cannot be referenced
+in the Book of TY until it exists on disk.
+Source: Phase 5 completion session 2026-03-25. Deferred every
+session since. Carried forward through all handoffs to 2026-05-25.
+Action required: Jose decides -- write and commit, or retire.
+
+---
+
+### F-15 (Proof Refresh Anomaly Storm)
+Status: RESOLVED -- formally closed FIX-633 2026-05-25
+Root cause diagnosed April 2026 Phase 7 polish session.
+The background proof refresh thread (Part 100, 60s cycle) called
+ledger::log_operation() which the sentinel incorrectly categorized
+as EscalationDrift + TierInconsistency. 1787 anomalies logged in
+one session. CRI reached 99 Critical. False positive -- proof
+refresh is a legitimate governance operation.
+Resolution: Monitoring thread rebuilt in Phase 9+ sessions.
+Jaya Runtime now runs 14000+ governance events with nominal CRI
+and zero anomaly storms. F-15 condition no longer exists.
+Formally closed: FIX-633 | 2026-05-25 | San Diego.
+
+---
+
+### Section 37.10 (Chapter 37 -- Personal Voice)
+Status: OPEN -- Jose personal authorship required
+Chapter 37 (The Outward Reach, Phase 6) has one section reserved
+for Jose personal account of what Phase 6 means. Cannot be
+drafted by any other hand. Open since March 2026.
+Source: Phase 6 handoff 2026-03-29. Carried forward.
+Action: Jose authors when ready. Not blocking any phase.
+
+---
+
+### Post-Phase-5 Structural Gaps
+Status: PARTIALLY RESOLVED
+Gap 1 -- System lives on one machine -- no real-world reach:
+  PARTIALLY RESOLVED. testing.tyova.ai live. SS321 live at
+  silversounds321.com. Patent pending. Not yet publicly
+  distributed as a downloadable runtime.
+Gap 2 -- No adoption strategy documented:
+  OPEN. No formal adoption strategy document exists.
+Gap 3 -- No deployment strategy documented:
+  OPEN. Blocked pending Walker Weitzel patent response.
+
+---
+
+### Yampolskiy Gap 3 (Future AI Scalability)
+Status: OPEN -- long-term research question
+Gap 1 operator-independent verification: RESOLVED Phase 6 Track A
+Gap 2 external adoption standard: RESOLVED Phase 6 Track B
+Gap 3 scalability to future AI systems: OPEN
+Definition: As AI systems become more capable, will TY AI OS
+governance architecture scale? Current architecture assumes
+known bounded agent types. Future AI with emergent capabilities
+may not fit the current tier model. Not an implementation gap --
+a research question that cannot be answered until future AI
+systems exist.
+Source: Ch27 Yampolskiy gaps addendum FIX-98.02 2026-03-26.
+
+---
+
+## SECTION 3 UPDATE -- Parts 31-35 Early Wiring Gaps RESOLVED
+
+All items flagged as not-wired in Jaya Runtime Parts 31-35
+(ChatGPT era, early 2026) verified RESOLVED 2026-05-25 via
+direct lib.rs inspection. Source: lib.rs HEAD fedef6c.
+
+RESOLVED: storage_cleanup -- wired Tauri command line 373,
+  registered line 844
+RESOLVED: run_storage_cleanup -- wired and registered
+RESOLVED: restore_snapshot -- wired lines 94/513-524/856
+RESOLVED: structural_lock -- acquire_lock/release_lock
+  imported line 93
+RESOLVED: sentinel dedup logic -- sentinel fully operational,
+  started line 1085, monitoring thread lines 1200-1225,
+  commands registered lines 857-858
+
+---
+
+Updated: FIX-633 | Entry-651 | 2026-05-25 | San Diego
+Established: FIX-632 | Entry-650 | 2026-05-24 | San Diego
