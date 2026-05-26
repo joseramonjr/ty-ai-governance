@@ -12653,3 +12653,13 @@ FLAG-129 complete -- TYOVA-governance dedicated Supabase -- SS321 fully separate
 Policy engine edge cases complete -- validate_fields -- bounds + empty id -- 8 tests -- 193/193 passing
 
 **Status:** CLOSED
+
+### Entry-666 | FIX-648 | 2026-05-26 16:13 PDT San Diego -- 2026-05-26 16:43 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 0077805
+**Scope:** Phase 13 Item 6 -- Tier boundary hardening 0/1/2/3
+
+Tier boundary hardening complete -- active tier vs required tier + policy max_allowed_autonomy_tier enforced -- 4 tests -- 197/197 passing
+
+**Status:** CLOSED

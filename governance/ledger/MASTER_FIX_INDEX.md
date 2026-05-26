@@ -8766,3 +8766,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-646 | 2026-05-26 13:52 PDT San Diego -- 2026-05-26 14:55 PDT San Diego | TYOVA | Phase 13 Item 4 -- FLAG-129 -- Dedicated TYOVA Supabase -- separate jaya_audit_events from SS321 -- clean architectural boundary. FLAG-129 complete -- TYOVA-governance dedicated Supabase -- SS321 fully separated -- 53 live events confirmed -- BOM-free config -- WARDs pulsing verified Commit NO-COMMIT. CLOSED |
 
 | FIX-647 | 2026-05-26 15:51 PDT San Diego -- 2026-05-26 16:03 PDT San Diego | Jaya-Runtime | Phase 13 Item 5 -- Policy engine edge case coverage. Policy engine edge cases complete -- validate_fields -- bounds + empty id -- 8 tests -- 193/193 passing Commit 9f018cd. CLOSED |
+
+| FIX-648 | 2026-05-26 16:13 PDT San Diego -- 2026-05-26 16:43 PDT San Diego | Jaya-Runtime | Phase 13 Item 6 -- Tier boundary hardening 0/1/2/3. Tier boundary hardening complete -- active tier vs required tier + policy max_allowed_autonomy_tier enforced -- 4 tests -- 197/197 passing Commit 0077805. CLOSED |
