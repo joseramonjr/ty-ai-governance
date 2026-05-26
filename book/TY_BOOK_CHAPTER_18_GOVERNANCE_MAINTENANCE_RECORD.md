@@ -12633,3 +12633,13 @@ governance_hash autonomous check complete -- GOVERNANCE_HASH_V2 constant -- 3-fi
 Self-healing loop complete -- CRI recovery + sentinel cleared + policy availability -- 3 tests -- 185/185 passing
 
 **Status:** CLOSED
+
+### Entry-664 | FIX-646 | 2026-05-26 13:52 PDT San Diego -- 2026-05-26 14:55 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** NO-COMMIT
+**Scope:** Phase 13 Item 4 -- FLAG-129 -- Dedicated TYOVA Supabase -- separate jaya_audit_events from SS321 -- clean architectural boundary
+
+FLAG-129 complete -- TYOVA-governance dedicated Supabase -- SS321 fully separated -- 53 live events confirmed -- BOM-free config -- WARDs pulsing verified
+
+**Status:** CLOSED

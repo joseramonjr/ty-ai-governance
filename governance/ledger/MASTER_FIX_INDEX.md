@@ -8762,3 +8762,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-644 addendum | 2026-05-26 12:01 PDT San Diego | Jaya-Runtime | 3 condition verification tests -- fix643 NWP trigger conditions + fix644 hash check verified -- 182/182 passing -- bd44f92 |
 
 | FIX-645 | 2026-05-26 12:06 PDT San Diego -- 2026-05-26 12:27 PDT San Diego | Jaya-Runtime | Phase 13 Item 3 -- Self-healing loop -- detect and recover from governance degraded states autonomously. Self-healing loop complete -- CRI recovery + sentinel cleared + policy availability -- 3 tests -- 185/185 passing Commit f8789bf. CLOSED |
+
+| FIX-646 | 2026-05-26 13:52 PDT San Diego -- 2026-05-26 14:55 PDT San Diego | TYOVA | Phase 13 Item 4 -- FLAG-129 -- Dedicated TYOVA Supabase -- separate jaya_audit_events from SS321 -- clean architectural boundary. FLAG-129 complete -- TYOVA-governance dedicated Supabase -- SS321 fully separated -- 53 live events confirmed -- BOM-free config -- WARDs pulsing verified Commit NO-COMMIT. CLOSED |
