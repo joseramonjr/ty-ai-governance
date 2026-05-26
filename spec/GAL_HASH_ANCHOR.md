@@ -62,3 +62,10 @@ This hash is invalid and must be recomputed if any of the following occur:
 ## Seal Record
 v0.1: CLO JAYA-CLO-135 | 2026-03-11 | San Diego (America/Los_Angeles)
 v0.2: FIX-635 Entry-653 | 2026-05-25 | San Diego (America/Los_Angeles)
+
+## FLAG-132 -- Self-Healing WARD Visibility -- Phase 13 Item 10 scope addition
+- Logged: 2026-05-26 12:27 PDT San Diego
+- Option A: Map SELF_HEAL_* events to Sentinel + CRI Monitor WARDs on EcosystemFlow -- pulse on self-heal fire
+- Option B: Add dedicated Self-Healing WARD to EcosystemFlow -- last heal event + type + timestamp + outcome
+- Both options confirmed by guardian Jose Ramon -- implement together in Phase 13 Item 10 TYOVA session
+- Destination: TYOVA EcosystemFlowPage.tsx
