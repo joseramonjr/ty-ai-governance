@@ -12643,3 +12643,13 @@ Self-healing loop complete -- CRI recovery + sentinel cleared + policy availabil
 FLAG-129 complete -- TYOVA-governance dedicated Supabase -- SS321 fully separated -- 53 live events confirmed -- BOM-free config -- WARDs pulsing verified
 
 **Status:** CLOSED
+
+### Entry-665 | FIX-647 | 2026-05-26 15:51 PDT San Diego -- 2026-05-26 16:03 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 9f018cd
+**Scope:** Phase 13 Item 5 -- Policy engine edge case coverage
+
+Policy engine edge cases complete -- validate_fields -- bounds + empty id -- 8 tests -- 193/193 passing
+
+**Status:** CLOSED
