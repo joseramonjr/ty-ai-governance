@@ -12602,3 +12602,14 @@ WARD sub-label contrast -- lightenColor helper 55% toward white -- live value + 
 
 #### Addendum 2 | FIX-642 | 2026-05-25 16:37 PDT San Diego
 WARD sub-label contrast -- lightenColor helper 55% toward white -- live value + alert text lightened -- commit 02a8ad7
+
+
+### Entry-661 | FIX-643 | 2026-05-26 10:23 PDT San Diego -- 2026-05-26 11:16 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 9e84be5
+**Scope:** Phase 13 Item 1 -- NWP wiring gap -- Notice and Warning Protocol enforcement in runtime
+
+NWP wiring gap closed -- evaluate_and_intercept wired into 3 commands -- 177/177 passing
+
+**Status:** CLOSED

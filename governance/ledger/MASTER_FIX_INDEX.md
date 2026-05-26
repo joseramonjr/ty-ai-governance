@@ -8754,3 +8754,6 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-642 addendum | 2026-05-25 16:25 PDT San Diego | TYOVA | Zone label contrast -- col+cc/ff -> #c8d8ec/#ffffff -- 378776a |
 
 | FIX-642 addendum 2 | 2026-05-25 16:37 PDT San Diego | TYOVA | WARD sub-label lightenColor 55% -- live value + alert text -- 02a8ad7 |
+
+
+| FIX-643 | 2026-05-26 10:23 PDT San Diego -- 2026-05-26 11:16 PDT San Diego | Jaya-Runtime | Phase 13 Item 1 -- NWP wiring gap -- Notice and Warning Protocol enforcement in runtime. NWP wiring gap closed -- evaluate_and_intercept wired into 3 commands -- 177/177 passing Commit 9e84be5. CLOSED |
