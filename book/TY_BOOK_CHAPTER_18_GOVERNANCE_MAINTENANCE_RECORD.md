@@ -12663,3 +12663,13 @@ Policy engine edge cases complete -- validate_fields -- bounds + empty id -- 8 t
 Tier boundary hardening complete -- active tier vs required tier + policy max_allowed_autonomy_tier enforced -- 4 tests -- 197/197 passing
 
 **Status:** CLOSED
+
+### Entry-667 | FIX-649 | 2026-05-26 16:46 PDT San Diego -- 2026-05-26 16:57 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 762d83c
+**Scope:** Phase 13 Item 7 -- Policy file corruption graceful handling
+
+Policy file corruption graceful handling complete -- reload preserves previous policy -- 3 tests -- 200/200 passing
+
+**Status:** CLOSED

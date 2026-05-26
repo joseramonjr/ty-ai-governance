@@ -8768,3 +8768,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-647 | 2026-05-26 15:51 PDT San Diego -- 2026-05-26 16:03 PDT San Diego | Jaya-Runtime | Phase 13 Item 5 -- Policy engine edge case coverage. Policy engine edge cases complete -- validate_fields -- bounds + empty id -- 8 tests -- 193/193 passing Commit 9f018cd. CLOSED |
 
 | FIX-648 | 2026-05-26 16:13 PDT San Diego -- 2026-05-26 16:43 PDT San Diego | Jaya-Runtime | Phase 13 Item 6 -- Tier boundary hardening 0/1/2/3. Tier boundary hardening complete -- active tier vs required tier + policy max_allowed_autonomy_tier enforced -- 4 tests -- 197/197 passing Commit 0077805. CLOSED |
+
+| FIX-649 | 2026-05-26 16:46 PDT San Diego -- 2026-05-26 16:57 PDT San Diego | Jaya-Runtime | Phase 13 Item 7 -- Policy file corruption graceful handling. Policy file corruption graceful handling complete -- reload preserves previous policy -- 3 tests -- 200/200 passing Commit 762d83c. CLOSED |
