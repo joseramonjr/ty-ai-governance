@@ -12733,3 +12733,13 @@ Ch70 full 230 lines + Ch71 full 204 lines + Ch72 full 380 lines -- 814 total lin
 TYOVA bookChapterContent.ts Ch70 Ch71 Ch72 full content -- 154 lines added -- BookOfTyIndex 3 entries -- BookOfTyChapter 3 titles -- chaptersSealed 69 to 72 -- Lovable commit 196f791
 
 **Status:** CLOSED
+
+### Entry-674 | FIX-656 | 2026-05-26 23:05 PDT San Diego -- 2026-05-26 23:12 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** c665a96
+**Scope:** Ch26 vocabulary 4 new Phase 13 terms -- Self-Healing Loop + Cryptographic Event Chain + Degraded State + verify-live -- 359 to 363 terms
+
+Ch26 4 new terms -- Self-Healing Loop + Cryptographic Event Chain + Degraded State + verify-live -- 359 to 363 terms -- 3758 lines
+
+**Status:** CLOSED
