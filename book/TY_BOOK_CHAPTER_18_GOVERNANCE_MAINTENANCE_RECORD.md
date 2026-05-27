@@ -12673,3 +12673,13 @@ Tier boundary hardening complete -- active tier vs required tier + policy max_al
 Policy file corruption graceful handling complete -- reload preserves previous policy -- 3 tests -- 200/200 passing
 
 **Status:** CLOSED
+
+### Entry-668 | FIX-650 | 2026-05-26 17:58 PDT San Diego -- 2026-05-26 18:05 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 7765f38
+**Scope:** Phase 13 Item 8 -- Supabase unreachable degradation protocol
+
+Supabase unreachable degradation protocol complete -- local ledger fallback on write failure -- 3 tests -- 203/203 passing
+
+**Status:** CLOSED
