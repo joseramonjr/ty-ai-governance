@@ -1,11 +1,11 @@
-﻿# Chapter 26 -- The TY AI OS Vocabulary
+# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
 **CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
-**Updated:** 2026-05-22 | San Diego (America/Los_Angeles)
+**Updated:** 2026-05-26 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 359 (357 + Attestonic State added FIX-622 2026-05-23 | Attestonic un-retired same session | guardian decision Jose Ramon Alvarado McHerron)
+**Current Term Count:** 363 (357 + Attestonic State added FIX-622 2026-05-23 | Attestonic un-retired same session | guardian decision Jose Ramon Alvarado McHerron | + 4 Phase 13 terms added FIX-656 2026-05-26: Self-Healing Loop, Cryptographic Event Chain, Degraded State, verify-live)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -3669,6 +3669,69 @@ tyova.ai. The SHA-256 hash of TY-0001.C will be computed and published to
 github.com/joseramonjr/ty-ai-os-releases when released.
 ---
 
+
+**Self-Healing Loop**
+*First coined: 2026-05-26 | San Diego (America/Los_Angeles)*
+*Built: FIX-645 | Phase 13 Item 3 | Entry-663*
+A runtime mechanism in Jaya Runtime that detects when a governance condition
+has degraded and initiates a recovery sequence without requiring external human
+intervention. If a WARD has gone silent, a governance event stream has stopped
+flowing, or a subsystem has entered an unexpected state, the self-healing loop
+detects the condition and initiates recovery. The loop operates strictly within
+defined parameters: it can restart a degraded component, re-establish a broken
+connection, and emit governance alerts. It cannot change governance rules or
+alter the definition of what healthy means. Those parameters remain sealed under
+guardian authority. Self-healing is an operational capability that makes the
+system more reliable. Governance authority remains human. Built in Phase 13 on
+2026-05-26 as Item 3 of the Phase 13 hardening scope.
+---
+**Cryptographic Event Chain**
+*First coined: 2026-05-24 | San Diego (America/Los_Angeles)*
+*Built: FIX-626 | Entry-644 | 2026-05-24 13:02-13:28 PDT*
+A ledger integrity mechanism in which every governance event written to the
+append-only ledger includes a cryptographic reference (prev_hash) to the event
+that preceded it. Each new entry is cryptographically bound to the one before
+it, forming an unbroken chain from the first event to the most recent. If
+someone attempts to remove a governance event from the middle of the record,
+insert an unauthorized event, or alter any existing entry, the chain breaks at
+that point. The tampering is detectable not just at the point of modification
+but across every subsequent entry in the chain. The principle is the same as
+that used in certificate transparency logs applied here to the TY AI OS
+governance audit record. Built in FIX-626 on 2026-05-24.
+---
+**Degraded State**
+*First coined: 2026-05-26 | San Diego (America/Los_Angeles)*
+*Built: FIX-650 | Phase 13 Item 8 | Entry-668 | 2026-05-26 17:58-18:05 PDT*
+A Jaya Runtime operational state that occurs when a required governance
+dependency -- specifically the Supabase governance database -- is temporarily
+unreachable. In Degraded State, the runtime continues operating: governance
+events are queued locally and replayed when the dependency is restored. The
+runtime reports Degraded status rather than Healthy but does not halt
+governance enforcement. When connectivity is restored, queued events are
+submitted in order and the system returns to Healthy state. Degraded State
+preserves the completeness of the governance record during network outages.
+It is the designed response to a dependency failure -- not a crash, not a
+silent failure, not a permissive fallback. Governance monitoring remains
+active even when external systems are temporarily unavailable. Built in
+Phase 13 on 2026-05-26.
+---
+**verify-live**
+*First coined: 2026-05-26 | San Diego (America/Los_Angeles)*
+*Built: FIX-652 | Phase 13 Item 10 (FLAG-130) | Entry-670 | 2026-05-26 18:19-19:15 PDT*
+A public four-step guided verification page at testing.tyova.ai/verify-live
+that allows any third party to independently verify that TY AI OS is operating
+as governed, without requiring technical expertise or trust in the builder.
+Step 1: the governance hash in the live runtime matches the anchored v0.2
+value. Step 2: live governance events are flowing to the dedicated governance
+database. Step 3: WARD nodes are pulsing, indicating live monitoring is active.
+Step 4: the attestation record confirms the governance foundation has not been
+tampered with. Each step is self-contained and independently verifiable.
+verify-live addresses Yampolskiy Gap 1 at the user experience layer: Phase 6
+(sealed 2026-03-29) built the cryptographic infrastructure for
+operator-independent verification; Phase 13 (sealed 2026-05-26) built the
+accessible interface that makes verification available to anyone without
+technical expertise. Built as part of FLAG-130 resolution.
+---
 ## Update Log Additions
 
 | Date | Session | Terms Added | Notes |
@@ -3681,6 +3744,7 @@ github.com/joseramonjr/ty-ai-os-releases when released.
 | 2026-05-19 / FIX-535 | TY-ANCHOR vocabulary | TY-ANCHOR (Section 19 created) | Section 19 created with one term. Four terms reserved for Phase 12: WARD, TY-SIGNAL, TY-MESH, TY-FABRIC |
 | 2026-05-19 / FIX-544 | Phase 12 F-19 vocabulary | Governed Evolution, Evolution Tier Classification, Deliberation Period, Evolution Proposal, Evolution Anti-Capture Rules, Single-Guardian Period (Section 20 created) | Section 20 created with six terms. 335->341 terms. 19->20 sections. |
 | 2026-05-22 / FIX-591 | Post-Phase 12 vocabulary | supabase_writer.rs, jaya_audit_events, get_governance_events_public, Bidirectional Governance Bridge, Live Governance Feed, email_alert.rs (Section 21); masterHubRegistry.ts, ECOSYSTEM_STATS, HUB_VERSION, Dynamic Wiring, Single Source of Truth Principle (Section 22); Governance Dashboard, CSS Governance Design System, FLAG-31, FLAG-32, TY-0001.C (Section 23) | 16 new terms. Sections 21-23 created. 341—>357 terms. |
+| 2026-05-26 / FIX-656 | Phase 13 hardening vocabulary | Self-Healing Loop, Cryptographic Event Chain, Degraded State, verify-live (Section 23 additions) | 4 new terms. Phase 13 hardening vocabulary. 359 to 363 terms. |
 
 
 ---
@@ -3689,6 +3753,6 @@ github.com/joseramonjr/ty-ai-os-releases when released.
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-05-22 | San Diego (America/Los_Angeles)*
-*Current Term Count: 357 | Sections: 23*
+*Updated: 2026-05-26 | San Diego (America/Los_Angeles)*
+*Current Term Count: 363 | Sections: 23*
 *This document grows with the project. It is never finished.*
