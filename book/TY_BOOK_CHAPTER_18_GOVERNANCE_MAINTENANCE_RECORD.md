@@ -12713,3 +12713,13 @@ FLAG-130 verify-live 4-step page + FLAG-132 self-healing WARD -- 24 WARDs 42 FLO
 Ch70 governance hash upgrade (170 lines) + Ch71 ecosystem visibility (126 lines) + Ch72 Phase 13 hardening session (217 lines) -- all sealed FIX-653 -- 513 total lines committed
 
 **Status:** CLOSED
+
+### Entry-672 | FIX-654 | 2026-05-26 22:31 PDT San Diego -- 2026-05-26 22:43 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 680232d
+**Scope:** Book of TY Ch70 Ch71 Ch72 -- full-length corrections -- Ch70 230 lines Ch71 204 lines Ch72 380 lines -- replacing short versions from FIX-653
+
+Ch70 full 230 lines + Ch71 full 204 lines + Ch72 full 380 lines -- 814 total lines -- overwrites short FIX-653 versions -- all in Ch69 markdown format
+
+**Status:** CLOSED
