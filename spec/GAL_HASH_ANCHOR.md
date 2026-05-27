@@ -1,4 +1,4 @@
-﻿# GAL GOVERNANCE HASH ANCHOR
+# GAL GOVERNANCE HASH ANCHOR
 # Document ID: TY-GAL-HASH-ANCHOR-v0.1
 # Author: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
 # Date: 2026-03-11 | San Diego (America/Los_Angeles)
@@ -69,3 +69,12 @@ v0.2: FIX-635 Entry-653 | 2026-05-25 | San Diego (America/Los_Angeles)
 - Option B: Add dedicated Self-Healing WARD to EcosystemFlow -- last heal event + type + timestamp + outcome
 - Both options confirmed by guardian Jose Ramon -- implement together in Phase 13 Item 10 TYOVA session
 - Destination: TYOVA EcosystemFlowPage.tsx
+
+## FLAG-133 -- Missing Return Flows -- Phase 14 scope
+- Logged: 2026-05-26 19:15 PDT San Diego
+- Three external system WARDs have incoming flows but no return paths:
+  1. attestation -> human: chain verified (SHA-256 result returns to Guardian)
+  2. compliance -> human: compliance proven (kit proof result returns to Guardian)
+  3. status -> jaya: audit read (status feed data returns to governance layer)
+- Destination: TYOVA EcosystemFlowPage.tsx
+- Priority: Phase 14 scope -- close the architectural loop on external systems
