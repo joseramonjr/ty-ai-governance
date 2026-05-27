@@ -8772,3 +8772,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-649 | 2026-05-26 16:46 PDT San Diego -- 2026-05-26 16:57 PDT San Diego | Jaya-Runtime | Phase 13 Item 7 -- Policy file corruption graceful handling. Policy file corruption graceful handling complete -- reload preserves previous policy -- 3 tests -- 200/200 passing Commit 762d83c. CLOSED |
 
 | FIX-650 | 2026-05-26 17:58 PDT San Diego -- 2026-05-26 18:05 PDT San Diego | Jaya-Runtime | Phase 13 Item 8 -- Supabase unreachable degradation protocol. Supabase unreachable degradation protocol complete -- local ledger fallback on write failure -- 3 tests -- 203/203 passing Commit 7765f38. CLOSED |
+
+| FIX-651 | 2026-05-26 18:08 PDT San Diego -- 2026-05-26 18:16 PDT San Diego | Jaya-Runtime | Phase 13 Item 9 -- CRI adversarial stress test. CRI adversarial stress test complete -- 8 tests -- modifier cap + emergency cap + zero division + tier3 + recovery + oscillation -- 211/211 passing Commit 4bf20aa. CLOSED |

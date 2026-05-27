@@ -12683,3 +12683,13 @@ Policy file corruption graceful handling complete -- reload preserves previous p
 Supabase unreachable degradation protocol complete -- local ledger fallback on write failure -- 3 tests -- 203/203 passing
 
 **Status:** CLOSED
+
+### Entry-669 | FIX-651 | 2026-05-26 18:08 PDT San Diego -- 2026-05-26 18:16 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 4bf20aa
+**Scope:** Phase 13 Item 9 -- CRI adversarial stress test
+
+CRI adversarial stress test complete -- 8 tests -- modifier cap + emergency cap + zero division + tier3 + recovery + oscillation -- 211/211 passing
+
+**Status:** CLOSED
