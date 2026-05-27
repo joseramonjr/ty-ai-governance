@@ -12763,3 +12763,13 @@ Ch26 TOC regex fix + 22 missing vocab terms synced -- 312 to 334 headings -- com
 TY_CANONICAL_THRESHOLDS_REGISTRY.md created -- 7 entries T-01 through T-07 -- 300 lines 14304 bytes
 
 **Status:** CLOSED
+
+### Entry-677 | FIX-659 | 2026-05-27 12:44 PDT San Diego -- 2026-05-27 13:04 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** HASH
+**Scope:** TY_CANONICAL_THRESHOLDS_REGISTRY.md -- add T-08 through T-15 + flag 60-second proof refresh inconsistency
+
+T-08 through T-24 added + F-01 flagged -- full three-repo deep scan complete -- 24 entries -- 795 lines 37755 bytes
+
+**Status:** CLOSED
