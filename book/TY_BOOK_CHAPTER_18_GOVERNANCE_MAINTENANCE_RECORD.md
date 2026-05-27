@@ -1,4 +1,4 @@
-# Chapter 18 -- The Governance Maintenance Record
+﻿# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current
@@ -12751,5 +12751,15 @@ Ch26 4 new terms -- Self-Healing Loop + Cryptographic Event Chain + Degraded Sta
 **Scope:** Ch26 TOC regex fix + 22 missing vocabulary terms synced to bookChapterContent.ts
 
 Ch26 TOC regex fix + 22 missing vocab terms synced -- 312 to 334 headings -- compiledNote 359 to 363
+
+**Status:** CLOSED
+
+### Entry-676 | FIX-658 | 2026-05-27 12:27 PDT San Diego -- 2026-05-27 12:30 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** PASTE_HASH_HERE
+**Scope:** Create TY_CANONICAL_THRESHOLDS_REGISTRY.md -- single source of truth for all time, duration, interval, and threshold values across TY AI OS
+
+TY_CANONICAL_THRESHOLDS_REGISTRY.md created -- 7 entries T-01 through T-07 -- 300 lines 14304 bytes
 
 **Status:** CLOSED

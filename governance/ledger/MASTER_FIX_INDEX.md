@@ -8787,3 +8787,5 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 
 
 | FIX-657 | 2026-05-27 10:59 PDT San Diego -- 2026-05-27 11:08 PDT San Diego | TYOVA | Ch26 TOC regex fix + 22 missing vocabulary terms synced to bookChapterContent.ts. Ch26 TOC regex fix + 22 missing vocab terms synced -- 312 to 334 headings -- compiledNote 359 to 363 Commit 6708027. CLOSED |
+
+| FIX-658 | 2026-05-27 12:27 PDT San Diego -- 2026-05-27 12:30 PDT San Diego | ty-ai-governance | Create TY_CANONICAL_THRESHOLDS_REGISTRY.md -- single source of truth for all time, duration, interval, and threshold values across TY AI OS. TY_CANONICAL_THRESHOLDS_REGISTRY.md created -- 7 entries T-01 through T-07 -- 300 lines 14304 bytes Commit edc9bae. CLOSED |
