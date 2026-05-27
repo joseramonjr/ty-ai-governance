@@ -1,4 +1,4 @@
-﻿# Chapter 18 -- The Governance Maintenance Record
+# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current
@@ -12741,5 +12741,15 @@ TYOVA bookChapterContent.ts Ch70 Ch71 Ch72 full content -- 154 lines added -- Bo
 **Scope:** Ch26 vocabulary 4 new Phase 13 terms -- Self-Healing Loop + Cryptographic Event Chain + Degraded State + verify-live -- 359 to 363 terms
 
 Ch26 4 new terms -- Self-Healing Loop + Cryptographic Event Chain + Degraded State + verify-live -- 359 to 363 terms -- 3758 lines
+
+**Status:** CLOSED
+
+### Entry-675 | FIX-657 | 2026-05-27 10:59 PDT San Diego -- 2026-05-27 11:08 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** PENDING
+**Scope:** Ch26 TOC regex fix + 22 missing vocabulary terms synced to bookChapterContent.ts
+
+Ch26 TOC regex fix + 22 missing vocab terms synced -- 312 to 334 headings -- compiledNote 359 to 363
 
 **Status:** CLOSED
