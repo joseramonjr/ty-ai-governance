@@ -1,4 +1,4 @@
-# Chapter 18 -- The Governance Maintenance Record
+﻿# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current
@@ -12781,5 +12781,15 @@ T-08 through T-24 added + F-01 flagged -- full three-repo deep scan complete -- 
 **Scope:** Phase 14 P1 -- Governance Succession Chain -- succession_chain.rs -- Ed25519 guardian check-in -- 365-day Tier 0 auto-drop -- recovery via guardian attestation -- F-01 proof refresh 60s to 30s fix -- registry T-07 + F-01 resolved
 
 Phase 14 P1 -- succession_chain.rs -- guardian_checkin -- 365-day Tier 0 auto-drop -- F-01 30s fix -- 0 errors 30 warnings
+
+**Status:** CLOSED
+
+### Entry-679 | FIX-661 | 2026-05-27 18:53 PDT San Diego -- 2026-05-27 19:24 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** HASH
+**Scope:** Part A: S1 corruption audit + .gitattributes line ending lock -- Part B: TY_ARCHITECTURAL_DECISIONS_RECORD.md created -- all decisions to date backfilled
+
+Part A BOM 39+15 files fixed + .gitattributes -- Part B ADR-001 through ADR-027 created -- 548 lines 22978 bytes -- FLAG-134 TYOVA deferred
 
 **Status:** CLOSED
