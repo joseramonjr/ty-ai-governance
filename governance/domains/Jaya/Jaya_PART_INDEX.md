@@ -1,4 +1,4 @@
-﻿i sne# Jaya_PART_INDEX
+i sne# Jaya_PART_INDEX
 
 
 

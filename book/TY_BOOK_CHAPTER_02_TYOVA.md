@@ -1,4 +1,4 @@
-﻿# TY AI OS — The Documentary Record
+# TY AI OS — The Documentary Record
 ## Chapter 2: The Canonical Hub
 ### Building TYOVA — The Integrity Archive That Would Outlast Its Builder
 

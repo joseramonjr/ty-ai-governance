@@ -1,4 +1,4 @@
-﻿# Chapter 66 -- The Road Ahead
+# Chapter 66 -- The Road Ahead
 **Subtitle:** Where TY AI OS Stands in May 2026 and What Comes Next
 **Book:** TY AI OS -- The Documentary Record
 **Document Type:** Canonical Book Documentation -- Current State and Future Vision

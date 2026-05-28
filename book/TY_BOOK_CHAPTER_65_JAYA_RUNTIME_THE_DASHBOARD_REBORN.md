@@ -1,4 +1,4 @@
-﻿# Chapter 65 -- Jaya Runtime -- The Dashboard Reborn
+# Chapter 65 -- Jaya Runtime -- The Dashboard Reborn
 **Subtitle:** When the Governance Engine Earned an Interface Worthy of Its Purpose
 **Book:** TY AI OS -- The Documentary Record
 **Document Type:** Canonical Book Documentation -- UI Redesign Record

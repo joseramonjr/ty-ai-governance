@@ -1,4 +1,4 @@
-﻿# Chapter 69: The Attestonic Standard
+# Chapter 69: The Attestonic Standard
 
 *Sealed: FIX-628 | 2026-05-24 | San Diego (America/Los_Angeles)*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*

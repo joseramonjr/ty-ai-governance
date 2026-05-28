@@ -1,4 +1,4 @@
-﻿# TY AI OS — The Documentary Record
+# TY AI OS — The Documentary Record
 ## Chapter 13: The Authority Boundary Model
 ### What Each System Can and Cannot Do — and Why the Boundaries Are Structural
 

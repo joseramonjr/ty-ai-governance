@@ -1,4 +1,4 @@
-﻿# Chapter 64 -- The TYOVA Accuracy Audit
+# Chapter 64 -- The TYOVA Accuracy Audit
 **Subtitle:** One Source of Truth, Every Page Verified
 **Book:** TY AI OS -- The Documentary Record
 **Document Type:** Canonical Book Documentation -- TYOVA Integrity Record

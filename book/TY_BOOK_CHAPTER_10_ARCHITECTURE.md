@@ -1,4 +1,4 @@
-﻿# TY AI OS — The Documentary Record
+# TY AI OS — The Documentary Record
 ## Chapter 10: The Architecture of Trust
 ### How the Three-Layer Model Works and Why Each Layer Exists
 

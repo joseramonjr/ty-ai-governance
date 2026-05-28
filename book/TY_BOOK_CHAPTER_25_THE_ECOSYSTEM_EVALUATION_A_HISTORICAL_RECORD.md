@@ -1,4 +1,4 @@
-﻿# Chapter 25 -- The Ecosystem Evaluation: A Historical Record
+# Chapter 25 -- The Ecosystem Evaluation: A Historical Record
 
 **Document Type:** Canonical Book Documentation -- Historical Status Evaluation
 **CLO:** JAYA-CLO-146

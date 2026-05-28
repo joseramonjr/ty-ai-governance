@@ -1,4 +1,4 @@
-﻿# Chapter 62 -- The Governance Bridge Completes
+# Chapter 62 -- The Governance Bridge Completes
 **Subtitle:** The Day Jaya Stopped Listening and Started Speaking
 **Book:** TY AI OS -- The Documentary Record
 **Document Type:** Canonical Book Documentation -- Post-Phase 12 Record

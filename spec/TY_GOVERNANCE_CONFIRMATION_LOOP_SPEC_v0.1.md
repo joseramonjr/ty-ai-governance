@@ -1,4 +1,4 @@
-﻿# TY AI OS -- Governance Confirmation Loop Specification v0.1
+# TY AI OS -- Governance Confirmation Loop Specification v0.1
 
 Status: Design Specification -- Phase 13+
 Logged: FLAG-35 | FIX-614 | 2026-05-23 14:21 PDT San Diego

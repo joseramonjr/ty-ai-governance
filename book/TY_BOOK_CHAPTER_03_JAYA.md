@@ -1,4 +1,4 @@
-﻿# TY AI OS — The Documentary Record
+# TY AI OS — The Documentary Record
 ## Chapter 3: The Execution Engine
 ### Building Jaya Runtime — Governed Hands for a Governance-First OS
 

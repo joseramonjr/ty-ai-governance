@@ -1,4 +1,4 @@
-﻿# TY_PHASE_12_SCOPE_v0.1.md
+# TY_PHASE_12_SCOPE_v0.1.md
 # TY AI OS — Phase 12 Scope Definition: Governed Evolution
 # Author: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
 # Date: 2026-05-19 | San Diego (America/Los_Angeles)

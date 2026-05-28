@@ -1,4 +1,4 @@
-﻿# JAYA_FIX_LEDGER
+# JAYA_FIX_LEDGER
 Status: Active
 ---
 ## Part 35 — CRI Lifecycle Completion and Authority Reservation

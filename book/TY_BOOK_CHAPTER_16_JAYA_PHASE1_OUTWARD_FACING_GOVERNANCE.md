@@ -1,4 +1,4 @@
-﻿# Chapter 16 — Jaya Phase 1 — Outward-Facing Governance
+# Chapter 16 — Jaya Phase 1 — Outward-Facing Governance
 ## TY AI OS: The Case for Verifiable Governance
 **Sealed:** 2026-03-11 | San Diego
 **FIX:** JAYA-CLO-096 | MODEL: Claude Sonnet 4.6

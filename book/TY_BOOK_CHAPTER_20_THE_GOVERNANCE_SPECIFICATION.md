@@ -1,4 +1,4 @@
-﻿# Chapter 20 -- The Governance Specification
+# Chapter 20 -- The Governance Specification
 
 **CLO:** JAYA-CLO-126
 **Date:** 2026-03-11 | San Diego (America/Los_Angeles)

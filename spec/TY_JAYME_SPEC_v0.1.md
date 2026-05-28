@@ -1,4 +1,4 @@
-﻿# TY_JAYME_SPEC_v0.1.md
+# TY_JAYME_SPEC_v0.1.md
 # Jayme AI -- Continuity Guardian Specification v0.1
 # Document Type: Governance Specification -- Design-Only
 # CLO: JAYA-CLO-175

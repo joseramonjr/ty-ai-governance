@@ -1,4 +1,4 @@
-﻿# TY-ANCHOR -- TY AI OS Session Governance Tooling Suite
+# TY-ANCHOR -- TY AI OS Session Governance Tooling Suite
 # Version: v0.1
 # Built: FIX-534 | 2026-05-19 | San Diego (America/Los_Angeles)
 # Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.

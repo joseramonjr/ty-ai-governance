@@ -1,4 +1,4 @@
-﻿# TY AI OS — The Documentary Record
+# TY AI OS — The Documentary Record
 ## Chapter 4: The Constitutional Layer
 ### The Governance Canon — Master Charter, Invariants, and the Discipline That Made It Auditable
 

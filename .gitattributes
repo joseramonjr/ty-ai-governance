@@ -1,0 +1,12 @@
+# TY AI OS -- line ending normalization
+# Prevents LF/CRLF corruption on Windows checkouts
+# FIX-661 | 2026-05-27 | San Diego
+
+* text=auto eol=lf
+*.md text eol=lf
+*.rs text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.json text eol=lf
+*.toml text eol=lf
+*.ps1 text eol=crlf

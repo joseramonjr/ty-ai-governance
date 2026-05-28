@@ -1,4 +1,4 @@
-﻿# Chapter 19 — The Phase 2 Build Journey
+# Chapter 19 — The Phase 2 Build Journey
 ## Parts 51–65: How Multi-Agent Governance Was Built
 
 **Document Type:** Canonical Book Documentation — Phase 2 Construction Record

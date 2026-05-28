@@ -1,4 +1,4 @@
-﻿# Jaya_SEALS
+# Jaya_SEALS
 Status: Active
 Domain: Jaya Runtime
 Canonical Timezone: America/Los_Angeles

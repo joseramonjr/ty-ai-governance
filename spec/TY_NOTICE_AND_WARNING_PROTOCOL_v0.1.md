@@ -1,4 +1,4 @@
-﻿# TY AI OS -- Notice and Warning Protocol v0.1
+# TY AI OS -- Notice and Warning Protocol v0.1
 
 **Document ID:** TY-NWP-001
 **Version:** v0.1

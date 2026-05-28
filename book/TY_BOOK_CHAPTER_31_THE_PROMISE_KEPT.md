@@ -1,4 +1,4 @@
-﻿# Chapter 31 -- The Promise Kept: Jayme AI and the
+# Chapter 31 -- The Promise Kept: Jayme AI and the
 # Continuity of Authority
 **Document Type:** Canonical Book Chapter -- Design-Only
 **CLO:** JAYA-CLO-175

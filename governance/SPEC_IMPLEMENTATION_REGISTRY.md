@@ -1,4 +1,4 @@
-﻿# TY AI OS -- Specification Implementation Registry
+# TY AI OS -- Specification Implementation Registry
 
 Status: LIVING DOCUMENT
 Established: FIX-632 | 2026-05-24 | San Diego

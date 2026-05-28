@@ -1,4 +1,4 @@
-﻿# TY_GOVERNED_UPDATE_DELIVERY_SPEC_v0.1.md
+# TY_GOVERNED_UPDATE_DELIVERY_SPEC_v0.1.md
 # TY AI OS -- Governed Update Delivery Specification
 # Version: 0.1 (Initial)
 # Status: DRAFT -- Pending seal after builder review

@@ -1,4 +1,4 @@
-﻿# TY AI OS — The Documentary Record
+# TY AI OS — The Documentary Record
 ## Chapter 6: The Full Picture
 ### The TY AI OS Ecosystem — Five Systems, One Governance Discipline
 

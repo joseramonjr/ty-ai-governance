@@ -1,4 +1,4 @@
-﻿# TY AI OS — The Documentary Record
+# TY AI OS — The Documentary Record
 ## Chapter 15: The Mission Restored
 ### Why TY Was Built, What It Protects, and Who It Protects It For
 

@@ -1,4 +1,4 @@
-﻿# TY_GOVERNED_EVOLUTION_SPEC_v0.1.md
+# TY_GOVERNED_EVOLUTION_SPEC_v0.1.md
 # TY AI OS -- Governed Evolution Specification v0.1
 # Flag: F-19 | Phase: 12
 # Author: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.

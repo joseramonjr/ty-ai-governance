@@ -1,4 +1,4 @@
-﻿# Chapter 7 -- Luke and Jayme
+# Chapter 7 -- Luke and Jayme
 **Document Type:** Canonical Book Chapter -- Sealed
 **CLO:** JAYA-CLO-175
 **Model:** Claude Sonnet 4.6

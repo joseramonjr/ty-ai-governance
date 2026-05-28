@@ -1,4 +1,4 @@
-﻿# Chapter 21 -- The Global Attestonic Layer
+# Chapter 21 -- The Global Attestonic Layer
 
 *TY AI OS: The Case for Verifiable Governance*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*

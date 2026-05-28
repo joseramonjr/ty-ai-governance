@@ -1,4 +1,4 @@
-﻿# TY AI OS — The Documentary Record
+# TY AI OS — The Documentary Record
 ## Chapter 8: What Comes Next
 ### The Forward Roadmap — From Architectural Foundation to Governance Specification
 

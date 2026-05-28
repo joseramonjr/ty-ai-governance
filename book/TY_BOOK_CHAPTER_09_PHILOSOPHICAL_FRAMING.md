@@ -1,4 +1,4 @@
-﻿# Chapter 9 — What This Means
+# Chapter 9 — What This Means
 
 ## The Problem That Was Already Here
 

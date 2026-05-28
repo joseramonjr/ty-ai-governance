@@ -1,4 +1,4 @@
-﻿# TY AI OS — The Documentary Record
+# TY AI OS — The Documentary Record
 ## Chapter 14: The Ledger and Seal Discipline
 ### How Auditability Is Built Into the Ecosystem at Every Level
 

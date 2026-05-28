@@ -1,4 +1,4 @@
-﻿# Chapter 18 -- The Governance Maintenance Record
+# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current

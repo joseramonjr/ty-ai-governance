@@ -1,4 +1,4 @@
-﻿# Chapter 63 -- The Hub Audit -- What Was Really Built
+# Chapter 63 -- The Hub Audit -- What Was Really Built
 **Subtitle:** Applying the Zero-Fabrication Rule to the Public Record
 **Book:** TY AI OS -- The Documentary Record
 **Document Type:** Canonical Book Documentation -- TYOVA Integrity Record

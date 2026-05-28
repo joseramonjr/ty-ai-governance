@@ -1,4 +1,4 @@
-﻿# Chapter 17 — The Multi-Agent Problem
+# Chapter 17 — The Multi-Agent Problem
 ## TY AI OS: The Case for Verifiable Governance
 **Sealed:** 2026-03-11 | San Diego
 **CLO:** JAYA-CLO-119 | MODEL: Claude Sonnet 4.6

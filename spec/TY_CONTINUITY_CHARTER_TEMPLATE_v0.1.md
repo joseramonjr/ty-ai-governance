@@ -1,4 +1,4 @@
-﻿# TY_CONTINUITY_CHARTER_TEMPLATE_v0.1.md
+# TY_CONTINUITY_CHARTER_TEMPLATE_v0.1.md
 # Continuity Charter -- Template for Builder Completion
 # Document Type: Template -- INCOMPLETE -- Requires Builder Authorship
 # CLO: JAYA-CLO-175

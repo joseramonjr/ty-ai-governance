@@ -1,4 +1,4 @@
-﻿# TY AI OS -- Phase 11 Scope Definition v0.1
+# TY AI OS -- Phase 11 Scope Definition v0.1
 
 **Document ID:** TY-P11-SCOPE-001
 **Version:** v0.1
