@@ -12773,3 +12773,13 @@ TY_CANONICAL_THRESHOLDS_REGISTRY.md created -- 7 entries T-01 through T-07 -- 30
 T-08 through T-24 added + F-01 flagged -- full three-repo deep scan complete -- 24 entries -- 795 lines 37755 bytes
 
 **Status:** CLOSED
+
+### Entry-678 | FIX-660 | 2026-05-27 15:50 PDT San Diego -- 2026-05-27 18:43 PDT San Diego
+
+**Destination:** Jaya-Runtime + ty-ai-governance
+**Commit:** HASH
+**Scope:** Phase 14 P1 -- Governance Succession Chain -- succession_chain.rs -- Ed25519 guardian check-in -- 365-day Tier 0 auto-drop -- recovery via guardian attestation -- F-01 proof refresh 60s to 30s fix -- registry T-07 + F-01 resolved
+
+Phase 14 P1 -- succession_chain.rs -- guardian_checkin -- 365-day Tier 0 auto-drop -- F-01 30s fix -- 0 errors 30 warnings
+
+**Status:** CLOSED
