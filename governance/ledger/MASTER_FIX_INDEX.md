@@ -8795,3 +8795,11 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-660 | 2026-05-27 15:50 PDT San Diego -- 2026-05-27 18:43 PDT San Diego | Jaya-Runtime + ty-ai-governance | Phase 14 P1 -- Governance Succession Chain -- succession_chain.rs -- Ed25519 guardian check-in -- 365-day Tier 0 auto-drop -- recovery via guardian attestation -- F-01 proof refresh 60s to 30s fix -- registry T-07 + F-01 resolved. Phase 14 P1 -- succession_chain.rs -- guardian_checkin -- 365-day Tier 0 auto-drop -- F-01 30s fix -- 0 errors 30 warnings Commit c87aef6. CLOSED |
 
 | FIX-661 | 2026-05-27 18:53 PDT San Diego -- 2026-05-27 19:24 PDT San Diego | ty-ai-governance | Part A: S1 corruption audit + .gitattributes line ending lock -- Part B: TY_ARCHITECTURAL_DECISIONS_RECORD.md created -- all decisions to date backfilled. Part A BOM 39+15 files fixed + .gitattributes -- Part B ADR-001 through ADR-027 created -- 548 lines 22978 bytes -- FLAG-134 TYOVA deferred Commit 3e531da. CLOSED |
+## FIX-662 | CLOSED | 2026-05-28 · 12:04 PDT · San Diego
+**Entry:** Entry-680
+**Repo:** ty-ai-governance
+**File:** governance/TY_QA_REGISTRY.md
+**Description:** Created TY_QA_REGISTRY.md — single canonical Q&A registry
+for all development questions and Governance Invariant Questions (GIQs).
+142 entries across 5 sections. 2,532 lines. 129,576 bytes.
+**Verification:** Lines 2532 · Bytes 129576 · Confirmed on-disk 2026-05-28

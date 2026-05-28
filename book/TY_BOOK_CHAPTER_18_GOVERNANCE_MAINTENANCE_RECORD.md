@@ -12793,3 +12793,36 @@ Phase 14 P1 -- succession_chain.rs -- guardian_checkin -- 365-day Tier 0 auto-dr
 Part A BOM 39+15 files fixed + .gitattributes -- Part B ADR-001 through ADR-027 created -- 548 lines 22978 bytes -- FLAG-134 TYOVA deferred
 
 **Status:** CLOSED
+### Entry-680
+**FIX:** FIX-662
+**Date:** 2026-05-28 · 12:04 PDT · San Diego
+**Repo:** ty-ai-governance
+**Status:** CLOSED
+
+#### Scope
+Created TY_QA_REGISTRY.md — the single canonical location for all questions
+asked and answered during the building of TY AI OS, and for Governance
+Invariant Questions (GIQs) defining how TY must behave in all circumstances.
+
+#### Work Completed
+- Full audit of 176 ChatGPT conversations (June 2025 – March 2026)
+- Full deep scan of Claude conversation history (March 2026 – present)
+- Registry built in five sections:
+  - Section 1: Development Q&A ChatGPT era (QA-001 to QA-060, 60 entries)
+  - Section 2: Governance Invariant Questions initial set (GIQ-001 to GIQ-020, 20 entries)
+  - Section 3: Development Q&A Claude era (QA-061 to QA-082, 22 entries)
+  - Section 4: GIQ Claude deep scan 1 (GIQ-021 to GIQ-040, 20 entries)
+  - Section 5: GIQ Claude deep scan 2 (GIQ-041 to GIQ-060, 20 entries)
+- Duplicate statistics tables identified and corrected (3 tables → 1 canonical)
+- Each entry includes: Question, Answer, Why/Reasoning, Source, Date
+
+#### File Verification
+- Canonical path: E:\TY-Ecosystem\ty-ai-governance\governance\TY_QA_REGISTRY.md
+- Lines: 2,532
+- Bytes: 129,576
+
+#### Counts
+- Total entries: 142
+- QA entries: 82
+- GIQ entries: 60
+- Date range: 2025-12-02 to 2026-05-27
