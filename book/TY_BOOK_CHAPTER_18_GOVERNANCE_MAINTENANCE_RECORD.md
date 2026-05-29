@@ -12915,3 +12915,49 @@ Two new canonical files placed: governance copy and Book of TY Chapter 73.
 FIX-663 closed last session -- clearing session state to open FIX-664
 
 **Status:** CLOSED
+### Entry-682
+**FIX:** FIX-664
+**Date:** 2026-05-29 · 14:57 PDT · San Diego
+**Repo:** ty-ai-governance
+**Status:** CLOSED
+
+#### Scope
+TY-Brain backup + ADR-029 FLAG-136 + Claude Project TY AI OS Governance setup.
+Established full AI conversation history backup, formally documented the
+ecosystem knowledge gap for Jaya/Jayme/Luke, and created the Claude Project
+that loads all governance registries into context at every session.
+
+#### Work Completed
+- TY-Brain folder created at E:\TY-Ecosystem\TY-Brain\
+- Claude history backed up: claude-export-2026-05-29.zip (53 MB)
+- ChatGPT history backed up: 9 files including conversations-000/001 zip+json
+- ADR-029 added: FLAG-136 TY AI Ecosystem Knowledge Layer -- Jaya, Jayme,
+  Luke have no access to ecosystem knowledge base -- Phase 15+ scope
+- Claude Project created: TY AI OS Governance at claude.ai/projects
+  5 files uploaded: TY_QA_REGISTRY.md, TY_CONSCIENCE_THREAD_v0.1.md,
+  TY_CANONICAL_THRESHOLDS_REGISTRY.md, TY_BOOK_CHAPTER_26, TY_ADR.md
+  Project instructions: Zero-Fabrication Rule, registry check protocol,
+  CHECK BEFORE ASKING rule, NO CONFLICTS rule, current state
+- Problem formally documented: same question asked differently = risk of
+  contradictory answer -- three registries = single source of truth
+
+#### Architectural Decision
+FLAG-136 identified as Phase 15+ scope. ADR-029 defines required architecture:
+machine-readable SQLite knowledge layer for Jaya, Jayme, and Luke.
+Implementation blocked pending Phase 15 open.
+
+#### File Verification
+- TY_ARCHITECTURAL_DECISIONS_RECORD.md: 645 lines
+- TY-Brain: claude-export + chatgpt-export folders populated
+- Claude Project: 5 files + instructions active
+
+
+### Entry-682 | 664 | 2026-05-29 14:57 PDT San Diego -- 2026-05-29 14:59 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** d80cae5
+**Scope:** TY-Brain backup + ADR-029 FLAG-136 + Claude Project setup
+
+TY-Brain + ADR-029 + Claude Project setup complete
+
+**Status:** CLOSED

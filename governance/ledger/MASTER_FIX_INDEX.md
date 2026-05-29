@@ -8826,3 +8826,14 @@ Architectural decision: Ed25519 signing not applicable to living documents.
 
 
 | FIX-663 | 2026-05-28 20:06 PDT San Diego -- 2026-05-29 14:54 PDT San Diego | ty-ai-governance + Jaya-Runtime | Phase 14 P2 Conscience Thread - document + Rust module + Ed25519 signing. FIX-663 closed last session -- clearing session state to open FIX-664 Commit 418ee7c. CLOSED |
+## FIX-664 | CLOSED | 2026-05-29 · 14:57 PDT · San Diego
+**Entry:** Entry-682
+**Repo:** ty-ai-governance
+**Description:** TY-Brain backup + ADR-029 FLAG-136 + Claude Project setup.
+Full AI history backed up. FLAG-136 ecosystem knowledge gap documented.
+Claude Project created with 5 governance files -- registry check enforced
+at every session. Same-question-different-wording problem solved.
+**Verification:** Ch18 12952 lines · ADR 645 lines · TY-Brain populated
+
+
+| 664 | 2026-05-29 14:57 PDT San Diego -- 2026-05-29 14:59 PDT San Diego | ty-ai-governance | TY-Brain backup + ADR-029 FLAG-136 + Claude Project setup. TY-Brain + ADR-029 + Claude Project setup complete Commit d80cae5. CLOSED |
