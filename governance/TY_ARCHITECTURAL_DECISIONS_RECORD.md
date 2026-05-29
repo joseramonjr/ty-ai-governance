@@ -546,3 +546,58 @@ Questions not yet decided. Each will become an ADR when resolved.
 | Date | ADRs Added | CLO |
 |------|-----------|-----|
 | 2026-05-27 | ADR-001 through ADR-027 + OAQ-001 through OAQ-004 | FIX-661 |
+---
+
+### ADR-028 — TY_QA_REGISTRY.md as Single Canonical Q&A Location
+
+**Date:** 2026-05-28
+**FIX:** FIX-662 · Entry-680
+**Phase:** Cross-phase governance infrastructure
+**Status:** ACCEPTED
+
+#### Question
+Where should all questions asked and answered during TY AI OS development
+be stored, and what format should they use?
+
+#### Decision
+TY_QA_REGISTRY.md is established as the single canonical location for all
+Q&A, GIQ, and ADQ entries across the full TY AI OS build history.
+
+Canonical path: E:\TY-Ecosystem\ty-ai-governance\governance\TY_QA_REGISTRY.md
+
+Three-section format:
+- QA (Development Q&A): Questions asked and answered during building.
+  Format: Question / Answer / Why-Reasoning / Source / Date.
+- GIQ (Governance Invariant Questions): Constitutional rules of the system.
+  Locked answers that TY must always follow. Changing a GIQ without
+  documentation is a governance violation.
+- ADQ (Architectural Decision Q&A): Questions where Claude presented
+  multiple concrete options and Jose Ramon selected one. The selection
+  became binding on the implementation.
+
+Option B discipline: New entries are added at every session close before
+commit, as part of the mandatory session-close gate. This mirrors the
+Ch26 vocabulary update discipline.
+
+#### Rationale
+Future guardians and external auditors must be able to understand not
+just what TY AI OS does but why specific architectural choices were made
+over alternatives. A central registry with Why/Reasoning for every entry
+closes the gap between rules and intent. Without documented reasoning,
+a future guardian cannot distinguish a deliberate constraint from an
+oversight.
+
+#### Options Considered
+- Per-session documentation only (Ch18) -- does not produce a queryable
+  single reference for all decisions
+- ADR file only -- captures architectural decisions but not the full
+  development Q&A and constitutional invariant set
+- TY_QA_REGISTRY.md three-section format -- chosen; captures all three
+  distinct question types in one canonical location
+
+#### Consequences
+- Every session close must include a registry review gate
+- ADQ entries require Options Presented and Chosen fields, not just outcome
+- GIQ entries are append-only; superseded answers require a new entry
+  referencing the old one
+- Registry is the cross-reference point for ADR, Ch18, and MFI entries
