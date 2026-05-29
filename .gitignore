@@ -38,3 +38,5 @@ Thumbs.db
 *.txt
 TOKENS*
 *TOKENS*
+
+tools/.ty-anchor-session.json
