@@ -2500,33 +2500,833 @@ deleted — a permanent record makes these two cases distinguishable.
 
 ---
 
-## REGISTRY STATISTICS — CANONICAL
+---
+
+## SECTION 6 — ARCHITECTURAL DECISION Q&A (ADQ)
+
+Questions where Claude presented multiple concrete options and Jose Ramon
+selected one. The selection became binding on the implementation.
+
+This section is distinct from Section 1/3 (development Q&A) because:
+- Options were explicitly enumerated with trade-offs stated
+- Jose Ramon's choice was the deciding factor, not Claude's recommendation
+- The choice directly dictated code structure or governance mechanism
+
+Format per entry:
+  ADQ-NNN   Short title
+  Date      When decided
+  FIX       Associated fix
+  Question  The architectural question asked
+  Options   The choices that were presented
+  Chosen    Which option Jose Ramon selected
+  Why       Why that option, what alternatives would have cost
+  Source    Conversation / FIX reference
+
+---
+
+### ADQ-001 — Succession Timeout: How Long Before Tier 0 Drop?
+**Date:** 2026-05-19
+**FIX:** FIX-660 · Phase 14 P1
+**Question:** How long can the system go without a valid check-in before Jaya drops to Tier 0?
+**Options presented:**
+- 24h — aggressive; daily check-in required
+- 72h — moderate; tolerates a weekend
+- 7 days — permissive; tolerates travel or illness
+- Configurable in policy file — flexible with hard ceiling
+**Chosen:** 1 year — aligned with T-03 incapacitation threshold already documented in TY_GUARDIAN_CODEX_v0.1.md lines 426, 925, 955, 979
+**Why:** Jose Ramon identified that the 1-year incapacitation threshold was already canonically documented in the Guardian Codex. Phase 14 P1 is the runtime enforcement of that threshold. Using the same value avoids contradiction and aligns the code with existing doctrine. No new value needed.
+**Source:** Claude "Phase 14 architecture questions pending" (2026-05-19), ADR-017, T-07
+
+---
+
+### ADQ-002 — Valid Check-In Mechanism: What Resets the Succession Timer?
+**Date:** 2026-05-19
+**FIX:** FIX-660 · Phase 14 P1
+**Question:** What constitutes a legitimate heartbeat that resets the succession timer?
+**Options presented:**
+- Ed25519-signed heartbeat to ledger — strongest; requires Jose to hold the key and explicitly act
+- Any guardian attestation event — broader; Jayme or Luke activity counts, may fire without direct intent
+- Explicit succession-keepalive command — clearest intent signal; separate from normal governance activity
+**Chosen:** Ed25519-signed heartbeat to ledger
+**Why:** The signed heartbeat requires physical possession of the private key — only Jose can produce it. This means check-ins cannot fire accidentally through background governance activity. The requirement for deliberate action ensures the succession timer reflects actual builder presence, not incidental system activity. Inherits the same trust root as the Global Attestonic Layer.
+**Source:** Claude "Phase 14 architecture questions pending" (2026-05-19), ADR-018
+
+---
+
+### ADQ-003 — Succession Recovery: How Is Normal Operation Restored After Tier 0?
+**Date:** 2026-05-19
+**FIX:** FIX-660 · Phase 14 P1
+**Question:** Once the system drops to Tier 0 due to silence, how is normal operation restored?
+**Options presented:**
+- Guardian re-attest + explicit reset command — two-factor; attest proves identity, reset proves intent
+- Any valid guardian attestation alone — single-factor; faster but easier to trigger accidentally
+**Chosen:** Any valid guardian attestation alone
+**Why:** One valid attestation proves the keyholder is present and in control of the private key. Requiring a second explicit reset command adds friction without adding security — if an attacker already has the key, they can produce two actions as easily as one. Recovery must be as frictionless as the security model allows. The single attestation is sufficient proof of presence.
+**Source:** Claude "Phase 14 architecture questions pending" (2026-05-19), ADR-019
+
+---
+
+### ADQ-004 — Rust Module Placement: Where Does succession_chain.rs Live?
+**Date:** 2026-05-19
+**FIX:** FIX-660 · Phase 14 P1
+**Question:** Where does succession_chain.rs live in the Jaya Runtime directory structure?
+**Options presented:**
+- src/governance/evolution/ — alongside Phase 12 modules (groups all high-stakes governance together)
+- src/governance/succession/ — its own namespace (cleaner separation: evolution governs rules, succession governs authority)
+**Chosen:** src/governance/succession/ — its own namespace
+**Why:** Evolution governs rules (what changes are permitted and how). Succession governs authority (who holds guardian rights and under what conditions). These are fundamentally different concerns. Placing succession logic inside the evolution namespace creates coupling — bugs or refactors in evolution modules could silently affect succession behavior. A standalone module is separately auditable, separately testable, and separately replaceable.
+**Source:** Claude "Phase 14 architecture questions pending" (2026-05-19), ADR-020
+
+---
+
+### ADQ-005 — Alert System: What Conditions Trigger a Drift Alert?
+**Date:** 2026-03-10
+**FIX:** FIX-48.x · Jaya Part 47/48
+**Question:** What conditions should trigger a drift alert in the Jaya Runtime alert system?
+**Options presented:**
+- A: Only on confirmed violation events
+- B: On both violations and anomaly scores above threshold
+- C: On violations, anomalies, and sentinel warnings
+- D: All of the above — violations, anomalies, sentinel warnings, and any drift detection event
+**Chosen:** Option D — all conditions trigger alerts
+**Why:** A governance system that only alerts on confirmed violations misses early warning signals. Anomaly scores and sentinel warnings exist precisely to detect drift before it becomes a confirmed violation. Suppressing alerts on these events defeats the purpose of the intelligence layer. All governance-relevant signals must surface to the human.
+**Source:** Claude "Jaya Part 47 governance file updates" (2026-03-10), Part 47/48 drift engine design
+
+---
+
+### ADQ-006 — Alert Storage: Where Are Alerts Persisted?
+**Date:** 2026-03-10
+**FIX:** FIX-48.x · Jaya Part 47/48
+**Question:** Where should drift alerts be stored?
+**Options presented:**
+- A: In-memory only (cleared on restart)
+- B: SQLite database (survives restart)
+- C: Ledger only (append-only governance record)
+**Chosen:** Option B — SQLite
+**Why:** In-memory storage means all alert history is lost on restart — an agent could clear its alert record by causing or waiting for a restart. SQLite survives restarts, making alert history part of the auditable governance record. Consistent with the append-only ledger philosophy: governance events must persist.
+**Source:** Claude "Jaya Part 47 governance file updates" (2026-03-10)
+
+---
+
+### ADQ-007 — Alert Dismissal: How Are Reviewed Alerts Handled?
+**Date:** 2026-03-10
+**FIX:** FIX-48.x · Jaya Part 47/48
+**Question:** How should a human dismiss a reviewed alert?
+**Options presented:**
+- A: Soft-dismiss — mark as dismissed in SQLite, filter from active view, never delete from database
+- B: No dismissal — append-only, read-only, alerts accumulate forever
+**Chosen:** Option A — soft-dismiss
+**Why:** Option B is governance-pure but produces an unusable UI as alerts accumulate over time. Soft-dismiss preserves the complete historical record (nothing is deleted) while keeping the active alert view useful. Dismissed = reviewed and acknowledged, not erased. The underlying governance record remains intact and queryable.
+**Source:** Claude "Jaya Part 47 governance file updates" (2026-03-10)
+
+---
+
+### ADQ-008 — Drift History Storage: Where Does Agent Action History Live?
+**Date:** 2026-03-10
+**FIX:** FIX-48.x · Jaya Part 47/48
+**Question:** Where should recent agent action history be stored for drift evaluation?
+**Options presented:**
+- A: In-memory per agent (HashMap, cleared on restart)
+- B: SQLite — new agent_actions table (survives restart)
+**Chosen:** Option B — SQLite
+**Why:** In-memory history creates a restart bypass — an agent could trigger a restart to clear its drift history, making the first 10 actions after any restart always appear clean regardless of prior behavior. This is a governance gap. SQLite closes it by persisting action history across sessions. Drift detection must be consistent across restarts to be trustworthy.
+**Source:** Claude "Jaya Part 47 governance file updates" (2026-03-10)
+
+---
+
+### ADQ-009 — Agent Registry Schema Migration: Destructive or Non-Destructive?
+**Date:** 2026-03-10
+**FIX:** FIX-48.x · Jaya Part 47/48
+**Question:** When upgrading the agents table schema, should the migration preserve or drop existing agent rows?
+**Options presented:**
+- M1: ALTER TABLE (non-destructive) — adds new columns, existing agent rows survive
+- M2: Drop and recreate (destructive) — all existing registered agents lost on upgrade
+**Chosen:** M1 — ALTER TABLE, non-destructive
+**Why:** Dropping agent history on a schema change is not acceptable for a governance system. Registered agents represent governance commitments — erasing them on upgrade would corrupt the governance record and require re-registration. Non-destructive migration preserves continuity.
+**Source:** Claude "Jaya Part 47 governance file updates" (2026-03-10)
+
+---
+
+### ADQ-010 — expected_actions Serialization: Comma or Pipe Separator?
+**Date:** 2026-03-10
+**FIX:** FIX-48.x · Jaya Part 47/48
+**Question:** How should Vec<String> expected_actions be serialized to SQLite (which has no native array type)?
+**Options presented:**
+- Q2-A: Comma-separated string ("FileRead,LedgerRead,SnapshotRead") — simple but fragile if names contain commas
+- Q2-B: Pipe-separated string ("FileRead|LedgerRead|SnapshotRead") — same simplicity, pipe is unambiguous
+**Chosen:** Q2-B — pipe-separated string
+**Why:** Action names are clean identifiers that will never contain a pipe character. Pipe is unambiguous and safe. No JSON overhead or external crate needed. Slightly more future-proof than comma because action names could theoretically be extended with descriptive text containing commas.
+**Source:** Claude "Jaya Part 47 governance file updates" (2026-03-10)
+
+---
+
+### ADQ-011 — Alert UI Poll Interval: How Often Does the Alert Panel Refresh?
+**Date:** 2026-03-10
+**FIX:** FIX-49.03 · Jaya Part 49
+**Question:** How often should the AlertPanel call get_active_alerts to refresh displayed alerts?
+**Options presented:**
+- 5 seconds — alerts appear quickly, higher frequency background calls
+- 10 seconds — balanced, violation visible within 10 seconds, low overhead
+- 30 seconds — very low overhead but alert could sit unnoticed for 30 seconds
+**Chosen:** 10 seconds
+**Why:** The Phase 1 proof condition requires a human to be notified of a violation. 10 seconds provides fast enough visibility to matter while keeping background call overhead low. 5 seconds is excessive for a governance dashboard. 30 seconds is too slow for meaningful real-time oversight.
+**Source:** Claude "Jaya runtime cargo check fixes and alert system completion" (2026-03-10), Part 49 UI design
+
+---
+
+### ADQ-012 — Alert Dismissal Granularity: Per-Alert or Dismiss All?
+**Date:** 2026-03-10
+**FIX:** FIX-49.03 · Jaya Part 49
+**Question:** Should the alert dismissal UI operate per-alert or provide a Dismiss All button?
+**Options presented:**
+- Per-alert — each alert row has its own Dismiss button, forces conscious acknowledgment of each event
+- Dismiss All — one button clears everything, faster but bypasses individual alert review
+**Chosen:** Per-alert dismissal
+**Why:** Per-alert dismissal creates an implicit acknowledgment record — the human saw and cleared each specific event. Dismiss All is a shortcut that allows bypassing review of individual alerts, which weakens governance posture. A governance system must encourage deliberate human review, not provide shortcuts around it.
+**Source:** Claude "Jaya runtime cargo check fixes and alert system completion" (2026-03-10), Part 49 UI design
+
+---
+
+### ADQ-013 — Drift Monitor Scope: All Agents or Per-Agent Dropdown?
+**Date:** 2026-03-10
+**FIX:** FIX-49.03 · Jaya Part 49
+**Question:** Should the DriftMonitorPanel show drift history for all agents combined or allow per-agent filtering?
+**Options presented:**
+- All agents combined — one table, full system-wide view, simpler to build
+- Per-agent dropdown — user selects agent, table filters to that agent's history
+**Chosen:** Per-agent dropdown
+**Why:** Per-agent view enables deep investigation of individual agent behavior without noise from other agents. For a governance system, the ability to trace a specific agent's complete behavioral history is essential for audit and compliance. All-agents combined is useful for system-wide pattern detection but per-agent is required for targeted investigation.
+**Source:** Claude "Jaya runtime cargo check fixes and alert system completion" (2026-03-10), Part 49 UI design
+
+---
+
+### ADQ-014 — Phase 5 Proof Format: cargo test, Tauri command, or Both?
+**Date:** 2026-03-20
+**FIX:** FIX-82.x · Phase 5 Track A Part 82
+**Question:** What format should the Class B integration proof take?
+**Options presented:**
+- A: Tauri command callable from React UI returning a signed, verifiable attestation record
+- B: Rust test (cargo test) exercising the full chain and asserting success
+- C: Both A and B
+**Chosen:** C — both cargo test and Tauri command
+**Why:** cargo test provides machine-verifiable proof that can be run independently by any auditor. The Tauri command surfaces the proof in the UI, making it human-visible without requiring command-line access. C is the strongest proof condition — it is both independently verifiable and human-inspectable. Neither alone is sufficient: a test without UI proof is invisible to users; a UI command without a test is not independently verifiable.
+**Source:** Claude "TY AI OS Phase 5 handoff and governance checkpoint" (2026-03-20), Phase 5 Part 82
+
+---
+
+### ADQ-015 — Ch26 Vocabulary Update: Replace or Append Outdated Definitions?
+**Date:** 2026-03-22
+**FIX:** Phase 5 Track B vocabulary update
+**Question:** Two terms (Transparency Layer and Governance Intelligence) had planning-era definitions in Chapter 26. After Phase 5 proved and implemented them, should the old definitions be kept alongside the new, or replaced?
+**Options presented:**
+- A: Keep both planning and proven definitions (two entries per term)
+- B: Replace planning definitions with proven implementation definitions
+**Chosen:** Option B — replace
+**Why:** Keeping planning-era definitions alongside proven implementations creates a contradiction in the vocabulary. Planning definitions describe what was intended; proven definitions describe what was built and verified. Readers would face two conflicting definitions for the same term. The Book Truth Standard is active — implemented and proven = state as fact. The canonical record reflects reality, not planning history.
+**Source:** Claude "B2 Policy Engine completion and next steps" (2026-03-22)
+
+---
+
+### ADQ-016 — Generate-Handoff.ps1 Location: Where Does the Script Live?
+**Date:** 2026-03-17
+**FIX:** JAYA-CLO-157
+**Question:** Where should the Generate-Handoff.ps1 automation script be placed?
+**Options presented:**
+- 1: E:\TY-Ecosystem\ty-ai-governance\tools\ — in the governance repo, versioned and auditable
+- 2: Local scripts folder outside repos — not tracked in git
+**Chosen:** Option 1 — ty-ai-governance/tools/
+**Why:** Governance tooling must be versioned and auditable. A script that generates governance handoff documents is itself a governance artifact. Placing it outside the repo would mean the tool that maintains governance continuity is itself ungoverned. Every session benefits from the script immediately and any improvements are tracked in Git history.
+**Source:** Claude "TY AI OS session handoff confirmation" (2026-03-17), JAYA-CLO-157
+
+---
+
+### ADQ-017 — Pre-Flight.ps1 Numbering: Phase 8 Component or Standalone Tooling FIX?
+**Date:** 2026-04-19
+**FIX:** FIX-189
+**Question:** Should Pre-Flight.ps1 be assigned as a Phase 8 component fix or as a standalone tooling FIX outside Phase 8?
+**Options presented:**
+- Approach 1: FIX-189 = Pre-Flight.ps1 as a Phase 8 component (keeps all FIX-189+ as Phase 8)
+- Approach 2: FIX-189 = Pre-Flight.ps1 as standalone tooling FIX; Phase 8 first fix becomes FIX-190
+**Chosen:** Approach 2 — standalone tooling FIX
+**Why:** Phase 8 is declared as TYOVA Documentation Integrity Audit. Pre-Flight.ps1 is a governance diagnostic tool that benefits every session, not specifically a documentation integrity fix. Mixing them blurs Phase 8 scope. This matches how Generate-Handoff.ps1 was handled — tooling stands on its own, not inside a phase. Phase 8 scope stays focused and clean.
+**Source:** Claude "TY AI OS governance session handoff and TYOVA sync audit" (2026-04-19)
+
+---
+
+### ADQ-018 — Pre-Flight.ps1 Bad-State Behavior: Report or Block?
+**Date:** 2026-04-19
+**FIX:** FIX-189
+**Question:** If Pre-Flight.ps1 detects a repo in bad state (merge conflict, detached HEAD, etc.), should it report the issue and continue, or fail loudly and exit?
+**Options presented:**
+- A: Report and continue — visual warnings shown, script completes, exits with success code
+- B: Fail loudly and exit — error code returned, script stops
+**Chosen:** Option A — report and continue with strong visual warnings and final summary line
+**Why:** Pre-Flight is a diagnostic tool, not a gatekeeper. It reports facts; the builder interprets them. A blocking exit would prevent the builder from seeing the full state picture — they might need to see the other repos even if one is in bad state. The visual warning approach ensures problems are impossible to miss while still presenting complete information.
+**Source:** Claude "TY AI OS governance session handoff and TYOVA sync audit" (2026-04-19), FIX-189 design Q6
+
+---
+
+### ADQ-019 — HVP Document Placement: Where Does the Protocol Spec Live?
+**Date:** 2026-05-16
+**FIX:** FIX-530 · Phase 10
+**Question:** Where should TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md be stored?
+**Options presented:**
+- A: Standalone file in spec/ directory
+- B: Embedded in an existing governance document
+- C: In the Guardian Codex as a new section
+**Chosen:** Option A — standalone file in spec/
+**Why:** The Human Verification Protocol is a complete independent specification that will be referenced by multiple other governance documents (Guardian Codex, Continuity Charter, Jayme spec). Embedding it inside another document creates coupling — changes to the host document require coordinating with the protocol, and the protocol cannot be versioned independently. Standalone in spec/ makes it independently addressable, separately versionable, and cross-referenceable.
+**Source:** Claude "TY AI OS phase 10 session handoff" (2026-05-16), Phase 10 Q1
+
+---
+
+### ADQ-020 — HVP Retry Waiting Period: How Long Between Failed Verification Attempts?
+**Date:** 2026-05-16
+**FIX:** FIX-530 · Phase 10
+**Question:** If a guardian verification attempt fails any layer of the HVP, how long must they wait before retrying?
+**Options presented:**
+- A: 72 hours (3 days) — short enough that a genuine guardian in an emergency is not severely delayed
+- B: 7 days — moderate protection, makes attack iteration very slow
+- C: 30 days — strong anti-attack, but could seriously delay a legitimate guardian in emergency
+**Chosen:** 7 days (Option B)
+**Why:** 7 days balances genuine-emergency inconvenience against attack resistance. Long enough to make automated probing impractical — an attacker would need months to iterate meaningfully. Short enough that a real person in a real emergency can retry within a reasonable timeframe. The HVP must survive centuries, so the waiting period must be long enough to discourage patient adversaries.
+**Source:** Claude "TY AI OS phase 10 session handoff" (2026-05-16), Phase 10 Q4, T-13 in Canonical Thresholds Registry
+
+---
+
+### ADQ-021 — HVP Lockdown Clearance: What Do Regular Users Use Without Full HVP?
+**Date:** 2026-05-17
+**FIX:** FIX-530 · Phase 11
+**Question:** For regular users or Path 1 solo installations that did not set up HVP, how should lockdown state be cleared?
+**Options presented:**
+- Full HVP enforcement (all users must complete HVP)
+- Simple passcode as fallback clearance mechanism
+**Chosen:** Simple passcode — user self-verification through a simpler mechanism for regular users
+**Why:** Full HVP (hardware token, cryptographic keypair, four-layer verification) is appropriate for high-security organizational deployments and guardian-level verification. For solo personal users in Path 1 installations, this level of friction is disproportionate. A passcode set during installation and stored encrypted in the Private Verification Store provides adequate verification for personal use while keeping TY AI OS accessible to non-technical users. The ledger records that clearance was done via passcode, not HVP, preserving audit transparency.
+**Source:** Claude "TY AI OS phase 11 completion handoff" (2026-05-17/19), Phase 11 Q1/Q2
+
+---
+
+### ADQ-022 — HVP Guardian Transfer: Must HVP Be Rebuilt When a Guardian Changes?
+**Date:** 2026-05-17
+**FIX:** FIX-531 · Phase 11
+**Question:** When a guardian leaves and a new guardian is designated, must the Human Verification Protocol be rebuilt for the new guardian?
+**Options presented:**
+- New HVP required for every guardian change
+- Old HVP settings can be carried forward at the organization's choice
+**Chosen:** Both options preserved — guardian transfer must present both options to the organization
+**Why:** A new guardian has different physical characteristics and credentials than the old guardian, so a new HVP is technically required for identity verification to work correctly. However, forcing immediate HVP rebuild during a guardian transfer may create operational hardship, particularly in urgent successions. The correct governance answer is to ensure the organization consciously chooses — they must be informed of the consequences of keeping old HVP settings before the choice is made. Neither option is forbidden; the choice must be explicit and recorded.
+**Source:** Claude "TY AI OS phase 11 completion handoff" (2026-05-17/19), Phase 11 Q4
+
+---
+
+### ADQ-023 — TYOVA Infrastructure: Rebuild Web App or Keep Docs-Only?
+**Date:** 2026-01-28
+**FIX:** TYOVA Configuration Start
+**Question:** TYOVA was a docs-only repository. Adding TY Admin required re-adding React/Vite/TypeScript web app infrastructure. Which approach?
+**Options presented:**
+- Re-add web app infrastructure — add back package.json, vite.config.ts, index.html, and src/ with TY Admin UI; docs/ folder remains canonical source
+- Keep docs-only, use external static site generator
+**Chosen:** Re-add web app infrastructure
+**Why:** The TY Admin surface requires interactive UI — a download portal, verification feedback, and confirmation flows. A static site generator cannot provide the interactivity needed for TYOVA to serve as a live verification interface. The docs/ canonical source is preserved regardless of whether a web app exists alongside it. The web app serves users; the docs remain the authority.
+**Source:** ChatGPT "TYOVA Configuration Start" (2026-01-28)
+
+---
+
+### ADQ-024 — Timestamp Correction: Amend Committed Ledger Entry or Leave As-Is?
+**Date:** 2026-04-02
+**FIX:** FIX-120 · Phase 7
+**Question:** FIX-120.01 and FIX-120.02 were committed with timestamp 20:30 San Diego when the actual time was 20:26. Should the committed ledger entries be amended?
+**Options presented:**
+- A: Leave as-is — entries are committed, discrepancy is minor, correcting adds noise
+- B: Amend the ledger entries with correct timestamp and recommit
+**Chosen:** Option A — leave as-is
+**Why:** The committed entries are already in Git history. Amending them for a 4-minute discrepancy would create a rewritten commit, adding noise to the governance record without meaningful accuracy benefit. The Zero-Fabrication Rule requires honesty about what happened; it does not require retroactive perfection of minor recorded discrepancies. Going forward the time-first rule was strengthened: always ask for exact San Diego time before writing any timestamp.
+**Source:** Claude "TY AI OS phase 7 delivery handoff" (2026-04-02), FIX-120
+
+---
+
+---
+
+### ADQ-025 — Phase 5 Scope: Complete Phase 4.2 or Introduce Something New?
+**Date:** 2026-03-15
+**FIX:** Phase 5 scope definition, JAYA-CLO-149
+**Question:** Should Phase 5 be defined as a completion pass (close Phase 4.2 gaps: nonce, ledger hash, Class B, keychain) or as an expansion pass introducing something structurally new above Phases 1-4? Or both?
+**Options presented:**
+- Phase 5 = complete Phase 4.2 only (hardening/completion pass)
+- Phase 5 = something structurally new only (new capability layer, Phase 4.2 stays on backlog)
+- Phase 5 = both (close Phase 4.2 in Track A, introduce new capability in Track B)
+**Chosen:** Both — Track A first (Foundation Completion: nonce, ledger hash, Class B, keychain), then Track B (The Outward Reach: Federation, Policy Engine, Transparency Layer, Governance Intelligence). Track B cannot begin until Track A is complete. All four Track B capabilities confirmed by Jose Ramon.
+**Why:** Phase 4.2 gaps represent real structural debt — the system cannot claim complete attestation without replay protection (nonce) and ledger binding (ledger hash). Building new capability on an incomplete foundation accumulates risk. Track A is prerequisite. Track B is the mission: reaching outward toward real-world governance impact. The strict dependency (Track B blocked on Track A) ensures the foundation is provably hardened before extension.
+**Source:** Claude "Phase 5 scope definition and corruption scan protocol" (2026-03-15), TY_PHASE5_SPEC_v0.1.md
+
+---
+
+### ADQ-026 — F-13 Repository Visibility: Make Public or Build Verification Endpoint?
+**Date:** 2026-03-28
+**FIX:** JAYA-CLO-183 · Phase 6 scope definition
+**Question:** To close Yampolskiy Gap 1 (operator-independent verification), should ty-ai-governance be made public, or should a signed verification endpoint be built while the code remains private?
+**Options presented:**
+- Option A: Make ty-ai-governance public — full transparency, anyone reads the Book of TY and specs, paper can cite public URL, no new code needed
+- Option B: Build public signed verification endpoint — repos stay private, Jaya Runtime serves a cryptographically signed governance proof that anyone can verify with only the public key
+**Chosen:** Option B — Build public signed verification endpoint. TY's code is permanently private. No exceptions. Distribution is binary/runtime only. Source is never exposed.
+**Why:** Jose Ramon's reasoning: "TY's code will always be private and secret. No one should be able to copy and try to duplicate TY's code in any way. Even when TY is distributed to other machines, TY's internal working code should not in any way be duplicated, or hacked." The verification endpoint proves governance without exposing implementation. The world can verify that TY works; the world cannot see how TY works. This established INV-TY-PRIV-1 (Source Privacy Invariant) as a permanent architectural principle.
+**Source:** Claude "Phase 5 completion and Phase 6 handoff" (2026-03-28), F-13 decision locked 16:00 PDT San Diego
+
+---
+
+### ADQ-027 — Pre-Part 81 Repository Visibility: Keep Private or Make Public?
+**Date:** 2026-03-19
+**FIX:** Pre-Part 81 gate (Part 81: JAYA-CLO-160)
+**Question:** Should ty-ai-governance be made public before Part 81 opens? Three options: (A) Make ty-ai-governance public, (B) same as A — Jaya-Runtime stays private regardless, (C) keep both private.
+**Options presented:**
+- A: ty-ai-governance goes public — full verifiability, paper can cite URL, closes Yampolskiy Gap 1
+- B: Same as A (clarification that Jaya-Runtime was never at risk)
+- C: Both repos stay private — paper remains "available to reviewers upon request"
+**Chosen:** Option C — keep both repos private. TYOVA web app is not ready to go public yet.
+**Why:** Jose Ramon's reasoning: the TYOVA web app and ty-ai-governance repo are interconnected in user perception. Publishing the governance repo before the public-facing TYOVA interface is ready creates a disjointed impression. The decision was correct for this moment — Yampolskiy Gap 1 remained open here but was later resolved through Track B of Phase 6 (the signed verification endpoint built in Part 102).
+**Source:** Claude "TY AI OS session handoff and repository verification" (2026-03-19), pre-Part 81 gate
+
+---
+
+### ADQ-028 — SS321 Ledger Location: Move to ty-ai-governance or Leave as Local File?
+**Date:** 2026-04-26
+**FIX:** SS321 session handoff review
+**Question:** Should SS321_FIX_INDEX.md be moved from its local-only path (E:\TY-Ecosystem\ss321\SS321_FIX_INDEX.md) into the ty-ai-governance repo for git tracking?
+**Options presented:**
+- Path X: Leave as-is — SS321 ledger remains a local convenience copy; MASTER_FIX_INDEX in ty-ai-governance is the canonical cross-product history; no scope expansion
+- Path Y: Promote SS321_FIX_INDEX.md into ty-ai-governance governance/ledger/ — single source of truth, all future SS321 ledger writes git-tracked
+**Chosen:** Path X — leave as-is
+**Why:** (1) The canonical file path was already committed in handoff documents — moving it breaks references in past records, violating append-only governance discipline. (2) MASTER_FIX_INDEX already contains all closures; the audit trail is intact. (3) Scope discipline: restructuring the ledger location is exactly the kind of expansion the governance rules guard against when a launch blocker (B-SS321-003) is the actual priority. If symmetry matters, log as a future item rather than act now.
+**Source:** Claude "SS321 session handoff and fix ledger closure" (2026-04-26)
+
+---
+
+### ADQ-029 — WaveSurfer Audio: Fix Double-Download, Which Option?
+**Date:** 2026-05-07
+**FIX:** SS-FIX-393
+**Question:** WaveSurfer was downloading the full audio file twice per track (once for waveform visualization, once for playback). Three options to fix this.
+**Options presented:**
+- Option A: Share the audio blob — download once, create blob URL, feed to both WaveSurfer and audio element
+- Option B: Use WaveSurfer's built-in media element — configure WaveSurfer to use the existing audio element as media source (one config change, fastest fix)
+- Option C: Pre-generate waveform data — store waveform peak data in database at upload time; WaveSurfer reads pre-computed peaks instead of downloading audio to generate them
+**Chosen:** Option C — Pre-generate waveform data
+**Why:** Option B is the fastest fix but solves only the current instance. Option C is the most scalable long-term: once peaks are computed and stored at upload time, every subsequent playback is free — no audio download needed for visualization ever again. The track_intelligence table already existed in the schema, making Option C feasible without new migrations. The extraction is fire-and-forget (non-blocking) so it never delays uploads. Backward compatible: legacy tracks without stored peaks fall back to current behavior.
+**Source:** Claude "SS321 trophy system handoff and open items" (2026-05-07), SS-FIX-393
+
+---
+
+### ADQ-030 — F-12 Academic Paper: Write Now or Defer?
+**Date:** 2026-03-25
+**FIX:** F-12 (Academic paper on TY AI OS)
+**Question:** The academic paper on TY AI OS is not yet committed to disk. Should it be written to disk now and referenced in the Book of TY, or deferred?
+**Options presented:**
+- Write the paper to disk now, commit to ty-ai-governance, then reference in the book
+- Defer F-12 — add to flag list for dedicated session
+- Skip the paper entirely — not needed for Phase 6
+**Chosen:** Defer F-12 — add to flag list for dedicated session
+**Why:** The Book Truth Standard requires zero fabrication. Referencing a paper that does not exist on disk introduces a gap between what the book says and what the repository contains. The paper is large (400+ lines). Writing it properly requires a dedicated session. Deferring preserves integrity — the book only references what actually exists on disk. The paper remains open as a flag item.
+**Source:** Claude "Phase 5 completion and Jayme AI definition" (2026-03-25), F-12 flag
+
+---
+
+### ADQ-031 — Pre-Flight.ps1: Should It Check SS321 Repo State?
+**Date:** 2026-04-19
+**FIX:** FIX-189 · Pre-Flight.ps1 design Q7
+**Question:** Should Pre-Flight.ps1 include checks on the SS321 repository state in addition to ty-ai-governance and TYOVA?
+**Options presented:**
+- Yes: Include SS321 repo state (git status, HEAD, SS321_FIX_INDEX last entry) in Pre-Flight output
+- No: Pre-Flight checks governance repos only (ty-ai-governance and TYOVA)
+**Chosen:** Yes — Pre-Flight.ps1 checks SS321 repo state. SS321_FIX_INDEX.md located at E:\TY-Ecosystem\ss321\SS321_FIX_INDEX.md confirmed by Jose Ramon.
+**Why:** SS321 is a primary TY ecosystem artifact. A pre-flight check that does not include the first live host of TY AI OS principles is incomplete. The builder needs to know the state of all three repos at session start, not just the governance repos. The script can read SS321_FIX_INDEX for last SS-FIX number consistently across sessions.
+**Source:** Claude "TY AI OS governance session handoff and TYOVA sync audit" (2026-04-19), Pre-Flight Q7
+
+---
+
+### ADQ-032 — Phase 12 Deliberation Window: How Long Must Evolution Proposals Deliberate?
+**Date:** 2026-05-19
+**FIX:** Phase 12 (F-19 Governed Evolution), Jaya-Runtime evolution modules
+**Question:** What is the minimum deliberation period before any Layer 2 governance change may be adopted? This is the core enforcement window of the anti-capture rules.
+**Options presented:** Not explicitly listed as options — this was a binding specification decision
+**Chosen:** 7 days minimum (604,800 seconds). Enforced in Jaya Runtime at code level. EVOL-AC-2: deliberation period cannot be shortened below 7 days.
+**Why:** 7 days provides enough time for any guardian or reviewer to identify a problematic amendment before it takes effect. This prevents rushed governance changes — no emergency or urgency can legally compress the deliberation period. The runtime enforcement (hard rejection if authorization is attempted before 604,800 seconds) means this is not a policy the system can choose to ignore. It is an architectural constraint. Any attempt to authorize evolution before the period expires returns a hard rejection, not a warning.
+**Source:** Claude "TY AI OS Phase 12 evolution completion and FIX-555 handoff" (2026-05-20), Phase 12 EVOL-AC-2, T-05 in Canonical Thresholds Registry
+
+---
+
+### ADQ-033 — Jayme AI: Can It Decide Independently When to Halt TY AI OS?
+**Date:** 2026-03-25 (formalized in TY_JAYME_SPEC_v0.1.md 2026-03-24)
+**FIX:** Phase 5 completion, Jayme AI definition
+**Question:** Should Jayme AI have independent judgment authority to decide when TY AI OS should be halted?
+**Options presented:**
+- Jayme AI may decide independently to halt TY based on its own assessment of conditions
+- Jayme AI may only execute a halt that the Continuity Charter explicitly specifies, written by humans before they were gone
+**Chosen:** Jayme AI executes charter-defined halt conditions only. It cannot independently decide to halt. The conditions are written by humans in advance. Jayme executes; it does not decide.
+**Why:** Canonical sentence: "If continuity requires betrayal, continuity must fail." A system that can decide when to halt itself can also decide not to halt when it should. Jayme's halt authority is a commitment made in writing by humans — Jayme executes that commitment, it does not author new halt conditions. A Jayme with independent halt judgment is a self-governing AI, which is exactly what the eternal principles prohibit.
+**Source:** TY_JAYME_SPEC_v0.1.md, Claude "Phase 5 completion and Jayme AI definition" (2026-03-24/25), Section XIV of Guardian Codex
+
+---
+
+### ADQ-034 — Jayme AI: Can It Self-Activate Based on Its Own Judgment?
+**Date:** 2026-03-24 (TY_JAYME_SPEC_v0.1.md)
+**FIX:** Phase 5 completion, Jayme AI specification
+**Question:** Should Jayme AI be permitted to decide for itself when the conditions for its own activation have been met?
+**Options presented:**
+- Jayme AI assesses conditions and self-activates when it judges activation is warranted
+- Activation is triggered only by verifiable charter-defined conditions; Jayme checks them but does not define them
+**Chosen:** Activation triggered only by charter-defined conditions. Jayme checks conditions but does not define them. Self-activation is permanently prohibited (INV-J2).
+**Why:** Canonical sentence: "A system that can judge when it should stop deferring to humans has already stopped deferring to humans." If Jayme could assess its own activation conditions, it could activate prematurely under ambiguous circumstances. The fourth activation condition — activation triggered by charter-defined conditions, not Jayme's own judgment — removes both failure modes: premature activation and self-authorization. The activation trigger must come from verifiable external conditions specified by humans, not from Jayme's interpretation of the situation.
+**Source:** TY_JAYME_SPEC_v0.1.md INV-J2, Guardian Codex Condition 4, Claude "System handoff and governance verification" (2026-04-04)
+
+---
+
+## SECTION 7 — ARCHITECTURAL DECISION Q&A: SYSTEMATIC SCAN (ADQ-035 to ADQ-060)
+
+From full systematic scan of all accessible Claude conversations, phase by phase.
+These are architectural decision Q&A instances confirmed from primary source conversations
+that were not captured in earlier scans.
+
+---
+
+### ADQ-035 — GAL Spec: Three Pre-Draft Locks
+**Date:** 2026-03-11 (Phase 4, Part 67, JAYA-CLO-134)
+**FIX:** JAYA-CLO-134 · Phase 4 Part 67
+**Question:** Three architectural decisions needed before TY_GAL_SPEC_v0.1.md could be drafted: (1) What to hash for governance_hash, (2) what freshness window to use, (3) whether to include ledger hash in v0.1.
+**Options presented:**
+- Lock 1: governance_hash = hash of implementation OR hash of constitutional invariant set (doctrine only)
+- Lock 2: Freshness window = 10s (too strict), 30s (strong), or 60s (forgiving)
+- Lock 3: Include ledger hash in v0.1 OR defer to v1.1
+**Chosen:** Lock 1 = doctrine hash only (SHA-256 of canonical governance invariant set, not implementation). Lock 2 = 30 seconds. Lock 3 = Deferred to v1.1.
+**Why:** Lock 1: A codebase hash breaks on every Jaya release; a doctrine hash only changes when governance intentionally changes. Lock 2: 30 seconds prevents meaningful replay, tolerates clock skew, easy to audit, can be tightened in v1.1. Lock 3: Including ledger hash ties the protocol to Jaya's specific ledger implementation, preventing other runtimes from adopting it. Minimal v0.1 payload (7 fields) is sufficient for Phase 4 proof.
+**Source:** Claude "Project state confirmation and next phase planning" (2026-03-12), Phase 4 pre-draft decisions
+
+---
+
+### ADQ-036 — Phase 4 Proof Condition: 4 Steps or 7 Steps?
+**Date:** 2026-03-13 (Phase 4, Part 75)
+**FIX:** JAYA-CLO-143 · Phase 4 Part 75
+**Question:** Should the Phase 4 GAL proof condition require 4 steps or be expanded to 7 steps?
+**Options presented:**
+- 4-step proof: Node produces attestation → Node verifies own attestation → Peer verifies → Mismatch detected
+- 7-step proof: Extended with additional verification layers
+**Chosen:** 7-step proof condition (expanded from original 4).
+**Why:** The 4-step proof was the original Phase 4 requirement. Part 78 (Ledger Hash Attestation Binding) added a ledger hash binding step to the canonical attestation message format, extending the proof from 4 to 6 steps. The GAL proof condition expanded to reflect this. The expanded proof is stronger evidence of full chain integrity.
+**Source:** Claude "Jaya-Runtime phase 4 setup and verification" (2026-03-13), Phase 4 seal record
+
+---
+
+### ADQ-037 — Alert Delivery: In-App Only vs. OS Desktop Notification
+**Date:** 2026-03-10 (Jaya Part 49, JAYA-CLO-094)
+**FIX:** FIX-49.03 · JAYA-CLO-094
+**Question:** Should Jaya alert delivery for Part 49 include in-app visual only, or also OS desktop notification?
+**Options presented:**
+- Layer 1 only: In-app visual alert (red badge + alert panel). No external dependencies. User must have app open.
+- Layer 1 + Layer 2: In-app AND OS desktop notification via tauri-plugin-notification. User notified even when app is backgrounded.
+- Layer 3 (phone/SMS/email): Out of scope — incompatible with local-first architecture.
+**Chosen:** Layer 1 only — in-app visual alert (red badge + alert panel).
+**Why:** Layer 1 is buildable in Part 49 with zero new dependencies. Layer 2 requires adding a Tauri plugin dependency which increases complexity and attack surface. Layer 3 introduces external service dependencies incompatible with local-first governance doctrine. The governance requirement is that violations surface to the human — in-app display satisfies this without architectural compromise.
+**Source:** Claude "Jaya Part 47 governance file updates" (2026-03-10), Part 49 decisions
+
+---
+
+### ADQ-038 — Jaya Status Panel: In-App Only vs. Email vs. Both
+**Date:** 2026-05-22 (FIX-572)
+**FIX:** FIX-572
+**Question:** For the Jaya Runtime Status Panel (monitoring Supabase bridge, Luke, Jayme connections), should alerts be in-app notification only, email only, or both?
+**Options presented:**
+- Option 1: In-app notification only — blinking banner inside app. No external credentials needed.
+- Option 2: Email alert only — requires SMTP credentials, user configures email.
+- Option 3: Both — in-app blinking indicator always present, email as optional add-on.
+**Chosen:** Option 3 — both. Email infrastructure already confirmed working (Resend, noreply@silversounds321.com, DKIM/SPF/DMARC verified).
+**Why:** In-app alerts require the app to be open; email alerts reach the guardian even when Jaya is in the background. The local-first doctrine prohibits phone/SMS external services, but email is acceptable as an optional alert channel. Since Resend was already implemented for SS321, the additional cost is minimal.
+**Source:** Claude "TY AI OS session handoff and governance state" (2026-05-22), FIX-572 design decision
+
+---
+
+### ADQ-039 — Federation B1: Simulate Two Nodes or Defer Until Second Machine?
+**Date:** 2026-03-18 (Phase 5 Track B, Part 82 pre-open)
+**FIX:** Phase 5 Track B, JAYA-CLO-161
+**Question:** The Phase 5 B1 proof condition requires two Jaya nodes on separate machines. TY only has one machine. Should federation be simulated locally, built without proving, or deferred?
+**Options presented:**
+- Option 1: Simulate two nodes locally — two separate Jaya instances on the same machine with different data directories and different port configurations (com.jaya.runtime and com.jaya.runtime.nodeb, ports 1420 and 1421).
+- Option 2: Build B1 federation infrastructure now, defer proof condition until second machine available.
+- Option 3: Defer B1 entirely until a second machine is available.
+**Chosen:** Option 1 — simulate two nodes locally. Zero damage approach: one new file only (tauri.node-b.conf.json), zero modifications to existing files.
+**Why:** The federation architecture, attestation exchange, and violation detection can all be proven on one machine with two separate node instances. The governance constraint is structural correctness, not physical hardware separation. The proof condition is met logically even if not physically on two machines. Governance claim is preserved.
+**Source:** Claude "Jaya runtime Part 79 handoff and Phase 5 Track A resumption" (2026-03-18), Phase 5 Track B decision
+
+---
+
+### ADQ-040 — Luke Architecture: Language, Data Source, Explanation Engine
+**Date:** 2026-05-08 (Phase 8, FIX-403)
+**FIX:** FIX-403 · LUKE_AI_ARCHITECTURE.md
+**Question:** Four architecture decisions needed before Luke AI could be built: language/integration, data source, explanation engine, and proof conditions.
+**Options presented:**
+- Decision 1 (Language): Rust module inside Jaya's Tauri app / Separate Rust/Tauri app / TypeScript inside Tauri
+- Decision 2 (Data source): Jaya's local SQLite ledger only / Supabase governance tables / Both
+- Decision 3 (Explanation engine): Template-based / Claude API / Hybrid
+- Decision 4 (Proof conditions): LC-001, LC-002, LC-003 + INV-L1, INV-L4
+**Chosen:** Decision 1 = Rust module inside Jaya's Tauri app. Decision 2 = Jaya SQLite ledger only for MVP. Decision 3 = Template-based for MVP. Decision 4 = Confirmed as proposed.
+**Why:** Decision 1: One install, one app, one binary, consistent tech stack — no second installer or update path. Decision 2: Keeps Luke fully local-first and offline-capable; Supabase events route through Jaya→SQLite→Luke, never directly to Luke. Decision 3: Template-based ensures deterministic, auditable explanations with no network dependency; every event type in Jaya's ledger already has a defined structure. Decision 4: INV-L1 (no execution path) is the structural guarantee that makes Luke safe.
+**Source:** Claude "Phase 8 documentation audit completion and governance status" (2026-05-08), FIX-403
+
+---
+
+### ADQ-041 — Luke + Supabase Integration: Option A, B, or C?
+**Date:** 2026-05-08 (Phase 9, Step 5.2)
+**FIX:** Phase 9 Step 5.2 architectural decision
+**Question:** Before sealing Phase 9, should Luke be amended to read Supabase governance events directly (Option B), or should Phase 9 be sealed first and the integration added post-seal (Option C)?
+**Options presented:**
+- Option A: Complete LC 8-14 as designed (SQLite only). Seal Phase 9. Supabase stays deferred per sealed architecture.
+- Option B: Amend architecture first, add Supabase integration to Luke before seal. Expands Phase 9 scope.
+- Option C: Seal Phase 9 first on original design, add Luke + Supabase as a separate post-seal FIX.
+**Chosen:** Option C — seal Phase 9 first, with a permanent architectural clarification: Luke should NEVER read Supabase directly. The correct architecture is Jaya writes Supabase-sourced events into SQLite → Luke reads them through SQLite as normal. This is a Jaya task, not a Luke task.
+**Why:** Luke's structural guarantees (always offline, always deterministic, zero write paths) must be preserved. Giving Luke direct Supabase access would add a network dependency that compromises local-first doctrine and makes Luke's behavior non-deterministic. Routing through Jaya→SQLite preserves everything. Option C keeps every record honest and every phase boundary clean.
+**Source:** Claude "TY AI OS phase 9 governance system handoff" (2026-05-09), Phase 9 Step 5.2 decision
+
+---
+
+### ADQ-042 — Phase 9 Seal: Add Jayme Proof Condition or Seal As-Is?
+**Date:** 2026-05-08 (Phase 9 pre-seal)
+**FIX:** Phase 9 seal session (FIX-414 area)
+**Question:** Phase 9 had no formal proof condition for Jayme's drift monitor (unlike ADR-001-PC-001 for Jaya). Should a formal proof condition be declared before sealing, or seal as-is?
+**Options presented:**
+- Add Jayme formal proof condition before sealing
+- Seal Phase 9 as-is, note the drift monitor as tested (8/8 unit tests) but without a formal declared proof condition
+**Chosen:** Add Jayme proof condition before sealing. JDM-PC-001 was declared and met on 2026-05-08 at 21:24 PDT: drift monitor ran against live SS321 production data, analyzed 1 event, checked 7 behavioral patterns, no drift detected.
+**Why:** The governance standard requires proof conditions, not just passing unit tests. A unit test proves the code works in isolation; a proof condition proves the live system performed its governance function against real production data. Items 2 (distribution arrow corruption) and 3 (INV-L2 structural gap note) were confirmed non-blocking and did not require pre-seal resolution.
+**Source:** Claude "TY AI OS phase 9 governance system handoff" (2026-05-09), pre-seal assessment
+
+---
+
+### ADQ-043 — CLO Number Conflict: Nav Fix Takes CLO-173 as What?
+**Date:** 2026-03-23 (Phase 5 Track B, end of Part 93)
+**FIX:** FIX-93.03 · JAYA-CLO-173
+**Question:** An unplanned TYOVA nav fix needed a CLO number. CLO-173 was pre-assigned for Phase 5 seal (FIX-94.01). Should the nav fix displace the seal, or be numbered as a sub-entry?
+**Options presented:**
+- Option A: Nav fix takes JAYA-CLO-173 as FIX-94.01; Phase 5 seal shifts to FIX-94.02 / JAYA-CLO-174.
+- Option B: Nav fix takes JAYA-CLO-173 as FIX-93.03 (sub-entry under Part 93 work); Phase 5 seal stays FIX-94.01 / JAYA-CLO-174.
+**Chosen:** Option B — nav fix as FIX-93.03. Phase 5 seal remains FIX-94.01.
+**Why:** Phase 5 formal seal is the most significant milestone in the system — 5 phases, 93 parts, all proof conditions satisfied. It deserves to stand alone as FIX-94.01 with no ambiguity. The nav fix is TYOVA UI cleanup continuation from Part 93, architecturally honest to group it there. Historical ledger clarity is more valuable than linear CLO assignment.
+**Source:** Claude "Phase 5 completion and master hub navigation fixes" (2026-03-25), CLO conflict resolution
+
+---
+
+### ADQ-044 — SS321 Notification System: Include SMS or Email + Bell Only?
+**Date:** 2026-05-01 (SS321 notification feature)
+**FIX:** SS321 notifications feature scope
+**Question:** Should SS321 artist upload notifications include SMS (Twilio) or launch with email + in-app bell only?
+**Options presented:**
+- Include SMS now — requires Twilio setup, $1.40 per upload for 100 SMS subscribers, $15 one-time + monthly campaign fees, 10DLC registration
+- Email + bell only for now — ship faster, SMS can be added later
+**Chosen:** Email + bell only for launch. SMS deferred.
+**Why:** Twilio SMS costs approximately $1.40 per track upload event for 100 subscribers, plus campaign registration overhead. At 20 tracks per month this reaches ~$28/month plus fixed fees. The governance doctrine prefers minimal external service dependencies. Resend (email) is already set up and verified for SS321. Starting with email + bell satisfies the notification requirement with zero new external dependencies.
+**Source:** Claude "SS321 production handoff and governance state" (2026-05-01), notification scope decision
+
+---
+
+### ADQ-045 — Phase 5 Track B: Class B Integration Proof — cargo test or Tauri Command or Both?
+**Date:** 2026-03-20 (Phase 5 Track B, Part 82, JAYA-CLO-161)
+**FIX:** FIX-82.x · JAYA-CLO-161
+**Question:** What format should the Class B integration proof take — cargo test, Tauri command, or both?
+**Options presented:**
+- A: Tauri command callable from React UI, returning a signed, verifiable attestation record
+- B: Rust test (cargo test) exercising the full chain and asserting success
+- C: Both A and B
+**Chosen:** C — both cargo test and Tauri command.
+**Why:** cargo test provides machine-verifiable proof runnable by any auditor independently. The Tauri command surfaces the proof in the UI for human visibility without requiring command-line access. C is the strongest proof condition — independently verifiable AND human-inspectable. Neither alone is sufficient.
+**Source:** Claude "TY AI OS Phase 5 handoff and governance checkpoint" (2026-03-20), Part 82 proof format
+
+---
+
+### ADQ-046 — Chapter 26 Planning vs. Proven Definitions: Replace or Keep Both?
+**Date:** 2026-03-22 (Phase 5 Track B, vocabulary update)
+**FIX:** Phase 5 Track B vocabulary update session
+**Question:** Two terms (Transparency Layer and Governance Intelligence) had planning-era definitions in Ch26. After Phase 5 proved and implemented them, should old definitions be kept alongside new ones or replaced?
+**Options presented:**
+- A: Keep both planning and proven definitions (two entries per term)
+- B: Replace planning definitions with proven implementation definitions
+**Chosen:** Option B — replace.
+**Why:** Keeping planning-era definitions alongside proven implementations creates contradictions — readers face two conflicting definitions for the same term. The Book Truth Standard requires records to reflect reality, not planning history. Planning definitions describe what was intended; proven definitions describe what was built and verified. The canonical record reflects implemented reality.
+**Source:** Claude "B2 Policy Engine completion and next steps" (2026-03-22)
+
+---
+
+### ADQ-047 — TY-0001.C Must Bundle What?
+**Date:** 2026-05-21 (FIX-561, Entry-580)
+**FIX:** FIX-561 · Entry-580
+**Question:** Should TY-0001.C release bundle the TY Compliance Proof Kit v0.1 documents, or keep the release and the kit as separate deliverables?
+**Options presented:**
+- Bundle the Compliance Kit with TY-0001.C — kit and release stay in sync
+- Keep them separate — TY-0001.C is a runtime release, Compliance Kit is a governance document
+**Chosen:** Bundle — TY-0001.C must include Compliance Kit v0.1 documents. Decision locked in Entry-580.
+**Why:** The Compliance Kit is the adoption artifact that enables external builders to verify TY governance compliance without builder involvement. A TY release that does not include the verification kit is a release that cannot be independently verified. Keeping them bundled ensures every installation includes its own verification standard.
+**Source:** Claude "TY AI OS session handoff and patent review" (2026-05-21), FIX-561 Entry-580
+
+---
+
+### ADQ-048 — TYOVA Hub: 11 Empty Sections — Mark Planned or Remove?
+**Date:** 2026-05-21 (FIX-567)
+**FIX:** FIX-567
+**Question:** 11 of 16 empty hub sections in masterHubRegistry.ts had no corresponding Rust implementation in Jaya Runtime. Should they be fabricated (fill in content), removed, or marked honestly as planned?
+**Options presented:**
+- Fabricate content to fill the sections
+- Remove the empty sections entirely
+- Mark all 11 as "Planned · Phase 13+" with honest empty metrics, mark 5 verified active sections with real content
+**Chosen:** Mark 11 as "Planned · Phase 13+" with honest empty metrics. Mark 5 verified sections with real content from confirmed modules (cognitive-drift, meta-autonomy, supervisor-engine, attil-progression, auto-diagnosis).
+**Why:** Zero-Fabrication Rule prohibits fabricating content about capabilities that do not exist. Removing them entirely would erase legitimate future-phase planning artifacts that ChatGPT era built as real phase-by-phase features. The "Planned · Phase 13+" designation is exactly true — the features are planned but not yet built. Honest empty metrics over fabricated ones.
+**Source:** Claude "TY AI OS session handoff and governance state" (2026-05-21), FIX-567
+
+---
+
+### ADQ-049 — Phase 5 Chapters: Write Ch36 Now or Defer?
+**Date:** 2026-03-28 (Phase 5 completion, F-11 final chapter)
+**FIX:** Phase 5 completion session
+**Question:** Should Chapter 36 (the F-11 capstone tying together the previous four chapters) be written in the current session or deferred?
+**Options presented:**
+- Option A: Write Ch36 now — extract facts and write this session (F-11 fully resolved)
+- Option B: Defer Ch36 — formally log as remaining open item, close F-11 partially, proceed to Ch18 Entry-040 and Phase 6
+**Chosen:** Option A — write Ch36 now.
+**Why:** The facts were already extracted in the ChatGPT history files. Ch36 is the capstone of F-11 — it ties all four previous chapters together. Writing it then keeps F-11 fully resolved rather than partially resolved. Deferred documentation creates documentation debt that is harder to close later. The Book Truth Standard requires concurrent documentation.
+**Source:** Claude "Phase 5 completion and session handoff" (2026-03-28), F-11 chapter decision
+
+---
+
+### ADQ-050 — VITE_ADMIN_PASSWORD: Hash or Plaintext?
+**Date:** 2026-05 (TYOVA security hardening, SS-FIX-085 canonical pattern)
+**FIX:** SS-FIX-085 canonical pattern set
+**Question:** TYOVA's admin password was stored as plaintext in VITE_ADMIN_PASSWORD. Should it be replaced with a SHA-256 hash or kept as plaintext with access controls?
+**Options presented:**
+- Replace with SHA-256 hash: VITE_ADMIN_PASSWORD replaced with VITE_ADMIN_PASSWORD_HASH
+- Keep plaintext with access controls
+**Chosen:** SHA-256 hash. VITE_ADMIN_PASSWORD replaced with VITE_ADMIN_PASSWORD_HASH. Comparison logic updated in all consuming components.
+**Why:** A plaintext password in an environment variable (even a .env file) is a security violation. If the variable is ever logged, exposed through a build artifact, or accidentally committed, the plaintext is readable. SHA-256 hash is a one-way function — even if the hash is exposed, the original password cannot be trivially recovered. The comparison logic SHA-256 hashes the user's input before comparing against the stored hash.
+**Source:** SS-FIX-085 canonical pattern set, TYOVA security hardening session (2026-05)
+
+---
+
+### ADQ-051 — TYOVA Supabase: Shared With SS321 or Dedicated Instance?
+**Date:** 2026-05-26 (FLAG-129, FIX-646)
+**FIX:** FIX-646 · FLAG-129
+**Question:** Should TYOVA's governance events use the same Supabase project as SS321, or a dedicated separate Supabase project?
+**Options presented:**
+- Shared: TYOVA and SS321 use the same Supabase project (tsmyhzjmkampssjwshqh). Simpler. One database.
+- Dedicated: New TYOVA-governance Supabase project. Complete separation between SS321 user data and TY governance data.
+**Chosen:** Dedicated — new TYOVA-governance Supabase project (utzkoozekztyztdxejij). Vercel env vars updated: VITE_SS321_SUPABASE_URL + VITE_SS321_SUPABASE_ANON_KEY → TYOVA-governance credentials. SS321 Supabase remains completely separate and untouched.
+**Why:** SS321 contains user data (music, profiles, payments). TYOVA contains governance data (audit events, proof records). Separating them ensures that a Supabase credential for TYOVA cannot be used to access SS321 user data, and vice versa. The separation is architecturally consistent with TY AI OS's doctrine that governance infrastructure should not share resources with consumer applications.
+**Source:** Claude "TY AI OS phase 13 completion and governance infrastructure handoff" (2026-05-26), FLAG-129 resolution
+
+---
+
+### ADQ-052 — Governance Intelligence Warning: Precede or Follow Violation?
+**Date:** 2026-03-22 (Phase 5 Track B, Part 93, B4 proof condition)
+**FIX:** JAYA-CLO-172 · FIX-93.01 / FIX-93.02
+**Question:** For the B4 Governance Intelligence proof condition, should the intelligence warning precede the violation or follow it?
+**Options presented:**
+- Intelligence fires after violation is recorded (reactive)
+- Intelligence fires BEFORE violation occurs based on anomaly pattern detection (proactive)
+**Chosen:** Proactive — intelligence warning must PRECEDE the violation. B4 proof condition required: Jaya detects an anomaly pattern before the violation occurs. First B4 event: WARN-20260322162339-LOW, weighted_score=40.5, signal_only=true.
+**Why:** The value of Governance Intelligence is in early warning, not post-hoc reporting. A system that only warns after a violation has already occurred provides no governance advantage over the violation log itself. Governance Intelligence must detect patterns in behavior that indicate a violation is coming, allowing the human guardian to intervene before the violation occurs. The B4 proof condition was specifically designed to demonstrate this proactive capability.
+**Source:** Claude "Phase 5 completion and master hub navigation fixes" (2026-03-25), B4 proof condition record
+
+---
+
+### ADQ-053 — Governance Event Schema ADR-001 vs ADR-002: Separate or Combined?
+**Date:** 2026-05-08 (Phase 9, ADR definitions)
+**FIX:** Phase 9 ADR-001 and ADR-002
+**Question:** Should the governance event schema be one ADR or two — one for the schema itself and one for the Supabase bridge?
+**Options presented:**
+- One combined ADR covering both the governance event schema and the bridge architecture
+- Two separate ADRs: ADR-001 for governance event schema, ADR-002 for Supabase bridge architecture
+**Chosen:** Two separate ADRs. ADR-001 = governance event schema (operation_type, execution_status, governance_tier, g41_applied, timestamp). ADR-002 = Supabase bridge architecture.
+**Why:** The schema and the bridge are separable concerns. The schema defines what a governance event IS. The bridge defines how it is communicated. A future implementation could change the bridge (use a different database, different transport) without changing the event schema. Keeping them separate preserves architectural flexibility and makes each ADR independently auditable.
+**Source:** Claude "Chapter 49: governance proven to the world" (2026-05-10), Phase 9 ADR records
+
+---
+
+### ADQ-054 — Chapter 25: Write Sealed Chapters Before or After Phase 5?
+**Date:** 2026-03-12 (pre-Phase 5, book audit)
+**FIX:** Book audit session (Chapter 25)
+**Question:** Should Chapter 25 (The Ecosystem Evaluation: A Historical Record) be written before Phase 5 begins or deferred until after Phase 5?
+**Options presented:**
+- Write Chapter 25 before Phase 5: captured state at Phase 4 completion, seal it
+- Defer Chapter 25: write after Phase 5 to capture a more complete state
+**Chosen:** Write Chapter 25 before Phase 5. Sealed as SEALED (not deferred). Sealed chapters cannot be rewritten.
+**Why:** A chapter documenting the Phase 4 state must be written at Phase 4 completion, not Phase 5 completion. Writing it after Phase 5 would require including Phase 5 information in a chapter that is supposed to document Phase 4. The sealed chapter discipline means the historical record captures accurate state at each phase seal, not a retrospective view from a later phase.
+**Source:** Claude "TY AI OS phase 4 handoff and phase 5 scope" (2026-03-15), Book of TY audit session
+
+---
+
+### ADQ-055 — Chapter 26 Living Document: Sealed or Living?
+**Date:** 2026-03-14 (vocabulary chapter decision)
+**FIX:** Chapter 26 establishment (JAYA-CLO-147)
+**Question:** Should Chapter 26 (The TY AI OS Vocabulary) be a sealed chapter or a living document?
+**Options presented:**
+- Sealed: written once, sealed at a specific date, never updated
+- Living: never sealed, updated after every chapter completion and phase seal as part of the mandatory session-close protocol
+**Chosen:** Living — Chapter 26 is never sealed. Update discipline: add new terms at session close, never edit existing term definitions, track first-coined dates.
+**Why:** A sealed vocabulary would become outdated immediately as new terms are coined during development. TY is an active, evolving system — new architectural terms, governance concepts, and doctrine elements are coined in nearly every session. A living document preserves the ability to add terms while maintaining traceability through first-coined dates. This distinction (sealed chapters capture history; Ch26 grows with the project) became a fundamental Book of TY discipline.
+**Source:** Claude "Phase 5 scope discussion and system status" (2026-03-15), Chapter 26 living document decision
+
+---
+
+### ADQ-056 — Pre-Flight v3: Two Regex Failures — Fix In-Session or Next Session?
+**Date:** 2026-05-07 (FIX-396)
+**FIX:** FIX-396 · Pre-Flight.ps1 v3
+**Question:** Pre-Flight.ps1 was discovered to have two regex failures that caused it to be blind to FIX-425 through FIX-474 (the tool was reading the MFI for entry numbers but patterns only matched the old pipe-table format). Should this be fixed in the current session or deferred to next session?
+**Options presented:**
+- Fix in current session — correct both regex patterns, verify Pre-Flight correctly reads the newer entry format
+- Defer to next session — document the limitation, proceed with known gap
+**Chosen:** Fix in current session — FIX-396.
+**Why:** A pre-flight tool that cannot see the last 50 FIX entries is not a pre-flight tool — it is a false-assurance system. Proceeding with a known broken verification tool is a governance failure. The repair must happen before the tool is trusted again. This is consistent with the session discipline principle: fix things when they arise rather than deferring.
+**Source:** Claude "TY AI OS session handoff and governance state" (2026-05-21), Pre-Flight evolution history
+
+
+## REGISTRY STATISTICS — CANONICAL (OPTION A COMPLETE)
 
 | Metric | Value |
 |--------|-------|
 | Section 1 — Development Q&A (ChatGPT era) | QA-001 to QA-060 = 60 entries |
 | Section 2 — Governance Invariant Questions (initial) | GIQ-001 to GIQ-020 = 20 entries |
 | Section 3 — Development Q&A (Claude era) | QA-061 to QA-082 = 22 entries |
-| Section 4 — Governance Invariant Questions (Claude deep scan 1) | GIQ-021 to GIQ-040 = 20 entries |
-| Section 5 — Governance Invariant Questions (Claude deep scan 2) | GIQ-041 to GIQ-060 = 20 entries |
-| **Total entries** | **142** |
+| Section 4 — GIQ Claude deep scan 1 | GIQ-021 to GIQ-040 = 20 entries |
+| Section 5 — GIQ Claude deep scan 2 | GIQ-041 to GIQ-060 = 20 entries |
+| Section 6 — Architectural Decision Q&A (initial + scan 1) | ADQ-001 to ADQ-034 = 34 entries |
+| Section 7 — Architectural Decision Q&A (systematic scan) | ADQ-035 to ADQ-056 = 22 entries |
+| **Total entries** | **198** |
 | Date range covered | 2025-12-02 to 2026-05-27 |
-| Earliest entry coined | 2025-12-02 (QA-003 Card ID system) |
-| Last updated | 2026-05-27 · FIX-662 Session (comprehensive rebuild) |
+| Last updated | 2026-05-28 · FIX-662 · Option A systematic scan complete |
 | FIX | FIX-662 · Entry-680 |
 
 ---
 
-## PENDING — FUTURE ENTRIES
+## OPTION B DISCIPLINE — ACTIVE FROM THIS POINT
 
-The following sources contain additional Q&A material not yet extracted:
+Every future session: before session close, any new ADQ, QA, or GIQ entries
+produced by architectural decisions made in that session must be added to this
+registry as part of the session-close gate (same discipline as Ch26 vocabulary).
 
-- ADR-001 through ADR-027 (27 architectural decisions — select entries
-  represented above; remaining to be backfilled as QA or GIQ)
-- Phase 8-14 governance maintenance sessions (Ch18 entries)
-- SS321 governance bridge decisions (supabase_reader.rs, supabase_writer.rs)
+New ADQ entries continue from ADQ-057.
+New QA entries continue from QA-083.
+New GIQ entries continue from GIQ-061.
+
+---
+
+## PENDING — CONFIRMED GAPS NOT YET EXTRACTED
+
+The following sources contain additional Q&A material not yet extracted
+due to access limitations or scope:
+
+- Phase 6 Track A Parts 99-102 detailed decisions (JAYA-CLO-183 through JAYA-CLO-187)
+- Phase 6 Track C TYOVA expansion decisions
+- Phase 7 TY-0001.A release and Guardian Codex detailed decisions
+- Phase 8 documentation integrity audit FIX-specific decisions
+- SS321 SS-FIX-379 through SS-FIX-661+ (full SS321 build history)
+- ADR-001 through ADR-027 (27 ADRs — select entries represented; remaining to be
+  backfilled as the ADR file becomes accessible)
 - FLAG resolutions (FLAGS 128-134) when closed
-- Phase 14 P2 (Conscience Thread) and P3 (Internal Red-Team) — new
-  GIQs expected from those sessions
-- Yampolskiy Gap 3 (future AI scalability research question)
-- TY AI OS installer Q&A (Q-01 through Q-0N, Phase 10)
+- Phase 14 P2 (Conscience Thread) and P3 (Internal Red-Team)
+- Jaya Runtime Parts 50-76 detailed per-fix decisions
+- Guardian Codex G-1 through G-40 detailed decision rationale
+- Continuity Charter signing decisions
+- HVP Q2 and Q3 (physical method and cryptographic credential) — pending

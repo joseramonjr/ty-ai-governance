@@ -12826,3 +12826,32 @@ Invariant Questions (GIQs) defining how TY must behave in all circumstances.
 - QA entries: 82
 - GIQ entries: 60
 - Date range: 2025-12-02 to 2026-05-27
+
+### Entry-680-A
+**FIX:** FIX-662 — FINAL STATE ADDENDUM
+**Date:** 2026-05-28 · 19:11 PDT · San Diego
+**Status:** CLOSED — FINAL
+
+#### Expansion Record
+FIX-662 Entry-680 was initially committed at 12:04 PDT (2,532 lines, 129,576 bytes,
+142 entries). Three additional scan passes were completed this session:
+
+- Section 6 added (ADQ-001 to ADQ-034): Architectural Decision Q&A, 34 entries
+  sourced from Claude conversation history
+- Section 7 added (ADQ-035 to ADQ-056): Systematic full-scan pass of all
+  accessible Claude conversations phase by phase, 22 additional entries
+
+#### Final Verified State
+- Canonical path: E:\TY-Ecosystem\ty-ai-governance\governance\TY_QA_REGISTRY.md
+- Lines: 3,332
+- Bytes: 194,647
+- Total entries: 198
+  - QA (Development Q&A): 82 entries (Sections 1 and 3)
+  - GIQ (Governance Invariant Questions): 60 entries (Sections 2, 4, 5)
+  - ADQ (Architectural Decision Q&A): 56 entries (Sections 6, 7)
+- Date range: 2025-12-02 to 2026-05-27
+- Option B discipline active: new entries added at every future session close
+
+#### Coverage Note
+Option A systematic scan complete. Pending entries documented in registry
+PENDING section. Option B live from this point forward.
