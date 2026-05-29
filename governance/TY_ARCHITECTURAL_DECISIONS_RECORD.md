@@ -1,4 +1,4 @@
-# TY_ARCHITECTURAL_DECISIONS_RECORD.md
+﻿# TY_ARCHITECTURAL_DECISIONS_RECORD.md
 # TY AI OS -- Central Architectural Decisions Register
 # FIX-661 | Entry-679 | 2026-05-27 | San Diego
 # Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
@@ -548,10 +548,10 @@ Questions not yet decided. Each will become an ADR when resolved.
 | 2026-05-27 | ADR-001 through ADR-027 + OAQ-001 through OAQ-004 | FIX-661 |
 ---
 
-### ADR-028 � TY_QA_REGISTRY.md as Single Canonical Q&A Location
+### ADR-028 � TY_QA_REGISTRY.md as Single Canonical Q&A Location
 
 **Date:** 2026-05-28
-**FIX:** FIX-662 � Entry-680
+**FIX:** FIX-662 � Entry-680
 **Phase:** Cross-phase governance infrastructure
 **Status:** ACCEPTED
 
@@ -601,3 +601,45 @@ oversight.
 - GIQ entries are append-only; superseded answers require a new entry
   referencing the old one
 - Registry is the cross-reference point for ADR, Ch18, and MFI entries
+
+## ADR-029 — FLAG-136: TY AI Ecosystem Knowledge Layer
+**Date:** 2026-05-29 | San Diego (America/Los_Angeles)
+**Status:** OPEN — Phase 15+ scope
+**Raised by:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+
+### Problem
+Jaya Runtime, Jayme, and Luke AI currently have no access to the
+full TY AI OS ecosystem knowledge base. Jaya operates on compiled
+code and SQLite ledger data only. Jayme reads live Supabase event
+streams only. Luke AI is not yet implemented. None of them can read
+the Book of TY, QA Registry, Conscience Thread, Thresholds Registry,
+or any governance documentation. They cannot answer questions about
+TY doctrine, verify decisions against locked answers, or understand
+the moral reasoning behind governance boundaries.
+
+This creates a governance gap: the components enforcing TY AI OS
+rules do not have access to the full knowledge that produced those
+rules. A governed system whose AI components do not know the
+ecosystem they are governing is incomplete.
+
+### Required Architecture
+A machine-readable knowledge layer derived from ty-ai-governance
+canonical documents, stored in SQLite alongside the Jaya ledger,
+queryable by all TY AI components at runtime. One source of truth
+that Jaya, Jayme, and Luke all read from. When a governance document
+is updated, the knowledge layer is updated. No component operates on
+stale knowledge.
+
+### Target State ### Constraints
+- Must not conflict with Zero-Fabrication Rule
+- Knowledge layer is read-only for AI components
+- Updates to knowledge layer require builder authorization
+- SQLite schema must be defined before any data is loaded
+- All three components (Jaya, Jayme, Luke) must query same source
+
+### Blocked By
+Phase 15 not yet opened. ADR-029 must be reviewed and accepted
+before any implementation begins.
+
+### Related
+FLAG-135 (conscience_thread.rs) · Phase 14 P3 (Internal Red-Team)
