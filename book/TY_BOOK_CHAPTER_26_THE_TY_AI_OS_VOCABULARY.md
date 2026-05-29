@@ -1,11 +1,11 @@
-# Chapter 26 -- The TY AI OS Vocabulary
+﻿# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
-**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added)
+**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
-**Updated:** 2026-05-26 | San Diego (America/Los_Angeles)
+**Updated:** 2026-05-28 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 363 (357 + Attestonic State added FIX-622 2026-05-23 | Attestonic un-retired same session | guardian decision Jose Ramon Alvarado McHerron | + 4 Phase 13 terms added FIX-656 2026-05-26: Self-Healing Loop, Cryptographic Event Chain, Degraded State, verify-live)
+**Current Term Count:** 366 (357 + Attestonic State added FIX-622 2026-05-23 | Attestonic un-retired same session | guardian decision Jose Ramon Alvarado McHerron | + 4 Phase 13 terms added FIX-656 2026-05-26: Self-Healing Loop, Cryptographic Event Chain, Degraded State, verify-live | + 3 Phase 14 P2 terms added FIX-663 2026-05-28: Conscience Thread, Moral History, Conscience Attestation)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -3732,6 +3732,34 @@ operator-independent verification; Phase 13 (sealed 2026-05-26) built the
 accessible interface that makes verification available to anyone without
 technical expertise. Built as part of FLAG-130 resolution.
 ---
+---
+## Section 24 -- Conscience Thread and Moral History Terms
+These terms describe the system for documenting and preserving the moral
+reasoning behind every TY AI OS governance boundary decision.
+
+**Conscience Thread**
+*First coined: 2026-05-28 23:53 | San Diego (America/Los_Angeles)*
+The permanent, living record of the moral reasoning behind every governance
+boundary in TY AI OS. Documents not just what the rules are but why each
+boundary was drawn and what alternatives were deliberately rejected. One of
+three registries preventing contradictory answers to the same question asked
+differently across sessions. Never sealed. Lives in the governance directory
+as TY_CONSCIENCE_THREAD_v0.1.md and in the Book of TY as Chapter 73.
+
+**Moral History**
+*First coined: 2026-05-28 23:53 | San Diego (America/Los_Angeles)*
+The body of documented moral reasoning that produced TY AI OS governance
+architecture. Distinct from the governance rules themselves -- the rules
+record what TY does; the moral history records why those specific rules were
+chosen over the alternatives that were considered and rejected. Preserved in
+the Conscience Thread.
+
+**Conscience Attestation**
+*First coined: 2026-05-28 23:53 | San Diego (America/Los_Angeles)*
+The act of computing a SHA-256 hash of the Conscience Thread at session close
+and recording it in the governance ledger. Provides a point-in-time integrity
+snapshot of the moral reasoning record without requiring a static signature on
+a living document. Current attestation: 4F871EE67BA31ECFBD95A44A5D35E3B2414A12207E0616D49A76158110B9C61C (2026-05-28).
 ## Update Log Additions
 
 | Date | Session | Terms Added | Notes |
@@ -3745,6 +3773,7 @@ technical expertise. Built as part of FLAG-130 resolution.
 | 2026-05-19 / FIX-544 | Phase 12 F-19 vocabulary | Governed Evolution, Evolution Tier Classification, Deliberation Period, Evolution Proposal, Evolution Anti-Capture Rules, Single-Guardian Period (Section 20 created) | Section 20 created with six terms. 335->341 terms. 19->20 sections. |
 | 2026-05-22 / FIX-591 | Post-Phase 12 vocabulary | supabase_writer.rs, jaya_audit_events, get_governance_events_public, Bidirectional Governance Bridge, Live Governance Feed, email_alert.rs (Section 21); masterHubRegistry.ts, ECOSYSTEM_STATS, HUB_VERSION, Dynamic Wiring, Single Source of Truth Principle (Section 22); Governance Dashboard, CSS Governance Design System, FLAG-31, FLAG-32, TY-0001.C (Section 23) | 16 new terms. Sections 21-23 created. 341—>357 terms. |
 | 2026-05-26 / FIX-656 | Phase 13 hardening vocabulary | Self-Healing Loop, Cryptographic Event Chain, Degraded State, verify-live (Section 23 additions) | 4 new terms. Phase 13 hardening vocabulary. 359 to 363 terms. |
+| 2026-05-28 / FIX-663 | Phase 14 P2 Conscience Thread | Conscience Thread, Moral History, Conscience Attestation (Section 24 created) | 3 new terms. Section 24 created. 363->366 terms. |
 
 
 ---
@@ -3753,6 +3782,6 @@ technical expertise. Built as part of FLAG-130 resolution.
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-05-26 | San Diego (America/Los_Angeles)*
-*Current Term Count: 363 | Sections: 23*
+*Updated: 2026-05-28 | San Diego (America/Los_Angeles)*
+*Current Term Count: 366 | Sections: 24*
 *This document grows with the project. It is never finished.*

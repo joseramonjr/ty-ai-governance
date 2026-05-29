@@ -1,4 +1,4 @@
-# MASTER_FIX_INDEX
+ï»¿# MASTER_FIX_INDEX
 
 Status: Active
 
@@ -8795,18 +8795,31 @@ Added 7 missing sections to TYAIHubNavigation.tsx hardcoded nav list. Root cause
 | FIX-660 | 2026-05-27 15:50 PDT San Diego -- 2026-05-27 18:43 PDT San Diego | Jaya-Runtime + ty-ai-governance | Phase 14 P1 -- Governance Succession Chain -- succession_chain.rs -- Ed25519 guardian check-in -- 365-day Tier 0 auto-drop -- recovery via guardian attestation -- F-01 proof refresh 60s to 30s fix -- registry T-07 + F-01 resolved. Phase 14 P1 -- succession_chain.rs -- guardian_checkin -- 365-day Tier 0 auto-drop -- F-01 30s fix -- 0 errors 30 warnings Commit c87aef6. CLOSED |
 
 | FIX-661 | 2026-05-27 18:53 PDT San Diego -- 2026-05-27 19:24 PDT San Diego | ty-ai-governance | Part A: S1 corruption audit + .gitattributes line ending lock -- Part B: TY_ARCHITECTURAL_DECISIONS_RECORD.md created -- all decisions to date backfilled. Part A BOM 39+15 files fixed + .gitattributes -- Part B ADR-001 through ADR-027 created -- 548 lines 22978 bytes -- FLAG-134 TYOVA deferred Commit 3e531da. CLOSED |
-## FIX-662 | CLOSED | 2026-05-28 · 12:04 PDT · San Diego
+## FIX-662 | CLOSED | 2026-05-28 ï¿½ 12:04 PDT ï¿½ San Diego
 **Entry:** Entry-680
 **Repo:** ty-ai-governance
 **File:** governance/TY_QA_REGISTRY.md
-**Description:** Created TY_QA_REGISTRY.md — single canonical Q&A registry
+**Description:** Created TY_QA_REGISTRY.md ï¿½ single canonical Q&A registry
 for all development questions and Governance Invariant Questions (GIQs).
 142 entries across 5 sections. 2,532 lines. 129,576 bytes.
-**Verification:** Lines 2532 · Bytes 129576 · Confirmed on-disk 2026-05-28
+**Verification:** Lines 2532 ï¿½ Bytes 129576 ï¿½ Confirmed on-disk 2026-05-28
 
-## FIX-662 FINAL STATE | 2026-05-28 · 19:11 PDT · San Diego
+## FIX-662 FINAL STATE | 2026-05-28 ï¿½ 19:11 PDT ï¿½ San Diego
 **Addendum to FIX-662 initial entry (12:04 PDT)**
 **Final file:** governance/TY_QA_REGISTRY.md
 **Final lines:** 3,332 | **Final bytes:** 194,647 | **Total entries:** 198
-**Sections:** QA=82 · GIQ=60 · ADQ=56
+**Sections:** QA=82 ï¿½ GIQ=60 ï¿½ ADQ=56
 **Option A scan:** COMPLETE | **Option B:** ACTIVE from this session
+
+## FIX-663 | CLOSED | 2026-05-28 Â· 20:06 PDT to 2026-05-29 Â· 00:02 PDT Â· San Diego
+**Entry:** Entry-681
+**Repo:** ty-ai-governance
+**Files:** governance/TY_CONSCIENCE_THREAD_v0.1.md Â· book/TY_BOOK_CHAPTER_73_THE_CONSCIENCE_THREAD.md Â· book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
+**Description:** Phase 14 P2 -- Conscience Thread. Permanent living record of
+moral reasoning behind every TY AI OS governance boundary. 64 entries across
+12 categories. Full audit against ChatGPT export (176 conversations) and Claude
+history. 5 corrections applied. 9 new entries added from Claude history. Book
+Chapter 73 created. Ch26 Section 24 added -- 3 new terms -- 363 to 366.
+Architectural decision: Ed25519 signing not applicable to living documents.
+**SHA-256:** 4F871EE67BA31ECFBD95A44A5D35E3B2414A12207E0616D49A76158110B9C61C
+**Verification:** governance copy 1526 lines Â· book chapter 1590 lines Â· Ch26 3787 lines Â· Ch18 12906 lines
