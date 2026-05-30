@@ -13011,3 +13011,13 @@ Phase 14 P4 Internal Red-Team complete -- TY_RED_TEAM_REPORT_FIX668.md -- 15 mod
 RED-TEAM role spec corrections complete -- FLAG-RED-01 CRI decay + FLAG-RED-03 Jayme dormancy + FLAG-RED-04 proof7777 + FLAG-RED-05 fedPeers + FLAG-RED-07 attestation + FLAG-RED-09 selfHeal -- 9 changes -- S1 clean -- 01bb46b
 
 **Status:** CLOSED
+
+### Entry-688 | FIX-670 | 2026-05-30 13:17 PDT San Diego -- 2026-05-30 13:25 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** c93a644
+**Scope:** FLAG-RED-08 -- Add NWP Protection WARD to ecosystem flow diagram -- Normal/Suspended/Lockdown state machine -- Phase 11 Track B -- protection_state.rs -- EcosystemFlowPage.tsx
+
+FLAG-RED-08 -- NWP Protection WARD added to ecosystem flow diagram -- Normal/Suspended/Lockdown state machine -- cx:1164 cy:712 -- enforcement zone -- role spec block -- protection_state.rs Phase 11 Track B -- S1 clean -- c93a644
+
+**Status:** CLOSED
