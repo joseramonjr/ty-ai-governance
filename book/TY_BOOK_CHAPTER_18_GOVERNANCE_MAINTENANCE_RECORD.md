@@ -13001,3 +13001,13 @@ All 24 WARD role specifications complete -- FUNCTION + RECEIVES + PRODUCES + REP
 Phase 14 P4 Internal Red-Team complete -- TY_RED_TEAM_REPORT_FIX668.md -- 15 modules verified -- 9 flags raised -- 6 role spec corrections (FIX-669) + 1 new NWP WARD (FIX-670) + 2 log-only -- a47acc4
 
 **Status:** CLOSED
+
+### Entry-687 | FIX-669 | 2026-05-30 13:05 PDT San Diego -- 2026-05-30 13:16 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 01bb46b
+**Scope:** RED-TEAM corrections -- WARD role spec updates -- FLAG-RED-01 CRI decay + FLAG-RED-03 Jayme dormancy + FLAG-RED-04 proof7777 wording + FLAG-RED-05 fedPeers capability + FLAG-RED-07 attestation protocol + FLAG-RED-09 selfHeal note -- EcosystemFlowPage.tsx
+
+RED-TEAM role spec corrections complete -- FLAG-RED-01 CRI decay + FLAG-RED-03 Jayme dormancy + FLAG-RED-04 proof7777 + FLAG-RED-05 fedPeers + FLAG-RED-07 attestation + FLAG-RED-09 selfHeal -- 9 changes -- S1 clean -- 01bb46b
+
+**Status:** CLOSED
