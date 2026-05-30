@@ -3330,3 +3330,114 @@ due to access limitations or scope:
 - Guardian Codex G-1 through G-40 detailed decision rationale
 - Continuity Charter signing decisions
 - HVP Q2 and Q3 (physical method and cryptographic credential) — pending
+
+---
+
+### ADQ-057 — conscience_thread.rs DQ-1: Content Source at Runtime
+**Date:** 2026-05-29
+**FIX:** FIX-665 · FLAG-135
+**Question:** Where does the Conscience Thread content come from when
+Jaya Runtime verifies it at runtime?
+**Options presented:**
+- Option A: Live file read from ty-ai-governance repo at runtime
+- Option B: Build-time bundled snapshot embedded via include_str!
+- Option C: Network fetch from a published URL at runtime
+**Chosen:** Option B — build-time bundled snapshot via include_str!.
+A vendored copy of TY_CONSCIENCE_THREAD_v0.1.md lives in
+src-tauri/src/ and is byte-identical to the canonical document.
+**Why:** Live file read (Option A) creates a cross-repo filesystem
+dependency and breaks portability. Network fetch (Option C) violates
+the local-first doctrine (ADR-002) — governance verification cannot
+depend on network availability. A bundled snapshot makes the binary
+self-contained: the moral-reasoning record ships with the runtime,
+verifiable without external dependencies.
+**Source:** Claude session "TY AI OS conscience thread development"
+(2026-05-29) · ADR-030 DQ-1
+
+---
+
+### ADQ-058 — conscience_thread.rs DQ-2: Anchor Mechanism
+**Date:** 2026-05-29
+**FIX:** FIX-665 · FLAG-135
+**Question:** How is the authenticity of the bundled snapshot
+established so third parties can independently verify it?
+**Options presented:**
+- B-1: Git commit hash of the governance repo at release cut
+- B-2: SHA-256 computed at Jaya startup, stored nowhere external
+- B-3: Published release anchor — SHA-256 computed once, published
+  externally before distribution
+**Chosen:** B-3 — published release anchor. CONSCIENCE_ANCHOR is the
+SHA-256 of the bundled snapshot. Published anchor:
+4c296d41cc07f98449b7fb7da3a60d4eda300ca651926e158cae80cfa4fbdd6b
+**Why:** B-1 requires git at runtime — rejected. B-2 produces no
+external verifiability — a third party cannot confirm the snapshot
+without running Jaya. B-3 enables independent verification: anyone
+with the published anchor can confirm any Jaya build carries the
+authentic Conscience Thread without running the runtime.
+**Source:** Claude session "TY AI OS conscience thread development"
+(2026-05-29) · ADR-030 DQ-2
+
+---
+
+### ADQ-059 — conscience_thread.rs DQ-3: Module Placement
+**Date:** 2026-05-29
+**FIX:** FIX-665 · FLAG-135
+**Question:** Where in Jaya-Runtime does conscience_thread.rs live?
+**Options presented:**
+- Option A: Standalone module in its own namespace at src-tauri/src/
+- Option B: Inline inside lib.rs alongside Tauri command definitions
+**Chosen:** Option A — standalone module, own namespace. Follows
+the succession_chain.rs placement precedent (ADR-020).
+**Why:** Inline in lib.rs (Option B) violates the standalone module
+discipline established by ADR-020. Each governance module with
+distinct invariants and its own scope belongs in its own file. A
+standalone module is independently auditable, independently testable,
+and independently replaceable without touching lib.rs.
+**Source:** Claude session "TY AI OS conscience thread development"
+(2026-05-29) · ADR-030 DQ-3
+
+---
+
+### ADQ-060 — conscience_thread.rs DQ-4: Mismatch Behavior
+**Date:** 2026-05-29
+**FIX:** FIX-665 · FLAG-135
+**Question:** What does Jaya Runtime do when verify_conscience_thread
+detects that the bundled snapshot hash does not match CONSCIENCE_ANCHOR?
+**Options presented:**
+- Option (i): Report only — return Mismatch status, take no action
+- Option (ii): Increment CRI on mismatch
+- Option (iii): Drop to lower autonomy tier on mismatch
+- Option (iv): Halt runtime on mismatch
+**Chosen:** Option (i) — report only. Governed by INV-CT1: the module
+has no write path, no ledger access, no app state, no action authority.
+Mismatch-to-enforcement wiring is explicitly deferred.
+**Why:** Conscience thread verification is a new capability. Wiring
+it immediately to CRI or tier enforcement without a deliberate separate
+decision would couple governance enforcement to a new, unproven module.
+Report-only allows the capability to ship and prove itself before
+enforcement weight is added. INV-CT1 ensures this is a structural
+constraint, not a policy preference that can be quietly bypassed.
+**Source:** Claude session "TY AI OS conscience thread development"
+(2026-05-29) · ADR-030 DQ-4
+
+---
+
+### ADQ-061 — conscience_thread.rs DQ-5: Status Report Fields
+**Date:** 2026-05-29
+**FIX:** FIX-665 · FLAG-135
+**Question:** What fields does get_conscience_thread_status return?
+**Options presented:**
+- Option 1: Three fields (verification_result, anchor_hash, release_id)
+- Option 2: Five fields (verification_result, anchor_hash, release_id,
+  entry_count, snapshot_timestamp)
+- Option 3: Full diagnostic (all Option 2 fields plus raw hash, byte
+  count, encoding confirmation, and diff summary)
+**Chosen:** Option 2 — five fields.
+**Why:** Option 1 is insufficient for external auditors who need to
+confirm they are looking at the correct version of the document
+(entry_count and snapshot_timestamp are needed). Option 3 overexposes
+internal state and produces outputs that could be misread. Five fields
+give an auditor everything needed to confirm authenticity without
+exposing implementation details.
+**Source:** Claude session "TY AI OS conscience thread development"
+(2026-05-29) · ADR-030 DQ-5

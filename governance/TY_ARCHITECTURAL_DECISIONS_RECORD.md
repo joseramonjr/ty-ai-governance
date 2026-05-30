@@ -534,10 +534,11 @@ Questions not yet decided. Each will become an ADR when resolved.
 
 | # | Question | Phase | Status |
 |---|---|---|---|
-| OAQ-001 | Phase 14 P2 -- Conscience Thread design | Phase 14 | OPEN |
+| OAQ-001 | Phase 14 P2 -- Conscience Thread design | Phase 14 | RESOLVED — ADR-030 |
 | OAQ-002 | Phase 14 P3 -- Internal Red-Team scope | Phase 14 | OPEN |
 | OAQ-003 | TYOVA BOM correction strategy with Lovable | FLAG-134 | DEFERRED |
 | OAQ-004 | Yampolskiy Gap 3 -- future AI scalability | Future | DEFERRED |
+| OAQ-005 | Publish conscience anchor 4c296d41 location | Pre-TY-0001.C | OPEN |
 
 ---
 
@@ -546,6 +547,7 @@ Questions not yet decided. Each will become an ADR when resolved.
 | Date | ADRs Added | CLO |
 |------|-----------|-----|
 | 2026-05-27 | ADR-001 through ADR-027 + OAQ-001 through OAQ-004 | FIX-661 |
+| 2026-05-29 | ADR-030 + OAQ-001 resolved + OAQ-005 opened | FIX-665 |
 ---
 
 ### ADR-028 � TY_QA_REGISTRY.md as Single Canonical Q&A Location
@@ -643,3 +645,96 @@ before any implementation begins.
 
 ### Related
 FLAG-135 (conscience_thread.rs) · Phase 14 P3 (Internal Red-Team)
+
+---
+
+### ADR-030 — conscience_thread.rs: Conscience Thread Integrity Module Design
+
+**Date:** 2026-05-29 | San Diego (America/Los_Angeles)
+**FIX:** FIX-665 · Entry-683
+**Phase:** Phase 14 P2 — FLAG-135
+**Status:** ACCEPTED — closes OAQ-001
+
+#### Question
+How should the Jaya Runtime verify the integrity of the Conscience Thread
+document at runtime? Five sub-decisions (DQ-1 through DQ-5) were required.
+
+#### Decisions
+
+**DQ-1 — Content source:**
+Option B selected. The Conscience Thread document is embedded into the
+Jaya binary at compile time via include_str!. A vendored snapshot copy
+(TY_CONSCIENCE_THREAD_v0.1.md) lives in src-tauri/src/ and is byte-
+identical to the canonical governance document at release cut.
+
+**DQ-2 — Anchor mechanism:**
+B-3 selected. A published release anchor — CONSCIENCE_ANCHOR — is the
+SHA-256 of the bundled snapshot, computed once at release and published
+externally so third parties can independently corroborate it without
+running Jaya. Anchor: 4c296d41cc07f98449b7fb7da3a60d4eda300ca651926e158cae80cfa4fbdd6b
+
+**DQ-3 — Module placement:**
+Option A selected. conscience_thread.rs is a standalone module in its
+own namespace at src-tauri/src/, following the succession_chain.rs
+placement precedent (ADR-020).
+
+**DQ-4 — Mismatch behavior:**
+Option (i) selected. Report only. Governed by INV-CT1: the module has
+no write path, no ledger access, no app state, and no action authority.
+On a Mismatch it reports only -- it takes no enforcement action. Wiring
+a Mismatch into CRI or tier escalation is deferred.
+
+**DQ-5 — Status report fields:**
+Option 2 selected. Five fields: verification_result, anchor_hash,
+release_id, entry_count, snapshot_timestamp.
+
+#### Rationale
+The Conscience Thread is the permanent moral-reasoning record behind
+every governance boundary. Making it runtime-verifiable extends the
+TY AI OS proof story from "the rules are enforced" to "the documented
+reasoning behind the rules is intact and tamper-evident inside this
+build." Option B was chosen over live file read (Option A) because
+live reads introduce runtime filesystem dependency and cross-repo
+coupling. Report-only (INV-CT1) was chosen over enforcement because
+the enforcement wiring (mismatch → CRI / tier drop) requires a
+separate deliberate decision with its own ADR.
+
+#### Options Considered
+- DQ-1: A (live file read at runtime) — rejected: cross-repo filesystem
+  dependency, breaks local-first portability
+- DQ-1: B (build-time bundled snapshot) — chosen
+- DQ-1: C (network fetch) — rejected: network dependency violates
+  local-first doctrine (ADR-002)
+- DQ-2: B-1 (git commit hash) — rejected: requires git at runtime
+- DQ-2: B-2 (computed at startup, stored nowhere) — rejected: no
+  external verifiability
+- DQ-2: B-3 (published release anchor) — chosen
+- DQ-3: inline in lib.rs — rejected: violates standalone module
+  discipline (ADR-020)
+- DQ-4: (ii) CRI increment — deferred, not rejected; separate decision
+- DQ-5: three fields — rejected: insufficient for external audit
+- DQ-5: full diagnostic — rejected: overexposes internal state
+
+#### Findings Documented
+Finding 1 — Self-reference: The Conscience Thread document contains its
+own SHA-256 hash in the statistics block (recorded as 4f871ee6). This
+value cannot equal the bundle self-hash (4c296d41) because the file
+contains the hash line itself, making exact self-verification logically
+impossible. 4f871ee6 represents a prior attestation state. 4c296d41 is
+the authoritative published anchor for TY-0001.C. This is a known
+architectural characteristic, not a defect.
+
+Finding 2 — BOM slipped past FIX-661: The conscience thread document
+had a UTF-8 BOM despite FIX-661 targeting governance files. Detected
+during FLAG-135 and corrected before anchor computation. Related to
+FLAG-134 (TYOVA BOM scope).
+
+#### Consequences
+- OAQ-001 is RESOLVED by this ADR
+- OAQ-005 opened: publish anchor 4c296d41 location before TY-0001.C
+- Every release cut of Jaya-Runtime requires vendoring a fresh snapshot
+  and recomputing the anchor
+- INV-CT1 mismatch → enforcement wiring is explicitly deferred
+
+**Builder confirmed:** Jose Ramon Alvarado McHerron | 2026-05-29
+**Reference:** FIX-665 Entry-683 · conscience_thread.rs · Jaya-Runtime ce9f287
