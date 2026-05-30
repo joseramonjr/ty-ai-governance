@@ -12971,3 +12971,13 @@ TY-Brain + ADR-029 + Claude Project setup complete
 FLAG-135 P14 P2 sealed -- conscience_thread.rs integrity module -- bundled snapshot anchor 4c296d41 -- INV-CT1 report-only -- 213/213 tests -- ADR-030 + ADQ-057-061 + OAQ-001 closed + OAQ-005 opened. Bad close-out commit 222771c reverted 2026-05-29.
 
 **Status:** CLOSED
+
+### Entry-684 | FIX-666 | 2026-05-29 19:45 PDT San Diego -- 2026-05-29 22:28 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 68ff0c6
+**Scope:** FLAG-133 Phase 14 -- Missing return flows -- 3 paths -- attestation-to-human chain-verified + compliance-to-human kit-complete + status-to-jaya audit-read -- EcosystemFlowPage.tsx
+
+FLAG-133 Phase 14 P3 -- EcosystemFlowPage.tsx -- 3 return flows added (chain verified + kit complete + audit read) -- routing corrected per CL-1/CL-2 model (chain verified to jaya, kit complete to tyos, audit read to jaya) -- 45 flows total -- S1 clean -- FLAG-35 sub-items logged
+
+**Status:** CLOSED
