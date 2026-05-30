@@ -12981,3 +12981,13 @@ FLAG-135 P14 P2 sealed -- conscience_thread.rs integrity module -- bundled snaps
 FLAG-133 Phase 14 P3 -- EcosystemFlowPage.tsx -- 3 return flows added (chain verified + kit complete + audit read) -- routing corrected per CL-1/CL-2 model (chain verified to jaya, kit complete to tyos, audit read to jaya) -- 45 flows total -- S1 clean -- FLAG-35 sub-items logged
 
 **Status:** CLOSED
+
+### Entry-685 | FIX-667 | 2026-05-30 12:33 PDT San Diego -- 2026-05-30 12:33 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 3433bc7
+**Scope:** WARD role documentation -- all 24 WARDs -- FUNCTION + RECEIVES + PRODUCES + REPORTS TO -- Fortune 500 governance model -- drill-down panel restructure + Section 1 (human codex tyos tyova luke jayme) + Section 2 (jaya alert policy cri ledger sentinel selfHeal evoEngine keyRotation ed25519) + Section 3 (verifier agents ss321 proof7777 fedPeers) -- EcosystemFlowPage.tsx
+
+All 24 WARD role specifications complete -- FUNCTION + RECEIVES + PRODUCES + REPORTS TO -- Fortune 500 governance model -- drill-down panel restructured (role spec before events) -- 24 WARDs documented across 3 sections -- S1 clean -- role specs document intended architecture -- code verification deferred to FIX-668 Internal Red-Team
+
+**Status:** CLOSED
