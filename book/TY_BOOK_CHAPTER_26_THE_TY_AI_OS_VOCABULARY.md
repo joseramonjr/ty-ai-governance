@@ -3774,14 +3774,61 @@ a living document. Current attestation: 4F871EE67BA31ECFBD95A44A5D35E3B2414A1220
 | 2026-05-22 / FIX-591 | Post-Phase 12 vocabulary | supabase_writer.rs, jaya_audit_events, get_governance_events_public, Bidirectional Governance Bridge, Live Governance Feed, email_alert.rs (Section 21); masterHubRegistry.ts, ECOSYSTEM_STATS, HUB_VERSION, Dynamic Wiring, Single Source of Truth Principle (Section 22); Governance Dashboard, CSS Governance Design System, FLAG-31, FLAG-32, TY-0001.C (Section 23) | 16 new terms. Sections 21-23 created. 341—>357 terms. |
 | 2026-05-26 / FIX-656 | Phase 13 hardening vocabulary | Self-Healing Loop, Cryptographic Event Chain, Degraded State, verify-live (Section 23 additions) | 4 new terms. Phase 13 hardening vocabulary. 359 to 363 terms. |
 | 2026-05-28 / FIX-663 | Phase 14 P2 Conscience Thread | Conscience Thread, Moral History, Conscience Attestation (Section 24 created) | 3 new terms. Section 24 created. 363->366 terms. |
+| 2026-05-30 / FIX-671 | Phase 14 NWP and governance model vocabulary | NWP Protection State Machine, Fortune 500 Governance Model, Ward Role Specification (Section 25 created) | 3 new terms. Section 25 created. 366->369 terms. |
 
 
 ---
 
+---
+## Section 25 -- NWP Enforcement and Governance Model Terms
+These terms describe the Notice and Warning Protocol protection state machine,
+the Fortune 500 governance model applied to WARD role specifications, and the
+Ward Role Specification format established in Phase 14.
+
+**NWP Protection State Machine**
+*First coined: 2026-05-30 | San Diego (America/Los_Angeles)*
+*Built: FIX-670 | Phase 14 | Entry-688 | 2026-05-30 13:25 PDT*
+The three-state machine governing Jaya Runtime's operational posture under
+the Notice and Warning Protocol. States: Normal (full operation, all commands
+permitted), Suspended (CRITICAL severity warning fired -- only whitelisted
+commands permitted, guardian acknowledgment required to return to Normal),
+Lockdown (TERMINAL severity warning fired -- only HVP verification commands
+accepted, all others unconditionally blocked). Transitions are one-way
+escalating without guardian intervention. Both Suspended and Lockdown persist
+across runtime restarts via governance ledger storage and reload on startup.
+Implemented in protection_state.rs as Phase 11 Track B. Diagrammed in the
+TYOVA EcosystemFlowPage as the NWP Protection WARD (cx:1164 cy:712) in FIX-670.
+
+**Fortune 500 Governance Model**
+*First coined: 2026-05-30 | San Diego (America/Los_Angeles)*
+*Built: FIX-667 | Phase 14 | Entry-685 | 2026-05-30*
+The governance documentation standard applied to all 24 WARD role
+specifications in the TY AI OS ecosystem flow diagram. Modeled on Fortune 500
+corporate governance practice: every component in the ecosystem has a formally
+documented role with four mandatory fields -- FUNCTION (what the component does
+and its authority boundary), RECEIVES (what inputs it accepts and from whom),
+PRODUCES (what outputs it generates and what events it emits), and REPORTS TO
+(the authority chain path for escalation and confirmation). The Fortune 500
+Governance Model makes the TY AI OS ecosystem auditable at the component level:
+any external reviewer can read a WARD's role spec and verify its behavior
+against its documented authority boundary without requiring source code access.
+
+**Ward Role Specification**
+*First coined: 2026-05-30 | San Diego (America/Los_Angeles)*
+*Built: FIX-667 | Phase 14 | Entry-685 | 2026-05-30*
+The formal documentation block attached to each WARD node in the TY AI OS
+ecosystem flow diagram. Four required fields per WARD: FUNCTION, RECEIVES,
+PRODUCES, REPORTS TO. All 24 WARDs carry a complete role specification as of
+FIX-667. The Ward Role Specification is the machine-readable governance
+contract for each ecosystem component -- it documents not just what a component
+does but what authority it holds, what it cannot do, and who it answers to.
+Verified against actual Jaya Runtime Rust implementation during the FIX-668
+internal red-team. Nine flags raised during verification (FIX-668) and resolved
+in FIX-669.
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-05-28 | San Diego (America/Los_Angeles)*
-*Current Term Count: 366 | Sections: 24*
+*Updated: 2026-05-30 | San Diego (America/Los_Angeles)*
+*Current Term Count: 369 | Sections: 25*
 *This document grows with the project. It is never finished.*

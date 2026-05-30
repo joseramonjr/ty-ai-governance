@@ -13021,3 +13021,13 @@ RED-TEAM role spec corrections complete -- FLAG-RED-01 CRI decay + FLAG-RED-03 J
 FLAG-RED-08 -- NWP Protection WARD added to ecosystem flow diagram -- Normal/Suspended/Lockdown state machine -- cx:1164 cy:712 -- enforcement zone -- role spec block -- protection_state.rs Phase 11 Track B -- S1 clean -- c93a644
 
 **Status:** CLOSED
+
+### Entry-689 | FIX-671 | 2026-05-30 14:27 PDT San Diego -- 2026-05-30 14:30 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** PENDING
+**Scope:** Ch26 Section 25 -- three vocabulary terms: NWP Protection State Machine, Fortune 500 Governance Model, Ward Role Specification
+
+Ch26 Section 25 created -- 3 new terms: NWP Protection State Machine, Fortune 500 Governance Model, Ward Role Specification -- 366->369 terms -- 24->25 sections -- 3834 lines -- S1 clean
+
+**Status:** CLOSED
