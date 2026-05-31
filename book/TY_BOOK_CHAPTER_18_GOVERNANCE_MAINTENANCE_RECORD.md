@@ -13205,3 +13205,22 @@ now fully connected with at least one incoming and one outgoing flow.
 **Lines:** 858 (from 856)
 **Commit:** c1f9145 | TYOVA
 **Net change:** 6 insertions, 4 deletions
+
+### Entry-703 | FIX-685 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego
+
+**Action:** TYOVA Archive flow correction. Analysis revealed the existing
+tyova->jaya flow labeled 'spec' was architecturally inaccurate -- TYOVA
+does not send specification data to Jaya at runtime; it queries port 7777
+for governance proofs. Two changes: (1) tyova->jaya 'spec' rerouted to
+tyova->proof7777 'proof query' col:#a855f7 -- reflects actual runtime
+behavior of TYOVA polling :7777 endpoint. (2) proof7777->tyova 'proof
+data' added as new FWD flow col:#a855f7 rate:4200 -- the proof response
+returning to TYOVA was missing. FLOW_DST index 5 corrected from jaya to
+proof7777. FLOW_DST index 50 added for new proof7777->tyova flow. Display
+updated to 51 FLOWS. TYOVA Archive now has 2 correct incoming flows:
+ss321->tyova (live feed) and proof7777->tyova (proof data).
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 859 (from 858)
+**Commit:** b0b8d8d | TYOVA
+**Net change:** 6 insertions, 5 deletions
