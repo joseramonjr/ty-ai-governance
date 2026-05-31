@@ -13368,3 +13368,23 @@ destination WARDs. No changes to canvas, flow paths, colors, or positions.
 - setFlowTick in existing 1s interval -- no new interval needed
 - FlowPaths IIFE panel -- renders before all selectedWard panels
 - isFlowLive() -- reads hotWardsRef, 120s window, same as canvas
+
+### Entry-710 | FIX-692 | 2026-05-31 10:55 PDT San Diego -- 2026-05-31 10:55 PDT San Diego
+
+**Action:** Step 1 of agent registry TYOVA display. Jaya Runtime now writes
+agent registration and deregistration events to Supabase jaya_agents table.
+Three changes: (1) SQL migration FIX-692_jaya_agents.sql -- CREATE TABLE
+jaya_agents with fields: agent_id, label, tier, status, permissions,
+expected_actions, autonomy_class, registered_at, updated_at, event_type --
+GRANT INSERT/SELECT/UPDATE to anon/authenticated/service_role -- applied
+to governance Supabase project utzkoozekztyztdxejij. (2) supabase_writer.rs
+-- new write_agent_to_supabase() function using load_config(app) pattern
+consistent with write_governance_event_sync -- posts to jaya_agents REST
+endpoint. (3) lib.rs -- register_agent() gains app: tauri::AppHandle
+parameter and calls write_agent_to_supabase() after SQLite persist with
+event_type REGISTERED -- deregister_agent() calls write_agent_to_supabase()
+with event_type DEREGISTERED. 222/222 tests pass. cargo check 0 errors.
+
+**Repos:** Jaya-Runtime 2c8d2e4 | ty-ai-governance 195e4a5
+**Next:** FIX-693 -- Step 2 -- TYOVA polls jaya_agents table to display
+agent count badge and agent list in AI Agents WARD drill-down panel.
