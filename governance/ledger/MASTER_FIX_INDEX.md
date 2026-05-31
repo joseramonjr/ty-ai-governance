@@ -8872,3 +8872,5 @@ at every session. Same-question-different-wording problem solved.
 | FIX-679 | 2026-05-30 18:34 PDT San Diego -- 2026-05-30 18:37 PDT San Diego | ty-ai-os-releases | OAQ-005 -- publish conscience anchor 4c296d41 to ty-ai-os-releases -- CONSCIENCE_ANCHOR.md -- prerequisite for TY-0001.C. OAQ-005 -- CONSCIENCE_ANCHOR.md published to ty-ai-os-releases -- anchor 4c296d41 now publicly accessible -- prerequisite for TY-0001.C satisfied -- ADR-030 reference included Commit 5ac562e. CLOSED |
 
 | FIX-680 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego | TYOVA | FLAG-RED-06 -- Merge keyRotation + ed25519 WARDs into unified keychain WARD -- EcosystemFlowPage.tsx 853 lines -- 14 insertions 28 deletions -- ADR-031 added -- FLAG-RED-06 CLOSED. Commit 12ef276. |
+
+| FIX-681 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego | TYOVA | EcosystemFlow audit -- nwp WARD wired to ZONE_WARDS enforcement + WARD_REVEAL:58 + EVENT_WARD_MAP -- subtitle corrected 24 WARDs 45 flows -- 3 insertions 3 deletions. Commit 17cc23f. |

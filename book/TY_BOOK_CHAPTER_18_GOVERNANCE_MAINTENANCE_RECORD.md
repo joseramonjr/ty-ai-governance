@@ -13133,3 +13133,19 @@ reference added to keychain panel. ADR-031 added to ADR file.
 - No stale keyRotation or ed25519 node references
 - ed25519 panel removed
 - FLAG-RED-06: CLOSED
+
+### Entry-699 | FIX-681 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego
+
+**Action:** EcosystemFlowPage.tsx audit and corrections. Four issues found
+and fixed: (1) nwp WARD added to ZONE_WARDS enforcement zone -- was orphaned
+with no zone assignment causing no zone pulse on NWP events. (2) nwp added
+to WARD_REVEAL at threshold 58 -- was missing from animated intro sequence.
+(3) nwp added to EVENT_WARD_MAP with entries nwp/lockdown/suspended --
+was unresponsive to all governance events. (4) JSX subtitle corrected from
+23 WARDs / 42 flows to 24 WARDs / 45 flows -- stale count from pre-nwp era.
+nwp drill-down panel confirmed present at line 669 -- no change needed.
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 853 (unchanged)
+**Commit:** 17cc23f | TYOVA
+**Net change:** 3 insertions, 3 deletions
