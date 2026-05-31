@@ -13459,3 +13459,22 @@ overflow on long WARD subtitles (Jaya Runtime, NWP Protection, Keychain).
 ctx.measureText() used to check if subtitle exceeds WARD width (n.w-16px)
 -- if so, text is sliced proportionally and ellipsis appended. TYOVA dfd5dcc.
 FIX-694 now fully complete -- agent count in subtitle + no overflow.
+### Entry-713 | FIX-695 | 2026-05-31 13:53 PDT San Diego -- 2026-05-31 14:05 PDT San Diego
+
+**Fix:** FIX-695 -- FLAG-134 CLOSED -- TYOVA BOM audit complete
+**Destination:** TYOVA
+**Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+**Session:** 2026-05-31 | San Diego (America/Los_Angeles)
+
+**What was done:**
+BOM corruption audit and remediation for TYOVA repository. 113 files confirmed BOM-corrupted via PowerShell scan (EF BB BF byte prefix detection). All 113 files corrected using [System.IO.File]::ReadAllBytes / WriteAllBytes -- BOM stripped, content preserved exactly. .gitattributes added to TYOVA root enforcing UTF-8 without BOM and LF line endings for all .ts, .tsx, .json, .md, .css, .html files permanently. TypeScript check post-fix: one pre-existing error only (AttestationPage.tsx @supabase/supabase-js -- pre-existing, non-blocking). Verification scan post-fix: zero BOM files remaining. ADQ-057 architectural decision recorded: Option C selected (local fix + .gitattributes enforcement + Lovable sync) over Option A (fix only) and Option B (Lovable prompt -- rejected as unreliable for byte-level encoding operations). ADR-026 compliance achieved across all TYOVA files.
+
+**Verification:**
+- BOM files before: 113
+- BOM files after: 0
+- .gitattributes: written at 411 bytes -- UTF-8 no BOM
+- TypeScript errors: 1 pre-existing (non-blocking)
+- Total .ts/.tsx files in repo: 964 -- all clean
+- Commit: 14f50a3 -- 114 files changed -- pushed to origin/main
+
+**FLAG-134: CLOSED**
