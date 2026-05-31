@@ -13405,3 +13405,27 @@ agent count badge and agent list in AI Agents WARD drill-down panel.
   STATUS_SUSPENDED writes working correctly
 - Jaya-Runtime commit: 3c4b4c7
 - FIX-693 gate is now open -- TYOVA can poll jaya_agents
+
+### Entry-711 | FIX-693 | 2026-05-31 11:42 PDT San Diego -- 2026-05-31 11:42 PDT San Diego
+
+**Action:** AI Agents WARD drill-down panel upgraded with live agent registry.
+TYOVA now polls jaya_agents Supabase table every 30 seconds alongside the
+existing governance event poll. Three changes to EcosystemFlowPage.tsx:
+(1) agentData useState added -- typed array of agent records from jaya_agents.
+(2) fetchAgents() async function added -- GETs jaya_agents REST endpoint with
+select agent_id,label,tier,status,permissions,updated_at ordered by
+updated_at desc -- wired into existing 30-second polling interval alongside
+fetchLive(). (3) AI Agents panel replaced -- now shows Registered Agents
+count header and dynamic list of all non-Deregistered agents with agent_id
+(monospace blue), status (color-coded green/orange/red), label, tier, and
+permissions. Empty state shows informative message when no agents registered.
+Closes FLAG-137 (deferred until first agent registers) -- feature is now
+implemented and ready. Requires Jaya Runtime running with jaya_agents writes
+active (FIX-692) to show live data.
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 945 (from 919)
+**Commit:** 37fe898 | TYOVA
+**Net change:** 31 insertions, 4 deletions
+**Closes:** FLAG-137
+**Depends on:** FIX-692 (jaya_agents Supabase bridge)
