@@ -13429,3 +13429,25 @@ active (FIX-692) to show live data.
 **Net change:** 31 insertions, 4 deletions
 **Closes:** FLAG-137
 **Depends on:** FIX-692 (jaya_agents Supabase bridge)
+
+### Entry-712 | FIX-694 | 2026-05-31 13:01 PDT San Diego -- 2026-05-31 13:01 PDT San Diego
+
+**Action:** AI Agents WARD subtitle shows live registered agent count on
+the canvas card. Builder requested agent count visible on the WARD node
+itself without clicking. Implementation: agentCountRef added alongside
+hotWardsRef -- a mutable ref readable inside the canvas animation closure
+without stale state capture. fetchAgents() now computes active agent count
+(deduplicated, excluding Revoked+Deregistered) and writes to
+agentCountRef.current before calling setAgentData(). Canvas drawNode call
+reads agentCountRef.current and passes dynamic subtitle to agents WARD:
+'TIER 0-3 GOVERNED N REGISTERED' where N updates every 30 seconds.
+Initial attempt used agentData state directly in canvas closure -- failed
+because canvas useEffect captures state at mount time (stale closure).
+Fix: ref pattern consistent with hotWardsRef used throughout the canvas
+system. Live tested: 0 REGISTERED with no agents, 1 REGISTERED after
+registering ss321-agent-001. Updates automatically without page refresh.
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 949 (from 946)
+**Commits:** 3c66994 + ba38775 | TYOVA
+**Net change:** 6 insertions, 3 deletions total
