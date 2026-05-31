@@ -13299,3 +13299,18 @@ WARD flows now correctly show white diamonds permanently.
 **Lines:** 859 (unchanged)
 **Commit:** ebb5f6c | TYOVA
 **Net change:** 1 insertion, 1 deletion
+
+### CORRECTION NOTE | 2026-05-31 10:15 PDT San Diego
+
+**Applies to:** Entry-698 through Entry-707 (FIX-680 through FIX-689)
+**Error:** All entries above were recorded with date 2026-05-31. The correct
+date is 2026-05-30. The session ran from approximately 20:23 PDT through
+23:21 PDT on 2026-05-30 San Diego time. The date error originated from the
+builder stating the wrong date at session open and was carried through all
+subsequent timestamps.
+**Git commits:** Cannot be amended without rewriting history -- commit
+messages stand as recorded. This correction note is the authoritative
+date correction for the governance record.
+**Technical content:** All FIX-680 through FIX-689 technical content,
+commit hashes, and file changes are correct and unaffected by this error.
+**Confirmed by:** Jose Ramon Alvarado McHerron | 2026-05-31 10:15 PDT San Diego
