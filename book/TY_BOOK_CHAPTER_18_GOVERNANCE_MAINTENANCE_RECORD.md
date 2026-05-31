@@ -13314,3 +13314,29 @@ date correction for the governance record.
 **Technical content:** All FIX-680 through FIX-689 technical content,
 commit hashes, and file changes are correct and unaffected by this error.
 **Confirmed by:** Jose Ramon Alvarado McHerron | 2026-05-31 10:15 PDT San Diego
+
+### Entry-708 | FIX-690 | 2026-05-31 10:21 PDT San Diego -- 2026-05-31 10:21 PDT San Diego
+
+**Action:** FLOW_DST complete rebuild -- definitive fix. Deep audit at
+session open revealed 42 of 51 FLOW_DST entries were wrong. Root cause
+identified: the TYFlow interface definition line at IDX 0 contains 'lbl:'
+which caused the index counter to be off by 1 throughout all previous
+FLOW_DST builds. Every flow from IDX 1 onward was mapped to FLOW_DST key
+N-1 instead of the correct key. FIX-682 and all subsequent individual
+patches (FIX-687, FIX-688, FIX-689) were correcting symptoms of this
+fundamental offset error, not the root cause. This FIX performs a complete
+rebuild from the verified flow array, cross-referencing each flow's actual
+destination WARD against each FLOW_DST key. 12/12 spot checks passed.
+All 51 flows now correctly drive circle/diamond live state on their true
+destination WARDs. This is the definitive FLOW_DST fix.
+
+**Root cause:** Interface line 'interface TYFlow { ... lbl:string; }' at
+IDX 0 matched the lbl: pattern used for index counting, shifting all
+subsequent indices by +1. FLOW_DST[N] was mapping to the flow at
+array position N+1, not N.
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 859 (unchanged)
+**Commit:** b67ca51 | TYOVA
+**Net change:** 1 insertion, 1 deletion
+**Supersedes:** FIX-682, FIX-687, FIX-688, FIX-689 (partial fixes of same root cause)
