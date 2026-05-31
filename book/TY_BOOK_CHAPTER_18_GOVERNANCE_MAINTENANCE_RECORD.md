@@ -13340,3 +13340,31 @@ array position N+1, not N.
 **Commit:** b67ca51 | TYOVA
 **Net change:** 1 insertion, 1 deletion
 **Supersedes:** FIX-682, FIX-687, FIX-688, FIX-689 (partial fixes of same root cause)
+
+### Entry-709 | FIX-691 | 2026-05-31 10:55 PDT San Diego -- 2026-05-31 10:55 PDT San Diego
+
+**Action:** Live Flow Paths panel added to all 24 WARD drill-down panels.
+Builder requested a dynamic flow path section in each WARD panel that
+mirrors the live circle/diamond state of the canvas. When a user clicks
+any WARD the panel now shows a LIVE FLOW PATHS section listing every
+incoming and outgoing flow with: a colored circle (live) or grey diamond
+(inactive) matching the canvas dot state, the flow label, direction arrow,
+and the other WARD name. State updates every second via flowTick useState
+counter piggybacked onto the existing 1s proof-age interval. isFlowLive()
+reads hotWardsRef.current for the destination WARD and applies the same
+120-second window as the canvas. void flowTick reference in the IIFE
+ensures React re-renders the panel on every tick. WARD_FLOWS data constant
+added (lines 156-182) mapping all 51 flows to their 24 source and
+destination WARDs. No changes to canvas, flow paths, colors, or positions.
+
+**Files:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 918 (from 859)
+**Commit:** 9523324 | TYOVA
+**Net change:** 60 insertions, 1 deletion
+
+**Components added:**
+- WARD_FLOWS constant -- 24 WARD entries, all 51 flows mapped
+- flowTick useState -- triggers 1s re-render of flow state
+- setFlowTick in existing 1s interval -- no new interval needed
+- FlowPaths IIFE panel -- renders before all selectedWard panels
+- isFlowLive() -- reads hotWardsRef, 120s window, same as canvas
