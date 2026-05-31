@@ -1,4 +1,4 @@
-﻿# Chapter 18 -- The Governance Maintenance Record
+# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current
@@ -13149,3 +13149,40 @@ nwp drill-down panel confirmed present at line 669 -- no change needed.
 **Lines:** 853 (unchanged)
 **Commit:** 17cc23f | TYOVA
 **Net change:** 3 insertions, 3 deletions
+
+### Entry-699 | FIX-681 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego
+
+**Action:** EcosystemFlowPage.tsx audit and corrections. Four issues found
+and fixed: (1) nwp WARD added to ZONE_WARDS enforcement zone -- was orphaned
+with no zone assignment. (2) nwp added to WARD_REVEAL at threshold 58 --
+missing from animated intro. (3) nwp added to EVENT_WARD_MAP with entries
+nwp/lockdown/suspended. (4) JSX subtitle corrected from 23 WARDs / 42 flows
+to 24 WARDs / 45 flows. nwp drill-down panel confirmed present at line 669.
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx | **Lines:** 853
+**Commit:** 17cc23f | TYOVA | **Net change:** 3 insertions, 3 deletions
+
+### Entry-700 | FIX-682 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego
+
+**Action:** FLOW_DST table rebuilt. Full audit revealed 25 misaligned
+index-to-destination entries caused by flow array growth over multiple FIXes
+without FLOW_DST reindex. Effect: live governance dots were lighting incorrect
+WARDs. Root cause: FIX-652 selfHeal flows inserted without reindexing
+subsequent entries. Fix: complete rebuild of FLOW_DST indices 0-44 verified
+against actual FWD (25 flows) and RET (20 flows) arrays. Orphan index 45
+removed. 10/10 spot checks passed. Users now see correct WARD activation.
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx | **Lines:** 853
+**Commit:** 0a89aec | TYOVA | **Net change:** 1 insertion, 1 deletion
+
+### Entry-701 | FIX-683 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego
+
+**Action:** NWP Protection WARD flow paths added. NWP was added in FIX-670
+as a node only with no animated flow connections. Three paths added:
+(1) jaya->nwp escalate (FWD, red, rate:4000) -- Jaya sends escalation signals
+driving NWP state transitions. (2) nwp->alert lockdown alert (FWD, red,
+rate:6000) -- NWP escalates to Guardian Alert on Lockdown entry. (3)
+nwp->jaya state feedback (RET, red, rate:3500) -- NWP state constrains Jaya
+enforcement layer. FLOW_DST extended with indices 45:nwp 46:alert 47:jaya.
+Display strings updated: 48 FLOWS across canvas bar (lines 425-426) and JSX
+subtitle (line 480).
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx | **Lines:** 856
+**Commit:** 9362fbb | TYOVA | **Net change:** 7 insertions, 4 deletions

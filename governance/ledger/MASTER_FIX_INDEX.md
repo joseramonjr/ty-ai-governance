@@ -1,4 +1,4 @@
-﻿# MASTER_FIX_INDEX
+# MASTER_FIX_INDEX
 
 Status: Active
 
@@ -8874,3 +8874,5 @@ at every session. Same-question-different-wording problem solved.
 | FIX-680 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego | TYOVA | FLAG-RED-06 -- Merge keyRotation + ed25519 WARDs into unified keychain WARD -- EcosystemFlowPage.tsx 853 lines -- 14 insertions 28 deletions -- ADR-031 added -- FLAG-RED-06 CLOSED. Commit 12ef276. |
 
 | FIX-681 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego | TYOVA | EcosystemFlow audit -- nwp WARD wired to ZONE_WARDS enforcement + WARD_REVEAL:58 + EVENT_WARD_MAP -- subtitle corrected 24 WARDs 45 flows -- 3 insertions 3 deletions. Commit 17cc23f. |
+| FIX-682 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego | TYOVA | FLOW_DST rebuilt -- 25 misaligned index-to-destination entries corrected -- live dots now activate correct WARDs -- indices 0-44 verified -- orphan index 45 removed. Commit 0a89aec. |
+| FIX-683 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego | TYOVA | NWP WARD flow paths added -- jaya->nwp escalate + nwp->alert lockdown + nwp->jaya state feedback -- FLOW_DST indices 45-47 -- display updated 48 FLOWS. Commit 9362fbb. |
