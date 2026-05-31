@@ -13280,3 +13280,22 @@ WARD flows now show white diamonds correctly with no registered agents.
 **Lines:** 859 (unchanged)
 **Commit:** 4aa4af0 | TYOVA
 **Net change:** 1 insertion, 1 deletion
+
+### Entry-707 | FIX-689 | 2026-05-31 22:50 PDT San Diego -- 2026-05-31 22:50 PDT San Diego
+
+**Action:** EVENT_WARD_MAP agent key corrected. After FIX-688 circles
+persisted on AI Agents WARD. Root cause: Jaya Runtime monitoring thread
+writes AGENT_CHECK to Supabase every 30 seconds. EVENT_WARD_MAP key
+'agent' matched AGENT_CHECK as substring, marking agents WARD hot every
+30 seconds. AGENT_CHECK is a governance health check -- it verifies the
+agent registry is operational, not that a real agent is executing.
+Fix: 'agent':['agents','jaya'] changed to 'agent':['jaya']. AGENT_CHECK
+now only marks jaya WARD hot. AI Agents WARD only activates when a real
+agent governance action fires (action_type containing 'agent_action' or
+'ai_' from a registered agent). With no registered agents all AI Agents
+WARD flows now correctly show white diamonds permanently.
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 859 (unchanged)
+**Commit:** ebb5f6c | TYOVA
+**Net change:** 1 insertion, 1 deletion
