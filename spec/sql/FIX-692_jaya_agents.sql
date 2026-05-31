@@ -18,3 +18,9 @@ CREATE TABLE IF NOT EXISTS jaya_agents (
 
 GRANT INSERT, SELECT, UPDATE ON jaya_agents TO anon, authenticated, service_role;
 GRANT USAGE, SELECT ON SEQUENCE jaya_agents_id_seq TO anon, authenticated, service_role;
+-- RLS policy added during live test 2026-05-31
+ALTER TABLE jaya_agents ENABLE ROW LEVEL SECURITY;
+CREATE POLICY "allow_anon_read_jaya_agents"
+ON jaya_agents FOR SELECT
+TO anon, authenticated, service_role
+USING (true);
