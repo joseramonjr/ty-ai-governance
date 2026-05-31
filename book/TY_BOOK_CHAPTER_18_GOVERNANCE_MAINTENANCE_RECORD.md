@@ -13388,3 +13388,5 @@ with event_type DEREGISTERED. 222/222 tests pass. cargo check 0 errors.
 **Repos:** Jaya-Runtime 2c8d2e4 | ty-ai-governance 195e4a5
 **Next:** FIX-693 -- Step 2 -- TYOVA polls jaya_agents table to display
 agent count badge and agent list in AI Agents WARD drill-down panel.
+
+**TEST GATE — FIX-692:** write_agent_to_supabase not yet live-tested. Requires Jaya Runtime running and agent registration command executed. Verify jaya_agents row appears in Supabase before opening FIX-693. Test pending -- 2026-05-31 10:55 PDT San Diego.
