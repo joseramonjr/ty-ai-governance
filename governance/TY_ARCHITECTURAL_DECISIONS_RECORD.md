@@ -1,4 +1,4 @@
-﻿# TY_ARCHITECTURAL_DECISIONS_RECORD.md
+# TY_ARCHITECTURAL_DECISIONS_RECORD.md
 # TY AI OS -- Central Architectural Decisions Register
 # FIX-661 | Entry-679 | 2026-05-27 | San Diego
 # Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
@@ -738,3 +738,48 @@ FLAG-134 (TYOVA BOM scope).
 
 **Builder confirmed:** Jose Ramon Alvarado McHerron | 2026-05-29
 **Reference:** FIX-665 Entry-683 · conscience_thread.rs · Jaya-Runtime ce9f287
+
+---
+
+## ADR-031 — FLAG-RED-06: keychain.rs Is One Module, Not Two WARDs
+
+**Date:** 2026-05-31 | San Diego (America/Los_Angeles)
+**FIX:** FIX-680 | Entry-698
+**Flag:** FLAG-RED-06 — CLOSED
+**Phase:** Phase 14 P3 Red-Team Audit finding
+**Status:** CLOSED
+
+### Finding
+During the Phase 14 internal red-team audit, the TY AI OS architecture
+diagram (EcosystemFlowPage.tsx) was found to show keyRotation and Ed25519
+signing as two separate WARD components. This was architecturally inaccurate
+and misleading to future readers.
+
+### Actual Implementation
+Both Key Rotation and Ed25519 signing are implemented in a single unified
+Rust module: keychain.rs
+(E:\TY-Ecosystem\Jaya-Runtime\src-tauri\src\keychain.rs).
+keychain.rs is the single source of truth for all key operations in the
+Jaya Runtime: keypair creation, signing, rotation, retirement, grace-period
+enforcement (300 seconds), and compromise declaration. No key operation
+occurs outside it. Implemented Part 80 -- JAYA-CLO-159.
+
+### Resolution
+The two separate WARDs (keyRotation and ed25519) were merged into a single
+unified WARD (keychain) in EcosystemFlowPage.tsx. The unified WARD label
+reads: KEY ROTATION · ED25519 · PHASE 4. The drill-down panel was updated
+to reflect the unified module. The ed25519 panel was removed.
+TYOVA commit: 12ef276.
+
+No code change to Jaya Runtime required. The implementation was correct.
+The diagram required correction.
+
+### Related
+ADR-004 (Ed25519 as cryptographic primitive -- references keychain.rs)
+ADR-030 (conscience_thread.rs module design)
+Ch26: Keychain (Part 80 -- JAYA-CLO-159)
+Ch26: Key Rotation (Part 80 -- JAYA-CLO-159)
+FLAG-RED-06 -- CLOSED
+
+**Builder confirmed:** Jose Ramon Alvarado McHerron
+**Reference:** FIX-680 Entry-698 · EcosystemFlowPage.tsx · TYOVA 12ef276 · 2026-05-31 20:23 PDT San Diego

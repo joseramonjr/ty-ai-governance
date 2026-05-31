@@ -13111,3 +13111,25 @@ GAP 1D-B -- task aggregation wired into monitoring thread -- GovernanceTask per 
 OAQ-005 -- CONSCIENCE_ANCHOR.md published to ty-ai-os-releases -- anchor 4c296d41 now publicly accessible -- prerequisite for TY-0001.C satisfied -- ADR-030 reference included
 
 **Status:** CLOSED
+
+### Entry-698 | FIX-680 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego
+
+**Action:** FLAG-RED-06 closed. Merged keyRotation and ed25519 WARDs into
+unified keychain WARD in EcosystemFlowPage.tsx. Two separate WARD nodes
+(keyRotation at cy:920, ed25519 at cy:1000) replaced by single unified
+keychain WARD (cy:960). Label: KEY ROTATION · ED25519 · PHASE 4.
+EVENT_WARD_MAP, ZONE_WARDS, WARD_REVEAL, flow paths, FLOW_DST, and
+drill-down panel all updated. ed25519 panel removed. JAYA-CLO-159
+reference added to keychain panel. ADR-031 added to ADR file.
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 853 (from 866 pre-fix)
+**Commit:** 12ef276 | TYOVA
+**Net change:** 14 insertions, 28 deletions
+
+**Verification:**
+- keychain node Line 78 confirmed
+- keychain panel selector Line 757 confirmed
+- No stale keyRotation or ed25519 node references
+- ed25519 panel removed
+- FLAG-RED-06: CLOSED

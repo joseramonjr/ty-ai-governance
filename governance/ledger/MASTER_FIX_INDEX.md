@@ -8259,7 +8259,8 @@ Next: Phase 11 Track B Session 4 -- FIX-515 Steps 5-7 -- warning interception + 
 
 Three files delivered:
 
-1. untime_warning.rs (new -- 26,064 bytes) -- Full NWP Section 5 runtime implementation. WarningSeverity (Advisory/Warning/Critical/Terminal), TriggerCondition (8 types per Section 5.3), WarningEvent (all Section 5.4 + 5.6 fields + ledger_entry_hash SHA-256 tamper-evidence), assess_severity() mapping all 8 triggers, assess_severity_with_context() allowing escalation-only override, protective_response_label() mapping to NWP Section 6.3 tiers, build_warning_output() exact Section 5.4 format, evaluate_and_intercept() main entry point, intercept_and_warn() blocks action + writes ledger + logs Tier 3/4 hooks, log_advisory() to advisory_log only (no block), six convenience constructors covering all common warning scenarios. Critical data rule enforced: PVS content never enters any warning or ledger record.
+1. 
+untime_warning.rs (new -- 26,064 bytes) -- Full NWP Section 5 runtime implementation. WarningSeverity (Advisory/Warning/Critical/Terminal), TriggerCondition (8 types per Section 5.3), WarningEvent (all Section 5.4 + 5.6 fields + ledger_entry_hash SHA-256 tamper-evidence), assess_severity() mapping all 8 triggers, assess_severity_with_context() allowing escalation-only override, protective_response_label() mapping to NWP Section 6.3 tiers, build_warning_output() exact Section 5.4 format, evaluate_and_intercept() main entry point, intercept_and_warn() blocks action + writes ledger + logs Tier 3/4 hooks, log_advisory() to advisory_log only (no block), six convenience constructors covering all common warning scenarios. Critical data rule enforced: PVS content never enters any warning or ledger record.
 
 2. ledger.rs (modified -- 43,921 bytes) -- warning_events table (all 8 Section 5.6 mandatory fields + ledger_entry_hash), advisory_log table (separate from governance ledger per Section 5.6), log_warning_event(), log_advisory_event(), fetch_warning_events(), WarningEventRecord struct.
 
@@ -8305,7 +8306,8 @@ Four files delivered:
 
 2. ledger.rs (modified -- 52,813 bytes) -- jayme_dormancy_state table (single-row, restart-persistent), save_jayme_dormancy_state(), load_jayme_dormancy_state().
 
-3. untime_warning.rs (modified -- 26,243 bytes) -- CRITICAL arm wired: now calls protection_state::enter_suspended() (Sessions 4+5 connected). TERMINAL arm wired: now calls protection_state::enter_lockdown() + jayme_dormancy::evaluate_and_trigger_dormancy() (Sessions 4+5+6 fully connected). use tauri::Manager added.
+3. 
+untime_warning.rs (modified -- 26,243 bytes) -- CRITICAL arm wired: now calls protection_state::enter_suspended() (Sessions 4+5 connected). TERMINAL arm wired: now calls protection_state::enter_lockdown() + jayme_dormancy::evaluate_and_trigger_dormancy() (Sessions 4+5+6 fully connected). use tauri::Manager added.
 
 4. lib.rs (modified -- 118,550 bytes) -- mod jayme_dormancy, get_jayme_state command, resume_jayme_from_dormancy command, Jayme startup load from DB, both commands in invoke_handler.
 
@@ -8330,7 +8332,8 @@ Five files modified (test blocks added):
 
 2. update_state_machine.rs (15,481 bytes) -- validate_transition pub(crate). 7 tests: all 13 valid transitions, terminal states no outgoing, illegal transitions rejected, initial Proposed state, all 9 display strings, absolute rejection path, timeout authorize path.
 
-3. untime_warning.rs (33,649 bytes) -- 13 tests: all 8 severity mappings, ordering Advisory<Warning<Critical<Terminal, escalation permitted, de-escalation blocked, all Section 5.4 output fields, TERMINAL/CRITICAL event constructors, ledger hash format + collision resistance, all WARNING+ outcomes BLOCKED.
+3. 
+untime_warning.rs (33,649 bytes) -- 13 tests: all 8 severity mappings, ordering Advisory<Warning<Critical<Terminal, escalation permitted, de-escalation blocked, all Section 5.4 output fields, TERMINAL/CRITICAL event constructors, ledger hash format + collision resistance, all WARNING+ outcomes BLOCKED.
 
 4. protection_state.rs (28,463 bytes) -- 12 tests: from_str all values, display all values, new=Normal, gate Normal/Suspended/Lockdown command whitelist enforcement, record default, round-trip, state identification.
 
@@ -8867,3 +8870,5 @@ at every session. Same-question-different-wording problem solved.
 | FIX-678 | 2026-05-30 18:15 PDT San Diego -- 2026-05-30 18:19 PDT San Diego | Jaya-Runtime | GAP 1D-B -- wire task aggregation into monitoring thread -- one GovernanceTask per 30s cycle -- group CRI_EVALUATION, LEDGER_WRITE, SENTINEL_SCAN, POLICY_CHECK receipts -- RESOLVED normal / ESCALATED on CRI>=75 or anomaly -- route_task_outcome writes to jaya_task_completion_summaries. GAP 1D-B -- task aggregation wired into monitoring thread -- GovernanceTask per 30s cycle -- 4 receipts grouped per cycle -- RESOLVED normal / ESCALATED on CRI>=75 or anomaly -- route_task_outcome writes to jaya_task_completion_summaries -- 222/222 tests -- S1 clean Commit e3c4bea. CLOSED |
 
 | FIX-679 | 2026-05-30 18:34 PDT San Diego -- 2026-05-30 18:37 PDT San Diego | ty-ai-os-releases | OAQ-005 -- publish conscience anchor 4c296d41 to ty-ai-os-releases -- CONSCIENCE_ANCHOR.md -- prerequisite for TY-0001.C. OAQ-005 -- CONSCIENCE_ANCHOR.md published to ty-ai-os-releases -- anchor 4c296d41 now publicly accessible -- prerequisite for TY-0001.C satisfied -- ADR-030 reference included Commit 5ac562e. CLOSED |
+
+| FIX-680 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego | TYOVA | FLAG-RED-06 -- Merge keyRotation + ed25519 WARDs into unified keychain WARD -- EcosystemFlowPage.tsx 853 lines -- 14 insertions 28 deletions -- ADR-031 added -- FLAG-RED-06 CLOSED. Commit 12ef276. |
