@@ -13081,3 +13081,13 @@ GAP 1C -- task_aggregator.rs -- GovernanceTask struct -- TaskCompletionSummary -
 GAP 1D-A -- write_execution_receipt_sync wired into monitoring thread -- CRI_EVALUATION, LEDGER_WRITE, SENTINEL_SCAN, POLICY_CHECK receipt writes active -- live Supabase writes to jaya_execution_receipts -- 222/222 tests -- S1 clean
 
 **Status:** CLOSED
+
+### Entry-695 | FIX-677 | 2026-05-30 17:25 PDT San Diego -- 2026-05-30 17:56 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** f5a1c64
+**Scope:** GAP 1D-A correction -- switch monitoring thread receipt calls from write_execution_receipt_sync to write_execution_receipt_from_command -- fix reqwest blocking conflict -- live Supabase writes to jaya_execution_receipts
+
+GAP 1D-A correction -- switched to write_execution_receipt_from_command to fix reqwest blocking conflict -- identified missing INSERT/SELECT grants on all three new tables -- grants applied in Supabase -- SQL migration files corrected with grant statements committed 8dd7d2d -- live receipts confirmed in jaya_execution_receipts -- 222/222 tests -- S1 clean
+
+**Status:** CLOSED
