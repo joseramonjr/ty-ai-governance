@@ -13224,3 +13224,22 @@ ss321->tyova (live feed) and proof7777->tyova (proof data).
 **Lines:** 859 (from 858)
 **Commit:** b0b8d8d | TYOVA
 **Net change:** 6 insertions, 5 deletions
+
+### Entry-704 | FIX-686 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego
+
+**Action:** Corrected ss321->tyova flow direction. Builder correctly
+identified that the white diamond on ss321->tyova meant no governed data
+flows from SS321 to TYOVA -- TYOVA polls SS321, it does not receive pushed
+data. Flow direction reversed: ss321->tyova (live feed) removed, replaced
+with tyova->ss321 (poll events) col:#06b6d4 rate:3800. FLOW_DST[49]
+corrected from tyova to ss321. White diamond on tyova->ss321 is now
+architecturally honest -- TYOVA initiates the poll, no governance event
+tracks the response as a push to TYOVA. TYOVA Archive incoming flows
+remain: proof7777->tyova (proof data, active when Jaya running locally).
+TYOVA Archive outgoing flows: tyova->proof7777 (proof query) +
+tyova->ss321 (poll events). Both outgoing show white diamonds correctly.
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 859 (unchanged)
+**Commit:** 8fc28cb | TYOVA
+**Net change:** 2 insertions, 2 deletions
