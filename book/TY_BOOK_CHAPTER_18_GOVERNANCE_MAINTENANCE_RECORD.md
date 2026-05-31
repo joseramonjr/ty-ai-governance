@@ -13451,3 +13451,11 @@ registering ss321-agent-001. Updates automatically without page refresh.
 **Lines:** 949 (from 946)
 **Commits:** 3c66994 + ba38775 | TYOVA
 **Net change:** 6 insertions, 3 deletions total
+
+### Entry-712 ADDENDUM | FIX-694 COMPLETE | 2026-05-31 13:01 PDT San Diego
+
+**Hotfix 3:** Subtitle text truncation added to drawNode() -- prevents
+overflow on long WARD subtitles (Jaya Runtime, NWP Protection, Keychain).
+ctx.measureText() used to check if subtitle exceeds WARD width (n.w-16px)
+-- if so, text is sliced proportionally and ellipsis appended. TYOVA dfd5dcc.
+FIX-694 now fully complete -- agent count in subtitle + no overflow.

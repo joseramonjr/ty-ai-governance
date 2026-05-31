@@ -8889,3 +8889,4 @@ at every session. Same-question-different-wording problem solved.
 | FIX-692 ADDENDUM | 2026-05-31 11:42 PDT San Diego | Jaya-Runtime | set_agent_status wired to Supabase + Revoke agentId bug fixed -- live tested REGISTERED + STATUS_SUSPENDED -- FIX-693 gate open. Commit 3c4b4c7. |
 | FIX-693 | 2026-05-31 11:42 PDT San Diego -- 2026-05-31 11:42 PDT San Diego | TYOVA | AI Agents WARD live registry -- agentData + fetchAgents + dynamic panel -- polls jaya_agents 30s -- closes FLAG-137. Commit 37fe898. |
 | FIX-694 | 2026-05-31 13:01 PDT San Diego -- 2026-05-31 13:01 PDT San Diego | TYOVA | AI Agents WARD subtitle live agent count -- agentCountRef pattern -- TIER 0-3 GOVERNED N REGISTERED -- live tested 0 and 1 REGISTERED. Commits 3c66994 + ba38775. |
+| FIX-694 HOTFIX 3 | 2026-05-31 13:01 PDT San Diego | TYOVA | Subtitle truncation -- prevents overflow on long WARD subtitles -- drawNode measureText fix. Commit dfd5dcc. FIX-694 COMPLETE. |
