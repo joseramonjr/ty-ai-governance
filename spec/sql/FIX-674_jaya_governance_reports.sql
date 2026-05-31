@@ -39,3 +39,6 @@ CREATE POLICY "reports_read_public" ON jaya_governance_reports
 -- Index for latest report queries
 CREATE INDEX IF NOT EXISTS idx_reports_created_at
     ON jaya_governance_reports (created_at DESC);
+-- FIX-677 correction: explicit grants required for Supabase REST API access
+GRANT INSERT ON jaya_governance_reports TO anon, authenticated, service_role;
+GRANT SELECT ON jaya_governance_reports TO anon, authenticated, service_role;

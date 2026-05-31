@@ -37,3 +37,6 @@ CREATE INDEX IF NOT EXISTS idx_summaries_created_at
 -- Index for outcome filtering (RESOLVED_INTERNAL vs ESCALATED_TO_GUARDIAN)
 CREATE INDEX IF NOT EXISTS idx_summaries_outcome
     ON jaya_task_completion_summaries (outcome);
+-- FIX-677 correction: explicit grants required for Supabase REST API access
+GRANT INSERT ON jaya_task_completion_summaries TO anon, authenticated, service_role;
+GRANT SELECT ON jaya_task_completion_summaries TO anon, authenticated, service_role;

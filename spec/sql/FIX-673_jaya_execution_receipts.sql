@@ -36,3 +36,6 @@ CREATE INDEX IF NOT EXISTS idx_receipts_created_at
 -- Index for confirmation level filtering
 CREATE INDEX IF NOT EXISTS idx_receipts_confirmation_level
     ON jaya_execution_receipts (confirmation_level);
+-- FIX-677 correction: explicit grants required for Supabase REST API access
+GRANT INSERT ON jaya_execution_receipts TO anon, authenticated, service_role;
+GRANT SELECT ON jaya_execution_receipts TO anon, authenticated, service_role;
