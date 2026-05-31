@@ -13071,3 +13071,13 @@ GAP 1B -- generate_governance_state_report in supabase_writer.rs -- 60-minute cy
 GAP 1C -- task_aggregator.rs -- GovernanceTask struct -- TaskCompletionSummary -- TA-1 through TA-5 -- write_task_completion_summary_sync -- route_task_outcome -- mod task_aggregator registered in lib.rs -- SQL migration jaya_task_completion_summaries committed 1920268 -- 222/222 tests -- S1 clean
 
 **Status:** CLOSED
+
+### Entry-694 | FIX-676 | 2026-05-30 16:51 PDT San Diego -- 2026-05-30 17:00 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 015f015
+**Scope:** GAP 1D-A -- wire write_execution_receipt_sync into monitoring thread -- CRI_EVALUATION, LEDGER_WRITE, SENTINEL_SCAN, POLICY_CHECK, GOVERNANCE_PROOF_GENERATED receipt writes -- live Supabase writes to jaya_execution_receipts
+
+GAP 1D-A -- write_execution_receipt_sync wired into monitoring thread -- CRI_EVALUATION, LEDGER_WRITE, SENTINEL_SCAN, POLICY_CHECK receipt writes active -- live Supabase writes to jaya_execution_receipts -- 222/222 tests -- S1 clean
+
+**Status:** CLOSED
