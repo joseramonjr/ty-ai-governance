@@ -13186,3 +13186,22 @@ Display strings updated: 48 FLOWS across canvas bar (lines 425-426) and JSX
 subtitle (line 480).
 **File:** TYOVA/src/pages/EcosystemFlowPage.tsx | **Lines:** 856
 **Commit:** 9362fbb | TYOVA | **Net change:** 7 insertions, 4 deletions
+
+### Entry-702 | FIX-684 | 2026-05-31 20:23 PDT San Diego -- 2026-05-31 20:23 PDT San Diego
+
+**Action:** Full 24-WARD flow connectivity audit. 22/24 WARDs passed.
+Two missing incoming flows identified and added: (1) human->codex
+(author invariants) -- Guardian Codex had outgoing flow to Jaya but no
+incoming flow from Human Guardian. Authority chain visually incomplete
+without it. Added FWD flow col:#6366f1 rate:5500. (2) ss321->tyova
+(live feed) -- TYOVA polls SS321 Supabase at runtime to display live
+governance events. Had no incoming flow despite active runtime
+dependency. Added FWD flow col:#06b6d4 rate:3800. FLOW_DST extended
+with indices 48:codex 49:tyova. Display updated to 50 FLOWS across
+canvas bar (lines 427-428) and JSX subtitle (line 482). All 24 WARDs
+now fully connected with at least one incoming and one outgoing flow.
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 858 (from 856)
+**Commit:** c1f9145 | TYOVA
+**Net change:** 6 insertions, 4 deletions
