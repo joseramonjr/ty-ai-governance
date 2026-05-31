@@ -13390,3 +13390,18 @@ with event_type DEREGISTERED. 222/222 tests pass. cargo check 0 errors.
 agent count badge and agent list in AI Agents WARD drill-down panel.
 
 **TEST GATE — FIX-692:** write_agent_to_supabase not yet live-tested. Requires Jaya Runtime running and agent registration command executed. Verify jaya_agents row appears in Supabase before opening FIX-693. Test pending -- 2026-05-31 10:55 PDT San Diego.
+
+### Entry-710 ADDENDUM | FIX-692 COMPLETE | 2026-05-31 11:42 PDT San Diego
+
+**Live test results:**
+- REGISTERED event: fix-692-test row confirmed in jaya_agents -- PASS
+- STATUS_SUSPENDED event: proof-agent-A row confirmed in jaya_agents -- PASS
+- Revoke UI bug fixed: agentId parameter corrected in AgentMonitorPanel.tsx
+- set_agent_status() wired to write_agent_to_supabase() for all status
+  changes: Active, Suspended, Revoked -- event_type: STATUS_ACTIVE,
+  STATUS_SUSPENDED, STATUS_REVOKED
+- All status changes now flow: Jaya Runtime -> jaya_agents Supabase table
+- FIX-692 TEST GATE: CLEARED -- live test confirmed both REGISTERED and
+  STATUS_SUSPENDED writes working correctly
+- Jaya-Runtime commit: 3c4b4c7
+- FIX-693 gate is now open -- TYOVA can poll jaya_agents
