@@ -13243,3 +13243,26 @@ tyova->ss321 (poll events). Both outgoing show white diamonds correctly.
 **Lines:** 859 (unchanged)
 **Commit:** 8fc28cb | TYOVA
 **Net change:** 2 insertions, 2 deletions
+
+### Entry-705 | FIX-687 | 2026-05-31 22:50 PDT San Diego -- 2026-05-31 22:50 PDT San Diego
+
+**Action:** FLOW_DST agent flow indices corrected. Builder observed colored
+circles on jaya->agents and agents->jaya flows despite no real agent being
+registered in Jaya Runtime. Root cause: FLOW_DST indices 16, 42, and 43
+were mapped to wrong destination WARDs (ss321, jaya, tyos respectively),
+causing those flows to borrow hotness from unrelated governance events.
+Fix: all three indices set to 'agents'. Now agent flows only show colored
+circles when a real agent governance event (action_type containing 'agent'
+or 'ai_') arrives in the Supabase stream. With no registered agents, all
+three flows correctly show white blinking diamonds. The diagram now
+honestly represents the absence of registered agents.
+
+**Indices corrected:**
+- FLOW_DST[16] jaya->agents approved: ss321 -> agents
+- FLOW_DST[42] agents->jaya new request: jaya -> agents
+- FLOW_DST[43] jaya->agents blocked: tyos -> agents
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 859 (unchanged)
+**Commit:** e29b75e | TYOVA
+**Net change:** 1 insertion, 1 deletion
