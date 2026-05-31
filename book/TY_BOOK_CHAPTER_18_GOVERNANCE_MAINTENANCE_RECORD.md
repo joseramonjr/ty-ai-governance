@@ -13266,3 +13266,17 @@ honestly represents the absence of registered agents.
 **Lines:** 859 (unchanged)
 **Commit:** e29b75e | TYOVA
 **Net change:** 1 insertion, 1 deletion
+
+### Entry-706 | FIX-688 | 2026-05-31 22:50 PDT San Diego -- 2026-05-31 22:50 PDT San Diego
+
+**Action:** FLOW_DST[37] corrected. Builder observed remaining colored
+circle on agents->jaya return path after FIX-687. Root cause: FLOW_DST[37]
+mapped ss321->jaya (read events) to destination 'agents' instead of 'jaya'.
+ss321->jaya fires every 30 seconds, marking agents as hot, which caused
+all agent flows to show circles. Fix: FLOW_DST[37] = 'jaya'. AI Agents
+WARD flows now show white diamonds correctly with no registered agents.
+
+**File:** TYOVA/src/pages/EcosystemFlowPage.tsx
+**Lines:** 859 (unchanged)
+**Commit:** 4aa4af0 | TYOVA
+**Net change:** 1 insertion, 1 deletion
