@@ -3441,3 +3441,64 @@ give an auditor everything needed to confirm authenticity without
 exposing implementation details.
 **Source:** Claude session "TY AI OS conscience thread development"
 (2026-05-29) · ADR-030 DQ-5
+---
+
+### QA-084 -- Cryptographic Governance Accessibility Gap Closure Paths
+**Date:** 2026-06-01
+**FIX:** FIX-700 -- Entry-718
+**Question:** How does TY AI OS close the accessibility gap between cryptographic governance verification and the non-technical humans most affected by AI governance decisions?
+**Answer:** Five concrete paths identified to close the cryptographic accessibility gap progressively:
+
+Path 1 -- Human-Readable Governance Summary Layer
+Build a plain-language translation layer on top of the cryptographic proof within TYOVA. Display governance status in language any person can read without technical knowledge. Example output: "TY AI OS checked 847 actions today. All 847 were within authorized boundaries. No violations detected. Last verified: 14:32 PDT. Cryptographic proof available for technical review." The cryptographic proof still exists for those who can verify it. The plain-language summary gives non-technical people meaningful access to governance status. Phase 15/16 scope.
+
+Path 2 -- Trusted Intermediary Program
+Define a formal Governance Verifier role. A small number of trusted third parties -- journalists, researchers, public interest organizations, legal advocates -- are given the tools, documentation, and training to verify TY AI OS governance proofs on behalf of affected people. Mirrors financial auditing model -- most people cannot read financial statements but rely on auditors who can. The governance record already exists. The proof endpoint already works. What is missing is the intermediary layer and the formal program defining who qualifies as a trusted verifier and what their verification obligations are. Organizational work required -- not just code.
+
+Path 3 -- One-Click Verification Tool
+Build a simple web-based verification tool on TYOVA. User submits a governance event ID or session hash. Tool returns a plain-language result with green checkmark or red flag and explanation. No cryptographic knowledge required. Tool performs cryptographic verification internally and surfaces result in accessible language. Equivalent of SSL certificate padlock in a browser -- most people do not understand TLS but understand the padlock. TY AI OS needs its equivalent of the padlock. Phase 15/16 scope.
+
+Path 4 -- Legal Standing Bridge
+Work with legal counsel to establish what a cryptographic governance proof means as admissible legal evidence. If a person is harmed by a TY AI OS governed system, can the governance proof be introduced as evidence in legal proceedings? Bridges cryptographic verifiability to institutional accountability without requiring the affected person to understand cryptography -- requires their lawyer to use the proof in court. Requires legal counsel. Post-Walker Weitzel resolution scope.
+
+Path 5 -- Public Governance Dashboard
+A publicly accessible real-time dashboard showing governance health in simple visual terms. Green/yellow/red status. Number of governed actions today. Last verified timestamp. Trend over time. No technical knowledge required to interpret. Most visible public accountability tool -- requires least technical literacy from viewers. TYOVA EcosystemFlow already partially implements this -- extend it. Phase 15/16 scope.
+
+**Why/Reasoning:** The accessibility gap is real -- most people affected by AI governance decisions cannot directly verify cryptographic governance proofs. However institutional governance has equivalent accessibility barriers plus susceptibility to capture by regulated entities. Cryptographic governance provides verification that cannot be purchased or suppressed. The democratization argument requires accessible intermediaries -- not personal cryptographic literacy -- and that is achievable through these five paths. Closing the accessibility gap progressively strengthens TY AI OS's core thesis that verifiable governance is stronger than promised governance.
+**Source:** CAT-3-006 Red-Team challenge -- TY_REDTEAM_REPORT_v0.1.md -- 2026-06-01 San Diego
+
+---
+
+### QA-085 -- TY AI OS Ecosystem Growth Architecture
+**Date:** 2026-06-01
+**FIX:** FIX-700 -- Entry-718
+**Question:** How do TY AI, Jaya, Luke, and Jayme continue to grow and evolve as the world changes beyond 2026? What prevents the ecosystem from being frozen at the year it was built?
+**Answer:** Each component has a defined growth path. Three ecosystem-level mechanisms ensure the system as a whole evolves with the world.
+
+Component Growth Paths:
+
+TY AI (Tiberius) -- The Executor
+Core behavior is Tier 1 permanently immutable -- deny-by-default, explicit authorization only, tier enforcement. Growth occurs at Tier 2 -- governably evolvable. New policy rules added through governed evolution process. New agent types registered. New integration layers built. New domains served. TY AI can do more things in more contexts without changing what it fundamentally is. Every expansion goes through the seven-day deliberation period and is recorded in the governance ledger.
+
+Jaya Runtime -- The Enforcement Engine
+Three-layer growth architecture. Layer 1 -- policy file evolution allows Jaya to enforce new rules without code changes. Layer 2 -- new Rust modules added for new governance capabilities (conscience_thread.rs in Phase 15 is the first example). Layer 3 -- Supabase schema extended to capture new event types as ecosystem encounters new governance scenarios. Jaya enforcement core stays architecturally frozen. Capability surface expands through modules and policy. This is the correct pattern -- the thing that must not change does not change, the things that can grow do grow.
+
+Luke AI -- The Advisor/Auditor
+Most naturally growth-capable component because its entire purpose is explanation and analysis. As governance ledger grows Luke explanations become richer. As new event types added to SQLite Luke can explain them. As governance record accumulates years of behavioral history Luke can identify patterns invisible in the first year. Primary growth mechanism is the unified knowledge layer in Phase 15 -- when Luke reads from a shared canonical knowledge base updated through governed evolution Luke's understanding grows with the system. Luke never executes so there is no safety risk in expanding what Luke knows and can explain. Luke is the component best positioned to bridge the 2026 architecture and the future world.
+
+Jayme AI -- The Continuity Guardian
+Two growth mechanisms. First -- before succession activates human guardians can evolve Jayme's behavioral constraints through the governed evolution process. Janet L. McHerron as active guardian can propose Jayme updates reflecting new circumstances. Jayme does not have to be frozen at 2026 -- it can be updated by living guardians as the world changes provided updates go through proper deliberation. Second -- Jayme's drift monitoring capability extended to recognize new behavioral patterns as they emerge. New drift categories added through policy evolution without changing Jayme's core architecture.
+
+Three Ecosystem-Level Growth Mechanisms:
+
+Mechanism 1 -- Annual Governance Review (ADR-030 when Phase 15 opens)
+Mandatory annual review cycle where the guardian evaluates whether existing governance rules still accurately reflect governance intent in the current world. Not a change process -- a review process. Output is either rules remain appropriate or governed evolution proposal required. Closes the freeze risk by building calendar-driven adaptation into the governance lifecycle. Without this mechanism ecosystem evolution depends entirely on guardian personal initiative -- with it evolution is architecturally committed.
+
+Mechanism 2 -- External Input Protocol (ADR-031 when Phase 15 opens -- verify no collision with existing ADR-031)
+Formal process for incorporating external governance insights -- new AI safety research, regulatory changes, novel threat patterns, lessons from other governance systems -- into the TY AI OS governed evolution process. Currently external input can only enter through Jose Ramon's judgment. A formal External Input Protocol defines how external information is evaluated, who can submit it, and what the threshold is for triggering a governed evolution proposal. Prevents the ecosystem from being isolated from the world's growing understanding of AI governance.
+
+Mechanism 3 -- Capability Horizon Registry (ADR-032 when Phase 15 opens)
+Living document tracking known future capability gaps -- things TY AI OS cannot currently handle but will need to handle as the world evolves. Examples already identified: cryptographic aging to post-quantum algorithms (CAT-1-005-A), quantum computing governance, multi-modal AI governance, agentic AI at scale. Documents known future challenges before they become crises. Gives future guardians advance notice of what is coming. Prevents capability gaps from being discovered under pressure rather than anticipated in advance.
+
+**Why/Reasoning:** Without deliberate growth architecture TY AI OS freezes at the moment its builder stops actively developing it. The governance rules the Conscience Thread the invariants the tier definitions all reflect the world as Jose Ramon understood it in 2025-2026. The world will not stop there. The component growth paths ensure each AI component can expand its capability within its architectural constraints. The three ecosystem mechanisms ensure the governance framework itself adapts to new circumstances through deliberate structured processes rather than guardian personal initiative alone. The goal is not change for its own sake -- it is ensuring the governance remains accurate and relevant as the world evolves. A governance system that cannot adapt is a governance system that will eventually fail to govern correctly.
+**Source:** CAT-3-012 Red-Team challenge -- TY_REDTEAM_REPORT_v0.1.md -- 2026-06-01 San Diego
