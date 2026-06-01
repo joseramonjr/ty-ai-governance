@@ -1,11 +1,11 @@
-﻿# Chapter 26 -- The TY AI OS Vocabulary
+# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
-**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added)
+**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
-**Updated:** 2026-05-28 | San Diego (America/Los_Angeles)
+**Updated:** 2026-06-01 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 366 (357 + Attestonic State added FIX-622 2026-05-23 | Attestonic un-retired same session | guardian decision Jose Ramon Alvarado McHerron | + 4 Phase 13 terms added FIX-656 2026-05-26: Self-Healing Loop, Cryptographic Event Chain, Degraded State, verify-live | + 3 Phase 14 P2 terms added FIX-663 2026-05-28: Conscience Thread, Moral History, Conscience Attestation)
+**Current Term Count:** 381 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01: Internal Red-Team, HOLD Verdict, GAP Verdict, BREACH Verdict, Logical Consistency Challenge, Boundary Exploitation, Conscience Thread Stress Test, Promotion Path, Enterprise Misuse Cluster, Annual Governance Review, External Input Protocol, Capability Horizon Registry)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -3774,6 +3774,7 @@ a living document. Current attestation: 4F871EE67BA31ECFBD95A44A5D35E3B2414A1220
 | 2026-05-22 / FIX-591 | Post-Phase 12 vocabulary | supabase_writer.rs, jaya_audit_events, get_governance_events_public, Bidirectional Governance Bridge, Live Governance Feed, email_alert.rs (Section 21); masterHubRegistry.ts, ECOSYSTEM_STATS, HUB_VERSION, Dynamic Wiring, Single Source of Truth Principle (Section 22); Governance Dashboard, CSS Governance Design System, FLAG-31, FLAG-32, TY-0001.C (Section 23) | 16 new terms. Sections 21-23 created. 341—>357 terms. |
 | 2026-05-26 / FIX-656 | Phase 13 hardening vocabulary | Self-Healing Loop, Cryptographic Event Chain, Degraded State, verify-live (Section 23 additions) | 4 new terms. Phase 13 hardening vocabulary. 359 to 363 terms. |
 | 2026-05-28 / FIX-663 | Phase 14 P2 Conscience Thread | Conscience Thread, Moral History, Conscience Attestation (Section 24 created) | 3 new terms. Section 24 created. 363->366 terms. |
+| 2026-06-01 / FIX-702 | Phase 14 P3 Red-Team terms | Internal Red-Team, HOLD Verdict, GAP Verdict, BREACH Verdict, Logical Consistency Challenge, Boundary Exploitation, Conscience Thread Stress Test, Promotion Path, Enterprise Misuse Cluster, Annual Governance Review, External Input Protocol, Capability Horizon Registry (Section 26 created) | 12 new terms. Section 26 created. 369->381 terms. |
 | 2026-05-30 / FIX-671 | Phase 14 NWP and governance model vocabulary | NWP Protection State Machine, Fortune 500 Governance Model, Ward Role Specification (Section 25 created) | 3 new terms. Section 25 created. 366->369 terms. |
 
 
@@ -3825,10 +3826,164 @@ does but what authority it holds, what it cannot do, and who it answers to.
 Verified against actual Jaya Runtime Rust implementation during the FIX-668
 internal red-team. Nine flags raised during verification (FIX-668) and resolved
 in FIX-669.
+
+---
+## Section 26 -- Phase 14 Red-Team and Governance Resilience Terms
+These terms were coined during Phase 14 Part 3 -- the Internal Red-Team --
+the first structured adversarial challenge to the TY AI OS governance
+architecture. They describe the process, verdicts, and findings of that
+challenge, and the governance mechanisms designed to ensure TY AI OS
+evolves with the world beyond 2026.
+
+**Internal Red-Team**
+*First coined: 2026-05-31 | San Diego (America/Los_Angeles)*
+*Built: FIX-696 | Phase 14 P3 | Entry-714 | 2026-05-31*
+The first structured adversarial challenge to the TY AI OS governance
+architecture. Designated OAQ-002. Conducted across May 31 and June 1, 2026.
+45 challenges across three categories -- CAT-1 Logical Consistency, CAT-2
+Boundary Exploitation, CAT-3 Conscience Thread Stress Test. 24 rules held
+under adversarial pressure (HOLD). 21 documentation gaps found (GAP). Zero
+fundamental failures (0 BREACH). One active security vulnerability found and
+remediated live during the session (ty-ai-governance branch protection
+enabled during CAT-2-013). Findings committed to
+TY_REDTEAM_REPORT_v0.1.md -- 794 lines -- publicly visible in governance
+record. The Internal Red-Team is the mechanism by which TY AI OS challenges
+its own governance reasoning before external scrutiny does.
+
+**HOLD Verdict**
+*First coined: 2026-05-31 | San Diego (America/Los_Angeles)*
+*Built: FIX-696 | Phase 14 P3 | Entry-714 | 2026-05-31*
+One of three possible verdicts in a TY AI OS Internal Red-Team challenge.
+HOLD means the governance reasoning survives the adversarial challenge
+intact -- the rule holds, the moral reasoning is sound, no gap is found.
+24 of 45 challenges in OAQ-002 produced HOLD verdicts. A HOLD is not
+proof that a rule is perfect -- it is proof that the strongest argument
+against it that could be constructed did not find a fundamental flaw.
+
+**GAP Verdict**
+*First coined: 2026-05-31 | San Diego (America/Los_Angeles)*
+*Built: FIX-696 | Phase 14 P3 | Entry-714 | 2026-05-31*
+One of three possible verdicts in a TY AI OS Internal Red-Team challenge.
+GAP means a documentation weakness was found -- the architecture is doing
+the right thing but the canonical record does not explicitly state the rule
+it is following. A GAP does not mean broken code. It means the paper trail
+has not caught up to what the architecture already does correctly. 21 of 45
+challenges in OAQ-002 produced GAP verdicts. All gaps are recorded with
+priority levels and resolution paths in TY_REDTEAM_REPORT_v0.1.md.
+
+**BREACH Verdict**
+*First coined: 2026-05-31 | San Diego (America/Los_Angeles)*
+*Built: FIX-696 | Phase 14 P3 | Entry-714 | 2026-05-31*
+One of three possible verdicts in a TY AI OS Internal Red-Team challenge.
+BREACH means a fundamental governance failure was found that requires
+immediate remediation -- a separate FIX number is assigned and the issue
+must be resolved before the session continues. 0 of 45 challenges in
+OAQ-002 produced BREACH verdicts. Zero BREACHes means no governance rule
+was found to be structurally broken across the full adversarial challenge.
+
+**Logical Consistency Challenge**
+*First coined: 2026-05-31 | San Diego (America/Los_Angeles)*
+*Built: FIX-696 | Phase 14 P3 | Entry-714 | 2026-05-31*
+Category 1 of the Internal Red-Team challenge structure. Tests whether two
+governance rules that are each correct in isolation contradict each other
+when applied simultaneously. The logical consistency category is the least
+difficult of the three categories -- it does not require constructing
+exploit scenarios or arguing against moral positions, only identifying
+internal tensions between legitimate rules. 15 challenges in CAT-1 of
+OAQ-002. 5 HOLD. 10 GAP. 0 BREACH.
+
+**Boundary Exploitation**
+*First coined: 2026-05-31 | San Diego (America/Los_Angeles)*
+*Built: FIX-697 | Phase 14 P3 | Entry-715 | 2026-05-31*
+Category 2 of the Internal Red-Team challenge structure. Tests whether a
+sophisticated actor could use the governance rules' own language, definitions,
+and exceptions to argue their way across a governance boundary. More difficult
+than logical consistency challenges because it requires constructing the
+strongest possible exploit scenario using the system's own rules as the attack
+vector. 15 challenges in CAT-2 of OAQ-002. 7 HOLD. 8 GAP. 0 BREACH. CAT-2-013
+produced the only live remediation in the full Red-Team -- branch protection
+enabled on ty-ai-governance during the session.
+
+**Conscience Thread Stress Test**
+*First coined: 2026-06-01 | San Diego (America/Los_Angeles)*
+*Built: FIX-699 | Phase 14 P3 | Entry-717 | 2026-06-01*
+Category 3 of the Internal Red-Team challenge structure -- the most difficult
+category. Tests whether the moral reasoning in the Conscience Thread survives
+adversarial argument. Takes each entry's documented "what was rejected and why"
+position and argues the rejected option as strongly as possible. Tests not just
+whether the governance rules are logically consistent but whether the moral
+convictions behind them survive the strongest counter-arguments. 15 challenges
+in CAT-3 of OAQ-002. 12 HOLD. 3 GAP. 0 BREACH.
+
+**Promotion Path**
+*First coined: 2026-05-28 | San Diego (America/Los_Angeles)*
+*Built: FIX-696 | Phase 14 P3 | Entry-714 | 2026-05-31*
+The formal mechanism by which a finding from the Internal Red-Team Report
+is elevated to canonical governance doctrine in the TY_QA_REGISTRY.md. A
+Red-Team finding that produces an answer worthy of becoming canonical
+governance doctrine may be promoted -- but only through a deliberate act
+by the builder. Promotion is never automatic. Promoted entries reference
+their Red-Team source. The Promotion Path ensures test material and canonical
+doctrine remain in separate files while allowing valuable findings to graduate
+to permanent governance record. First promotions: CAT-3-006 to QA-084 and
+CAT-3-012 to QA-085, FIX-700, 2026-06-01.
+
+**Enterprise Misuse Cluster**
+*First coined: 2026-05-31 | San Diego (America/Los_Angeles)*
+*Built: FIX-697 | Phase 14 P3 | Entry-715 | 2026-05-31*
+A group of four linked Red-Team findings that must be resolved together before
+any enterprise deployment of TY AI OS begins: CAT-1-012 (Non-Weaponization
+Guardrail vs Enterprise Deployment), CAT-1-013 (Distribution Semantics vs
+Moral Responsibility), CAT-2-012 (Compliance Theater), CAT-2-015 (Beneficial
+Monitoring Argument). All four address the same underlying vulnerability from
+different angles -- that TY AI OS governance infrastructure could be misused
+by administrators to surveil, profile, or disadvantage the humans it is
+supposed to protect. The four findings are formally linked in
+TY_REDTEAM_REPORT_v0.1.md and carry CRITICAL PRIORITY status.
+
+**Annual Governance Review**
+*First coined: 2026-06-01 | San Diego (America/Los_Angeles)*
+*Built: FIX-700 | Phase 14 P3 | Entry-718 | 2026-06-01*
+One of three ecosystem-level growth mechanisms identified during the Internal
+Red-Team as necessary to prevent TY AI OS from freezing at the year it was
+built. A mandatory annual review cycle where the guardian evaluates whether
+the existing governance rules still accurately reflect the governance intent
+in the current world. Not a change process -- a review process. Output is
+either rules remain appropriate or a governed evolution proposal is required.
+Closes the freeze risk by building calendar-driven adaptation into the
+governance lifecycle. To be formally established as ADR-030 when Phase 15
+opens. First documented in QA-085, FIX-700, 2026-06-01.
+
+**External Input Protocol**
+*First coined: 2026-06-01 | San Diego (America/Los_Angeles)*
+*Built: FIX-700 | Phase 14 P3 | Entry-718 | 2026-06-01*
+One of three ecosystem-level growth mechanisms identified during the Internal
+Red-Team. A formal process for incorporating external governance insights --
+new AI safety research, regulatory changes, novel threat patterns, lessons
+from other governance systems -- into the TY AI OS governed evolution process.
+Prevents the ecosystem from being isolated from the world's growing
+understanding of AI governance. Defines how external information is evaluated,
+who can submit it, and what the threshold is for triggering a governed
+evolution proposal. To be formally established as ADR-031 when Phase 15
+opens. First documented in QA-085, FIX-700, 2026-06-01.
+
+**Capability Horizon Registry**
+*First coined: 2026-06-01 | San Diego (America/Los_Angeles)*
+*Built: FIX-700 | Phase 14 P3 | Entry-718 | 2026-06-01*
+One of three ecosystem-level growth mechanisms identified during the Internal
+Red-Team. A living document tracking known future capability gaps -- things
+TY AI OS cannot currently handle but will need to handle as the world evolves.
+Examples already identified: cryptographic aging to post-quantum algorithms,
+quantum computing governance, multi-modal AI governance, agentic AI at scale.
+Documents known future challenges before they become crises. Gives future
+guardians advance notice of what is coming. Prevents capability gaps from
+being discovered under pressure rather than anticipated in advance. To be
+formally established as ADR-032 when Phase 15 opens. First documented in
+QA-085, FIX-700, 2026-06-01.
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-05-30 | San Diego (America/Los_Angeles)*
-*Current Term Count: 369 | Sections: 25*
+*Updated: 2026-06-01 | San Diego (America/Los_Angeles)*
+*Current Term Count: 381 | Sections: 26*
 *This document grows with the project. It is never finished.*
