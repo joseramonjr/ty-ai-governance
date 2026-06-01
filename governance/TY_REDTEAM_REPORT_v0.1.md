@@ -72,7 +72,8 @@ Entries promoted from this report to TY_QA_REGISTRY.md.
 
 | Challenge # | Promoted To | FIX | Date |
 |---|---|---|---|
-| -- | -- | -- | -- |
+| CAT-3-006 | QA-084 | FIX-700 | 2026-06-01 |
+| CAT-3-012 | QA-085 | FIX-700 | 2026-06-01 |
 
 ---
 

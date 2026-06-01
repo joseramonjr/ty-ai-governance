@@ -13598,3 +13598,21 @@ CAT-3 Conscience Thread Stress Test completed. 15 challenges presented and adjud
 - Commit: 4a042d3 -- 251 insertions -- pushed to origin/main
 
 **OAQ-002: COMPLETE -- all three categories done -- Phase 14 P3 COMPLETE**
+
+### Entry-718 | FIX-700 | 2026-06-01 11:54 PDT San Diego
+
+**Fix:** FIX-700 -- QA-084 + QA-085 written to TY_QA_REGISTRY.md
+**Destination:** ty-ai-governance
+**Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+**Session:** 2026-06-01 | San Diego (America/Los_Angeles)
+
+**What was done:**
+Two new QA entries promoted from Red-Team findings to canonical QA Registry. QA-084: Five accessibility gap closure paths for cryptographic governance -- human-readable summary layer, trusted intermediary program, one-click verification tool, legal standing bridge, public governance dashboard -- all Phase 15/16 scope except legal standing bridge (post-Walker). QA-085: Ecosystem growth architecture for all four AI components (TY AI, Jaya, Luke, Jayme) plus three ecosystem-level growth mechanisms -- Annual Governance Review (ADR-030), External Input Protocol (ADR-031), Capability Horizon Registry (ADR-032) -- all flagged for Phase 15 opening. These are the first two entries promoted from the Red-Team Report to the canonical governance record. QA Registry now 3504 lines.
+
+**Verification:**
+- TY_QA_REGISTRY.md lines: 3504
+- QA-084: written -- 36 lines
+- QA-085: written -- 36 lines
+- Commit: 276f780 -- 62 insertions -- pushed to origin/main
+
+**Promotion log updated in TY_REDTEAM_REPORT_v0.1.md: CAT-3-006 and CAT-3-012 promoted to QA Registry.**
