@@ -8893,3 +8893,5 @@ at every session. Same-question-different-wording problem solved.
 | FIX-695 | 2026-05-31 13:53 PDT San Diego -- 2026-05-31 14:05 PDT San Diego | TYOVA | FLAG-134 CLOSED -- BOM removed from 113 TYOVA files -- .gitattributes added enforcing UTF-8 no BOM LF line endings -- ADR-026 compliance -- Option C selected (ADQ-057) -- TypeScript check PASS -- zero BOM files remaining -- Commit 14f50a3. CLOSED |
 
 | FIX-696 | 2026-05-31 18:14 PDT San Diego | ty-ai-governance | OAQ-002 Phase 14 P3 -- TY_REDTEAM_REPORT_v0.1.md created -- Red-Team structure established -- CAT-1 CAT-2 CAT-3 defined -- ADQ-058 Option C locked -- separate file + promotion path to QA Registry -- 125 lines -- 4343 bytes -- Commit 75ba857. |
+
+| FIX-697 | 2026-05-31 19:37 PDT San Diego | ty-ai-governance | OAQ-002 CAT-1 COMPLETE -- 15 challenges -- 5 HOLD 10 GAP 0 BREACH -- Phase 15 scope note recorded -- GAP severity register -- critical CAT-1-012+CAT-1-013 enterprise weaponization linked -- TY_REDTEAM_REPORT_v0.1.md updated -- 352 lines -- 24589 bytes -- Commit edd8bd2. |
