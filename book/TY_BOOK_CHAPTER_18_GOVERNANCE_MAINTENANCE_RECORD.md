@@ -13849,3 +13849,27 @@ F-19, coined 2026-04-01). First applied in FIX-706.
 **Footer updated:** Updated date 2026-06-01 to 2026-06-02. Term count line
 updated 381 to 385. Header term count line updated 381 to 385 with provenance
 trail for all additions.
+
+### Entry-730 | FIX-712 | 2026-06-02 13:31 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** 8631ea2
+**File:** governance/TY_ARCHITECTURAL_DECISIONS_RECORD.md
+**Action:** ADR-032 added -- Jaya Runtime SQLite backup architecture
+**Size:** 889 lines (ADR file)
+
+**Decision recorded:** Three-tier SQLite backup architecture. Option A
+(local daily backup, Task Scheduler, SHA-256 verification) -- ACTIVE,
+FLAG-139 pre-ship blocker. Option B (AES-256 encrypted offsite backup,
+guardian-controlled, weekly minimum) -- REQUIRED before TY-0001.C ships,
+FLAG-139. Option C (federation redundancy via cross-node attestation
+records) -- DEFERRED Phase 15+, FLAG-138.
+
+**Constraints documented:** Backup restores historical enforcement record
+only. Guardian authority, Ed25519 key material, and system authority grants
+must never be restored from backup -- re-established through HVP on recovery
+(QA-022 M4/M5 FORBIDDEN). Gap Entry with Ed25519 guardian attestation
+required on recovery.
+
+**References:** FIX-709, FLAG-139, FLAG-138, ADR-003, ADR-002, QA-022,
+TY_OFFLINE_FAIL_CLOSED_RULE.md FIX-708.
