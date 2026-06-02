@@ -13783,3 +13783,28 @@ Chapter 26 TY AI OS Vocabulary updated with 12 new Phase 14 P3 Red-Team terms in
 **Future-scale addressed:** External operator backup discipline requirement, guardian succession backup access transfer, federation node independent backup (no central backup, authority non-propagation applies), AI-assisted backup verification constitutional constraint.
 
 **References:** ADR-003, C10-002, QA-022, QA-023, IBB-1, TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md, FLAG-139, FLAG-138, TY_OFFLINE_FAIL_CLOSED_RULE.md FIX-708, Phase 10 FIX-508.
+
+### Entry-728 | FIX-710 | 2026-06-02 13:06 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** ddd7a72
+**File:** governance/TY_BRANCH_PROTECTION_RULE.md
+**Action:** New governance rule document created
+**Size:** 201 lines | 10,815 bytes
+
+**Gap closed:** OAQ-002 CAT-2-013 -- branch protection existed as a GitHub setting (FIX-698, 2026-05-31) but was never documented as a canonical governance requirement. The rule that governance repositories must be protected against force push and unauthorized history rewriting was implicit in the No Silent Change doctrine and append-only ledger principle but never explicitly stated as a binding rule.
+
+**Three-layer framing applied:** Constitutional (governance repos must be protected against unauthorized rewriting -- eternal, holds at any scale), architectural (branch protection mechanisms reflect current platform constraints with defined evolution path), operational (current enforcement status per repo).
+
+**Current state documented honestly:** ty-ai-governance ACTIVE (force push disabled, FIX-698 2026-05-31). TYOVA and Jaya-Runtime: rule exists, NOT enforced (private repo, free GitHub plan). Risk levels assessed. Required actions defined for each repo.
+
+**Three attack vectors addressed:** Unauthorized history rewriting (force push disabled), silent commit deletion (branch protection at platform layer + append-only at governance layer), branch replacement (branch deletion disabled).
+
+**Future-scale addressed:** Paid plan enforcement requirement, required signed commits Phase 15+ (Ed25519/GPG chain of custody), required reviews for multi-guardian federation deployments, external operator branch protection standard, node governance repo requirement (node = Jaya Runtime instance, distinct from TYOVA EcosystemFlowPage WARDs).
+
+**ALL SEVEN OAQ-002 DOCUMENTATION GAPS NOW CLOSED:**
+CAT-1-003 FIX-704, CAT-1-006 FIX-705, CAT-1-011 FIX-706,
+CAT-2-005 FIX-707, CAT-2-010 FIX-708, CAT-3-014 FIX-709,
+CAT-2-013 FIX-710.
+
+**References:** C9-003, C10-002, GIQ-013, Zero-Fabrication Rule, FIX-698, Phase 10 FIX-508, TY_LEDGER_LAYER_DISTINCTION.md FIX-706.
