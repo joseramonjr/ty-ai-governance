@@ -13695,3 +13695,21 @@ Chapter 26 TY AI OS Vocabulary updated with 12 new Phase 14 P3 Red-Team terms in
 **Future-proof design:** Federation egress (FLAG-136, ADR-029, Phase 15+) is anticipated and governed. Each future category has a defined addition path. No wildcard domains permitted. Authority non-propagation applies to all federation peer connections.
 
 **References:** GIQ-047, C1-008, ADQ-051, FIX-569, FIX-572, ADR-029, FLAG-136, FIX-508, JAYA-CLO-163, FIX-36.00.
+
+### Entry-724 | FIX-706 | 2026-06-02 10:19 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** 6aed4ac
+**File:** governance/TY_LEDGER_LAYER_DISTINCTION.md
+**Action:** New governance rule document created
+**Size:** 190 lines | 10,049 bytes
+
+**Gap closed:** OAQ-002 CAT-1-011 -- no explicit distinction existed between the SQLite enforcement ledger (Jaya Runtime, real-time, runtime authority) and the MFI documentation layer (human governance record, session-close cadence, documentation authority).
+
+**Three-layer framing applied:** Constitutional layer (two-layer architecture permanent at any scale), architectural layer (how layers connect, federation implications), operational layer (current tooling, current paths). First document in the gap series to apply the three-layer framing doctrine established 2026-06-02.
+
+**Future-scale addressed:** Federation node ledgers (each node maintains own SQLite, no merge, authority non-propagation), guardian succession MFI discipline transfer, external operator documentation responsibilities (Path 2/3/4), AI-assisted documentation constitutional constraint.
+
+**Also committed this session:** FLAG-137 opened -- retroactive future-proofing pass for FIX-704 and FIX-705 deferred until after FIX-709.
+
+**References:** ADR-003, C10-002, C10-003, Ch26 Ledger Discipline, Ch26 FIX Discipline, GIQ-013, R14, TY_GUARDIAN_CODEX_v0.1.md, Phase 10 FIX-508.
