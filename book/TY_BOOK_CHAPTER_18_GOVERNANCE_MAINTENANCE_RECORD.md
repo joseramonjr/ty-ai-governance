@@ -13731,3 +13731,29 @@ Chapter 26 TY AI OS Vocabulary updated with 12 new Phase 14 P3 Red-Team terms in
 **Node vs WARD clarification added:** Node defined as Jaya Runtime instance, explicitly distinguished from TYOVA EcosystemFlowPage WARDs (24 visual display panels, visibility only, no enforcement authority, no ledgers).
 
 **References:** GIQ-023, C6-008, C6-007, Ch26 Interpretive Conservatism, QA-026, GIQ-046, C4-001, C4-002, GIQ-025, GIQ-026, GIQ-013, Zero-Fabrication Rule, Phase 12 F-19, Phase 10 FIX-508.
+
+### Entry-726 | FIX-708 | 2026-06-02 10:19 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** 5c37079
+**Files:** governance/TY_OFFLINE_FAIL_CLOSED_RULE.md + governance/FLAGS.md
+**Action:** New governance rule document created + FLAG-138 opened
+**Size:** 223 lines | 11,995 bytes (rule file) + FLAGS.md updated to 167 lines
+
+**Gap closed:** OAQ-002 CAT-2-010 -- no explicit rule stating Jaya offline means fail-closed not fail-open. The local-first architecture implied fail-closed behavior but no single document stated it explicitly as a binding constitutional rule with exploitation resistance and future-scale guidance.
+
+**Three-layer framing applied:** Constitutional (fail-closed rule is eternal -- network connectivity is visibility, not enforcement), architectural (Option A/B/C three-tier degraded state response model), operational (current threshold values, current component names).
+
+**Option A (active):** Local enforcement continues at full strength during offline. Visibility layer (Supabase writes, email alerts, TYOVA WARDs) suspended. Zero enforcement items suspended. SQLite ledger complete and continuous regardless of offline duration.
+
+**Option B (Phase 15, not yet implemented):** Automatic tier drop after isolation threshold exceeded -- analogous to T-09 JAYA_SILENT. New threshold T-25 (or next available) to be added to TY_CANONICAL_THRESHOLDS_REGISTRY when Phase 15 federation ADR is written.
+
+**Option C (FLAG-138, Phase 15+):** Backup connectivity infrastructure deferred. Requires dedicated ADR + security analysis + egress allowlist amendment per FIX-705.
+
+**Exploitation resistance section added:** Three attack vectors addressed -- induced connectivity failure (no governance advantage to attacker), extended isolation (Option B makes extended isolation less advantageous), false reconnection (reconnection restores visibility only, not tier).
+
+**FLAG-138 opened:** Federation Network Partition Governance -- Options A/B/C documented, recommendation stated, trigger condition defined for Phase 15.
+
+**Node vs WARD clarification:** Node defined as Jaya Runtime instance, explicitly distinguished from TYOVA EcosystemFlowPage WARDs in Option B section.
+
+**References:** ADR-002, ADR-003, GIQ-028, TY_ENFORCEMENT_AUTHORITY_BOUNDARY.md FIX-704, T-09, FLAG-138, C10-002, Phase 12 F-19, TY_EGRESS_ALLOWLIST.md FIX-705.
