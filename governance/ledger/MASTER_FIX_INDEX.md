@@ -8907,3 +8907,5 @@ at every session. Same-question-different-wording problem solved.
 | FIX-702 | 2026-06-01 14:01 PDT San Diego | ty-ai-governance | Ch26 Section 26 added -- 12 Phase 14 P3 Red-Team terms -- Internal Red-Team + HOLD + GAP + BREACH + Logical Consistency Challenge + Boundary Exploitation + Conscience Thread Stress Test + Promotion Path + Enterprise Misuse Cluster + Annual Governance Review + External Input Protocol + Capability Horizon Registry -- 369->381 terms -- 25->26 sections -- 3989 lines -- Commit 534a178. |
 
 | FIX-703 | 2026-06-02 10:19 PDT San Diego | TYOVA | PACKAGING_MANIFEST.md CRLF->LF line ending normalization -- resolves persistent Pre-Flight false positive caused by .gitattributes LF enforcement conflict with CRLF-committed file -- git rm --cached + re-add + commit -- 318 lines 12640 bytes -- Commit 7b86a42. |
+
+| FIX-704 | 2026-06-02 10:19 PDT San Diego | ty-ai-governance | TY_ENFORCEMENT_AUTHORITY_BOUNDARY.md created -- CAT-1-003 closed -- Supabase visibility only rule -- enforcement authority never leaves local SQLite -- prohibitions + permissions + authority chain documented -- 75 lines 3489 bytes -- Commit f02da4c. |

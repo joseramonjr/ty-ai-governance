@@ -13665,3 +13665,17 @@ Chapter 26 TY AI OS Vocabulary updated with 12 new Phase 14 P3 Red-Team terms in
 **Fix:** git rm --cached to remove the file from the index, git add to re-stage it under .gitattributes LF enforcement, committed and pushed. Pre-Flight confirmed OVERALL: READY with no exceptions.
 
 **Result:** Persistent Pre-Flight false positive permanently resolved. .gitattributes LF enforcement now fully consistent across all tracked files.
+
+### Entry-722 | FIX-704 | 2026-06-02 10:19 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** f02da4c
+**File:** governance/TY_ENFORCEMENT_AUTHORITY_BOUNDARY.md
+**Action:** New governance rule document created
+**Size:** 75 lines | 3,489 bytes
+
+**Gap closed:** OAQ-002 CAT-1-003 -- Supabase holds visibility state only -- enforcement authority never leaves local SQLite. No explicit written rule existed prior to this fix.
+
+**Rule established:** Supabase is a downstream recipient of governance records only. All enforcement decisions are made in Jaya Runtime and recorded in local SQLite before any Supabase write occurs. Supabase unavailability does not degrade enforcement. No component may read from Supabase to make a governance decision. Luke AI must never read Supabase directly -- the path is Jaya writes Supabase-sourced events into SQLite and Luke reads through SQLite (ADQ-041).
+
+**References:** ADR-002 (Supabase as message queue only), ADR-003 (SQLite append-only ledger as canonical record), ADQ-041 (Luke direct Supabase access prohibited).
