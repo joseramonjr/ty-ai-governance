@@ -13651,3 +13651,17 @@ Chapter 26 TY AI OS Vocabulary updated with 12 new Phase 14 P3 Red-Team terms in
 - Terms: 369->381 (+12)
 - Sections: 25->26 (+1)
 - Commit: 534a178 -- 161 insertions -- pushed to origin/main
+
+### Entry-721 | FIX-703 | 2026-06-02 10:19 PDT San Diego
+
+**Repo:** TYOVA
+**Commit:** 7b86a42
+**File:** src/ty-ai-admin-core/bundle/PACKAGING_MANIFEST.md
+**Action:** CRLF->LF line ending normalization
+**Size:** 318 lines | 12,640 bytes
+
+**Problem:** PACKAGING_MANIFEST.md was committed with CRLF line endings. After FIX-695 added .gitattributes enforcing LF for all .md files, Git continuously detected the file as modified on every checkout, causing Pre-Flight to report OVERALL: ACTION REQUIRED on every session open. git checkout could not resolve it because .gitattributes reconverted the endings immediately.
+
+**Fix:** git rm --cached to remove the file from the index, git add to re-stage it under .gitattributes LF enforcement, committed and pushed. Pre-Flight confirmed OVERALL: READY with no exceptions.
+
+**Result:** Persistent Pre-Flight false positive permanently resolved. .gitattributes LF enforcement now fully consistent across all tracked files.

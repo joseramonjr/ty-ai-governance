@@ -8905,3 +8905,5 @@ at every session. Same-question-different-wording problem solved.
 | FIX-701 | 2026-06-01 14:01 PDT San Diego | ty-ai-governance | Chapter 74 written -- Phase 14 The Survivability Phase -- succession chain + conscience thread + internal red-team -- 308 lines -- 17823 bytes -- BOM False -- Commit 6ca2c28. |
 
 | FIX-702 | 2026-06-01 14:01 PDT San Diego | ty-ai-governance | Ch26 Section 26 added -- 12 Phase 14 P3 Red-Team terms -- Internal Red-Team + HOLD + GAP + BREACH + Logical Consistency Challenge + Boundary Exploitation + Conscience Thread Stress Test + Promotion Path + Enterprise Misuse Cluster + Annual Governance Review + External Input Protocol + Capability Horizon Registry -- 369->381 terms -- 25->26 sections -- 3989 lines -- Commit 534a178. |
+
+| FIX-703 | 2026-06-02 10:19 PDT San Diego | TYOVA | PACKAGING_MANIFEST.md CRLF->LF line ending normalization -- resolves persistent Pre-Flight false positive caused by .gitattributes LF enforcement conflict with CRLF-committed file -- git rm --cached + re-add + commit -- 318 lines 12640 bytes -- Commit 7b86a42. |
