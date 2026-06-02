@@ -203,3 +203,103 @@ ADR-029 -- TY AI Ecosystem Knowledge Layer (Phase 15+)
 TY_EGRESS_ALLOWLIST.md FIX-705 -- any backup paths need egress
 authorization
 TY_CANONICAL_THRESHOLDS_REGISTRY.md -- Option B threshold T-25
+
+---
+
+## FLAG-139 -- Jaya Runtime SQLite Backup Implementation
+
+**Status:** OPEN -- PRE-SHIP BLOCKER
+**Opened:** 2026-06-02 | San Diego (America/Los_Angeles)
+**FIX:** FIX-709 session (raised during CAT-3-014 gap work)
+**Raised by:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+**Blocks:** TY-0001.C release
+
+### Problem
+As of 2026-06-02, no formal backup of the Jaya Runtime SQLite
+enforcement ledger exists. The SQLite database file is the single
+copy of the enforcement authority. A hardware failure, theft, fire,
+or ransomware event would permanently destroy the governance
+enforcement history with no recovery path.
+
+The documentation gap was closed by FIX-709
+(TY_SQLITE_BACKUP_DISCIPLINE.md). The implementation gap -- the
+actual backup system -- remains open and blocks TY-0001.C.
+
+### What Must Be Built
+
+**Tier 1 -- Local Backup (implement first)**
+
+A PowerShell script that:
+1. Copies the Jaya Runtime SQLite database file to a second
+   location on the guardian's machine (different drive or partition)
+2. Names the copy with a datestamp:
+   jaya_ledger_backup_YYYY-MM-DD.db
+3. Computes SHA-256 of the copy and writes it to a companion
+   file: jaya_ledger_backup_YYYY-MM-DD.db.sha256
+4. Deletes backups older than 30 days
+5. Logs the backup operation with San Diego timestamp
+
+Windows Task Scheduler configuration:
+- Run daily at guardian-defined time
+- Run whether user is logged on or not
+- Alert guardian via email (Resend) if backup fails
+
+**Tier 2 -- Encrypted Offsite Backup (implement before ship)**
+
+A process that:
+1. Encrypts the SQLite database file with AES-256
+2. Stores the encrypted archive in a guardian-controlled
+   offsite location (personal cloud or external drive at
+   separate physical location)
+3. The encryption key is held by the guardian only -- never
+   stored in any TY AI OS governance file
+4. Runs weekly minimum
+
+**Verification Gate (required before closing FLAG-139)**
+
+Before FLAG-139 can be closed:
+1. Tier 1 backup must have run successfully at least once
+   and the SHA-256 verified
+2. A test restore must succeed -- the backup file must be
+   restorable to a test location and the SQLite database
+   must open and be readable
+3. Pre-Flight.ps1 must be updated to check that the most
+   recent Tier 1 backup is not older than 2 days -- if
+   backup is stale, Pre-Flight reports ACTION REQUIRED
+4. Tier 2 encrypted offsite backup must be confirmed at
+   least one successful archive
+
+### Pre-Flight.ps1 Addition Required
+
+Add a new gate to Pre-Flight.ps1:
+
+[LEDGER BACKUP]
+  Check: most recent jaya_ledger_backup_*.db file
+  Pass condition: backup file exists AND is less than 2 days old
+  Fail condition: no backup file found OR backup older than 2 days
+  Action: PASS = continue / FAIL = report ACTION REQUIRED with
+  message "Jaya Runtime SQLite backup is stale or missing --
+  run Backup-Ledger.ps1 before proceeding"
+
+### Why This Blocks TY-0001.C
+
+A production release of TY AI OS governance infrastructure that
+does not have a working backup of its enforcement ledger is not
+production-ready. External operators who adopt TY AI OS governance
+must be able to trust that the reference implementation the builder
+ships has basic survivability discipline. A system that can be
+destroyed by a single hardware failure is not production governance
+infrastructure.
+
+### Trigger Condition
+Implement Tier 1 first. Verify with test restore. Implement
+Tier 2. Verify with test restore. Update Pre-Flight.ps1.
+Close FLAG-139 with a dedicated FIX that commits all
+implementation artifacts and verification evidence.
+
+### Related
+FIX-709 -- TY_SQLITE_BACKUP_DISCIPLINE.md (documentation)
+FLAG-131 -- Walker Weitzel patent (also blocks TY-0001.C)
+FLAG-138 -- Federation Network Partition Governance (Tier 3)
+TY_OFFLINE_FAIL_CLOSED_RULE.md FIX-708 -- fail-closed during
+backup unavailability
