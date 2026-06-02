@@ -783,3 +783,107 @@ FLAG-RED-06 -- CLOSED
 
 **Builder confirmed:** Jose Ramon Alvarado McHerron
 **Reference:** FIX-680 Entry-698 Â· EcosystemFlowPage.tsx Â· TYOVA 12ef276 Â· 2026-05-31 20:23 PDT San Diego
+---
+
+## ADR-032 -- Jaya Runtime SQLite Backup Architecture
+
+**Date:** 2026-06-02 | San Diego (America/Los_Angeles)
+**FIX:** FIX-709 · Entry-727
+**Phase:** Phase 14 P3 -- OAQ-002 CAT-3-014 gap closure
+**Status:** ACCEPTED -- Option A active, Option B Phase 15, Option C deferred
+**Raised by:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+
+### Problem
+The Jaya Runtime SQLite enforcement ledger is the single authoritative
+record of all governance decisions. As of 2026-06-02 no formal backup
+of this ledger exists. A hardware failure, theft, fire, or ransomware
+event would permanently destroy the governance enforcement history with
+no recovery path. This was confirmed as OAQ-002 CAT-3-014 GAP during
+the Phase 14 P3 Internal Red-Team. The historical precursor IBB-1
+(Internal Backup Button, SS321 Part 37, Fix 37.4) was designed for the
+SS321 web app layer and does not apply to the Jaya Runtime SQLite ledger.
+
+### Options Considered
+
+**Option A -- Local backup only (fail-closed during backup unavailability)**
+Daily automated copy of the SQLite database file to a second location on
+the guardian's machine. PowerShell script scheduled via Windows Task
+Scheduler. SHA-256 hash written alongside each backup. 30-day retention.
+Protects against accidental deletion and some ransomware scenarios.
+Does not protect against total hardware failure.
+
+**Option B -- Encrypted offsite backup (Tier 2)**
+AES-256 encrypted archive of the SQLite database file stored in a
+guardian-controlled offsite location -- personal cloud storage or external
+drive at a separate physical location. Weekly minimum frequency. Encryption
+key held by guardian only, never stored in any TY AI OS governance file.
+Protects against total hardware failure, theft, fire, flood.
+
+**Option C -- Federation redundancy (Tier 3)**
+In a federated deployment, peer nodes hold attestation records that can
+partially reconstruct ledger state. Cross-node attestation payloads contain
+governance state hashes providing an independent verification record.
+Important limitation: not a substitute for Tier 1 and Tier 2 -- cannot
+restore full SQLite schema including agent registry, policy state, CRI
+history. Requires federation architecture to be defined first.
+
+### Decision
+
+**Option A: ACTIVE -- implement immediately (FLAG-139 pre-ship blocker)**
+**Option B: REQUIRED -- before TY-0001.C ships (FLAG-139)**
+**Option C: DEFERRED -- Phase 15+ scope (FLAG-138)**
+
+All three tiers are the defined architecture. Option A is the minimum
+acceptable standard. Option B is required before any external deployment.
+Option C is a Phase 15 engineering item that does not substitute for
+Options A and B.
+
+### Rationale
+
+Option A alone is insufficient for production deployment because it does
+not survive total hardware failure. Option B is required before TY-0001.C
+ships because a production release of governance infrastructure that cannot
+survive its guardian's hardware failing is not production-ready. Option C
+is deferred because federation architecture (ADR-029, Phase 15) must be
+defined before federation redundancy can be properly scoped -- building
+backup connectivity before knowing the federation topology would introduce
+premature architectural decisions.
+
+### Constraints
+
+- Backup restores historical enforcement record only -- not guardian
+  authority, not Ed25519 key material, not system authority grants (QA-022)
+- Guardian authority is re-established through HVP on recovery
+- A recovered ledger requires a formal Gap Entry with Ed25519 guardian
+  attestation documenting the loss and recovery
+- Backup encryption key must never be stored in any TY AI OS governance
+  file or repository
+
+### What Backup Must Include
+
+1. Complete SQLite database file -- all tables, all rows
+2. SHA-256 hash of the backup file computed at backup time
+3. San Diego timestamp
+4. Jaya Runtime commit version identifier
+
+### Implementation Gate
+
+FLAG-139 (PRE-SHIP BLOCKER) defines exact implementation requirements:
+PowerShell script, Task Scheduler config, test restore verification,
+Pre-Flight.ps1 backup gate addition. FLAG-139 must be closed before
+TY-0001.C ships.
+
+### Related
+
+FIX-709 -- TY_SQLITE_BACKUP_DISCIPLINE.md (governance rule document)
+FLAG-139 -- Pre-ship blocker -- Tier 1 + Tier 2 implementation
+FLAG-138 -- Federation Network Partition Governance -- Tier 3 scope
+ADR-003 -- SQLite append-only ledger as canonical governance record
+ADR-002 -- Local-first architecture -- enforcement authority local
+QA-022 -- Memory backup design -- M4 authority backup FORBIDDEN
+TY_OFFLINE_FAIL_CLOSED_RULE.md (FIX-708) -- fail-closed during backup
+  unavailability
+
+**Builder confirmed:** Jose Ramon Alvarado McHerron AKA Jose Ramon
+  Bautista Jr.
+**Reference:** FIX-709 · Entry-727 · 2026-06-02 13:06 PDT San Diego
