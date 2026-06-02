@@ -1,11 +1,11 @@
-# Chapter 26 -- The TY AI OS Vocabulary
+﻿# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
 **CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-06-01 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 381 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01: Internal Red-Team, HOLD Verdict, GAP Verdict, BREACH Verdict, Logical Consistency Challenge, Boundary Exploitation, Conscience Thread Stress Test, Promotion Path, Enterprise Misuse Cluster, Annual Governance Review, External Input Protocol, Capability Horizon Registry)
+**Current Term Count:** 385 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01 + 4 Phase 14 P3 gap closure terms added FIX-711 2026-06-02: Fail-Closed, Backup Discipline, Gap Entry, Constitutional / Architectural / Operational Framing)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -3771,7 +3771,7 @@ a living document. Current attestation: 4F871EE67BA31ECFBD95A44A5D35E3B2414A1220
 | 2026-05-17 / FIX-538 | Local file sync | Local markdown file updated from 244 terms to 334 terms. Sections 15-18 added. Inter-section additions appended. Header updated. Source: TYOVA bookChapterContent.ts verified by builder 2026-05-17. | Sections 15-18 created locally |
 | 2026-05-19 / FIX-535 | TY-ANCHOR vocabulary | TY-ANCHOR (Section 19 created) | Section 19 created with one term. Four terms reserved for Phase 12: WARD, TY-SIGNAL, TY-MESH, TY-FABRIC |
 | 2026-05-19 / FIX-544 | Phase 12 F-19 vocabulary | Governed Evolution, Evolution Tier Classification, Deliberation Period, Evolution Proposal, Evolution Anti-Capture Rules, Single-Guardian Period (Section 20 created) | Section 20 created with six terms. 335->341 terms. 19->20 sections. |
-| 2026-05-22 / FIX-591 | Post-Phase 12 vocabulary | supabase_writer.rs, jaya_audit_events, get_governance_events_public, Bidirectional Governance Bridge, Live Governance Feed, email_alert.rs (Section 21); masterHubRegistry.ts, ECOSYSTEM_STATS, HUB_VERSION, Dynamic Wiring, Single Source of Truth Principle (Section 22); Governance Dashboard, CSS Governance Design System, FLAG-31, FLAG-32, TY-0001.C (Section 23) | 16 new terms. Sections 21-23 created. 341—>357 terms. |
+| 2026-05-22 / FIX-591 | Post-Phase 12 vocabulary | supabase_writer.rs, jaya_audit_events, get_governance_events_public, Bidirectional Governance Bridge, Live Governance Feed, email_alert.rs (Section 21); masterHubRegistry.ts, ECOSYSTEM_STATS, HUB_VERSION, Dynamic Wiring, Single Source of Truth Principle (Section 22); Governance Dashboard, CSS Governance Design System, FLAG-31, FLAG-32, TY-0001.C (Section 23) | 16 new terms. Sections 21-23 created. 341â€”>357 terms. |
 | 2026-05-26 / FIX-656 | Phase 13 hardening vocabulary | Self-Healing Loop, Cryptographic Event Chain, Degraded State, verify-live (Section 23 additions) | 4 new terms. Phase 13 hardening vocabulary. 359 to 363 terms. |
 | 2026-05-28 / FIX-663 | Phase 14 P2 Conscience Thread | Conscience Thread, Moral History, Conscience Attestation (Section 24 created) | 3 new terms. Section 24 created. 363->366 terms. |
 | 2026-06-01 / FIX-702 | Phase 14 P3 Red-Team terms | Internal Red-Team, HOLD Verdict, GAP Verdict, BREACH Verdict, Logical Consistency Challenge, Boundary Exploitation, Conscience Thread Stress Test, Promotion Path, Enterprise Misuse Cluster, Annual Governance Review, External Input Protocol, Capability Horizon Registry (Section 26 created) | 12 new terms. Section 26 created. 369->381 terms. |
@@ -3980,10 +3980,119 @@ guardians advance notice of what is coming. Prevents capability gaps from
 being discovered under pressure rather than anticipated in advance. To be
 formally established as ADR-032 when Phase 15 opens. First documented in
 QA-085, FIX-700, 2026-06-01.
+
+**Fail-Closed**
+*First coined: 2026-06-02 | San Diego (America/Los_Angeles)*
+The governance behavior of Jaya Runtime when network connectivity is lost,
+the Supabase bridge becomes unreachable, or the system operates in any
+degraded state. Fail-closed means Jaya Runtime enforcement becomes more
+restrictive, never less. Local enforcement continues at full strength
+regardless of connectivity status. No agent receives expanded permissions
+during degraded operation. No enforcement path requires network connectivity
+to function. Degraded state is a signal to become more conservative, not
+less. The opposite behavior -- fail-open -- is permanently prohibited under
+TY AI OS constitutional doctrine. A system that relaxes governance constraints
+when it cannot verify its state is a system that can be exploited by
+deliberately inducing connectivity failures. Anyone who can cut the network
+connection gains no governance advantage because fail-closed means cutting
+the network makes governance more conservative, not less. At federation
+scale, a network partition that isolates a node from its peers must not
+cause that node to become more permissive -- the fail-closed rule applies
+identically to single-node and federated deployments. What is suspended
+during offline operation is the visibility layer only (Supabase writes,
+email alerts, TYOVA EcosystemFlowPage WARDs which are display components
+only) -- zero enforcement items are suspended. The SQLite enforcement ledger
+remains complete and continuous regardless of how long the node is offline.
+Established as constitutional doctrine in TY_OFFLINE_FAIL_CLOSED_RULE.md
+(FIX-708, 2026-06-02).
+
+**Backup Discipline**
+*First coined: 2026-06-02 | San Diego (America/Los_Angeles)*
+The canonical governance requirement that the Jaya Runtime SQLite enforcement
+ledger must be backed up on a defined schedule, with cryptographic integrity
+verification, and with a tested and documented recovery procedure. Backup
+discipline is not an operational convenience -- it is a governance
+requirement. The SQLite ledger is the enforcement authority of TY AI OS.
+Its loss is a governance crisis, not merely a data loss event. A guardian
+who has not established backup discipline has created a single point of
+failure in the governance chain. The backup discipline requirement holds
+at any scale, in any phase, and under any deployment configuration -- it
+does not relax as the system grows. Three-tier backup architecture defines
+the implementation path: Tier 1 is a local daily automated backup to a
+second location on the guardian's machine (minimum acceptable standard,
+required immediately), Tier 2 is an AES-256 encrypted offsite backup to
+a guardian-controlled location separate from the primary machine (required
+before TY-0001.C ships, FLAG-139), and Tier 3 is federation redundancy
+through cross-node attestation records (Phase 15+ scope). A compliant
+backup must include the complete SQLite database file, a SHA-256 hash of
+the backup file computed at backup time, a San Diego timestamp, and a
+version identifier linking the backup to the Jaya Runtime commit that
+produced the data. What backup must never restore: guardian authority,
+Ed25519 key material, or system authority grants -- these are re-established
+through the Human Verification Protocol on recovery, not restored from a
+data file (QA-022). Backup restores the historical enforcement record --
+what happened, when, and what decisions were made -- it does not restore
+who is in charge. Historical precursor: IBB-1 (Internal Backup Button,
+SS321 Part 37, Fix 37.4, ChatGPT era) was designed for the SS321 web app
+layer and predates Jaya Runtime -- it does not apply to the SQLite
+enforcement ledger. Established in TY_SQLITE_BACKUP_DISCIPLINE.md
+(FIX-709, 2026-06-02).
+
+**Gap Entry**
+*First coined: 2026-06-02 | San Diego (America/Los_Angeles)*
+A formal ledger record required when a Jaya Runtime SQLite backup is
+restored after a ledger loss event caused by hardware failure, corruption,
+or any other cause. The gap entry permanently records the date and time
+of the ledger loss, the cause of the loss, the backup date from which
+recovery was made, the SHA-256 hash of the backup file used, the timestamp
+of the last event in the backup (acknowledged gap start), the timestamp
+of the recovery (acknowledged gap end), and the guardian's Ed25519 signed
+attestation confirming the recovery. The gap is permanent and auditable --
+it is not hidden, not minimized, and not omitted from the governance record.
+A recovered ledger with a properly formatted gap entry is the canonical
+record going forward. Starting a new empty ledger without a gap entry after
+a ledger loss is a governance violation because it conceals the discontinuity
+in the enforcement history from future auditors. The acknowledged gap --
+the period between the backup date and the loss date during which enforcement
+events may have been lost -- is documented honestly as a permanent part of
+the governance record. External auditors reviewing the ledger will see the
+gap entry and understand exactly what happened, when, and how the system
+was recovered. Established in TY_SQLITE_BACKUP_DISCIPLINE.md
+(FIX-709, 2026-06-02).
+
+**Constitutional / Architectural / Operational Framing**
+*First coined: 2026-06-02 | San Diego (America/Los_Angeles)*
+The three-layer document structure applied to all TY AI OS governance rule
+documents from FIX-706 onward as part of the future-proofing doctrine
+established during Phase 14 P3 gap closure. Constitutional layer: rules
+that never change regardless of scale, phase, AI capability advancement,
+or federation size -- eternal constraints that hold whether TY governs one
+agent or one million across a global federation, cannot be amended by F-19
+or any other process, changing them would require rebuilding the system.
+Architectural layer: rules that govern current design with a defined
+evolution path -- will change as TY scales, amendment requires a dedicated
+FIX with explicit rationale, MFI and Ch18 entries, and builder or guardian
+authorization, no silent change permitted. Operational layer: current-state
+specifics expected to be updated regularly as the ecosystem grows -- file
+paths, tool names, current phase references, specific endpoint addresses.
+This framing is distinct from the Three-Layer Governance Model (coined
+2026-04-01) which uses Layer 1 (Eternal Principles), Layer 2 (Governed
+Evolution), and Layer 3 (User Adaptation) to describe how doctrine evolves
+under F-19. The constitutional/architectural/operational framing is a
+document structure convention that tells readers which layer each rule
+belongs to so future guardians can immediately identify what is immutable,
+what is expected to evolve, and what is current operational state -- without
+needing to consult the builder or reconstruct context from session history.
+A guardian reading any governance rule document in 2035 can use this framing
+to govern at whatever scale TY has reached without guessing which rules are
+eternal constraints and which have been superseded by the ecosystem's growth.
+Retroactive application to FIX-704 and FIX-705 is tracked under FLAG-137.
+First applied in TY_LEDGER_LAYER_DISTINCTION.md (FIX-706, 2026-06-02).
+
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-06-01 | San Diego (America/Los_Angeles)*
-*Current Term Count: 381 | Sections: 26*
+*Updated: 2026-06-02 | San Diego (America/Los_Angeles)*
+*Current Term Count: 385 | Sections: 26*
 *This document grows with the project. It is never finished.*
