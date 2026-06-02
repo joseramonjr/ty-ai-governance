@@ -124,3 +124,82 @@ FIX-704 -- TY_ENFORCEMENT_AUTHORITY_BOUNDARY.md
 FIX-705 -- TY_EGRESS_ALLOWLIST.md
 FIX-706 through FIX-709 -- remaining documentation gaps
 Three-layer framing doctrine established 2026-06-02
+
+---
+
+## FLAG-138 -- Federation Network Partition Governance
+
+**Status:** OPEN
+**Opened:** 2026-06-02 | San Diego (America/Los_Angeles)
+**FIX:** FIX-708 session (raised during CAT-2-010 gap work)
+**Raised by:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+
+### Problem
+When TY AI OS scales to federation (Phase 15+), network partitions
+that isolate a Jaya Runtime node from its peers are expected
+operational events, not edge cases. The current fail-closed rule
+(FIX-708) establishes that isolation never degrades governance --
+local enforcement continues at full strength. However, two
+additional architectural questions remain unresolved:
+
+1. Should an isolated node automatically drop to a more restrictive
+   autonomy tier after an isolation threshold is exceeded? (Option B)
+2. Should Jaya Runtime have a secondary network path when the
+   primary fails -- backup Supabase endpoint, peer-to-peer direct
+   connections, or local network fallbacks? (Option C)
+
+### Three Options
+
+**Option A -- Continue enforcing locally, suspend federation
+verification until reconnected (IMPLEMENTED -- FIX-708)**
+The node governs its local agents at full strength. Cross-node
+attestation is paused. When connectivity is restored, attestation
+resumes. This is the current constitutional baseline.
+
+**Option B -- Automatic tier drop after isolation threshold
+(Phase 15 design, not yet implemented)**
+If a node cannot perform cross-node attestation for longer than
+a defined threshold (analogous to T-09 JAYA_SILENT), it
+automatically drops to a more restrictive autonomy tier until
+peer connectivity is restored and attestation is re-verified.
+The threshold will be added to TY_CANONICAL_THRESHOLDS_REGISTRY
+as T-25 or next available when Phase 15 federation ADR is written.
+Guardian-configurable per deployment within canonical bounds.
+
+**Option C -- Backup connectivity infrastructure
+(Phase 15+ scope, deferred)**
+Secondary network path when primary fails. Options include:
+backup Supabase endpoint, peer-to-peer direct connections,
+or local network fallbacks for federation communication.
+Requires dedicated ADR, security analysis of backup path
+attack surfaces, definition of which visibility functions
+use which paths, and guardian authorization for any new
+egress destinations per TY_EGRESS_ALLOWLIST.md (FIX-705).
+
+### Recommended Resolution
+Option A: already implemented (FIX-708).
+Option B: implement as first Phase 15 federation threshold --
+add T-25 to TY_CANONICAL_THRESHOLDS_REGISTRY with guardian-
+configurable isolation window.
+Option C: evaluate after federation architecture is defined --
+may not be needed if Option B provides sufficient governance
+during isolation periods.
+
+### Why Deferred
+Phase 15 federation architecture (ADR-029 through ADR-035)
+must be defined before Options B and C can be properly scoped.
+Building backup connectivity before knowing the federation
+topology would introduce premature architectural decisions.
+
+### Trigger Condition
+Open Option B as first action when Phase 15 federation ADR
+is written. Evaluate Option C after federation topology is
+defined.
+
+### Related
+FIX-708 -- TY_OFFLINE_FAIL_CLOSED_RULE.md (Option A active)
+FLAG-136 -- Phase 15+ scope
+ADR-029 -- TY AI Ecosystem Knowledge Layer (Phase 15+)
+TY_EGRESS_ALLOWLIST.md FIX-705 -- any backup paths need egress
+authorization
+TY_CANONICAL_THRESHOLDS_REGISTRY.md -- Option B threshold T-25
