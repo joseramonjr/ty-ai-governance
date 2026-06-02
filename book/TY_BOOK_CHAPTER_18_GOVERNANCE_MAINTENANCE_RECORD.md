@@ -13808,3 +13808,44 @@ CAT-2-005 FIX-707, CAT-2-010 FIX-708, CAT-3-014 FIX-709,
 CAT-2-013 FIX-710.
 
 **References:** C9-003, C10-002, GIQ-013, Zero-Fabrication Rule, FIX-698, Phase 10 FIX-508, TY_LEDGER_LAYER_DISTINCTION.md FIX-706.
+
+### Entry-729 | FIX-711 | 2026-06-02 13:31 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** a3f7367
+**File:** book/TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md
+**Action:** Four new vocabulary terms added -- term count 381 to 385
+**Size:** 3,616 lines | 233,960 bytes
+
+**Terms added:**
+
+Fail-Closed (line 3984) -- The governance behavior of Jaya Runtime when
+connectivity is lost or system operates in degraded state. Enforcement becomes
+more restrictive never less. Visibility layer suspended, zero enforcement items
+suspended. SQLite ledger complete and continuous regardless of offline duration.
+Fail-open permanently prohibited. First applied in FIX-708.
+
+Backup Discipline (line 4009) -- Canonical governance requirement that the
+Jaya Runtime SQLite enforcement ledger must be backed up on defined schedule
+with cryptographic integrity verification and tested recovery procedure. Three-
+tier architecture: Tier 1 local daily, Tier 2 AES-256 encrypted offsite,
+Tier 3 federation redundancy Phase 15+. What backup must never restore: guardian
+authority, Ed25519 key material, system authority grants (QA-022). IBB-1
+historical precursor documented. First applied in FIX-709.
+
+Gap Entry (line 4041) -- Formal ledger record required when Jaya Runtime SQLite
+backup is restored after ledger loss. Records cause, backup date, SHA-256 hash,
+acknowledged gap timestamps, guardian Ed25519 attestation. Gap is permanent and
+auditable -- not hidden. Starting new empty ledger without gap entry is a
+governance violation. First applied in FIX-709.
+
+Constitutional / Architectural / Operational Framing (line 4063) -- Three-layer
+document structure applied to all governance rule documents from FIX-706 onward.
+Constitutional (eternal, cannot be amended by F-19), architectural (current
+design with defined evolution path), operational (current-state specifics
+expected to change). Distinct from Three-Layer Governance Model (Layer 1/2/3,
+F-19, coined 2026-04-01). First applied in FIX-706.
+
+**Footer updated:** Updated date 2026-06-01 to 2026-06-02. Term count line
+updated 381 to 385. Header term count line updated 381 to 385 with provenance
+trail for all additions.
