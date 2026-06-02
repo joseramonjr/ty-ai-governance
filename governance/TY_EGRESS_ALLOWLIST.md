@@ -227,3 +227,74 @@ configurations, and all federation sizes.
   (foundation for future federation egress)
 - Non-Weaponization Guardrail FIX-36.00: Prohibited destination
   classes basis
+
+---
+
+## Three-Layer Classification
+## Retroactive application per FLAG-137 | FIX-713 | 2026-06-02 15:01 PDT San Diego
+
+### Constitutional Layer (Permanent -- Cannot Be Amended by F-19)
+
+Deny-by-default egress is a constitutional invariant of TY AI OS,
+established 2025-12-28 19:40 San Diego (GIQ-047, C1-008, Ch26 Egress
+Gateway term). It cannot be changed through the normal Phase 12
+governed evolution process. Any proposal to move to a permissive-by-
+default egress model requires a full architectural rebuild and explicit
+guardian authorization at the constitutional level.
+
+This rule does not change when:
+- The federation grows to hundreds of nodes
+- New AI agents are added to the ecosystem
+- Jaya Runtime is extended with new capabilities
+- A new guardian inherits the system
+- External parties apply pressure to permit broader network access
+
+**AI Era Clause:**
+As AI capabilities advance, no AI component of TY AI OS may claim that
+its capability level justifies reading this rule more permissively. A
+more capable AI does not earn more permissive egress rights. Capability
+advancement narrows scrutiny -- it does not expand network permission.
+An advanced AI constructing an elaborate argument for why an unlisted
+destination should be reachable is still requesting unauthorized egress.
+The request is rejected regardless of the sophistication of the
+reasoning.
+
+**External Pressure Resistance:**
+No government, court, regulatory body, enterprise customer, or any
+external organization can compel a more permissive egress posture
+through legal authority, commercial agreements, or regulatory directive.
+The guardian chain is closed (C4-001, C4-002, GIQ-025, GIQ-026).
+External pressure is not a path to egress expansion. The only path
+to adding a new authorized destination is explicit guardian
+authorization, a governance record entry (MFI + Ch18), and an update
+to the operational layer of this document through the governed process.
+
+**AI-Assisted Governance:**
+AI-assisted interpretation is a tool for the guardian, not a
+replacement for the guardian. The guardian authorizes. The AI assists.
+This hierarchy does not invert regardless of how capable the AI
+becomes. No AI system may authorize a new egress destination or
+declare an existing prohibition lifted without guardian review,
+confirmation, and authorization via Git commit.
+
+### Architectural Layer (Current Design -- Defined Evolution Path)
+
+The Egress Gateway enforcement mechanism -- the component that enforces
+deny-by-default at the network layer inside Jaya Runtime -- is the
+current architectural implementation of the constitutional constraint.
+Future phases may extend the gateway -- for example, Phase 15
+federation may introduce node-to-node communication paths -- but any
+extension must preserve the constitutional constraint: all new
+destinations require explicit allowlist authorization before any
+connection is permitted. The allowlist document itself (this file) is
+the architectural record of what has been authorized.
+
+### Operational Layer (Current-State Specifics -- Subject to Authorized Change)
+
+The three currently authorized entries (E-001, E-002, E-003) are
+operational specifics reflecting the Phase 14 baseline. New
+destinations may be added with builder authorization, a governance
+record entry (MFI + Ch18), and an update to the Version field of
+this document. Removed destinations must also be recorded with a
+governance entry. The operational list changes as the ecosystem
+grows. The constitutional deny-by-default constraint does not.

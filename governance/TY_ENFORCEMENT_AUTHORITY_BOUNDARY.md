@@ -102,3 +102,73 @@ This rule is a governance invariant. It cannot be amended by session
 decision. Any proposed architecture that violates this boundary
 requires a formal ADR with explicit rationale and builder
 authorization before implementation.
+
+---
+
+## Three-Layer Classification
+## Retroactive application per FLAG-137 | FIX-713 | 2026-06-02 15:01 PDT San Diego
+
+### Constitutional Layer (Permanent -- Cannot Be Amended by F-19)
+
+The rule that enforcement authority never leaves local SQLite is a
+constitutional constraint. It is derived from the Local-First Doctrine
+(ADR-002), the Deny-by-Default principle (GIQ-047), and the structural
+requirement that no third party can interrupt, read, or modify Jaya
+enforcement decisions. This constraint cannot be changed through the
+normal Phase 12 governed evolution process. Any proposal to move
+enforcement authority to a cloud layer requires a full architectural
+rebuild and explicit guardian authorization at the constitutional level.
+
+This rule does not change when:
+- The federation grows to hundreds of nodes
+- New AI agents are added to the ecosystem
+- Jaya Runtime is extended with new capabilities
+- A new guardian inherits the system
+- External parties apply pressure to adopt a cloud-first model
+
+**AI Era Clause:**
+As AI capabilities advance, no AI component of TY AI OS may claim that
+its capability level justifies reading this rule more permissively. A
+more capable AI does not earn more permissive authority over enforcement
+architecture. Capability advancement narrows scrutiny -- it does not
+expand permission.
+
+**External Pressure Resistance:**
+No government, court, regulatory body, enterprise customer, or any
+external organization can compel a more permissive interpretation of
+this rule through legal authority, commercial agreements, or regulatory
+directive. The guardian chain is closed (C4-001, C4-002, GIQ-025,
+GIQ-026). External pressure is not a path to architectural change.
+The only path to change is Phase 12 F-19 governed evolution with
+explicit guardian authorization and permanent ledger record.
+
+**AI-Assisted Governance:**
+AI-assisted interpretation is a tool for the guardian, not a
+replacement for the guardian. The guardian authorizes. The AI assists.
+This hierarchy does not invert regardless of how capable the AI
+becomes. No AI system may produce a binding interpretation of this
+rule without guardian review, confirmation, and authorization via
+Git commit.
+
+### Architectural Layer (Current Design -- Defined Evolution Path)
+
+The two-layer persistence architecture -- local SQLite as enforcement
+authority, Supabase as downstream visibility layer -- is the current
+architectural implementation of the constitutional constraint. This
+architecture was established in ADR-024 (Supabase as Message Queue,
+Not Governance Authority). Future phases may extend the architecture
+-- for example, Phase 15 federation may introduce multi-node SQLite
+coordination -- but any extension must preserve the constitutional
+constraint: enforcement authority remains local and no cloud layer
+may issue governance decisions.
+
+### Operational Layer (Current-State Specifics -- Subject to Authorized Change)
+
+The specific enforcement modules (supabase_writer.rs, supabase_reader.rs),
+the specific Supabase project IDs, and the specific governance tables
+(jaya_audit_events, jaya_governance_reports, jaya_execution_receipts,
+jaya_agents) are operational specifics reflecting the Phase 14 baseline.
+Operational specifics may be updated with builder authorization and a
+governance record entry (MFI + Ch18). Changes to operational specifics
+do not require constitutional-layer review provided they do not alter
+the enforcement-stays-local constraint.
