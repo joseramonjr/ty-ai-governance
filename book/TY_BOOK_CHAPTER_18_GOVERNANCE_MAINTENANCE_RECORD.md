@@ -13713,3 +13713,21 @@ Chapter 26 TY AI OS Vocabulary updated with 12 new Phase 14 P3 Red-Team terms in
 **Also committed this session:** FLAG-137 opened -- retroactive future-proofing pass for FIX-704 and FIX-705 deferred until after FIX-709.
 
 **References:** ADR-003, C10-002, C10-003, Ch26 Ledger Discipline, Ch26 FIX Discipline, GIQ-013, R14, TY_GUARDIAN_CODEX_v0.1.md, Phase 10 FIX-508.
+
+### Entry-725 | FIX-707 | 2026-06-02 10:19 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** 61e9afc
+**File:** governance/TY_NARROW_INTERPRETATION_PRINCIPLE.md
+**Action:** New governance rule document created
+**Size:** 291 lines | 16,215 bytes
+
+**Gap closed:** OAQ-002 CAT-2-005 -- narrow interpretation principle not explicitly documented as a binding rule. Interpretive Conservatism existed in GIQ-023 and C6-008 but no single governance rule document stated it as a binding operational constraint with explicit prohibitions and future-scale guidance.
+
+**Three-layer framing applied:** Constitutional (narrow interpretation principle is a meta-rule -- cannot be amended by F-19 or any other process), architectural (application contexts, federation implications), operational (current component names, current rule references).
+
+**New sections added for future-proofing:** External Pressure and Capture Resistance -- governments, courts, regulators, and enterprise customers cannot compel more permissive interpretations through legal, commercial, or political pressure; connects to C4-001 (Two Protection Directions) and C4-002 (Closed Chain Rule). AI-Assisted Interpretation -- future guardians using AI to help interpret rules are still bound by the narrow interpretation principle; AI assistance cannot produce binding interpretations without guardian authorization via Git commit; guardian authorizes, AI assists, hierarchy does not invert regardless of AI capability.
+
+**Node vs WARD clarification added:** Node defined as Jaya Runtime instance, explicitly distinguished from TYOVA EcosystemFlowPage WARDs (24 visual display panels, visibility only, no enforcement authority, no ledgers).
+
+**References:** GIQ-023, C6-008, C6-007, Ch26 Interpretive Conservatism, QA-026, GIQ-046, C4-001, C4-002, GIQ-025, GIQ-026, GIQ-013, Zero-Fabrication Rule, Phase 12 F-19, Phase 10 FIX-508.
