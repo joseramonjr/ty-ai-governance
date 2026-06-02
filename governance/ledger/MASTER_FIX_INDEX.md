@@ -8909,3 +8909,5 @@ at every session. Same-question-different-wording problem solved.
 | FIX-703 | 2026-06-02 10:19 PDT San Diego | TYOVA | PACKAGING_MANIFEST.md CRLF->LF line ending normalization -- resolves persistent Pre-Flight false positive caused by .gitattributes LF enforcement conflict with CRLF-committed file -- git rm --cached + re-add + commit -- 318 lines 12640 bytes -- Commit 7b86a42. |
 
 | FIX-704 | 2026-06-02 10:19 PDT San Diego | ty-ai-governance | TY_ENFORCEMENT_AUTHORITY_BOUNDARY.md created -- CAT-1-003 closed -- Supabase visibility only rule -- enforcement authority never leaves local SQLite -- prohibitions + permissions + authority chain documented -- 75 lines 3489 bytes -- Commit f02da4c. |
+
+| FIX-705 | 2026-06-02 10:19 PDT San Diego | ty-ai-governance | TY_EGRESS_ALLOWLIST.md created -- CAT-1-006 closed -- formal egress allowlist v0.1 -- 3 authorized destinations (TYOVA Supabase + SS321 Supabase + Resend API) -- 4 future categories (federation + external verifier + knowledge layer + new hosts) -- amendment process + prohibited classes -- future-proof federation ready -- 182 lines 9687 bytes -- Commit a5c2ce1. |

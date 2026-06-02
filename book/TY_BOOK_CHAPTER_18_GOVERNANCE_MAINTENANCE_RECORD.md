@@ -13679,3 +13679,19 @@ Chapter 26 TY AI OS Vocabulary updated with 12 new Phase 14 P3 Red-Team terms in
 **Rule established:** Supabase is a downstream recipient of governance records only. All enforcement decisions are made in Jaya Runtime and recorded in local SQLite before any Supabase write occurs. Supabase unavailability does not degrade enforcement. No component may read from Supabase to make a governance decision. Luke AI must never read Supabase directly -- the path is Jaya writes Supabase-sourced events into SQLite and Luke reads through SQLite (ADQ-041).
 
 **References:** ADR-002 (Supabase as message queue only), ADR-003 (SQLite append-only ledger as canonical record), ADQ-041 (Luke direct Supabase access prohibited).
+
+### Entry-723 | FIX-705 | 2026-06-02 10:19 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** a5c2ce1
+**File:** governance/TY_EGRESS_ALLOWLIST.md
+**Action:** New governance rule document created
+**Size:** 182 lines | 9,687 bytes
+
+**Gap closed:** OAQ-002 CAT-1-006 -- no formal egress allowlist document existed. The deny-by-default egress invariant (GIQ-047, C1-008) was established but no single document enumerated the authorized destinations.
+
+**Document structure:** Five sections. Section 1: three currently authorized destinations (E-001 TYOVA Supabase utzkoozekztyztdxejij, E-002 SS321 Supabase tsmyhzjmkampssjwshqh, E-003 Resend API guardian alerts). Section 2: four future destination categories not yet authorized -- federation peer-to-peer (F-001), external verifier endpoints (F-002), knowledge layer sync (F-003), additional governed host connections (F-004). Section 3: amendment process -- governance document updated before code. Section 4: permanently prohibited destination classes derived from Non-Weaponization Guardrail. Section 5: canonical references.
+
+**Future-proof design:** Federation egress (FLAG-136, ADR-029, Phase 15+) is anticipated and governed. Each future category has a defined addition path. No wildcard domains permitted. Authority non-propagation applies to all federation peer connections.
+
+**References:** GIQ-047, C1-008, ADQ-051, FIX-569, FIX-572, ADR-029, FLAG-136, FIX-508, JAYA-CLO-163, FIX-36.00.
