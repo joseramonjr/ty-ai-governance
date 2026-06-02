@@ -13757,3 +13757,29 @@ Chapter 26 TY AI OS Vocabulary updated with 12 new Phase 14 P3 Red-Team terms in
 **Node vs WARD clarification:** Node defined as Jaya Runtime instance, explicitly distinguished from TYOVA EcosystemFlowPage WARDs in Option B section.
 
 **References:** ADR-002, ADR-003, GIQ-028, TY_ENFORCEMENT_AUTHORITY_BOUNDARY.md FIX-704, T-09, FLAG-138, C10-002, Phase 12 F-19, TY_EGRESS_ALLOWLIST.md FIX-705.
+
+### Entry-727 | FIX-709 | 2026-06-02 10:19 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** 11017ba
+**Files:** governance/TY_SQLITE_BACKUP_DISCIPLINE.md + governance/FLAGS.md
+**Action:** New governance rule document created + FLAG-139 opened
+**Size:** 264 lines | 14,077 bytes (rule file) + FLAGS.md updated to 247 lines
+
+**Gap closed:** OAQ-002 CAT-3-014 -- SQLite backup discipline never committed as canonical governance requirement. Confirmed via Red-Team verdict and full project history scan including ChatGPT export. IBB-1 (Internal Backup Button, SS321 Part 37, Fix 37.4) was the historical precursor designed for the SS321 web app layer -- it predates Jaya Runtime and does not apply to the SQLite enforcement ledger.
+
+**Current state confirmed:** As of 2026-06-02, no formal backup of the Jaya Runtime SQLite enforcement ledger exists. GitHub repos (ty-ai-governance, TYOVA, Jaya-Runtime source code) are backed up. Supabase holds partial governance event stream. The SQLite database file itself -- containing all enforcement history, agent registry, policy state, CRI history -- has no backup.
+
+**Three-layer framing applied:** Constitutional (backup discipline is permanent -- ledger loss is governance crisis at any scale), architectural (three-tier backup architecture -- Tier 1 local daily, Tier 2 encrypted offsite, Tier 3 federation Phase 15+), operational (specific paths, schedules, tooling defined in FLAG-139).
+
+**What backup must include:** Complete SQLite file + SHA-256 hash + San Diego timestamp + Jaya Runtime version identifier.
+
+**What backup must NOT restore:** Guardian authority, Ed25519 key material, system authority grants -- derived from QA-022 (M4 authority memory and M5 identity memory FORBIDDEN from backup).
+
+**Recovery procedure:** 6 steps -- do not launch without ledger, verify hash, restore, write gap entry, resume, notify governance record. Gap entry format defined with required fields including Ed25519 guardian attestation.
+
+**FLAG-139 opened -- PRE-SHIP BLOCKER:** TY-0001.C must not ship without Tier 1 + Tier 2 backup implemented and verified. Pre-Flight.ps1 backup gate required. Test restore required before closing.
+
+**Future-scale addressed:** External operator backup discipline requirement, guardian succession backup access transfer, federation node independent backup (no central backup, authority non-propagation applies), AI-assisted backup verification constitutional constraint.
+
+**References:** ADR-003, C10-002, QA-022, QA-023, IBB-1, TY_HUMAN_VERIFICATION_PROTOCOL_v0.1.md, FLAG-139, FLAG-138, TY_OFFLINE_FAIL_CLOSED_RULE.md FIX-708, Phase 10 FIX-508.
