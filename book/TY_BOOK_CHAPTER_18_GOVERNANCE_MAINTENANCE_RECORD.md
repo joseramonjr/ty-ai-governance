@@ -13873,3 +13873,28 @@ required on recovery.
 
 **References:** FIX-709, FLAG-139, FLAG-138, ADR-003, ADR-002, QA-022,
 TY_OFFLINE_FAIL_CLOSED_RULE.md FIX-708.
+
+### Entry-731 | FIX-713 | 2026-06-02 15:01 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** abf96b7
+**Files:** governance/TY_ENFORCEMENT_AUTHORITY_BOUNDARY.md | governance/TY_EGRESS_ALLOWLIST.md
+**Action:** Retroactive three-layer classification + full future-proof doctrine applied to both documents
+**Sizes:** TY_ENFORCEMENT_AUTHORITY_BOUNDARY.md -- 133 lines | 6,959 bytes | TY_EGRESS_ALLOWLIST.md -- 241 lines | 13,228 bytes
+
+**FLAG-137 CLOSED.**
+
+**What was added to both documents:**
+Constitutional/architectural/operational three-layer classification section appended to each file. All three future-proof doctrine elements applied consistently:
+
+1. AI Era Clause -- advanced AI cannot earn more permissive interpretation rights or authority regardless of capability or track record. Capability advancement narrows scrutiny, it does not expand permission.
+
+2. External Pressure Resistance -- governments, courts, regulatory bodies, enterprise customers, and any external organization cannot compel a more permissive interpretation or architectural change through legal authority, commercial agreements, or regulatory directive. Guardian chain is closed (C4-001, C4-002, GIQ-025, GIQ-026). Only path to change is Phase 12 F-19 governed evolution with explicit guardian authorization.
+
+3. AI-Assisted Governance Hierarchy -- AI-assisted governance interpretation is a tool for the guardian, not a replacement. The guardian authorizes. The AI assists. This hierarchy does not invert regardless of how capable the AI becomes. No AI system may authorize changes or declare prohibitions lifted without guardian review and Git commit authorization.
+
+**Architectural and operational layers also documented for both files:**
+TY_ENFORCEMENT_AUTHORITY_BOUNDARY.md -- architectural layer covers two-layer persistence architecture (ADR-024); operational layer covers specific modules and Supabase project IDs.
+TY_EGRESS_ALLOWLIST.md -- architectural layer covers Egress Gateway enforcement mechanism and Phase 15 federation extension path; operational layer covers three authorized entries (E-001, E-002, E-003) and the process for adding or removing destinations.
+
+**References:** FLAG-137, FIX-704, FIX-705, FIX-706 through FIX-712 (standard established), ADR-024, GIQ-047, C1-008, C4-001, C4-002, GIQ-025, GIQ-026.
