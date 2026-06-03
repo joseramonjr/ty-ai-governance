@@ -239,8 +239,61 @@ if (Test-Path $SS321_FOLDER) {
     $actionItems += "SS321 : local folder does not exist"
 }
 
+
 # =============================================================================
-# SECTION 3: Ledger state
+# SECTION 3: Jaya Runtime SQLite Ledger Backup
+# =============================================================================
+$BACKUP_DIR     = "E:\TY-Ecosystem\backups\jaya-ledger"
+$MAX_BACKUP_AGE = 2 # days -- Pre-Flight fails if backup older than this
+
+Write-Host ""
+Write-Host "[LEDGER BACKUP]" -ForegroundColor Yellow
+Write-Host "  Backup dir: $BACKUP_DIR"
+
+if (-not (Test-Path $BACKUP_DIR)) {
+    Write-Host "  STATUS: BACKUP DIRECTORY NOT FOUND" -ForegroundColor Red
+    $actionItems += "LEDGER BACKUP : backup directory does not exist -- run Backup-JayaLedger.ps1"
+} else {
+    $backupFiles = Get-ChildItem -Path $BACKUP_DIR -Filter "jaya_ledger_backup_*.db" |
+        Sort-Object LastWriteTime -Descending
+    if ($backupFiles.Count -eq 0) {
+        Write-Host "  STATUS: NO BACKUP FILES FOUND" -ForegroundColor Red
+        $actionItems += "LEDGER BACKUP : no backup found -- run Backup-JayaLedger.ps1 before proceeding"
+    } else {
+        $latest     = $backupFiles[0]
+        $latestHash = $latest.FullName + ".sha256"
+        $ageHours   = [math]::Round(((Get-Date) - $latest.CreationTime).TotalHours, 1)
+        $ageDays    = [math]::Round(((Get-Date) - $latest.CreationTime).TotalDays, 2)
+        Write-Host "  Latest backup: $($latest.Name)"
+        Write-Host "  Backup age:    $ageHours hours ($ageDays days)"
+        Write-Host "  Backup size:   $($latest.Length) bytes"
+        # Verify hash file exists
+        if (-not (Test-Path $latestHash)) {
+            Write-Host "  Hash file:     MISSING" -ForegroundColor Red
+            $actionItems += "LEDGER BACKUP : SHA-256 hash file missing for $($latest.Name) -- re-run Backup-JayaLedger.ps1"
+        } else {
+            # Verify hash matches
+            $computedHash = (Get-FileHash -Path $latest.FullName -Algorithm SHA256).Hash
+            $storedHash   = (Get-Content $latestHash).Split(" ")[0].Trim()
+            if ($computedHash -eq $storedHash) {
+                Write-Host "  SHA-256:       VERIFIED ($computedHash)" -ForegroundColor Green
+            } else {
+                Write-Host "  SHA-256:       MISMATCH -- backup may be corrupted" -ForegroundColor Red
+                $actionItems += "LEDGER BACKUP : SHA-256 mismatch on $($latest.Name) -- backup integrity failure"
+            }
+        }
+        # Age check
+        if ($ageDays -gt $MAX_BACKUP_AGE) {
+            Write-Host "  STATUS: STALE -- backup is $ageDays days old (limit: $MAX_BACKUP_AGE days)" -ForegroundColor Red
+            $actionItems += "LEDGER BACKUP : backup is stale ($ageDays days old) -- run Backup-JayaLedger.ps1 before proceeding"
+        } else {
+            Write-Host "  STATUS: CURRENT" -ForegroundColor Green
+        }
+        Write-Host "  Total backups: $($backupFiles.Count)"
+    }
+}
+# =============================================================================
+# SECTION 4: Ledger state
 # =============================================================================
 Write-Host ""
 Write-Host "[LEDGER STATE]" -ForegroundColor Yellow
