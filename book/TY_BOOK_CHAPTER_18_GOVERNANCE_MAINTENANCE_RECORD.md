@@ -14085,3 +14085,41 @@ CAT-2-015 -- CLOSED
 
 **References:** OAQ-002, C8-001 through C8-003, C4-001, C4-002, GIQ-025, GIQ-026,
 GIQ-017, C2-003, FIX-508, FIX-513, TY_CONSCIENCE_THREAD_v0.1.md, Chapter 49.
+
+### Entry-735 | FIX-716 | 2026-06-03 09:26 PDT San Diego
+
+**Repo:** Jaya-Runtime
+**Commit:** e6ce3a1
+**File:** src-tauri/src/governance.rs (modified -- 166 lines 6,009 bytes)
+**Action:** CAT-2-008 CLOSED -- registry refusal recording gap fixed
+
+**Root cause confirmed:**
+governance.rs Chokepoint Architecture had registry.validate(module)? on line 23
+-- bare ? operator propagated all four registry.validate() error paths immediately
+with no ledger entry written. Three refusal paths were already correctly logged
+(POLICY_VIOLATION, TIER_VIOLATION x2) but registry validation failures were
+completely invisible in the enforcement ledger. An auditor inspecting the ledger
+would see no record of registry-rejected operations.
+
+**Four registry.validate() error paths now recorded:**
+1. Registry integrity violation -- REGISTRY_VIOLATION -- Registry integrity violation detected.
+2. Version mismatch -- REGISTRY_VIOLATION -- Module version mismatch for '{id}'...
+3. Fingerprint mismatch -- REGISTRY_VIOLATION -- Module fingerprint mismatch for '{id}'.
+4. Not registered -- REGISTRY_VIOLATION -- Module '{id}' is not registered.
+
+**Fix applied:**
+Risk computed BEFORE validate() call so ledger entry carries accurate risk metadata.
+if let Err(registry_err) = registry.validate(module) block added -- calls log_operation
+with REGISTRY_VIOLATION status, then returns the error. All four error paths now
+produce a ledger entry before the function returns. C10-003 (ledger entry created
+BEFORE operation runs) now satisfied for all chokepoint refusal paths.
+
+**Verification:**
+- cargo check: Finished -- 0 errors, 32 pre-existing warnings (none new)
+- cargo test: 222 passed, 0 failed, 0 ignored
+- All pre-existing tests unaffected by the change
+
+**GAP-1 of FLAG-141 (CAT-2-008): CLOSED**
+**Remaining FLAG-141 gaps: GAP-2 (CAT-2-002 delegation) + GAP-3 (CAT-1-008 conscience_thread.rs)**
+
+**References:** FLAG-141, OAQ-002 CAT-2-008, C10-003, governance.rs, ledger.rs.
