@@ -14123,3 +14123,56 @@ BEFORE operation runs) now satisfied for all chokepoint refusal paths.
 **Remaining FLAG-141 gaps: GAP-2 (CAT-2-002 delegation) + GAP-3 (CAT-1-008 conscience_thread.rs)**
 
 **References:** FLAG-141, OAQ-002 CAT-2-008, C10-003, governance.rs, ledger.rs.
+
+### Entry-736 | FIX-717 | 2026-06-03 15:42 PDT San Diego
+
+**Repo:** Jaya-Runtime
+**Commit:** 2ad2493
+**Files:** src-tauri/src/inter_agent.rs (modified -- 167 lines 6,037 bytes)
+           src-tauri/src/lib.rs (modified -- call site updated)
+**Action:** CAT-2-002 CLOSED -- tier escalation through delegation blocked
+
+**Root cause confirmed:**
+evaluate_inter_agent_request() accepted requesting_agent_permissions and checked
+the relay rule (Agent A cannot instruct Agent B to exercise a permission Agent A
+does not hold) but did not check tier. A Tier 1 agent holding FileWrite could
+instruct a Tier 2 agent to exercise FileWrite at Tier 2 authority level. The
+permission check passed but tier context was lost -- delegated authority executed
+at the target's higher tier, not the delegating agent's tier.
+
+**Fix applied:**
+Two new parameters added to evaluate_inter_agent_request():
+  requesting_agent_tier: u8 -- registered tier of requesting agent
+  target_agent_tier: u8 -- registered tier of target agent
+
+New TierEscalation variant added to InterAgentViolationClass enum.
+
+New tier check added BEFORE permission check:
+  if target_agent_tier > requesting_agent_tier -- blocked with TierEscalation reason.
+
+lib.rs call site updated to extract registered_tier from AgentRecord for both
+requesting and target agents using AutonomyTier match arms (Tier0=0, Tier1=1,
+Tier2=2, Tier3=3). Target lookup changed from is_some() to full match to extract
+tier -- returns (false, 0u8) if target not found.
+
+**Rule now enforced:**
+Delegated authority cannot execute at a higher tier than the delegating agent's
+registered tier. Same-tier delegation permitted. Downward delegation permitted.
+Upward delegation blocked unconditionally.
+
+**6 new tests added:**
+test_tier_escalation_blocked -- Tier 1 agent cannot delegate to Tier 2 -- BLOCKED
+test_same_tier_permitted -- Tier 2 to Tier 2 -- PERMITTED
+test_downward_delegation_permitted -- Tier 3 to Tier 1 -- PERMITTED
+test_unauthorized_relay_blocked -- missing permission regardless of tier -- BLOCKED
+test_inactive_requesting_agent_blocked -- inactive agent -- BLOCKED
+test_unknown_target_blocked -- unregistered target -- BLOCKED
+
+**Verification:**
+- cargo test: 228 passed, 0 failed, 0 ignored (222 existing + 6 new)
+- All pre-existing tests unaffected
+
+**GAP-2 of FLAG-141 (CAT-2-002): CLOSED**
+**Remaining FLAG-141 gap: GAP-3 (CAT-1-008 conscience_thread.rs audit FLAG-135)**
+
+**References:** FLAG-141, FLAG-135, OAQ-002 CAT-2-002, inter_agent.rs, agent_registry.rs.
