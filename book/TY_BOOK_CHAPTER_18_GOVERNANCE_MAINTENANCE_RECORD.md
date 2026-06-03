@@ -14003,3 +14003,15 @@ or before any guardian transition occurs.
 
 **References:** FLAG-139, FLAG-140, FIX-709 (TY_SQLITE_BACKUP_DISCIPLINE.md),
 ADR-032, ADR-003, ADR-002 (Local-First Doctrine).
+
+### Entry-733 Addendum | Decrypt Verification | 2026-06-03 09:26 PDT San Diego
+
+Tier 2 decrypt verification completed next session (2026-06-03).
+Passphrase re-entered (35 characters confirmed). AES-256-CBC decryption
+of jaya_ledger_tier2_2026-06-02.db.aes produced exactly 61,440 bytes.
+SQLite magic string confirmed: SQLite format 3. Size matched original
+source exactly. Test file written and removed clean.
+
+TIER 2 DECRYPT VERIFICATION -- PASS
+Passphrase is correct. Backup is fully recoverable.
+FLAG-139 fully closed -- no conditions outstanding.
