@@ -1,4 +1,4 @@
-# Chapter 18 -- The Governance Maintenance Record
+﻿# Chapter 18 -- The Governance Maintenance Record
 
 
 ## How TY AI OS Is Kept Current
@@ -14176,3 +14176,30 @@ test_unknown_target_blocked -- unregistered target -- BLOCKED
 **Remaining FLAG-141 gap: GAP-3 (CAT-1-008 conscience_thread.rs audit FLAG-135)**
 
 **References:** FLAG-141, FLAG-135, OAQ-002 CAT-2-002, inter_agent.rs, agent_registry.rs.
+
+### Entry-737 | FIX-718 | 2026-06-03 16:21 PDT San Diego — 2026-06-03 16:31 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Scope:** FLAG-141 GAP-3 -- conscience_thread.rs canon-to-code audit -- OAQ-002 final gap closure
+
+**Work completed:**
+
+GAP-3 canon-to-code audit executed against all 64 Conscience Thread rules across 12 categories. Audit confirmed:
+
+- Q3 (silence/denial ledgering) -- CODE-ENFORCED. Blocked paths call ledger::log_operation. Confirmed.
+- Q4 (signed proof endpoint) -- CODE-ENFORCED. proof_server, sign_attestation_with_keychain, generate_attestation, run_gal_proof all present and functional. Confirmed.
+- Q1 (egress deny-by-default) -- GAP CONFIRMED. tauri.conf.json CSP is null. No Rust-layer egress guard. Opened as FLAG-142. Phase 15 scope.
+- Q2 (halt-state persistence) -- GAP CONFIRMED and FIXED. shutdown_flag AtomicBool was never set to true and no halt record was written to SQLite on exit. Fixed by adding .build().run() exit handler to lib.rs. HALT_STATE now written to governance ledger on ExitRequested before process exit.
+
+**Code change:** lib.rs -- .build().run() exit handler added. 19 lines inserted, 2 lines replaced. 228/228 tests pass.
+
+**FLAGS:**
+- FLAG-141 GAP-3 -- CLOSED. Canon-to-code audit complete. Two real gaps found. GAP-3b fixed in this FIX. GAP-3a (egress) opened as FLAG-142.
+- FLAG-142 -- OPENED. C1-008 egress deny-by-default not structurally enforced. tauri.conf.json CSP null. No Rust egress guard. Phase 15 scope.
+- FLAG-141 -- FULLY CLOSED. All three GAPs resolved: GAP-1 (FIX-716), GAP-2 (FIX-717), GAP-3 (FIX-718).
+
+**OAQ-002 -- SEALED.** All 30 Internal Red-Team challenges resolved across Phase 14 P3. 18 documentation gaps closed. 3 real code fixes (FIX-716, FIX-717, FIX-718). 1 known open item (FLAG-142, Phase 15). Red-team is a permanent governance requirement per C8-002.
+
+**Commit:** f1d0777
+**Tests:** 228/228 passing
+**Repo state:** Jaya-Runtime clean at f1d0777
