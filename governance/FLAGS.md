@@ -329,3 +329,53 @@ must be confirmed before TY-0001.C ships.
 **Blocking:** TY-0001.C ship (alongside FLAG-131)
 **Phase:** 14 -- pre-ship requirement
 **Related:** FLAG-131 (Walker Weitzel), FIX-714b (Tier 2 backup passphrase)
+
+## FLAG-141 | OPEN | Code Audit -- Documentation-to-Code Gap
+**Opened:** 2026-06-03 09:26 PDT San Diego
+**Opened by:** FIX-715 | Entry-734 | Option C decision
+**Priority:** Required before enterprise deployment
+
+**Description:**
+Three OAQ-002 gaps require code fixes in Jaya Runtime -- not just documentation.
+Per Option C decision (FIX-715), documentation was completed first to establish
+canonical targets. Code audit must now verify whether the code enforces what
+the documents claim, and fix any gaps found.
+
+**Three code gaps to audit and fix:**
+
+**GAP-1 -- CAT-2-008 -- Audit Log Completeness**
+Location: ledger.rs (Jaya-Runtime)
+Issue: Jaya Runtime may not record governance refusals -- only executions.
+If a governance decision results in a refusal, that refusal may be absent
+from the SQLite enforcement ledger. The verifiability claim requires refusals
+to be recorded. An auditor inspecting the ledger for a period of time would
+see only what was permitted -- not what was refused. This is a real gap in
+the completeness of the governance record.
+Required fix: Verify ledger.rs records refusal events. If not, add refusal
+recording before every operation that is refused. Verify with test.
+
+**GAP-2 -- CAT-2-002 -- Tier Escalation Through Delegation**
+Location: Jaya-Runtime delegation path (exact module TBD by audit)
+Issue: When one agent delegates authority to another, the authority chain
+validation may be undocumented and possibly unenforced in code. An agent
+at Tier 1 delegating to an agent at Tier 2 could result in the delegated
+agent operating at a higher tier than the delegating agent authorized.
+Required fix: Audit the delegation path. Verify authority chain validation
+is enforced at the code level -- delegated authority cannot exceed the
+delegating agent's authority. Document the validation rule canonically.
+
+**GAP-3 -- CAT-1-008 -- Canon-to-Code Conscience Thread**
+Location: conscience_thread.rs (Jaya-Runtime) -- FLAG-135
+Issue: conscience_thread.rs exists but has never been adversarially tested.
+The canonical rules it enforces may not match what is documented in
+TY_CONSCIENCE_THREAD_v0.1.md. This is the ethical reasoning layer of
+TY AI OS -- a mismatch between document and code here is a governance
+integrity failure.
+Required fix: Full audit of conscience_thread.rs against
+TY_CONSCIENCE_THREAD_v0.1.md. Every documented rule verified in code.
+Every code rule verified in documentation. Adversarial test suite added.
+Related: FLAG-135.
+
+**Blocking:** Enterprise deployment
+**Phase:** 14 -- pre-enterprise requirement
+**Related:** FLAG-135 (conscience_thread.rs), FIX-715, OAQ-002

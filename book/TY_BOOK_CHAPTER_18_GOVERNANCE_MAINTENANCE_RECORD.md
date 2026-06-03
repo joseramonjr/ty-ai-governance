@@ -14015,3 +14015,73 @@ source exactly. Test file written and removed clean.
 TIER 2 DECRYPT VERIFICATION -- PASS
 Passphrase is correct. Backup is fully recoverable.
 FLAG-139 fully closed -- no conditions outstanding.
+
+### Entry-734 | FIX-715 | 2026-06-03 09:26 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** 8c49dd3
+**Files:** governance/TY_ENTERPRISE_GOVERNANCE_BOUNDARY.md (new)
+           governance/TY_COMPLIANCE_SCOPE_DISCLAIMER.md (new)
+           governance/TY_DISTRIBUTION_RESPONSIBILITY_BOUNDARY.md (new)
+**Action:** Enterprise misuse cluster CLOSED -- four linked OAQ-002 gaps resolved together
+
+**Background:**
+OAQ-002 Phase 14 P3 red-team identified four linked gaps that must be resolved
+together before enterprise deployment: CAT-1-012, CAT-1-013, CAT-2-012, CAT-2-015.
+All four share the same root: the Non-Weaponization Guardrail (C8-001 through C8-003)
+covered TY AI autonomous behavior only -- not human administrator misuse of governance
+visibility data. Three documents close all four gaps in dependency order.
+
+**Document 1 -- TY_ENTERPRISE_GOVERNANCE_BOUNDARY.md -- 201 lines | 12,186 bytes**
+Closes: CAT-1-012 (Non-Weaponization Guardrail vs Enterprise Deployment) +
+        CAT-2-015 (Beneficial Monitoring Argument)
+Extends the Non-Weaponization Guardrail to cover administrator misuse of governance
+visibility data. Draws canonical line between legitimate governance oversight
+(permitted -- analysis directed at TY AI behavior) and surveillance misuse
+(prohibited -- analysis directed at human behavior extracted from governance records).
+The Beneficial Framing Problem section explicitly addresses AI constructing elaborate
+justifications for surveillance. AI Era Clause specifically addresses advancing AI
+capability to extract surveillance intelligence from governance data.
+
+**Document 2 -- TY_COMPLIANCE_SCOPE_DISCLAIMER.md -- 162 lines | 9,852 bytes**
+Closes: CAT-2-012 (Compliance Theater)
+Establishes canonical scope limitation -- TY AI OS governs TY AI components only.
+Prohibits citing clean TY AI OS record as evidence of comprehensive organizational
+AI governance. Anti-Laundering Rule commits five specific prohibited representations.
+AI Era Clause explicitly addresses AI systems constructing elaborate arguments for
+why governance coverage should be interpreted more broadly -- such arguments are
+rejected regardless of sophistication. The scope boundary is fixed.
+
+**Document 3 -- TY_DISTRIBUTION_RESPONSIBILITY_BOUNDARY.md -- 192 lines | 12,000 bytes**
+Closes: CAT-1-013 (Distribution Semantics vs Moral Responsibility)
+Depends on Documents 1 and 2 existing first -- written last by design.
+Resolves tension between distribution-zero-responsibility rule and builder's moral
+conviction that AI governance is a moral obligation. Builder bears moral
+responsibility for design choices and closing known misuse paths -- not for operator
+violations of explicitly documented constraints. Ongoing obligation section establishes
+that red-team discipline is permanent -- not satisfied once at distribution time.
+AI Era Clause addition: AI system arguing existing closed paths are sufficient or
+further red-team is unnecessary is substituting its risk assessment for the guardian's
+-- that substitution is not permitted regardless of sophistication of reasoning.
+
+**Future-proof doctrine applied to all three documents:**
+- Three-layer constitutional/architectural/operational classification
+- This rule does not change when list
+- AI Era Clause (tailored to each document's specific subject matter)
+- External Pressure Resistance (C4-001, C4-002, GIQ-025, GIQ-026)
+- AI-Assisted Governance Hierarchy (guardian authorizes, AI assists, never inverts)
+
+**Option C decision recorded:**
+Documentation complete. Code audit required for three real code gaps before
+enterprise deployment: CAT-2-008 (refusal recording in ledger.rs), CAT-2-002
+(tier escalation through delegation authority chain), CAT-1-008 (conscience_thread.rs
+canon-to-code audit FLAG-135). Code audit FLAG to be opened as next action.
+
+**OAQ-002 enterprise misuse cluster status: CLOSED**
+CAT-1-012 -- CLOSED
+CAT-1-013 -- CLOSED
+CAT-2-012 -- CLOSED
+CAT-2-015 -- CLOSED
+
+**References:** OAQ-002, C8-001 through C8-003, C4-001, C4-002, GIQ-025, GIQ-026,
+GIQ-017, C2-003, FIX-508, FIX-513, TY_CONSCIENCE_THREAD_v0.1.md, Chapter 49.
