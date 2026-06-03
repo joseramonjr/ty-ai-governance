@@ -303,3 +303,29 @@ FLAG-131 -- Walker Weitzel patent (also blocks TY-0001.C)
 FLAG-138 -- Federation Network Partition Governance (Tier 3)
 TY_OFFLINE_FAIL_CLOSED_RULE.md FIX-708 -- fail-closed during
 backup unavailability
+
+## FLAG-140 | OPEN | Guardian Succession Envelope
+**Opened:** 2026-06-02 15:01 PDT San Diego
+**Opened by:** FIX-714b | Entry-733
+**Priority:** Required before TY-0001.C ships or any guardian transition occurs
+
+**Description:**
+No formal guardian succession envelope exists as of 2026-06-02. The Tier 2
+encrypted backup passphrase (35 characters, AES-256-CBC key for
+jaya_ledger_tier2_*.db.aes files) must be included in a formal succession
+package alongside all other guardian credentials:
+- Ed25519 private key
+- HVP credentials
+- Tier 2 backup passphrase (new -- added FIX-714b)
+- Any other guardian-only credentials
+
+**What must be built:**
+A formal guardian succession envelope -- physical or secure digital -- that
+contains all credentials required for a successor guardian to take full
+operational control of TY AI OS. The envelope must be stored securely,
+separately from any TY AI OS governance repo or file, and its existence
+must be confirmed before TY-0001.C ships.
+
+**Blocking:** TY-0001.C ship (alongside FLAG-131)
+**Phase:** 14 -- pre-ship requirement
+**Related:** FLAG-131 (Walker Weitzel), FIX-714b (Tier 2 backup passphrase)

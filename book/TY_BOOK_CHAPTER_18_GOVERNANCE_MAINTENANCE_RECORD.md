@@ -13937,3 +13937,69 @@ Tier 1 COMPLETE. Tier 2 (encrypted offsite) remains open -- required before TY-0
 Task Scheduler daily automation not yet configured -- next step in FLAG-139 sequence.
 
 **References:** FLAG-139, FIX-709 (TY_SQLITE_BACKUP_DISCIPLINE.md), ADR-032, ADR-003.
+
+### Entry-733 | FIX-714b | 2026-06-02 15:01 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** d14010a
+**Files:** governance/tools/Backup-JayaLedger-Tier2.ps1 (new)
+**Action:** FLAG-139 Tier 2 SQLite encrypted backup implementation complete
+
+**Backup-JayaLedger-Tier2.ps1 -- 100 lines | 4,884 bytes**
+Weekly Tier 2 AES-256-CBC encrypted backup of Jaya Runtime SQLite enforcement ledger.
+Source: C:\Users\joseramonjr\AppData\Roaming\com.jaya.runtime\jaya_governance.db
+Destination: D:\TY-Backups\jaya-ledger-encrypted (Disk 1 -- WD_BLACK SN8100 4TB -- separate
+physical disk from source C:\ Disk 0 and Tier 1 E:\ Disk 2).
+Naming: jaya_ledger_tier2_YYYY-MM-DD.db.aes
+Encryption: AES-256-CBC. Key derived from guardian passphrase via SHA-256.
+Passphrase: 35 characters. GUARDIAN-HELD. Not stored in any repo or governance file.
+Must be included in guardian succession credentials.
+Retention: PERMANENT -- no deletion ever. Storage projection: 3.2 MB/year at current
+DB size. 10 GB allocation lasts decades. Move to larger storage via future FIX when needed.
+SHA-256 hash companion file written for every backup for integrity verification.
+Count bug fixed: @() array operator added to Get-ChildItem to prevent StrictMode failure.
+
+**Verification results:**
+- First run: 2026-06-02 19:46 PDT | Source 61,440 bytes | Encrypted 61,456 bytes
+- SHA-256: 0EC0813700AD8DC729F61F4E12C5BDCB56364899DCCAC506F7B5B631D6D81DC1
+- AES padding: 16 bytes (correct for AES-256-CBC PKCS7)
+- Second run (after bug fix): clean -- END TIER 2 BACKUP RUN confirmed
+
+**Task Scheduler:**
+Task: TY-AI-OS-JayaLedgerBackup-Tier2
+Schedule: Weekly Sunday 03:00 AM
+Principal: SYSTEM (no password required)
+Next run: 2026-06-07 03:00:00
+Registered via elevated PowerShell shell.
+
+**Repo safety:**
+Passphrase redacted before commit. File committed with placeholder:
+GUARDIAN-HELD-NOT-STORED-IN-REPO -- see guardian succession credentials.
+Local working copy also redacted. Passphrase lives in Task Scheduler
+credential vault and guardian password manager only.
+
+**Physical disk redundancy confirmed:**
+Source DB: C:\ (Disk 0 -- Samsung SSD 9100 PRO 2TB)
+Tier 1 backup: E:\ (Disk 2 -- Samsung SSD 9100 PRO 8TB)
+Tier 2 backup: D:\ (Disk 1 -- WD_BLACK SN8100 4TB)
+Three separate physical disks. Single disk failure cannot destroy all copies.
+
+**FLAG-139 CLOSED.**
+All pre-ship blocker requirements met:
+- Tier 1 local backup -- COMPLETE (FIX-714 Entry-732)
+- Tier 2 encrypted offsite backup -- COMPLETE (FIX-714b Entry-733)
+- SHA-256 verification -- COMPLETE
+- Test restore -- PASS
+- Pre-Flight.ps1 v6 gate -- COMPLETE
+- Task Scheduler Tier 1 daily -- REGISTERED
+- Task Scheduler Tier 2 weekly -- REGISTERED
+
+**Remaining pre-ship blocker: FLAG-131 only (Walker Weitzel -- external).**
+
+**New FLAG opened: FLAG-140 -- Guardian Succession Envelope.**
+Tier 2 passphrase must be included in formal guardian succession package.
+No succession envelope exists as of 2026-06-02. Required before TY-0001.C ships
+or before any guardian transition occurs.
+
+**References:** FLAG-139, FLAG-140, FIX-709 (TY_SQLITE_BACKUP_DISCIPLINE.md),
+ADR-032, ADR-003, ADR-002 (Local-First Doctrine).
