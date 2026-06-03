@@ -13898,3 +13898,42 @@ TY_ENFORCEMENT_AUTHORITY_BOUNDARY.md -- architectural layer covers two-layer per
 TY_EGRESS_ALLOWLIST.md -- architectural layer covers Egress Gateway enforcement mechanism and Phase 15 federation extension path; operational layer covers three authorized entries (E-001, E-002, E-003) and the process for adding or removing destinations.
 
 **References:** FLAG-137, FIX-704, FIX-705, FIX-706 through FIX-712 (standard established), ADR-024, GIQ-047, C1-008, C4-001, C4-002, GIQ-025, GIQ-026.
+
+### Entry-732 | FIX-714 | 2026-06-02 15:01 PDT San Diego
+
+**Repo:** ty-ai-governance
+**Commit:** 9effc99
+**Files:** governance/tools/Backup-JayaLedger.ps1 (new) | tools/Pre-Flight.ps1 v6 (modified)
+**Action:** FLAG-139 Tier 1 SQLite backup implementation complete
+
+**Backup-JayaLedger.ps1 -- 91 lines | 3,819 bytes**
+Daily Tier 1 local backup script for Jaya Runtime SQLite enforcement ledger.
+Source: C:\Users\joseramonjr\AppData\Roaming\com.jaya.runtime\jaya_governance.db
+Backup dir: E:\TY-Ecosystem\backups\jaya-ledger
+Naming: jaya_ledger_backup_YYYY-MM-DD.db
+Operations: copy source DB, stamp LastWriteTime to backup-run time (prevents false-stale reads),
+compute SHA-256 and write companion .sha256 file, verify size matches source, purge backups
+older than 30 days, log all operations with San Diego timestamp.
+Exit code 1 on any failure. Designed to run daily via Windows Task Scheduler.
+
+**Pre-Flight.ps1 v6 -- 355 lines | 17,384 bytes**
+New SECTION 3 LEDGER BACKUP gate added. Checks: backup directory exists, at least one
+jaya_ledger_backup_*.db file present, most recent backup CreationTime is within 2 days,
+SHA-256 hash file exists and matches computed hash. Reports STATUS CURRENT (green) or
+STATUS STALE / MISSING (red with ACTION REQUIRED). Old SECTION 3 renumbered to SECTION 4.
+Bug fixed: age calculation uses CreationTime not LastWriteTime -- Copy-Item preserves
+source LastWriteTime so LastWriteTime would always read as stale.
+
+**Verification results:**
+- First backup run: 2026-06-02 18:46 PDT | 61,440 bytes
+- SHA-256: B8E909A4B20D9F35C42DE75ABE8E3864E71F04ABAACA583961E05EA4F13D93CF
+- Test restore: HASH MATCH + SQLITE VERIFIED (magic string confirmed) + size 61,440 bytes
+- Pre-Flight run: LEDGER BACKUP STATUS CURRENT | 0.1 hours old | SHA-256 VERIFIED
+- Pre-Flight OVERALL: ACTION REQUIRED resolved to 1 item (uncommitted changes only, expected)
+- Post-commit Pre-Flight: OVERALL READY pending Task Scheduler setup
+
+**FLAG-139 status after this FIX:**
+Tier 1 COMPLETE. Tier 2 (encrypted offsite) remains open -- required before TY-0001.C ships.
+Task Scheduler daily automation not yet configured -- next step in FLAG-139 sequence.
+
+**References:** FLAG-139, FIX-709 (TY_SQLITE_BACKUP_DISCIPLINE.md), ADR-032, ADR-003.
