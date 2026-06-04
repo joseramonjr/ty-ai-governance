@@ -8946,3 +8946,5 @@ at every session. Same-question-different-wording problem solved.
 
 
 | FIX-721 | 2026-06-03 20:12 PDT San Diego | TYOVA | Ch26 TYOVA sync -- Section 26 (16 terms) and Section 27 (2 terms) added to bookChapterContent.ts -- term count 380->398 -- sections 25->27 -- Lovable deploy -- Commits 272f71d, 29877cd, ba90fca. |
+
+
