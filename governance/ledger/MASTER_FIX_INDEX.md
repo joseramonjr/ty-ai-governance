@@ -8940,3 +8940,5 @@ at every session. Same-question-different-wording problem solved.
 | FIX-718 | 2026-06-03 16:31 PDT San Diego | Jaya-Runtime | GAP-3b CLOSED -- C2-004 halt-state persistence -- lib.rs .build().run() exit handler added -- HALT_STATE written to governance ledger on ExitRequested -- shutdown_flag set to true on clean exit -- FLAG-141 GAP-3 audit complete -- FLAG-142 opened (egress csp:null gap, Phase 15) -- OAQ-002 sealed -- 228/228 tests pass -- Commit f1d0777. |
 
 | FIX-719 | 2026-06-03 18:21 PDT San Diego | ty-ai-governance | OAQ-002 SEALED -- ADQ-058 written in TY_QA_REGISTRY.md -- 30 red-team challenges resolved -- 3 code fixes (FIX-716, FIX-717, FIX-718) -- FLAG-141 FULLY CLOSED -- FLAG-142 open (egress Phase 15) -- 228/228 tests pass -- Commit 2a098d5. |
+
+
