@@ -1,11 +1,11 @@
 ﻿# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
-**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added)
+**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added) | FIX-720 (Section 27 created -- HALT_STATE, Canon-to-Code Audit added)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
-**Updated:** 2026-06-01 | San Diego (America/Los_Angeles)
+**Updated:** 2026-06-03 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 385 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01 + 4 Phase 14 P3 gap closure terms added FIX-711 2026-06-02: Fail-Closed, Backup Discipline, Gap Entry, Constitutional / Architectural / Operational Framing)
+**Current Term Count:** 387 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01 + 4 Phase 14 P3 gap closure terms added FIX-711 2026-06-02: Fail-Closed, Backup Discipline, Gap Entry, Constitutional / Architectural / Operational Framing + 2 Phase 14 P3 canon-to-code audit terms added FIX-720 2026-06-03: HALT_STATE, Canon-to-Code Audit)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -4089,10 +4089,64 @@ eternal constraints and which have been superseded by the ecosystem's growth.
 Retroactive application to FIX-704 and FIX-705 is tracked under FLAG-137.
 First applied in TY_LEDGER_LAYER_DISTINCTION.md (FIX-706, 2026-06-02).
 
+
+---
+## Section 27 -- Phase 14 P3 Red-Team and Canon-to-Code Governance Terms
+These terms describe the governance patterns, audit methodology, and named
+ledger events that emerged from Phase 14 P3 (Internal Red-Team) and the
+canon-to-code audit of the Conscience Thread.
+
+**HALT_STATE**
+*First coined: 2026-06-03 | San Diego (America/Los_Angeles)*
+*Built: FIX-718 | Phase 14 P3 GAP-3b | Entry-737 | 2026-06-03 16:21 PDT*
+A named governance ledger event written to the SQLite append-only ledger
+immediately before Jaya Runtime exits. Introduced in FIX-718 to close
+GAP-3b of FLAG-141 -- a canon-to-code gap where C2-004 (Refresh Does Not
+Equal Resume) required halt state to persist across process exit, but no
+such record existed in the codebase. The fix added a Tauri RunEvent::
+ExitRequested handler in lib.rs that sets the shutdown_flag AtomicBool to
+true and calls ledger::log_operation with operation label 'halt_state',
+risk score 0, tier 0, success flag 1, and the detail string 'HALT_STATE
+recorded -- clean shutdown exit persisted to ledger'. This ensures that
+any auditor reading the governance ledger can determine whether the last
+session ended with a clean shutdown or an unexpected process kill -- a
+clean shutdown produces a HALT_STATE record; the absence of a HALT_STATE
+record at the end of a session indicates the process was terminated
+without a clean exit. HALT_STATE is an operational ledger event, not a
+governance authority record. It carries no tier, no agent ID, and no
+authorization reference. Its sole purpose is auditability of process
+lifecycle. Addresses Conscience Thread rule C2-004.
+
+**Canon-to-Code Audit**
+*First coined: 2026-06-03 | San Diego (America/Los_Angeles)*
+*Executed: FIX-718 | FLAG-141 GAP-3 | OAQ-002 final gap | Entry-737 | 2026-06-03*
+A structured audit methodology that systematically verifies whether every
+rule declared in a canonical governance document has a corresponding
+structural enforcement counterpart in the running codebase. The audit
+applies the Canon-to-Code Discipline (C5-005): doctrine that has no code
+counterpart is unverified; governance claims that cannot be traced to
+running code that enforces them are documentation, not enforcement. Each
+rule is classified as one of five statuses: CODE-ENFORCED (structural
+code counterpart confirmed in Jaya Runtime), PARTIAL (partially enforced,
+gap exists), DOC-ONLY (no structural code counterpart -- governance claim
+is documentation only), ARCH-ONLY (enforced by architecture, not runtime
+code -- a structural impossibility rather than a policy), or
+PHASE-DEFERRED (code enforcement explicitly deferred to a future phase by
+governance record). The first Canon-to-Code Audit in TY AI OS was executed
+in FIX-718 against all 64 rules of the Conscience Thread across 12
+categories. The audit found no new structural enforcement gaps beyond
+FLAG-35 and FLAG-138 (already ledgered), confirmed two real gaps (GAP-3a
+egress and GAP-3b halt persistence), fixed GAP-3b in the same FIX, and
+opened FLAG-142 for GAP-3a as Phase 15 scope. The governance pattern
+established by the Canon-to-Code Audit is: document declares the canonical
+target, audit verifies enforcement, code fix closes the gap, red-team
+verifies the fix. This pattern is recorded in ADQ-058 as the standard
+for all future red-team gap closure in TY AI OS.
+
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-06-02 | San Diego (America/Los_Angeles)*
-*Current Term Count: 385 | Sections: 26*
+*Updated: 2026-06-03 | San Diego (America/Los_Angeles)*
+*Current Term Count: 387 | Sections: 27*
 *This document grows with the project. It is never finished.*
