@@ -8948,3 +8948,4 @@ at every session. Same-question-different-wording problem solved.
 | FIX-721 | 2026-06-03 20:12 PDT San Diego | TYOVA | Ch26 TYOVA sync -- Section 26 (16 terms) and Section 27 (2 terms) added to bookChapterContent.ts -- term count 380->398 -- sections 25->27 -- Lovable deploy -- Commits 272f71d, 29877cd, ba90fca. |
 
 
+| FIX-722 | 2026-06-04 16:21 PDT San Diego | ty-ai-governance | Chapter 75 written -- After Phase 14 The Honest Reckoning -- 360 lines 21271 bytes BOM clean -- FLAG-134 FLAG-139 FLAG-141 OAQ-002 canon-to-code audit gap closure documented -- Commit a7d5290. |
