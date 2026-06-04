@@ -8945,3 +8945,4 @@ at every session. Same-question-different-wording problem solved.
 | FIX-720 | 2026-06-03 19:06 PDT San Diego | ty-ai-governance | Ch26 Section 27 created -- HALT_STATE and Canon-to-Code Audit terms added -- 385->387 terms -- 26->27 sections -- Phase 14 P3 Red-Team vocabulary -- Commit 7934e9a. |
 
 
+| FIX-721 | 2026-06-03 20:12 PDT San Diego | TYOVA | Ch26 TYOVA sync -- Section 26 (16 terms) and Section 27 (2 terms) added to bookChapterContent.ts -- term count 380->398 -- sections 25->27 -- Lovable deploy -- Commits 272f71d, 29877cd, ba90fca. |

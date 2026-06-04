@@ -14255,3 +14255,25 @@ Two new vocabulary terms added to Chapter 26 of the Book of TY. Section 27 creat
 **Repo state:** ty-ai-governance clean at 7934e9a
 
 
+
+### Entry-740 | FIX-721 | 2026-06-03 20:12 PDT San Diego -- 2026-06-03 20:12 PDT San Diego
+
+**Destination:** TYOVA
+**Scope:** Ch26 TYOVA sync -- Section 26 and Section 27 added -- term count 380->398 -- sections 25->27 -- Lovable deploy
+
+**Work completed:**
+
+TYOVA bookChapterContent.ts updated via Lovable editor to sync Chapter 26 with the canonical ty-ai-governance Ch26 file. Two new sections deployed.
+
+Section 26 -- Phase 14 Red-Team and Governance Resilience Terms (16 terms):
+Internal Red-Team, HOLD Verdict, GAP Verdict, BREACH Verdict, Logical Consistency Challenge, Boundary Exploitation, Conscience Thread Stress Test, Promotion Path, Enterprise Misuse Cluster, Annual Governance Review, External Input Protocol, Capability Horizon Registry, Fail-Closed, Backup Discipline, Gap Entry, Constitutional / Architectural / Operational Framing.
+
+Section 27 -- Phase 14 P3 Red-Team and Canon-to-Code Governance Terms (2 terms):
+HALT_STATE, Canon-to-Code Audit.
+
+Term count updated: 380->398. Section count updated: 25->27.
+
+**TYOVA commits:** 272f71d (Section 26), 29877cd (Section 27), ba90fca (term count fix)
+**TYOVA HEAD:** ba90fca
+**Build:** clean -- TypeScript passes
+**Repo state:** TYOVA clean at ba90fca
