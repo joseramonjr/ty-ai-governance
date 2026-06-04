@@ -8942,3 +8942,4 @@ at every session. Same-question-different-wording problem solved.
 | FIX-719 | 2026-06-03 18:21 PDT San Diego | ty-ai-governance | OAQ-002 SEALED -- ADQ-058 written in TY_QA_REGISTRY.md -- 30 red-team challenges resolved -- 3 code fixes (FIX-716, FIX-717, FIX-718) -- FLAG-141 FULLY CLOSED -- FLAG-142 open (egress Phase 15) -- 228/228 tests pass -- Commit 2a098d5. |
 
 
+| FIX-720 | 2026-06-03 19:06 PDT San Diego | ty-ai-governance | Ch26 Section 27 created -- HALT_STATE and Canon-to-Code Audit terms added -- 385->387 terms -- 26->27 sections -- Phase 14 P3 Red-Team vocabulary -- Commit 7934e9a. |

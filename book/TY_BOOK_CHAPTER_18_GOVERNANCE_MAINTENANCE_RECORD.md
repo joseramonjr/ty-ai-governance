@@ -14229,3 +14229,27 @@ Option C doctrine -- document establishes canonical target, code audit verifies 
 **Repo state:** ty-ai-governance clean at 2a098d5
 
 
+
+### Entry-739 | FIX-720 | 2026-06-03 18:41 PDT San Diego -- 2026-06-03 19:06 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Scope:** Ch26 vocabulary -- Section 27 created -- HALT_STATE and Canon-to-Code Audit terms added -- Phase 14 P3 Red-Team vocabulary
+
+**Work completed:**
+
+Two new vocabulary terms added to Chapter 26 of the Book of TY. Section 27 created as the Phase 14 P3 Red-Team and Canon-to-Code Governance Terms section. Terms are documented from verified facts only -- zero fabrication.
+
+- HALT_STATE: Named governance ledger event written to SQLite immediately before Jaya Runtime exits. Introduced in FIX-718 (GAP-3b). Addresses Conscience Thread rule C2-004. First coined 2026-06-03.
+- Canon-to-Code Audit: Structured audit methodology verifying every canonical governance rule has a structural code enforcement counterpart. Five classification statuses: CODE-ENFORCED, PARTIAL, DOC-ONLY, ARCH-ONLY, PHASE-DEFERRED. First executed in FIX-718 against all 64 Conscience Thread rules. Pattern recorded in ADQ-058. First coined 2026-06-03.
+
+**Ch26 state after FIX-720:**
+- Term count: 387 (was 385)
+- Sections: 27 (was 26)
+- Header Updated: 2026-06-03
+- Footer confirmed clean
+- Section order: 25 -> 26 -> 27 correct
+
+**Note:** TYOVA Ch26 sync (bookChapterContent.ts) not yet updated. Requires Lovable editor session. Tracked as next priority.
+
+**Commit:** 7934e9a
+**Repo state:** ty-ai-governance clean at 7934e9a
