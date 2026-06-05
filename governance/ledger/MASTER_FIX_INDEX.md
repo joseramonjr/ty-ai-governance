@@ -4777,3 +4777,19 @@ at every session. Same-question-different-wording problem solved.
 **Flag:** None
 **Blocked by:** None
 **Blocks:** None
+## FIX-725 · Entry-744
+**Date:** 2026-06-05 · San Diego
+**Description:** Chapter 5 written and deployed to TYOVA — The Builder's Account — PA-001, PA-002, PA-003 — F-6 CLOSED
+- Chapter 5 title added to BookOfTyChapter.tsx chapterTitles map
+- Chapter 5 full content block inserted into bookChapterContent.ts between Ch4 and Ch6
+- PA-001 (Why I Built This) — 9 paragraphs — full length
+- PA-002 (Why Bidirectional Protection) — 7 paragraphs — full length
+- PA-003 (What I Want TY to Be in 100 Years) — 4 paragraphs — full length
+- Status: LIVING — Never Sealed — builder may add at any time
+- Paragraph verification passed
+- BOM check passed on both files
+- F-6 FLAG CLOSED — Chapter 5 personal authorship complete
+- TYOVA/src/data/bookChapterContent.ts
+- TYOVA/src/pages/BookOfTyChapter.tsx
+**Ledger:** Entry-744
+**Flag:** F-6 CLOSED
