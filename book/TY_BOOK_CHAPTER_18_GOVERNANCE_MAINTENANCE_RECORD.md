@@ -7574,3 +7574,13 @@ Phase 15 opened -- ADR-029 ACCEPTED -- ADR-033 Annual Governance Review -- ADR-0
 FLAG-142 CLOSED -- C1-008 egress deny-by-default structurally enforced -- tauri.conf.json CSP set blocking unauthorized egress -- egress.rs module added with validate_egress and get_allowlist -- cmd_validate_egress and cmd_get_egress_allowlist Tauri commands registered -- 238/238 tests passing
 
 **Status:** CLOSED
+
+### Entry-748 | FIX-729 | 2026-06-06 09:57 PDT San Diego -- 2026-06-06 10:21 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 815e9ab
+**Scope:** FIX-728 follow-on -- egress validate_egress wiring -- supabase_writer.rs supabase_reader.rs email_alert.rs
+
+C1-008 egress wiring complete -- validate_egress called at all 7 outbound call sites -- supabase_writer.rs 6 sites -- supabase_reader.rs 1 site -- email_alert.rs 1 site -- use crate::egress added to all three files -- 238/238 tests passing
+
+**Status:** CLOSED
