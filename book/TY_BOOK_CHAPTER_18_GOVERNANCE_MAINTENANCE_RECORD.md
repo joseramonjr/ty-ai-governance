@@ -7594,3 +7594,13 @@ C1-008 egress wiring complete -- validate_egress called at all 7 outbound call s
 EcosystemFlowPage.tsx updated -- C1-008 egress enforcement annotated in 5 locations -- Jaya Runtime tip, Guardian Alert tip, SS321 Supabase tip, Jaya PRODUCES drill-down, Guardian Alert PRODUCES drill-down -- diagram now accurately reflects egress routing
 
 **Status:** CLOSED
+
+### Entry-750 | FIX-731 | 2026-06-06 12:52 PDT San Diego -- 2026-06-06 12:59 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** e8c3db3
+**Scope:** HVP Layer 2 -- replace v0.1 non-empty check with real PVS Argon2 verification in resume_from_lockdown -- protection_state.rs
+
+HVP Layer 2 real enforcement -- resume_from_lockdown now calls pvs_verify_item hvp_layer2_passphrase -- Argon2 hash verification replaces v0.1 non-empty check -- wrong passphrase rejected with ledger entry -- PVS error handled with clear guardian instructions -- 238/238 tests passing
+
+**Status:** CLOSED
