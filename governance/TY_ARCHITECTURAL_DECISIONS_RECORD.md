@@ -606,7 +606,7 @@ oversight.
 
 ## ADR-029 â€” FLAG-136: TY AI Ecosystem Knowledge Layer
 **Date:** 2026-05-29 | San Diego (America/Los_Angeles)
-**Status:** OPEN â€” Phase 15+ scope
+**Status:** ACCEPTED -- Phase 15 opening -- FIX-727 -- 2026-06-06 San Diego
 **Raised by:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
 
 ### Problem
@@ -788,7 +788,7 @@ FLAG-RED-06 -- CLOSED
 ## ADR-032 -- Jaya Runtime SQLite Backup Architecture
 
 **Date:** 2026-06-02 | San Diego (America/Los_Angeles)
-**FIX:** FIX-709 · Entry-727
+**FIX:** FIX-709 ï¿½ Entry-727
 **Phase:** Phase 14 P3 -- OAQ-002 CAT-3-014 gap closure
 **Status:** ACCEPTED -- Option A active, Option B Phase 15, Option C deferred
 **Raised by:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
@@ -886,4 +886,183 @@ TY_OFFLINE_FAIL_CLOSED_RULE.md (FIX-708) -- fail-closed during backup
 
 **Builder confirmed:** Jose Ramon Alvarado McHerron AKA Jose Ramon
   Bautista Jr.
-**Reference:** FIX-709 · Entry-727 · 2026-06-02 13:06 PDT San Diego
+**Reference:** FIX-709 ï¿½ Entry-727 ï¿½ 2026-06-02 13:06 PDT San Diego
+
+
+---
+
+## ADR-033 -- Annual Governance Review
+
+**Date:** 2026-06-06 | San Diego (America/Los_Angeles)
+**Phase:** Phase 15
+**Status:** ACCEPTED
+**FIX:** FIX-727 -- Entry-746
+**Raised by:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+
+### Question
+How does TY AI OS governance stay accurate and current over time without
+becoming stale, contradicted, or quietly drifting from what the system
+actually does?
+
+### Problem
+Governance documents, thresholds, and conscience thread entries were written
+at specific points in time. As Jaya Runtime evolves, new capabilities are
+added, and the threat landscape changes, those documents can drift from
+reality. Without a formal review cycle, drift accumulates silently until
+the gap between documentation and implementation becomes large enough to
+be exploitable.
+
+### Decision
+An Annual Governance Review (AGR) is established as a mandatory governance
+process. Once per calendar year, the guardian conducts a structured review
+of all canonical governance documents against the current state of the
+codebase, ledger, and threat environment. The review produces a signed AGR
+record committed to ty-ai-governance.
+
+### Minimum AGR Scope
+- Verify all Canonical Thresholds Registry values match current Rust
+  implementation
+- Verify Conscience Thread entries have not been contradicted by new code
+- Verify QA Registry locked answers remain consistent with current
+  architecture
+- Verify ADR decisions have not been silently overridden
+- Check for new capability additions that require Dual-Use Audit
+- Produce an AGR summary record with date, guardian signature, and findings
+
+### Constraints
+- AGR cannot modify sealed governance entries
+- Findings only -- changes require Phase 12 Governed Evolution process
+  (ADR-021, 7-day deliberation minimum)
+- AGR record is append-only once committed
+
+### Rationale
+A governance system that is never reviewed is a governance system that
+trusts its own past. Annual review converts governance from a static
+artifact into a living process. The cadence (annual) aligns with T-03
+(guardian incapacitation threshold) -- a guardian present enough to
+conduct an annual review is a guardian present enough to govern.
+
+### Builder confirmed
+Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr. | 2026-06-06 San Diego
+
+### Reference
+QA-085 -- FIX-727 -- Entry-746
+
+---
+
+## ADR-034 -- External Input Protocol
+
+**Date:** 2026-06-06 | San Diego (America/Los_Angeles)
+**Phase:** Phase 15
+**Status:** ACCEPTED
+**FIX:** FIX-727 -- Entry-746
+**Raised by:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+
+### Question
+How does TY AI OS receive external input -- from auditors, researchers,
+future adopters, or the public -- without that input compromising governance
+integrity or creating an unauthorized authority pathway?
+
+### Problem
+TY AI OS is designed to be externally verifiable. External verifiers will
+have questions, findings, and challenges. Without a defined protocol, two
+failure modes exist: (1) external input is ignored entirely, making TY
+governance a closed system that cannot improve from external scrutiny;
+(2) external input is acted on without governance controls, creating an
+unauthorized pathway that bypasses the guardian chain.
+
+### Decision
+An External Input Protocol (EIP) is established. All external input --
+audit findings, challenge submissions, public questions, researcher
+feedback -- is received through a defined channel and handled according
+to a tiered response model.
+
+### Tier Structure
+- Tier A -- Factual error: External party identifies a verifiable error
+  in a governance document. Guardian reviews. If confirmed, corrected via
+  normal FIX process. Zero-Fabrication Rule applies -- correction requires
+  primary source evidence.
+- Tier B -- Architectural challenge: External party challenges a design
+  decision. Guardian reviews against ADR record. If the ADR already
+  addresses the challenge, the ADR is the response. If not, the challenge
+  is evaluated and either an ADQ entry is added or a new ADR is opened.
+- Tier C -- Governance suggestion: External party suggests a new
+  governance mechanism or rule. Treated as input only. Guardian may open
+  a new FLAG or defer. No obligation to adopt.
+
+### Constraints
+- External input cannot modify sealed governance records
+- External parties have no authority in the TY governance chain regardless
+  of credentials or role
+- Input is received; authority remains with the guardian
+
+### Rationale
+External verifiability is a core TY AI OS value. A system that cannot
+receive external scrutiny is not a governance system -- it is a closed
+assertion. The EIP creates the pathway for scrutiny without creating an
+authority gap. The three-tier model ensures different types of input
+receive proportional responses without any input bypassing the guardian
+chain.
+
+### Builder confirmed
+Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr. | 2026-06-06 San Diego
+
+### Reference
+QA-085 -- FIX-727 -- Entry-746
+
+---
+
+## ADR-035 -- Capability Horizon Registry
+
+**Date:** 2026-06-06 | San Diego (America/Los_Angeles)
+**Phase:** Phase 15
+**Status:** ACCEPTED
+**FIX:** FIX-727 -- Entry-746
+**Raised by:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
+
+### Question
+How does TY AI OS stay ahead of emerging AI capabilities that could render
+current governance boundaries insufficient, obsolete, or exploitable?
+
+### Problem
+TY AI OS governance was designed for the AI capabilities that existed at
+the time each phase was built. As AI capabilities advance -- more autonomous
+agents, multimodal systems, agentic chains, self-modifying models --
+boundaries designed for current systems may not hold against future ones.
+Without a tracking mechanism, TY governance silently becomes outdated while
+claiming to govern a threat landscape it no longer accurately describes.
+
+### Decision
+A Capability Horizon Registry (CHR) is established as a living document
+in ty-ai-governance. The CHR tracks emerging AI capabilities relevant to
+TY governance boundaries. For each capability the registry records:
+capability description, current governance coverage assessment
+(covered / gap / unknown), and required action
+(none / dual-use audit / new ADR / phase scope item).
+
+### CHR Update Discipline
+- Reviewed and updated during each Annual Governance Review (ADR-033)
+- New capability entries may be added at any session close when a
+  significant new capability is identified
+- Entries are append-only -- past assessments are never deleted
+- A CHR entry that identifies a gap triggers a FLAG; the FLAG is tracked
+  until resolved
+
+### Constraints
+- CHR does not modify existing governance
+- It is an early-warning instrument, not an authority mechanism
+- Identified gaps require the normal governance process to close
+
+### Rationale
+A governance system that cannot see the horizon is a governance system
+that will eventually be overtaken by what is coming. The CHR converts
+the abstract risk of capability drift into a concrete tracked register.
+Combined with ADR-033 (Annual Governance Review) and ADR-034 (External
+Input Protocol), it completes the three mechanisms identified in QA-085
+as the Phase 15 governance growth architecture.
+
+### Builder confirmed
+Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr. | 2026-06-06 San Diego
+
+### Reference
+QA-085 -- FIX-727 -- Entry-746
