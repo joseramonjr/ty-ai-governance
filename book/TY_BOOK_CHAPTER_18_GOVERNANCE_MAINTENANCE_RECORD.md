@@ -7634,3 +7634,13 @@ SOP v1.2 committed -- HVP Layer 2 Argon2 enforcement documented -- Section 3B up
 ECOSYSTEM_STATS corrected -- phasesSealed 14 -- chaptersSealed 75 -- testsTotal 238 -- testsPass 238 -- vocabTerms 387 -- HUB_VERSION Phase14Sealed -- snapshotDate 2026-06-06 -- live site now shows accurate statistics
 
 **Status:** CLOSED
+
+### Entry-754 | FIX-735 | 2026-06-06 16:32 PDT San Diego -- 2026-06-06 16:39 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** a07d7ea
+**Scope:** Ch26 Section 28 -- Phase 15 opening terms -- Annual Governance Review -- External Input Protocol -- Capability Horizon Registry -- Egress Guard -- 4 new terms -- 387->391
+
+Ch26 Section 28 added -- Annual Governance Review AGR -- External Input Protocol EIP -- Capability Horizon Registry CHR -- Egress Guard -- 4 new terms -- 387->391 -- Sections 27->28 -- Section 26 placeholder entries updated to reference Section 28 canonical definitions
+
+**Status:** CLOSED
