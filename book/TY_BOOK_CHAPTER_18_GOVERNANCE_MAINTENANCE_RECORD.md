@@ -7644,3 +7644,13 @@ ECOSYSTEM_STATS corrected -- phasesSealed 14 -- chaptersSealed 75 -- testsTotal 
 Ch26 Section 28 added -- Annual Governance Review AGR -- External Input Protocol EIP -- Capability Horizon Registry CHR -- Egress Guard -- 4 new terms -- 387->391 -- Sections 27->28 -- Section 26 placeholder entries updated to reference Section 28 canonical definitions
 
 **Status:** CLOSED
+
+### Entry-755 | FIX-736 | 2026-06-06 16:46 PDT San Diego -- 2026-06-06 16:51 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 0637d8f
+**Scope:** bookChapterContent.ts -- Ch26 Section 28 sync -- Annual Governance Review AGR -- External Input Protocol EIP -- Capability Horizon Registry CHR -- Egress Guard -- 4 terms -- 398->402 terms -- sections 27->28
+
+bookChapterContent.ts Ch26 Section 28 synced to TYOVA -- Annual Governance Review AGR -- External Input Protocol EIP -- Capability Horizon Registry CHR -- Egress Guard -- 4 terms -- 398->402 -- sections 27->28 -- live at testing.tyova.ai/book/chapter-26
+
+**Status:** CLOSED
