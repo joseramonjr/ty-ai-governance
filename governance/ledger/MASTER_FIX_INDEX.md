@@ -1,4 +1,4 @@
-# MASTER_FIX_INDEX
+﻿# MASTER_FIX_INDEX
 
 Status: Active
 ---
@@ -4826,3 +4826,5 @@ at every session. Same-question-different-wording problem solved.
 
 
 | FIX-727 · Entry-746 | 2026-06-06 08:26 PDT San Diego -- 2026-06-06 09:09 PDT San Diego | ty-ai-governance | Phase 15 opening -- ADR-029 acceptance review -- ADR-033 ADR-034 ADR-035. Phase 15 opened -- ADR-029 ACCEPTED -- ADR-033 Annual Governance Review -- ADR-034 External Input Protocol -- ADR-035 Capability Horizon Registry -- committed to ty-ai-governance Commit 25bb4f3. CLOSED |
+
+| FIX-728 | 2026-06-06 09:16 PDT San Diego -- 2026-06-06 09:32 PDT San Diego | Jaya-Runtime | FLAG-142 -- C1-008 egress deny-by-default -- tauri.conf.json CSP + Rust egress guard module. FLAG-142 CLOSED -- C1-008 egress deny-by-default structurally enforced -- tauri.conf.json CSP set blocking unauthorized egress -- egress.rs module added with validate_egress and get_allowlist -- cmd_validate_egress and cmd_get_egress_allowlist Tauri commands registered -- 238/238 tests passing Commit 197e37c. CLOSED |
