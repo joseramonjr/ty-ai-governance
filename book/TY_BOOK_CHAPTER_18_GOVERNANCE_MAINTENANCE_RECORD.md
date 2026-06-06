@@ -7584,3 +7584,13 @@ FLAG-142 CLOSED -- C1-008 egress deny-by-default structurally enforced -- tauri.
 C1-008 egress wiring complete -- validate_egress called at all 7 outbound call sites -- supabase_writer.rs 6 sites -- supabase_reader.rs 1 site -- email_alert.rs 1 site -- use crate::egress added to all three files -- 238/238 tests passing
 
 **Status:** CLOSED
+
+### Entry-749 | FIX-730 | 2026-06-06 10:37 PDT San Diego -- 2026-06-06 10:47 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** ae931c0
+**Scope:** EcosystemFlowPage.tsx -- egress guard annotation -- tip text and drill-down PRODUCES text updated on Jaya Runtime, Guardian Alert, SS321 Supabase nodes -- C1-008 enforcement visible in diagram
+
+EcosystemFlowPage.tsx updated -- C1-008 egress enforcement annotated in 5 locations -- Jaya Runtime tip, Guardian Alert tip, SS321 Supabase tip, Jaya PRODUCES drill-down, Guardian Alert PRODUCES drill-down -- diagram now accurately reflects egress routing
+
+**Status:** CLOSED
