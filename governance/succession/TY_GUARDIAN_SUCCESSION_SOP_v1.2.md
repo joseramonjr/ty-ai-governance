@@ -1,4 +1,4 @@
-# TY GUARDIAN SUCCESSION SOP v1.1
+# TY GUARDIAN SUCCESSION SOP v1.2
 ## Standard Operating Procedure — Guardian Transfer and Succession Protocol
 
 **Classification:** GUARDIAN RESTRICTED — SUCCESSOR ACCESS ONLY
@@ -95,7 +95,7 @@ You currently hold or have access to the following. Everything you need is in on
 You received this from Jose personally. This is required to clear Lockdown State. Keep it secure. Do not photograph it, describe it in writing, or share it with anyone who is not a designated guardian. If it is lost or destroyed, Lockdown State cannot be cleared through normal means.
 
 ### 3B — The HVP Passphrase (Layer 2)
-The HVP passphrase is stored in the encrypted supplement file described in Section 3E. You do not need to find it anywhere else.
+The HVP passphrase is your guardian passphrase — the same passphrase Jose gave you verbally and wrote in the sealed envelope. This passphrase is now cryptographically enforced using Argon2 hashing in the Private Verification Store (PVS). Only the correct passphrase clears Lockdown State. You do not need to find it anywhere other than the encrypted supplement file described in Section 3E.
 
 ### 3C — The Ed25519 Private Key
 The Ed25519 private key file and its exact location on the machine are stored in the encrypted supplement file described in Section 3E. You do not need to find it anywhere else.
@@ -172,7 +172,7 @@ You are the only one who can clear Lockdown. No AI system, no other person, and 
 
 **What you need:**
 - The physical verification object (HVP Layer 1) — you have this
-- The HVP passphrase (HVP Layer 2) — in the encrypted supplement
+- Your guardian passphrase (HVP Layer 2) — the passphrase Jose gave you verbally, also written in the sealed envelope and stored in the encrypted supplement
 - Jaya Runtime running on the machine (see Section 4 note — technical assistance may be required until TY-0001.C ships)
 
 **Steps:**
@@ -181,7 +181,7 @@ You are the only one who can clear Lockdown. No AI system, no other person, and 
 2. The system will show: "LOCKDOWN STATE — HVP Verification Required"
 3. Select "Begin HVP Verification"
 4. Layer 1: Present your physical verification object as prompted
-5. Layer 2: Enter the HVP passphrase when prompted
+5. Layer 2: Enter your guardian passphrase when prompted — enter it twice to confirm
 6. All layers must pass simultaneously — failure of any single layer rejects the attempt
 7. If verification passes, Lockdown clears and Jaya returns to Normal State
 8. The clearance event is recorded permanently in the governance ledger
@@ -353,9 +353,9 @@ That is all I ask.
 
 ---
 
-*TY GUARDIAN SUCCESSION SOP v1.1*
-*Written: 2026-06-05 | San Diego (America/Los_Angeles)*
+*TY GUARDIAN SUCCESSION SOP v1.2*
+*Written: 2026-06-05 | Updated: 2026-06-06 | San Diego (America/Los_Angeles)*
 *Author: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
-*FIX: FIX-726 | Entry-745*
+*FIX: FIX-726 | Entry-745 | Updated: FIX-733 | Entry-752*
 *Status: LIVING — May be updated by the current guardian at any time*
 *Classification: GUARDIAN RESTRICTED — SUCCESSOR ACCESS ONLY*
