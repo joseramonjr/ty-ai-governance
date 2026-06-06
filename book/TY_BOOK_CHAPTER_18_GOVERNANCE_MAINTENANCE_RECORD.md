@@ -7614,3 +7614,13 @@ HVP Layer 2 real enforcement -- resume_from_lockdown now calls pvs_verify_item h
 HVP Layer 2 initialization UI complete -- HvpInitCard permanently visible in GuardianCheckinPanel.tsx -- pvs_initialize called with hvp_layer2_passphrase item_id -- passphrase entered twice for confirmation -- minimum 12 characters enforced -- Argon2 hash stored in PVS -- builder action only warning displayed
 
 **Status:** CLOSED
+
+### Entry-752 | FIX-733 | 2026-06-06 14:51 PDT San Diego -- 2026-06-06 14:57 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** e53ed03
+**Scope:** SOP v1.2 -- HVP Layer 2 real enforcement documented -- Section 3B and Section 5 updated -- supplement rebuild with real HVP passphrase
+
+SOP v1.2 committed -- HVP Layer 2 Argon2 enforcement documented -- Section 3B updated with real passphrase model -- Section 5 updated with enter twice instruction -- footer updated -- v1.1 renamed to v1.2 -- supplement rebuild pending
+
+**Status:** CLOSED
