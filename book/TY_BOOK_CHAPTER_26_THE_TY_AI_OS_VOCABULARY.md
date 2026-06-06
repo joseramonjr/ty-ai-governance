@@ -1,4 +1,4 @@
-﻿# Chapter 26 -- The TY AI OS Vocabulary
+# Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
 **CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added) | FIX-720 (Section 27 created -- HALT_STATE, Canon-to-Code Audit added)
 **Model:** Claude Sonnet 4.6
@@ -3951,8 +3951,7 @@ the existing governance rules still accurately reflect the governance intent
 in the current world. Not a change process -- a review process. Output is
 either rules remain appropriate or a governed evolution proposal is required.
 Closes the freeze risk by building calendar-driven adaptation into the
-governance lifecycle. To be formally established as ADR-030 when Phase 15
-opens. First documented in QA-085, FIX-700, 2026-06-01.
+governance lifecycle. Formally established as ADR-033 in FIX-727, 2026-06-06. Full canonical definition in Section 28.
 
 **External Input Protocol**
 *First coined: 2026-06-01 | San Diego (America/Los_Angeles)*
@@ -3964,8 +3963,7 @@ from other governance systems -- into the TY AI OS governed evolution process.
 Prevents the ecosystem from being isolated from the world's growing
 understanding of AI governance. Defines how external information is evaluated,
 who can submit it, and what the threshold is for triggering a governed
-evolution proposal. To be formally established as ADR-031 when Phase 15
-opens. First documented in QA-085, FIX-700, 2026-06-01.
+evolution proposal. Formally established as ADR-034 in FIX-727, 2026-06-06. Full canonical definition in Section 28.
 
 **Capability Horizon Registry**
 *First coined: 2026-06-01 | San Diego (America/Los_Angeles)*
@@ -3977,9 +3975,7 @@ Examples already identified: cryptographic aging to post-quantum algorithms,
 quantum computing governance, multi-modal AI governance, agentic AI at scale.
 Documents known future challenges before they become crises. Gives future
 guardians advance notice of what is coming. Prevents capability gaps from
-being discovered under pressure rather than anticipated in advance. To be
-formally established as ADR-032 when Phase 15 opens. First documented in
-QA-085, FIX-700, 2026-06-01.
+being discovered under pressure rather than anticipated in advance. Formally established as ADR-035 in FIX-727, 2026-06-06. Full canonical definition in Section 28.
 
 **Fail-Closed**
 *First coined: 2026-06-02 | San Diego (America/Los_Angeles)*
@@ -4143,10 +4139,95 @@ target, audit verifies enforcement, code fix closes the gap, red-team
 verifies the fix. This pattern is recorded in ADQ-058 as the standard
 for all future red-team gap closure in TY AI OS.
 
+
+
+## Section 28 -- Phase 15 Opening and Egress Governance Terms
+
+These terms describe the governance mechanisms established at Phase 15 opening
+(ADR-033 through ADR-035) and the egress enforcement architecture implemented
+in FIX-728 through FIX-730 closing FLAG-142 and enforcing C1-008.
+
+**Annual Governance Review (AGR)**
+*First coined: 2026-06-06 | San Diego (America/Los_Angeles)*
+*Established: FIX-727 | ADR-033 | Entry-746 | 2026-06-06 08:26 PDT*
+A mandatory governance process established in ADR-033 requiring the guardian
+to conduct a structured review of all canonical TY AI OS governance documents
+against the current state of the codebase, ledger, and threat environment once
+per calendar year. The AGR produces a signed summary record committed to the
+ty-ai-governance repository. The minimum AGR scope includes: verifying all
+Canonical Thresholds Registry values match the current Rust implementation,
+verifying Conscience Thread entries have not been contradicted by new code,
+verifying QA Registry locked answers remain consistent with current
+architecture, verifying ADR decisions have not been silently overridden, and
+checking for new capability additions that require Dual-Use Audit. The AGR
+cannot modify sealed governance entries -- it produces findings only. Changes
+require the Phase 12 Governed Evolution process (ADR-021, 7-day deliberation
+minimum). The AGR record is append-only once committed. The annual cadence
+aligns with T-03 (guardian incapacitation threshold) -- a guardian present
+enough to conduct an annual review is a guardian present enough to govern.
+Addresses QA-085. Phase 15 scope.
+
+**External Input Protocol (EIP)**
+*First coined: 2026-06-06 | San Diego (America/Los_Angeles)*
+*Established: FIX-727 | ADR-034 | Entry-746 | 2026-06-06 08:26 PDT*
+A defined governance protocol established in ADR-034 for receiving external
+input -- from auditors, researchers, future adopters, or the public -- without
+that input compromising governance integrity or creating an unauthorized
+authority pathway. The EIP uses a three-tier response model: Tier A (factual
+error) -- external party identifies a verifiable error in a governance document,
+guardian reviews, if confirmed corrected via normal FIX process with
+Zero-Fabrication Rule applied; Tier B (architectural challenge) -- external
+party challenges a design decision, guardian reviews against ADR record, if the
+ADR already addresses the challenge the ADR is the response, otherwise the
+challenge is evaluated and an ADQ entry added or new ADR opened; Tier C
+(governance suggestion) -- external party suggests a new governance mechanism
+or rule, treated as input only, guardian may open a new FLAG or defer, no
+obligation to adopt. External input cannot modify sealed governance records.
+External parties have no authority in the TY governance chain regardless of
+credentials or role. Input is received; authority remains with the guardian.
+Addresses QA-085. Phase 15 scope.
+
+**Capability Horizon Registry (CHR)**
+*First coined: 2026-06-06 | San Diego (America/Los_Angeles)*
+*Established: FIX-727 | ADR-035 | Entry-746 | 2026-06-06 08:26 PDT*
+A living document established in ADR-035 maintained in the ty-ai-governance
+repository that tracks emerging AI capabilities relevant to TY AI OS governance
+boundaries. For each capability the CHR records: capability description, current
+governance coverage assessment (covered / gap / unknown), and required action
+(none / dual-use audit / new ADR / phase scope item). The CHR is reviewed and
+updated during each Annual Governance Review (ADR-033). New capability entries
+may be added at any session close when a significant new capability is
+identified. Entries are append-only -- past assessments are never deleted. A
+CHR entry that identifies a gap triggers a FLAG; the FLAG is tracked until
+resolved. The CHR is an early-warning instrument, not an authority mechanism.
+Identified gaps require the normal governance process to close. The CHR
+converts the abstract risk of capability drift into a concrete tracked register.
+Addresses QA-085. Phase 15 scope.
+
+**Egress Guard**
+*First coined: 2026-06-06 | San Diego (America/Los_Angeles)*
+*Built: FIX-728 | FIX-729 | FLAG-142 CLOSED | Entry-747 | Entry-748 | 2026-06-06*
+The structural enforcement mechanism for C1-008 (Deny-by-Default Egress,
+GIQ-047) in Jaya Runtime. The Egress Guard consists of two enforcement layers:
+(1) a Content Security Policy (CSP) in tauri.conf.json that blocks all outbound
+connections from the Tauri webview frontend except to allowlisted destinations
+(*.supabase.co and api.resend.com); (2) egress.rs, a Rust module that defines
+the canonical egress allowlist as a static constant and provides
+validate_egress(url) -- a function that returns a hard error for any URL not on
+the allowlist. The validate_egress() function is called at all seven outbound
+call sites in Jaya Runtime: six in supabase_writer.rs and one each in
+supabase_reader.rs and email_alert.rs. An unauthorized egress attempt is
+rejected before any connection is attempted and a ledger entry is written.
+Adding a new authorized destination requires a governance FIX with builder
+authorization -- the allowlist is a static constant in committed code. The
+Egress Guard closes FLAG-142 (opened FIX-718 Canon-to-Code Audit, GAP-3a)
+and brings C1-008 from DOC-ONLY status to CODE-ENFORCED status. Phase 15.
+See also: egress.rs, C1-008, GIQ-047, FLAG-142, tauri.conf.json.
+
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-06-03 | San Diego (America/Los_Angeles)*
-*Current Term Count: 387 | Sections: 27*
+*Updated: 2026-06-06 | San Diego (America/Los_Angeles)*
+*Current Term Count: 391 | Sections: 28*
 *This document grows with the project. It is never finished.*
