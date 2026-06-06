@@ -7604,3 +7604,13 @@ EcosystemFlowPage.tsx updated -- C1-008 egress enforcement annotated in 5 locati
 HVP Layer 2 real enforcement -- resume_from_lockdown now calls pvs_verify_item hvp_layer2_passphrase -- Argon2 hash verification replaces v0.1 non-empty check -- wrong passphrase rejected with ledger entry -- PVS error handled with clear guardian instructions -- 238/238 tests passing
 
 **Status:** CLOSED
+
+### Entry-751 | FIX-732 | 2026-06-06 14:19 PDT San Diego -- 2026-06-06 14:26 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 95665ad
+**Scope:** HVP Layer 2 initialization UI -- GuardianCheckinPanel.tsx -- pvs_initialize hvp_layer2_passphrase -- always visible -- passphrase entry x2 confirm
+
+HVP Layer 2 initialization UI complete -- HvpInitCard permanently visible in GuardianCheckinPanel.tsx -- pvs_initialize called with hvp_layer2_passphrase item_id -- passphrase entered twice for confirmation -- minimum 12 characters enforced -- Argon2 hash stored in PVS -- builder action only warning displayed
+
+**Status:** CLOSED
