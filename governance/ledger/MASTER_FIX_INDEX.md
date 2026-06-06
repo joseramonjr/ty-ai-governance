@@ -4823,3 +4823,6 @@ at every session. Same-question-different-wording problem solved.
 **Ledger:** Entry-745
 **Flag:** FLAG-140 CLOSED
 **Blocks:** TY-0001.C — FLAG-140 was pre-ship blocker — now resolved
+
+
+| FIX-727 · Entry-746 | 2026-06-06 08:26 PDT San Diego -- 2026-06-06 09:09 PDT San Diego | ty-ai-governance | Phase 15 opening -- ADR-029 acceptance review -- ADR-033 ADR-034 ADR-035. Phase 15 opened -- ADR-029 ACCEPTED -- ADR-033 Annual Governance Review -- ADR-034 External Input Protocol -- ADR-035 Capability Horizon Registry -- committed to ty-ai-governance Commit 25bb4f3. CLOSED |
