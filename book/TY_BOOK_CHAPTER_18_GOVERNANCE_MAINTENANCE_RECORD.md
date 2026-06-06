@@ -7545,3 +7545,11 @@ Prompt 3: Featured announcement banner updated from Phase 12 message (outdated s
 **Integrity:** Zero-Fabrication Rule applied. Content sourced from builder's spoken words in session 2026-06-04 and 2026-06-05.
 **Files:** TYOVA/src/data/bookChapterContent.ts · TYOVA/src/pages/BookOfTyChapter.tsx
 **Result:** COMMITTED — Lovable sync required to go live
+## Entry-745 · FIX-726
+**Date:** 2026-06-05 · 20:24 PDT · San Diego
+**Type:** Guardian Succession Envelope — FLAG-140 CLOSED
+**Action:** Complete Guardian Succession Envelope built, encrypted, and committed
+**Summary:** FLAG-140 closed. Ed25519 guardian key pair generated using ed25519-dalek v2. Public key 061d2f1730e95fa6935cbc111c02bac0ed2ec54bd1f3da581fc6c4c07e65c761 committed to governance/succession/. Private key gitignored and stored locally only. Encrypted supplement file TY_GUARDIAN_SUPPLEMENT_ENCRYPTED.bin built at 3668 bytes using AES-256 — contains Ed25519 key location, HVP v0.1 status and clearance instructions, Tier 2 passphrase, GitHub credentials, Jaya Runtime launch instructions, and contact information for Walker Weitzel. Guardian Check-In UI panel added to Jaya Runtime Identity section — GuardianCheckinPanel.tsx 153 lines — three Tauri commands registered (guardian_checkin, get_last_guardian_checkin, check_succession_status). TY_GUARDIAN_SUCCESSION_SOP_v1.1.md written as complete guardian transfer protocol — 361 lines — designated successor Janet L McHerron confirmed holding physical verification object. 228/228 tests passing. FLAG-140 was the last buildable pre-ship blocker for TY-0001.C. Only FLAG-131 (Walker Weitzel — external) remains before TY-0001.C can ship.
+**Integrity:** Zero-Fabrication Rule applied. All records traceable to committed governance artifacts.
+**Files:** See MFI Entry-745 for complete file list
+**Result:** COMMITTED — FLAG-140 CLOSED

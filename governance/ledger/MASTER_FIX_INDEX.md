@@ -4793,3 +4793,33 @@ at every session. Same-question-different-wording problem solved.
 - TYOVA/src/pages/BookOfTyChapter.tsx
 **Ledger:** Entry-744
 **Flag:** F-6 CLOSED
+## FIX-726 · Entry-745
+**Date:** 2026-06-05 · 20:24 PDT · San Diego
+**Description:** FLAG-140 CLOSED — Guardian Succession Envelope built and committed
+- Ed25519 guardian key pair generated using ed25519-dalek v2
+- Public key: 061d2f1730e95fa6935cbc111c02bac0ed2ec54bd1f3da581fc6c4c07e65c761
+- Private key stored at governance/succession/guardian_private.key — gitignored — never committed
+- Succession directory created: governance/succession/
+- Encrypted supplement file built: TY_GUARDIAN_SUPPLEMENT_ENCRYPTED.bin — 3668 bytes — AES-256
+- Supplement contains: Ed25519 key location, HVP v0.1 status, Tier 2 passphrase, GitHub access, launch instructions, contacts
+- Guardian Check-In UI panel added to Jaya Runtime — Identity section
+- Tauri commands registered: guardian_checkin, get_last_guardian_checkin, check_succession_status
+- GuardianCheckinPanel.tsx created — 153 lines
+- lib.rs updated with FIX-726 Guardian Check-In command block
+- 228/228 tests passing
+- TY_GUARDIAN_SUCCESSION_SOP_v1.1.md written — 361 lines — guardian transfer protocol
+- Designated successor: Janet L McHerron — physical verification object confirmed in her possession
+- FLAG-140 PRE-SHIP BLOCKER: CLOSED
+- Jaya-Runtime: src/components/GuardianCheckinPanel.tsx (new)
+- Jaya-Runtime: src/App.tsx
+- Jaya-Runtime: src-tauri/src/lib.rs
+- ty-ai-governance: governance/succession/guardian_public.key (new)
+- ty-ai-governance: governance/succession/TY_GUARDIAN_SUPPLEMENT_ENCRYPTED.bin (new)
+- ty-ai-governance: .gitignore
+**Commits:**
+- ty-ai-governance: 68ff058 (succession dir + public key)
+- ty-ai-governance: 2e4ce18 (encrypted supplement)
+- Jaya-Runtime: 15f8551 (Guardian Check-In UI + Tauri commands)
+**Ledger:** Entry-745
+**Flag:** FLAG-140 CLOSED
+**Blocks:** TY-0001.C — FLAG-140 was pre-ship blocker — now resolved
