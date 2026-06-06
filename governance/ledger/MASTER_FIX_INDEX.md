@@ -1,4 +1,4 @@
-# MASTER_FIX_INDEX
+﻿# MASTER_FIX_INDEX
 
 Status: Active
 ---
@@ -4838,3 +4838,5 @@ at every session. Same-question-different-wording problem solved.
 | FIX-732 | 2026-06-06 14:19 PDT San Diego -- 2026-06-06 14:26 PDT San Diego | Jaya-Runtime | HVP Layer 2 initialization UI -- GuardianCheckinPanel.tsx -- pvs_initialize hvp_layer2_passphrase -- always visible -- passphrase entry x2 confirm. HVP Layer 2 initialization UI complete -- HvpInitCard permanently visible in GuardianCheckinPanel.tsx -- pvs_initialize called with hvp_layer2_passphrase item_id -- passphrase entered twice for confirmation -- minimum 12 characters enforced -- Argon2 hash stored in PVS -- builder action only warning displayed Commit 95665ad. Hotfix 55da632 -- InitItem field corrected from id to item_id -- HVP passphrase initialized successfully in PVS. CLOSED |
 
 | FIX-733 | 2026-06-06 14:51 PDT San Diego -- 2026-06-06 14:57 PDT San Diego | ty-ai-governance | SOP v1.2 -- HVP Layer 2 real enforcement documented -- Section 3B and Section 5 updated -- supplement rebuild with real HVP passphrase. SOP v1.2 committed -- HVP Layer 2 Argon2 enforcement documented -- Section 3B updated with real passphrase model -- Section 5 updated with enter twice instruction -- footer updated -- v1.1 renamed to v1.2 -- supplement rebuild pending Commit e53ed03. Supplement v3 rebuilt 53fbc4e -- HVP Layer 2 real passphrase included -- 3088 bytes -- decryption verified. CLOSED |
+
+| FIX-734 | 2026-06-06 16:27 PDT San Diego -- 2026-06-06 16:29 PDT San Diego | TYOVA | ECOSYSTEM_STATS update -- phasesSealed 12->14 -- chaptersSealed 72->75 -- testsTotal 174->238 -- testsPass 174->238 -- vocabTerms 359->387 -- HUB_VERSION Phase12Sealed->Phase14Sealed -- snapshotDate updated. ECOSYSTEM_STATS corrected -- phasesSealed 14 -- chaptersSealed 75 -- testsTotal 238 -- testsPass 238 -- vocabTerms 387 -- HUB_VERSION Phase14Sealed -- snapshotDate 2026-06-06 -- live site now shows accurate statistics Commit 629f743. CLOSED |

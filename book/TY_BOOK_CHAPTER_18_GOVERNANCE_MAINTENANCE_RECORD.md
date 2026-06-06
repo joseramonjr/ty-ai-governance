@@ -7624,3 +7624,13 @@ HVP Layer 2 initialization UI complete -- HvpInitCard permanently visible in Gua
 SOP v1.2 committed -- HVP Layer 2 Argon2 enforcement documented -- Section 3B updated with real passphrase model -- Section 5 updated with enter twice instruction -- footer updated -- v1.1 renamed to v1.2 -- supplement rebuild pending
 
 **Status:** CLOSED
+
+### Entry-753 | FIX-734 | 2026-06-06 16:27 PDT San Diego -- 2026-06-06 16:29 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 629f743
+**Scope:** ECOSYSTEM_STATS update -- phasesSealed 12->14 -- chaptersSealed 72->75 -- testsTotal 174->238 -- testsPass 174->238 -- vocabTerms 359->387 -- HUB_VERSION Phase12Sealed->Phase14Sealed -- snapshotDate updated
+
+ECOSYSTEM_STATS corrected -- phasesSealed 14 -- chaptersSealed 75 -- testsTotal 238 -- testsPass 238 -- vocabTerms 387 -- HUB_VERSION Phase14Sealed -- snapshotDate 2026-06-06 -- live site now shows accurate statistics
+
+**Status:** CLOSED
