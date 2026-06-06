@@ -1,4 +1,4 @@
-﻿# MASTER_FIX_INDEX
+# MASTER_FIX_INDEX
 
 Status: Active
 ---
@@ -4831,4 +4831,4 @@ at every session. Same-question-different-wording problem solved.
 
 | FIX-729 | 2026-06-06 09:57 PDT San Diego -- 2026-06-06 10:21 PDT San Diego | Jaya-Runtime | FIX-728 follow-on -- egress validate_egress wiring -- supabase_writer.rs supabase_reader.rs email_alert.rs. C1-008 egress wiring complete -- validate_egress called at all 7 outbound call sites -- supabase_writer.rs 6 sites -- supabase_reader.rs 1 site -- email_alert.rs 1 site -- use crate::egress added to all three files -- 238/238 tests passing Commit 815e9ab. CLOSED |
 
-| FIX-730 | 2026-06-06 10:37 PDT San Diego -- 2026-06-06 10:47 PDT San Diego | TYOVA | EcosystemFlowPage.tsx -- egress guard annotation -- tip text and drill-down PRODUCES text updated on Jaya Runtime, Guardian Alert, SS321 Supabase nodes -- C1-008 enforcement visible in diagram. EcosystemFlowPage.tsx updated -- C1-008 egress enforcement annotated in 5 locations -- Jaya Runtime tip, Guardian Alert tip, SS321 Supabase tip, Jaya PRODUCES drill-down, Guardian Alert PRODUCES drill-down -- diagram now accurately reflects egress routing Commit ae931c0. CLOSED |
+| FIX-730 | 2026-06-06 10:37 PDT San Diego -- 2026-06-06 10:47 PDT San Diego | TYOVA | EcosystemFlowPage.tsx -- egress guard annotation -- tip text and drill-down PRODUCES text updated on Jaya Runtime, Guardian Alert, SS321 Supabase nodes -- C1-008 enforcement visible in diagram. EcosystemFlowPage.tsx updated -- C1-008 egress enforcement annotated in 5 locations -- Jaya Runtime tip, Guardian Alert tip, SS321 Supabase tip, Jaya PRODUCES drill-down, Guardian Alert PRODUCES drill-down -- diagram now accurately reflects egress routing Commit ae931c0. Hotfix ffdb653 -- Jaya PRODUCES egress sentence tripled -- reduced to single occurrence. CLOSED |
