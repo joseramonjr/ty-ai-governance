@@ -14,6 +14,8 @@ jobs:
 
       - name: Install dependencies
         run: pip install resend
+
+      - name: Run guardian reminder script
         run: python3 .github/scripts/guardian_reminder.py
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
