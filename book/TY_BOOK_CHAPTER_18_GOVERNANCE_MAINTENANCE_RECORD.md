@@ -7684,3 +7684,13 @@ SOP v1.2 FLAG-142 marked CLOSED -- Pre-Flight tools reference note added -- Ecos
 FIX-739 -- SOP v1.3 full rewrite -- explicit step-by-step instructions for non-technical guardian -- USB key file procedure added -- Section 6D decrypt command restored -- encoding clean -- PDF generated and committed -- 2026-06-06 San Diego
 
 **Status:** CLOSED
+
+### Entry-759 | FIX-740 | 2026-06-06 18:57 PDT San Diego -- 2026-06-06 19:15 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 0085635
+**Scope:** Supplement v4 rebuild -- update Ed25519 key location from machine path to USB drive F:\guardian_private.key
+
+FIX-740 -- Supplement v4 -- Ed25519 key location updated from machine path to USB drive F:\guardian_private.key -- decryption verified -- 2026-06-06 San Diego
+
+**Status:** CLOSED
