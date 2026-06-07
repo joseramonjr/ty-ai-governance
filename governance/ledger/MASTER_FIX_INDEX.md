@@ -1,4 +1,4 @@
-# MASTER_FIX_INDEX
+﻿# MASTER_FIX_INDEX
 
 Status: Active
 ---
@@ -4844,3 +4844,5 @@ at every session. Same-question-different-wording problem solved.
 | FIX-735 | 2026-06-06 16:32 PDT San Diego -- 2026-06-06 16:39 PDT San Diego | ty-ai-governance | Ch26 Section 28 -- Phase 15 opening terms -- Annual Governance Review -- External Input Protocol -- Capability Horizon Registry -- Egress Guard -- 4 new terms -- 387->391. Ch26 Section 28 added -- Annual Governance Review AGR -- External Input Protocol EIP -- Capability Horizon Registry CHR -- Egress Guard -- 4 new terms -- 387->391 -- Sections 27->28 -- Section 26 placeholder entries updated to reference Section 28 canonical definitions Commit a07d7ea. CLOSED |
 
 | FIX-736 | 2026-06-06 16:46 PDT San Diego -- 2026-06-06 16:51 PDT San Diego | TYOVA | bookChapterContent.ts -- Ch26 Section 28 sync -- Annual Governance Review AGR -- External Input Protocol EIP -- Capability Horizon Registry CHR -- Egress Guard -- 4 terms -- 398->402 terms -- sections 27->28. bookChapterContent.ts Ch26 Section 28 synced to TYOVA -- Annual Governance Review AGR -- External Input Protocol EIP -- Capability Horizon Registry CHR -- Egress Guard -- 4 terms -- 398->402 -- sections 27->28 -- live at testing.tyova.ai/book/chapter-26 Commit 0637d8f. Hotfix 39b3d67 -- compiledNote term count 398->402 -- sections 27->28 -- Updated 2026-06-06 -- live total corrected. CLOSED |
+
+| FIX-737 | 2026-06-06 17:17 PDT San Diego -- 2026-06-06 17:19 PDT San Diego | ty-ai-governance | TOOLS_REFERENCE.md created -- permanent tool registry -- when to use each tool -- handoff section added. TY_TOOLS_REFERENCE.md created and committed -- permanent tool registry covering all session lifecycle tools -- vocabulary sync tools -- backup tools -- succession tools -- 10 usage rules -- known tool behaviors documented -- prevents tools from being forgotten between sessions Commit 89389e6. CLOSED |

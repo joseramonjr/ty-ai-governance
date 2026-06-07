@@ -7654,3 +7654,13 @@ Ch26 Section 28 added -- Annual Governance Review AGR -- External Input Protocol
 bookChapterContent.ts Ch26 Section 28 synced to TYOVA -- Annual Governance Review AGR -- External Input Protocol EIP -- Capability Horizon Registry CHR -- Egress Guard -- 4 terms -- 398->402 -- sections 27->28 -- live at testing.tyova.ai/book/chapter-26
 
 **Status:** CLOSED
+
+### Entry-756 | FIX-737 | 2026-06-06 17:17 PDT San Diego -- 2026-06-06 17:19 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 89389e6
+**Scope:** TOOLS_REFERENCE.md created -- permanent tool registry -- when to use each tool -- handoff section added
+
+TY_TOOLS_REFERENCE.md created and committed -- permanent tool registry covering all session lifecycle tools -- vocabulary sync tools -- backup tools -- succession tools -- 10 usage rules -- known tool behaviors documented -- prevents tools from being forgotten between sessions
+
+**Status:** CLOSED
