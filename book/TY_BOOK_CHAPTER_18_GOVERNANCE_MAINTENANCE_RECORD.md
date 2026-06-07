@@ -7694,3 +7694,13 @@ FIX-739 -- SOP v1.3 full rewrite -- explicit step-by-step instructions for non-t
 FIX-740 -- Supplement v4 -- Ed25519 key location updated from machine path to USB drive F:\guardian_private.key -- decryption verified -- 2026-06-06 San Diego
 
 **Status:** CLOSED
+
+### Entry-760 | FIX-741 | 2026-06-07 10:54 PDT San Diego -- 2026-06-07 15:12 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 3477b78
+**Scope:** Guardian reminder system -- Supabase Edge Function + pg_cron -- Twilio SMS + Resend email -- reminders at 6mo 10mo 11mo 12mo -- Guardian Status card on EcosystemFlow
+
+FIX-741 -- Guardian reminder system -- GitHub Actions workflow daily at 9AM PDT -- Resend email confirmed working -- Twilio SMS pending A2P 10DLC registration approval -- local number +16197894262 purchased -- guardian_authority table created -- test values in script pending SMS confirmation -- 2026-06-07 San Diego
+
+**Status:** CLOSED
