@@ -1,11 +1,11 @@
 # Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
-**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added) | FIX-720 (Section 27 created -- HALT_STATE, Canon-to-Code Audit added)
+**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added) | FIX-720 (Section 27 created -- HALT_STATE, Canon-to-Code Audit added) | FIX-735 (Section 28 created -- Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
-**Updated:** 2026-06-03 | San Diego (America/Los_Angeles)
+**Updated:** 2026-06-06 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 387 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01 + 4 Phase 14 P3 gap closure terms added FIX-711 2026-06-02: Fail-Closed, Backup Discipline, Gap Entry, Constitutional / Architectural / Operational Framing + 2 Phase 14 P3 canon-to-code audit terms added FIX-720 2026-06-03: HALT_STATE, Canon-to-Code Audit)
+**Current Term Count:** 391 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01 + 4 Phase 14 P3 gap closure terms added FIX-711 2026-06-02: Fail-Closed, Backup Discipline, Gap Entry, Constitutional / Architectural / Operational Framing + 2 Phase 14 P3 canon-to-code audit terms added FIX-720 2026-06-03: HALT_STATE, Canon-to-Code Audit + 4 Phase 15 opening terms added FIX-735 2026-06-06: Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
