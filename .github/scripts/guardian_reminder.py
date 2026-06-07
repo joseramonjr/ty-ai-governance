@@ -82,8 +82,14 @@ email_req = urllib.request.Request(
         "Content-Type": "application/json"
     }
 )
-with urllib.request.urlopen(email_req) as res:
-    print(f"Email sent: {res.status}")
+try:
+    with urllib.request.urlopen(email_req) as res:
+        print(f"Email sent: {res.status}")
+except urllib.error.HTTPError as e:
+    error_body = e.read().decode()
+    print(f"Email failed: {e.code} {e.reason}")
+    print(f"Resend error detail: {error_body}")
+    raise
 
 credentials = base64.b64encode(f"{TWILIO_ACCOUNT_SID}:{TWILIO_AUTH_TOKEN}".encode()).decode()
 sms_body = f"TY AI OS REMINDER: {reminder_type} guardian check-in due. {days_remaining} days remaining. Check your email for instructions."
