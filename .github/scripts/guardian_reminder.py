@@ -14,7 +14,7 @@ TWILIO_PHONE_NUMBER = os.environ["TWILIO_PHONE_NUMBER"]
 GUARDIAN_PHONE_NUMBER = os.environ["GUARDIAN_PHONE_NUMBER"]
 GUARDIAN_EMAIL = os.environ["GUARDIAN_EMAIL"]
 
-REMINDER_DAYS = [182, 304, 334, 355]
+REMINDER_DAYS = [182, 304, 334, 355, 0]
 
 url = f"{SUPABASE_URL}/rest/v1/guardian_authority?select=guardian_name,last_checkin_at,next_checkin_due&order=created_at.desc&limit=1"
 req = urllib.request.Request(url, headers={
