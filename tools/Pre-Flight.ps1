@@ -1,4 +1,4 @@
-﻿# =============================================================================
+# =============================================================================
 # Pre-Flight.ps1 - TY AI OS Session State Diagnostic
 # =============================================================================
 # Purpose: Read-only diagnostic reporting state of the two TY ecosystem git
@@ -382,4 +382,7 @@ if ($actionItems.Count -eq 0) {
     }
 }
 Write-Host "===========================================================" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "  TOOLS REFERENCE: E:\TY-Ecosystem\ty-ai-governance\tools\TY_TOOLS_REFERENCE.md" -ForegroundColor Cyan
+Write-Host "  Read this before any work begins. Use tools. Do not do manually what a tool does." -ForegroundColor Cyan
 Write-Host ""

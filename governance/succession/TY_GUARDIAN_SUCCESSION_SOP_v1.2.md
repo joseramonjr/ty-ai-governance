@@ -298,7 +298,7 @@ The following items are tracked in the governance system and must be resolved be
 |---|---|
 | FLAG-32 | Jaya Runtime system tray auto-start — Phase 15 — makes Jaya launch automatically at Windows login, accessible via single tray click |
 | FLAG-31 | Browser-based Jaya admin dashboard via localhost:7777 — Phase 15 — allows dashboard access without Tauri |
-| FLAG-142 | C1-008 egress guard in Rust — Phase 15 |
+| FLAG-142 | C1-008 egress guard in Rust -- CLOSED FIX-728 FIX-729 2026-06-06 |
 
 These flags are tracked in the governance ledger at E:\TY-Ecosystem\ty-ai-governance\governance\FLAGS.md and visible in the TYOVA transparency archive.
 
