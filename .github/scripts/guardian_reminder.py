@@ -39,7 +39,7 @@ if days_elapsed not in REMINDER_DAYS:
     print("No reminder needed today.")
     exit(0)
 
-reminder_map = {182: "6-month", 304: "10-month", 334: "11-month", 355: "12-month"}
+reminder_map = {182: "6-month", 304: "10-month", 334: "11-month", 355: "12-month", 0: "test"}
 reminder_type = reminder_map[days_elapsed]
 print(f"Sending {reminder_type} reminder...")
 
