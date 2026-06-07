@@ -7674,3 +7674,13 @@ TY_TOOLS_REFERENCE.md created and committed -- permanent tool registry covering 
 SOP v1.2 FLAG-142 marked CLOSED -- Pre-Flight tools reference note added -- EcosystemFlowPage.tsx hardcoded 12 phases replaced with ECOSYSTEM_STATS.phasesSealed -- TYOVA commit 60346f4
 
 **Status:** CLOSED
+
+### Entry-758 | FIX-739 | 2026-06-06 18:04 PDT San Diego -- 2026-06-06 18:54 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** e653633
+**Scope:** SOP v1.3 -- full rewrite -- explicit step-by-step instructions for non-technical guardian -- no steps missing -- USB key file procedure added
+
+FIX-739 -- SOP v1.3 full rewrite -- explicit step-by-step instructions for non-technical guardian -- USB key file procedure added -- Section 6D decrypt command restored -- encoding clean -- PDF generated and committed -- 2026-06-06 San Diego
+
+**Status:** CLOSED
