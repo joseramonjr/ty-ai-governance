@@ -7704,3 +7704,13 @@ FIX-740 -- Supplement v4 -- Ed25519 key location updated from machine path to US
 FIX-741 -- Guardian reminder system -- GitHub Actions workflow daily at 9AM PDT -- Resend email confirmed working -- Twilio SMS pending A2P 10DLC registration approval -- local number +16197894262 purchased -- guardian_authority table created -- test values in script pending SMS confirmation -- 2026-06-07 San Diego
 
 **Status:** CLOSED
+
+### Entry-761 | FIX-742 | 2026-06-07 15:33 PDT San Diego -- 2026-06-07 16:13 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 7d11377
+**Scope:** Guardian Status card on EcosystemFlow -- last check-in date -- days elapsed -- days remaining -- next reminder date
+
+FIX-742 -- Guardian Status card live on EcosystemFlow -- shows guardian name last check-in days elapsed days remaining next reminder -- green color -- RLS policy added -- verified at testing.tyova.ai -- 2026-06-07 San Diego
+
+**Status:** CLOSED
