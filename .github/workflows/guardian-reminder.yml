@@ -12,7 +12,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run guardian reminder script
+      - name: Install dependencies
+        run: pip install resend
         run: python3 .github/scripts/guardian_reminder.py
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}

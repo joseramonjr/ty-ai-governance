@@ -1,4 +1,5 @@
 import urllib.request
+import resend
 import urllib.parse
 import json
 import os
@@ -68,28 +69,14 @@ If you need assistance refer to your SOP document or contact Jose Ramon.
 This message was sent automatically by TY AI OS.
 -- TY AI OS Guardian Reminder System"""
 
-email_data = json.dumps({
+resend.api_key = RESEND_API_KEY
+email_result = resend.Emails.send({
     "from": "TY AI OS <noreply@silversounds321.com>",
     "to": GUARDIAN_EMAIL,
     "subject": f"TY AI OS -- Guardian Check-In Reminder ({reminder_type})",
     "text": email_body
-}).encode()
-email_req = urllib.request.Request(
-    "https://api.resend.com/emails",
-    data=email_data,
-    headers={
-        "Authorization": f"Bearer {RESEND_API_KEY}",
-        "Content-Type": "application/json"
-    }
-)
-try:
-    with urllib.request.urlopen(email_req) as res:
-        print(f"Email sent: {res.status}")
-except urllib.error.HTTPError as e:
-    error_body = e.read().decode()
-    print(f"Email failed: {e.code} {e.reason}")
-    print(f"Resend error detail: {error_body}")
-    raise
+})
+print(f"Email sent: {email_result}")
 
 credentials = base64.b64encode(f"{TWILIO_ACCOUNT_SID}:{TWILIO_AUTH_TOKEN}".encode()).decode()
 sms_body = f"TY AI OS REMINDER: {reminder_type} guardian check-in due. {days_remaining} days remaining. Check your email for instructions."
