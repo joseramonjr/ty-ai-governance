@@ -93,7 +93,13 @@ sms_req = urllib.request.Request(
         "Content-Type": "application/x-www-form-urlencoded"
     }
 )
-with urllib.request.urlopen(sms_req) as res:
-    print(f"SMS sent: {res.status}")
+try:
+    with urllib.request.urlopen(sms_req) as res:
+        print(f"SMS sent: {res.status}")
+except urllib.error.HTTPError as e:
+    error_body = e.read().decode()
+    print(f"SMS failed: {e.code} {e.reason}")
+    print(f"Twilio error detail: {error_body}")
+    raise
 
 print(f"Reminder complete: {reminder_type} sent to guardian.")
