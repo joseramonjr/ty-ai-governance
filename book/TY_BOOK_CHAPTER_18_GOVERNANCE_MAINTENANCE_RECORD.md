@@ -7714,3 +7714,13 @@ FIX-741 -- Guardian reminder system -- GitHub Actions workflow daily at 9AM PDT 
 FIX-742 -- Guardian Status card live on EcosystemFlow -- shows guardian name last check-in days elapsed days remaining next reminder -- green color -- RLS policy added -- verified at testing.tyova.ai -- 2026-06-07 San Diego
 
 **Status:** CLOSED
+
+### Entry-762 | FIX-743 | 2026-06-07 16:15 PDT San Diego -- 2026-06-07 16:56 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 45ad858
+**Scope:** Guardian Status card tooltips -- hover explanations for each heading
+
+FIX-743 -- Guardian Status card tooltips -- full explanation text on all 5 fields -- Guardian Last Check-In Days Elapsed Days Remaining Next Reminder -- verified live at testing.tyova.ai -- 2026-06-07 San Diego
+
+**Status:** CLOSED
