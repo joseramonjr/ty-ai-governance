@@ -7724,3 +7724,13 @@ FIX-742 -- Guardian Status card live on EcosystemFlow -- shows guardian name las
 FIX-743 -- Guardian Status card tooltips -- full explanation text on all 5 fields -- Guardian Last Check-In Days Elapsed Days Remaining Next Reminder -- verified live at testing.tyova.ai -- 2026-06-07 San Diego
 
 **Status:** CLOSED
+
+### Entry-763 | FIX-744 | 2026-06-07 17:08 PDT San Diego -- 2026-06-07 17:12 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** c17fb6a
+**Scope:** EcosystemFlow stats panel -- Phases Sealed hardcoded 12 -- replace with ECOSYSTEM_STATS.phasesSealed dynamic value
+
+FIX-744 -- EcosystemFlow stats panel -- Phases Sealed hardcoded 12 replaced with ECOSYSTEM_STATS.phasesSealed -- now shows 14 dynamically -- verified live at testing.tyova.ai -- 2026-06-07 San Diego
+
+**Status:** CLOSED
