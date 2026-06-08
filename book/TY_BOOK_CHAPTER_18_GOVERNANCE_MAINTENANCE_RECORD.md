@@ -7734,3 +7734,13 @@ FIX-743 -- Guardian Status card tooltips -- full explanation text on all 5 field
 FIX-744 -- EcosystemFlow stats panel -- Phases Sealed hardcoded 12 replaced with ECOSYSTEM_STATS.phasesSealed -- now shows 14 dynamically -- verified live at testing.tyova.ai -- 2026-06-07 San Diego
 
 **Status:** CLOSED
+
+### Entry-764 | FIX-745 | 2026-06-08 10:31 PDT San Diego -- 2026-06-08 10:59 PDT San Diego
+
+**Destination:** ty-ai-governance, TYOVA
+**Commit:** 7f2cc23
+**Scope:** Chapter 76 Nexora -- add to book folder -- register in bookChapterContent.ts as LIVING -- update chaptersSealed to 76 in masterHubRegistry.ts
+
+FIX-745 -- Chapter 76 Nexora -- The Birth of a New Idea -- LIVING -- added to book folder -- registered in bookChapterContent.ts -- chapterTitles in BookOfTyChapter.tsx -- LIVING in BookOfTyIndex.tsx -- chaptersSealed updated to 76 -- verified live at testing.tyova.ai -- 2026-06-08 San Diego
+
+**Status:** CLOSED
