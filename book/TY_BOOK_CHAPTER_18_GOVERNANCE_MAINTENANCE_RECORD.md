@@ -7764,3 +7764,23 @@ FIX-746 -- Chapter 77 Nexora Thesis -- book folder committed f64fa9f -- TYOVA re
 Chapter 77 Nexora Thesis expanded -- Perplexity June 7 22:00 content incorporated -- What Nexora Is Not -- six open questions answered -- corrected scorecard Autonomy=Bounded -- figure caption -- Part VI Intellectual Honesty -- compiledNote updated in TYOVA -- ty-ai-governance commit d76d3be -- TYOVA commit 410fbee
 
 **Status:** CLOSED
+
+### Entry-767 | FIX-748 | 2026-06-08 17:28 PDT San Diego -- 2026-06-08 17:28 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** e06e101
+**Scope:** Nexora Visual 1 -- Nexora Scorecard page at testing.tyova.ai/nexora -- 11 criteria with color-coded strong/partial/bounded indicators -- each criterion linked to primary source evidence
+
+FIX-748 registered as FLAG-143 -- Nexora Scorecard visual -- deferred to future session -- no code changes this FIX -- tracked in governance ledger
+
+**Status:** CLOSED
+
+### Entry-768 | FIX-749 | 2026-06-08 17:39 PDT San Diego -- 2026-06-08 17:41 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** e9f3bdb
+**Scope:** Register FLAGS 143-147 -- five Nexora visual work items deferred -- Scorecard -- Architecture map -- Layer stack -- Timeline -- Before/after panel
+
+FLAGS 143-147 registered -- five Nexora visual work items -- FLAG-143 Scorecard -- FLAG-144 Architecture map -- FLAG-145 Layer stack -- FLAG-146 Timeline -- FLAG-147 Before/after panel -- flags folder created -- all deferred to future sessions
+
+**Status:** CLOSED
