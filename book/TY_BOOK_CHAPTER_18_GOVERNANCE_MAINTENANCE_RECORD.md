@@ -7844,3 +7844,13 @@ Ch26 TYOVA display updated -- Section 29 Nexora added -- partHeading and heading
 Ch26 Nexora display format fixed -- metadata split into separate paragraphs matching Ch26 term format -- duplicate heading removed -- empty heading field added for TypeScript compliance -- TYOVA commit e64e599
 
 **Status:** CLOSED
+
+### Entry-775 | FIX-755 | 2026-06-09 10:14 PDT San Diego -- 2026-06-09 10:19 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 1db67df
+**Scope:** Ch26 header update -- term count 391 to 392 -- CLO chain add FIX-752 Section 29 -- Updated date 2026-06-08 -- line 8 term count annotation
+
+Ch26 header updated -- term count 391 to 392 -- CLO chain FIX-752 Section 29 added -- Updated date corrected to 2026-06-08 -- line 8 annotation updated
+
+**Status:** CLOSED
