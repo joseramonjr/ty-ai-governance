@@ -7784,3 +7784,23 @@ FIX-748 registered as FLAG-143 -- Nexora Scorecard visual -- deferred to future 
 FLAGS 143-147 registered -- five Nexora visual work items -- FLAG-143 Scorecard -- FLAG-144 Architecture map -- FLAG-145 Layer stack -- FLAG-146 Timeline -- FLAG-147 Before/after panel -- flags folder created -- all deferred to future sessions
 
 **Status:** CLOSED
+
+### Entry-769 | FIX-750 | 2026-06-08 17:44 PDT San Diego -- 2026-06-08 18:10 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** ac66fee
+**Scope:** Chapter 77 TYOVA fix -- sections array updated with full expanded content -- sealed flag corrected to living -- all six parts visible on live site
+
+Chapter 77 TYOVA sections updated with all six parts -- Part I through Part VI plus Conclusion and Personal Account -- BookOfTyChapter.tsx living list includes 76 and 77 -- sealed badge fixed -- duplicate bracket removed
+
+**Status:** CLOSED
+
+### Entry-770 | FIX-750 | 2026-06-08 18:11 PDT San Diego -- 2026-06-08 18:11 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** ac66fee
+**Scope:** Chapter 77 TYOVA fix -- sections array updated with all six parts -- sealed badge fixed -- BookOfTyChapter.tsx living list updated
+
+Chapter 77 TYOVA sections updated -- all six parts -- sealed badge fixed -- BookOfTyChapter.tsx living list 76 and 77 -- work already committed ac66fee -- ledger entry only
+
+**Status:** CLOSED
