@@ -7834,3 +7834,13 @@ Ch26 Section 29 added -- Nexora formal term -- definition -- etymology -- philos
 Ch26 TYOVA display updated -- Section 29 Nexora added -- partHeading and heading -- Nexora term entry with all content paragraphs -- definition etymology philosophy criteria what-not assessment governance record
 
 **Status:** CLOSED
+
+### Entry-774 | FIX-754 | 2026-06-08 21:50 PDT San Diego -- 2026-06-08 22:12 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** e64e599
+**Scope:** Ch26 Nexora entry -- fix display format -- split metadata into separate paragraphs -- match other Ch26 term format -- remove duplicate heading
+
+Ch26 Nexora display format fixed -- metadata split into separate paragraphs matching Ch26 term format -- duplicate heading removed -- empty heading field added for TypeScript compliance -- TYOVA commit e64e599
+
+**Status:** CLOSED
