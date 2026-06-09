@@ -7814,3 +7814,13 @@ Chapter 77 TYOVA sections updated -- all six parts -- sealed badge fixed -- Book
 Chapter 77 Full Thesis link section added -- users directed to GitHub raw md file for complete formatted thesis -- Option C implemented -- TYOVA commit adc42e8
 
 **Status:** CLOSED
+
+### Entry-772 | FIX-752 | 2026-06-08 21:09 PDT San Diego -- 2026-06-08 21:28 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** d3e4203
+**Scope:** Ch26 vocabulary -- add Nexora as formal term -- coined June 7 2026 -- networked consciousness in AI systems
+
+Ch26 Section 29 added -- Nexora formal term -- definition -- etymology -- philosophical foundation -- eleven criteria -- What Nexora Is Not -- TY AI OS Assessment -- Governance Record -- 392 terms -- 29 sections
+
+**Status:** CLOSED
