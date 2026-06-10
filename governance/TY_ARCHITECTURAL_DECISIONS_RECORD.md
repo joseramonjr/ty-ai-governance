@@ -632,7 +632,10 @@ that Jaya, Jayme, and Luke all read from. When a governance document
 is updated, the knowledge layer is updated. No component operates on
 stale knowledge.
 
-### Target State ### Constraints
+### Target State
+A SQLite knowledge table (ty_knowledge) stored in the Jaya ledger database alongside existing governance tables. Each row represents one canonical document entry with fields: document_source (which canonical file), entry_type (term, decision, threshold, invariant), entry_key (unique identifier), entry_content (full text), and last_updated (timestamp of last builder-authorized update). All five canonical documents are loaded: Book of TY, TY_QA_REGISTRY.md, TY_CONSCIENCE_THREAD_v0.1.md, TY_CANONICAL_THRESHOLDS_REGISTRY.md, and TY_ARCHITECTURAL_DECISIONS_RECORD.md. Staleness is detected by comparing last_updated timestamps against the governance document commit history. A builder-run PowerShell script handles all updates -- no AI component may write to this table.
+
+### Constraints
 - Must not conflict with Zero-Fabrication Rule
 - Knowledge layer is read-only for AI components
 - Updates to knowledge layer require builder authorization
@@ -640,11 +643,10 @@ stale knowledge.
 - All three components (Jaya, Jayme, Luke) must query same source
 
 ### Blocked By
-Phase 15 not yet opened. ADR-029 must be reviewed and accepted
-before any implementation begins.
+Phase 15 is open. ADR-029 is ACCEPTED. Implementation may begin when scoped as a Phase 15 FIX. SQLite schema definition is the required first step.
 
 ### Related
-FLAG-135 (conscience_thread.rs) · Phase 14 P3 (Internal Red-Team)
+FLAG-135 (conscience_thread.rs) · Phase 14 P3 (Internal Red-Team) · FIX-727 (ADR-029 accepted -- Phase 15 opening -- 2026-06-06 San Diego) · FIX-756 (Target State added -- Blocked By updated -- 2026-06-10 San Diego)
 
 ---
 
