@@ -7854,3 +7854,13 @@ Ch26 Nexora display format fixed -- metadata split into separate paragraphs matc
 Ch26 header updated -- term count 391 to 392 -- CLO chain FIX-752 Section 29 added -- Updated date corrected to 2026-06-08 -- line 8 annotation updated
 
 **Status:** CLOSED
+
+### Entry-776 | FIX-756 | 2026-06-10 16:42 PDT San Diego -- 2026-06-10 16:49 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 0569ff2
+**Scope:** ADR-029 review and acceptance -- Target State section added -- status changed from OPEN to ACCEPTED -- Section 8 Maintenance Log updated
+
+ADR-029 Target State section written -- ty_knowledge SQLite table defined -- Blocked By updated to reflect Phase 15 open -- Related section updated with FIX-727 and FIX-756 references
+
+**Status:** CLOSED
