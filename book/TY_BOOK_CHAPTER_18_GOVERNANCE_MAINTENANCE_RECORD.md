@@ -7914,3 +7914,13 @@ EcosystemFlowPage.tsx -- ty_knowledge WARD data structures scoped and scripted -
 EcosystemFlowPage.tsx -- ty_knowledge node added at cy:330 between spec and advisory layers -- 6 flows verified bidirectional -- Jaya reads queries references -- knowledge result returns to Jaya Luke Jayme -- VS Code direct edit -- rendered correctly on localhost -- pushed to GitHub for Lovable deploy
 
 **Status:** CLOSED
+
+### Entry-782 | FIX-762 | 2026-06-11 11:02 PDT San Diego -- 2026-06-11 11:07 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 9f0e013
+**Scope:** EcosystemFlowPage.tsx -- ty_knowledge WARD_FLOWS entry -- drill-down panel flow paths
+
+EcosystemFlowPage.tsx -- ty_knowledge WARD_FLOWS entry added -- drill-down panel shows 3 incoming reads queries references -- 3 outgoing knowledge result result result -- all 6 flow paths registered -- VS Code direct edit
+
+**Status:** CLOSED
