@@ -7874,3 +7874,13 @@ ADR-029 Target State section written -- ty_knowledge SQLite table defined -- Blo
 ADR-029 GAP 1A complete -- ty_knowledge table created in db.rs -- six fields defined -- cargo check passes -- no errors introduced -- GAP 1B population script is next
 
 **Status:** CLOSED
+
+### Entry-778 | FIX-758 | 2026-06-10 17:42 PDT San Diego -- 2026-06-10 17:44 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 31ad470
+**Scope:** ADR-029 GAP 1B -- Populate-TyKnowledge.ps1 v2 created -- stdin batch transaction approach -- 697 rows loaded across 7 entry types -- all types verified -- population proof complete
+
+ADR-029 GAP 1B complete -- Populate-TyKnowledge.ps1 v2 committed -- stdin batch transaction approach -- 697 rows loaded -- all 7 types at expected counts -- content verified via GIQ-026 query -- GAP 1C query proof is next
+
+**Status:** CLOSED
