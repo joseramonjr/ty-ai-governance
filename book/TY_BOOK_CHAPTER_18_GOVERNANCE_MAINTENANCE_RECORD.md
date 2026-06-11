@@ -7924,3 +7924,13 @@ EcosystemFlowPage.tsx -- ty_knowledge node added at cy:330 between spec and advi
 EcosystemFlowPage.tsx -- ty_knowledge WARD_FLOWS entry added -- drill-down panel shows 3 incoming reads queries references -- 3 outgoing knowledge result result result -- all 6 flow paths registered -- VS Code direct edit
 
 **Status:** CLOSED
+
+### Entry-783 | FIX-763 | 2026-06-11 13:03 PDT San Diego -- 2026-06-11 13:03 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 773ba25
+**Scope:** FLAG-149 -- resend_config.json -- Resend API key updated -- guardian email alert verified working
+
+FLAG-149 resolved -- Resend API key in resend_config.json was invalid -- old TY AI key deleted from Resend dashboard -- new TY AI key created and saved to resend_config.json -- API key verified valid against Resend domains endpoint -- test email sent and delivered to support@tyova.ai -- guardian email alerts now working -- no code change required -- config file is local only never committed
+
+**Status:** CLOSED
