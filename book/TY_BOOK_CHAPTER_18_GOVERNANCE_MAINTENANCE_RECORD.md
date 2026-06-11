@@ -7944,3 +7944,13 @@ FLAG-149 resolved -- Resend API key in resend_config.json was invalid -- old TY 
 EcosystemFlowPage.tsx -- EVENT_WARD_MAP -- knowledge entry added -- ty_knowledge WARD canvas dot will activate when governance events containing knowledge in action_type are received -- VS Code direct edit
 
 **Status:** CLOSED
+
+### Entry-785 | FIX-765 | 2026-06-11 16:17 PDT San Diego -- 2026-06-11 16:21 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 8edf0c0
+**Scope:** App.tsx -- wire CRI Critical detection to send_governance_alert_email -- email fires automatically when CRI hits 75
+
+App.tsx -- CRI Critical detection now wired to send_governance_alert_email -- invoke call added after setCriAlert on line 104 -- email fires automatically when CRI hits 75 -- HMR confirmed hot-reloaded at 16:19 PDT -- next CRI Critical alert will trigger email to support@tyova.ai
+
+**Status:** CLOSED
