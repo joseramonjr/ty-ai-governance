@@ -7884,3 +7884,13 @@ ADR-029 GAP 1A complete -- ty_knowledge table created in db.rs -- six fields def
 ADR-029 GAP 1B complete -- Populate-TyKnowledge.ps1 v2 committed -- stdin batch transaction approach -- 697 rows loaded -- all 7 types at expected counts -- content verified via GIQ-026 query -- GAP 1C query proof is next
 
 **Status:** CLOSED
+
+### Entry-779 | FIX-759 | 2026-06-10 17:52 PDT San Diego -- 2026-06-10 18:01 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 773ba25
+**Scope:** ADR-029 GAP 1C -- query_ty_knowledge Tauri command -- search ty_knowledge table by entry_type and query string -- returns matching entries -- proof condition for ADR-029 completion
+
+ADR-029 GAP 1C complete -- query_ty_knowledge Tauri command added to lib.rs -- KnowledgeEntry struct -- search by query string and optional entry_type filter -- registered in invoke_handler -- cargo check passes -- ADR-029 fully implemented
+
+**Status:** CLOSED
