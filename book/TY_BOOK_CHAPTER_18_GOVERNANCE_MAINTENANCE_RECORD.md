@@ -7864,3 +7864,13 @@ Ch26 header updated -- term count 391 to 392 -- CLO chain FIX-752 Section 29 add
 ADR-029 Target State section written -- ty_knowledge SQLite table defined -- Blocked By updated to reflect Phase 15 open -- Related section updated with FIX-727 and FIX-756 references
 
 **Status:** CLOSED
+
+### Entry-777 | FIX-757 | 2026-06-10 17:01 PDT San Diego -- 2026-06-10 17:02 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 49796f1
+**Scope:** ADR-029 GAP 1A -- ty_knowledge SQLite table added to db.rs init_db -- six fields -- document_source entry_type entry_key entry_content last_updated -- cargo check passes
+
+ADR-029 GAP 1A complete -- ty_knowledge table created in db.rs -- six fields defined -- cargo check passes -- no errors introduced -- GAP 1B population script is next
+
+**Status:** CLOSED
