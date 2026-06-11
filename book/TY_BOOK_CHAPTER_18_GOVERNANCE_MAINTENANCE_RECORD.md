@@ -7894,3 +7894,13 @@ ADR-029 GAP 1B complete -- Populate-TyKnowledge.ps1 v2 committed -- stdin batch 
 ADR-029 GAP 1C complete -- query_ty_knowledge Tauri command added to lib.rs -- KnowledgeEntry struct -- search by query string and optional entry_type filter -- registered in invoke_handler -- cargo check passes -- ADR-029 fully implemented
 
 **Status:** CLOSED
+
+### Entry-780 | FIX-760 | 2026-06-10 20:49 PDT San Diego -- 2026-06-10 22:19 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** e64e599
+**Scope:** EcosystemFlowPage.tsx -- add ty_knowledge node and flows
+
+EcosystemFlowPage.tsx -- ty_knowledge WARD data structures scoped and scripted -- node visual deferred to FIX-761 -- canvas render root cause not resolved -- file reverted to e64e599 clean state -- FLAG-149 opened for Resend email alert gap -- CRI Critical alert fired and self-healed at 22:02 PDT
+
+**Status:** CLOSED
