@@ -7904,3 +7904,13 @@ ADR-029 GAP 1C complete -- query_ty_knowledge Tauri command added to lib.rs -- K
 EcosystemFlowPage.tsx -- ty_knowledge WARD data structures scoped and scripted -- node visual deferred to FIX-761 -- canvas render root cause not resolved -- file reverted to e64e599 clean state -- FLAG-149 opened for Resend email alert gap -- CRI Critical alert fired and self-healed at 22:02 PDT
 
 **Status:** CLOSED
+
+### Entry-781 | FIX-761 | 2026-06-11 08:33 PDT San Diego -- 2026-06-11 10:57 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 92de953
+**Scope:** EcosystemFlowPage.tsx -- ty_knowledge node visual -- VS Code direct edit
+
+EcosystemFlowPage.tsx -- ty_knowledge node added at cy:330 between spec and advisory layers -- 6 flows verified bidirectional -- Jaya reads queries references -- knowledge result returns to Jaya Luke Jayme -- VS Code direct edit -- rendered correctly on localhost -- pushed to GitHub for Lovable deploy
+
+**Status:** CLOSED
