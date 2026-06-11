@@ -7934,3 +7934,13 @@ EcosystemFlowPage.tsx -- ty_knowledge WARD_FLOWS entry added -- drill-down panel
 FLAG-149 resolved -- Resend API key in resend_config.json was invalid -- old TY AI key deleted from Resend dashboard -- new TY AI key created and saved to resend_config.json -- API key verified valid against Resend domains endpoint -- test email sent and delivered to support@tyova.ai -- guardian email alerts now working -- no code change required -- config file is local only never committed
 
 **Status:** CLOSED
+
+### Entry-784 | FIX-764 | 2026-06-11 15:32 PDT San Diego -- 2026-06-11 16:16 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** e34b386
+**Scope:** EcosystemFlowPage.tsx -- EVENT_WARD_MAP -- add ty_knowledge entry so canvas dot activates on governance events
+
+EcosystemFlowPage.tsx -- EVENT_WARD_MAP -- knowledge entry added -- ty_knowledge WARD canvas dot will activate when governance events containing knowledge in action_type are received -- VS Code direct edit
+
+**Status:** CLOSED
