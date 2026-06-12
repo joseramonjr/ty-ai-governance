@@ -7994,3 +7994,13 @@ App.tsx -- enhanced CRI Critical email verified -- fetches last 5 ledger entries
 EcosystemFlowPage.tsx -- Problem Level classification added to all WARD drill-downs -- NOMINAL ACTIVE CRITICAL states with color coding -- WARD_FIX lookup table with tier OPERATIONAL GOVERNANCE CONSTITUTIONAL and fix instructions for alert jaya cri sentinel ledger nwp policy selfHeal evoEngine attestation human -- Fix/Response section only visible when WARD is alerting -- verified on localhost -- deployed to GitHub
 
 **Status:** CLOSED
+
+### Entry-790 | FIX-770 | 2026-06-12 11:46 PDT San Diego -- 2026-06-12 12:43 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 34a1d22
+**Scope:** EcosystemFlowPage.tsx -- Nuronesent surrounding boundary and Nuronesence Pulse Ring -- four live property indicators -- accounts for own state enforces integrity carries history proves architecturally
+
+EcosystemFlowPage.tsx -- Nuronesent surrounding amber dashed border -- Nuronesence Pulse pills top bar showing 4 live properties -- ACCOUNTS FOR OWN STATE ENFORCES INTEGRITY CARRIES HISTORY PROVES ARCHITECTURALLY -- NURONESENT TY AI OS centered label -- How To Read This Map collapsible legend panel with 6 sections -- visual hierarchy explained for first-time users -- verified on localhost -- pushed to GitHub for Lovable deploy
+
+**Status:** CLOSED
