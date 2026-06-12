@@ -7974,3 +7974,13 @@ lib.rs -- CRI startup reset proven -- ledger::update_cri called with 0 before Se
 App.tsx -- curly brace fix confirmed -- invoke send_governance_alert_email now correctly inside if Critical block -- was previously firing on every CRI band change not just Critical -- this was the root cause of missing email alerts -- fix verified by code review -- email will now only fire when CRI enters Critical band
 
 **Status:** CLOSED
+
+### Entry-788 | FIX-768 | 2026-06-12 10:00 PDT San Diego -- 2026-06-12 10:12 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 2a1e58d
+**Scope:** App.tsx -- enhanced CRI Critical email -- include last 5 risk events with operation_type risk_score and explanation in email body
+
+App.tsx -- enhanced CRI Critical email verified -- fetches last 5 ledger entries with risk_score > 0 -- email includes WHY table with timestamp operation_type risk_score explanation -- WHAT TO DO section with 4 actionable steps -- format test email sent and confirmed delivered to support@tyova.ai -- guardian now receives full context on every CRI Critical alert
+
+**Status:** CLOSED
