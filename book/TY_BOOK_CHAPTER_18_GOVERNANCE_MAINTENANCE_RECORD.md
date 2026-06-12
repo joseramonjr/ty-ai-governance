@@ -7984,3 +7984,13 @@ App.tsx -- curly brace fix confirmed -- invoke send_governance_alert_email now c
 App.tsx -- enhanced CRI Critical email verified -- fetches last 5 ledger entries with risk_score > 0 -- email includes WHY table with timestamp operation_type risk_score explanation -- WHAT TO DO section with 4 actionable steps -- format test email sent and confirmed delivered to support@tyova.ai -- guardian now receives full context on every CRI Critical alert
 
 **Status:** CLOSED
+
+### Entry-789 | FIX-769 | 2026-06-12 10:45 PDT San Diego -- 2026-06-12 11:18 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** fbe86b6
+**Scope:** EcosystemFlowPage.tsx -- problem level classification on Guardian Alert WARD drill-down -- INFO LOW MODERATE CRITICAL TERMINAL -- self-resolving vs guardian action required
+
+EcosystemFlowPage.tsx -- Problem Level classification added to all WARD drill-downs -- NOMINAL ACTIVE CRITICAL states with color coding -- WARD_FIX lookup table with tier OPERATIONAL GOVERNANCE CONSTITUTIONAL and fix instructions for alert jaya cri sentinel ledger nwp policy selfHeal evoEngine attestation human -- Fix/Response section only visible when WARD is alerting -- verified on localhost -- deployed to GitHub
+
+**Status:** CLOSED
