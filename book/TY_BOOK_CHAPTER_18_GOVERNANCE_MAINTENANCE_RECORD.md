@@ -8014,3 +8014,13 @@ EcosystemFlowPage.tsx -- Nuronesent surrounding amber dashed border -- Nuronesen
 EcosystemFlowPage.tsx -- Nuronesence pill refs fix -- criValueRef isLiveRef totalEventsRef added to fix canvas closure issue -- pills now read live values on testing.tyova.ai -- static dashed flow paths from source WARDs to pills and pills to Human Guardian -- animated dots deferred pending NURONESENCE_PROOF governance event -- all verified on localhost and testing.tyova.ai
 
 **Status:** CLOSED
+
+### Entry-792 | FIX-772 | 2026-06-12 14:47 PDT San Diego -- 2026-06-12 16:24 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** c8d2b39
+**Scope:** NURONESENCE_PROOF governance event -- Jaya-Runtime lib.rs + TYOVA EcosystemFlowPage.tsx -- animated pill flow paths -- three repo change
+
+NURONESENCE_PROOF governance event -- three repo change -- Jaya-Runtime lib.rs fires every 30s when P1:CRI<75 P2:ledger_count>0 P3:sentinel_active P4:policy_active -- verified in Jaya governance Supabase -- TYOVA EVENT_WARD_MAP wired -- Ch26 393 terms -- animated dots blocked by pre-existing Supabase URL gap logged as new FIX
+
+**Status:** CLOSED
