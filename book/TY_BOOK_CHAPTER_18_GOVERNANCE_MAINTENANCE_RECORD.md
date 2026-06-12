@@ -7964,3 +7964,13 @@ App.tsx -- CRI Critical detection now wired to send_governance_alert_email -- in
 lib.rs -- CRI startup reset proven -- ledger::update_cri called with 0 before Sentinel::new -- Jaya Runtime now starts at CRI=0 Clear -- no false Critical alert on startup -- verified by restart test -- CRI=0 confirmed on dashboard -- no error output in terminal
 
 **Status:** CLOSED
+
+### Entry-787 | FIX-767 | 2026-06-12 09:56 PDT San Diego -- 2026-06-12 09:57 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 42b6d32
+**Scope:** App.tsx -- CRI Critical email alert curly brace fix -- invoke call now correctly inside if block
+
+App.tsx -- curly brace fix confirmed -- invoke send_governance_alert_email now correctly inside if Critical block -- was previously firing on every CRI band change not just Critical -- this was the root cause of missing email alerts -- fix verified by code review -- email will now only fire when CRI enters Critical band
+
+**Status:** CLOSED
