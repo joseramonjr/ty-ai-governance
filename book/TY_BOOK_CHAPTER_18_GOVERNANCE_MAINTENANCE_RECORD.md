@@ -8004,3 +8004,13 @@ EcosystemFlowPage.tsx -- Problem Level classification added to all WARD drill-do
 EcosystemFlowPage.tsx -- Nuronesent surrounding amber dashed border -- Nuronesence Pulse pills top bar showing 4 live properties -- ACCOUNTS FOR OWN STATE ENFORCES INTEGRITY CARRIES HISTORY PROVES ARCHITECTURALLY -- NURONESENT TY AI OS centered label -- How To Read This Map collapsible legend panel with 6 sections -- visual hierarchy explained for first-time users -- verified on localhost -- pushed to GitHub for Lovable deploy
 
 **Status:** CLOSED
+
+### Entry-791 | FIX-771 | 2026-06-12 14:32 PDT San Diego -- 2026-06-12 14:33 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** f94aee9
+**Scope:** EcosystemFlowPage.tsx -- Nuronesence pill refs fix and pill flow paths -- criValueRef isLiveRef totalEventsRef -- static dashed lines source WARDs to pills to Human Guardian
+
+EcosystemFlowPage.tsx -- Nuronesence pill refs fix -- criValueRef isLiveRef totalEventsRef added to fix canvas closure issue -- pills now read live values on testing.tyova.ai -- static dashed flow paths from source WARDs to pills and pills to Human Guardian -- animated dots deferred pending NURONESENCE_PROOF governance event -- all verified on localhost and testing.tyova.ai
+
+**Status:** CLOSED
