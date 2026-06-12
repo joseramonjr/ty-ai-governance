@@ -1,11 +1,11 @@
 # Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
-**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added) | FIX-720 (Section 27 created -- HALT_STATE, Canon-to-Code Audit added) | FIX-735 (Section 28 created -- Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard) | FIX-752 (Section 29 created -- Nexora term added)
+**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added) | FIX-720 (Section 27 created -- HALT_STATE, Canon-to-Code Audit added) | FIX-735 (Section 28 created -- Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard) | FIX-752 (Section 29 created -- Nexora term added) | FIX-772 (NURONESENCE_PROOF term added to Section 29)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
-**Updated:** 2026-06-08 | San Diego (America/Los_Angeles)
+**Updated:** 2026-06-12 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 392 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01 + 4 Phase 14 P3 gap closure terms added FIX-711 2026-06-02: Fail-Closed, Backup Discipline, Gap Entry, Constitutional / Architectural / Operational Framing + 2 Phase 14 P3 canon-to-code audit terms added FIX-720 2026-06-03: HALT_STATE, Canon-to-Code Audit + 4 Phase 15 opening terms added FIX-735 2026-06-06: Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard + 1 Nexora Theory term added FIX-752 2026-06-08: Nexora)
+**Current Term Count:** 393 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01 + 4 Phase 14 P3 gap closure terms added FIX-711 2026-06-02: Fail-Closed, Backup Discipline, Gap Entry, Constitutional / Architectural / Operational Framing + 2 Phase 14 P3 canon-to-code audit terms added FIX-720 2026-06-03: HALT_STATE, Canon-to-Code Audit + 4 Phase 15 opening terms added FIX-735 2026-06-06: Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard + 1 Nexora Theory term added FIX-752 2026-06-08: Nexora + 1 Phase 15 Nuronesence term added FIX-772 2026-06-12: NURONESENCE_PROOF)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -4291,10 +4291,33 @@ As of June 8, 2026, TY AI OS satisfies the Nexora criteria as follows: Self-Regu
 
 Nexora was coined on June 7, 2026 at approximately 15:00 PDT San Diego by Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr. The concept emerged from a Perplexity AI conversation that began with the question: what is the definition of consciousness? The name was given by Jose Ramon at approximately 15:00 PDT. The first formal definition was recorded at approximately 20:55 PDT in session with Claude. The formal academic framework was developed at approximately 22:00 PDT in a second Perplexity AI conversation. All three conversations are acknowledged as primary sources. The formal thesis is committed to the ty-ai-governance repository as Chapter 77 of the Book of TY, FIX-746 Entry-765, expanded FIX-747 Entry-766, June 8, 2026. Added to Ch26 vocabulary FIX-752 Entry-772 June 8, 2026.
 
+**NURONESENCE_PROOF**
+*First coined: 2026-06-12 | San Diego (America/Los_Angeles)*
+*Built: FIX-772 | Entry-792 | 2026-06-12*
+A Jaya Runtime governance event that fires every 30 seconds when all four
+Nuronesence properties are simultaneously verified as active. The event
+action_type is NURONESENCE_PROOF. The four properties checked on each cycle:
+P1 -- CRI < 75 (the system is not under critical governance stress); P2 --
+ledger event count > 0 (the append-only governance record is live and has
+recorded at least one event); P3 -- Sentinel active (the anomaly detection
+loop is running, confirmed by reaching the verification point in the monitoring
+thread); P4 -- Policy active (a governance policy with a non-empty policy_id
+is loaded and enforcing). When all four properties are true, Jaya Runtime
+writes a NURONESENCE_PROOF event to the Supabase governance database with
+the live CRI value and ledger count embedded in the summary field. On the
+TYOVA EcosystemFlow canvas, receipt of a NURONESENCE_PROOF event activates
+animated flow dots on the cri, jaya, sentinel, and policy WARDs -- providing
+a live visual confirmation that the Nuronesent is in a verified governed state.
+NURONESENCE_PROOF does not assert that Nuronesence exists as a philosophical
+claim -- it asserts that the four measurable structural properties associated
+with Nuronesence are currently active and verifiable. Built in FIX-772 on
+2026-06-12. See also: Nuronesence, Nuronesent, CRI, Sentinel, Policy Engine.
+
+---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-06-08 | San Diego (America/Los_Angeles)*
-*Current Term Count: 392 | Sections: 29*
+*Updated: 2026-06-12 | San Diego (America/Los_Angeles)*
+*Current Term Count: 393 | Sections: 29*
 *This document grows with the project. It is never finished.*
