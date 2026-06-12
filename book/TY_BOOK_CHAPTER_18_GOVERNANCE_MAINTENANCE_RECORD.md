@@ -7954,3 +7954,13 @@ EcosystemFlowPage.tsx -- EVENT_WARD_MAP -- knowledge entry added -- ty_knowledge
 App.tsx -- CRI Critical detection now wired to send_governance_alert_email -- invoke call added after setCriAlert on line 104 -- email fires automatically when CRI hits 75 -- HMR confirmed hot-reloaded at 16:19 PDT -- next CRI Critical alert will trigger email to support@tyova.ai
 
 **Status:** CLOSED
+
+### Entry-786 | FIX-766 | 2026-06-11 18:14 PDT San Diego -- 2026-06-11 18:25 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** f23d14a
+**Scope:** App.tsx -- CRI startup reset to 0 on clean start -- enhanced email alert with WHY and HOW TO FIX context from last 5 risk events
+
+lib.rs -- CRI startup reset proven -- ledger::update_cri called with 0 before Sentinel::new -- Jaya Runtime now starts at CRI=0 Clear -- no false Critical alert on startup -- verified by restart test -- CRI=0 confirmed on dashboard -- no error output in terminal
+
+**Status:** CLOSED
