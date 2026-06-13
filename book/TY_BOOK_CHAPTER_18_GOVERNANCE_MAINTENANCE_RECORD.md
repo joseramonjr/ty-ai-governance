@@ -8024,3 +8024,13 @@ EcosystemFlowPage.tsx -- Nuronesence pill refs fix -- criValueRef isLiveRef tota
 NURONESENCE_PROOF governance event -- three repo change -- Jaya-Runtime lib.rs fires every 30s when P1:CRI<75 P2:ledger_count>0 P3:sentinel_active P4:policy_active -- verified in Jaya governance Supabase -- TYOVA EVENT_WARD_MAP wired -- Ch26 393 terms -- animated dots blocked by pre-existing Supabase URL gap logged as new FIX
 
 **Status:** CLOSED
+
+### Entry-793 | FIX-773 | 2026-06-12 16:26 PDT San Diego -- 2026-06-12 17:26 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 1899431
+**Scope:** EcosystemFlowPage.tsx -- VITE_JAYA_SUPABASE_URL env var -- wire TYOVA to Jaya governance Supabase for governance events -- fix 404 errors -- enable NURONESENCE_PROOF animated dots
+
+TYOVA EcosystemFlowPage.tsx -- switch governance event polling to VITE_JAYA_SUPABASE_URL -- fix EVENT_WARD_MAP match priority nuronesence_proof before proof -- governance events now flowing from Jaya Supabase to TYOVA -- cri jaya sentinel policy WARDs receiving NURONESENCE_PROOF events -- pill path animated dots deferred to FIX-774
+
+**Status:** CLOSED
