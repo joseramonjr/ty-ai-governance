@@ -8034,3 +8034,13 @@ NURONESENCE_PROOF governance event -- three repo change -- Jaya-Runtime lib.rs f
 TYOVA EcosystemFlowPage.tsx -- switch governance event polling to VITE_JAYA_SUPABASE_URL -- fix EVENT_WARD_MAP match priority nuronesence_proof before proof -- governance events now flowing from Jaya Supabase to TYOVA -- cri jaya sentinel policy WARDs receiving NURONESENCE_PROOF events -- pill path animated dots deferred to FIX-774
 
 **Status:** CLOSED
+
+### Entry-794 | FIX-774 | 2026-06-12 17:29 PDT San Diego -- 2026-06-12 18:05 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** ed0dbb6
+**Scope:** EcosystemFlowPage.tsx -- convert static drawPillFlow lines to animated dot system -- dots move on pill paths when NURONESENCE_PROOF event active
+
+EcosystemFlowPage.tsx -- animated pill dot spawner -- pillDotAcc array -- dots move on 10 pill paths when NURONESENCE_PROOF active via cri WARD hotTime -- aspirational pill-to-human guardian path included -- represents Nuronesence verification flowing toward guardian
+
+**Status:** CLOSED
