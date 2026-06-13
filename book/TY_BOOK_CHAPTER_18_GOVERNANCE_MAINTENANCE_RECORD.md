@@ -8054,3 +8054,13 @@ EcosystemFlowPage.tsx -- animated pill dot spawner -- pillDotAcc array -- dots m
 Chapter 78 -- The Nuronesent -- When the Governed Whole Became Visible -- 335 lines LIVING -- Nuronesence coined June 9 Nuronesent coined June 11 -- full coining story wave-ocean analogy co-constitutive relationship -- FIX-760 through FIX-774 documented -- NURONESENCE_PROOF event -- waveform concept open question
 
 **Status:** CLOSED
+
+### Entry-796 | FIX-776 | 2026-06-13 09:14 PDT San Diego -- 2026-06-13 10:06 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 25fd071
+**Scope:** EcosystemFlowPage.tsx — Nuronesent pill position correction — move pills to ON or OUTSIDE amber dashed border
+
+EcosystemFlowPage.tsx -- Nuronesent pill position correction -- amber border top moved to Y:110 -- four property indicator pills now sit above and outside the Nuronesent border -- architecturally correct: pills verify the Nuronesent from outside, not inside
+
+**Status:** CLOSED
