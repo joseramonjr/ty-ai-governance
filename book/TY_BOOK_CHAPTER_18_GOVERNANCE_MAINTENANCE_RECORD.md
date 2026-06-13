@@ -8084,3 +8084,13 @@ EcosystemFlowPage.tsx -- Nuronesent border verification state -- startup fill an
 EcosystemFlowPage.tsx -- Nuronesent sentry check-in -- four colored dots arc up to touch own pill on each lap -- pill brightens on check-in -- triggered by real live data confirmation timestamps per property -- pillLastConfirmedRef updates when each Nuronesence property is confirmed active -- check-in fires when dot passes within 60px of pill X on top border segment and data confirmed within 35s -- degraded dot freezes red on property failure
 
 **Status:** CLOSED
+
+### Entry-799 | FIX-779 | 2026-06-13 12:42 PDT San Diego -- 2026-06-13 13:28 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 1b05be6
+**Scope:** EcosystemFlowPage.tsx — shift entire canvas down 80px uniformly — increase CH from 1700 to 1780 — all WARD cy values +80 — all zone Y values +80 — all flow path Y coordinates +80 — reduce crowding between pills and WARDs
+
+EcosystemFlowPage.tsx -- shift entire canvas down uniformly -- CH increased to 2000 -- all WARD cy values adjusted -- all zone Y values adjusted -- additional spacing for AUTHORITY and middle zones -- pill flows converted from hardcoded Y to ep() auto-positioning -- pill flows will never break on WARD repositioning again
+
+**Status:** CLOSED
