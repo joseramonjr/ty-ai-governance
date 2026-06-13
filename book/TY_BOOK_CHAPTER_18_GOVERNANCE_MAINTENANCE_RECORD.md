@@ -8074,3 +8074,13 @@ EcosystemFlowPage.tsx -- Nuronesent pill position correction -- amber border top
 EcosystemFlowPage.tsx -- Nuronesent border verification state -- startup fill animation on every page load -- four colored traveling dots (blue purple indigo cyan) with trails at 10s per circuit -- passive dashed faint border when unverified -- solid glowing amber border when all four Nuronesence properties confirmed -- degraded state dot freezes red pulse when property fails
 
 **Status:** CLOSED
+
+### Entry-798 | FIX-778 | 2026-06-13 11:32 PDT San Diego -- 2026-06-13 12:29 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** ba69c4f
+**Scope:** EcosystemFlowPage.tsx — Nuronesent sentry check-in — dots arc up to touch own pill on each lap triggered by real live data confirmation timestamps — pill brightens on check-in — dot freezes red and pill alerts on property failure
+
+EcosystemFlowPage.tsx -- Nuronesent sentry check-in -- four colored dots arc up to touch own pill on each lap -- pill brightens on check-in -- triggered by real live data confirmation timestamps per property -- pillLastConfirmedRef updates when each Nuronesence property is confirmed active -- check-in fires when dot passes within 60px of pill X on top border segment and data confirmed within 35s -- degraded dot freezes red on property failure
+
+**Status:** CLOSED
