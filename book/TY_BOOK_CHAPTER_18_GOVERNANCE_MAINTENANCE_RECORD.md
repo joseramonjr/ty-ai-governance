@@ -8064,3 +8064,13 @@ Chapter 78 -- The Nuronesent -- When the Governed Whole Became Visible -- 335 li
 EcosystemFlowPage.tsx -- Nuronesent pill position correction -- amber border top moved to Y:110 -- four property indicator pills now sit above and outside the Nuronesent border -- architecturally correct: pills verify the Nuronesent from outside, not inside
 
 **Status:** CLOSED
+
+### Entry-797 | FIX-777 | 2026-06-13 10:08 PDT San Diego -- 2026-06-13 11:31 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** c0297b8
+**Scope:** EcosystemFlowPage.tsx — Nuronesent border verification state — passive dashed faint vs verified solid glow when all four Nuronesence properties confirmed
+
+EcosystemFlowPage.tsx -- Nuronesent border verification state -- startup fill animation on every page load -- four colored traveling dots (blue purple indigo cyan) with trails at 10s per circuit -- passive dashed faint border when unverified -- solid glowing amber border when all four Nuronesence properties confirmed -- degraded state dot freezes red pulse when property fails
+
+**Status:** CLOSED
