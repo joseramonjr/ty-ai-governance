@@ -8094,3 +8094,13 @@ EcosystemFlowPage.tsx -- Nuronesent sentry check-in -- four colored dots arc up 
 EcosystemFlowPage.tsx -- shift entire canvas down uniformly -- CH increased to 2000 -- all WARD cy values adjusted -- all zone Y values adjusted -- additional spacing for AUTHORITY and middle zones -- pill flows converted from hardcoded Y to ep() auto-positioning -- pill flows will never break on WARD repositioning again
 
 **Status:** CLOSED
+
+### Entry-800 | FIX-780 | 2026-06-13 13:35 PDT San Diego -- 2026-06-13 18:29 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 0bfa788
+**Scope:** EcosystemFlowPage.tsx — EcosystemFlow Behavioral Proof — four named test conditions — verified state — degraded state — recovery — data freshness — pass/fail per condition — results committed to Ch18 as proof record
+
+EcosystemFlowPage.tsx -- EcosystemFlow Behavioral Proof -- Option A Jaya liveness detection 180s event freshness threshold -- frozen red dot on border when property fails -- border goes dashed in degraded state -- sentry touch resets liveness clock -- inner glow stroke added for border visibility -- EFP-001 Verified State PASS -- EFP-002 Degraded State PASS -- EFP-003 Recovery PASS -- EFP-004 Sentry Check-In Real Data PASS -- 4/4 proof conditions met
+
+**Status:** CLOSED
