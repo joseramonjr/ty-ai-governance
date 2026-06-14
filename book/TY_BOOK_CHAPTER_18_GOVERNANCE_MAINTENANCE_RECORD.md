@@ -8124,3 +8124,13 @@ EcosystemFlowPage.tsx -- disabled Nuronesent pills turn red and blink when prope
 EcosystemFlowPage.tsx -- Nuronesent diagnostic panel -- auto-appears below pills when any property fails in degraded state -- shows failed property name reason and fix steps derived from code conditions -- drawn at end of draw loop renders on top of all zones -- panel disappears automatically when all properties restored -- completes the governance alert system: red blinking pill + frozen red dot + diagnostic panel with reason and fix
 
 **Status:** CLOSED
+
+### Entry-803 | FIX-783 | 2026-06-13 21:58 PDT San Diego -- 2026-06-13 21:59 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 047a78b
+**Scope:** EcosystemFlowPage.tsx — Human Guardian repositioned to cy:200 — pill flows connected to ep() auto-positioning — animated pill dot path tracks guardian position — spec flow readable
+
+EcosystemFlowPage.tsx -- Human Guardian repositioned to cy:200 for better spacing and readability -- pill flows connected to ep('human','b') auto-positioning -- animated pill dot path updated to track guardian position dynamically -- spec flow between Human Guardian and TY AI OS Core now readable
+
+**Status:** CLOSED
