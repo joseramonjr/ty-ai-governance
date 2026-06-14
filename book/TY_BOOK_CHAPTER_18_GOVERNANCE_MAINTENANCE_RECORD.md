@@ -8134,3 +8134,13 @@ EcosystemFlowPage.tsx -- Nuronesent diagnostic panel -- auto-appears below pills
 EcosystemFlowPage.tsx -- Human Guardian repositioned to cy:200 for better spacing and readability -- pill flows connected to ep('human','b') auto-positioning -- animated pill dot path updated to track guardian position dynamically -- spec flow between Human Guardian and TY AI OS Core now readable
 
 **Status:** CLOSED
+
+### Entry-804 | FIX-784 | 2026-06-14 09:24 PDT San Diego -- 2026-06-14 09:28 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** a494ad0
+**Scope:** TY_ARCHITECTURAL_DECISIONS_RECORD.md — update ADR-029 status from OPEN to ACCEPTED — record implementation evidence FIX-759 through FIX-764 — 697 rows loaded — Tauri command verified — EcosystemFlow WARD live — formally document Phase 15 opening
+
+TY_ARCHITECTURAL_DECISIONS_RECORD.md -- ADR-029 implementation evidence added -- FIX-759 through FIX-764 confirmed -- 697 rows loaded across 7 entry types -- query_ty_knowledge Tauri command verified live -- TY Knowledge Layer WARD live on EcosystemFlowPage with 6 bidirectional flows -- GIQ-026 returned for closed chain query -- Phase 15 formally documented as open
+
+**Status:** CLOSED
