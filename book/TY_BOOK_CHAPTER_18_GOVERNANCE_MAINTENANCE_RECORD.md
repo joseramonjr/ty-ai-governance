@@ -8104,3 +8104,13 @@ EcosystemFlowPage.tsx -- shift entire canvas down uniformly -- CH increased to 2
 EcosystemFlowPage.tsx -- EcosystemFlow Behavioral Proof -- Option A Jaya liveness detection 180s event freshness threshold -- frozen red dot on border when property fails -- border goes dashed in degraded state -- sentry touch resets liveness clock -- inner glow stroke added for border visibility -- EFP-001 Verified State PASS -- EFP-002 Degraded State PASS -- EFP-003 Recovery PASS -- EFP-004 Sentry Check-In Real Data PASS -- 4/4 proof conditions met
 
 **Status:** CLOSED
+
+### Entry-801 | FIX-781 | 2026-06-13 18:36 PDT San Diego -- 2026-06-13 18:53 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** de2edc4
+**Scope:** EcosystemFlowPage.tsx — disabled Nuronesent pills turn red and blink when property fails in degraded state — pill alert state complements frozen red dot on border
+
+EcosystemFlowPage.tsx -- disabled Nuronesent pills turn red and blink when property fails in degraded state -- pill background and border pulse red at 300ms interval -- complements frozen red dot on border -- unmistakable failure signal
+
+**Status:** CLOSED
