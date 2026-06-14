@@ -8114,3 +8114,13 @@ EcosystemFlowPage.tsx -- EcosystemFlow Behavioral Proof -- Option A Jaya livenes
 EcosystemFlowPage.tsx -- disabled Nuronesent pills turn red and blink when property fails in degraded state -- pill background and border pulse red at 300ms interval -- complements frozen red dot on border -- unmistakable failure signal
 
 **Status:** CLOSED
+
+### Entry-802 | FIX-782 | 2026-06-13 18:54 PDT San Diego -- 2026-06-13 19:32 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** b8abbf7
+**Scope:** EcosystemFlowPage.tsx — Nuronesent diagnostic panel — when any pill fails in degraded state show automatic panel below pills with reason and fix steps derived from code conditions — one entry per failed pill
+
+EcosystemFlowPage.tsx -- Nuronesent diagnostic panel -- auto-appears below pills when any property fails in degraded state -- shows failed property name reason and fix steps derived from code conditions -- drawn at end of draw loop renders on top of all zones -- panel disappears automatically when all properties restored -- completes the governance alert system: red blinking pill + frozen red dot + diagnostic panel with reason and fix
+
+**Status:** CLOSED
