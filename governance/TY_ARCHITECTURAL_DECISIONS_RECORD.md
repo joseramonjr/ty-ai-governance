@@ -1,4 +1,4 @@
-# TY_ARCHITECTURAL_DECISIONS_RECORD.md
+﻿# TY_ARCHITECTURAL_DECISIONS_RECORD.md
 # TY AI OS -- Central Architectural Decisions Register
 # FIX-661 | Entry-679 | 2026-05-27 | San Diego
 # Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
@@ -607,6 +607,8 @@ oversight.
 ## ADR-029 — FLAG-136: TY AI Ecosystem Knowledge Layer
 **Date:** 2026-05-29 | San Diego (America/Los_Angeles)
 **Status:** ACCEPTED -- Phase 15 opening -- FIX-727 -- 2026-06-06 San Diego
+**Implementation confirmed:** FIX-759 through FIX-764 -- 2026-06-12 San Diego
+**Implementation evidence:** ty_knowledge SQLite table created -- Populate-TyKnowledge.ps1 loaded 697 rows across 7 entry types -- query_ty_knowledge Tauri command verified live -- TY Knowledge Layer WARD live on EcosystemFlowPage.tsx with 6 bidirectional flows -- search proof confirmed GIQ-026 returned for 'closed chain' query
 **Raised by:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
 
 ### Problem
