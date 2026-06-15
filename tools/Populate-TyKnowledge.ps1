@@ -19,7 +19,7 @@ $timestamp  = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
 $doc_thresh = "E:\TY-Ecosystem\ty-ai-governance\spec\TY_CANONICAL_THRESHOLDS_REGISTRY.md"
 $doc_adr    = "E:\TY-Ecosystem\ty-ai-governance\governance\TY_ARCHITECTURAL_DECISIONS_RECORD.md"
 $doc_qa     = "E:\TY-Ecosystem\ty-ai-governance\governance\TY_QA_REGISTRY.md"
-$doc_ct     = "E:\TY-Ecosystem\ty-ai-governance\governance\TY_CONSCIENCE_THREAD_v0.1.md"
+$doc_ct     = "E:\TY-Ecosystem\ty-ai-governance\governance\TY_NURONETHIC_THREAD_v0.1.md"
 $doc_ch26   = "E:\TY-Ecosystem\ty-ai-governance\book\TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md"
 
 # Verify prerequisites
@@ -136,7 +136,7 @@ $entries = Split-ByPattern $content "(?m)^### C\d+-\d+"
 foreach ($entry in $entries) {
     $keyMatch = [regex]::Match($entry, "^### (C\d+-\d+)")
     if ($keyMatch.Success) {
-        Add-Row "TY_CONSCIENCE_THREAD_v0.1.md" "invariant" $keyMatch.Groups[1].Value $entry
+        Add-Row "TY_NURONETHIC_THREAD_v0.1.md" "invariant" $keyMatch.Groups[1].Value $entry
     }
 }
 Write-Host "  Conscience Thread entries queued: $($entries.Count)"

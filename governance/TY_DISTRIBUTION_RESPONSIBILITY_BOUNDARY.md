@@ -212,7 +212,7 @@ legal responsibility boundary. This document establishes the moral
 responsibility boundary. The two are complementary -- neither supersedes
 the other.
 
-**TY_CONSCIENCE_THREAD_v0.1.md:** The moral conviction documented in the
+**TY_NURONETHIC_THREAD_v0.1.md:** The moral conviction documented in the
 Conscience Thread is the foundation of this document. The 64 entries
 of moral reasoning behind TY AI OS boundaries are what make the
 ongoing obligation genuine rather than performative.
@@ -235,5 +235,5 @@ GIQ-025, GIQ-026 -- Capture Resistance
 OAQ-002 CAT-1-013 -- Distribution Semantics vs Moral Responsibility
 TY_ENTERPRISE_GOVERNANCE_BOUNDARY.md -- prerequisite (CAT-1-012 + CAT-2-015)
 TY_COMPLIANCE_SCOPE_DISCLAIMER.md -- prerequisite (CAT-2-012)
-TY_CONSCIENCE_THREAD_v0.1.md -- moral foundation
+TY_NURONETHIC_THREAD_v0.1.md -- moral foundation
 Chapter 49 -- Mission record

@@ -3744,7 +3744,7 @@ boundary in TY AI OS. Documents not just what the rules are but why each
 boundary was drawn and what alternatives were deliberately rejected. One of
 three registries preventing contradictory answers to the same question asked
 differently across sessions. Never sealed. Lives in the governance directory
-as TY_CONSCIENCE_THREAD_v0.1.md and in the Book of TY as Chapter 73.
+as TY_NURONETHIC_THREAD_v0.1.md and in the Book of TY as Chapter 73.
 
 **Moral History**
 *First coined: 2026-05-28 23:53 | San Diego (America/Los_Angeles)*

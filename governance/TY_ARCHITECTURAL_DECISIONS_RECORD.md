@@ -635,7 +635,7 @@ is updated, the knowledge layer is updated. No component operates on
 stale knowledge.
 
 ### Target State
-A SQLite knowledge table (ty_knowledge) stored in the Jaya ledger database alongside existing governance tables. Each row represents one canonical document entry with fields: document_source (which canonical file), entry_type (term, decision, threshold, invariant), entry_key (unique identifier), entry_content (full text), and last_updated (timestamp of last builder-authorized update). All five canonical documents are loaded: Book of TY, TY_QA_REGISTRY.md, TY_CONSCIENCE_THREAD_v0.1.md, TY_CANONICAL_THRESHOLDS_REGISTRY.md, and TY_ARCHITECTURAL_DECISIONS_RECORD.md. Staleness is detected by comparing last_updated timestamps against the governance document commit history. A builder-run PowerShell script handles all updates -- no AI component may write to this table.
+A SQLite knowledge table (ty_knowledge) stored in the Jaya ledger database alongside existing governance tables. Each row represents one canonical document entry with fields: document_source (which canonical file), entry_type (term, decision, threshold, invariant), entry_key (unique identifier), entry_content (full text), and last_updated (timestamp of last builder-authorized update). All five canonical documents are loaded: Book of TY, TY_QA_REGISTRY.md, TY_NURONETHIC_THREAD_v0.1.md, TY_CANONICAL_THRESHOLDS_REGISTRY.md, and TY_ARCHITECTURAL_DECISIONS_RECORD.md. Staleness is detected by comparing last_updated timestamps against the governance document commit history. A builder-run PowerShell script handles all updates -- no AI component may write to this table.
 
 ### Constraints
 - Must not conflict with Zero-Fabrication Rule
@@ -668,7 +668,7 @@ document at runtime? Five sub-decisions (DQ-1 through DQ-5) were required.
 **DQ-1 — Content source:**
 Option B selected. The Conscience Thread document is embedded into the
 Jaya binary at compile time via include_str!. A vendored snapshot copy
-(TY_CONSCIENCE_THREAD_v0.1.md) lives in src-tauri/src/ and is byte-
+(TY_NURONETHIC_THREAD_v0.1.md) lives in src-tauri/src/ and is byte-
 identical to the canonical governance document at release cut.
 
 **DQ-2 — Anchor mechanism:**

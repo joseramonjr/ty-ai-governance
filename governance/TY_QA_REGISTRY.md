@@ -3343,7 +3343,7 @@ Jaya Runtime verifies it at runtime?
 - Option B: Build-time bundled snapshot embedded via include_str!
 - Option C: Network fetch from a published URL at runtime
 **Chosen:** Option B — build-time bundled snapshot via include_str!.
-A vendored copy of TY_CONSCIENCE_THREAD_v0.1.md lives in
+A vendored copy of TY_NURONETHIC_THREAD_v0.1.md lives in
 src-tauri/src/ and is byte-identical to the canonical document.
 **Why:** Live file read (Option A) creates a cross-repo filesystem
 dependency and breaks portability. Network fetch (Option C) violates

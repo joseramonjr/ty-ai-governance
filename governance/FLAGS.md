@@ -368,11 +368,11 @@ delegating agent's authority. Document the validation rule canonically.
 Location: conscience_thread.rs (Jaya-Runtime) -- FLAG-135
 Issue: conscience_thread.rs exists but has never been adversarially tested.
 The canonical rules it enforces may not match what is documented in
-TY_CONSCIENCE_THREAD_v0.1.md. This is the ethical reasoning layer of
+TY_NURONETHIC_THREAD_v0.1.md. This is the ethical reasoning layer of
 TY AI OS -- a mismatch between document and code here is a governance
 integrity failure.
 Required fix: Full audit of conscience_thread.rs against
-TY_CONSCIENCE_THREAD_v0.1.md. Every documented rule verified in code.
+TY_NURONETHIC_THREAD_v0.1.md. Every documented rule verified in code.
 Every code rule verified in documentation. Adversarial test suite added.
 Related: FLAG-135.
 

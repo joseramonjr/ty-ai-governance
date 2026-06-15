@@ -76,7 +76,7 @@ written by the builder personally when the builder is ready. They cannot be
 written by anyone else. Until they are written, the placeholders remain.
 
 A cryptographically signed copy of this document lives in the governance
-directory of the ty-ai-governance repository as TY_CONSCIENCE_THREAD_v0.1.md.
+directory of the ty-ai-governance repository as TY_NURONETHIC_THREAD_v0.1.md.
 That copy carries a SHA-256 hash computed after the document was finalized and
 an Ed25519 signature by the builder's private key. This chapter is the
 public-readable version. The governance file is the attested version. When a new

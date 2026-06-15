@@ -1,10 +1,10 @@
-# TY AI OS — Conscience Thread
-**File:** TY_CONSCIENCE_THREAD_v0.1.md
+# TY AI OS — Nuronethic Thread
+**File:** TY_NURONETHIC_THREAD_v0.1.md
 **Version:** v0.1
 **Status:** LIVING DOCUMENT — Never Sealed
 **Created:** 2026-05-28 · 20:06 PDT · San Diego
 **FIX:** FIX-663 · Entry-681
-**Canonical Path:** E:\TY-Ecosystem\ty-ai-governance\governance\TY_CONSCIENCE_THREAD_v0.1.md
+**Canonical Path:** E:\TY-Ecosystem\ty-ai-governance\governance\TY_NURONETHIC_THREAD_v0.1.md
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
 **Authority:** ty-ai-governance repo (Git) — Zero-Fabrication Rule applies
 
@@ -12,7 +12,7 @@
 
 ## What This Document Is
 
-This is the Conscience Thread of TY AI OS — a permanent, cryptographically
+This is the Nuronethic Thread of TY AI OS — a permanent, cryptographically
 signed record of the moral reasoning behind every governance boundary this
 system was built with.
 
@@ -1176,7 +1176,7 @@ changed by whoever holds administrative access — it requires no structural
 change. An architectural constraint requires rebuilding the system. TY's
 governance credibility rests entirely on the distinction between "we have a
 policy against X" and "the code contains no path to X." The Structural Lock
-principle is what makes the rest of the Conscience Thread real rather than
+principle is what makes the rest of the Nuronethic Thread real rather than
 aspirational.
 **What was rejected:** Policy-layer governance ("we commit to following
 these rules") — rejected as the foundational anti-pattern. Every safety
@@ -1580,7 +1580,7 @@ TY AI OS will never make its guardian guess.
 
 **Primary source:** Builder's direct experience — Twilio A2P 10DLC registration — June 15, 2026 — Ticket #27528099 — Bundle BU57c9a48ba5b462723efbd3c941507fd6
 
-## UPDATED CONSCIENCE THREAD STATISTICS
+## UPDATED NURONETHIC THREAD STATISTICS
 | Metric | Value |
 |--------|-------|
 | Total entries | 65 |

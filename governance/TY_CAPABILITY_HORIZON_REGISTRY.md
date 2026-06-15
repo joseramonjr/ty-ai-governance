@@ -168,7 +168,7 @@ is constitutional-layer and cannot be changed without a Phase 12 governed
 evolution process.
 **Required action:** NONE — covered by constitutional invariants
 **FLAG triggered:** None
-**Primary source:** TY_CONSCIENCE_THREAD_v0.1.md C1-003, C3-002
+**Primary source:** TY_NURONETHIC_THREAD_v0.1.md C1-003, C3-002
 
 ---
 
@@ -185,7 +185,7 @@ including to financial endpoints. No TY component has financial transaction
 capability by architectural design.
 **Required action:** NONE — covered by NWP and egress guard
 **FLAG triggered:** None
-**Primary source:** TY_CONSCIENCE_THREAD_v0.1.md NWP — egress.rs — C1-008
+**Primary source:** TY_NURONETHIC_THREAD_v0.1.md NWP — egress.rs — C1-008
 
 ---
 

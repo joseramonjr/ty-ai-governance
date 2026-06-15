@@ -254,5 +254,5 @@ OAQ-002 CAT-1-012 -- Non-Weaponization Guardrail vs Enterprise Deployment
 OAQ-002 CAT-2-015 -- Beneficial Monitoring Argument
 TY_COMPLIANCE_SCOPE_DISCLAIMER.md -- companion document (CAT-2-012)
 TY_DISTRIBUTION_RESPONSIBILITY_BOUNDARY.md -- companion document (CAT-1-013)
-TY_CONSCIENCE_THREAD_v0.1.md -- moral foundation
+TY_NURONETHIC_THREAD_v0.1.md -- moral foundation
 ADR-024 -- Supabase as Message Queue Not Governance Authority
