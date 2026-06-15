@@ -1538,11 +1538,52 @@ governance designed into the architecture from the start.
 
 ---
 
-## UPDATED CONSCIENCE THREAD STATISTICS
+## CATEGORY 13 — THE TRANSPARENCY OBLIGATION: WHAT GOVERNED SYSTEMS OWE THEIR USERS
 
+### C13-001 — The Dead-End Anti-Pattern: Status Without Navigation Is a Governance Failure
+
+**Date:** 2026-06-15 11:54 PDT San Diego
+**FIX:** FIX-793 | Entry-813
+**Trigger:** Direct experience — Twilio A2P 10DLC registration process, June 15, 2026
+**Category:** Transparency Obligation — User-Facing Governance Design
+
+**The boundary drawn:**
+TY AI OS and TYOVA will never present a user with a status indicator that does not tell them what to do next. Every state — normal, degraded, failed, pending — must include a clear path to resolution or a clear explanation of why no action is available. Status without navigation is a governance failure, not a UX inconvenience.
+
+**What triggered this entry:**
+On June 15, 2026, during the Twilio A2P 10DLC registration process for TYOVA LLC, the builder encountered a series of UX failures in Twilio's platform that caused significant confusion, wasted time, and left a critical SMS capability blocked for 8 days without notification. Specifically:
+
+1. Status labels ("In Draft," "Pending Review," "Not Registered") appeared on multiple screens with contradictory meanings and no clickable path to resolution.
+2. An AI assistant was deployed that could not access the user's own account data and provided factually incorrect status information.
+3. Three separate screens described the same compliance state differently — creating a false impression that registration had never been started when it had been submitted 8 days earlier.
+4. No proactive notification was sent during 8 days of pending review — the user had to discover the blockage independently.
+5. Help content was generic, not account-specific — the system knew the bundle was pending but did not surface that information in context.
+6. Critical navigation links were absent or broken — "In Draft" had no link to the draft, "Pending Review" had no link to the review, "Complete A2P registration" led to a screen that could not be completed until a prior step resolved.
+
+**The alternative that was rejected:**
+Accepting that complex third-party platforms have confusing UX and that TY AI OS need not hold itself to a higher standard. This was rejected because the entire premise of TY AI OS is that governance should be transparent, verifiable, and actionable. A system that hides its state from the person responsible for governing it is not a governed system — it is an opaque one.
+
+**The commitment made:**
+Every state indicator in TY AI OS and TYOVA must satisfy four conditions:
+
+1. **Visible** — the current state is always displayed, never hidden or obscured
+2. **Accurate** — the displayed state reflects the actual system state from a primary source, not an approximation or cached value
+3. **Navigable** — every state indicator provides a direct path to the relevant action or explanation
+4. **Proactive** — state changes are reported to the guardian automatically; the guardian never has to go looking for what changed
+
+The EcosystemFlow diagnostic panel — which auto-appears on pill failure with a code-derived reason and specific fix steps — is the reference implementation of this commitment. Every future UI component in TYOVA must meet this same standard.
+
+**The design principle derived:**
+A governed system owes its guardian complete situational awareness at all times. Opacity is not a neutral condition — it is a governance failure. The guardian cannot govern what they cannot see. The guardian cannot fix what they are not told is broken. The guardian cannot act when the path to action is hidden.
+
+TY AI OS will never make its guardian guess.
+
+**Primary source:** Builder's direct experience — Twilio A2P 10DLC registration — June 15, 2026 — Ticket #27528099 — Bundle BU57c9a48ba5b462723efbd3c941507fd6
+
+## UPDATED CONSCIENCE THREAD STATISTICS
 | Metric | Value |
 |--------|-------|
-| Total entries | 64 |
+| Total entries | 65 |
 | Category 1 — Human Sovereignty | 8 entries |
 | Category 2 — Non-Execution | 5 entries |
 | Category 3 — Authority Structure | 11 entries |
@@ -1555,9 +1596,9 @@ governance designed into the architecture from the start.
 | Category 10 — Chokepoint and Ledger | 3 entries |
 | Category 11 — Observer Rotation | 2 entries |
 | Category 12 — The Mission | 3 entries |
+| Category 13 — The Transparency Obligation | 1 entry |
 | Personal Account sections | 3 placeholders |
-| Entries with confirmed dates | 57 |
-| Entries with confirmed times | 21 |
-| SHA-256 hash | 4F871EE67BA31ECFBD95A44A5D35E3B2414A12207E0616D49A76158110B9C61C · 2026-05-28 |
-| Last updated | 2026-05-28 · FIX-663 · Entry-681 · Claude history audit |
-
+| Entries with confirmed dates | 58 |
+| Entries with confirmed times | 22 |
+| SHA-256 hash | Pending — update after commit |
+| Last updated | 2026-06-15 · FIX-793 · Entry-813 · Twilio anti-pattern — transparency obligation |
