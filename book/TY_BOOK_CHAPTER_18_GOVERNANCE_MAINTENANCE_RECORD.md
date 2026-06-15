@@ -8234,3 +8234,13 @@ Chapter 77 expanded — Part VIII Discussion section added — Seth projection a
 Conscience Thread — Category 13 The Transparency Obligation added — C13-001 The Dead-End Anti-Pattern — derived from Twilio A2P 10DLC experience June 15 2026 — seven specific UX failures documented — four TY design commitments established — total entries 65 — S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-814 | 794 | 2026-06-15 12:37 PDT San Diego -- 2026-06-15 12:45 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** f396ead
+**Scope:** Create TY_CAPABILITY_HORIZON_REGISTRY.md — ADR-035 — Phase 15 first governance document — capability horizon tracking and gap identification
+
+TY_CAPABILITY_HORIZON_REGISTRY.md created — ADR-035 — Phase 15 first governance document — 8 entries across 3 sections — 2 COVERED 5 GAP 1 UNKNOWN — FLAG-151 AI-generated code input boundary — FLAG-152 cross-session agentic accumulation — FLAG-153 self-modifying governance boundary — 219 lines — S1 CLEAN
+
+**Status:** CLOSED
