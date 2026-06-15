@@ -8254,3 +8254,13 @@ TY_CAPABILITY_HORIZON_REGISTRY.md created — ADR-035 — Phase 15 first governa
 Chapter 77 Conclusion updated — reflects full vocabulary doctrine and all four coined terms — References table completed — Nurvexus added — Walker IP review noted — Bibliography section added with six academic sources — citation verification note added — 572 lines to 608 lines — S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-816 | 796 | 2026-06-15 13:02 PDT San Diego -- 2026-06-15 13:09 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 33c857a
+**Scope:** TYOVA sync — Chapter 77 bookChapterContent.ts — replace Nexora content with Nuronesence — update title summary and GitHub link — reflect FIX-789 through FIX-795
+
+TYOVA sync — Chapter 77 bookChapterContent.ts — Nexora replaced with Nuronesence throughout — 70 replacements — title subtitle compiledNote updated — GitHub link updated — Nuronesence definition corrected with final coined definition — TypeScript clean
+
+**Status:** CLOSED
