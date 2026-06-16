@@ -8344,3 +8344,13 @@ get_jaya_events_public -- dropped parameterless overload causing PGRST203 300 re
 governance_events table created in TYOVA Supabase -- matched SS321 schema exactly -- RLS enabled -- SELECT granted to anon authenticated service_role -- Supabase Bridge green -- All Systems Operational -- Supabase-side only no code commit
 
 **Status:** CLOSED
+
+### Entry-825 | FIX-805 | 2026-06-16 11:37 PDT San Diego -- 2026-06-16 11:39 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** no-commit
+**Scope:** ADR-033 and ADR-034 -- TYOVA Enhanced Display Layer and Luke-TYOVA Integration Endpoint -- Phase 15 architectural decisions documented
+
+ADR-033 ADR-034 ADR-035 already committed in FIX-727 Entry-746 2026-06-06 -- no new documentation required -- handoff item resolved by inspection
+
+**Status:** CLOSED
