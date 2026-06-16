@@ -8314,3 +8314,13 @@ AttestationPage performance fix -- get_jaya_events_public RPC updated to use lim
 AttestationPage hash verification fix -- get_jaya_events_public RPC updated to include entry_timestamp field -- browser now correctly recomputes SHA-256 using entry_timestamp not created_at -- result 50/50 VERIFIED 50/50 CHAIN INTACT 0 mismatches -- Supabase-side change only no TYOVA commit
 
 **Status:** CLOSED
+
+### Entry-822 | FIX-802 | 2026-06-15 21:51 PDT San Diego -- 2026-06-15 22:35 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** bc3daa0
+**Scope:** Ch26 Section 25 -- four coined terms -- Nuronesence, Nuronesent, Nuronethic, Nurvexus -- Walker IP cleared June 15 2026
+
+Ch26 Section 30 created -- four coined terms Nuronesence, Nuronesent, Nuronethic, Nurvexus -- Walker IP cleared 2026-06-15 11:50 AM PDT -- 393->397 terms -- 29->30 sections
+
+**Status:** CLOSED
