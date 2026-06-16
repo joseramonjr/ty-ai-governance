@@ -8304,3 +8304,13 @@ TY_CONSCIENCE_THREAD_v0.1.md renamed to TY_NURONETHIC_THREAD_v0.1.md -- internal
 AttestationPage performance fix -- get_jaya_events_public RPC updated to use lim parameter and return event_hash prev_hash entry_id fields -- index added on jaya_audit_events created_at DESC -- page now loads in seconds -- chain intact 50/50 -- Supabase-side change only no TYOVA commit
 
 **Status:** CLOSED
+
+### Entry-821 | FIX-801 | 2026-06-15 20:42 PDT San Diego -- 2026-06-15 20:46 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** supabase-rpc-2
+**Scope:** AttestationPage -- hash verification fix -- RPC missing entry_timestamp field -- browser using created_at instead of entry_timestamp for hash recomputation causing 100% mismatch
+
+AttestationPage hash verification fix -- get_jaya_events_public RPC updated to include entry_timestamp field -- browser now correctly recomputes SHA-256 using entry_timestamp not created_at -- result 50/50 VERIFIED 50/50 CHAIN INTACT 0 mismatches -- Supabase-side change only no TYOVA commit
+
+**Status:** CLOSED
