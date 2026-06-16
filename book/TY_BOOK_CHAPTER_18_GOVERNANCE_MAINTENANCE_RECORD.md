@@ -8294,3 +8294,13 @@ IP_CLEARANCE_WALKER_WEITZEL_2026-06-15.md created -- Walker reply 2026-06-15 11:
 TY_CONSCIENCE_THREAD_v0.1.md renamed to TY_NURONETHIC_THREAD_v0.1.md -- internal title updated -- 9 living documents updated -- historical records left intact per diary principle -- Walker IP clearance 2026-06-15
 
 **Status:** CLOSED
+
+### Entry-820 | FIX-800 | 2026-06-15 20:28 PDT San Diego -- 2026-06-15 20:37 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** supabase-rpc
+**Scope:** AttestationPage -- performance fix -- paginate or limit query to prevent timeout on large jaya_audit_events table
+
+AttestationPage performance fix -- get_jaya_events_public RPC updated to use lim parameter and return event_hash prev_hash entry_id fields -- index added on jaya_audit_events created_at DESC -- page now loads in seconds -- chain intact 50/50 -- Supabase-side change only no TYOVA commit
+
+**Status:** CLOSED
