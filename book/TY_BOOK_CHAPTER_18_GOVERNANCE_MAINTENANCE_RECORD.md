@@ -8334,3 +8334,13 @@ Ch26 Section 30 created -- four coined terms Nuronesence, Nuronesent, Nuronethic
 get_jaya_events_public -- dropped parameterless overload causing PGRST203 300 response -- recreated single function with lim integer DEFAULT 50 returning all required fields including entry_timestamp event_hash prev_hash entry_id -- EcosystemFlow dots restored -- four Nuronesence pills lit -- Supabase-side only no TYOVA commit
 
 **Status:** CLOSED
+
+### Entry-824 | FIX-804 | 2026-06-16 11:01 PDT San Diego -- 2026-06-16 11:24 PDT San Diego
+
+**Destination:** supabase
+**Commit:** supabase-ddl-1
+**Scope:** Create governance_events table in TYOVA Supabase -- SS321 bridge cannot reach table -- matches SS321 schema -- restores Supabase Bridge connection in Jaya TY Status
+
+governance_events table created in TYOVA Supabase -- matched SS321 schema exactly -- RLS enabled -- SELECT granted to anon authenticated service_role -- Supabase Bridge green -- All Systems Operational -- Supabase-side only no code commit
+
+**Status:** CLOSED
