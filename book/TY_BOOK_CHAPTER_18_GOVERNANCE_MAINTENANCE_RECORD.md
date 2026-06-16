@@ -8324,3 +8324,13 @@ AttestationPage hash verification fix -- get_jaya_events_public RPC updated to i
 Ch26 Section 30 created -- four coined terms Nuronesence, Nuronesent, Nuronethic, Nurvexus -- Walker IP cleared 2026-06-15 11:50 AM PDT -- 393->397 terms -- 29->30 sections
 
 **Status:** CLOSED
+
+### Entry-823 | FIX-803 | 2026-06-16 10:48 PDT San Diego -- 2026-06-16 10:55 PDT San Diego
+
+**Destination:** supabase
+**Commit:** supabase-rpc-3
+**Scope:** get_jaya_events_public -- drop overloaded v1 function -- PGRST203 conflict causing 300 response -- EcosystemFlow not connected
+
+get_jaya_events_public -- dropped parameterless overload causing PGRST203 300 response -- recreated single function with lim integer DEFAULT 50 returning all required fields including entry_timestamp event_hash prev_hash entry_id -- EcosystemFlow dots restored -- four Nuronesence pills lit -- Supabase-side only no TYOVA commit
+
+**Status:** CLOSED
