@@ -90,6 +90,12 @@ explicit builder action.
 This response does not close FLAG-151 — it establishes the governance
 position. FLAG-151 remains open until a formal ADR is written and
 committed. Drafting of that ADR is Phase 15 scope.
+**Related:** FLAG-36 (post-authorization autonomous repair model, Phase 13+
+design intent) establishes the pre-existing framework for bounded autonomous
+repair within a guardian-authorized AHW. The ADR for FLAG-151 must define
+how AI-generated repair code produced within a FLAG-36 AHW is governed —
+specifically whether AHW authorization is sufficient or whether per-action
+Human Guardian review is still required within the window.
 **Response status:** POSITION ESTABLISHED — ADR PENDING
 
 ---
