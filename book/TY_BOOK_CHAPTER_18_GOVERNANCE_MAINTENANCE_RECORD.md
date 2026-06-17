@@ -8394,3 +8394,13 @@ EcosystemFlowPage.tsx -- clickable Nuronesence pills -- slide-in panel per pill 
 EcosystemFlowPage.tsx -- pill hover detection -- cursor pointer on pill hover -- visual highlight on hovered pill -- Lovable implemented -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-830 | FIX-810 | 2026-06-16 19:52 PDT San Diego -- 2026-06-16 20:03 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** e9d0bec
+**Scope:** guardian_authority RLS fix -- GRANT SELECT to anon -- CREATE POLICY anon read -- fixes 400 error on EcosystemFlow guardian status card -- SS321 Supabase SQL
+
+guardian_authority RLS fixed -- GRANT SELECT anon added in SS321 Supabase -- query corrected to use guardian_name status role updated_at -- last_checkin_at days_elapsed days_remaining removed -- 400 error resolved -- Guardian Status card now functional
+
+**Status:** CLOSED
