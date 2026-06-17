@@ -8374,3 +8374,13 @@ Three governance responses written — FLAG-151 FLAG-152 FLAG-153 — positions 
 FLAG-143 -- NuronesencePage.tsx created -- four live Nuronesence property cards -- NURONESENCE_PROOF polling -- LIVE on testing.tyova.ai/nuronesence -- nav link added to Jaya Runtime dropdown after Attestation -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-828 | FIX-808 | 2026-06-16 18:55 PDT San Diego -- 2026-06-16 19:14 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 07d406a
+**Scope:** FLAG-143 wow factor -- EcosystemFlowPage.tsx -- clickable Nuronesence pills -- slide-in panel per pill -- four property detail panels -- link to /nuronesence
+
+EcosystemFlowPage.tsx -- clickable Nuronesence pills -- slide-in panel per pill -- four property panels with live CRI and event count -- See full proof link to /nuronesence -- S1 CLEAN
+
+**Status:** CLOSED
