@@ -8414,3 +8414,13 @@ guardian_authority RLS fixed -- GRANT SELECT anon added in SS321 Supabase -- que
 FLAG-144 FLAG-145 -- Architecture Map and Governance Layer Stack added to NuronesencePage.tsx -- four property cards with components -- five governance layers with property pills -- pill overflow fixed -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-832 | FIX-812 | 2026-06-17 15:17 PDT San Diego -- 2026-06-17 15:55 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** a5cd8fa
+**Scope:** FLAG-146 -- Governance State Timeline -- NuronesencePage.tsx -- live high-signal event timeline -- GOVERNANCE_ALERT SELF_HEAL HEALTH_CHECK NURONESENCE_PROOF -- VITE_JAYA_SUPABASE credentials
+
+FLAG-146 -- Governance State Timeline added to NuronesencePage.tsx -- VITE_JAYA_SUPABASE credentials -- 30 high-signal events -- GOVERNANCE_ALERT SELF_HEAL HEALTH_CHECK NURONESENCE_PROOF -- jayaSupabase storageKey fixed -- S1 CLEAN
+
+**Status:** CLOSED
