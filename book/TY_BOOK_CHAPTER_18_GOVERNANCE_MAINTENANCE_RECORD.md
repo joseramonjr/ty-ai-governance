@@ -8384,3 +8384,13 @@ FLAG-143 -- NuronesencePage.tsx created -- four live Nuronesence property cards 
 EcosystemFlowPage.tsx -- clickable Nuronesence pills -- slide-in panel per pill -- four property panels with live CRI and event count -- See full proof link to /nuronesence -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-829 | FIX-809 | 2026-06-16 19:18 PDT San Diego -- 2026-06-16 19:48 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** f7cedbc
+**Scope:** EcosystemFlowPage.tsx -- pill hover detection -- cursor pointer on pill hover -- visual highlight on hovered pill -- user discoverability improvement
+
+EcosystemFlowPage.tsx -- pill hover detection -- cursor pointer on pill hover -- visual highlight on hovered pill -- Lovable implemented -- S1 CLEAN
+
+**Status:** CLOSED
