@@ -8404,3 +8404,13 @@ EcosystemFlowPage.tsx -- pill hover detection -- cursor pointer on pill hover --
 guardian_authority RLS fixed -- GRANT SELECT anon added in SS321 Supabase -- query corrected to use guardian_name status role updated_at -- last_checkin_at days_elapsed days_remaining removed -- 400 error resolved -- Guardian Status card now functional
 
 **Status:** CLOSED
+
+### Entry-831 | FIX-811 | 2026-06-17 14:17 PDT San Diego -- 2026-06-17 14:44 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** ebb264d
+**Scope:** FLAG-144 FLAG-145 -- Nuronesence architecture map and layer stack diagram -- static visuals added to NuronesencePage.tsx -- which components prove which properties -- five governance layers annotated
+
+FLAG-144 FLAG-145 -- Architecture Map and Governance Layer Stack added to NuronesencePage.tsx -- four property cards with components -- five governance layers with property pills -- pill overflow fixed -- S1 CLEAN
+
+**Status:** CLOSED
