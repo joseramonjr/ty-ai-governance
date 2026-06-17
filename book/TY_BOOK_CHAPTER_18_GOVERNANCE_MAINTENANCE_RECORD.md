@@ -8424,3 +8424,13 @@ FLAG-144 FLAG-145 -- Architecture Map and Governance Layer Stack added to Nurone
 FLAG-146 -- Governance State Timeline added to NuronesencePage.tsx -- VITE_JAYA_SUPABASE credentials -- 30 high-signal events -- GOVERNANCE_ALERT SELF_HEAL HEALTH_CHECK NURONESENCE_PROOF -- jayaSupabase storageKey fixed -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-833 | FIX-813 | 2026-06-17 16:13 PDT San Diego -- 2026-06-17 16:25 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** a1fd1bb
+**Scope:** FLAG-147 -- Before/After Comparison Panel -- NuronesencePage.tsx -- real June 11 2026 governance incident -- GOVERNANCE_ALERT CRI=84 -- SELF_HEAL_CRI_RECOVERY 101 seconds -- static hardcoded real data
+
+FLAG-147 -- Governance Incident Record panel added to NuronesencePage.tsx -- real June 11 2026 incident -- GOVERNANCE_ALERT CRI=84 -- SELF_HEAL_CRI_RECOVERY 101 seconds -- static hardcoded real ledger data -- S1 CLEAN
+
+**Status:** CLOSED
