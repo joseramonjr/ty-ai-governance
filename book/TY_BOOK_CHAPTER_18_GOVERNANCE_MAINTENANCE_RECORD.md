@@ -8444,3 +8444,13 @@ FLAG-147 -- Governance Incident Record panel added to NuronesencePage.tsx -- rea
 CHR entries CHR-009 through CHR-016 -- Sections 4-6 -- FLAGS 156-163 -- Nuronethic Thread C13-002 Error Resolution Doctrine -- S1 CLEAN -- documentation only -- no code
 
 **Status:** CLOSED
+
+### Entry-835 | FIX-815 | 2026-06-17 19:52 PDT San Diego -- 2026-06-17 20:11 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 00057c5
+**Scope:** FLAG-157 -- Architecture Map clickable component pills -- slide-in panel with live data -- NuronesencePage.tsx -- Lovable
+
+FLAG-157 -- Architecture Map clickable component pills -- slide-in panel with live data -- 16 pills mapped -- CRI Monitor Sentinel Monitoring Thread SQLite Ledger Policy Engine Tier System Egress Guard Jaya Runtime SHA-256 Hash Chain Attestation Chain Ed25519 Signatures NURONESENCE_PROOF Event Ed25519 Attestation Port 7777 TYOVA Public Archive -- pill overflow fix -- S1 CLEAN
+
+**Status:** CLOSED
