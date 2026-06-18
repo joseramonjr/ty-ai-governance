@@ -8504,3 +8504,13 @@ FLAG-161 -- Opening question reframe -- amber challenge question -- TY AI OS can
 FLAG-161 tooltip blur fix -- governed word -- tooltip moved outside pulsing p to sibling div under header -- React state replaces CSS hover -- crisp rendering confirmed live -- NuronesencePage.tsx -- Lovable -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-841 | FIX-821 | 2026-06-18 09:29 PDT San Diego -- 2026-06-18 09:37 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 1bacdf2
+**Scope:** Add builder name and company to TYOVA footer -- Jose Ramon Alvarado McHerron -- TYOVA LLC -- San Diego CA -- Twilio A2P verification requirement
+
+Add builder attribution to TYOVA footer -- Jose Ramon Alvarado McHerron -- TYOVA LLC -- San Diego CA -- PublicLayout.tsx -- Lovable -- Twilio A2P verification requirement -- confirmed live -- S1 CLEAN
+
+**Status:** CLOSED
