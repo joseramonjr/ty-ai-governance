@@ -8464,3 +8464,13 @@ FLAG-157 -- Architecture Map clickable component pills -- slide-in panel with li
 FLAG-158 -- Layer Stack live status indicators -- five layers -- Authority Specification Enforcement Audit Cryptographic -- green pulse dots -- proofIsLive logic -- CRI<75 Runtime check -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-837 | FIX-817 | 2026-06-17 21:02 PDT San Diego -- 2026-06-17 21:23 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 064cab5
+**Scope:** FLAG-159 -- Live governed actions counter -- large live number showing total ledger entries -- NuronesencePage.tsx -- Lovable
+
+FLAG-159 -- Live governed actions counter -- 51180 live -- amber large number -- green pulse dot -- explanatory text -- FLAG-164 logged -- Public Verification Surface deferred -- S1 CLEAN
+
+**Status:** CLOSED
