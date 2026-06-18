@@ -8564,3 +8564,13 @@ FLAG-155 Layer 2 -- Infrastructure Survivability -- TYOVA guided repair page -- 
 FLAG-155 Layer 3 -- Verify-Deployment.ps1 -- 16 gates -- all pass confirmed -- Layer 1 Jaya INFRASTRUCTURE_FAULT capability verified -- Layer 2 TYOVA repair page verified -- Layer 3 script self-confirming -- all repos clean -- FLAG-155 Infrastructure Survivability COMPLETE all three layers
 
 **Status:** CLOSED
+
+### Entry-847 | FIX-827 | 2026-06-18 13:56 PDT San Diego -- 2026-06-18 14:00 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 7627155
+**Scope:** FLAG-166 -- Clickable Error Surface -- CHR documentation -- every TY AI OS error must be clickable with human-readable explanation and actionable fix steps -- all layers -- documentation only
+
+FLAG-166 -- Clickable Error Surface -- CHR-017 added -- Section 7 Interface Layer Error Governance -- every TY AI OS error must be clickable with human-readable explanation and actionable fix steps -- all layers -- Twilio A2P analogy -- extends FLAG-155 pattern -- documentation only
+
+**Status:** CLOSED
