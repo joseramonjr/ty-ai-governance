@@ -8544,3 +8544,13 @@ FLAG-163 -- Governance incident root cause analysis -- DEFERRED -- root cause da
 FLAG-155 Layer 1 -- Infrastructure Survivability -- write_infrastructure_fault function added to system_health.rs -- four fault codes defined SUPABASE_UNREACHABLE LEDGER_WRITE_FAILED SENTINEL_INIT_FAILED POLICY_LOAD_FAILED -- wired to CRI startup reset failure and startup proof failure in lib.rs -- build clean 0 errors -- system_health.rs + lib.rs
 
 **Status:** CLOSED
+
+### Entry-845 | FIX-825 | 2026-06-18 13:15 PDT San Diego -- 2026-06-18 13:36 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 0496fc3
+**Scope:** FLAG-155 Layer 2 -- Infrastructure Survivability -- TYOVA guided repair page -- per fault code human-readable repair instructions -- reads INFRASTRUCTURE_FAULT events from Supabase -- Lovable only
+
+FLAG-155 Layer 2 -- Infrastructure Survivability -- TYOVA guided repair page -- InfrastructureRepairPage.tsx created -- route added at /infrastructure-repair -- polls jaya_audit_events for INFRASTRUCTURE_FAULT -- four fault codes with repair steps -- green all-clear panel when no faults -- confirmed live -- Lovable -- S1 CLEAN
+
+**Status:** CLOSED
