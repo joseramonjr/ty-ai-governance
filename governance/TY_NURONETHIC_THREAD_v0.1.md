@@ -1580,10 +1580,84 @@ TY AI OS will never make its guardian guess.
 
 **Primary source:** Builder's direct experience — Twilio A2P 10DLC registration — June 15, 2026 — Ticket #27528099 — Bundle BU57c9a48ba5b462723efbd3c941507fd6
 
+---
+
+### C13-002 — The Error Resolution Doctrine: Every Failure State Must Name Its Cause and Its Fix
+
+**Date:** 2026-06-17 19:12 PDT San Diego
+**FIX:** FIX-814 | Entry-834
+**Trigger:** Direct experience — Twilio A2P 10DLC profile rejection, June 17, 2026
+**Category:** Transparency Obligation — Error State Completeness
+
+**The boundary drawn:**
+Every error, alert, or failure state produced by TY AI OS must state three
+things: (1) what failed, (2) why it failed, and (3) what the guardian must
+do to resolve it. A system that reports a problem without a resolution path
+has not completed the governance loop. An incomplete error is not a
+governance signal — it is noise that shifts the burden of diagnosis to the
+human without providing the information needed to act.
+
+**What triggered this entry:**
+On June 17, 2026, the Twilio A2P 10DLC compliance profile for TYOVA LLC
+was rejected with error code 18604: "Unable to verify Authorized
+Representative #1." The rejection named the problem category but provided
+no specific information: which field was wrong, what the correct value
+should be, what verification source Twilio was checking against, or what
+change would resolve the rejection. The builder had to guess which field
+caused the failure, change it blind, and resubmit without confirmation
+that the fix was correct. This is a distinct failure mode from C13-001
+(dead-end status) — the status was visible and navigable, but the error
+content itself was incomplete. Navigation to an incomplete error is still
+a governance failure.
+
+**The distinction from C13-001:**
+C13-001 addresses opacity — states that are hidden, mislabeled, or
+unnavigable. C13-002 addresses incompleteness — states that are visible
+and navigable but omit the diagnostic content the guardian needs to act.
+Both are transparency failures. Together they close the full error surface:
+C13-001 ensures the guardian can find the error; C13-002 ensures the error
+tells them everything they need to fix it.
+
+**The three required elements of every error state:**
+1. **What failed** — the specific component, field, condition, or boundary
+   that was violated. Not a category label. Not an error code alone.
+   The specific thing that is wrong.
+2. **Why it failed** — the cause. What condition triggered this state.
+   What the system expected versus what it received. If the cause cannot
+   be determined, the error must say so explicitly — "cause unknown,
+   manual investigation required" is acceptable. Silence is not.
+3. **What to do** — the specific resolution path available to the guardian.
+   If a fix exists: name it. If multiple options exist: list them with
+   consequences. If no fix is available from the guardian's position:
+   state that explicitly and name who can resolve it and how to reach them.
+
+**Application to TY AI OS alert architecture:**
+The enhanced CRI Critical email (FIX-768) implemented the WHY table and
+WHAT TO DO section — a partial implementation of this doctrine. FLAG-163
+(Governance Incident Root Cause Analysis — CHR-016) is the full
+architectural response: automated root cause identification included in
+every GOVERNANCE_ALERT. Every future alert, error surface, and failure
+notification in TY AI OS must satisfy all three elements before it is
+considered a complete governance signal.
+
+**The alternative that was rejected:**
+Accepting that some errors are inherently opaque — that third-party
+verification failures, network errors, or edge cases cannot always be
+diagnosed. This was rejected because the obligation is not to always have
+the answer — it is to always be honest about what is known and unknown.
+"Verification failed — specific cause unavailable from this system —
+contact [specific party] at [specific contact]" satisfies the doctrine.
+"Error 18604" does not.
+
+**Primary source:** Builder's direct experience — Twilio A2P 10DLC profile
+rejection — June 17, 2026 — Error code 18604 — Bundle
+BU57c9a48ba5b462723efbd3c941507fd6 — Ticket #27528099
+**Related:** C13-001 · CHR-016 · FLAG-163 · FIX-768
+
 ## UPDATED NURONETHIC THREAD STATISTICS
 | Metric | Value |
 |--------|-------|
-| Total entries | 65 |
+| Total entries | 66 |
 | Category 1 — Human Sovereignty | 8 entries |
 | Category 2 — Non-Execution | 5 entries |
 | Category 3 — Authority Structure | 11 entries |
@@ -1596,9 +1670,9 @@ TY AI OS will never make its guardian guess.
 | Category 10 — Chokepoint and Ledger | 3 entries |
 | Category 11 — Observer Rotation | 2 entries |
 | Category 12 — The Mission | 3 entries |
-| Category 13 — The Transparency Obligation | 1 entry |
+| Category 13 — The Transparency Obligation | 2 entry |
 | Personal Account sections | 3 placeholders |
 | Entries with confirmed dates | 58 |
 | Entries with confirmed times | 22 |
 | SHA-256 hash | Pending — update after commit |
-| Last updated | 2026-06-15 · FIX-793 · Entry-813 · Twilio anti-pattern — transparency obligation |
+| Last updated | 2026-06-17 · FIX-814 · Entry-834 · Error Resolution Doctrine — C13-002 |

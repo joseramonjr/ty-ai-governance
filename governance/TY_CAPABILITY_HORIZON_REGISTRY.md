@@ -40,13 +40,14 @@
 ## CHR STATISTICS
 | Metric | Value |
 |--------|-------|
-| Total entries | 8 |
+| Total entries | 16 |
 | COVERED | 2 |
-| GAP | 5 |
+| GAP | 12 |
 | UNKNOWN | 1 |
-| Active FLAGs triggered | 3 |
+| GAP — interface layer | 6 |
+| Active FLAGs triggered | 11 |
 | Governance responses written | 3 |
-| Last reviewed | 2026-06-16 · FIX-806 · Entry-826 |
+| Last reviewed | 2026-06-17 · FIX-814 · Entry-834 |
 | Next scheduled review | Annual Governance Review — Phase 15 |
 
 ---
@@ -295,8 +296,187 @@ into the Conscience Thread and committed. That writing is Phase 15 scope.
 
 ---
 
+## SECTION 4 — AGENTIC EXTERNAL ACTION GOVERNANCE
+
+---
+
+### CHR-009 — Agentic External Action Boundary
+**Date identified:** 2026-06-17
+**Description:** AI systems deployed in agentic contexts that take external
+actions — sending emails, making API calls, modifying files, triggering
+workflows — on behalf of users without per-action human authorization.
+This category is distinct from internal governance enforcement: the action
+crosses a boundary into external systems that TY AI OS does not control
+and cannot undo.
+**Current governance coverage:** GAP
+**Gap description:** TY AI OS current governance boundary is scoped to
+SS321 governed actions within the Jaya Runtime enforcement perimeter.
+The deny-by-default egress guard (egress.rs) blocks unauthorized outbound
+connections at the network layer but does not govern the semantic layer:
+what an agentic TY deployment is authorized to do, say, or trigger in
+external systems on a user's behalf. A TY instance acting as an agent —
+browsing, drafting, submitting, purchasing — operates outside the current
+governance perimeter entirely. LeCun's consequence prediction gap is
+directly relevant: governance interception before execution is the
+architectural response, but the interception architecture for external
+agentic actions does not yet exist in TY AI OS.
+**Required action:** NEW ADR — agentic external action governance boundary
+**FLAG triggered:** FLAG-156 — Agentic external action governance boundary
+**Primary source:** Builder observation — June 17, 2026 — FIX-814
+LeCun AMI Labs / India AI Impact Summit 2026 — June 16, 2026 session
+
+---
+
+## SECTION 5 — NURONESENCE PAGE INTERFACE CAPABILITIES
+
+---
+
+### CHR-010 — Architecture Map Navigable Component Pills
+**Date identified:** 2026-06-17
+**Description:** The Nuronesence page Architecture Map currently displays
+component pills (Jaya Runtime, TYOVA, Supabase, SQLite Ledger) as static
+visual elements. The capability to make these pills interactive — navigating
+to the relevant TYOVA page or opening the corresponding EcosystemFlow WARD
+drill-down panel — is not yet implemented.
+**Current governance coverage:** GAP — interface layer
+**Gap description:** Static pills provide architectural documentation but
+no live navigation path. A visitor reading the Architecture Map cannot
+click through to verify the component directly. The Nuronesence page
+claims structural coherence — the interface should allow that claim to be
+followed to its source.
+**Required action:** PHASE SCOPE ITEM — Phase 15 Nuronesence enhancement
+**FLAG triggered:** FLAG-157 — Architecture Map clickable component pills
+**Primary source:** Builder observation — June 17, 2026 — FIX-814
+
+---
+
+### CHR-011 — Layer Stack Live Status Indicators
+**Date identified:** 2026-06-17
+**Description:** The Governance Layer Stack on the Nuronesence page
+currently displays five layers with property pills as static indicators.
+The capability to show live green/red status dots on each layer and
+property pill — driven by real NURONESENCE_PROOF event data — is not
+yet implemented.
+**Current governance coverage:** GAP — interface layer
+**Gap description:** The Layer Stack is currently a static diagram. It
+does not reflect live system state. A visitor cannot see at a glance
+whether each governance layer is currently active. The gap between
+static documentation and live verification is the core tension the
+Nuronesence page is designed to resolve — the Layer Stack should
+participate in that resolution.
+**Required action:** PHASE SCOPE ITEM — Phase 15 Nuronesence enhancement
+**FLAG triggered:** FLAG-158 — Layer Stack live status indicators
+**Primary source:** Builder observation — June 17, 2026 — FIX-814
+
+---
+
+### CHR-012 — Live Governed Actions Counter
+**Date identified:** 2026-06-17
+**Description:** The Nuronesence page has no live counter showing the
+total number of governance events recorded in the ledger. The capability
+to display a single large number updating in real time as Jaya Runtime
+writes governance events — using the ledger_count from the
+NURONESENCE_PROOF event summary — is not yet implemented.
+**Current governance coverage:** GAP — interface layer
+**Gap description:** The page proves governance is active through event
+streams and property cards but provides no cumulative count visible at
+a glance. A live counter transforms the page from a snapshot into a
+continuous record — the number itself is evidence.
+**Required action:** PHASE SCOPE ITEM — Phase 15 Nuronesence enhancement
+**FLAG triggered:** FLAG-159 — Live governed actions counter
+**Primary source:** Builder observation — June 17, 2026 — FIX-814
+
+---
+
+### CHR-013 — Proof Moment Page Pulse
+**Date identified:** 2026-06-17
+**Description:** The Nuronesence page has no visual response when a
+NURONESENCE_PROOF event fires. The capability to pulse the entire page
+amber for one second every 30 seconds when NURONESENCE_PROOF fires —
+communicating to the visitor that the system just proved itself — is not
+yet implemented.
+**Current governance coverage:** GAP — interface layer
+**Gap description:** Proof events fire silently. The visitor reads static
+content while the system continuously verifies itself in the background.
+The page pulse closes the gap between background proof and foreground
+awareness — the visitor experiences the proof moment, not just the
+documentation of it.
+**Required action:** PHASE SCOPE ITEM — Phase 15 Nuronesence enhancement
+**FLAG triggered:** FLAG-160 — Proof moment page pulse
+**Primary source:** Builder observation — June 17, 2026 — FIX-814
+
+---
+
+### CHR-014 — Opening Question Reframe
+**Date identified:** 2026-06-17
+**Description:** The Nuronesence page currently opens with a definition
+paragraph. The capability to reframe the opening as a direct challenge —
+"Can you prove your AI is governed right now?" followed by "TY AI OS can.
+Here is the proof." — transforming the page from a document into a
+verified answer, is not yet implemented.
+**Current governance coverage:** GAP — interface layer
+**Gap description:** A definition paragraph addresses readers who already
+accept the premise. A challenge addresses skeptics. The Nuronesence claim
+is strongest when it faces the skeptic directly and answers immediately.
+The current opening does not do this.
+**Required action:** PHASE SCOPE ITEM — Phase 15 Nuronesence enhancement
+**FLAG triggered:** FLAG-161 — Opening question reframe
+**Primary source:** Builder observation — June 17, 2026 — FIX-814
+
+---
+
+### CHR-015 — Live Governance Heartbeat Line
+**Date identified:** 2026-06-17
+**Description:** The Nuronesence page has no persistent live signal at
+the top indicating the system is active. The capability to display a
+pulsing EKG-style line at the very top of the page — firing every time
+a governance event is received — communicating that the system is alive
+before the visitor reads a single word, is not yet implemented.
+**Current governance coverage:** GAP — interface layer
+**Gap description:** A visitor arriving at the page sees a document. A
+visitor arriving at a page with a live heartbeat sees a system. The
+distinction is not cosmetic — it is the difference between reading about
+governance and witnessing it. The heartbeat line makes the Nuronesence
+claim immediate and visceral before any text is processed.
+**Required action:** PHASE SCOPE ITEM — Phase 15 Nuronesence enhancement
+**FLAG triggered:** FLAG-162 — Live governance heartbeat line
+**Primary source:** Builder observation — June 17, 2026 — FIX-814
+
+---
+
+## SECTION 6 — GOVERNANCE INCIDENT COMPLETENESS
+
+---
+
+### CHR-016 — Governance Incident Root Cause Analysis
+**Date identified:** 2026-06-17
+**Description:** When a GOVERNANCE_ALERT fires, Jaya Runtime currently
+reports the CRI value and alert type. The capability to automatically
+query the preceding ledger window, identify the specific events that
+drove the CRI spike, and include a root cause summary in both the
+guardian email and the TYOVA incident record — transforming "CRI=84,
+review required" into "CRI=84 caused by 3 consecutive POLICY_CHECK
+failures on AGENT-001 between 23:04 and 23:06" — is not yet implemented.
+**Current governance coverage:** GAP
+**Gap description:** The enhanced CRI Critical email (FIX-768) added a
+WHY table and WHAT TO DO section, which improved alert quality. However,
+root cause identification remains manual — the guardian must query the
+ledger themselves to understand what drove the alert. Automated root
+cause analysis closes the loop: the system that detected the problem
+should also identify its cause. This is the governance equivalent of the
+Error Resolution Doctrine — an alert without a cause is an incomplete
+governance signal.
+**Required action:** NEW ADR — automated root cause analysis architecture
+**FLAG triggered:** FLAG-163 — Governance incident root cause analysis
+**Primary source:** Builder observation — June 17, 2026 — FIX-814
+Real incident: June 11, 2026 GOVERNANCE_ALERT CRI=84 followed by
+SELF_HEAL_CRI_RECOVERY 101 seconds later
+
+---
+
 ## CHR UPDATE LOG
 | Date | FIX | Entry | Action | Builder |
 |------|-----|-------|--------|---------|
 | 2026-06-15 | FIX-794 | Entry-814 | Initial CHR created — 8 entries — Sections 1–3 | Jose Ramon Alvarado McHerron |
 | 2026-06-16 | FIX-806 | Entry-826 | Three governance responses written — FLAG-151 FLAG-152 FLAG-153 — positions established, audits and ADR pending | Jose Ramon Alvarado McHerron |
+| 2026-06-17 | FIX-814 | Entry-834 | 8 new entries added — Sections 4–6 — FLAGS 156–163 — Error Resolution Doctrine noted | Jose Ramon Alvarado McHerron |
