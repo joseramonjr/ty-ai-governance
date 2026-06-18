@@ -480,3 +480,41 @@ SELF_HEAL_CRI_RECOVERY 101 seconds later
 | 2026-06-15 | FIX-794 | Entry-814 | Initial CHR created — 8 entries — Sections 1–3 | Jose Ramon Alvarado McHerron |
 | 2026-06-16 | FIX-806 | Entry-826 | Three governance responses written — FLAG-151 FLAG-152 FLAG-153 — positions established, audits and ADR pending | Jose Ramon Alvarado McHerron |
 | 2026-06-17 | FIX-814 | Entry-834 | 8 new entries added — Sections 4–6 — FLAGS 156–163 — Error Resolution Doctrine noted | Jose Ramon Alvarado McHerron |
+| 2026-06-18 | FIX-827 | Entry-847 | CHR-017 added -- Section 7 Interface Layer Error Governance -- FLAG-166 Clickable Error Surface -- every TY AI OS error must be clickable with explanation and fix steps | Jose Ramon Alvarado McHerron |
+---
+
+## SECTION 7 -- INTERFACE LAYER ERROR GOVERNANCE
+
+---
+
+### CHR-017 -- Clickable Error Surface
+**Date identified:** 2026-06-18
+**Description:** Errors across TY AI OS layers -- TYOVA components,
+Jaya Runtime failures, EcosystemFlow interactions, Supabase connectivity
+failures -- are not consistently surfaced as clickable, explainable,
+actionable events. A user who encounters an error has no governed path
+to understanding what failed or how to restore the system. The capability
+to make every error clickable -- displaying a human-readable explanation
+of what failed, why it failed, and actionable steps to resolve it --
+is not yet fully implemented across all layers.
+**Current governance coverage:** PARTIAL -- GAP
+**Gap description:** FLAG-155 established the Infrastructure Repair Guide
+pattern for Jaya Runtime startup failures. That pattern -- fault detected,
+governed event written, TYOVA displays guided repair -- is correct and
+must be extended to all layers. Currently: TYOVA components fail silently
+or show broken UI with no guidance. EcosystemFlow pill interactions fail
+with no explanation. Supabase connectivity failures show raw error text.
+No React error boundaries exist on TYOVA components. The Human Guardian
+principle requires that a human can always understand and act on system
+state. A system that fails without explanation is not verifiably
+governable. This gap was identified by analogy to the Twilio A2P
+experience -- an error without explanation and actionable fix forces
+the user to seek external help, breaking governance continuity.
+**Required action:** PHASE SCOPE ITEM -- extend FLAG-155 Infrastructure
+Repair Guide pattern to all TYOVA component layers -- React error
+boundaries on every component -- per-error clickable explanation and
+fix guidance -- no silent failures -- no cryptic errors
+**FLAG triggered:** FLAG-166 -- Clickable Error Surface
+**Primary source:** Builder observation -- June 18, 2026 -- FIX-827
+Twilio A2P analogy: error without explanation requires external help,
+breaking governance continuity
