@@ -571,3 +571,79 @@ Architecture
 Identified during FIX-830 recovery panel build -- external users
 have no Vercel access and cannot complete current recovery flow
 | 2026-06-18 | FIX-831 | Entry-851 | CHR-018 added -- Section 8 External User Credential Governance -- FLAG-168 -- External user admin credential architecture -- PVS-based local credential storage -- HVP dependency -- pre-ship blocker | Jose Ramon Alvarado McHerron |
+
+---
+## SECTION 9 -- GOVERNED KNOWLEDGE AND EXPLAINABILITY LAYER
+---
+### CHR-019 -- Luke AI Natural Language Governance Interface
+**Date identified:** 2026-06-18
+**Description:** TY AI OS has grown to a level of architectural depth
+that exceeds what any person can hold in working memory without
+structured support. It spans three repositories, 850+ ledger entries,
+79 sealed Book of TY chapters, 397 coined vocabulary terms, 18 CHR
+entries, a QA Registry with 198 canonical questions, a Conscience
+Thread, a Guardian Codex, a Continuity Charter, and session discipline
+with 6-gate pre-flight and close protocols. An external user, future
+guardian, or auditor who encounters TY AI OS without the builder
+present has no governed way to ask questions and receive canonical
+answers. The knowledge exists in canonical documents but is not
+accessible in conversational form to non-builders.
+**Current governance coverage:** PARTIAL -- GAP
+**Gap description:** Luke AI is partially built -- it reads the
+governance ledger and can explain specific entries. ADR-029 (FIX-759,
+2026-06-10) implemented the TY Knowledge Layer: a SQLite table
+(ty_knowledge) loaded with 697 rows across seven entry types
+(threshold, decision, qa, giq, adq, invariant, term) from all five
+canonical governance documents. The query_ty_knowledge Tauri command
+exists in Jaya Runtime and can search by query string and entry type.
+What does not exist is a natural language conversational interface
+that external users and guardians can interact with to ask questions
+about TY AI OS and receive governed, Zero-Fabrication-compliant
+answers sourced from canonical documents. The builder currently
+receives this capability through Claude sessions with full project
+context. External users and future guardians have no equivalent.
+**Required architecture:** Three components required --
+(1) Luke AI conversational interface: a natural language front end
+that accepts questions from users and guardians, queries the
+ty_knowledge SQLite layer via query_ty_knowledge, and returns
+answers sourced exclusively from canonical documents -- never
+invented, never estimated, always traceable to a primary source.
+Zero-Fabrication Rule applies to Luke AI answers as it does to
+all TY governance records.
+(2) External-facing SOP documents: written for someone who has
+never met the builder and has no session history -- installation
+guide, guardian onboarding guide, credential management guide,
+incident response guide, governance architecture overview. These
+must be written by the builder under the Book Truth Standard and
+cannot be fabricated or templated.
+(3) TYOVA help surface: contextual help on every TYOVA page that
+draws from the canonical knowledge base via Luke AI -- not static
+text but governed answers sourced from primary documents in
+real time.
+**What already exists:** ty_knowledge SQLite table with 697 rows --
+query_ty_knowledge Tauri command in Jaya Runtime -- Luke AI
+architecture in luke-ai repository -- ADR-029 fully implemented --
+the knowledge is present, the query interface exists, the
+conversational layer and SOP documents are missing.
+**Dependency:** External-facing SOP documents must be written before
+Luke AI can answer questions about external user workflows -- Luke
+can only answer from what exists in canonical documents. SOP
+documents must be canonically committed before Luke can reference
+them. Luke AI natural language interface is a Phase 16+ scope item.
+External SOP documents can begin in Phase 15 as governance records.
+**Required action:** PHASE 16+ SCOPE ITEM --
+Step 1: Write external-facing SOP documents as canonical governance
+records committed to ty-ai-governance (Phase 15) --
+Step 2: Load SOP documents into ty_knowledge SQLite layer --
+Step 3: Build Luke AI conversational interface (natural language
+query layer over ty_knowledge) --
+Step 4: Surface Luke AI on TYOVA as a governed help interface
+accessible to any user or guardian
+**FLAG triggered:** FLAG-169 -- Luke AI Natural Language Governance
+Interface
+**Primary source:** Builder observation -- June 18, 2026 -- FIX-832
+Identified during session discussion of external user SOP requirements
+-- TY AI OS has grown complex enough to require a governed AI layer
+to explain itself to external users and future guardians the way
+Claude explains it to the builder in active sessions
+| 2026-06-18 | FIX-832 | Entry-852 | CHR-019 added -- Section 9 Governed Knowledge and Explainability Layer -- FLAG-169 -- Luke AI natural language governance interface -- external user and guardian knowledge layer -- SOP explainer -- Phase 16+ scope | Jose Ramon Alvarado McHerron |
