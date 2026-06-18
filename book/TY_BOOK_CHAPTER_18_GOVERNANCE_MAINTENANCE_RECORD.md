@@ -8474,3 +8474,13 @@ FLAG-158 -- Layer Stack live status indicators -- five layers -- Authority Speci
 FLAG-159 -- Live governed actions counter -- 51180 live -- amber large number -- green pulse dot -- explanatory text -- FLAG-164 logged -- Public Verification Surface deferred -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-838 | FIX-818 | 2026-06-17 21:25 PDT San Diego -- 2026-06-17 22:03 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 664c124
+**Scope:** FLAG-160 -- Proof moment page pulse -- amber flash on NURONESENCE_PROOF event every 30s -- NuronesencePage.tsx -- Lovable
+
+FLAG-160 -- Proof moment page pulse -- 3s green banner -- amber page glow -- governance proof verified timestamp -- permanent caption near LIVE badge -- portal replaced with in-flow banner -- S1 CLEAN
+
+**Status:** CLOSED
