@@ -8604,3 +8604,13 @@ FLAG-166 Phase 2 -- Clickable Error Surface -- GovernanceErrorBoundary wrapped a
 FLAG-167 -- Admin login recovery panel -- Option C inline SHA-256 hash generator -- Forgot password link added -- recovery panel with instructions amber warning and click-to-copy hash -- AdminLogin.tsx -- Lovable -- FLAG-168 logged for future HVP-based local credential recovery -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-851 | FIX-831 | 2026-06-18 16:04 PDT San Diego -- 2026-06-18 16:06 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 634ff70
+**Scope:** FLAG-168 -- External user admin credential architecture -- CHR documentation -- PVS-based local credential storage required before external deployment -- HVP dependency -- documentation only
+
+FLAG-168 -- External User Admin Credential Architecture -- CHR-018 added -- Section 8 External User Credential Governance -- PVS-based local credential storage required -- HVP dependency -- pre-ship blocker -- documentation only
+
+**Status:** CLOSED
