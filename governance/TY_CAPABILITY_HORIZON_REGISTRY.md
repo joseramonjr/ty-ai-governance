@@ -518,3 +518,56 @@ fix guidance -- no silent failures -- no cryptic errors
 **Primary source:** Builder observation -- June 18, 2026 -- FIX-827
 Twilio A2P analogy: error without explanation requires external help,
 breaking governance continuity
+
+---
+## SECTION 8 -- EXTERNAL USER CREDENTIAL GOVERNANCE
+---
+### CHR-018 -- External User Admin Credential Architecture
+**Date identified:** 2026-06-18
+**Description:** The current TYOVA admin login uses a single SHA-256
+password hash stored in a Vercel environment variable
+(VITE_ADMIN_PASSWORD_HASH). This architecture is builder-only. When
+TY AI OS ships to external users, each user installs Jaya Runtime
+locally on their own machine. They have no Vercel account and no
+path to update a Vercel environment variable. An external user who
+forgets their admin password has no recovery mechanism and no way
+to reset their credentials without builder intervention. This is a
+pre-ship blocker for external deployment.
+**Current governance coverage:** NONE -- GAP
+**Gap description:** No local credential storage exists for external
+users. No self-service recovery flow exists that works without Vercel
+access. The Option C inline hash generator added in FIX-830
+(2026-06-18) is an interim tool for the builder only -- it still
+requires manual Vercel update to complete a password reset. External
+users cannot complete this step. The credential must move from a
+Vercel environment variable into a locally controlled, encrypted
+store on the user's machine before TY AI OS can be deployed to
+external users.
+**Required architecture:** Three components required before external
+deployment -- (1) PVS-based local credential storage: admin password
+hash stored encrypted in the Private Verification Store (PVS) in
+Jaya Runtime, not in any cloud environment variable -- (2) Port 7777
+admin auth endpoint: TYOVA admin login calls the existing Jaya
+Runtime local HTTP server on port 7777 to verify credentials against
+the local PVS rather than against a Vercel env var -- (3) HVP-gated
+recovery: when a user forgets their password, they prove identity
+through the Human Verification Protocol and set a new credential
+locally. No email, no cloud service, no external dependency required.
+**Dependency:** HVP full implementation must be complete before this
+architecture can be built. HVP is currently at v0.1 (accepts any
+non-empty token). Full HVP is a Phase 15 obligation.
+**Interim state:** FIX-830 (2026-06-18) added Option C recovery panel
+to AdminLogin.tsx -- inline SHA-256 hash generator with Vercel
+update instructions and amber warning that this is builder-only
+interim. The amber warning explicitly states future versions will
+support fully local credential recovery via HVP.
+**Required action:** PHASE 15+ SCOPE ITEM -- after HVP full
+implementation -- PVS admin credential storage -- port 7777 auth
+endpoint -- HVP-gated self-service recovery -- remove Vercel env
+var dependency entirely for credential management
+**FLAG triggered:** FLAG-168 -- External User Admin Credential
+Architecture
+**Primary source:** Builder observation -- June 18, 2026 -- FIX-831
+Identified during FIX-830 recovery panel build -- external users
+have no Vercel access and cannot complete current recovery flow
+| 2026-06-18 | FIX-831 | Entry-851 | CHR-018 added -- Section 8 External User Credential Governance -- FLAG-168 -- External user admin credential architecture -- PVS-based local credential storage -- HVP dependency -- pre-ship blocker | Jose Ramon Alvarado McHerron |
