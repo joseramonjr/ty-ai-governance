@@ -8594,3 +8594,13 @@ FLAG-166 Phase 1 -- Clickable Error Surface -- GovernanceErrorBoundary component
 FLAG-166 Phase 2 -- Clickable Error Surface -- GovernanceErrorBoundary wrapped all remaining 39 TYOVA pages -- 4 batches -- all 43 pages now covered -- confirmed live -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-850 | FIX-830 | 2026-06-18 15:49 PDT San Diego -- 2026-06-18 15:56 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** de4c785
+**Scope:** FLAG-167 -- Admin login recovery panel -- Option C inline SHA-256 hash generator -- Forgot password link -- AdminLogin.tsx -- Lovable only -- FLAG-168 logged
+
+FLAG-167 -- Admin login recovery panel -- Option C inline SHA-256 hash generator -- Forgot password link added -- recovery panel with instructions amber warning and click-to-copy hash -- AdminLogin.tsx -- Lovable -- FLAG-168 logged for future HVP-based local credential recovery -- S1 CLEAN
+
+**Status:** CLOSED
