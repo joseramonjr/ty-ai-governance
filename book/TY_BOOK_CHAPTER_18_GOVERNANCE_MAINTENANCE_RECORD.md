@@ -8524,3 +8524,13 @@ Add builder attribution to TYOVA footer -- Jose Ramon Alvarado McHerron -- TYOVA
 FLAG-162 -- Live governance EKG heartbeat strip -- full width -- top of NuronesencePage and EcosystemFlowPage -- amber EKG line -- spikes on NURONESENCE_PROOF events -- text below line -- confirmed live on both pages -- GovernanceEkgStrip inline component -- Lovable -- S1 CLEAN -- FLAG-165 logged -- additional TY event routing to TYOVA Supabase deferred to future phase
 
 **Status:** CLOSED
+
+### Entry-843 | FIX-823 | 2026-06-18 12:39 PDT San Diego -- 2026-06-18 12:55 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 2d62795
+**Scope:** FLAG-163 -- Governance incident root cause analysis -- NuronesencePage incident record -- root cause summary -- Lovable only
+
+FLAG-163 -- Governance incident root cause analysis -- DEFERRED -- root cause data for June 11 CRI=84 incident not recoverable from available SQLite backup -- backup contains data through March 2026 only -- live ledger query required -- deferred alongside CHR-016 Jaya-Runtime implementation -- no TYOVA changes made
+
+**Status:** CLOSED
