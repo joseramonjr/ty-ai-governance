@@ -8534,3 +8534,13 @@ FLAG-162 -- Live governance EKG heartbeat strip -- full width -- top of Nuronese
 FLAG-163 -- Governance incident root cause analysis -- DEFERRED -- root cause data for June 11 CRI=84 incident not recoverable from available SQLite backup -- backup contains data through March 2026 only -- live ledger query required -- deferred alongside CHR-016 Jaya-Runtime implementation -- no TYOVA changes made
 
 **Status:** CLOSED
+
+### Entry-844 | FIX-824 | 2026-06-18 12:59 PDT San Diego -- 2026-06-18 13:12 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 49237e2
+**Scope:** FLAG-155 Layer 1 -- Infrastructure Survivability -- startup health checks -- INFRASTRUCTURE_FAULT ledger events -- fault codes SUPABASE_UNREACHABLE LEDGER_WRITE_FAILED SENTINEL_INIT_FAILED POLICY_LOAD_FAILED -- system_health.rs -- editor paste only
+
+FLAG-155 Layer 1 -- Infrastructure Survivability -- write_infrastructure_fault function added to system_health.rs -- four fault codes defined SUPABASE_UNREACHABLE LEDGER_WRITE_FAILED SENTINEL_INIT_FAILED POLICY_LOAD_FAILED -- wired to CRI startup reset failure and startup proof failure in lib.rs -- build clean 0 errors -- system_health.rs + lib.rs
+
+**Status:** CLOSED
