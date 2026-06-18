@@ -8454,3 +8454,13 @@ CHR entries CHR-009 through CHR-016 -- Sections 4-6 -- FLAGS 156-163 -- Nuroneth
 FLAG-157 -- Architecture Map clickable component pills -- slide-in panel with live data -- 16 pills mapped -- CRI Monitor Sentinel Monitoring Thread SQLite Ledger Policy Engine Tier System Egress Guard Jaya Runtime SHA-256 Hash Chain Attestation Chain Ed25519 Signatures NURONESENCE_PROOF Event Ed25519 Attestation Port 7777 TYOVA Public Archive -- pill overflow fix -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-836 | FIX-816 | 2026-06-17 20:47 PDT San Diego -- 2026-06-17 20:57 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 75ec5a4
+**Scope:** FLAG-158 -- Layer Stack live status indicators -- green/red dots per layer driven by NURONESENCE_PROOF events -- NuronesencePage.tsx -- Lovable
+
+FLAG-158 -- Layer Stack live status indicators -- five layers -- Authority Specification Enforcement Audit Cryptographic -- green pulse dots -- proofIsLive logic -- CRI<75 Runtime check -- S1 CLEAN
+
+**Status:** CLOSED
