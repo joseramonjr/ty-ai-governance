@@ -8494,3 +8494,13 @@ FLAG-160 -- Proof moment page pulse -- 3s green banner -- amber page glow -- gov
 FLAG-161 -- Opening question reframe -- amber challenge question -- TY AI OS can Here is the proof -- governed tooltip -- tooltip blur cosmetic issue pending next session -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-840 | FIX-820 | 2026-06-17 23:02 PDT San Diego -- 2026-06-17 23:26 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 8b04db1
+**Scope:** Tooltip blur fix -- governed word -- NuronesencePage.tsx -- Lovable only -- cosmetic
+
+FLAG-161 tooltip blur fix -- governed word -- tooltip moved outside pulsing p to sibling div under header -- React state replaces CSS hover -- crisp rendering confirmed live -- NuronesencePage.tsx -- Lovable -- S1 CLEAN
+
+**Status:** CLOSED
