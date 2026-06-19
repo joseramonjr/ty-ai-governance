@@ -5,6 +5,7 @@
 # Builder: TYOVA LLC | San Diego, California
 # FIX: FIX-837 | Entry-857
 # Status: PENDING CARRIER VETTING
+# Amended: 2026-06-19 10:57 PDT -- FIX-839 -- Phone Number SID added -- Campaign In Review confirmed
 
 ---
 
@@ -25,13 +26,13 @@ remaining step and is outside builder control.
 
 | Date | Event |
 |------|-------|
-| 2026-06-07 | Ticket #27528099 first submitted â€” bundle PENDING_REVIEW |
-| 2026-06-17 | Ticket resubmitted â€” error 18604 authorized rep verification |
-| 2026-06-18 | Ticket resubmitted again â€” 09:39 PDT San Diego |
+| 2026-06-07 | Ticket #27528099 first submitted Ã¢â‚¬â€ bundle PENDING_REVIEW |
+| 2026-06-17 | Ticket resubmitted Ã¢â‚¬â€ error 18604 authorized rep verification |
+| 2026-06-18 | Ticket resubmitted again Ã¢â‚¬â€ 09:39 PDT San Diego |
 | 2026-06-19 07:08 PDT | Business Profile BU57c9a48ba5b462723efbd3c941507fd6 APPROVED |
-| 2026-06-19 09:45 PDT | Brand BN794174f166bd826b661b549216031034 REGISTERED â€” TCR approved in under 60 seconds |
+| 2026-06-19 09:45 PDT | Brand BN794174f166bd826b661b549216031034 REGISTERED Ã¢â‚¬â€ TCR approved in under 60 seconds |
 | 2026-06-19 10:12 PDT | Privacy Policy and Terms pages built and live (FIX-836) |
-| 2026-06-19 10:21 PDT | Campaign CM026a1ace4017fc366cb1d32e708bb266 SUBMITTED â€” pending carrier vetting |
+| 2026-06-19 10:21 PDT | Campaign CM026a1ace4017fc366cb1d32e708bb266 SUBMITTED Ã¢â‚¬â€ pending carrier vetting |
 
 ---
 
@@ -46,6 +47,7 @@ remaining step and is outside builder control.
 | Trust Hub A2P Bundle SID | BU4853f50dfd1be53e666d1f3843922787 |
 | A2P Campaign SID | CM026a1ace4017fc366cb1d32e708bb266 |
 | Phone Number | +1 619 789 4262 |
+| Phone Number SID | PN6358a35babd67d9e9bfaafac3aad7c38 |
 | Brand Type | Low Volume Standard |
 | Customer Type | Private |
 | Support Ticket | #27528099 |
@@ -69,7 +71,9 @@ remaining step and is outside builder control.
 
 ## Current Status
 
-Campaign CM026a1ace4017fc366cb1d32e708bb266 is pending carrier vetting.
+Campaign CM026a1ace4017fc366cb1d32e708bb266 is In Review with carriers as of June 19, 2026 10:57 PDT.
+All four registration steps confirmed complete in Twilio console:
+compliance profile, messaging service, Brand registration, Campaign registration.
 Phone number +1 619 789 4262 is pre-registered and will activate
 automatically upon Campaign approval. No further action required from
 TYOVA LLC until vetting completes.
