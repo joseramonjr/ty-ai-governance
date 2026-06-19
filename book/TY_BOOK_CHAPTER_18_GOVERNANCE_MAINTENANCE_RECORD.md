@@ -8674,3 +8674,13 @@ Privacy Policy and Terms pages live -- testing.tyova.ai/privacy and testing.tyov
 Twilio A2P 10DLC registration complete -- Business Profile approved -- Brand registered -- Campaign CM026a1ace4017fc366cb1d32e708bb266 submitted -- number +1 619 789 4262 pre-registered -- Account SID redacted per GitHub secret scanning -- pending carrier vetting
 
 **Status:** CLOSED
+
+### Entry-858 | FIX-838 | 2026-06-19 10:29 PDT San Diego -- 2026-06-19 10:51 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** d853d61
+**Scope:** FLAG-170 -- Privacy Policy and Terms nav links -- footer links to testing.tyova.ai/privacy and testing.tyova.ai/terms -- Lovable
+
+FLAG-170 -- Privacy Policy and Terms of Service footer links added to PublicLayout.tsx -- amber gold hover effect via useState onMouseEnter onMouseLeave -- confirmed live at testing.tyova.ai -- S1 clean
+
+**Status:** CLOSED
