@@ -8654,3 +8654,13 @@ S-1-GAP-001 CLOSED -- Supabase RLS DELETE block applied to jaya_audit_events -- 
 TY_ATTESTONIC_STATE_AUDIT_v1.md amended -- S-1 verdict PARTIAL -> CONFIRMED -- S-1-GAP-001 closed same session FIX-834 -- summary table updated -- overall verdict updated -- 13/13 CONFIRMED
 
 **Status:** CLOSED
+
+### Entry-856 | FIX-836 | 2026-06-19 10:03 PDT San Diego -- 2026-06-19 10:12 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** b02a6cf
+**Scope:**  Privacy Policy and Terms pages -- testing.tyova.ai/privacy and testing.tyova.ai/terms -- Twilio A2P Campaign registration blocker -- two static React pages -- Lovable
+
+Privacy Policy and Terms pages live -- testing.tyova.ai/privacy and testing.tyova.ai/terms -- PrivacyPage.tsx and TermsPage.tsx created -- routes registered under PublicLayout -- Twilio A2P Campaign registration unblocked -- S1 clean
+
+**Status:** CLOSED
