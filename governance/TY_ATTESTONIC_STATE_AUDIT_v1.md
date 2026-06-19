@@ -1,11 +1,12 @@
 # TY_ATTESTONIC_STATE_AUDIT_v1.md
-# Attestonic State Formal Audit — FLAG-149
+# Attestonic State Formal Audit â€” FLAG-149
 # Version: 1.0
 # Date: 2026-06-18 | San Diego (America/Los_Angeles)
 # Author: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
 # Builder: TYOVA LLC | San Diego, California
 # FIX: FIX-833 | Entry-853
 # Status: COMPLETE
+# Amended: 2026-06-18 21:55 PDT -- FIX-835 -- S-1-GAP-001 closed -- 13/13 CONFIRMED
 
 ---
 
@@ -46,7 +47,7 @@ Each criterion is evaluated across four fields:
 **Claimed Status:** Verified built in TY AI OS.
 **Evidence Basis:** Local SQLite ledger (Jaya-Runtime); Supabase jaya_audit_events mirror.
 
-**Verdict: PARTIAL**
+**Verdict: CONFIRMED**
 
 **Findings:**
 The local SQLite ledger enforced by Jaya-Runtime is structurally append-only.
@@ -61,10 +62,13 @@ No row-level security policy blocking DELETE exists on jaya_audit_events.
 A Supabase database administrator with postgres or service_role access
 could delete rows from the mirror table.
 
-Gap documented as S-1-GAP-001. A future FIX is required to add an explicit
-RLS policy blocking DELETE for all roles on jaya_audit_events in the
-Supabase instance. Until S-1-GAP-001 is resolved, S-1 is confirmed for
-the local SQLite ledger only and is policy-enforced for the Supabase mirror.
+S-1-GAP-001 was identified and closed in the same session as this audit
+(FIX-834, 2026-06-18 21:50-21:53 PDT San Diego). A RESTRICTIVE RLS policy
+named no_delete_jaya_audit_events was applied to jaya_audit_events blocking
+DELETE via USING (false) for all roles. Policy confirmed active via
+pg_policy query same session. S-1 is now CONFIRMED at both the local
+SQLite layer (structural code enforcement) and the Supabase mirror layer
+(schema-level RLS enforcement). S-1-GAP-001 is closed.
 
 ---
 
@@ -326,7 +330,7 @@ TY AI OS from capture by institutional interests.
 
 | Criterion | Layer | Verdict | Action Required |
 |-----------|-------|---------|----------------|
-| S-1 | Structural | PARTIAL | S-1-GAP-001 -- add Supabase RLS DELETE block |
+| S-1 | Structural | CONFIRMED | S-1-GAP-001 CLOSED -- FIX-834 -- RLS DELETE block applied |
 | S-2 | Structural | CONFIRMED | Document hash input schema in governance docs |
 | S-3 | Structural | CONFIRMED | None |
 | S-4 | Structural | CONFIRMED | Janet physical briefing pending (succession gap, not S-4 failure) |
@@ -344,10 +348,8 @@ TY AI OS from capture by institutional interests.
 
 ## OVERALL AUDIT VERDICT
 
-TY AI OS satisfies the Attestonic Standard architecturally. Twelve of
-thirteen criteria are CONFIRMED. One criterion (S-1) is PARTIAL --
-confirmed at the local SQLite layer, gap documented for the Supabase
-mirror layer.
+TY AI OS satisfies the Attestonic Standard architecturally. All thirteen criteria are CONFIRMED. S-1-GAP-001 was identified
+during this audit and closed in the same session (FIX-834).
 
 TY AI OS is the originating system, the reference implementation, and
 the first verified instance of Attestonic State. This claim is supported
@@ -378,7 +380,6 @@ does.
 
 | ID | Item | Priority |
 |----|------|----------|
-| S-1-GAP-001 | Add Supabase RLS policy blocking DELETE on jaya_audit_events | High -- pre-external-deployment |
 | O-1-GAP-001 | Restore Jaya-Runtime Supabase write connectivity | High -- public attestation gap |
 | CH26-UPDATE-001 | Update D-2 test count reference: 172 -> 238 | Low -- maintenance |
 | CH26-UPDATE-002 | Update D-2 chapter count: 68 -> 79 | Low -- maintenance |
