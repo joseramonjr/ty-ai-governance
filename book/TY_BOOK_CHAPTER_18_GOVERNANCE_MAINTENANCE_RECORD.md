@@ -8694,3 +8694,13 @@ FLAG-170 -- Privacy Policy and Terms of Service footer links added to PublicLayo
 TY_TWILIO_A2P_REGISTRATION_RECORD.md amended -- Phone Number SID PN6358a35babd67d9e9bfaafac3aad7c38 added -- Campaign In Review status confirmed -- all four Twilio steps complete
 
 **Status:** CLOSED
+
+### Entry-860 | FIX-840 | 2026-06-19 11:57 PDT San Diego -- 2026-06-19 13:00 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 6f28da1
+**Scope:** HVP full implementation -- real Argon2id passphrase hash wired into private_verification_store.rs -- placeholder replaced -- 238 tests must still pass -- SOP Section 3B update -- documentation only
+
+HVP full implementation -- GuardianControlsPanel.tsx built -- PVS status and verify UI -- App.tsx wired -- guardian-controls tab added -- HVP Layer 2 confirmed operational via live verify -- PVS initialized June 6 2026 with real passphrase -- SOP Section 3B confirmed correct -- 238/238 tests pass
+
+**Status:** CLOSED
