@@ -8734,3 +8734,13 @@ TY_CONSCIENCE_THREAD_v0.1.md moved to canonical path governance/ in ty-ai-govern
 GVC category section added to how-ty-ai-os-works page -- two-axis HTML diagram -- GVC three property cards -- governed verified conscience definitions -- background-attachment fixed removed from index.css resolving site-wide SVG blur -- S1 clean both files
 
 **Status:** CLOSED
+
+### Entry-864 | FIX-844 | 2026-06-21 10:10 PDT San Diego -- 2026-06-21 10:18 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 304e6aa
+**Scope:** TY_CONSCIENCE_THREAD_v0.1.md restored to Jaya-Runtime src-tauri/src -- required by conscience_thread.rs include_str -- canonical copy remains in ty-ai-governance/governance
+
+TY_CONSCIENCE_THREAD_v0.1.md restored to Jaya-Runtime src-tauri/src -- include_str compile dependency in conscience_thread.rs line 42 -- cargo check 0 errors 34 warnings -- Jaya Runtime confirmed starting -- canonical copy remains in ty-ai-governance/governance
+
+**Status:** CLOSED
