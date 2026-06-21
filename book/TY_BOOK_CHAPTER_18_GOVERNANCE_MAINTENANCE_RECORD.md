@@ -8714,3 +8714,13 @@ HVP full implementation -- GuardianControlsPanel.tsx built -- PVS status and ver
 Ch73 expanded 7 to 11 sections in bookChapterContent.ts -- etymology, rules vs conscience distinction, TY has Conscience Thread not conscience, transferred conscience -- S1 clean -- localhost:8080 verified
 
 **Status:** CLOSED
+
+### Entry-862 | FIX-842 | 2026-06-20 18:56 PDT San Diego -- 2026-06-20 18:59 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** e842a25
+**Scope:** TY_CONSCIENCE_THREAD_v0.1.md moved to canonical path -- governance/TY_CONSCIENCE_THREAD_v0.1.md -- removed from Jaya-Runtime src-tauri/src
+
+TY_CONSCIENCE_THREAD_v0.1.md moved to canonical path governance/ in ty-ai-governance -- removed from Jaya-Runtime src-tauri/src -- sizes verified 78775 bytes -- two repo commits e842a25 and 3a46df7
+
+**Status:** CLOSED
