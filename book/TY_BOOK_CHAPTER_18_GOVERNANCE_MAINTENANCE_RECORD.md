@@ -8744,3 +8744,13 @@ GVC category section added to how-ty-ai-os-works page -- two-axis HTML diagram -
 TY_CONSCIENCE_THREAD_v0.1.md restored to Jaya-Runtime src-tauri/src -- include_str compile dependency in conscience_thread.rs line 42 -- cargo check 0 errors 34 warnings -- Jaya Runtime confirmed starting -- canonical copy remains in ty-ai-governance/governance
 
 **Status:** CLOSED
+
+### Entry-865 | FIX-845 | 2026-06-21 10:22 PDT San Diego -- 2026-06-21 10:26 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 6afa75f
+**Scope:** Rust warning cleanup -- unused variable signed_at in keychain.rs:377 renamed to _signed_at -- unused variable filter in lib.rs:860 renamed to _filter
+
+unused variable warnings resolved -- signed_at renamed _signed_at keychain.rs:377 -- filter renamed _filter lib.rs:860 -- cargo check 0 errors 32 warnings down from 34 -- remaining 32 are dead code future phase infrastructure not touched
+
+**Status:** CLOSED
