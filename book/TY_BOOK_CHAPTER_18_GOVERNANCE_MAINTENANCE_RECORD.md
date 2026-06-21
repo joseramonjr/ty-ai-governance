@@ -8724,3 +8724,13 @@ Ch73 expanded 7 to 11 sections in bookChapterContent.ts -- etymology, rules vs c
 TY_CONSCIENCE_THREAD_v0.1.md moved to canonical path governance/ in ty-ai-governance -- removed from Jaya-Runtime src-tauri/src -- sizes verified 78775 bytes -- two repo commits e842a25 and 3a46df7
 
 **Status:** CLOSED
+
+### Entry-863 | FIX-843 | 2026-06-20 20:48 PDT San Diego -- 2026-06-20 22:06 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 6b22f00
+**Scope:** GVC category section added to how-ty-ai-os-works page -- two-axis diagram, GVC definition, three property explanations
+
+GVC category section added to how-ty-ai-os-works page -- two-axis HTML diagram -- GVC three property cards -- governed verified conscience definitions -- background-attachment fixed removed from index.css resolving site-wide SVG blur -- S1 clean both files
+
+**Status:** CLOSED
