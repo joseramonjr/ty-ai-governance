@@ -8704,3 +8704,13 @@ TY_TWILIO_A2P_REGISTRATION_RECORD.md amended -- Phone Number SID PN6358a35babd67
 HVP full implementation -- GuardianControlsPanel.tsx built -- PVS status and verify UI -- App.tsx wired -- guardian-controls tab added -- HVP Layer 2 confirmed operational via live verify -- PVS initialized June 6 2026 with real passphrase -- SOP Section 3B confirmed correct -- 238/238 tests pass
 
 **Status:** CLOSED
+
+### Entry-861 | FIX-841 | 2026-06-20 18:11 PDT San Diego -- 2026-06-20 18:44 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 6164faa
+**Scope:** Ch73 bookChapterContent.ts expanded -- conscience thread etymology, rules vs conscience distinction, TY has Conscience Thread not conscience, transferred conscience section
+
+Ch73 expanded 7 to 11 sections in bookChapterContent.ts -- etymology, rules vs conscience distinction, TY has Conscience Thread not conscience, transferred conscience -- S1 clean -- localhost:8080 verified
+
+**Status:** CLOSED
