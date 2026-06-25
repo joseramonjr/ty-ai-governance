@@ -8814,3 +8814,13 @@ Chapter 80 The Consequence Layer -- Why TY Must Think Before It Acts -- new LIVI
 Chapter 80 The Consequence Layer TYOVA sync -- bookChapterContent.ts chapter content added -- BookOfTyIndex.tsx Ch80 added LIVING -- BookOfTyChapter.tsx title mapped -- masterHubRegistry.ts chaptersSealed updated 79 to 80 -- S1 CLEAN -- all four files verified
 
 **Status:** CLOSED
+
+### Entry-872 | FIX-852 | 2026-06-24 23:24 PDT San Diego -- 2026-06-24 23:26 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 8fe8e82
+**Scope:** Register FLAGS 172-176 -- early TY vision components deferred with architectural holds
+
+FLAGS 172-176 registered -- Voice Engine, Persona Engine, AUDE, Book Builder Engine, Lexicon System -- all deferred with architectural holds -- governance\FLAGS.md updated -- 110 lines added
+
+**Status:** CLOSED
