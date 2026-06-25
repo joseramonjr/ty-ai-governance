@@ -379,3 +379,113 @@ Related: FLAG-135.
 **Blocking:** Enterprise deployment
 **Phase:** 14 -- pre-enterprise requirement
 **Related:** FLAG-135 (conscience_thread.rs), FIX-715, OAQ-002
+
+## FLAG-172 | OPEN | HOLD -- ARCHITECTURE REVIEW REQUIRED
+Logged: 2026-06-24 23:24 PDT San Diego
+FIX: FIX-852 | Entry-872
+Description: Voice Engine -- TY AI OS audio interface layer. The early
+TY vision (SS321 era) described a Voice Engine allowing TY to communicate
+with the guardian via audio. This component does not exist in the current
+Jaya Runtime codebase. Adding a Voice Engine would require a new Rust
+module, Tauri audio integration, and a guardian interface audio layer.
+No conflicts with current governance principles or Zero-Fabrication Rule.
+Clean addition.
+Destination: Jaya Runtime -- new module -- future phase
+Status: OPEN -- deferred -- no active FIX
+Hold reason: Scope expansion. Design session required before any build
+work begins. Must not be opened until Phase 15 scope is complete and
+Walker patent email is resolved.
+Source: Builder review of original TY vision document -- 2026-06-24 San Diego
+
+## FLAG-173 | OPEN | HOLD -- DESIGN SESSION REQUIRED
+Logged: 2026-06-24 23:24 PDT San Diego
+FIX: FIX-852 | Entry-872
+Description: Persona Engine -- TY AI OS identity and persona layer. The
+early TY vision described a Persona Engine with multiple persona styles
+(Aurora, Alpha, Nexus, Echo), emotional routing, and device-adaptive
+presentation. This component does not exist in the current Jaya Runtime
+codebase. Adding a Persona Engine requires architectural design decisions
+about how persona interacts with governance enforcement -- specifically
+whether persona style can influence governance output, and how persona
+changes are governed.
+Destination: Jaya Runtime -- new module -- future phase
+Status: OPEN -- deferred -- no active FIX
+Hold reason: Design session required. The relationship between persona
+identity and governance authority must be resolved before build. Persona
+must not be able to override or soften governance enforcement.
+Source: Builder review of original TY vision document -- 2026-06-24 San Diego
+
+## FLAG-174 | OPEN | HOLD -- GOVERNANCE CONFLICT REQUIRES RESOLUTION
+Logged: 2026-06-24 23:24 PDT San Diego
+FIX: FIX-852 | Entry-872
+Description: AUDE (Auto-Update Documentation Engine) -- autonomous
+self-documentation system. The early TY vision described AUDE as scanning
+all TY engines and auto-generating documentation, summaries, and abstracts,
+updating every 30 seconds. luke.rs partially implements an explanation layer
+but does not auto-generate governance documentation. Full AUDE implementation
+conflicts with two locked governance principles:
+  1. Zero-Fabrication Rule -- all governance records must be traceable to
+     verified primary sources. AI-generated documentation cannot satisfy
+     this requirement without a guardian review and approval gate.
+  2. Book of TY personal authorship -- all Book of TY chapters are Jose
+     Ramon Alvarado McHerron's personal authorship. AUDE as originally
+     conceived would generate chapters autonomously, conflicting with the
+     patent evidence record.
+Destination: Jaya Runtime -- future phase -- blocked pending resolution
+Status: OPEN -- HELD -- cannot be opened without governance resolution
+Hold reason: Conflicts with Zero-Fabrication Rule and personal authorship
+doctrine. Resolution options before opening: (A) AUDE generates draft
+content only, requiring explicit guardian review and approval before any
+governance record is created -- no autonomous commits; (B) AUDE is scoped
+to non-governance documentation only and is permanently barred from the
+Book of TY and MASTER_FIX_INDEX. Jose must decide which option.
+Source: Builder review of original TY vision document -- 2026-06-24 San Diego
+
+## FLAG-175 | OPEN | HOLD -- GOVERNANCE CONFLICT REQUIRES RESOLUTION
+Logged: 2026-06-24 23:24 PDT San Diego
+FIX: FIX-852 | Entry-872
+Description: Book Builder Engine -- autonomous chapter generation system.
+The early TY vision described a Book Builder Engine allowing TY to generate
+chapters of the Book of TY automatically, tracking versioning, recording
+architecture, and producing structured narratives. This directly conflicts
+with two locked governance principles:
+  1. Book of TY personal authorship -- every chapter is Jose Ramon Alvarado
+     McHerron's personal authorship and serves as patent evidence record.
+     AI-generated chapters cannot carry this authorship designation.
+  2. Book title LOCKED -- "TY AI OS: The Case for Verifiable Governance" --
+     the book is a governed artifact under personal authorship.
+Destination: Future phase -- blocked pending Jose decision
+Status: OPEN -- HELD -- cannot be opened without Jose decision
+Hold reason: Conflicts with personal authorship doctrine and patent evidence
+record. Resolution options before opening: (A) Book Builder Engine generates
+structural scaffolding and data-verified statistics only, with all narrative
+written personally by Jose -- engine assists, does not author; (B) A separate
+AI-authored companion record is created alongside the human-authored Book of
+TY, clearly labeled as AI-generated and never used as patent evidence. Jose
+must decide before this FLAG can be opened.
+Source: Builder review of original TY vision document -- 2026-06-24 San Diego
+
+## FLAG-176 | OPEN | HOLD -- IP REVIEW REQUIRED
+Logged: 2026-06-24 23:24 PDT San Diego
+FIX: FIX-852 | Entry-872
+Description: Lexicon System -- autonomous vocabulary management system.
+The early TY vision described a Lexicon System as a living vocabulary
+maintained autonomously by TY. Chapter 26 (The TY AI OS Vocabulary)
+currently serves this function as a human-authored governance document
+with 397 terms across 30 sections. An autonomous Lexicon System conflicts
+with:
+  1. Walker IP guidance -- coined terms require human authorship and
+     verified first-use dates for IP protection. Autonomously generated
+     terms have no verifiable human origin date and cannot be submitted
+     for Walker review or IP clearance.
+  2. Zero-Fabrication Rule -- vocabulary terms in the governance record
+     must trace to verified human decisions.
+Destination: Future phase -- blocked pending Walker consultation
+Status: OPEN -- HELD -- cannot be opened without Walker consultation
+Hold reason: Conflicts with IP protection process and Zero-Fabrication Rule.
+Resolution option before opening: Lexicon System assists with term tracking,
+usage frequency, and cross-referencing only -- it does not coin new terms.
+All new terms remain human-coined, human-dated, and submitted to Walker for
+IP review per current process. Jose must confirm this scope before FLAG
+can be opened.
+Source: Builder review of original TY vision document -- 2026-06-24 San Diego
