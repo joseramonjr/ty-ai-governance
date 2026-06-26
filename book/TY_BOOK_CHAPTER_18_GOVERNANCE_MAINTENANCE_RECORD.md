@@ -8864,3 +8864,13 @@ EcosystemFlowPage.tsx -- CRI Sparkline History panel added below WARD Activity H
 EcosystemFlowPage.tsx -- Phase Seal Timeline panel added below CRI Sparkline History -- static horizontal scrollable timeline -- 15 phases hardcoded from governance record -- green dots connector lines abbreviated seal dates -- no new imports or data sources -- S1 CLEAN -- Lovable only
 
 **Status:** CLOSED
+
+### Entry-877 | FIX-857 | 2026-06-25 20:08 PDT San Diego -- 2026-06-25 20:25 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 4354650
+**Scope:** EcosystemFlowPage.tsx -- Event Volume Counter Per Zone -- live event count per zone section Authority Enforcement Ecosystem -- derived from existing recentEvents and EVENT_WARD_MAP -- no new data source -- Lovable only
+
+EcosystemFlowPage.tsx -- Zone Event Volume panel added below Phase Seal Timeline -- three zone cards Authority Enforcement Ecosystem -- live event counts from existing recentEvents and EVENT_WARD_MAP -- proportion bars -- header count fixed to show sum of zone counts not sliced array length -- no new imports or data sources -- S1 CLEAN -- Lovable only
+
+**Status:** CLOSED
