@@ -8824,3 +8824,13 @@ Chapter 80 The Consequence Layer TYOVA sync -- bookChapterContent.ts chapter con
 FLAGS 172-176 registered -- Voice Engine, Persona Engine, AUDE, Book Builder Engine, Lexicon System -- all deferred with architectural holds -- governance\FLAGS.md updated -- 110 lines added
 
 **Status:** CLOSED
+
+### Entry-873 | FIX-853 | 2026-06-25 19:28 PDT San Diego -- 2026-06-25 19:35 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 730a1e5
+**Scope:** EcosystemFlowPage.tsx -- Governance Event Timeline Strip -- horizontally scrollable event card row below canvas -- reads existing get_jaya_events_public state -- 20 events newest-first -- color-coded by execution_status -- offline state handled -- Lovable only
+
+EcosystemFlowPage.tsx -- Governance Event Timeline Strip added below canvas -- horizontally scrollable pill row -- reads existing recentEvents state -- 20 events newest-first -- color-coded by execution_status -- offline state handled -- slice 0,10 to 0,20 -- S1 CLEAN -- Lovable only
+
+**Status:** CLOSED
