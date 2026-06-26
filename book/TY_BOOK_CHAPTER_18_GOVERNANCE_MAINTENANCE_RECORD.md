@@ -8834,3 +8834,13 @@ FLAGS 172-176 registered -- Voice Engine, Persona Engine, AUDE, Book Builder Eng
 EcosystemFlowPage.tsx -- Governance Event Timeline Strip added below canvas -- horizontally scrollable pill row -- reads existing recentEvents state -- 20 events newest-first -- color-coded by execution_status -- offline state handled -- slice 0,10 to 0,20 -- S1 CLEAN -- Lovable only
 
 **Status:** CLOSED
+
+### Entry-874 | FIX-854 | 2026-06-25 19:42 PDT San Diego -- 2026-06-25 19:49 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** deb42fa
+**Scope:** EcosystemFlowPage.tsx -- WARD activity heatmap sidebar -- ranked list of top WARDs by event count from existing recentEvents state -- no new data source -- Lovable only
+
+EcosystemFlowPage.tsx -- WARD Activity Heatmap panel added below Governance Event Timeline Strip -- top 5 WARDs ranked by event count from existing recentEvents state -- horizontal bars color-coded blue SUCCESS green FAILURE -- offline state handled -- no new imports or data sources -- S1 CLEAN -- Lovable only
+
+**Status:** CLOSED
