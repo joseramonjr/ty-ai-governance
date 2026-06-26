@@ -8884,3 +8884,13 @@ EcosystemFlowPage.tsx -- Zone Event Volume panel added below Phase Seal Timeline
 EcosystemFlowPage.tsx -- Consequence Layer preview panel added below Zone Event Volume -- static Phase 16 build target -- description from Ch80 FIX-850 Entry-870 -- three feature rows -- footer with primary source citation -- text contrast fixes applied -- no new imports or data sources -- S1 CLEAN -- Lovable only
 
 **Status:** CLOSED
+
+### Entry-879 | FIX-859 | 2026-06-25 20:39 PDT San Diego -- 2026-06-25 20:51 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 0f64d03
+**Scope:** EcosystemFlowPage.tsx -- Governance Health Score -- single computed 0-100 score derived from CRI value FAILURE event ratio and isLive state -- reads existing recentEvents and isLive -- no new data source -- Lovable only
+
+EcosystemFlowPage.tsx -- Governance Health Score panel added -- computed 0-100 score from liveness CRI and failure ratio -- three component breakdown -- five band reference chart with active band highlighted and now indicator -- no new imports or data sources -- S1 CLEAN -- Lovable only
+
+**Status:** CLOSED
