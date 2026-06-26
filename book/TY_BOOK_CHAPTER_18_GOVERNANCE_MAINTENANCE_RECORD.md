@@ -8904,3 +8904,13 @@ EcosystemFlowPage.tsx -- Governance Health Score panel added -- computed 0-100 s
 EcosystemFlowPage.tsx -- Last Guardian Check-In Display -- guardian_authority fetch wired to TYOVA-governance Supabase via VITE_JAYA_SUPABASE credentials -- top card restored showing Jose Ramon Alvarado McHerron ACTIVE HUMAN GUARDIAN last check-in 6/7/2026 -- redundant bottom panel removed -- verified live at testing.tyova.ai -- S1 CLEAN -- Lovable only
 
 **Status:** CLOSED
+
+### Entry-881 | FIX-861 | 2026-06-26 13:38 PDT San Diego -- 2026-06-26 13:42 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 503c2f9
+**Scope:** EcosystemFlowPage.tsx -- remove SS321 guardianStatus overwrite -- delete redundant useEffect at line 786 that fetches guardian_authority from VITE_SS321_SUPABASE_URL and overwrites canonical guardianStatus state already correctly populated by TYOVA-governance fetch at lines 329-354 -- Lovable only
+
+EcosystemFlowPage.tsx -- removed SS321 guardianStatus overwrite useEffect at line 786 -- guardianStatus now populated exclusively by canonical TYOVA-governance fetch at lines 329-354 -- Guardian Status card displays Jose Ramon Alvarado McHerron ACTIVE HUMAN GUARDIAN without SS321 historical record overwrite -- Lovable only -- build clean
+
+**Status:** CLOSED
