@@ -8874,3 +8874,13 @@ EcosystemFlowPage.tsx -- Phase Seal Timeline panel added below CRI Sparkline His
 EcosystemFlowPage.tsx -- Zone Event Volume panel added below Phase Seal Timeline -- three zone cards Authority Enforcement Ecosystem -- live event counts from existing recentEvents and EVENT_WARD_MAP -- proportion bars -- header count fixed to show sum of zone counts not sliced array length -- no new imports or data sources -- S1 CLEAN -- Lovable only
 
 **Status:** CLOSED
+
+### Entry-878 | FIX-858 | 2026-06-25 20:26 PDT San Diego -- 2026-06-25 20:38 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** d157e13
+**Scope:** EcosystemFlowPage.tsx -- Consequence Layer preview panel -- static Phase 16 build target panel -- honest forward-looking architectural documentation -- no live data -- Lovable only
+
+EcosystemFlowPage.tsx -- Consequence Layer preview panel added below Zone Event Volume -- static Phase 16 build target -- description from Ch80 FIX-850 Entry-870 -- three feature rows -- footer with primary source citation -- text contrast fixes applied -- no new imports or data sources -- S1 CLEAN -- Lovable only
+
+**Status:** CLOSED
