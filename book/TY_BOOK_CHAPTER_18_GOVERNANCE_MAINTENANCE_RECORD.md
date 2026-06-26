@@ -8894,3 +8894,13 @@ EcosystemFlowPage.tsx -- Consequence Layer preview panel added below Zone Event 
 EcosystemFlowPage.tsx -- Governance Health Score panel added -- computed 0-100 score from liveness CRI and failure ratio -- three component breakdown -- five band reference chart with active band highlighted and now indicator -- no new imports or data sources -- S1 CLEAN -- Lovable only
 
 **Status:** CLOSED
+
+### Entry-880 | FIX-860 | 2026-06-25 20:57 PDT San Diego -- 2026-06-25 23:53 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** db07620
+**Scope:** EcosystemFlowPage.tsx -- Last Guardian Check-In Display -- panel showing guardian name status days elapsed days remaining -- reads existing guardian_authority Supabase query already on page -- Lovable only
+
+EcosystemFlowPage.tsx -- Last Guardian Check-In Display -- guardian_authority fetch wired to TYOVA-governance Supabase via VITE_JAYA_SUPABASE credentials -- top card restored showing Jose Ramon Alvarado McHerron ACTIVE HUMAN GUARDIAN last check-in 6/7/2026 -- redundant bottom panel removed -- verified live at testing.tyova.ai -- S1 CLEAN -- Lovable only
+
+**Status:** CLOSED
