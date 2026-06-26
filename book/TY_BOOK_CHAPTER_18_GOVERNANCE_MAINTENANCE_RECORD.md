@@ -8844,3 +8844,13 @@ EcosystemFlowPage.tsx -- Governance Event Timeline Strip added below canvas -- h
 EcosystemFlowPage.tsx -- WARD Activity Heatmap panel added below Governance Event Timeline Strip -- top 5 WARDs ranked by event count from existing recentEvents state -- horizontal bars color-coded blue SUCCESS green FAILURE -- offline state handled -- no new imports or data sources -- S1 CLEAN -- Lovable only
 
 **Status:** CLOSED
+
+### Entry-875 | FIX-855 | 2026-06-25 19:51 PDT San Diego -- 2026-06-25 19:56 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 3b6438c
+**Scope:** EcosystemFlowPage.tsx -- CRI Sparkline History -- small line graph showing CRI value trend over last 30 minutes -- reads CRI_EVALUATION events from existing recentEvents state -- no new data source -- Lovable only
+
+EcosystemFlowPage.tsx -- CRI Sparkline History panel added below WARD Activity Heatmap -- SVG polyline of CRI values from CRI_EVALUATION events in recentEvents state -- threshold lines at CRI 50 and 75 -- color-coded by band -- empty state when fewer than 2 CRI events -- no new imports or data sources -- S1 CLEAN -- Lovable only
+
+**Status:** CLOSED
