@@ -8924,3 +8924,13 @@ EcosystemFlowPage.tsx -- removed SS321 guardianStatus overwrite useEffect at lin
 HowTyAiOsWorksPage.tsx -- GVC diagram redesigned -- perpendicular axis diagram replaced with animated glowing governance boundary ring -- teal pulsing ring encircles ASI AGI ANI tier cards -- GOVERNED label inside -- UNGOVERNED label exterior -- TY AI OS GOVERNANCE BOUNDARY inscription -- TY AI OS identity card positioned below ring as THE GOVERNANCE LAYER -- tier cards centered and vertically positioned -- description text brightened -- GVC subtitle 13px -- caption below ring -- FLAG-171 closed -- Lovable only -- build clean
 
 **Status:** CLOSED
+
+### Entry-883 | FIX-863 | 2026-06-26 22:42 PDT San Diego -- 2026-06-26 22:44 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 035dd52
+**Scope:** Jaya-Runtime -- governance warning documentation -- add DO_NOT_DELETE.md to src-tauri/src/ warning AI and humans never to delete or move TY_CONSCIENCE_THREAD_v0.1.md -- file is required build artifact embedded via include_str! in conscience_thread.rs -- deletion causes cargo build failure -- dual-location by design
+
+Jaya-Runtime src-tauri/src/DO_NOT_DELETE.md created -- governance warning file -- explicitly prohibits deletion or movement of TY_CONSCIENCE_THREAD_v0.1.md and all files in src-tauri/src/ -- documents include_str! dependency in conscience_thread.rs line 42 -- documents dual-location design -- documents byte-identity verification at line 127 -- cargo check clean 32 warnings 0 errors 238 tests passing
+
+**Status:** CLOSED
