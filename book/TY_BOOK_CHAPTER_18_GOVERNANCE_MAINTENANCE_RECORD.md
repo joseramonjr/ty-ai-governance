@@ -8964,3 +8964,13 @@ FLAG-155 documentation cleanup -- verified FLAG-155 not present in governance/FL
 FLAG-150 EcosystemFlow3DPage.tsx -- new 3D governance visualization page -- Three.js scene -- zone rings -- WARD spheres -- live Supabase feed -- HUD -- legend panel -- capture button -- drag rotation -- partial implementation -- labels and visual distinctions incomplete -- FIX-867 will rewrite clean
 
 **Status:** CLOSED
+
+### Entry-887 | FIX-867 | 2026-06-27 20:14 PDT San Diego -- 2026-06-27 23:45 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** b6688a2
+**Scope:** FLAG-150 -- EcosystemFlow3DPage.tsx -- complete clean rewrite -- full file generated in Claude then pasted to Lovable as replace -- fixes label truncation SS321 gold Jaya prominence and all accumulated drift from FIX-866 patches -- Lovable only
+
+FLAG-150 -- EcosystemFlow3DPage.tsx -- clean rewrite deployed -- scale entry animation -- dynamic edge lines -- WARD spheres parented to zone tori -- labels fixed -- SS321 gold -- Jaya prominent -- edge connections to most WARDs working -- sentinel HVP guardian edge precision remaining -- continue next session
+
+**Status:** CLOSED
