@@ -9024,3 +9024,13 @@ FLAG-150 Enhancement 3 -- WARD activity ripple rings -- expanding torus ring fro
 FLAG-150 Enhancement 4 -- layer health indicator rings -- colored torus rings above each platform -- green all active amber partial red low activity -- confirmed working accurately
 
 **Status:** CLOSED
+
+### Entry-893 | FIX-873 | 2026-06-28 12:43 PDT San Diego -- 2026-06-28 13:00 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 592de23
+**Scope:** FLAG-150 -- EcosystemFlow3DPage.tsx -- Enhancement 5 -- governance event ticker -- scrolling text feed in HUD showing last 5 event types with timestamps as they arrive -- Lovable only
+
+FLAG-150 Enhancement 5 -- governance event ticker -- live events feed below HUD -- last 5 events with timestamps -- readability fixes applied -- ticker confirmed working with live data
+
+**Status:** CLOSED
