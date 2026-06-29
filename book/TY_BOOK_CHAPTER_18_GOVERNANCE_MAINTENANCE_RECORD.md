@@ -9064,3 +9064,13 @@ FLAG-150 Enhancement 7 -- Governance Constellation Mode -- toggle switches verti
 FLAG-150 Enhancement 7 platform disc and health indicator ring fade patch -- platform discs and health indicator rings (AUTHORITY LAYER ENFORCEMENT CORE ECOSYSTEM LAYER) now fade to hidden in constellation mode via towerVis multiplier and visibility toggle -- confirmed working in both modes -- known dead code from fix attempts logged for future cleanup FIX -- Commit e72561f
 
 **Status:** CLOSED
+
+### Entry-897 | FIX-877 | 2026-06-29 14:26 PDT San Diego -- 2026-06-29 16:38 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** b547ed3
+**Scope:** FLAG-150 -- EcosystemFlow3DPage.tsx -- Enhancement 8 -- First-Person WARD Flythrough -- automated HUD tour button cycles Authority to Enforcement to Ecosystem -- click-to-fly on individual WARD spheres -- works in both Tower and Constellation modes -- OrbitControls disabled during flythrough -- Lovable only
+
+FLAG-150 Enhancement 8 -- First-Person WARD Flythrough -- GOVERNANCE TOUR button cycles Authority to Enforcement to Ecosystem WARDs -- click-to-fly on individual WARD spheres -- info chip shows WARD name and layer -- hover tooltip clears on click and suppressed during flight -- Escape key and click-to-dismiss return to home -- works in both Tower and Constellation modes -- three patches applied: timing 4000ms hold 1200ms fly -- info chip overwrite on WARD switch -- tooltip clear on fly -- all confirmed working on testing.tyova.ai
+
+**Status:** CLOSED
