@@ -501,3 +501,29 @@ Source: Builder review of original TY vision document -- 2026-06-24 San Diego
 **Required action:** Grep the TYOVA codebase for all references to VITE_SS321_SUPABASE_URL and VITE_SS321_SUPABASE_ANON_KEY. For each usage found, verify the feature is actually querying the correct SS321 project and returning expected data on testing.tyova.ai. Document findings even if the audit confirms no other usages exist.
 
 **Related:** FLAG-150 (EcosystemFlow3D), FIX-880 (Enhancement 11 close note documents full root cause chain)
+
+## FLAG-150 | IN PROGRESS | EcosystemFlow3D -- 3D Governance Visualization
+**Logged:** 2026-06-29 20:55 PDT San Diego | Retroactive formalization
+
+**Scope:** Three.js-based 3D governance visualization at testing.tyova.ai/ecosystem-flow-3d, built entirely in EcosystemFlow3DPage.tsx via Lovable only. Replaces the original 2D EcosystemFlowPage with a vertical authority tower metaphor -- Guardian apex, three horizontal platforms (Authority, Enforcement, Ecosystem), Jaya Runtime as central hub -- using live Supabase data from jaya_audit_events.
+
+**History:** Built across 11 FIXes (FIX-866 through FIX-880), 2026-06-27 through 2026-06-29.
+
+FIX-866/867/868 -- initial build, clean rewrite, vertical tower redesign.
+Enhancement 1 (FIX-869) -- Jaya Runtime hub spokes.
+Enhancement 2 (FIX-870) -- authority flow particle animation.
+Enhancement 3 (FIX-871) -- WARD activity ripple rings.
+Enhancement 4 (FIX-872) -- layer health indicator rings.
+Enhancement 5 (FIX-873) -- governance event ticker.
+Enhancement 6 (FIX-874) -- governance health score arc meter.
+Enhancement 7 (FIX-875/876) -- Governance Constellation Mode toggle, platform disc fade patch.
+Enhancement 8 (FIX-877) -- First-Person WARD Flythrough, tour and click-to-fly.
+Enhancement 9 (FIX-878) -- Time-Lapse Replay Slider, real historical event scrubbing.
+Enhancement 10 (FIX-879) -- Governance Storm Mode, CRI above 75 visual alert.
+Enhancement 11 (FIX-880) -- SS321 live user count, cross-repository Supabase integration.
+
+**Remaining:** Enhancement 12 -- Conscience Thread visualization (64 rule nodes expand from Conscience WARD). Final approved enhancement on this FLAG.
+
+**Known technical debt:** Dead code in EcosystemFlow3DPage.tsx from FIX-876 fix attempts (unused authPlatformRef, enfPlatformRef, ecoPlatformRef refs, possible stale opacity blocks). Logged for cleanup FIX after Enhancement 12 completes.
+
+**Related:** FLAG-177 (VITE_SS321_SUPABASE_URL audit, surfaced during Enhancement 11 build on this FLAG)
