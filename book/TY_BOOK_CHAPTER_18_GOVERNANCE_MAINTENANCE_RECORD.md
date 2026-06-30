@@ -9094,3 +9094,13 @@ FLAG-150 Enhancement 9 -- Time-Lapse Replay Slider -- one-time Supabase history 
 FLAG-150 Enhancement 10 -- Governance Storm Mode -- CRI above 75 triggers full scene shift -- background lerps to deep red -- WARD spheres shift emissive to red -- authority spine pulses red at 2Hz -- red vignette overlay at screen edges -- HUD storm banner pulses GOVERNANCE STORM CRI 80 -- smooth 1 second lerp transition in and out -- SIMULATE STORM test button confirmed working -- 10 second reset confirmed -- all verified on testing.tyova.ai
 
 **Status:** CLOSED
+
+### Entry-900 | FIX-880 | 2026-06-29 18:32 PDT San Diego -- 2026-06-29 20:19 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 0b045b5
+**Scope:** FLAG-150 -- EcosystemFlow3DPage.tsx -- Enhancement 11 -- SS321 live user count above SS321 sphere -- remove SIMULATE STORM test button -- Lovable only
+
+FLAG-150 Enhancement 11 -- SS321 live user count above SS321 sphere -- isolated SS321 Supabase client with unique auth storage key -- 60 second polling of user_presence table -- floating sprite label SS321 dot count live or offline -- follows sphere in Tower and Constellation modes -- root cause chain required four fixes outside TYOVA code: corrected VITE_SS321_SUPABASE_URL in Vercel from wrong governance URL to correct tsmyhzjmkampssjwshqh -- corrected VITE_SS321_SUPABASE_ANON_KEY to match -- GRANT SELECT on profiles id and show_activity columns to anon role -- new RLS policy Public can check show_activity flag on profiles table for anon role -- confirmed working live showing SS321 1 live on testing.tyova.ai
+
+**Status:** CLOSED
