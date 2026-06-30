@@ -489,3 +489,15 @@ All new terms remain human-coined, human-dated, and submitted to Walker for
 IP review per current process. Jose must confirm this scope before FLAG
 can be opened.
 Source: Builder review of original TY vision document -- 2026-06-24 San Diego
+
+## FLAG-177 | OPEN | Audit Required -- VITE_SS321_SUPABASE_URL Silent Misconfiguration
+**Logged:** 2026-06-29 20:48 PDT San Diego | FIX-880
+**Priority:** Medium -- not urgent, but tracked
+
+**Finding:** During FIX-880 (Enhancement 11, SS321 live user count), VITE_SS321_SUPABASE_URL in Vercel was discovered to be set to the governance Supabase URL (utzkoozekztyztdxejij) instead of the correct SS321 URL (tsmyhzjmkampssjwshqh). Root cause and duration unknown -- this could have been wrong since the variable was first set, or corrupted by a later edit.
+
+**Risk:** Any other TYOVA feature referencing VITE_SS321_SUPABASE_URL may have been silently querying the wrong Supabase project this entire time, either failing silently or returning incorrect/empty data without surfacing an error.
+
+**Required action:** Grep the TYOVA codebase for all references to VITE_SS321_SUPABASE_URL and VITE_SS321_SUPABASE_ANON_KEY. For each usage found, verify the feature is actually querying the correct SS321 project and returning expected data on testing.tyova.ai. Document findings even if the audit confirms no other usages exist.
+
+**Related:** FLAG-150 (EcosystemFlow3D), FIX-880 (Enhancement 11 close note documents full root cause chain)
