@@ -9074,3 +9074,13 @@ FLAG-150 Enhancement 7 platform disc and health indicator ring fade patch -- pla
 FLAG-150 Enhancement 8 -- First-Person WARD Flythrough -- GOVERNANCE TOUR button cycles Authority to Enforcement to Ecosystem WARDs -- click-to-fly on individual WARD spheres -- info chip shows WARD name and layer -- hover tooltip clears on click and suppressed during flight -- Escape key and click-to-dismiss return to home -- works in both Tower and Constellation modes -- three patches applied: timing 4000ms hold 1200ms fly -- info chip overwrite on WARD switch -- tooltip clear on fly -- all confirmed working on testing.tyova.ai
 
 **Status:** CLOSED
+
+### Entry-898 | FIX-878 | 2026-06-29 18:05 PDT San Diego -- 2026-06-29 18:05 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 588becc
+**Scope:** FLAG-150 -- EcosystemFlow3DPage.tsx -- Enhancement 9 -- Time-Lapse Replay Slider -- one-time Supabase history fetch -- scrubber drives WARD pulse intensity CRI health score governed actions -- live ticker freezes during replay -- Lovable only
+
+FLAG-150 Enhancement 9 -- Time-Lapse Replay Slider -- one-time Supabase history fetch 500 events -- scrubber drives WARD pulse intensity CRI health score governed actions -- live ticker freezes during replay resumes on stop -- GOVERNANCE REPLAY label and event sub-label -- Escape exits replay -- five patches applied: initial build -- button placement fix -- event_type column fix -- created_at field fix -- scrubber visibility and ticker freeze fix -- all confirmed working on testing.tyova.ai
+
+**Status:** CLOSED
