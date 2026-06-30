@@ -527,3 +527,28 @@ Enhancement 11 (FIX-880) -- SS321 live user count, cross-repository Supabase int
 **Known technical debt:** Dead code in EcosystemFlow3DPage.tsx from FIX-876 fix attempts (unused authPlatformRef, enfPlatformRef, ecoPlatformRef refs, possible stale opacity blocks). Logged for cleanup FIX after Enhancement 12 completes.
 
 **Related:** FLAG-177 (VITE_SS321_SUPABASE_URL audit, surfaced during Enhancement 11 build on this FLAG)
+
+## FLAG-178 | OPEN | EcosystemFlow3D -- Missing 11 Nodes from 2D Ecosystem Map
+**Logged:** 2026-06-30 09:48 PDT San Diego
+
+**Finding:** The 2D EcosystemFlowPage.tsx defines 25 nodes total (including Human Guardian). The 3D EcosystemFlow3DPage.tsx (FLAG-150) defines only 18 WARDs. Direct comparison confirms 11 nodes present in the 2D page are absent from the 3D page:
+
+1. ty_knowledge -- TY Knowledge Layer
+2. alert -- Guardian Alert (Resend email)
+3. nwp -- NWP Protection
+4. selfHeal -- Self-Healing
+5. evoEngine -- Evolution Engine (note: 3D page has an 'evolution' WARD -- needs confirmation whether this is the same component or a different one before merging)
+6. proof7777 -- :7777 Proof Server
+7. status -- /status Feed
+8. fedPeers -- Federation Peers
+9. verifier -- External Verifier
+10. compliance -- Compliance Kit
+11. attestation -- Attestation Chain
+
+**Decision:** Jose has confirmed the 3D page should eventually represent all 25 nodes from the 2D ecosystem map. This is NOT in scope for Enhancement 12 (Conscience Thread visualization) -- it is a separate future FIX, sequenced after Enhancement 12 and the existing FLAG-150 dead-code cleanup FIX.
+
+**Required action:** Scope a new FIX to add the 11 missing nodes to EcosystemFlow3DPage.tsx -- correct layer assignment, live Supabase event type mapping where applicable, and visual integration into the existing Tower/Constellation layout. First confirm whether evoEngine and the existing 'evolution' WARD are the same component or distinct before merging node lists.
+
+**Sequencing:** Enhancement 12 (Conscience Thread) -> FLAG-150 dead-code cleanup -> FLAG-178 (this item).
+
+**Related:** FLAG-150 (EcosystemFlow3D)
