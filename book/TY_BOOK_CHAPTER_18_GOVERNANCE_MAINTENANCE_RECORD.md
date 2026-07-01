@@ -9124,3 +9124,13 @@ FLAG-150 Enhancement 12 -- Conscience Thread visualization -- 64 Fibonacci spher
 FLAG-178 -- 11 missing WARD nodes added to 3D visualization -- ty_knowledge alert nwp selfHeal evoEngine proof7777 status fedPeers verifier compliance attestation -- CONST_POS constellation positions added -- boundary sphere dynamic scaling tower to constellation -- high-res governance boundary label 2048x128 canvas -- all nodes inside boundary in constellation mode
 
 **Status:** CLOSED
+
+### Entry-903 | FIX-883 | 2026-07-01 14:58 PDT San Diego -- 2026-07-01 15:11 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** fd2640c
+**Scope:** FLAG-177 -- EcosystemFlowPage.tsx -- remove hardcoded Supabase URL and anon key fallback values on line 356/357 -- fail visibly on missing env var instead of silently connecting to wrong project
+
+FLAG-177 -- EcosystemFlowPage.tsx -- removed hardcoded VITE_JAYA_SUPABASE_URL and VITE_JAYA_SUPABASE_ANON_KEY fallback values -- missing env var now fails visibly via existing guard -- FLAG-177 audit complete -- all env var references verified pointing to correct Supabase projects
+
+**Status:** CLOSED
