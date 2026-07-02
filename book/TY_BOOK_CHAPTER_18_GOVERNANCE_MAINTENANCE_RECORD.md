@@ -9144,3 +9144,13 @@ FLAG-177 -- EcosystemFlowPage.tsx -- removed hardcoded VITE_JAYA_SUPABASE_URL an
 FLAG-164 -- Public Verification Surface -- added Independent Verification section to NuronesencePage -- three independently verifiable claims -- live event stream -- SHA-256 attestation chain -- NURONESENCE_PROOF observable -- what is not exposed disclaimer -- honest minimum verification standard -- no source code exposure
 
 **Status:** CLOSED
+
+### Entry-905 | FIX-885 | 2026-07-01 22:22 PDT San Diego -- 2026-07-01 22:23 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 0cdbc51
+**Scope:** NuronesencePage.tsx -- supabase client wrong wiring -- get_jaya_events_public RPC was calling SS321 Supabase instead of Jaya governance Supabase -- changed supabase.rpc to jayaSupabase.rpc -- removed unused SS321 supabase client -- fixes LIVE badge stuck on CONNECTING
+
+NuronesencePage.tsx -- supabase client wrong wiring corrected -- get_jaya_events_public RPC was calling SS321 Supabase instead of Jaya governance Supabase -- changed supabase.rpc to jayaSupabase.rpc -- removed unused SS321 supabase client -- LIVE badge now shows correctly when Jaya Runtime is running
+
+**Status:** CLOSED
