@@ -9154,3 +9154,13 @@ FLAG-164 -- Public Verification Surface -- added Independent Verification sectio
 NuronesencePage.tsx -- supabase client wrong wiring corrected -- get_jaya_events_public RPC was calling SS321 Supabase instead of Jaya governance Supabase -- changed supabase.rpc to jayaSupabase.rpc -- removed unused SS321 supabase client -- LIVE badge now shows correctly when Jaya Runtime is running
 
 **Status:** CLOSED
+
+### Entry-906 | FIX-886 | 2026-07-01 22:29 PDT San Diego -- 2026-07-01 22:35 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** a2ca987
+**Scope:** FLAG-164 -- NuronesencePage.tsx -- add direct link to Attestation page in Public Verification Surface Claim 2 -- users should not have to search for the Attestation page
+
+FLAG-164 -- NuronesencePage.tsx -- added direct link to Attestation page in Public Verification Surface Claim 2 -- emerald styled anchor tag to /attestation -- users can now navigate directly from verification claim to attestation chain
+
+**Status:** CLOSED
