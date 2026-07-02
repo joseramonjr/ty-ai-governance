@@ -9134,3 +9134,13 @@ FLAG-178 -- 11 missing WARD nodes added to 3D visualization -- ty_knowledge aler
 FLAG-177 -- EcosystemFlowPage.tsx -- removed hardcoded VITE_JAYA_SUPABASE_URL and VITE_JAYA_SUPABASE_ANON_KEY fallback values -- missing env var now fails visibly via existing guard -- FLAG-177 audit complete -- all env var references verified pointing to correct Supabase projects
 
 **Status:** CLOSED
+
+### Entry-904 | FIX-884 | 2026-07-01 21:53 PDT San Diego -- 2026-07-01 22:09 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** d2c392e
+**Scope:** FLAG-164 -- Public Verification Surface -- add focused verify section to NuronesencePage -- three independently verifiable claims -- live event stream -- SHA-256 attestation chain -- NURONESENCE_PROOF observable -- no source code exposure -- no internal thresholds -- honest minimum verification standard
+
+FLAG-164 -- Public Verification Surface -- added Independent Verification section to NuronesencePage -- three independently verifiable claims -- live event stream -- SHA-256 attestation chain -- NURONESENCE_PROOF observable -- what is not exposed disclaimer -- honest minimum verification standard -- no source code exposure
+
+**Status:** CLOSED
