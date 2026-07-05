@@ -552,3 +552,68 @@ Enhancement 11 (FIX-880) -- SS321 live user count, cross-repository Supabase int
 **Sequencing:** Enhancement 12 (Conscience Thread) -> FLAG-150 dead-code cleanup -> FLAG-178 (this item).
 
 **Related:** FLAG-150 (EcosystemFlow3D)
+
+## FLAG-179 — TYOVA Product Health Monitoring Gap
+**Logged:** 2026-07-04 20:22 PDT San Diego
+**FIX:** FIX-899 / Entry-919
+**Phase:** Phase 16 (deferred)
+**Status:** OPEN
+**Classification:** Architectural Gap — Product Layer
+
+### Summary
+TY AI OS does not proactively detect or report broken UI features,
+Supabase wiring failures, or mobile behavior regressions on TYOVA or
+SS321. Every product-layer issue discovered to date has been found by
+the Human Guardian during manual testing, not by the system itself.
+
+### Evidence — Issues Found Manually July 4 2026
+The following issues were discovered by the builder during the July 4
+2026 session. None were flagged by TY AI OS proactively:
+
+1. Enhancement 8 (WARD Flythrough) recorded as pending in session
+   handoff -- already delivered by FIX-877 on June 29 2026. Project
+   knowledge files were stale. No system alert.
+2. SS321 presence showing Offline on mobile -- mobile browsers suspend
+   WebSocket connections. EcosystemFlow3DPage showed Offline for all
+   mobile users. No system alert.
+3. user_presence row going stale after 2 minutes -- 3D page polls with
+   120-second recency window. FIX-896 keep-alive updated Realtime
+   channel only, not the database row. False Offline after 2-3 minutes
+   of inactivity. No system alert.
+4. Brief Offline flash on second device join -- Supabase presence
+   momentarily reports 0 during track() overwrite. No system alert.
+
+### Root Cause
+TY AI OS governance enforcement (Jaya Runtime) operates at the
+structural governance layer: policy compliance, kill switch enforcement,
+attestation chain integrity, CRI monitoring, guardian succession.
+Jaya does not monitor TYOVA UI correctness, Supabase wiring health,
+feature behavior on mobile devices, live badge accuracy, or SS321
+integration health. The Human Guardian is currently the sole quality
+monitor for the product layer.
+
+### Capabilities Required to Close This Gap
+1. TYOVA Health Check Script (Phase 16) -- PowerShell or Node script
+   run at Pre-Flight confirming key pages load, Supabase events are
+   live, user_presence is current, EcosystemFlow3DPage badges are
+   correct. Integrates into Pre-Flight.ps1 as a fourth gate.
+2. SS321 Integration Health Check (Phase 16) -- confirms ss321-presence
+   channel receiving track() calls and user_presence rows have recent
+   last_seen_at timestamps.
+3. FLAG-35 Governance Confirmation Loop (Phase 13+) -- already logged.
+   Jaya proactively pushes governance state summary to Human Guardian
+   on a schedule. Not yet built.
+
+### Disposition
+Phase 16 scope. Do not build until Walker response received,
+FLAG-131 / FLAG-170 unblocked, tyova.ai migration complete, and
+dead code cleanup complete.
+Immediate mitigation: at session open manually verify
+testing.tyova.ai/ecosystem-flow-3d loads correctly and SS321 presence
+shows expected state before beginning any FIX work.
+
+### References
+- FLAG-35 -- Governance Confirmation Loop -- 2026-05-23
+- FIX-896 / Entry-916 -- SS321 presence keep-alive
+- FIX-897 / Entry-917 -- TYOVA debounce fix
+- FIX-898 / Entry-918 -- user_presence upsert keep-alive
