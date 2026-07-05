@@ -9244,3 +9244,13 @@ bookChapterContent.ts -- Ch26 Section 30 coined vocabulary family added -- Nuron
 bookChapterContent.ts -- Ch26 compiledNote updated -- Current Term Count 402 corrected to 398 -- Sections 28 corrected to 31 -- Lines updated to 4434 -- Updated date 2026-07-04 -- Update Log timeline fixed -- 8 entries replacing wrong single entry -- live verified testing.tyova.ai/book/chapter-26 shows 398 terms -- No BOM
 
 **Status:** CLOSED
+
+### Entry-915 | FIX-895 | 2026-07-04 18:34 PDT San Diego -- 2026-07-04 18:42 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 2cd8808
+**Scope:** FLAG-150 -- EcosystemFlow3DPage.tsx -- Enhancement 8 -- First-Person WARD Flythrough -- automated HUD tour button Authority to Enforcement to Ecosystem ~2s per WARD -- click-to-fly on individual WARDs -- OrbitControls disabled during flythrough re-enabled after -- Tower and Constellation modes -- Lovable only
+
+FLAG-150 Enhancement 8 -- First-Person WARD Flythrough -- verification only -- Enhancement 8 was delivered by FIX-877 Entry-897 2026-06-29 -- GOVERNANCE TOUR button confirmed live at testing.tyova.ai/ecosystem-flow-3d -- click-to-fly confirmed -- tour cycles Authority to Enforcement to Ecosystem -- no build work this FIX
+
+**Status:** CLOSED
