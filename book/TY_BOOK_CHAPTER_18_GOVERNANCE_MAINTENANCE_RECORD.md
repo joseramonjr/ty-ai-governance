@@ -9224,3 +9224,13 @@ bookChapterContent.ts -- Chapter 83 full entry added -- BookOfTyIndex.tsx -- num
 Ch26 Section 31 created -- transferred conscience -- coined 2026-06-20 -- verified clean -- 397 to 398 terms -- 30 to 31 sections -- header updated -- footer updated -- CLO line updated -- No BOM
 
 **Status:** CLOSED
+
+### Entry-913 | FIX-893 | 2026-07-04 17:54 PDT San Diego -- 2026-07-04 18:03 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** d0243a3
+**Scope:** bookChapterContent.ts -- Ch26 TYOVA sync -- add Section 30 coined vocabulary family missing from TYOVA -- add Section 31 transferred conscience -- update term count 397 to 398 -- update sections 29 to 31 -- Lovable only
+
+bookChapterContent.ts -- Ch26 Section 30 coined vocabulary family added -- Nuronesence Nuronesent Nuronethic Nurvexus NURONESENCE_PROOF -- Section 31 transferred conscience added -- live verified testing.tyova.ai/book/chapter-26 -- Section 30 5 terms Section 31 1 term -- No BOM
+
+**Status:** CLOSED
