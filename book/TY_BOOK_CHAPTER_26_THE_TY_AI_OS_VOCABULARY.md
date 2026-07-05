@@ -1,11 +1,11 @@
 # Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
-**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added) | FIX-720 (Section 27 created -- HALT_STATE, Canon-to-Code Audit added) | FIX-735 (Section 28 created -- Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard) | FIX-752 (Section 29 created -- Nexora term added) | FIX-772 (NURONESENCE_PROOF term added to Section 29) | FIX-802 (Section 30 created -- Nuronesence, Nuronesent, Nuronethic, Nurvexus)
+**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added) | FIX-720 (Section 27 created -- HALT_STATE, Canon-to-Code Audit added) | FIX-735 (Section 28 created -- Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard) | FIX-752 (Section 29 created -- Nexora term added) | FIX-772 (NURONESENCE_PROOF term added to Section 29) | FIX-802 (Section 30 created -- Nuronesence, Nuronesent, Nuronethic, Nurvexus) | FIX-892 (Section 31 created -- transferred conscience)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-06-15 | San Diego (America/Los_Angeles)
 **Builder:** Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.
-**Current Term Count:** 397 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01 + 4 Phase 14 P3 gap closure terms added FIX-711 2026-06-02: Fail-Closed, Backup Discipline, Gap Entry, Constitutional / Architectural / Operational Framing + 2 Phase 14 P3 canon-to-code audit terms added FIX-720 2026-06-03: HALT_STATE, Canon-to-Code Audit + 4 Phase 15 opening terms added FIX-735 2026-06-06: Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard + 1 Nexora Theory term added FIX-752 2026-06-08: Nexora + 1 Phase 15 Nuronesence term added FIX-772 2026-06-12: NURONESENCE_PROOF + 4 coined vocabulary family terms added FIX-802 2026-06-15: Nuronesence, Nuronesent, Nuronethic, Nurvexus)
+**Current Term Count:** 398 (369 confirmed at 2026-05-30 + 12 Phase 14 P3 Red-Team terms added FIX-702 2026-06-01 + 4 Phase 14 P3 gap closure terms added FIX-711 2026-06-02: Fail-Closed, Backup Discipline, Gap Entry, Constitutional / Architectural / Operational Framing + 2 Phase 14 P3 canon-to-code audit terms added FIX-720 2026-06-03: HALT_STATE, Canon-to-Code Audit + 4 Phase 15 opening terms added FIX-735 2026-06-06: Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard + 1 Nexora Theory term added FIX-752 2026-06-08: Nexora + 1 Phase 15 Nuronesence term added FIX-772 2026-06-12: NURONESENCE_PROOF + 4 coined vocabulary family terms added FIX-802 2026-06-15: Nuronesence, Nuronesent, Nuronethic, Nurvexus + 1 Moral Architecture term added FIX-892 2026-07-04: transferred conscience)
 ---
 ## How to Use This Chapter
 Every term coined, defined, or formalized during TY AI OS development
@@ -4398,11 +4398,37 @@ claim -- it asserts that the four measurable structural properties associated
 with Nuronesence are currently active and verifiable. Built in FIX-772 on
 2026-06-12. See also: Nuronesence, Nuronesent, CRI, Sentinel, Policy Engine.
 
+## Section 31 -- Moral Architecture and Transferred Conscience Terms
+*Created: FIX-892 | 2026-07-04 | San Diego (America/Los_Angeles)*
+*Coined by: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
+
+**transferred conscience**
+*First coined: 2026-06-20 | San Diego (America/Los_Angeles)*
+*Coined by: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
+*Internet conflict check: verified clean -- zero prior use found 2026-06-20*
+*Primary source: TY AI OS development session June 20, 2026 -- documented in Chapter 73
+and Chapter 77 Part IX*
+The moral reasoning of a human builder -- extracted from the place where human consciences
+die, encoded into a permanent, verifiable, and transferable structure, and anchored into
+the governance architecture of a system that will outlive the builder. A transferred
+conscience is not a copy of the builder's conscience. It is the structured, durable form
+of the moral reasoning the builder contributed -- preserved in an append-only ledger,
+enforced through architecture, and carried forward by the system itself. It is what
+remains of a human conscience after the human is gone -- not as memory, but as governing
+structure.
+**Distinction from Nuronethic:** Nuronethic describes the structural moral architecture
+of the governed system itself. Transferred conscience describes the act and outcome of
+the builder encoding their moral reasoning into that architecture. Nuronethic is what
+the system has. Transferred conscience is how it got there.
+**Primary appearance:** Chapter 73 -- The Conscience Thread (expanded June 20, 2026).
+Chapter 77 Part IX -- The Transferred Conscience (added FIX-846, June 21, 2026).
+See also: Nuronethic, Conscience Thread, Book of TY Chapter 73, Book of TY Chapter 77.
+
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-06-15 | San Diego (America/Los_Angeles)*
-*Current Term Count: 397 | Sections: 30*
+*Updated: 2026-07-04 | San Diego (America/Los_Angeles)*
+*Current Term Count: 398 | Sections: 31*
 *This document grows with the project. It is never finished.*
