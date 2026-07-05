@@ -9304,3 +9304,13 @@ FLAG-179 logged -- TYOVA product health monitoring gap -- TY AI OS does not proa
 TYOVA GuardianSmsConsentPage.tsx -- converted interactive form to static consent documentation page -- Twilio A2P Error 30896 fix -- page now public no auth required -- all 8 content items present -- phone number visible -- Privacy Policy and Terms links present -- no form fields no checkbox no submit button -- S1 CLEAN -- verified incognito testing.tyova.ai/guardian-sms-consent
 
 **Status:** CLOSED
+
+### Entry-921 | FIX-901 | 2026-07-05 16:13 PDT San Diego -- 2026-07-05 16:14 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** a214229
+**Scope:** Dead code verification -- EcosystemFlow3DPage.tsx -- authPlatformRef enfPlatformRef ecoPlatformRef flagged as dead code in FIX-876 handoff -- verified active -- refs control platform disc visibility opacity and emissive pulse animation -- DO NOT DELETE -- documentation only
+
+Dead code verification only -- EcosystemFlow3DPage.tsx -- authPlatformRef enfPlatformRef ecoPlatformRef flagged as dead code in FIX-876 handoff note -- VERIFIED ACTIVE -- refs control platform disc visibility and opacity during tower constellation lerp transition lines 1647-1674 -- emissive pulse animation lines 1801-1803 -- DO NOT DELETE -- removing these refs would break platform disc fade in constellation mode and emissive pulse -- dead code flag from FIX-876 is incorrect -- permanently closed by verification -- no code changed
+
+**Status:** CLOSED
