@@ -9294,3 +9294,13 @@ SS321 App.tsx -- user_presence upsert keep-alive added -- immediate upsert on mo
 FLAG-179 logged -- TYOVA product health monitoring gap -- TY AI OS does not proactively detect broken UI features Supabase wiring failures or mobile behavior regressions -- Phase 16 deferred -- FLAGS.md 27822 to 30927 bytes -- 65 insertions -- references FIX-896 FIX-897 FIX-898 FLAG-35
 
 **Status:** CLOSED
+
+### Entry-920 | FIX-900 | 2026-07-05 15:35 PDT San Diego -- 2026-07-05 15:43 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 1fc7447
+**Scope:** TYOVA guardian-sms-consent page -- convert interactive form to static consent documentation page -- Twilio A2P campaign CM026a1ace4017fc366cb1d32e708bb266 rejected Error 30896 -- carrier reviewer cannot fill form in unauthenticated state -- static page requires no login -- clear opt-in language for carrier review -- Lovable only
+
+TYOVA GuardianSmsConsentPage.tsx -- converted interactive form to static consent documentation page -- Twilio A2P Error 30896 fix -- page now public no auth required -- all 8 content items present -- phone number visible -- Privacy Policy and Terms links present -- no form fields no checkbox no submit button -- S1 CLEAN -- verified incognito testing.tyova.ai/guardian-sms-consent
+
+**Status:** CLOSED
