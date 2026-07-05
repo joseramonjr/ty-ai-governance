@@ -9264,3 +9264,13 @@ FLAG-150 Enhancement 8 -- First-Person WARD Flythrough -- verification only -- E
 SS321 App.tsx -- ss321-presence channel keep-alive added -- useEffect in AppContent gated on user?.id -- channel.track every 20s -- dependency array user?.id -- unauthenticated visitors correctly show Offline -- authenticated users show Live -- verified PC login shows 1 Live -- phone login same account shows 1 Live -- brief Offline flash on second device join identified as debounce issue -- TYOVA debounce fix pending FIX-897
 
 **Status:** CLOSED
+
+### Entry-917 | FIX-897 | 2026-07-04 19:33 PDT San Diego -- 2026-07-04 19:49 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 8f2f44a
+**Scope:** EcosystemFlow3DPage.tsx -- SS321 presence debounce fix -- brief Offline flash when second device joins same account -- add 3s debounce on zero-count presence updates -- positive counts apply instantly -- Lovable only
+
+EcosystemFlow3DPage.tsx -- SS321 presence debounce fix -- ss321OfflineTimerRef added -- zero-count updates debounced 5s -- positive counts apply instantly -- timer cleared on unmount -- S1 CLEAN -- verified testing.tyova.ai/ecosystem-flow-3d -- no Offline flash on second device join -- phone backgrounded 30s still Live -- phone logout with PC active correctly shows 1 Live
+
+**Status:** CLOSED
