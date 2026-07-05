@@ -9254,3 +9254,13 @@ bookChapterContent.ts -- Ch26 compiledNote updated -- Current Term Count 402 cor
 FLAG-150 Enhancement 8 -- First-Person WARD Flythrough -- verification only -- Enhancement 8 was delivered by FIX-877 Entry-897 2026-06-29 -- GOVERNANCE TOUR button confirmed live at testing.tyova.ai/ecosystem-flow-3d -- click-to-fly confirmed -- tour cycles Authority to Enforcement to Ecosystem -- no build work this FIX
 
 **Status:** CLOSED
+
+### Entry-916 | FIX-896 | 2026-07-04 18:59 PDT San Diego -- 2026-07-04 19:31 PDT San Diego
+
+**Destination:** SS321
+**Commit:** lovable-ss321-presence-keepalive
+**Scope:** SS321 -- presence keep-alive fix -- mobile browsers suspend WebSocket connections causing ss321-presence channel to drop -- add heartbeat ping every 20s in SS321 main layout to maintain Realtime presence on mobile -- Enhancement 11 shows Offline for mobile users -- Lovable only
+
+SS321 App.tsx -- ss321-presence channel keep-alive added -- useEffect in AppContent gated on user?.id -- channel.track every 20s -- dependency array user?.id -- unauthenticated visitors correctly show Offline -- authenticated users show Live -- verified PC login shows 1 Live -- phone login same account shows 1 Live -- brief Offline flash on second device join identified as debounce issue -- TYOVA debounce fix pending FIX-897
+
+**Status:** CLOSED
