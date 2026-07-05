@@ -9274,3 +9274,13 @@ SS321 App.tsx -- ss321-presence channel keep-alive added -- useEffect in AppCont
 EcosystemFlow3DPage.tsx -- SS321 presence debounce fix -- ss321OfflineTimerRef added -- zero-count updates debounced 5s -- positive counts apply instantly -- timer cleared on unmount -- S1 CLEAN -- verified testing.tyova.ai/ecosystem-flow-3d -- no Offline flash on second device join -- phone backgrounded 30s still Live -- phone logout with PC active correctly shows 1 Live
 
 **Status:** CLOSED
+
+### Entry-918 | FIX-898 | 2026-07-04 19:58 PDT San Diego -- 2026-07-04 20:14 PDT San Diego
+
+**Destination:** SS321
+**Commit:** lovable-ss321-presence-upsert
+**Scope:** SS321 App.tsx -- user_presence last_seen_at upsert keep-alive -- 3D page polls user_presence with 2-minute recency window -- FIX-896 keep-alive updates Realtime channel only -- user_presence row goes stale after 2 minutes causing false Offline -- add upsert to user_presence every 60s alongside existing channel.track -- Lovable only
+
+SS321 App.tsx -- user_presence upsert keep-alive added -- immediate upsert on mount -- 60s refresh interval -- upsert sets user_id last_seen_at is_online -- onConflict user_id -- gated on user?.id -- fixes false Offline after 2-3 min inactivity -- verified 1 Live after 5 min idle -- drops to Offline within 2min 40sec after logout -- TypeScript clean
+
+**Status:** CLOSED
