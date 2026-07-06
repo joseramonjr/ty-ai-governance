@@ -25,6 +25,9 @@
 #   v3 2026-05-07 15:45 - FIX-396: two regex fixes:
 #   v4 2026-05-11 23:04 - FIX-475: MFI pipe-table detection fix
 #   v5 2026-05-19 11:08 - FIX-532: Jaya-Runtime added to GIT_REPOS
+#   v6 2026-07-05 22:47 - FIX-907: Product health checks added as Section 4
+#                         Check-TYOVAHealth.ps1 + Check-SS321Health.ps1
+#                         integrated as Pre-Flight gate -- FLAG-179 close
 #                         (1) MASTER_FIX_INDEX: now catches both ## FIX- and ### FIX-
 #                         (2) Ch18: now catches both ### Entry- and Entry-NNN | inline format
 # =============================================================================
@@ -364,6 +367,44 @@ if (Test-Path $CH26) {
 } else {
     Write-Host "  Ch26: FILE NOT FOUND" -ForegroundColor Red
     $actionItems += "Ch26 : file missing"
+}
+
+# =============================================================================
+# SECTION 4: Product Health Checks (FLAG-179 / FIX-907)
+# =============================================================================
+Write-Host ""
+Write-Host "[PRODUCT HEALTH]" -ForegroundColor Yellow
+
+$healthScriptDir = $PSScriptRoot
+
+# TYOVA Health Check
+$tyovaScript = Join-Path $healthScriptDir "Check-TYOVAHealth.ps1"
+if (Test-Path $tyovaScript) {
+    & $tyovaScript -Quiet
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "  TYOVA Health: FAIL -- run .\Check-TYOVAHealth.ps1 for details" -ForegroundColor Red
+        $actionItems += "TYOVA Health Check : one or more checks failed -- run Check-TYOVAHealth.ps1"
+    } else {
+        Write-Host "  TYOVA Health: PASS" -ForegroundColor Green
+    }
+} else {
+    Write-Host "  TYOVA Health: SKIP -- Check-TYOVAHealth.ps1 not found" -ForegroundColor Yellow
+    $actionItems += "TYOVA Health Check : Check-TYOVAHealth.ps1 missing from tools folder"
+}
+
+# SS321 Health Check
+$ss321Script = Join-Path $healthScriptDir "Check-SS321Health.ps1"
+if (Test-Path $ss321Script) {
+    & $ss321Script -Quiet
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "  SS321 Health: FAIL -- run .\Check-SS321Health.ps1 for details" -ForegroundColor Red
+        $actionItems += "SS321 Health Check : one or more checks failed -- run Check-SS321Health.ps1"
+    } else {
+        Write-Host "  SS321 Health: PASS" -ForegroundColor Green
+    }
+} else {
+    Write-Host "  SS321 Health: SKIP -- Check-SS321Health.ps1 not found" -ForegroundColor Yellow
+    $actionItems += "SS321 Health Check : Check-SS321Health.ps1 missing from tools folder"
 }
 
 # =============================================================================
