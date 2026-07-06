@@ -9334,3 +9334,13 @@ Book of TY Chapter 84 committed to ty-ai-governance -- published to TYOVA -- cha
 BookOfTyIndex.tsx -- Phase banner updated Phase 14 to Phase 15 Complete -- Living count updated 11 to 12 -- Phases Documented updated 14 to 15 via masterHubRegistry.ts -- all four stats verified live testing.tyova.ai/book -- 84 total 71 sealed 12 living 15 phases -- S1 CLEAN both commits -- TYOVA commits 5031934 and b78cff1
 
 **Status:** CLOSED
+
+### Entry-924 | FIX-904 | 2026-07-05 21:23 PDT San Diego -- 2026-07-05 21:26 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 1e54a74
+**Scope:** FLAGS.md -- FLAG-178 CLOSED -- governance record closure -- code delivered FIX-882 cfe3d29 2026-07-01
+
+FLAGS.md FLAG-178 CLOSED -- governance record closure -- code delivered FIX-882 cfe3d29 -- FLAG-179 em dash encoding restored
+
+**Status:** CLOSED
