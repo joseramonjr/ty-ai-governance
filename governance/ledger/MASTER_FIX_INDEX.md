@@ -1,4 +1,4 @@
-﻿# MASTER_FIX_INDEX
+# MASTER_FIX_INDEX
 
 Status: Active
 ---
@@ -5183,4 +5183,4 @@ at every session. Same-question-different-wording problem solved.
 
 | FIX-904 | 2026-07-05 21:23 PDT San Diego -- 2026-07-05 21:26 PDT San Diego | ty-ai-governance | FLAGS.md -- FLAG-178 CLOSED -- governance record closure -- code delivered FIX-882 cfe3d29 2026-07-01. FLAGS.md FLAG-178 CLOSED -- governance record closure -- code delivered FIX-882 cfe3d29 -- FLAG-179 em dash encoding restored Commit 1e54a74. CLOSED |
 
-| FIX-905 | 2026-07-05 21:44 PDT San Diego -- 2026-07-05 21:50 PDT San Diego | ty-ai-governance | Check-TYOVAHealth.ps1 -- new script -- TYOVA page reachability + Supabase governance event recency T-06 30s + user_presence check -- FLAG-179 partial. Check-TYOVAHealth.ps1 created -- 2 checks -- 5 pages PASS -- jaya_audit_events T-06 PASS -- all green -- FLAG-179 partial Commit HASH. CLOSED |
+| FIX-905 | 2026-07-05 21:44 PDT San Diego -- 2026-07-05 21:50 PDT San Diego | ty-ai-governance | Check-TYOVAHealth.ps1 -- new script -- TYOVA page reachability + Supabase governance event recency T-06 30s + user_presence check -- FLAG-179 partial. Check-TYOVAHealth.ps1 created -- 2 checks -- 5 pages PASS -- jaya_audit_events T-06 PASS -- all green -- FLAG-179 partial Commit 7328174. CLOSED |
