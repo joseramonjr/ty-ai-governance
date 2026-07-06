@@ -9344,3 +9344,13 @@ BookOfTyIndex.tsx -- Phase banner updated Phase 14 to Phase 15 Complete -- Livin
 FLAGS.md FLAG-178 CLOSED -- governance record closure -- code delivered FIX-882 cfe3d29 -- FLAG-179 em dash encoding restored
 
 **Status:** CLOSED
+
+### Entry-925 | FIX-905 | 2026-07-05 21:44 PDT San Diego -- 2026-07-05 21:50 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** HASH
+**Scope:** Check-TYOVAHealth.ps1 -- new script -- TYOVA page reachability + Supabase governance event recency T-06 30s + user_presence check -- FLAG-179 partial
+
+Check-TYOVAHealth.ps1 created -- 2 checks -- 5 pages PASS -- jaya_audit_events T-06 PASS -- all green -- FLAG-179 partial
+
+**Status:** CLOSED
