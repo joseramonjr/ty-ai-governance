@@ -528,7 +528,7 @@ Enhancement 11 (FIX-880) -- SS321 live user count, cross-repository Supabase int
 
 **Related:** FLAG-177 (VITE_SS321_SUPABASE_URL audit, surfaced during Enhancement 11 build on this FLAG)
 
-## FLAG-178 | OPEN | EcosystemFlow3D -- Missing 11 Nodes from 2D Ecosystem Map
+## FLAG-178 | CLOSED | EcosystemFlow3D -- Missing 11 Nodes from 2D Ecosystem Map
 **Logged:** 2026-06-30 09:48 PDT San Diego
 
 **Finding:** The 2D EcosystemFlowPage.tsx defines 25 nodes total (including Human Guardian). The 3D EcosystemFlow3DPage.tsx (FLAG-150) defines only 18 WARDs. Direct comparison confirms 11 nodes present in the 2D page are absent from the 3D page:
@@ -553,12 +553,23 @@ Enhancement 11 (FIX-880) -- SS321 live user count, cross-repository Supabase int
 
 **Related:** FLAG-150 (EcosystemFlow3D)
 
+**Closed:** 2026-07-05 21:23 PDT San Diego
+**FIX:** FIX-882 | Commit cfe3d29 | 2026-07-01 10:02 PDT San Diego
+**Close note:** All 11 missing nodes added to EcosystemFlow3DPage.tsx in FIX-882.
+Nodes ty_knowledge, alert, nwp, selfHeal, evoEngine, proof7777, status, fedPeers,
+verifier, compliance, attestation added with CONST_POS constellation positions at
+radii 11, 17, and 24. evoEngine confirmed distinct from existing evolution WARD --
+both present in 3D page. Dynamic boundary sphere scaling tower-to-constellation added.
+High-res governance boundary label 2048x128 canvas added. Verified live at
+testing.tyova.ai/ecosystem-flow-3d. Governance record closure only -- code work
+completed in FIX-882. FLAG-150 dead-code prerequisite satisfied by FIX-901.
+
 ## FLAG-179 — TYOVA Product Health Monitoring Gap
 **Logged:** 2026-07-04 20:22 PDT San Diego
 **FIX:** FIX-899 / Entry-919
 **Phase:** Phase 16 (deferred)
 **Status:** OPEN
-**Classification:** Architectural Gap — Product Layer
+**Classification:** Architectural Gap â€” Product Layer
 
 ### Summary
 TY AI OS does not proactively detect or report broken UI features,
@@ -566,7 +577,7 @@ Supabase wiring failures, or mobile behavior regressions on TYOVA or
 SS321. Every product-layer issue discovered to date has been found by
 the Human Guardian during manual testing, not by the system itself.
 
-### Evidence — Issues Found Manually July 4 2026
+### Evidence â€” Issues Found Manually July 4 2026
 The following issues were discovered by the builder during the July 4
 2026 session. None were flagged by TY AI OS proactively:
 
