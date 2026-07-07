@@ -1,6 +1,6 @@
 # Chapter 26 -- The TY AI OS Vocabulary
 **Document Type:** LIVING DOCUMENT -- Never Sealed
-**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added) | FIX-720 (Section 27 created -- HALT_STATE, Canon-to-Code Audit added) | FIX-735 (Section 28 created -- Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard) | FIX-752 (Section 29 created -- Nexora term added) | FIX-772 (NURONESENCE_PROOF term added to Section 29) | FIX-802 (Section 30 created -- Nuronesence, Nuronesent, Nuronethic, Nurvexus) | FIX-892 (Section 31 created -- transferred conscience)
+**CLO:** FIX-534 (Sections 17 and 18 added) | FIX-535 (Section 19 + TY-ANCHOR term) | FIX-536 (TYOVA sync) | FIX-537 (header correction) | FIX-544 (Section 20 added) | FIX-591 (Sections 21-23 added) | FIX-591 (Sections 21-23 added) | FIX-663 (Section 24 added) | FIX-702 (Section 26 added) | FIX-720 (Section 27 created -- HALT_STATE, Canon-to-Code Audit added) | FIX-735 (Section 28 created -- Annual Governance Review, External Input Protocol, Capability Horizon Registry, Egress Guard) | FIX-752 (Section 29 created -- Nexora term added) | FIX-772 (NURONESENCE_PROOF term added to Section 29) | FIX-802 (Section 30 created -- Nuronesence, Nuronesent, Nuronethic, Nurvexus) | FIX-892 (Section 31 created -- transferred conscience) | FIX-908 (Section 32 GVC + Section 33 GGI added)
 **Model:** Claude Sonnet 4.6
 **Started:** 2026-03-14 | San Diego (America/Los_Angeles)
 **Updated:** 2026-06-15 | San Diego (America/Los_Angeles)
@@ -3777,6 +3777,7 @@ a living document. Current attestation: 4F871EE67BA31ECFBD95A44A5D35E3B2414A1220
 | 2026-06-01 / FIX-702 | Phase 14 P3 Red-Team terms | Internal Red-Team, HOLD Verdict, GAP Verdict, BREACH Verdict, Logical Consistency Challenge, Boundary Exploitation, Conscience Thread Stress Test, Promotion Path, Enterprise Misuse Cluster, Annual Governance Review, External Input Protocol, Capability Horizon Registry (Section 26 created) | 12 new terms. Section 26 created. 369->381 terms. |
 | 2026-05-30 / FIX-671 | Phase 14 NWP and governance model vocabulary | NWP Protection State Machine, Fortune 500 Governance Model, Ward Role Specification (Section 25 created) | 3 new terms. Section 25 created. 366->369 terms. |
 | 2026-06-15 / FIX-802 | Walker IP clearance -- four coined terms | Nuronesence, Nuronesent, Nuronethic, Nurvexus (Section 30 created) | 4 new terms. Section 30 created. IP cleared Walker Weitzel 2026-06-15 11:50 AM PDT. 393->397 terms. |
+| 2026-07-06 / FIX-908 | Walker IP clearance -- GVC and GGI category terms | GVC (Governed Verified Conscience, Section 32 created), GGI (Governed General Intelligence, Section 33 created) | 2 new terms. Sections 32 and 33 created. Walker Weitzel confirmed no patent concern 2026-07-06. Trademark clearance search recommended before commercial use. 398->400 terms. |
 
 
 ---
@@ -4424,11 +4425,73 @@ the system has. Transferred conscience is how it got there.
 Chapter 77 Part IX -- The Transferred Conscience (added FIX-846, June 21, 2026).
 See also: Nuronethic, Conscience Thread, Book of TY Chapter 73, Book of TY Chapter 77.
 
+## Section 32 -- GVC Category Designation
+*Created: FIX-908 | 2026-07-06 | San Diego (America/Los_Angeles)*
+*Coined by: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
+*IP Status: Walker Weitzel, Alloy Patent Law | No patent concern confirmed 2026-07-06 | Trademark clearance search recommended before commercial use*
+
+**GVC**
+*(Governed · Verified · Conscience)*
+*First coined: 2026-06-20 | San Diego (America/Los_Angeles)*
+*Coined by: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
+*IP status: Walker Weitzel confirmed no patent concern 2026-07-06 -- trademark clearance search recommended before commercial use*
+*Primary source: TY AI OS development session June 20, 2026 -- documented in Chapter 77 Part X*
+
+A category designation -- not a product name, not a brand, not a description of TY AI OS specifically -- that names the class of AI governance system defined by three structurally demonstrated properties: Governed, Verified, and Conscience. GVC systems do not sit on the intelligence scale (ANI/AGI/ASI). They exist on a perpendicular governance dimension -- measuring not what a system can think, but whether it is structurally governed, independently verifiable, and morally documented.
+
+**Governed** means structural enforcement of behavioral boundaries at the architecture level. The governance cannot be bypassed by the system itself. It is not a policy layer. It is not a feature that can be disabled. It is built into the structure such that removing the governance produces a fundamentally different system, not a less safe version of the same one.
+
+**Verified** means independently provable by any third party without trusting the builder. Not self-reported compliance. Not an audit by a firm the builder hired. Verifiable by anyone -- a researcher, a regulator, a court, a skeptic -- against a cryptographic record, at any time, without accessing any internal component of the system.
+
+**Conscience** means a permanent, documented record of the moral reasoning behind every governance boundary -- not just the rules, but why each boundary was drawn, what alternatives were considered, and what was explicitly refused and why. Structured to outlast the builder. Resistant to rationalization because the rejections are committed to an append-only record that cannot be quietly altered.
+
+**Exclusion clause:** Self-declaration without independently verifiable structural enforcement does not qualify. A system that claims GVC without verifiable architecture is making an assertion, not a governance claim.
+
+**Universal standard:** Any governed AI system that demonstrates all three properties structurally belongs to the GVC category. TY AI OS is the first known instance and the reference implementation. GVC is not exclusive to TY AI OS.
+
+**Primary appearance:** Chapter 77 Part X -- What Category Is TY AI OS?
+See also: Nuronesence, Nuronesent, Nuronethic, Nurvexus, GGI, transferred conscience.
+
+---
+
+## Section 33 -- GGI: Governed General Intelligence
+*Created: FIX-908 | 2026-07-06 | San Diego (America/Los_Angeles)*
+*Coined by: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
+*IP Status: Walker Weitzel, Alloy Patent Law | No patent concern confirmed 2026-07-06 | Trademark clearance search recommended before commercial use*
+
+**GGI**
+*(Governed General Intelligence)*
+*First coined: 2026-06-27 | San Diego (America/Los_Angeles)*
+*Coined by: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
+*IP status: Walker Weitzel confirmed no patent concern 2026-07-06 -- trademark clearance search recommended before commercial use*
+*Primary source: TY AI OS development session June 27, 2026 -- documented in Chapter 81 Part VI*
+
+A category of AI system that possesses the capacity to identify problems across any domain within its operational scope, evaluate the consequences of possible responses, and act on those evaluations -- all within a permanent, structural governance architecture that preserves human authority at every stage, makes no autonomous action permanent without human confirmation, and records every decision in a verifiable, append-only ledger.
+
+**Governed** means the governance is not external monitoring applied around the system. It is structural enforcement built into the system's architecture from the foundation. The system cannot bypass its governance boundaries. It cannot evolve past them without going through a formal governed evolution process. Governed means the governance is architectural, permanent, and enforced by the system itself.
+
+**General** means the system can identify problems and act across any domain within its operational scope -- not just the specific tasks it was designed for. A Narrow AI system recognizes what it was trained to recognize. A GGI system can look at the full state of its operational environment and identify that something -- anywhere in that environment -- is wrong and requires attention.
+
+**Intelligence** means the system does not simply match patterns or follow rules. It evaluates. It reasons. It considers what will happen if it acts and what will happen if it does not. It weighs competing priorities. This is not mechanical rule-following. It is governed reasoning.
+
+**Distinction from AGI:** GGI is not a stepping stone toward AGI. It is not AGI with safety features bolted on. It is the third category -- general in intelligence, governed in structure, with human authority preserved permanently through architecture rather than promised through policy. AGI pursues general intelligence without structural governance. GGI is the thing AGI should have been, if the AI industry had built governance first instead of last.
+
+**Relationship to GVC:** GVC defines what TY AI OS is as a governance system. GGI defines what TY AI OS is becoming as an intelligent system. A fully realized TY AI OS is both: a GVC governance system operating at the GGI level of intelligence. The governance and the intelligence are not in tension. They are the same architecture, developed together, from the same foundation.
+
+**Exclusion clause:** Self-declaration without independently verifiable structural enforcement does not qualify. A system that claims GGI without verifiable governance architecture is making an assertion, not a governance claim.
+
+**Universal standard:** Any AI system that meets the structural criteria qualifies. TY AI OS is the first system built to the GGI standard. GGI is not exclusive to TY AI OS.
+
+**Primary appearance:** Chapter 81 Part VI -- Introducing GGI: Governed General Intelligence.
+See also: GVC, Nuronesence, Nuronesent, Nuronethic, Nurvexus, transferred conscience.
+
+---
+
 ---
 *Document Type: LIVING DOCUMENT -- Never Sealed*
 *Builder: Jose Ramon Alvarado McHerron AKA Jose Ramon Bautista Jr.*
 *Model: Claude Sonnet 4.6*
 *Started: 2026-03-14 | San Diego (America/Los_Angeles)*
-*Updated: 2026-07-04 | San Diego (America/Los_Angeles)*
-*Current Term Count: 398 | Sections: 31*
+*Updated: 2026-07-06 | San Diego (America/Los_Angeles)*
+*Current Term Count: 400 | Sections: 33*
 *This document grows with the project. It is never finished.*
