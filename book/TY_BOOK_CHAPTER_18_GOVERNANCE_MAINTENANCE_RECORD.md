@@ -9474,3 +9474,13 @@ EcosystemFlow4DPage.tsx -- time plane opacity 0.08 to 0.25 -- grid opacity 0.35 
 EcosystemFlow4DPage.tsx -- time plane color 0x00ffff -- grid lines 0x00ddee 0x0099aa -- orb rise dt/3.5 -- node pulse 1.8 -- pulse scale 0.8 -- emissive 2.5 -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-938 | FIX-918 | 2026-07-07 19:43 PDT San Diego -- 2026-07-07 19:48 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** ac9278c
+**Scope:** EcosystemFlow4DPage.tsx + PublicLayout.tsx -- 4D page minimal nav overlay -- PublicLayout Jaya Runtime dropdown link to ecosystem-flow-4d
+
+EcosystemFlow4DPage.tsx nav overlay added -- 2D 3D 4D TYOVA links top-right -- PublicLayout.tsx Ecosystem Flow 4D added to Jaya Runtime dropdown -- both S1 CLEAN
+
+**Status:** CLOSED
