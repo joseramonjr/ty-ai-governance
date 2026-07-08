@@ -9454,3 +9454,13 @@ EcosystemFlow4DPage.tsx -- PerspectiveCamera FOV 55 to 75 -- wider field of view
 EcosystemFlow4DPage.tsx -- top-level div h-screen replaced with 100dvh inline style -- matches 3D page full viewport behavior -- canvas now fills full browser window -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-936 | FIX-916 | 2026-07-07 19:21 PDT San Diego -- 2026-07-07 19:25 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 027be24
+**Scope:** EcosystemFlow4DPage.tsx -- wow factor -- time plane opacity 0.08 to 0.25 -- grid opacity 0.35 to 0.65 -- event orb radius 0.55 to 1.8 -- orb color brighter -- marker radius 0.7 to 1.8
+
+EcosystemFlow4DPage.tsx -- time plane opacity 0.08 to 0.25 -- grid opacity 0.35 to 0.65 -- orb radius 0.55 to 1.8 -- orb color 0x00ffff -- marker radius 0.7 to 1.8 -- wow factor applied -- S1 CLEAN
+
+**Status:** CLOSED
