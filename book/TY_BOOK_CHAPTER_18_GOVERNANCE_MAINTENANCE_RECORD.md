@@ -9534,3 +9534,13 @@ GovernanceTimelinePage.tsx -- 16 phases -- route /governance-timeline registered
 FLAG-35 TYOVA Health Button -- JayaHealthButton inline component added to HUD telemetry panel -- EcosystemFlow4DPage.tsx -- status ONLINE SILENT OFFLINE teal amber red -- last event age live 10s interval -- session event count -- click popover with exact timestamp ISO and readable PT -- REFRESH via refreshKey re-subscribe -- 1207 lines -- visual verified testing.tyova.ai -- Integrity-Scan PASS -- Fable 5 authored Lovable applied
 
 **Status:** CLOSED
+
+### Entry-944 | FIX-924 | 2026-07-07 22:34 PDT San Diego -- 2026-07-07 22:51 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** d6a37f0
+**Scope:** FLAG-35 TYOVA Health Button -- JayaHealthButton component -- inside HUD panel -- EcosystemFlow3DPage.tsx -- same design as FIX-923 4D implementation -- Fable 5 Lovable only
+
+FLAG-35 TYOVA Health Button -- JayaHealthButton inline component added to HUD telemetry panel -- EcosystemFlow3DPage.tsx -- status ONLINE SILENT OFFLINE teal amber red -- last event age live 10s interval -- session event count -- click popover with exact timestamp ISO and readable PT -- REFRESH via __ty3dJayaRefresh window bridge -- no refreshKey scene teardown -- lastJayaEventAt state one line in handleEvent -- 2646 lines -- visual verified testing.tyova.ai -- JAYA ONLINE confirmed -- Constellation button overlap noted deferred to FIX-925 -- Fable 5 authored Lovable applied
+
+**Status:** CLOSED
