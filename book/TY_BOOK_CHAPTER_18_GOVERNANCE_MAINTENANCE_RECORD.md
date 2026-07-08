@@ -9424,3 +9424,13 @@ Ch26 line 8 term count corrected 398 to 400 -- GVC GGI added to count chain -- P
 EcosystemFlow4DPage.tsx created -- Live + Historical Playback modes -- 25 WARD nodes -- Fable 5 authored -- route /ecosystem-flow-4d registered -- ONLINE verified -- 43 events received -- time plane live -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-933 | FIX-913 | 2026-07-07 18:30 PDT San Diego -- 2026-07-07 18:33 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 3b7cf96
+**Scope:** EcosystemFlow4DPage.tsx -- camera zoom range adjustment -- min 30 to 45 -- max 180 to 280 -- starting radius 78 to 95 -- more nodes visible when zoomed in
+
+EcosystemFlow4DPage.tsx -- camRadius start 78 to 95 -- zoom clamp min 30 to 45 max 180 to 280 -- more nodes visible when zoomed in -- S1 CLEAN
+
+**Status:** CLOSED
