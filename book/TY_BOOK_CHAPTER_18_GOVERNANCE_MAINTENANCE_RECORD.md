@@ -9464,3 +9464,13 @@ EcosystemFlow4DPage.tsx -- top-level div h-screen replaced with 100dvh inline st
 EcosystemFlow4DPage.tsx -- time plane opacity 0.08 to 0.25 -- grid opacity 0.35 to 0.65 -- orb radius 0.55 to 1.8 -- orb color 0x00ffff -- marker radius 0.7 to 1.8 -- wow factor applied -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-937 | FIX-917 | 2026-07-07 19:32 PDT San Diego -- 2026-07-07 19:34 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** a56ead7
+**Scope:** EcosystemFlow4DPage.tsx -- wow factor v2 -- time plane color bright -- grid lines visible -- orb rise slower -- node pulse stronger
+
+EcosystemFlow4DPage.tsx -- time plane color 0x00ffff -- grid lines 0x00ddee 0x0099aa -- orb rise dt/3.5 -- node pulse 1.8 -- pulse scale 0.8 -- emissive 2.5 -- S1 CLEAN
+
+**Status:** CLOSED
