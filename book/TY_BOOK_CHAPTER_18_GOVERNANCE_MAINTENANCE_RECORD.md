@@ -9544,3 +9544,13 @@ FLAG-35 TYOVA Health Button -- JayaHealthButton inline component added to HUD te
 FLAG-35 TYOVA Health Button -- JayaHealthButton inline component added to HUD telemetry panel -- EcosystemFlow3DPage.tsx -- status ONLINE SILENT OFFLINE teal amber red -- last event age live 10s interval -- session event count -- click popover with exact timestamp ISO and readable PT -- REFRESH via __ty3dJayaRefresh window bridge -- no refreshKey scene teardown -- lastJayaEventAt state one line in handleEvent -- 2646 lines -- visual verified testing.tyova.ai -- JAYA ONLINE confirmed -- Constellation button overlap noted deferred to FIX-925 -- Fable 5 authored Lovable applied
 
 **Status:** CLOSED
+
+### Entry-945 | FIX-925 | 2026-07-07 22:53 PDT San Diego -- 2026-07-07 23:02 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 8e1d73c
+**Scope:** EcosystemFlow3DPage.tsx -- shift Constellation Mode button and Authority Tower View button stack down 70px to clear expanded HUD panel bottom edge -- health display overlap fix -- Lovable only
+
+EcosystemFlow3DPage.tsx -- layout-only fix -- shift Constellation Mode top 180 to 250 -- Governance Tour top 230 to 300 -- Time-Lapse Replay top 265 to 335 -- clears expanded HUD panel bottom edge -- health display overlap resolved -- visual verified testing.tyova.ai -- all buttons functional -- Fable 5 authored Lovable applied
+
+**Status:** CLOSED
