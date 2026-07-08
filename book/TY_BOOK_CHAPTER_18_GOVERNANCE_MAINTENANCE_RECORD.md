@@ -9434,3 +9434,13 @@ EcosystemFlow4DPage.tsx created -- Live + Historical Playback modes -- 25 WARD n
 EcosystemFlow4DPage.tsx -- camRadius start 78 to 95 -- zoom clamp min 30 to 45 max 180 to 280 -- more nodes visible when zoomed in -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-934 | FIX-914 | 2026-07-07 18:36 PDT San Diego -- 2026-07-07 18:37 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 3210ab8
+**Scope:** EcosystemFlow4DPage.tsx -- PerspectiveCamera FOV 55 to 75 -- wider field of view -- more scene visible
+
+EcosystemFlow4DPage.tsx -- PerspectiveCamera FOV 55 to 75 -- wider field of view -- more scene visible on screen -- S1 CLEAN
+
+**Status:** CLOSED
