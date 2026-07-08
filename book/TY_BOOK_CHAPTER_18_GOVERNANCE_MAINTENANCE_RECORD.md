@@ -9444,3 +9444,13 @@ EcosystemFlow4DPage.tsx -- camRadius start 78 to 95 -- zoom clamp min 30 to 45 m
 EcosystemFlow4DPage.tsx -- PerspectiveCamera FOV 55 to 75 -- wider field of view -- more scene visible on screen -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-935 | FIX-915 | 2026-07-07 18:43 PDT San Diego -- 2026-07-07 18:46 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 22e36c9
+**Scope:** EcosystemFlow4DPage.tsx -- fix canvas height -- h-screen to 100dvh inline style -- match 3D page full viewport behavior
+
+EcosystemFlow4DPage.tsx -- top-level div h-screen replaced with 100dvh inline style -- matches 3D page full viewport behavior -- canvas now fills full browser window -- S1 CLEAN
+
+**Status:** CLOSED
