@@ -9504,3 +9504,13 @@ EcosystemFlow3DPage.tsx + EcosystemFlowPage.tsx -- View 4D Model link added to b
 JayaOfflineBanner.tsx created -- 409 lines -- T-09 10min -- red offline -- amber unreachable -- 5min dismiss -- Fable 5 authored -- file only no page import yet -- S1 CLEAN -- FLAG-35 partial
 
 **Status:** CLOSED
+
+### Entry-941 | FIX-921 | 2026-07-07 20:16 PDT San Diego -- 2026-07-07 20:26 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 349ed28
+**Scope:** JayaOfflineBanner -- import and render on EcosystemFlow4DPage.tsx and EcosystemFlow3DPage.tsx -- FLAG-35 partial
+
+JayaOfflineBanner imported and rendered -- 4D line 972 -- 3D line 2126 -- Lovable eventually applied -- VS Code edits skipped by rebase as duplicate -- FLAG-35 partial
+
+**Status:** CLOSED
