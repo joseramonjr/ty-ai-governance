@@ -9574,3 +9574,13 @@ EcosystemFlow4DPage.tsx -- 4D wow factor v3 -- Guardian Beam gold vertical pulse
 EcosystemFlow4DPage.tsx -- 4D depth plane echo orbs -- real governance events spawn secondary echo orb from historical depth plane position (TIME_PLANE_Y - 2.6) -- same node target -- 0.6x scale -- 0.5 opacity -- 1.2x rise duration trailing effect -- echoOrbsRef separate from orbsRef -- RisingOrb interface reused -- cleanup in clearTemporalObjects and scene teardown -- Zero-Fabrication compliant -- visual verified testing.tyova.ai -- Integrity-Scan PASS -- Fable 5 authored Lovable applied -- 1445 lines
 
 **Status:** CLOSED
+
+### Entry-948 | FIX-928 | 2026-07-08 20:37 PDT San Diego -- 2026-07-08 21:04 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** c180f4e
+**Scope:** EcosystemFlow4DPage.tsx -- remove false constellation mesh -- replace with authority chain lines following true governance flow -- Guardian to Authority to Enforcement to Ecosystem -- architecturally accurate -- Zero-Fabrication -- Fable 5 Lovable only
+
+EcosystemFlow4DPage.tsx -- removed false constellation mesh connecting all 25 nodes -- replaced with authority chain lines Guardian apex to Authority layer gold -- Authority to Jaya teal -- Jaya to Ecosystem purple -- architecturally inaccurate topology identified post-deploy -- FIX-929 will correct to Jaya-centric model matching 2D -- 1494 lines -- Integrity-Scan PASS -- Fable 5 authored Lovable applied
+
+**Status:** CLOSED
