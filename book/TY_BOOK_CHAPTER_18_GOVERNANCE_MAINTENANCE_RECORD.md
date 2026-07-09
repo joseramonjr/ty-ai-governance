@@ -9604,3 +9604,13 @@ EcosystemFlow4DPage.tsx -- replaced false authority chain lines with accurate Ja
 EcosystemFlow4DPage.tsx -- Human Guardian gold sphere at beam apex -- Human Guardian label in gold -- sphere emissive pulse reuses beamPulseRef -- all 5 Human Guardian connection lines re-anchored to sphere apex via resolveFlowPos helper -- advisory lines from luke jayme alert evoEngine now terminate at apex -- makeLabelSprite optional color parameter -- visual verified testing.tyova.ai -- 1621 lines -- Fable 5 authored Lovable applied
 
 **Status:** CLOSED
+
+### Entry-951 | FIX-931 | 2026-07-08 23:02 PDT San Diego -- 2026-07-09 00:02 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** e26b3ec
+**Scope:** EcosystemFlow4DPage.tsx -- restructure to 7 layers matching 2D model -- add codex tyos compliance attestation nodes -- reposition all nodes to correct layers -- update all connections -- Fable 5 Lovable only
+
+EcosystemFlow4DPage.tsx -- restructured to 7 layers matching 2D model -- added codex Guardian Codex and tyos TY AI OS Core as new nodes -- compliance and attestation updated in place -- all 31 nodes repositioned to correct layers -- specification knowledge advisory enforcement_hub enforcement external -- 55 flow connections verified -- Human Guardian sphere anchor correct -- visual verified testing.tyova.ai -- Integrity-Scan PASS -- Fable 5 authored Lovable applied -- 1693 lines
+
+**Status:** CLOSED
