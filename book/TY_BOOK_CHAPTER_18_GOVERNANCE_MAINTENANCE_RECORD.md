@@ -9564,3 +9564,13 @@ EcosystemFlow3DPage.tsx -- layout-only fix -- shift Constellation Mode top 180 t
 EcosystemFlow4DPage.tsx -- 4D wow factor v3 -- Guardian Beam gold vertical pulse -- event shockwave ring expansion -- historical depth second time plane -- WARD constellation lines -- REFRESH seed fix via ingestLiveEvent gap recovery -- channel unique name per refreshKey -- onMouseDown stopPropagation -- 1377 lines -- visual verified testing.tyova.ai -- all four enhancements live -- REFRESH architecturally correct -- Fable 5 authored Lovable applied
 
 **Status:** CLOSED
+
+### Entry-947 | FIX-927 | 2026-07-08 19:30 PDT San Diego -- 2026-07-08 20:17 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 0c0f7a7
+**Scope:** EcosystemFlow4DPage.tsx -- 4D depth plane echo orbs -- real governance events spawn secondary orb from historical depth plane position -- same event same node target -- smaller scale lower opacity -- Zero-Fabrication compliant -- Fable 5 Lovable only
+
+EcosystemFlow4DPage.tsx -- 4D depth plane echo orbs -- real governance events spawn secondary echo orb from historical depth plane position (TIME_PLANE_Y - 2.6) -- same node target -- 0.6x scale -- 0.5 opacity -- 1.2x rise duration trailing effect -- echoOrbsRef separate from orbsRef -- RisingOrb interface reused -- cleanup in clearTemporalObjects and scene teardown -- Zero-Fabrication compliant -- visual verified testing.tyova.ai -- Integrity-Scan PASS -- Fable 5 authored Lovable applied -- 1445 lines
+
+**Status:** CLOSED
