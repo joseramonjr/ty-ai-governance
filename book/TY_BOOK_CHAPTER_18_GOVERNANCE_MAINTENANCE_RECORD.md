@@ -9614,3 +9614,13 @@ EcosystemFlow4DPage.tsx -- Human Guardian gold sphere at beam apex -- Human Guar
 EcosystemFlow4DPage.tsx -- restructured to 7 layers matching 2D model -- added codex Guardian Codex and tyos TY AI OS Core as new nodes -- compliance and attestation updated in place -- all 31 nodes repositioned to correct layers -- specification knowledge advisory enforcement_hub enforcement external -- 55 flow connections verified -- Human Guardian sphere anchor correct -- visual verified testing.tyova.ai -- Integrity-Scan PASS -- Fable 5 authored Lovable applied -- 1693 lines
 
 **Status:** CLOSED
+
+### Entry-952 | FIX-932 | 2026-07-09 15:14 PDT San Diego -- 2026-07-09 15:16 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** a14e86a
+**Scope:** Book of TY Chapter 82 -- The Patent Diary -- The Record of How TY AI OS Became Patent Pending -- provisional patent application 64/107,220 filed 2026-07-08 -- living document never sealed -- VS Code copy
+
+Book of TY Chapter 82 -- The Patent Diary -- The Record of How TY AI OS Became Patent Pending -- 11 parts -- 267 lines -- 29720 bytes -- provisional patent application 64/107,220 filed 2026-07-08 12:17:47 PM ET -- inventor Jose Ramon Alvarado McHerron -- attorney Walker Weitzel Alloy Patent Law -- living document never sealed -- VS Code copy -- Integrity-Scan PASS -- Commit a14e86a
+
+**Status:** CLOSED
