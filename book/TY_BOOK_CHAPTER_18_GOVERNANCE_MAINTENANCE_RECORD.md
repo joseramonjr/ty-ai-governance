@@ -9594,3 +9594,13 @@ EcosystemFlow4DPage.tsx -- removed false constellation mesh connecting all 25 no
 EcosystemFlow4DPage.tsx -- replaced false authority chain lines with accurate Jaya-centric connection topology matching 2D model -- 5 color-grouped LineSegments -- Jaya as central hub -- gold Human Guardian to Jaya -- teal Jaya outbound 13 connections -- teal Jaya inbound 7 connections -- amber advisory lines to Human Guardian -- slate other connections -- removed pre-existing false hub-spoke lines -- removed dead jayaPos -- pulse on real events -- visual verified testing.tyova.ai -- Integrity-Scan PASS -- Fable 5 authored Lovable applied -- 1551 lines
 
 **Status:** CLOSED
+
+### Entry-950 | FIX-930 | 2026-07-08 22:10 PDT San Diego -- 2026-07-08 23:00 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 7ec977b
+**Scope:** EcosystemFlow4DPage.tsx -- add Human Guardian sphere and label at Guardian Beam apex -- gold sphere -- Human Guardian label -- makes apex node visually consistent with all other governance nodes -- Fable 5 Lovable only
+
+EcosystemFlow4DPage.tsx -- Human Guardian gold sphere at beam apex -- Human Guardian label in gold -- sphere emissive pulse reuses beamPulseRef -- all 5 Human Guardian connection lines re-anchored to sphere apex via resolveFlowPos helper -- advisory lines from luke jayme alert evoEngine now terminate at apex -- makeLabelSprite optional color parameter -- visual verified testing.tyova.ai -- 1621 lines -- Fable 5 authored Lovable applied
+
+**Status:** CLOSED
