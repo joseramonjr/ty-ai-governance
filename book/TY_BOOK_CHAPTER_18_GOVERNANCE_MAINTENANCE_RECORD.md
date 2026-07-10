@@ -9644,3 +9644,13 @@ EcosystemFlow3DPage.tsx -- restructure to 7 layers matching 2D and 4D models -- 
 EcosystemFlow4DPage.tsx -- Tier 1 visual enhancements -- E1 geodesic boundary sphere radius 70 -- E2 six layer labels GUARDIAN APEX through EXTERNAL SYSTEMS plus five platform discs with red enforcement rim -- E3 node glow NODE_REST_EMISSIVE 0.85 plus static additive halo sprites all 31 nodes plus Human Guardian Sphere -- additive only -- two-site disclosed emissive literal swap -- no idle animation -- Zero-Fabrication verified -- 1893 lines -- no BOM -- Fable 5 authored Lovable applied -- live verified testing.tyova.ai/ecosystem-flow-4d -- Commit 80a12f5
 
 **Status:** CLOSED
+
+### Entry-955 | FIX-935 | 2026-07-09 21:52 PDT San Diego -- 2026-07-09 22:08 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 6ed6ab5
+**Scope:** EcosystemFlow4DPage.tsx -- Tier 2 E4 Time River -- last 24h real events as particle river between depth plane and main plane -- real data real time motion only -- HIST_TIME_SCALE mapping -- RAF additions disclosed -- Zero-Fabrication -- Lovable only -- Fable 5 authored
+
+EcosystemFlow4DPage.tsx -- Tier 2 E4 Time River -- last 24h real jaya_audit_events as particle river in channel between main plane and depth plane -- one THREE.Points preallocated 600 -- positions derived purely from real timestamps vs real now or scrub via HIST_TIME_SCALE -- teal standard gold attestation -- HUD Time River count with cap indicator -- cap indicator verified live at 544 events -- HISTORICAL scrub reposition and LIVE return verified -- 100 percent line-additive plus 179 lines -- disclosed RAF block and ingestLiveEvent append -- Zero-Fabrication verified -- 2072 lines -- no BOM -- Fable 5 authored Lovable applied -- live verified testing.tyova.ai/ecosystem-flow-4d -- Commit 6ed6ab5
+
+**Status:** CLOSED
