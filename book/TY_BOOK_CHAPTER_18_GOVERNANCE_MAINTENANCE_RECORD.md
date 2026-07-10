@@ -9654,3 +9654,13 @@ EcosystemFlow4DPage.tsx -- Tier 1 visual enhancements -- E1 geodesic boundary sp
 EcosystemFlow4DPage.tsx -- Tier 2 E4 Time River -- last 24h real jaya_audit_events as particle river in channel between main plane and depth plane -- one THREE.Points preallocated 600 -- positions derived purely from real timestamps vs real now or scrub via HIST_TIME_SCALE -- teal standard gold attestation -- HUD Time River count with cap indicator -- cap indicator verified live at 544 events -- HISTORICAL scrub reposition and LIVE return verified -- 100 percent line-additive plus 179 lines -- disclosed RAF block and ingestLiveEvent append -- Zero-Fabrication verified -- 2072 lines -- no BOM -- Fable 5 authored Lovable applied -- live verified testing.tyova.ai/ecosystem-flow-4d -- Commit 6ed6ab5
 
 **Status:** CLOSED
+
+### Entry-956 | FIX-936 | 2026-07-09 22:11 PDT San Diego -- 2026-07-09 22:34 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 12c9e97
+**Scope:** EcosystemFlow4DPage.tsx -- Tier 2 E5 connection light-trails -- event-driven pulse traveling the real verified flow edge Jaya to event ward only when edge exists in connection tables -- no pulse on non-topology edges -- spawnOrbForEvent trigger only -- Zero-Fabrication -- Lovable only -- Fable 5 authored
+
+EcosystemFlow4DPage.tsx -- Tier 2 E5 connection light-trails -- 3-particle train travels verified Jaya edge to event ward only -- JAYA_EDGE_WARDS derived mechanically from connection tables -- no trail on non-topology edges or chokepoint-routed events -- teal standard gold attestation -- TRAIL_TRAVEL_S tuned 0.6 to 1.1 per Guardian direction during live review -- size and train length unchanged -- trails confirmed live -- Lovable commit message anomaly noted App.tsx not touched -- Zero-Fabrication verified -- 2172 lines -- no BOM -- Fable 5 authored Lovable applied -- live verified testing.tyova.ai/ecosystem-flow-4d -- Commit 12c9e97
+
+**Status:** CLOSED
