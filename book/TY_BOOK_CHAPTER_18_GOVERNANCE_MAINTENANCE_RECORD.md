@@ -9634,3 +9634,13 @@ Book of TY Chapter 82 -- The Patent Diary -- The Record of How TY AI OS Became P
 EcosystemFlow3DPage.tsx -- restructure to 7 layers matching 2D and 4D models -- add codex Guardian Codex and tyos TY AI OS Core as new specification layer nodes -- reassign all nodes to correct layers -- 31 nodes -- 53 verified flow connections from 4D primary source -- Jaya-centric topology -- Human Guardian apex -- 7 layer LAYER_Y -- platform refs retained -- constellation lerp preserved -- JayaHealthButton preserved -- add knowledge advisory guardian apex layer labels -- Fable 5 authored Lovable applied -- 2720 lines -- Integrity-Scan PASS -- visual verified testing.tyova.ai
 
 **Status:** CLOSED
+
+### Entry-954 | FIX-934 | 2026-07-09 21:26 PDT San Diego -- 2026-07-09 21:49 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 80a12f5
+**Scope:** EcosystemFlow4DPage.tsx -- Tier 1 visual enhancements E1 boundary sphere E2 layer labels and platform discs E3 static node glow upgrade -- additive only -- no idle animation -- Zero-Fabrication -- Lovable only -- Fable 5 authored
+
+EcosystemFlow4DPage.tsx -- Tier 1 visual enhancements -- E1 geodesic boundary sphere radius 70 -- E2 six layer labels GUARDIAN APEX through EXTERNAL SYSTEMS plus five platform discs with red enforcement rim -- E3 node glow NODE_REST_EMISSIVE 0.85 plus static additive halo sprites all 31 nodes plus Human Guardian Sphere -- additive only -- two-site disclosed emissive literal swap -- no idle animation -- Zero-Fabrication verified -- 1893 lines -- no BOM -- Fable 5 authored Lovable applied -- live verified testing.tyova.ai/ecosystem-flow-4d -- Commit 80a12f5
+
+**Status:** CLOSED
