@@ -9664,3 +9664,13 @@ EcosystemFlow4DPage.tsx -- Tier 2 E4 Time River -- last 24h real jaya_audit_even
 EcosystemFlow4DPage.tsx -- Tier 2 E5 connection light-trails -- 3-particle train travels verified Jaya edge to event ward only -- JAYA_EDGE_WARDS derived mechanically from connection tables -- no trail on non-topology edges or chokepoint-routed events -- teal standard gold attestation -- TRAIL_TRAVEL_S tuned 0.6 to 1.1 per Guardian direction during live review -- size and train length unchanged -- trails confirmed live -- Lovable commit message anomaly noted App.tsx not touched -- Zero-Fabrication verified -- 2172 lines -- no BOM -- Fable 5 authored Lovable applied -- live verified testing.tyova.ai/ecosystem-flow-4d -- Commit 12c9e97
 
 **Status:** CLOSED
+
+### Entry-957 | FIX-937 | 2026-07-10 16:49 PDT San Diego -- 2026-07-10 17:04 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 786b477
+**Scope:** EcosystemFlow4DPage.tsx -- Time River particle texture -- replace default square THREE.Points billboard with circular canvas texture -- cosmetic only -- Zero-Fabrication unaffected -- Lovable only -- Fable 5 authored
+
+EcosystemFlow4DPage.tsx -- Time River particle texture -- replaced default square THREE.Points billboard with circular 64x64 canvas texture -- alphaTest 0.05 clips square corners under AdditiveBlending -- riverCircleTex disposed in cleanup -- cosmetic only -- Zero-Fabrication unaffected -- 2192 lines -- no BOM -- Fable 5 authored Lovable applied -- live verified testing.tyova.ai/ecosystem-flow-4d -- Commit 786b477
+
+**Status:** CLOSED
