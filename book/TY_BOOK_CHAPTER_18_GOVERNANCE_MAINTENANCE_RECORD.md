@@ -9704,3 +9704,13 @@ guardian_reminder.py -- reverted REMINDER_DAYS test value -- removed 0 test entr
 FLAG-164 CLOSED -- PublicVerificationPage.tsx created at src/pages/PublicVerificationPage.tsx -- static verification hub -- four claim cards -- CLAIM 1 live event feed links to /nuronesence -- CLAIM 2 attestation chain links to /attestation -- CLAIM 3 proof pulse links to /nuronesence -- CLAIM 4 governance hash guide links to /verify-live -- GovernanceErrorBoundary componentName Public Verification -- BOM clean -- route /public-verification registered in App.tsx -- verified live at testing.tyova.ai/public-verification -- nav registration deferred -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-960 | FIX-940 | 2026-07-10 21:22 PDT San Diego -- 2026-07-10 21:56 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 606231c
+**Scope:** FLAG-164 -- PublicVerificationPage.tsx -- new static verification hub page -- four verification paths -- external verifier front door -- no Supabase -- no Three.js -- Lovable only
+
+FLAG-164 CLOSED -- PublicVerificationPage.tsx -- static verification hub -- four claim cards -- route /public-verification -- verified live at testing.tyova.ai/public-verification -- nav registration deferred -- S1 CLEAN
+
+**Status:** CLOSED
