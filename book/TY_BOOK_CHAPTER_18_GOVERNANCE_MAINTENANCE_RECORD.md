@@ -9711,3 +9711,13 @@ FLAG-164 CLOSED -- PublicVerificationPage.tsx -- static verification hub -- four
 **Scope:** PublicLayout.tsx -- add Governance Timeline and Independent Verification to Jaya Runtime nav dropdown -- two links added -- verified live at testing.tyova.ai
 
 Nav registration complete. Both links confirmed in dropdown.
+
+### Entry-961 | FIX-941 | 2026-07-10 22:21 PDT San Diego -- 2026-07-10 22:24 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** 9187e82
+**Scope:** AttestationPage.tsx -- fix wrong Supabase project -- replace VITE_SS321_SUPABASE_URL and VITE_SS321_SUPABASE_ANON_KEY with VITE_JAYA_SUPABASE_URL and VITE_JAYA_SUPABASE_ANON_KEY -- attestation chain was reading from SS321 project instead of TYOVA governance project
+
+AttestationPage.tsx -- VITE_SS321_SUPABASE_URL and VITE_SS321_SUPABASE_ANON_KEY replaced with VITE_JAYA_SUPABASE_URL and VITE_JAYA_SUPABASE_ANON_KEY -- attestation chain now reads from TYOVA governance project utzkoozekztyztdxejij -- verified live 50/50 VERIFIED 50/50 CHAIN INTACT zero mismatches zero breaks
+
+**Status:** CLOSED
