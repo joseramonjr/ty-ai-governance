@@ -9694,3 +9694,13 @@ EcosystemFlow4DPage.tsx -- slow auto-rotate on idle -- rootGroup theta increment
 guardian_reminder.py -- reverted REMINDER_DAYS test value -- removed 0 test entry from reminder_map -- production values confirmed on GitHub via run 45 log -- Twilio A2P campaign CM026a1ace4017fc366cb1d32e708bb266 VERIFIED July 10 2026 -- Twilio SMS delivery confirmed via console direct send from plus16197894262 -- GitHub Actions end-to-end SMS test blocked by gitattributes CRLF normalization -- all components independently verified -- script logic Supabase query Resend email all confirmed -- production system will fire at day 182 approximately December 2026 -- no code change committed this FIX -- governance record update only
 
 **Status:** CLOSED
+
+### Entry-960 | FIX-940 | 2026-07-10 21:22 PDT San Diego -- 2026-07-10 21:45 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** ede5ce7 (route fix) / 44330fe (page file)
+**Scope:** FLAG-164 -- PublicVerificationPage.tsx -- new static verification hub page -- four verification paths -- external verifier front door -- no Supabase -- no Three.js -- Lovable only
+
+FLAG-164 CLOSED -- PublicVerificationPage.tsx created at src/pages/PublicVerificationPage.tsx -- static verification hub -- four claim cards -- CLAIM 1 live event feed links to /nuronesence -- CLAIM 2 attestation chain links to /attestation -- CLAIM 3 proof pulse links to /nuronesence -- CLAIM 4 governance hash guide links to /verify-live -- GovernanceErrorBoundary componentName Public Verification -- BOM clean -- route /public-verification registered in App.tsx -- verified live at testing.tyova.ai/public-verification -- nav registration deferred -- S1 CLEAN
+
+**Status:** CLOSED
