@@ -9684,3 +9684,13 @@ EcosystemFlow4DPage.tsx -- Time River particle texture -- replaced default squar
 EcosystemFlow4DPage.tsx -- slow auto-rotate on idle -- rootGroup theta increment in RAF loop at 0.06 rad/s -- pauses immediately on mousedown and wheel -- resumes 2500ms after last interaction -- applyCamera path unchanged -- timer cleared on unmount -- Zero-Fabrication compliant viewpoint change only -- 2217 lines -- no BOM -- Fable 5 authored Lovable applied -- live verified testing.tyova.ai/ecosystem-flow-4d -- Commit e5ac9b1
 
 **Status:** CLOSED
+
+### Entry-959 | FIX-939 | 2026-07-10 17:22 PDT San Diego -- 2026-07-10 17:56 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** bd73b4d
+**Scope:** guardian_reminder.py -- revert REMINDER_DAYS test value -- remove test reminder_map entry -- update GUARDIAN_PHONE_NUMBER GitHub secret to Janet -- Twilio A2P campaign VERIFIED -- activate live SMS guardian alerts -- final SMS test
+
+guardian_reminder.py -- reverted REMINDER_DAYS test value -- removed 0 test entry from reminder_map -- production values confirmed on GitHub via run 45 log -- Twilio A2P campaign CM026a1ace4017fc366cb1d32e708bb266 VERIFIED July 10 2026 -- Twilio SMS delivery confirmed via console direct send from plus16197894262 -- GitHub Actions end-to-end SMS test blocked by gitattributes CRLF normalization -- all components independently verified -- script logic Supabase query Resend email all confirmed -- production system will fire at day 182 approximately December 2026 -- no code change committed this FIX -- governance record update only
+
+**Status:** CLOSED
