@@ -9704,3 +9704,10 @@ guardian_reminder.py -- reverted REMINDER_DAYS test value -- removed 0 test entr
 FLAG-164 CLOSED -- PublicVerificationPage.tsx -- static verification hub -- four claim cards -- route /public-verification -- verified live at testing.tyova.ai/public-verification -- nav registration deferred -- S1 CLEAN
 
 **Status:** CLOSED
+
+### Entry-960 Addendum | FIX-940 | 2026-07-10 22:08 PDT San Diego
+
+**Commit:** 9ce87cc
+**Scope:** PublicLayout.tsx -- add Governance Timeline and Independent Verification to Jaya Runtime nav dropdown -- two links added -- verified live at testing.tyova.ai
+
+Nav registration complete. Both links confirmed in dropdown.
