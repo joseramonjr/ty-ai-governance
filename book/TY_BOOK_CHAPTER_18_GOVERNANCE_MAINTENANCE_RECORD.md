@@ -9674,3 +9674,13 @@ EcosystemFlow4DPage.tsx -- Tier 2 E5 connection light-trails -- 3-particle train
 EcosystemFlow4DPage.tsx -- Time River particle texture -- replaced default square THREE.Points billboard with circular 64x64 canvas texture -- alphaTest 0.05 clips square corners under AdditiveBlending -- riverCircleTex disposed in cleanup -- cosmetic only -- Zero-Fabrication unaffected -- 2192 lines -- no BOM -- Fable 5 authored Lovable applied -- live verified testing.tyova.ai/ecosystem-flow-4d -- Commit 786b477
 
 **Status:** CLOSED
+
+### Entry-958 | FIX-938 | 2026-07-10 17:05 PDT San Diego -- 2026-07-10 17:14 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** e5ac9b1
+**Scope:** EcosystemFlow4DPage.tsx -- slow auto-rotate scene on idle -- rootGroup Y-axis rotation in RAF loop -- pauses on user camera interaction -- resumes after idle -- Zero-Fabrication compliant viewpoint change only -- Lovable only -- Fable 5 authored
+
+EcosystemFlow4DPage.tsx -- slow auto-rotate on idle -- rootGroup theta increment in RAF loop at 0.06 rad/s -- pauses immediately on mousedown and wheel -- resumes 2500ms after last interaction -- applyCamera path unchanged -- timer cleared on unmount -- Zero-Fabrication compliant viewpoint change only -- 2217 lines -- no BOM -- Fable 5 authored Lovable applied -- live verified testing.tyova.ai/ecosystem-flow-4d -- Commit e5ac9b1
+
+**Status:** CLOSED
