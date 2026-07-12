@@ -280,3 +280,193 @@ KING-OI-005	Guardian review surface authentication model	Phase 4
 ---
 Zero-Fabrication Rule applies. All statements in this document are traceable
 to the session record of 2026-07-11, Jose Ramon Alvarado McHerron, San Diego.
+---
+
+## Verified Entry Point Surface Map
+*Completed FIX-945 · 2026-07-12 · San Diego. Verified from source code, not memory.*
+
+Every external entry point in Jaya Runtime was identified and audited
+against source code. Zero-Fabrication Rule applies — all findings
+traceable to committed source audit of FIX-944 / FIX-945 session record.
+
+**Entry Point 1 — Tauri IPC (invoke_handler)**
+Location: lib.rs, line 963. 118 commands registered via
+tauri::generate_handler. Primary governance execution surface. All
+governance-sensitive commands are callable through the Tauri webview.
+King Phase 2 will add interception on governance-sensitive commands
+during active integrity threat. Until Phase 2 is built, all 118
+commands are reachable without King awareness. Formally tracked as
+Phase 2 build target.
+
+**Entry Point 2 — Proof Server (HTTP port 7777)**
+Location: proof_server.rs. tiny_http::Server bound to 127.0.0.1:7777
+only — not network-accessible. GET /governance/proof only. All other
+paths return 404. All other methods return 405. Read-only. No write
+capability. CORS header restricted to "null" (FIX-945). Accepted risk:
+any browser tab on this machine can read governance proofs. This is by
+design — the proof endpoint is intentionally public.
+
+**Entry Point 3 — Supabase Outbound (supabase_writer.rs)**
+Location: supabase_writer.rs. Outbound HTTP POST to Supabase REST API.
+Egress guard enforced on every call. Chain integrity verified on every
+write. No inbound capability. Clean.
+
+**Entry Point 4 — Supabase Inbound (supabase_reader.rs)**
+Location: supabase_reader.rs. Reads governance_events from SS321
+Supabase. Hardened in FIX-945 with three additional checks:
+Option A — app_version non-empty validation.
+Option B — session continuity cross-check.
+Option C — event count cross-check against local ledger.
+Existing defenses: egress guard, nonce replay protection, allowlist
+validation (PERMITTED_ACTION_TYPES, PERMITTED_EXECUTION_STATUSES),
+ledger write on every event. Remaining structural gap: no cryptographic
+signature verification (UUID v4 nonces are not monotonically ordered —
+sequence checking not viable). Documented as accepted risk with King
+future monitoring scope (see below).
+
+**Entry Point 5 — Confirmation Loop (confirmation_loop.rs)**
+Location: confirmation_loop.rs. Outbound HTTP GET and POST to Supabase.
+Egress guard enforced. No inbound capability. Clean.
+
+**Entry Point 6 — Email Alerts (email_alert.rs)**
+Location: email_alert.rs. Outbound POST to api.resend.com. Egress guard
+enforced. No inbound capability. Clean.
+
+**Entry Point 7 — Environmental Detection (environmental_detection.rs)**
+Location: environmental_detection.rs. Spawns four OS-level processes:
+wmic, powershell, dsregcmd, reg. Binary path verification guards added
+in FIX-945 — all four Command::new calls now verify binary resolves to
+C:\Windows\System32\ or approved subdirectory via where.exe before
+spawning. Accepted residual risk: if where.exe itself is compromised,
+the guard fails. Requires OS-level compromise to exploit.
+
+**Entry Point 8 — Policy Hot-Reload (policy.rs)**
+Location: policy.rs. Watches local policy.json file. Guardian-controlled
+filesystem path. No network surface. Clean.
+
+**Entry Point 9 — Filesystem Writes (file_write.rs)**
+Location: file_write.rs. JayaModule with risk_level 60 — Tier2 required.
+All writes go through governance::execute_strategy() which enforces tier
+requirements before execution. Path and content specified by human only.
+Gated. Clean.
+
+**Entry Point 10 — Tauri Plugin Surface**
+Location: lib.rs. tauri-plugin-opener removed in FIX-944. No other
+plugins registered as of FIX-944. Zero plugin surface remaining.
+
+---
+
+## Backdoor Audit Findings
+*Completed FIX-944 / FIX-945 · 2026-07-12 · San Diego.*
+
+All findings verified from source code via PowerShell audit. Every
+finding is either closed, hardened, or formally tracked.
+
+**FINDING-1 — tauri-plugin-opener ungated IPC surface — CLOSED FIX-944**
+The tauri-plugin-opener plugin was registered in lib.rs but unused in
+any frontend file. In Tauri v2, registered plugins expose their commands
+to the frontend automatically without explicit invoke_handler registration.
+A compromised frontend or injected script could call plugin:opener|open_url
+or plugin:opener|open_path to open arbitrary URLs or files outside the
+governance boundary. Removed from lib.rs, Cargo.toml, and
+capabilities/default.json. Verified: Jaya Runtime launches and operates
+normally after removal. Zero functionality lost.
+
+**FINDING-2 — supabase_reader inbound injection risk — HARDENED FIX-945**
+Inbound Supabase records from SS321 passed only allowlist validation
+before FIX-945. A record with correct field values but injected content
+could pass validation. Three additional checks added: app_version
+non-empty validation, session continuity cross-check, event count
+cross-check against local ledger. Remaining gap documented above under
+Entry Point 4. King future monitoring scope addresses this gap.
+
+**FINDING-3 — proof_server CORS wildcard — CLOSED FIX-945**
+Access-Control-Allow-Origin was set to "*" allowing any browser tab on
+this machine to read governance proofs silently. Restricted to "null"
+in FIX-945. Accepted residual risk: the proof endpoint is intentionally
+publicly readable by design — restriction limits browser-based access
+while preserving direct HTTP query capability for external auditors.
+
+**FINDING-4 — environmental_detection PATH hijack — HARDENED FIX-945**
+Four Command::new calls spawned wmic, powershell, dsregcmd, and reg
+without verifying binary paths. A PATH-hijacked environment could
+substitute malicious binaries. Binary path verification guards added
+in FIX-945 using where.exe as anchor. All four calls now verify
+resolution to approved system directories before spawning.
+
+**FINDING-5 — jaya_ledger.db untracked in git — CLOSED FIX-945**
+An empty jaya_ledger.db file in src-tauri/ appeared as untracked in
+git status on every run. Added to src-tauri/.gitignore. No governance
+impact — this file is a dev-mode artifact, not the live database.
+
+---
+
+## King Future Monitoring Scope (Option D)
+*Documented FIX-946 · 2026-07-12 · San Diego. Build target: King Phase 3/4.*
+
+King's future monitoring scope extends beyond Jaya Runtime's Tauri
+command layer to include anomaly detection across all governed surfaces.
+This is not a Phase 1 or Phase 2 capability — it is the Phase 3/4
+build target documented here to ensure it is not lost.
+
+**Scope 1 — Supabase Reader Anomaly Detection**
+King monitors supabase_reader_state for anomalous patterns:
+sudden spikes in violation count, unexpected session continuity breaks,
+count mismatches between Supabase and local ledger. Any pattern
+consistent with injection or tampering is recorded in the private
+Guardian security log and surfaced in the Phase 4 Guardian review
+surface. King does not block supabase_reader operation — King observes
+and records. Guardian decides whether to act.
+
+**Scope 2 — Governance File Integrity**
+King verifies the governance hash on every monitoring cycle, not just
+at session open. An unexpected hash change mid-session is a confirmed
+integrity signal. This extends the existing governance_hash check
+(already performed at startup) into continuous runtime monitoring.
+
+**Scope 3 — Ledger Continuity**
+King monitors ledger_entries row count and chain hash continuity on
+every monitoring cycle. An unexpected DELETE or UPDATE on ledger_entries
+is a confirmed integrity signal. SQLite append-only enforcement is
+architectural but King's monitoring provides a detection layer above it.
+
+**Scope 4 — Policy File Integrity**
+King monitors policy.json hash on every hot-reload cycle. An unexpected
+hash change that was not preceded by a Guardian-authorized policy update
+is a confirmed integrity signal.
+
+**Invariant:** King's future monitoring scope never expands King's
+authority. King observes, records, and notifies. All responses remain
+within the existing Two-Tier Response architecture. The Human Guardian
+retains permanent retroactive authority over every autonomous action.
+
+---
+
+## Document History
+
+| Version | Date | FIX | Change |
+|---------|------|-----|--------|
+| v0.1 | 2026-07-11 23:09 PDT | Pre-FIX-942 | Initial specification — King identity founded |
+| v0.2 | 2026-07-12 13:34 PDT | FIX-946 | Surface map added — backdoor audit findings — King future monitoring scope — Open Items updated |
+
+---
+
+## Open Items
+
+| ID | Item | Status |
+|----|------|--------|
+| KING-OI-001 | Walker IP clearance for "King" as TY ecosystem identity | Pending — add to next Walker correspondence |
+| KING-OI-002 | Ch26 vocabulary entry for King (public identity only, no doctrine) | Deferred — post Walker clearance |
+| KING-OI-003 | guardian_security_log table schema finalization | CLOSED — FIX-942 |
+| KING-OI-004 | Phase 2 Integrity Isolation Layer design | Active — next build phase |
+| KING-OI-005 | Guardian review surface authentication model | Phase 4 |
+| KING-OI-006 | King future monitoring scope — supabase anomaly detection | Phase 3/4 |
+| KING-OI-007 | King future monitoring scope — governance file integrity | Phase 3/4 |
+| KING-OI-008 | King future monitoring scope — ledger continuity | Phase 3/4 |
+| KING-OI-009 | King future monitoring scope — policy file integrity | Phase 3/4 |
+| KING-OI-010 | Exact SS321 app_version string pinning in supabase_reader | Pending SS321 version confirmation |
+
+---
+
+*Zero-Fabrication Rule applies. All statements in this document are traceable
+to the session records of 2026-07-11 and 2026-07-12, Jose Ramon Alvarado McHerron, San Diego.*
