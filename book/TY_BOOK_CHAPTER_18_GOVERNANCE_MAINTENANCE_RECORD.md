@@ -9721,3 +9721,13 @@ Nav registration complete. Both links confirmed in dropdown.
 AttestationPage.tsx -- VITE_SS321_SUPABASE_URL and VITE_SS321_SUPABASE_ANON_KEY replaced with VITE_JAYA_SUPABASE_URL and VITE_JAYA_SUPABASE_ANON_KEY -- attestation chain now reads from TYOVA governance project utzkoozekztyztdxejij -- verified live 50/50 VERIFIED 50/50 CHAIN INTACT zero mismatches zero breaks
 
 **Status:** CLOSED
+
+### Entry-962 | FIX-942 | 2026-07-11 23:38 PDT San Diego -- 2026-07-12 00:02 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** a88b5c7
+**Scope:** King Phase 1 -- sentinel observation extension and guardian security log
+
+king.rs created -- sentinel.rs extended with observation fields and integrity hook -- lib.rs mod king added -- guardian_security_log private table -- 238 tests clean -- zero errors
+
+**Status:** CLOSED
