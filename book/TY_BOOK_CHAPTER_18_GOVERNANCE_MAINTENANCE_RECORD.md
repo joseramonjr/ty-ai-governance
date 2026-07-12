@@ -9751,3 +9751,13 @@ sentinel.rs King observation hook relocated from monitoring loop into handle_ano
 security audit -- tauri-plugin-opener removed from lib.rs Cargo.toml capabilities/default.json -- ungated IPC backdoor closed -- opener:default permission removed -- 238 tests clean -- Jaya Runtime verified live after removal
 
 **Status:** CLOSED
+
+### Entry-965 | FIX-945 | 2026-07-12 12:36 PDT San Diego -- 2026-07-12 13:26 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 34510bf
+**Scope:** Security audit -- supabase_reader inbound hardening -- hash verification on inbound records -- jaya_ledger.db gitignore
+
+security hardening complete -- supabase_reader inbound hardening Options A B C -- proof_server CORS restricted to null -- environmental_detection binary path verification guards -- jaya_ledger.db gitignore -- 238 tests clean -- full PS audit verified -- all identified backdoors closed
+
+**Status:** CLOSED
