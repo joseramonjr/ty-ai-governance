@@ -9761,3 +9761,13 @@ security audit -- tauri-plugin-opener removed from lib.rs Cargo.toml capabilitie
 security hardening complete -- supabase_reader inbound hardening Options A B C -- proof_server CORS restricted to null -- environmental_detection binary path verification guards -- jaya_ledger.db gitignore -- 238 tests clean -- full PS audit verified -- all identified backdoors closed
 
 **Status:** CLOSED
+
+### Entry-966 | FIX-946 | 2026-07-12 13:34 PDT San Diego -- 2026-07-12 13:40 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** c947a1c
+**Scope:** TY_KING_SPEC_v0.1.md update -- full surface map -- accepted risks -- King monitoring scope -- backdoor audit findings
+
+TY_KING_SPEC_v0.1.md updated to v0.2 -- surface map added -- backdoor audit findings documented -- King future monitoring scope defined -- open items updated -- 10 open items tracked
+
+**Status:** CLOSED
