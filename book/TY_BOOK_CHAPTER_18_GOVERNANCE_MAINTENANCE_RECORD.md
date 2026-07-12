@@ -9731,3 +9731,13 @@ AttestationPage.tsx -- VITE_SS321_SUPABASE_URL and VITE_SS321_SUPABASE_ANON_KEY 
 king.rs created -- sentinel.rs extended with observation fields and integrity hook -- lib.rs mod king added -- guardian_security_log private table -- 238 tests clean -- zero errors
 
 **Status:** CLOSED
+
+### Entry-963 | FIX-943 | 2026-07-12 11:16 PDT San Diego -- 2026-07-12 11:32 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** e443cbe
+**Scope:** King observation hook -- move from monitoring loop into handle_anomaly confirmed-anomaly gate
+
+sentinel.rs King observation hook relocated from monitoring loop into handle_anomaly if should_log gate -- fires only on confirmed cooldown-passed anomalies -- anomaly type now passes actual anomaly not hardcoded string -- verified live: zero new rows on healthy system -- 238 tests clean -- zero errors
+
+**Status:** CLOSED
