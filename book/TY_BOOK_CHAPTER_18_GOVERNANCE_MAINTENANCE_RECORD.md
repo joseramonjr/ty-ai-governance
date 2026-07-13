@@ -9791,3 +9791,13 @@ guardian_security_log purged -- 20019 stale pre-FIX-943 rows deleted -- no code 
 King Phase 2a complete -- KingState struct -- king_isolation_check -- 29 governance-sensitive Tauri command intercepts -- sentinel.rs king_state field -- 240 tests clean -- live verified zero rows on healthy system -- spec v0.3 committed ce8ff0d
 
 **Status:** CLOSED
+
+### Entry-969 | FIX-949 | 2026-07-12 20:29 PDT San Diego -- 2026-07-12 21:01 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 91a1ea1
+**Scope:** King Phase 2b -- policy file hash monitoring -- unauthorized change detection
+
+King Phase 2b complete -- PolicyHashGuard -- compute_policy_hash -- check_policy_integrity -- authorize_policy_reload -- policy hash monitored every sentinel cycle -- reload_policy wired -- 240 tests clean -- live verified zero rows on healthy system
+
+**Status:** CLOSED
