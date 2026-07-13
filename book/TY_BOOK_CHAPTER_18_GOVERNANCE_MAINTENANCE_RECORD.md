@@ -9811,3 +9811,13 @@ King Phase 2b complete -- PolicyHashGuard -- compute_policy_hash -- check_policy
 King Phase 2c complete -- LedgerGuard -- check_ledger_integrity -- ledger row count monitored every sentinel cycle -- unexpected decrease triggers LedgerCountViolation severity 95 -- 240 tests clean -- live verified zero rows on healthy system
 
 **Status:** CLOSED
+
+### Entry-971 | FIX-951 | 2026-07-12 21:17 PDT San Diego -- 2026-07-12 21:31 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 0bf0264
+**Scope:** King Phase 2d -- governance file hash mid-session monitoring -- unexpected change detection
+
+King Phase 2d complete -- GovernanceHashGuard -- check_governance_hash -- governance registry hash monitored every sentinel cycle -- unexpected change triggers GovernanceHashViolation severity 100 -- 240 tests clean -- live verified zero rows on healthy system
+
+**Status:** CLOSED
