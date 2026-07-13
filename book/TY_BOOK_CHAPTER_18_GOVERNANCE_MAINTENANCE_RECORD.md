@@ -9771,3 +9771,13 @@ security hardening complete -- supabase_reader inbound hardening Options A B C -
 TY_KING_SPEC_v0.1.md updated to v0.2 -- surface map added -- backdoor audit findings documented -- King future monitoring scope defined -- open items updated -- 10 open items tracked
 
 **Status:** CLOSED
+
+### Entry-967 | FIX-947 | 2026-07-12 18:14 PDT San Diego -- 2026-07-12 18:31 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** db-only
+**Scope:** sentinel.rs -- add evaluate_tier call to monitoring loop -- live tier state for doctrine consistency check
+
+guardian_security_log purged -- 20019 stale pre-FIX-943 rows deleted -- no code change -- zero rows confirmed on healthy system -- King calibration verified
+
+**Status:** CLOSED
