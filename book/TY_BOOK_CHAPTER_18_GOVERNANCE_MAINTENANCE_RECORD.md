@@ -9801,3 +9801,13 @@ King Phase 2a complete -- KingState struct -- king_isolation_check -- 29 governa
 King Phase 2b complete -- PolicyHashGuard -- compute_policy_hash -- check_policy_integrity -- authorize_policy_reload -- policy hash monitored every sentinel cycle -- reload_policy wired -- 240 tests clean -- live verified zero rows on healthy system
 
 **Status:** CLOSED
+
+### Entry-970 | FIX-950 | 2026-07-12 21:03 PDT San Diego -- 2026-07-12 21:15 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 19bd0e9
+**Scope:** King Phase 2c -- ledger row count integrity monitoring -- unexpected decrease detection
+
+King Phase 2c complete -- LedgerGuard -- check_ledger_integrity -- ledger row count monitored every sentinel cycle -- unexpected decrease triggers LedgerCountViolation severity 95 -- 240 tests clean -- live verified zero rows on healthy system
+
+**Status:** CLOSED
