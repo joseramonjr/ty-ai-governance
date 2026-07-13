@@ -9781,3 +9781,13 @@ TY_KING_SPEC_v0.1.md updated to v0.2 -- surface map added -- backdoor audit find
 guardian_security_log purged -- 20019 stale pre-FIX-943 rows deleted -- no code change -- zero rows confirmed on healthy system -- King calibration verified
 
 **Status:** CLOSED
+
+### Entry-968 | FIX-948 | 2026-07-12 18:33 PDT San Diego -- 2026-07-12 20:27 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** bf2fbc9
+**Scope:** King Phase 2 -- Integrity Isolation Layer -- design and build
+
+King Phase 2a complete -- KingState struct -- king_isolation_check -- 29 governance-sensitive Tauri command intercepts -- sentinel.rs king_state field -- 240 tests clean -- live verified zero rows on healthy system -- spec v0.3 committed ce8ff0d
+
+**Status:** CLOSED
