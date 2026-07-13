@@ -150,7 +150,7 @@ Phase 1 does not implement entry point sealing or the Integrity Isolation
 Layer. Phase 1 is sensing and recording only. The response capability is
 built in Phase 2.
 Phase 2 — Integrity Isolation Layer
-Build target: post FIX-942
+Build target: FIX-948 — Active
 King intercepts certain input classes when an active integrity threat is
 confirmed. The intercepted inputs receive plausible-looking governed
 responses. The real enforcement logic is never reached.
@@ -158,6 +158,69 @@ All Integrity Isolation Layer interactions are logged to the private
 guardian_security_log only. No public record of isolation layer activity
 exists anywhere. The isolation layer is activated simultaneously with
 entry point sealing on a first confirmed signal.
+
+Phase 2 is built in four layers. Each layer is a discrete verifiable
+unit. No layer begins until the prior layer is committed and verified.
+
+Phase 2a — KingState + Tauri Command Intercept
+KingState is a new managed struct registered in lib.rs at startup.
+Fields: threat_active: Arc<Mutex<bool>>, signal_count: Arc<Mutex<u8>>.
+notify_observation in king.rs updates KingState when signal_count
+reaches 1 — threat_active transitions to true simultaneously with the
+first confirmed signal log entry. This is the entry point seal.
+
+A helper function king_isolation_check is added to king.rs. It takes
+a reference to KingState and returns Option<serde_json::Value> — None
+on clean system, Some(isolation_response) on active threat. The
+isolation response is a structurally valid governed-looking JSON value
+that does not reveal King's existence, does not trigger frontend error
+states, and buys time for Guardian review.
+
+Twenty-nine governance-sensitive Tauri commands receive the
+king_isolation_check call at their entry point. If King is active,
+the isolation response is returned immediately and the real enforcement
+logic is never reached. All isolation responses are logged to
+guardian_security_log with note: "isolation_layer_active".
+
+Guardian-sovereign commands excluded from intercept:
+guardian_checkin — Guardian heartbeat must always reach enforcement.
+All read-only commands (get_*, check_*, list_*, verify_*, luke_*,
+query_*, diagnostic, environmental detection) pass through normally.
+The Guardian must retain full read access during an active threat.
+
+Governance-sensitive commands receiving King intercept check (29 total):
+set_autonomy_tier, reset_behavioral_state, re_trust_runtime,
+restore_snapshot_command, deliver_update_command,
+guardian_acknowledge_suspended, hvp_verify_lockdown,
+resume_jayme_from_dormancy, record_cri_band, run_file_write,
+register_agent, log_agent_violation, set_agent_status,
+deregister_agent, link_agents, assert_agent_isolation,
+isolate_escalated_agents, set_autonomy_class, issue_confirmation_token,
+rotate_key, compromise_key, inject_federation_violation, reload_policy,
+cmd_create_evolution_proposal, cmd_start_evolution_deliberation,
+cmd_add_evolution_deliberation_note, cmd_close_evolution_deliberation,
+cmd_authorize_evolution, cmd_record_evolution_event.
+
+Phase 2b — Policy File Hash Monitoring
+King monitors policy.json hash on every sentinel monitoring cycle.
+A hash change not preceded by a Guardian-authorized reload_policy call
+is a confirmed integrity signal logged to guardian_security_log.
+Build target: post Phase 2a verified.
+
+Phase 2c — Ledger Row Count Integrity
+King monitors ledger_entries row count on every sentinel monitoring
+cycle. An unexpected decrease in row count is a confirmed integrity
+signal — append-only enforcement is architectural but King provides
+a detection layer above it. Logged to guardian_security_log.
+Build target: post Phase 2b verified.
+
+Phase 2d — Governance File Hash Mid-Session
+King verifies the governance_hash stored in runtime_state against the
+live computed hash on every sentinel monitoring cycle. A mid-session
+hash change is a confirmed integrity signal. This extends the existing
+startup-only governance hash check into continuous runtime monitoring.
+Logged to guardian_security_log.
+Build target: post Phase 2c verified.
 Phase 3 — Pattern-Based Policy Proposal
 Build target: post Phase 2
 King reads the private observation log and identifies patterns in the
@@ -448,6 +511,7 @@ retains permanent retroactive authority over every autonomous action.
 |---------|------|-----|--------|
 | v0.1 | 2026-07-11 23:09 PDT | Pre-FIX-942 | Initial specification — King identity founded |
 | v0.2 | 2026-07-12 13:34 PDT | FIX-946 | Surface map added — backdoor audit findings — King future monitoring scope — Open Items updated |
+| v0.3 | 2026-07-12 18:33 PDT | FIX-948 | Phase 2 expanded — layered build sequence defined — KingState struct — 29 command intercept list — Phase 2a through 2d defined |
 
 ---
 
@@ -458,7 +522,7 @@ retains permanent retroactive authority over every autonomous action.
 | KING-OI-001 | Walker IP clearance for "King" as TY ecosystem identity | Pending — add to next Walker correspondence |
 | KING-OI-002 | Ch26 vocabulary entry for King (public identity only, no doctrine) | Deferred — post Walker clearance |
 | KING-OI-003 | guardian_security_log table schema finalization | CLOSED — FIX-942 |
-| KING-OI-004 | Phase 2 Integrity Isolation Layer design | Active — next build phase |
+| KING-OI-004 | Phase 2 Integrity Isolation Layer design and build | Active — FIX-948 in progress |
 | KING-OI-005 | Guardian review surface authentication model | Phase 4 |
 | KING-OI-006 | King future monitoring scope — supabase anomaly detection | Phase 3/4 |
 | KING-OI-007 | King future monitoring scope — governance file integrity | Phase 3/4 |
