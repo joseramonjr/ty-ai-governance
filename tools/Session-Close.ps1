@@ -136,6 +136,27 @@ try {
     Write-Host "  [WARN] Could not verify governance_hash: $_" -ForegroundColor Yellow
 }
 Write-Host ""
+# -- PROJECT KNOWLEDGE REFRESH REMINDER
+Write-Host "PROJECT KNOWLEDGE REFRESH" -ForegroundColor Yellow
+Write-Host "----------------------------------------------------------"
+Write-Host "  After every session, verify Claude project knowledge is current." -ForegroundColor Gray
+Write-Host "  Files to refresh if changed this session:" -ForegroundColor Gray
+Write-Host ""
+Write-Host "  [1] Ch18  -- book\TY_BOOK_CHAPTER_18_GOVERNANCE_MAINTENANCE_RECORD.md" -ForegroundColor Cyan
+Write-Host "  [2] MFI   -- governance\ledger\MASTER_FIX_INDEX.md" -ForegroundColor Cyan
+Write-Host "  [3] Ch26  -- book\TY_BOOK_CHAPTER_26_THE_TY_AI_OS_VOCABULARY.md" -ForegroundColor Cyan
+Write-Host "  [4] ADR   -- governance\TY_ARCHITECTURAL_DECISIONS_RECORD.md" -ForegroundColor Gray
+Write-Host "  [5] QA    -- governance\TY_QA_REGISTRY.md" -ForegroundColor Gray
+Write-Host "  [6] Ch73  -- book\TY_BOOK_CHAPTER_73_THE_CONSCIENCE_THREAD.md" -ForegroundColor Gray
+Write-Host "  [7] Ch77  -- book\TY_BOOK_CHAPTER_77_NEXORA_THE_THESIS.md" -ForegroundColor Gray
+Write-Host "  [8] Ch80  -- book\TY_BOOK_CHAPTER_80_THE_CONSEQUENCE_LAYER.md" -ForegroundColor Gray
+Write-Host "  [9] CT    -- governance\TY_CONSCIENCE_THREAD_v0.1.md" -ForegroundColor Gray
+Write-Host " [10] CTR   -- spec\TY_CANONICAL_THRESHOLDS_REGISTRY.md" -ForegroundColor Gray
+Write-Host ""
+Write-Host "  Ch18, MFI, Ch26 change every session -- always refresh these three." -ForegroundColor Yellow
+Write-Host "  Items 4-10 only if touched this session." -ForegroundColor Gray
+Write-Host ""
+
 # -- VERDICT
 Write-Host "============================================================" -ForegroundColor Cyan
 if ($failures -eq 0) {
