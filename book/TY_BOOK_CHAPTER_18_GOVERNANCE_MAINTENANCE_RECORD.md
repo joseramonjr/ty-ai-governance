@@ -9831,3 +9831,13 @@ King Phase 2d complete -- GovernanceHashGuard -- check_governance_hash -- govern
 TYOVA ecosystem stats updated -- masterHubRegistry.ts phasesSealed 16 testsTotal 240 testsPass 240 vocabTerms 400 chaptersSealed 85 snapshotDate 2026-07-12 -- BookOfTyIndex.tsx tests 238->240 -- live verified on testing.tyova.ai
 
 **Status:** CLOSED
+
+### Entry-973 | FIX-953 | 2026-07-18 19:35 PDT San Diego -- 2026-07-18 19:46 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** ad2970f
+**Scope:** Option C -- Pre-Flight auto-update script for masterHubRegistry.ts stats -- chaptersSealed vocabTerms testsTotal testsPass -- then Option A TYOVA dynamic chapter count
+
+Update-TYOVAStats.ps1 and Write-TestCount.ps1 added to tools -- auto-sync chaptersSealed vocabTerms testsTotal testsPass from live sources -- .last-test-count.json gitignored -- dry-run verified 85 chapters 400 terms 240 tests all correct
+
+**Status:** CLOSED
