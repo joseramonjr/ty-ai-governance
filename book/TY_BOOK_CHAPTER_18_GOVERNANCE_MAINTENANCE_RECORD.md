@@ -9841,3 +9841,13 @@ TYOVA ecosystem stats updated -- masterHubRegistry.ts phasesSealed 16 testsTotal
 Update-TYOVAStats.ps1 and Write-TestCount.ps1 added to tools -- auto-sync chaptersSealed vocabTerms testsTotal testsPass from live sources -- .last-test-count.json gitignored -- dry-run verified 85 chapters 400 terms 240 tests all correct
 
 **Status:** CLOSED
+
+### Entry-974 | FIX-954 | 2026-07-18 19:49 PDT San Diego -- 2026-07-18 20:01 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** f970410
+**Scope:** Pre-Flight warn if .last-test-count.json stale -- cargo test command updated in TY_TOOLS_REFERENCE.md to auto-write test count
+
+Pre-Flight test count gate added -- TY_TOOLS_REFERENCE.md testing tools section added -- Write-TestCount.ps1 timestamp fix -- cargo test piped command documented -- Pre-Flight shows 240 passing clean
+
+**Status:** CLOSED
