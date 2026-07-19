@@ -9821,3 +9821,13 @@ King Phase 2c complete -- LedgerGuard -- check_ledger_integrity -- ledger row co
 King Phase 2d complete -- GovernanceHashGuard -- check_governance_hash -- governance registry hash monitored every sentinel cycle -- unexpected change triggers GovernanceHashViolation severity 100 -- 240 tests clean -- live verified zero rows on healthy system
 
 **Status:** CLOSED
+
+### Entry-972 | FIX-952 | 2026-07-18 19:16 PDT San Diego -- 2026-07-18 19:30 PDT San Diego
+
+**Destination:** TYOVA
+**Commit:** b0924b6
+**Scope:** masterHubRegistry.ts -- update ecosystem stats -- phasesSealed 16 -- testsTotal 240 -- testsPass 240 -- vocabTerms 400 -- snapshotDate 2026-07-12
+
+TYOVA ecosystem stats updated -- masterHubRegistry.ts phasesSealed 16 testsTotal 240 testsPass 240 vocabTerms 400 chaptersSealed 85 snapshotDate 2026-07-12 -- BookOfTyIndex.tsx tests 238->240 -- live verified on testing.tyova.ai
+
+**Status:** CLOSED
