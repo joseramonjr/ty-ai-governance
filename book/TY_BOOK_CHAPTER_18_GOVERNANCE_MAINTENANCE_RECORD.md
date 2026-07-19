@@ -9851,3 +9851,13 @@ Update-TYOVAStats.ps1 and Write-TestCount.ps1 added to tools -- auto-sync chapte
 Pre-Flight test count gate added -- TY_TOOLS_REFERENCE.md testing tools section added -- Write-TestCount.ps1 timestamp fix -- cargo test piped command documented -- Pre-Flight shows 240 passing clean
 
 **Status:** CLOSED
+
+### Entry-975 | FIX-955 | 2026-07-18 21:22 PDT San Diego -- 2026-07-18 21:23 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** e7b1ca0
+**Scope:** Session-Close.ps1 -- PROJECT KNOWLEDGE REFRESH reminder section added -- canonical file paths printed at every session close
+
+Session-Close.ps1 updated -- PROJECT KNOWLEDGE REFRESH section added -- 10 canonical file paths printed at every session close -- Ch18 MFI Ch26 flagged as always-refresh
+
+**Status:** CLOSED
