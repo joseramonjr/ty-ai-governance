@@ -222,15 +222,124 @@ startup-only governance hash check into continuous runtime monitoring.
 Logged to guardian_security_log.
 Build target: post Phase 2c verified.
 Phase 3 — Pattern-Based Policy Proposal
-Build target: post Phase 2
-King reads the private observation log and identifies patterns in the
-confirmed threat activity. King generates proposed policy rules based
-on observed patterns and places them in the Guardian review queue.
-No proposed rule activates without an explicit Guardian decision.
-King proposes. The Guardian decides. The rule is activated only after
-explicit Guardian authorization. This is not a timeout model — King
-does not activate proposed rules if the Guardian does not respond.
-Proposed rules require explicit Guardian approval, always.
+Build target: FIX-957 (implementation — separate FIX after design committed FIX-956)
+Prerequisite: Phase 2 complete and verified — all four layers (2a through 2d)
+passing, 240 tests green.
+Status: Design locked FIX-956 · 2026-07-18 · San Diego
+
+Phase 3 is the learning layer. Phase 1 built sensing. Phase 2 built containment
+and redirection. Phase 3 converts what the attacker revealed inside the mirror
+into proposed policy adjustments that strengthen TY's defenses. The attacker's
+own actions become the raw material for hardening the governed system.
+
+The complete King response sequence governs Phase 3:
+Detect → Think → Act → Log → Notify → Review → Revert
+This sequence is established in Chapter 81 (The Thinking Guardian) and governs
+all of King's autonomous action. Phase 3 does not change this sequence. Phase 3
+adds the learning and proposal step after containment is already in place.
+
+Containment-First Principle:
+Phase 3 proposal generation never replaces or precedes containment. King always
+acts first to seal and isolate (Phase 2). The proposal is generated after
+containment is in place, using the intelligence gathered during containment.
+These are two distinct and sequentially ordered activities.
+
+The Naturalization Process (Shadow Layer Teardown):
+Before Phase 3 proposal generation, King runs four clean-bill-of-health checks
+to confirm the real system was never contaminated:
+1. Hash-verify real policy files against last known-good state.
+2. Verify real SQLite ledger chain is unbroken.
+3. Verify real CRI value is within expected range.
+4. Verify no real governance rules were modified.
+If all four pass — real system confirmed clean. Shadow layer is torn down
+completely. The attacker's fingerprint is preserved in guardian_security_log.
+The mirror disappears. The attacker has nothing to show for the attack.
+If any check fails — the threat escalated beyond the mirror. Guardian is notified
+of a confirmed contamination event. Full lockdown. Phase 3 proposal generation
+does not proceed. Guardian decision is required before any further action.
+
+Judgment Model — No Count Floor:
+King's pattern evaluation uses no minimum signal count and no fixed pattern
+signatures. One confirmed signal with a clear observation record is sufficient
+for a proposal if King's judgment warrants it. Consistent with KING-INV-5.
+A pattern is King evaluating the full observation record simultaneously —
+signal type, affected commands, timing, frequency, what the attacker did
+inside the mirror, cross-signal combinations across all four Phase 2 detection
+streams. Fixed pattern signatures are not used. King's judgment evaluates
+behavior and character, not checklists. This model remains valid without
+modification across the intended operational lifetime of TY AI OS.
+
+Proposal Scope — Existing Policy Parameters Only:
+Phase 3 proposals are limited to adjustments of existing policy.json parameters.
+King may not propose new rule types requiring new Rust enforcement logic —
+those belong to Phase 4 or later. A proposed rule the system cannot yet enforce
+creates a false security guarantee.
+
+Storage — king_proposals Table:
+Phase 3 adds one private table: king_proposals. Same private local SQLite
+database as guardian_security_log. Never published to Supabase. Never
+accessible via any Tauri command exposed to the frontend. Never visible on
+TYOVA. Consistent with KING-INV-2.
+
+king_proposals schema:
+  id                   INTEGER PRIMARY KEY  Auto-increment
+  created_at           TEXT                 ISO 8601 timestamp
+  signal_ids           TEXT                 guardian_security_log row IDs that contributed
+  pattern_description  TEXT                 King plain-language description of observed pattern
+  proposed_parameter   TEXT                 Exact policy.json field King proposes to adjust
+  current_value        TEXT                 Current value at proposal time
+  proposed_value       TEXT                 King proposed new value
+  rationale            TEXT                 King reasoning traceable to observation log entries
+  status               TEXT                 PENDING / APPROVED / REJECTED / REVERTED
+  guardian_decision_at TEXT                 Timestamp of Guardian decision, NULL until decided
+  guardian_note        TEXT                 Optional Guardian note, NULL until decided
+
+Status transitions: all proposals enter as PENDING. Guardian approves →
+APPROVED → Guardian applies to policy.json manually. Guardian rejects →
+REJECTED → no change to policy.json. Guardian approves then reverts →
+REVERTED → policy.json restored to prior value. King never transitions a
+proposal beyond PENDING autonomously. A proposal that receives no Guardian
+response remains PENDING indefinitely. There is no timeout activation path.
+
+Phase 3 / Phase 4 Data Contract:
+Phase 4 reads from two tables in the private SQLite database:
+guardian_security_log (what King observed and did) and king_proposals
+(what King proposed). The schema above is the Phase 4 contract. It must
+not change between Phase 3 and Phase 4 implementation without a spec amendment.
+
+Scope Assignment — KING-OI-006 through KING-OI-009 (all Phase 3):
+Scope 1 — Supabase reader anomaly detection: Phase 3. Pattern analysis
+input introduced fresh in Phase 3. King observes supabase_reader_state
+for anomalous patterns and includes those observations in pattern evaluation.
+King does not block supabase_reader operation. King observes, records, proposes.
+Scope 2 — Governance file integrity cross-signal patterns: Phase 3.
+Extends Phase 2d detection. Phase 2d detected single events. Phase 3 reads
+accumulated Phase 2d records and identifies patterns across them.
+Scope 3 — Ledger continuity cross-signal patterns: Phase 3.
+Extends Phase 2c detection. Phase 2c detected single events. Phase 3 reads
+accumulated Phase 2c records and identifies patterns across them.
+Scope 4 — Policy file integrity cross-signal patterns: Phase 3.
+Extends Phase 2b detection. Phase 2b detected single events. Phase 3 reads
+accumulated Phase 2b records and identifies patterns across them.
+Cross-signal patterns — behaviors no single Phase 2 layer would detect
+independently (e.g., governance hash anomaly followed by policy reload attempt
+in the same session) — are evaluated by Phase 3 across all four streams
+simultaneously.
+
+Invariant Extensions for Phase 3:
+KING-INV-1 extension: Containment action comes first — always. The proposal
+is generated after containment is in place, never instead of it. No proposed
+rule activates without explicit Guardian authorization.
+KING-INV-5 extension: The judgment model at the pattern layer uses no fixed
+signatures and no minimum event count floor. King evaluates the full
+observation record. The attacker's own actions inside the mirror are the
+primary input.
+
+Open Items closed by this design:
+KING-OI-006 — Supabase anomaly detection — Phase 3 Scope 1 — CLOSED FIX-956
+KING-OI-007 — Governance file integrity patterns — Phase 3 Scope 2 — CLOSED FIX-956
+KING-OI-008 — Ledger continuity patterns — Phase 3 Scope 3 — CLOSED FIX-956
+KING-OI-009 — Policy file integrity patterns — Phase 3 Scope 4 — CLOSED FIX-956
 Phase 4 — Guardian Review Surface
 Build target: post Phase 3
 A private Guardian-only interface surfaces:
@@ -512,6 +621,7 @@ retains permanent retroactive authority over every autonomous action.
 | v0.1 | 2026-07-11 23:09 PDT | Pre-FIX-942 | Initial specification — King identity founded |
 | v0.2 | 2026-07-12 13:34 PDT | FIX-946 | Surface map added — backdoor audit findings — King future monitoring scope — Open Items updated |
 | v0.3 | 2026-07-12 18:33 PDT | FIX-948 | Phase 2 expanded — layered build sequence defined — KingState struct — 29 command intercept list — Phase 2a through 2d defined |
+| v0.4 | 2026-07-18 21:47 PDT | FIX-956 | Phase 3 design locked — containment-first principle — seven-step sequence — naturalization process — judgment model — king_proposals schema — Phase 3/4 data contract — scope assignment KING-OI-006 through KING-OI-009 closed |
 
 ---
 
@@ -524,10 +634,10 @@ retains permanent retroactive authority over every autonomous action.
 | KING-OI-003 | guardian_security_log table schema finalization | CLOSED — FIX-942 |
 | KING-OI-004 | Phase 2 Integrity Isolation Layer design and build | Active — FIX-948 in progress |
 | KING-OI-005 | Guardian review surface authentication model | Phase 4 |
-| KING-OI-006 | King future monitoring scope — supabase anomaly detection | Phase 3/4 |
-| KING-OI-007 | King future monitoring scope — governance file integrity | Phase 3/4 |
-| KING-OI-008 | King future monitoring scope — ledger continuity | Phase 3/4 |
-| KING-OI-009 | King future monitoring scope — policy file integrity | Phase 3/4 |
+| KING-OI-006 | King future monitoring scope — supabase anomaly detection | CLOSED — FIX-956 |
+| KING-OI-007 | King future monitoring scope — governance file integrity | CLOSED — FIX-956 |
+| KING-OI-008 | King future monitoring scope — ledger continuity | CLOSED — FIX-956 |
+| KING-OI-009 | King future monitoring scope — policy file integrity | CLOSED — FIX-956 |
 | KING-OI-010 | Exact SS321 app_version string pinning in supabase_reader | Pending SS321 version confirmation |
 
 ---
