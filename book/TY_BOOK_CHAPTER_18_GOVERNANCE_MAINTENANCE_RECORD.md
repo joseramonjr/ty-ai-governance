@@ -9861,3 +9861,13 @@ Pre-Flight test count gate added -- TY_TOOLS_REFERENCE.md testing tools section 
 Session-Close.ps1 updated -- PROJECT KNOWLEDGE REFRESH section added -- 10 canonical file paths printed at every session close -- Ch18 MFI Ch26 flagged as always-refresh
 
 **Status:** CLOSED
+
+### Entry-976 | FIX-956 | 2026-07-18 21:47 PDT San Diego -- 2026-07-18 22:39 PDT San Diego
+
+**Destination:** ty-ai-governance
+**Commit:** 12ffb19
+**Scope:** TY_KING_SPEC_v0.1.md -- Phase 3 design section -- pattern-based policy proposal architecture -- v0.4
+
+TY_KING_SPEC_v0.1.md updated to v0.4 -- Phase 3 design locked -- containment-first principle -- seven-step sequence -- naturalization process -- judgment model -- king_proposals schema -- Phase 3/4 data contract -- KING-OI-006 through KING-OI-009 closed
+
+**Status:** CLOSED
