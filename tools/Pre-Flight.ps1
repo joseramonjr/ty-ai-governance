@@ -392,6 +392,20 @@ if (Test-Path $tyovaScript) {
     $actionItems += "TYOVA Health Check : Check-TYOVAHealth.ps1 missing from tools folder"
 }
 
+# Test Count Currency Check
+$testCountFile = "E:\TY-Ecosystem\Jaya-Runtime\src-tauri\.last-test-count.json"
+if (Test-Path $testCountFile) {
+    $testJson = Get-Content $testCountFile -Raw | ConvertFrom-Json
+    $recordedAt = $testJson.recordedAt
+    Write-Host "[TEST COUNT]"
+    Write-Host "  Last recorded  : $($testJson.testsTotal) passing -- $recordedAt" -ForegroundColor Gray
+} else {
+    Write-Host "[TEST COUNT]" -ForegroundColor Yellow
+    Write-Host "  WARNING: .last-test-count.json not found" -ForegroundColor Yellow
+    Write-Host "  Run cargo test with Write-TestCount.ps1 to record test count" -ForegroundColor Yellow
+    $actionItems += "Test Count : .last-test-count.json missing -- run cargo test with Write-TestCount.ps1"
+}
+
 # SS321 Health Check
 $ss321Script = Join-Path $healthScriptDir "Check-SS321Health.ps1"
 if (Test-Path $ss321Script) {

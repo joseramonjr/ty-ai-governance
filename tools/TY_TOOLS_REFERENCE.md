@@ -104,6 +104,88 @@ Outputs to tools\Ch26_sync_output.txt.
 
 ---
 
+## TESTING TOOLS
+
+### cargo test (standard command -- auto-writes test count)
+**When:** After every Jaya-Runtime code change -- before FIX-Close
+**What:** Runs full test suite and automatically records test count
+to .last-test-count.json for Update-TYOVAStats.ps1 to read.
+**Command:**
+  cd "E:\TY-Ecosystem\Jaya-Runtime\src-tauri"
+  cargo test 2>&1 | Tee-Object -Variable testOut | Select-Object -Last 5
+  $count = ([regex]::Match(($testOut -join "`n"), '(\d+) passed')).Groups[1].Value
+  E:\TY-Ecosystem\ty-ai-governance\tools\Write-TestCount.ps1 -TestsTotal $count -TestsPass $count
+**Never run bare cargo test alone** -- always pipe through Write-TestCount
+so the count is recorded for Update-TYOVAStats.ps1.
+
+---
+
+### Write-TestCount.ps1
+**When:** Automatically called by the cargo test command above
+**What:** Writes test count to Jaya-Runtime\src-tauri\.last-test-count.json
+Read by Update-TYOVAStats.ps1 to auto-update masterHubRegistry.ts
+**Manual use (if count is known):**
+  E:\TY-Ecosystem\ty-ai-governance\tools\Write-TestCount.ps1 -TestsTotal 240 -TestsPass 240
+
+---
+
+### Update-TYOVAStats.ps1
+**When:** At session open if TYOVA stats may be stale -- or after any
+chapter, vocabulary, or test count change
+**What:** Reads chaptersSealed from BookOfTyIndex.tsx, vocabTerms from
+Ch26 header, testsTotal/testsPass from .last-test-count.json.
+Patches masterHubRegistry.ts automatically. Does NOT update
+phasesSealed or snapshotDate -- those are human decisions.
+**Command:**
+  E:\TY-Ecosystem\ty-ai-governance\tools\Update-TYOVAStats.ps1
+**Dry-run (preview without writing):**
+  E:\TY-Ecosystem\ty-ai-governance\tools\Update-TYOVAStats.ps1 -DryRun
+**After running:** git diff TYOVA/src/config/masterHubRegistry.ts
+then commit TYOVA if changes were made.
+
+---
+
+## TESTING TOOLS
+
+### cargo test (standard command -- auto-writes test count)
+**When:** After every Jaya-Runtime code change -- before FIX-Close
+**What:** Runs full test suite and automatically records test count
+to .last-test-count.json for Update-TYOVAStats.ps1 to read.
+**Command:**
+  cd "E:\TY-Ecosystem\Jaya-Runtime\src-tauri"
+  cargo test 2>&1 | Tee-Object -Variable testOut | Select-Object -Last 5
+  $count = ([regex]::Match(($testOut -join "`n"), '(\d+) passed')).Groups[1].Value
+  E:\TY-Ecosystem\ty-ai-governance\tools\Write-TestCount.ps1 -TestsTotal $count -TestsPass $count
+**Never run bare cargo test alone** -- always pipe through Write-TestCount
+so the count is recorded for Update-TYOVAStats.ps1.
+
+---
+
+### Write-TestCount.ps1
+**When:** Automatically called by the cargo test command above
+**What:** Writes test count to Jaya-Runtime\src-tauri\.last-test-count.json
+Read by Update-TYOVAStats.ps1 to auto-update masterHubRegistry.ts
+**Manual use (if count is known):**
+  E:\TY-Ecosystem\ty-ai-governance\tools\Write-TestCount.ps1 -TestsTotal 240 -TestsPass 240
+
+---
+
+### Update-TYOVAStats.ps1
+**When:** At session open if TYOVA stats may be stale -- or after any
+chapter, vocabulary, or test count change
+**What:** Reads chaptersSealed from BookOfTyIndex.tsx, vocabTerms from
+Ch26 header, testsTotal/testsPass from .last-test-count.json.
+Patches masterHubRegistry.ts automatically. Does NOT update
+phasesSealed or snapshotDate -- those are human decisions.
+**Command:**
+  E:\TY-Ecosystem\ty-ai-governance\tools\Update-TYOVAStats.ps1
+**Dry-run (preview without writing):**
+  E:\TY-Ecosystem\ty-ai-governance\tools\Update-TYOVAStats.ps1 -DryRun
+**After running:** git diff TYOVA/src/config/masterHubRegistry.ts
+then commit TYOVA if changes were made.
+
+---
+
 ## BACKUP TOOLS
 
 ### Backup-JayaLedger.ps1
@@ -145,10 +227,12 @@ supplement file for guardian succession.
 4. Session-Close before ending -- no exceptions
 5. Sync-Ch26ToTYOVA before editing bookChapterContent.ts -- no exceptions
 6. Integrity-Scan after every Rust change -- no exceptions
-7. FIX-Close always produces duplicates -- always check before ledger commit
-8. Rust files via VS Code paste only -- never PowerShell WriteAllLines
-9. Backtick template literals via VS Code only -- never PowerShell heredoc
-10. Always ask Jose for San Diego time before any ledger entry
+7. cargo test via piped command only -- always write test count to .last-test-count.json
+8. Update-TYOVAStats.ps1 at session open if chapters, vocab, or tests may have changed
+9. FIX-Close always produces duplicates -- always check before ledger commit
+10. Rust files via VS Code paste only -- never PowerShell WriteAllLines
+11. Backtick template literals via VS Code only -- never PowerShell heredoc
+12. Always ask Jose for San Diego time before any ledger entry
 
 ---
 

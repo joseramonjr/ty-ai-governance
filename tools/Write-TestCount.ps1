@@ -23,7 +23,7 @@ if ($TestsTotal -gt 0) {
     $json = @{
         testsTotal  = $TestsTotal
         testsPass   = $TestsPass
-        recordedAt  = (Get-Date -Format "yyyy-MM-dd HH:mm PDT San Diego")
+        recordedAt  = (Get-Date -Format "yyyy-MM-dd HH:mm") + " PDT San Diego"
     } | ConvertTo-Json
 
     [System.IO.File]::WriteAllText($OUTPUT_FILE, $json, [System.Text.UTF8Encoding]::new($false))
@@ -42,7 +42,7 @@ if ($match.Success) {
     $json = @{
         testsTotal  = $count
         testsPass   = $count
-        recordedAt  = (Get-Date -Format "yyyy-MM-dd HH:mm PDT San Diego")
+        recordedAt  = (Get-Date -Format "yyyy-MM-dd HH:mm") + " PDT San Diego"
     } | ConvertTo-Json
 
     [System.IO.File]::WriteAllText($OUTPUT_FILE, $json, [System.Text.UTF8Encoding]::new($false))
