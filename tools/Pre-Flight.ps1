@@ -392,6 +392,20 @@ if (Test-Path $tyovaScript) {
     $actionItems += "TYOVA Health Check : Check-TYOVAHealth.ps1 missing from tools folder"
 }
 
+# TYOVA Stats Auto-Update
+$statsScript = Join-Path $healthScriptDir "Update-TYOVAStats.ps1"
+if (Test-Path $statsScript) {
+    $result = & $statsScript -Quiet
+    if ($LASTEXITCODE -eq 2) {
+        Write-Host "[TYOVA STATS] Updated -- commit TYOVA before session close" -ForegroundColor Yellow
+        $actionItems += "TYOVA Stats : masterHubRegistry.ts updated -- git add + commit + push TYOVA"
+    } elseif ($LASTEXITCODE -eq 0) {
+        Write-Host "[TYOVA STATS] Current -- no changes needed" -ForegroundColor Green
+    }
+} else {
+    Write-Host "[TYOVA STATS] SKIP -- Update-TYOVAStats.ps1 not found" -ForegroundColor Yellow
+}
+
 # Test Count Currency Check
 $testCountFile = "E:\TY-Ecosystem\Jaya-Runtime\src-tauri\.last-test-count.json"
 if (Test-Path $testCountFile) {
