@@ -9871,3 +9871,13 @@ Session-Close.ps1 updated -- PROJECT KNOWLEDGE REFRESH section added -- 10 canon
 TY_KING_SPEC_v0.1.md updated to v0.4 -- Phase 3 design locked -- containment-first principle -- seven-step sequence -- naturalization process -- judgment model -- king_proposals schema -- Phase 3/4 data contract -- KING-OI-006 through KING-OI-009 closed
 
 **Status:** CLOSED
+
+### Entry-977 | FIX-957 | 2026-07-19 22:30 PDT San Diego -- 2026-07-19 22:48 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 327772d
+**Scope:** king.rs -- Phase 3 implementation -- king_proposals table -- naturalization process -- pattern evaluation -- sentinel cycle integration
+
+King Phase 3 complete -- four layers -- king_proposals table -- naturalization process -- pattern evaluation five patterns -- sentinel cycle integration -- 240 tests passing -- king.rs 460+ lines sentinel.rs updated
+
+**Status:** CLOSED
