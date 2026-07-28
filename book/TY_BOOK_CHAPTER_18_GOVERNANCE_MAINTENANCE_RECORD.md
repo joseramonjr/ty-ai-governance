@@ -9901,3 +9901,13 @@ King Phase 4 complete -- Guardian Review Surface live verified -- four pieces --
 Guardian Review passphrase gate -- pvs_verify_item enforcement -- non-Guardian users blocked -- reinitialize PVS button added to GuardianControlsPanel -- consistent with Chapter 84 Model D User Sovereign Governance -- 240 tests passing -- live verified
 
 **Status:** CLOSED
+
+### Entry-980 | FIX-960 | 2026-07-28 10:38 PDT San Diego -- 2026-07-28 12:00 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 81f57be
+**Scope:** king.rs sentinel.rs -- King end-to-end integration test -- controlled anomaly trigger -- full chain verification -- detect isolate naturalize propose notify
+
+King end-to-end integration test PASSED -- full chain verified -- detect isolate naturalize propose notify approve revert -- shared KingState fix -- phase3_complete one-shot flag -- BOM fix resend_config -- email delivered -- Guardian decision flow confirmed -- 240 tests passing
+
+**Status:** CLOSED
