@@ -9881,3 +9881,13 @@ TY_KING_SPEC_v0.1.md updated to v0.4 -- Phase 3 design locked -- containment-fir
 King Phase 3 complete -- four layers -- king_proposals table -- naturalization process -- pattern evaluation five patterns -- sentinel cycle integration -- 240 tests passing -- king.rs 460+ lines sentinel.rs updated
 
 **Status:** CLOSED
+
+### Entry-978 | FIX-958 | 2026-07-27 17:09 PDT San Diego -- 2026-07-27 18:34 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** ef35d58
+**Scope:** king.rs lib.rs -- Phase 4 Guardian Review Surface -- private Tauri window -- guardian_security_log and king_proposals read commands -- proposal status update -- open_guardian_review command
+
+King Phase 4 complete -- Guardian Review Surface live verified -- four pieces -- king.rs read functions -- lib.rs async Tauri commands -- guardian_review.html bundled -- vite copy plugin -- capabilities -- WebView2 deadlock fix -- 240 tests passing
+
+**Status:** CLOSED
