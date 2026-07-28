@@ -9891,3 +9891,13 @@ King Phase 3 complete -- four layers -- king_proposals table -- naturalization p
 King Phase 4 complete -- Guardian Review Surface live verified -- four pieces -- king.rs read functions -- lib.rs async Tauri commands -- guardian_review.html bundled -- vite copy plugin -- capabilities -- WebView2 deadlock fix -- 240 tests passing
 
 **Status:** CLOSED
+
+### Entry-979 | FIX-959 | 2026-07-27 18:49 PDT San Diego -- 2026-07-27 20:58 PDT San Diego
+
+**Destination:** Jaya-Runtime
+**Commit:** 3647bb2
+**Scope:** App.tsx lib.rs -- Guardian Review button HVP gate -- hide button from non-Guardian users -- Guardian-only access enforcement
+
+Guardian Review passphrase gate -- pvs_verify_item enforcement -- non-Guardian users blocked -- reinitialize PVS button added to GuardianControlsPanel -- consistent with Chapter 84 Model D User Sovereign Governance -- 240 tests passing -- live verified
+
+**Status:** CLOSED
